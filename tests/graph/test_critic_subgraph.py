@@ -83,7 +83,7 @@ def test_hallucinated_finding_triggers_targeted_revision_then_rejected_after_cap
 
     def fake_run_analyst(spec, run_id, config, cleaned_artifacts, analysis_period, previous_period,
                           trailing_baseline_periods, code_generator=None, repair_generator=None,
-                          revision_feedback=None):
+                          revision_feedback=None, invocation_tag="initial"):
         call_log.append(spec.name)
         from src.analysts.base import AnalystRunResult
         # Margin analyst always regenerates the same unresolvable finding.

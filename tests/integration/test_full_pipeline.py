@@ -44,6 +44,9 @@ class _FakeChatModel:
             if "Context (artifact paths, schemas, periods):" in user_prompt else {}
         inputs = ctx.get("input_artifacts", {})
         first_artifact = next(iter(inputs), None)
+        period = ctx.get("analysis_period", {})
+        period_start = period.get("start", "")
+        period_end = period.get("end", "")
         return f'''
 import json, os
 import pandas as pd
@@ -57,7 +60,7 @@ if {first_artifact!r} and {first_artifact!r} in inputs:
         "claim": f"Observed {{len(df)}} rows in {first_artifact}.",
         "finding_type": "descriptive",
         "metrics": {{"row_count": {{"value": int(len(df)), "unit": "rows", "numerator": None,
-                                    "denominator": None, "period_start": "{{}}", "period_end": "{{}}"}}}},
+                                    "denominator": None, "period_start": {period_start!r}, "period_end": {period_end!r}}}}},
         "source_names": [{first_artifact!r}] if {first_artifact!r} else [],
         "sample_size": int(len(df)),
         "coverage_notes": [],

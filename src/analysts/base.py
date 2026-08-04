@@ -106,6 +106,7 @@ def run_analyst(
     code_generator: CodeGenerator | None = None,
     repair_generator: Callable[[str, str, dict[str, Any]], str] | None = None,
     revision_feedback: list[str] | None = None,
+    invocation_tag: str = "initial",
 ) -> AnalystRunResult:
     limits = config.app_settings.limits
     max_attempts = limits.analyst_code_attempts
@@ -154,7 +155,11 @@ def run_analyst(
     gen = code_generator or _default_llm_code_generator(model_name)
     repair = repair_generator or _repair_code_generator(model_name)
 
-    code_dir = artifact_dir(config.artifact_root, run_id, "code", spec.name)
+    # Namespaced by invocation_tag so a revision rerun never overwrites the
+    # artifact files of a prior invocation for the same analyst/run_id --
+    # artifacts must stay immutable even across critic-triggered reruns.
+    code_dir = artifact_dir(config.artifact_root, run_id, "code", spec.name, invocation_tag)
+    results_dir = artifact_dir(config.artifact_root, run_id, "results", spec.name, invocation_tag)
     input_refs = list(available.values())
 
     notes: list[str] = []
@@ -177,7 +182,7 @@ def run_analyst(
             timeout_seconds=limits.code_timeout_seconds, allowed_imports=[],
             max_output_bytes=2_000_000,
         )
-        exec_result = execute_python_code(request, code_dir, attempt=attempt)
+        exec_result = execute_python_code(request, code_dir, attempt=attempt, results_dir=results_dir)
         if exec_result["status"] == "success":
             break
         last_stderr = exec_result["stderr"] or f"execution status: {exec_result['status']}"

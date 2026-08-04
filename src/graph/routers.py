@@ -64,6 +64,7 @@ def run_one_analyst_revision(state: _RevisionJobState) -> dict[str, Any]:
         analysis_period=state["analysis_period"], previous_period=state["previous_period"],
         trailing_baseline_periods=state["trailing_baseline_periods"],
         revision_feedback=feedback,
+        invocation_tag=f"revision-{prior_revision + 1}",
     )
     revised_findings = []
     for f in result.findings:

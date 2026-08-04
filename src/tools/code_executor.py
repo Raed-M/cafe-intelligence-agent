@@ -86,6 +86,7 @@ def execute_python_code(
     code_artifact_dir: Path,
     attempt: int,
     python_executable: str | None = None,
+    results_dir: Path | None = None,
 ) -> CodeExecutionResult:
     import time
 
@@ -187,7 +188,12 @@ def execute_python_code(
                 elapsed_seconds=elapsed, code_artifact=code_artifact, result_artifact=None, attempt=attempt,
             )
 
-        result_dest = code_artifact_dir.parent / "results" / f"{attempt}.json"
+        # results_dir defaults to a sibling of the code dir for backward
+        # compatibility, but callers running multiple invocations for the
+        # same analyst/run (e.g. critic-triggered revisions) MUST pass a
+        # distinct results_dir per invocation so artifacts stay immutable.
+        dest_dir = results_dir if results_dir is not None else (code_artifact_dir.parent / "results")
+        result_dest = dest_dir / f"{attempt}.json"
         result_artifact = write_json(result_obj, result_dest)
 
         return CodeExecutionResult(
