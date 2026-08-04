@@ -1,0 +1,212 @@
+[
+  {
+    "review_id": "REV-0001",
+    "date": "2026-02-04",
+    "source": "instagram",
+    "rating": 4,
+    "text": "Great flat white, friendly staff."
+  },
+  {
+    "review_id": "REV-0002",
+    "date": "2026-02-02",
+    "source": "instagram",
+    "rating": 4,
+    "text": "قهوة ممتازة وخدمة سريعة"
+  },
+  {
+    "review_id": "REV-0003",
+    "date": "2026-02-05",
+    "source": "talabat",
+    "rating": 5,
+    "text": "Best cold brew in Jeddah."
+  },
+  {
+    "review_id": "REV-0004",
+    "date": "2026-02-05",
+    "source": "talabat",
+    "rating": 5,
+    "text": "Great flat white, friendly staff."
+  },
+  {
+    "review_id": "REV-0005",
+    "date": "2026-02-03",
+    "source": "instagram",
+    "rating": 3,
+    "text": "Great flat white, friendly staff."
+  },
+  {
+    "review_id": "REV-0006",
+    "date": "2026-02-05",
+    "source": "instagram",
+    "rating": 3,
+    "text": "Great flat white, friendly staff."
+  },
+  {
+    "review_id": "REV-0007",
+    "date": "2026-02-03",
+    "source": "talabat",
+    "rating": 3,
+    "text": "الأسعار مناسبة"
+  },
+  {
+    "review_id": "REV-0008",
+    "date": "2026-02-03",
+    "source": "talabat",
+    "rating": 5,
+    "text": "Great flat white, friendly staff."
+  },
+  {
+    "review_id": "REV-0009",
+    "date": "2026-02-04",
+    "source": "talabat",
+    "rating": 5,
+    "text": "A bit slow during peak hours but worth it."
+  },
+  {
+    "review_id": "REV-0010",
+    "date": "2026-02-05",
+    "source": "instagram",
+    "rating": 5,
+    "text": "قهوة ممتازة وخدمة سريعة"
+  },
+  {
+    "review_id": "REV-0011",
+    "date": "2026-02-04",
+    "source": "google",
+    "rating": 3,
+    "text": "أفضل قهوة باردة جربتها"
+  },
+  {
+    "review_id": "REV-0012",
+    "date": "2026-02-05",
+    "source": "talabat",
+    "rating": 5,
+    "text": "Best cold brew in Jeddah."
+  },
+  {
+    "review_id": "REV-0013",
+    "date": "2026-02-05",
+    "source": "talabat",
+    "rating": 5,
+    "text": "Seating is limited on weekends."
+  },
+  {
+    "review_id": "REV-0014",
+    "date": "2026-02-05",
+    "source": "google",
+    "rating": 4,
+    "text": "المكان جميل لكن مزدحم أحياناً"
+  },
+  {
+    "review_id": "REV-0015",
+    "date": "2026-02-08",
+    "source": "instagram",
+    "rating": 4,
+    "text": "أفضل قهوة باردة جربتها"
+  },
+  {
+    "review_id": "REV-0016",
+    "date": "2026-02-15",
+    "source": "google",
+    "rating": 4,
+    "text": "Best cold brew in Jeddah."
+  },
+  {
+    "review_id": "REV-0017",
+    "date": "2026-02-12",
+    "source": "talabat",
+    "rating": 3,
+    "text": "Best cold brew in Jeddah."
+  },
+  {
+    "review_id": "REV-0018",
+    "date": "2026-02-10",
+    "source": "talabat",
+    "rating": 5,
+    "text": "A bit slow during peak hours but worth it."
+  },
+  {
+    "review_id": "REV-0019",
+    "date": "2026-02-10",
+    "source": "google",
+    "rating": 4,
+    "text": "المكان جميل لكن مزدحم أحياناً"
+  },
+  {
+    "review_id": "REV-0020",
+    "date": "2026-02-12",
+    "source": "google",
+    "rating": 3,
+    "text": "قهوة ممتازة وخدمة سريعة"
+  },
+  {
+    "review_id": "REV-0021",
+    "date": "2026-02-14",
+    "source": "instagram",
+    "rating": 3,
+    "text": "أفضل قهوة باردة جربتها"
+  },
+  {
+    "review_id": "REV-0022",
+    "date": "2026-02-12",
+    "source": "google",
+    "rating": 5,
+    "text": "Best cold brew in Jeddah."
+  },
+  {
+    "review_id": "REV-0023",
+    "date": "2026-02-09",
+    "source": "instagram",
+    "rating": 4,
+    "text": "A bit slow during peak hours but worth it."
+  },
+  {
+    "review_id": "REV-0024",
+    "date": "2026-02-12",
+    "source": "google",
+    "rating": 3,
+    "text": "Best cold brew in Jeddah."
+  },
+  {
+    "review_id": "REV-0025",
+    "date": "2026-02-14",
+    "source": "instagram",
+    "rating": 4,
+    "text": "A bit slow during peak hours but worth it."
+  },
+  {
+    "review_id": "REV-0026",
+    "date": "2026-02-15",
+    "source": "instagram",
+    "rating": 4,
+    "text": "Great flat white, friendly staff."
+  },
+  {
+    "review_id": "REV-0027",
+    "date": "2026-02-14",
+    "source": "google",
+    "rating": 3,
+    "text": "Great flat white, friendly staff."
+  },
+  {
+    "review_id": "REV-0028",
+    "date": "2026-02-11",
+    "source": "talabat",
+    "rating": 3,
+    "text": "الأسعار مناسبة"
+  },
+  {
+    "review_id": "REV-0029",
+    "date": "2026-02-11",
+    "source": "google",
+    "rating": 5,
+    "text": "المكان جميل لكن مزدحم أحياناً"
+  },
+  {
+    "review_id": "REV-0030",
+    "date": "2026-02-13",
+    "source": "instagram",
+    "rating": 3,
+    "text": "Great flat white, friendly staff."
+  }
+]

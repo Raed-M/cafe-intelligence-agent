@@ -1,0 +1,1260 @@
+transaction_id,timestamp,sku,item_name,quantity,unit_price_sar,discount_sar,line_total_sar,payment_method,channel,cashier_id
+TXN-200001,2026-02-02 07:08:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,delivery,EMP-02
+TXN-200001,2026-02-02 07:08:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-01
+TXN-200002,2026-02-02 07:14:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-03
+TXN-200002,2026-02-02 07:14:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-03
+TXN-200003,2026-02-02 07:17:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-02
+TXN-200004,2026-02-02 07:09:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-02
+TXN-200005,2026-02-02 08:22:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-02
+TXN-200005,2026-02-02 08:22:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,dine_in,EMP-03
+TXN-200006,2026-02-02 08:18:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-01
+TXN-200006,2026-02-02 08:18:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-01
+TXN-200007,2026-02-02 09:24:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-02
+TXN-200008,2026-02-02 09:22:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-03
+TXN-200009,2026-02-02 09:10:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-02
+TXN-200009,2026-02-02 09:10:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-02
+TXN-200010,2026-02-02 09:53:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,takeaway,EMP-02
+TXN-200011,2026-02-02 09:17:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-03
+TXN-200012,2026-02-02 09:31:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-01
+TXN-200013,2026-02-02 10:34:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,takeaway,EMP-01
+TXN-200014,2026-02-02 10:08:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,dine_in,EMP-01
+TXN-200014,2026-02-02 10:08:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-02
+TXN-200015,2026-02-02 10:38:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-02
+TXN-200016,2026-02-02 10:33:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-03
+TXN-200017,2026-02-02 10:48:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-02
+TXN-200018,2026-02-02 11:46:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-01
+TXN-200018,2026-02-02 11:46:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-02
+TXN-200019,2026-02-02 11:48:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,takeaway,EMP-01
+TXN-200020,2026-02-02 11:07:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-01
+TXN-200021,2026-02-02 12:31:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-02
+TXN-200022,2026-02-02 13:33:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-03
+TXN-200022,2026-02-02 13:33:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-03
+TXN-200023,2026-02-02 13:41:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200024,2026-02-02 13:14:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-03
+TXN-200025,2026-02-02 13:14:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,dine_in,EMP-03
+TXN-200025,2026-02-02 13:14:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-01
+TXN-200026,2026-02-02 13:55:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-03
+TXN-200027,2026-02-02 13:31:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-02
+TXN-200028,2026-02-02 13:51:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,dine_in,EMP-03
+TXN-200029,2026-02-02 14:26:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-02
+TXN-200030,2026-02-02 14:46:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,dine_in,EMP-01
+TXN-200031,2026-02-02 14:34:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-02
+TXN-200032,2026-02-02 14:29:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-01
+TXN-200033,2026-02-02 14:03:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-01
+TXN-200033,2026-02-02 14:03:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,takeaway,EMP-01
+TXN-200034,2026-02-02 14:55:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-01
+TXN-200035,2026-02-02 14:24:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-03
+TXN-200036,2026-02-02 15:31:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-01
+TXN-200037,2026-02-02 15:37:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-01
+TXN-200037,2026-02-02 15:37:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,dine_in,EMP-03
+TXN-200038,2026-02-02 15:05:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,delivery,EMP-01
+TXN-200039,2026-02-02 15:25:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-01
+TXN-200040,2026-02-02 15:26:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-03
+TXN-200040,2026-02-02 15:26:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-02
+TXN-200041,2026-02-02 15:08:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-01
+TXN-200041,2026-02-02 15:08:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-03
+TXN-200042,2026-02-02 15:06:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-02
+TXN-200043,2026-02-02 15:56:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-01
+TXN-200044,2026-02-02 15:28:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-03
+TXN-200044,2026-02-02 15:28:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,dine_in,EMP-02
+TXN-200045,2026-02-02 15:07:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,takeaway,EMP-03
+TXN-200046,2026-02-02 15:13:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-03
+TXN-200046,2026-02-02 15:13:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-01
+TXN-200047,2026-02-02 16:53:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-01
+TXN-200048,2026-02-02 16:40:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-03
+TXN-200049,2026-02-02 17:07:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-03
+TXN-200050,2026-02-02 17:35:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,dine_in,EMP-02
+TXN-200051,2026-02-02 17:23:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-01
+TXN-200052,2026-02-02 17:42:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-03
+TXN-200053,2026-02-02 17:09:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,takeaway,EMP-01
+TXN-200054,2026-02-02 17:11:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-03
+TXN-200054,2026-02-02 17:11:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-03
+TXN-200055,2026-02-02 17:06:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-01
+TXN-200056,2026-02-02 17:52:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-01
+TXN-200057,2026-02-02 18:25:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,takeaway,EMP-02
+TXN-200058,2026-02-02 19:53:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-02
+TXN-200058,2026-02-02 19:53:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,dine_in,EMP-01
+TXN-200059,2026-02-02 19:38:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,takeaway,EMP-03
+TXN-200060,2026-02-02 19:32:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-01
+TXN-200061,2026-02-02 19:45:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-02
+TXN-200062,2026-02-02 19:04:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-01
+TXN-200062,2026-02-02 19:04:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-02
+TXN-200063,2026-02-02 19:20:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-02
+TXN-200064,2026-02-02 19:42:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,takeaway,EMP-03
+TXN-200065,2026-02-02 19:53:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-02
+TXN-200066,2026-02-02 20:28:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-01
+TXN-200066,2026-02-02 20:28:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-03
+TXN-200067,2026-02-02 20:40:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-03
+TXN-200067,2026-02-02 20:40:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-01
+TXN-200068,2026-02-02 20:01:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-01
+TXN-200069,2026-02-02 20:29:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-02
+TXN-200070,2026-02-02 20:15:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-01
+TXN-200071,2026-02-02 20:11:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,delivery,EMP-01
+TXN-200071,2026-02-02 20:11:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,dine_in,EMP-02
+TXN-200072,2026-02-02 21:35:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-03
+TXN-200072,2026-02-02 21:35:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,dine_in,EMP-03
+TXN-200073,2026-02-03 07:17:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-02
+TXN-200073,2026-02-03 07:17:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-02
+TXN-200074,2026-02-03 07:21:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,dine_in,EMP-01
+TXN-200075,2026-02-03 07:24:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-02
+TXN-200075,2026-02-03 07:24:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,delivery,EMP-02
+TXN-200076,2026-02-03 07:26:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-03
+TXN-200077,2026-02-03 07:44:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,dine_in,EMP-02
+TXN-200078,2026-02-03 07:19:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-01
+TXN-200079,2026-02-03 08:01:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-01
+TXN-200080,2026-02-03 08:53:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-03
+TXN-200081,2026-02-03 08:36:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-02
+TXN-200081,2026-02-03 08:36:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-01
+TXN-200082,2026-02-03 08:16:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-02
+TXN-200083,2026-02-03 08:21:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-01
+TXN-200084,2026-02-03 09:34:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-01
+TXN-200085,2026-02-03 09:49:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-01
+TXN-200085,2026-02-03 09:49:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-01
+TXN-200086,2026-02-03 09:30:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-03
+TXN-200086,2026-02-03 09:30:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-03
+TXN-200087,2026-02-03 09:38:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-01
+TXN-200087,2026-02-03 09:38:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-03
+TXN-200088,2026-02-03 09:58:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,dine_in,EMP-03
+TXN-200089,2026-02-03 10:49:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-03
+TXN-200090,2026-02-03 10:27:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-03
+TXN-200090,2026-02-03 10:27:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-02
+TXN-200091,2026-02-03 10:06:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-01
+TXN-200092,2026-02-03 11:33:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-02
+TXN-200092,2026-02-03 11:33:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-01
+TXN-200093,2026-02-03 11:17:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-03
+TXN-200094,2026-02-03 11:42:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-02
+TXN-200095,2026-02-03 11:11:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-02
+TXN-200096,2026-02-03 11:17:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-01
+TXN-200096,2026-02-03 11:17:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,delivery,EMP-02
+TXN-200097,2026-02-03 12:15:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,takeaway,EMP-01
+TXN-200097,2026-02-03 12:15:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-02
+TXN-200098,2026-02-03 12:44:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-03
+TXN-200099,2026-02-03 12:33:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-03
+TXN-200100,2026-02-03 12:29:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-01
+TXN-200101,2026-02-03 12:46:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-03
+TXN-200102,2026-02-03 12:48:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-03
+TXN-200102,2026-02-03 12:48:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,delivery,EMP-03
+TXN-200103,2026-02-03 12:48:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,dine_in,EMP-02
+TXN-200103,2026-02-03 12:48:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-02
+TXN-200104,2026-02-03 12:00:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,dine_in,EMP-01
+TXN-200104,2026-02-03 12:00:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-02
+TXN-200105,2026-02-03 12:06:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-02
+TXN-200106,2026-02-03 13:03:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,dine_in,EMP-02
+TXN-200107,2026-02-03 13:31:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-03
+TXN-200108,2026-02-03 13:19:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-02
+TXN-200109,2026-02-03 13:38:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-02
+TXN-200109,2026-02-03 13:38:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-03
+TXN-200110,2026-02-03 14:47:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-03
+TXN-200111,2026-02-03 14:05:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-01
+TXN-200112,2026-02-03 15:28:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-01
+TXN-200112,2026-02-03 15:28:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-02
+TXN-200113,2026-02-03 15:04:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-03
+TXN-200113,2026-02-03 15:04:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,dine_in,EMP-03
+TXN-200114,2026-02-03 16:58:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,dine_in,EMP-01
+TXN-200115,2026-02-03 16:50:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-02
+TXN-200116,2026-02-03 16:44:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,delivery,EMP-03
+TXN-200117,2026-02-03 16:31:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-03
+TXN-200118,2026-02-03 16:20:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,dine_in,EMP-01
+TXN-200118,2026-02-03 16:20:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-01
+TXN-200119,2026-02-03 17:41:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-02
+TXN-200120,2026-02-03 17:40:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,takeaway,EMP-02
+TXN-200121,2026-02-03 17:21:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-02
+TXN-200122,2026-02-03 18:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-02
+TXN-200122,2026-02-03 18:25:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-02
+TXN-200123,2026-02-03 18:55:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-01
+TXN-200123,2026-02-03 18:55:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-02
+TXN-200124,2026-02-03 18:40:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-03
+TXN-200125,2026-02-03 18:08:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200126,2026-02-03 18:40:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-03
+TXN-200126,2026-02-03 18:40:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-01
+TXN-200127,2026-02-03 18:53:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,delivery,EMP-01
+TXN-200128,2026-02-03 18:31:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-02
+TXN-200128,2026-02-03 18:31:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-03
+TXN-200129,2026-02-03 19:58:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-02
+TXN-200129,2026-02-03 19:58:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-02
+TXN-200130,2026-02-03 19:46:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-03
+TXN-200131,2026-02-03 19:30:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-02
+TXN-200132,2026-02-03 20:15:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-01
+TXN-200132,2026-02-03 20:15:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-02
+TXN-200133,2026-02-03 20:24:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-01
+TXN-200133,2026-02-03 20:24:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-01
+TXN-200134,2026-02-03 20:33:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-03
+TXN-200135,2026-02-03 20:09:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-03
+TXN-200136,2026-02-03 20:44:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-03
+TXN-200137,2026-02-03 21:40:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,delivery,EMP-01
+TXN-200137,2026-02-03 21:40:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-03
+TXN-200138,2026-02-04 07:45:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-02
+TXN-200139,2026-02-04 07:57:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-02
+TXN-200140,2026-02-04 07:22:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,dine_in,EMP-03
+TXN-200141,2026-02-04 08:50:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-03
+TXN-200142,2026-02-04 08:55:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-01
+TXN-200143,2026-02-04 08:14:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-03
+TXN-200144,2026-02-04 08:00:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-02
+TXN-200145,2026-02-04 08:22:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-02
+TXN-200145,2026-02-04 08:22:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-02
+TXN-200146,2026-02-04 08:54:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-03
+TXN-200147,2026-02-04 08:22:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-03
+TXN-200147,2026-02-04 08:22:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,dine_in,EMP-03
+TXN-200148,2026-02-04 08:55:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-01
+TXN-200148,2026-02-04 08:55:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-01
+TXN-200149,2026-02-04 09:46:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,delivery,EMP-03
+TXN-200149,2026-02-04 09:46:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,takeaway,EMP-01
+TXN-200150,2026-02-04 09:37:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-02
+TXN-200151,2026-02-04 09:47:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-03
+TXN-200152,2026-02-04 09:56:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-02
+TXN-200153,2026-02-04 09:51:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-01
+TXN-200154,2026-02-04 10:14:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,dine_in,EMP-02
+TXN-200154,2026-02-04 10:14:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-01
+TXN-200155,2026-02-04 10:29:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-02
+TXN-200156,2026-02-04 10:06:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,dine_in,EMP-03
+TXN-200156,2026-02-04 10:06:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-01
+TXN-200157,2026-02-04 10:40:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-01
+TXN-200158,2026-02-04 11:19:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-03
+TXN-200159,2026-02-04 11:08:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,delivery,EMP-03
+TXN-200160,2026-02-04 12:47:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-01
+TXN-200160,2026-02-04 12:47:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,takeaway,EMP-01
+TXN-200161,2026-02-04 12:44:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-01
+TXN-200162,2026-02-04 12:54:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-03
+TXN-200163,2026-02-04 12:22:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,dine_in,EMP-01
+TXN-200164,2026-02-04 12:54:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,delivery,EMP-03
+TXN-200165,2026-02-04 12:38:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-01
+TXN-200166,2026-02-04 12:50:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-01
+TXN-200166,2026-02-04 12:50:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-01
+TXN-200167,2026-02-04 12:50:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-01
+TXN-200167,2026-02-04 12:50:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-03
+TXN-200168,2026-02-04 12:55:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-01
+TXN-200169,2026-02-04 13:16:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-01
+TXN-200170,2026-02-04 13:47:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,takeaway,EMP-03
+TXN-200171,2026-02-04 13:37:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-01
+TXN-200172,2026-02-04 14:41:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-02
+TXN-200173,2026-02-04 14:43:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200174,2026-02-04 14:20:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,dine_in,EMP-02
+TXN-200174,2026-02-04 14:20:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-03
+TXN-200175,2026-02-04 14:18:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,delivery,EMP-01
+TXN-200176,2026-02-04 14:54:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-01
+TXN-200176,2026-02-04 14:54:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-02
+TXN-200177,2026-02-04 14:26:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-02
+TXN-200177,2026-02-04 14:26:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-03
+TXN-200178,2026-02-04 14:59:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-01
+TXN-200179,2026-02-04 15:47:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,delivery,EMP-03
+TXN-200180,2026-02-04 15:35:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,takeaway,EMP-03
+TXN-200181,2026-02-04 15:48:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-02
+TXN-200182,2026-02-04 15:22:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-02
+TXN-200183,2026-02-04 15:14:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-02
+TXN-200184,2026-02-04 16:54:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-01
+TXN-200184,2026-02-04 16:54:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-02
+TXN-200185,2026-02-04 16:00:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-01
+TXN-200186,2026-02-04 16:47:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-03
+TXN-200186,2026-02-04 16:47:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-02
+TXN-200187,2026-02-04 16:21:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-02
+TXN-200188,2026-02-04 16:49:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-01
+TXN-200188,2026-02-04 16:49:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-02
+TXN-200189,2026-02-04 17:28:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-01
+TXN-200190,2026-02-04 17:22:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-03
+TXN-200191,2026-02-04 17:37:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,dine_in,EMP-02
+TXN-200192,2026-02-04 17:38:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-01
+TXN-200193,2026-02-04 17:49:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-01
+TXN-200194,2026-02-04 17:00:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,dine_in,EMP-02
+TXN-200195,2026-02-04 17:34:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-02
+TXN-200195,2026-02-04 17:34:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-02
+TXN-200196,2026-02-04 18:36:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,takeaway,EMP-01
+TXN-200197,2026-02-04 18:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-02
+TXN-200198,2026-02-04 19:54:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-02
+TXN-200199,2026-02-04 19:33:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,delivery,EMP-02
+TXN-200200,2026-02-04 19:14:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,delivery,EMP-03
+TXN-200201,2026-02-04 19:07:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-03
+TXN-200201,2026-02-04 19:07:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-01
+TXN-200202,2026-02-04 20:38:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,delivery,EMP-02
+TXN-200203,2026-02-04 20:29:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,delivery,EMP-02
+TXN-200203,2026-02-04 20:29:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-02
+TXN-200204,2026-02-04 20:28:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-01
+TXN-200204,2026-02-04 20:28:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-02
+TXN-200205,2026-02-05 07:54:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-03
+TXN-200206,2026-02-05 07:50:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-03
+TXN-200206,2026-02-05 07:50:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-02
+TXN-200207,2026-02-05 08:03:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-01
+TXN-200208,2026-02-05 08:32:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,dine_in,EMP-03
+TXN-200208,2026-02-05 08:32:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,delivery,EMP-03
+TXN-200209,2026-02-05 08:39:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,takeaway,EMP-02
+TXN-200210,2026-02-05 08:26:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-02
+TXN-200211,2026-02-05 08:06:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-03
+TXN-200211,2026-02-05 08:06:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,dine_in,EMP-03
+TXN-200212,2026-02-05 08:42:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-03
+TXN-200213,2026-02-05 09:45:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-02
+TXN-200214,2026-02-05 09:52:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-02
+TXN-200215,2026-02-05 09:01:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-02
+TXN-200216,2026-02-05 09:49:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,dine_in,EMP-01
+TXN-200217,2026-02-05 09:04:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,delivery,EMP-02
+TXN-200218,2026-02-05 10:09:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-02
+TXN-200219,2026-02-05 10:02:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-03
+TXN-200220,2026-02-05 10:18:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-01
+TXN-200220,2026-02-05 10:18:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-02
+TXN-200221,2026-02-05 11:18:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,dine_in,EMP-03
+TXN-200222,2026-02-05 11:08:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-03
+TXN-200223,2026-02-05 11:59:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-01
+TXN-200224,2026-02-05 11:17:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-01
+TXN-200225,2026-02-05 11:52:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-01
+TXN-200226,2026-02-05 11:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-01
+TXN-200226,2026-02-05 11:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-02
+TXN-200227,2026-02-05 11:59:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-01
+TXN-200228,2026-02-05 12:30:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-03
+TXN-200228,2026-02-05 12:30:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-02
+TXN-200229,2026-02-05 12:13:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,takeaway,EMP-01
+TXN-200230,2026-02-05 12:19:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-03
+TXN-200231,2026-02-05 12:50:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,dine_in,EMP-02
+TXN-200231,2026-02-05 12:50:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-01
+TXN-200232,2026-02-05 12:18:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-03
+TXN-200233,2026-02-05 12:26:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-03
+TXN-200234,2026-02-05 12:34:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-01
+TXN-200234,2026-02-05 12:34:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-03
+TXN-200235,2026-02-05 13:04:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-03
+TXN-200236,2026-02-05 14:22:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-02
+TXN-200236,2026-02-05 14:22:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,dine_in,EMP-01
+TXN-200237,2026-02-05 14:45:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-01
+TXN-200238,2026-02-05 14:50:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,takeaway,EMP-03
+TXN-200239,2026-02-05 14:25:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-03
+TXN-200239,2026-02-05 14:25:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-01
+TXN-200240,2026-02-05 15:51:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-02
+TXN-200241,2026-02-05 15:57:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-03
+TXN-200242,2026-02-05 15:31:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-02
+TXN-200243,2026-02-05 15:05:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,takeaway,EMP-01
+TXN-200244,2026-02-05 15:05:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-03
+TXN-200245,2026-02-05 16:28:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,delivery,EMP-02
+TXN-200246,2026-02-05 16:39:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,dine_in,EMP-03
+TXN-200247,2026-02-05 16:40:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-01
+TXN-200248,2026-02-05 16:54:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,dine_in,EMP-01
+TXN-200248,2026-02-05 16:54:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-02
+TXN-200249,2026-02-05 16:36:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-02
+TXN-200250,2026-02-05 17:36:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-03
+TXN-200251,2026-02-05 17:17:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,delivery,EMP-01
+TXN-200252,2026-02-05 17:31:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,takeaway,EMP-02
+TXN-200252,2026-02-05 17:31:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-02
+TXN-200253,2026-02-05 17:44:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,dine_in,EMP-01
+TXN-200254,2026-02-05 17:28:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,delivery,EMP-02
+TXN-200255,2026-02-05 17:42:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-01
+TXN-200256,2026-02-05 17:45:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,delivery,EMP-01
+TXN-200256,2026-02-05 17:45:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,dine_in,EMP-01
+TXN-200257,2026-02-05 17:50:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-03
+TXN-200258,2026-02-05 17:23:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,dine_in,EMP-02
+TXN-200259,2026-02-05 18:46:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-01
+TXN-200260,2026-02-05 18:08:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,takeaway,EMP-03
+TXN-200261,2026-02-05 18:33:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-02
+TXN-200262,2026-02-05 18:32:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-01
+TXN-200263,2026-02-05 18:10:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-02
+TXN-200264,2026-02-05 18:54:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-03
+TXN-200265,2026-02-05 18:17:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-03
+TXN-200266,2026-02-05 18:10:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-03
+TXN-200266,2026-02-05 18:10:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-01
+TXN-200267,2026-02-05 18:02:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-02
+TXN-200267,2026-02-05 18:02:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-03
+TXN-200268,2026-02-05 18:18:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-03
+TXN-200268,2026-02-05 18:18:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-01
+TXN-200269,2026-02-05 19:26:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-03
+TXN-200270,2026-02-05 20:45:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-02
+TXN-200271,2026-02-05 20:32:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-02
+TXN-200271,2026-02-05 20:32:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-01
+TXN-200272,2026-02-06 07:55:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-01
+TXN-200273,2026-02-06 07:31:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,takeaway,EMP-02
+TXN-200273,2026-02-06 07:31:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-03
+TXN-200274,2026-02-06 07:29:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-01
+TXN-200275,2026-02-06 07:18:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,delivery,EMP-01
+TXN-200276,2026-02-06 07:54:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-03
+TXN-200277,2026-02-06 07:23:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-01
+TXN-200278,2026-02-06 08:35:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-02
+TXN-200279,2026-02-06 08:48:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,dine_in,EMP-01
+TXN-200279,2026-02-06 08:48:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-03
+TXN-200280,2026-02-06 08:23:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-01
+TXN-200281,2026-02-06 08:02:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,takeaway,EMP-03
+TXN-200282,2026-02-06 08:29:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,delivery,EMP-02
+TXN-200283,2026-02-06 08:10:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-03
+TXN-200284,2026-02-06 08:34:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-02
+TXN-200285,2026-02-06 09:26:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-02
+TXN-200285,2026-02-06 09:26:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-01
+TXN-200286,2026-02-06 09:37:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-03
+TXN-200287,2026-02-06 09:15:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,dine_in,EMP-02
+TXN-200288,2026-02-06 09:20:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-01
+TXN-200289,2026-02-06 09:26:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,delivery,EMP-01
+TXN-200289,2026-02-06 09:26:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-02
+TXN-200290,2026-02-06 09:33:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-03
+TXN-200291,2026-02-06 09:21:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-02
+TXN-200291,2026-02-06 09:21:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-03
+TXN-200292,2026-02-06 10:19:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-02
+TXN-200293,2026-02-06 10:22:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-03
+TXN-200293,2026-02-06 10:22:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,takeaway,EMP-01
+TXN-200294,2026-02-06 10:18:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,takeaway,EMP-02
+TXN-200295,2026-02-06 10:41:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,dine_in,EMP-03
+TXN-200296,2026-02-06 11:44:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,delivery,EMP-03
+TXN-200297,2026-02-06 11:37:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-03
+TXN-200298,2026-02-06 11:14:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,dine_in,EMP-02
+TXN-200298,2026-02-06 11:14:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-03
+TXN-200299,2026-02-06 11:49:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-03
+TXN-200300,2026-02-06 11:59:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-02
+TXN-200301,2026-02-06 11:18:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-03
+TXN-200301,2026-02-06 11:18:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,dine_in,EMP-02
+TXN-200302,2026-02-06 11:56:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-01
+TXN-200303,2026-02-06 12:00:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-02
+TXN-200304,2026-02-06 12:41:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-02
+TXN-200304,2026-02-06 12:41:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-02
+TXN-200305,2026-02-06 12:10:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,delivery,EMP-01
+TXN-200305,2026-02-06 12:10:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,takeaway,EMP-03
+TXN-200306,2026-02-06 12:43:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-03
+TXN-200307,2026-02-06 12:20:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,dine_in,EMP-01
+TXN-200308,2026-02-06 12:30:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,takeaway,EMP-02
+TXN-200309,2026-02-06 12:15:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-03
+TXN-200310,2026-02-06 13:23:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-01
+TXN-200310,2026-02-06 13:23:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-02
+TXN-200311,2026-02-06 14:56:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-02
+TXN-200311,2026-02-06 14:56:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-01
+TXN-200312,2026-02-06 14:30:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-03
+TXN-200313,2026-02-06 14:35:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-03
+TXN-200314,2026-02-06 14:55:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-03
+TXN-200315,2026-02-06 14:07:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,dine_in,EMP-02
+TXN-200316,2026-02-06 14:54:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,delivery,EMP-01
+TXN-200316,2026-02-06 14:54:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,delivery,EMP-02
+TXN-200317,2026-02-06 14:51:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-02
+TXN-200318,2026-02-06 14:29:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-02
+TXN-200318,2026-02-06 14:29:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-01
+TXN-200319,2026-02-06 14:47:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-02
+TXN-200320,2026-02-06 14:44:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-01
+TXN-200321,2026-02-06 14:18:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-03
+TXN-200322,2026-02-06 14:41:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-02
+TXN-200323,2026-02-06 15:42:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,dine_in,EMP-01
+TXN-200323,2026-02-06 15:42:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-01
+TXN-200324,2026-02-06 15:53:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,takeaway,EMP-03
+TXN-200325,2026-02-06 15:46:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,dine_in,EMP-01
+TXN-200325,2026-02-06 15:46:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-02
+TXN-200326,2026-02-06 15:12:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,delivery,EMP-02
+TXN-200326,2026-02-06 15:12:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-01
+TXN-200327,2026-02-06 16:28:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-01
+TXN-200327,2026-02-06 16:28:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,dine_in,EMP-03
+TXN-200328,2026-02-06 16:13:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,dine_in,EMP-03
+TXN-200329,2026-02-06 17:49:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-01
+TXN-200329,2026-02-06 17:49:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-02
+TXN-200330,2026-02-06 17:03:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-02
+TXN-200330,2026-02-06 17:03:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-03
+TXN-200331,2026-02-06 17:24:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-01
+TXN-200331,2026-02-06 17:24:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-03
+TXN-200332,2026-02-06 17:30:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-01
+TXN-200333,2026-02-06 17:51:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-03
+TXN-200334,2026-02-06 17:33:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-01
+TXN-200335,2026-02-06 18:59:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-03
+TXN-200336,2026-02-06 18:53:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,takeaway,EMP-03
+TXN-200337,2026-02-06 18:38:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-03
+TXN-200337,2026-02-06 18:38:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,dine_in,EMP-02
+TXN-200338,2026-02-06 18:19:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-01
+TXN-200339,2026-02-06 18:47:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-01
+TXN-200340,2026-02-06 18:35:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-03
+TXN-200341,2026-02-06 18:41:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-03
+TXN-200342,2026-02-06 19:51:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-02
+TXN-200342,2026-02-06 19:51:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-03
+TXN-200343,2026-02-06 19:55:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-03
+TXN-200344,2026-02-06 19:59:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,dine_in,EMP-01
+TXN-200344,2026-02-06 19:59:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-03
+TXN-200345,2026-02-06 19:53:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-02
+TXN-200346,2026-02-06 19:46:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-03
+TXN-200346,2026-02-06 19:46:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-03
+TXN-200347,2026-02-06 19:34:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,delivery,EMP-01
+TXN-200348,2026-02-06 19:53:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-01
+TXN-200349,2026-02-06 19:53:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-01
+TXN-200349,2026-02-06 19:53:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-02
+TXN-200350,2026-02-06 20:40:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200350,2026-02-06 20:40:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,dine_in,EMP-03
+TXN-200351,2026-02-06 20:46:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-03
+TXN-200352,2026-02-06 20:43:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,dine_in,EMP-03
+TXN-200353,2026-02-06 20:09:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-02
+TXN-200354,2026-02-07 07:14:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-02
+TXN-200355,2026-02-07 07:24:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,delivery,EMP-01
+TXN-200356,2026-02-07 07:44:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,takeaway,EMP-03
+TXN-200357,2026-02-07 07:50:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-01
+TXN-200358,2026-02-07 07:57:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-01
+TXN-200358,2026-02-07 07:57:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,dine_in,EMP-02
+TXN-200359,2026-02-07 07:01:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-02
+TXN-200360,2026-02-07 08:36:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-01
+TXN-200361,2026-02-07 08:50:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-01
+TXN-200361,2026-02-07 08:50:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,dine_in,EMP-02
+TXN-200362,2026-02-07 08:38:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,dine_in,EMP-03
+TXN-200362,2026-02-07 08:38:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-01
+TXN-200363,2026-02-07 09:24:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-03
+TXN-200364,2026-02-07 09:18:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-01
+TXN-200365,2026-02-07 09:24:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-02
+TXN-200365,2026-02-07 09:24:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-02
+TXN-200366,2026-02-07 09:28:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,dine_in,EMP-01
+TXN-200367,2026-02-07 09:11:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200368,2026-02-07 09:05:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-01
+TXN-200369,2026-02-07 09:18:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,delivery,EMP-03
+TXN-200370,2026-02-07 10:10:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,dine_in,EMP-02
+TXN-200370,2026-02-07 10:10:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-01
+TXN-200371,2026-02-07 10:04:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-02
+TXN-200372,2026-02-07 10:30:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-03
+TXN-200373,2026-02-07 10:40:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,dine_in,EMP-01
+TXN-200374,2026-02-07 10:19:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,delivery,EMP-02
+TXN-200375,2026-02-07 11:27:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,takeaway,EMP-03
+TXN-200375,2026-02-07 11:27:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-01
+TXN-200376,2026-02-07 11:25:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-01
+TXN-200377,2026-02-07 11:20:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-01
+TXN-200378,2026-02-07 11:59:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-03
+TXN-200378,2026-02-07 11:59:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-01
+TXN-200379,2026-02-07 11:28:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-02
+TXN-200380,2026-02-07 11:08:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-03
+TXN-200380,2026-02-07 11:08:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-01
+TXN-200381,2026-02-07 12:30:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-01
+TXN-200381,2026-02-07 12:30:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-01
+TXN-200382,2026-02-07 12:42:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-03
+TXN-200382,2026-02-07 12:42:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-02
+TXN-200383,2026-02-07 12:06:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-03
+TXN-200384,2026-02-07 12:47:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-02
+TXN-200384,2026-02-07 12:47:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-01
+TXN-200385,2026-02-07 12:30:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-01
+TXN-200386,2026-02-07 12:53:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,takeaway,EMP-02
+TXN-200386,2026-02-07 12:53:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-02
+TXN-200387,2026-02-07 12:22:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-03
+TXN-200388,2026-02-07 12:28:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-03
+TXN-200389,2026-02-07 12:07:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-01
+TXN-200390,2026-02-07 12:59:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-01
+TXN-200390,2026-02-07 12:59:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-01
+TXN-200391,2026-02-07 12:51:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-03
+TXN-200392,2026-02-07 13:47:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-02
+TXN-200392,2026-02-07 13:47:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,delivery,EMP-01
+TXN-200393,2026-02-07 13:13:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,delivery,EMP-01
+TXN-200394,2026-02-07 13:23:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,dine_in,EMP-02
+TXN-200395,2026-02-07 13:42:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-02
+TXN-200396,2026-02-07 13:37:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,takeaway,EMP-03
+TXN-200397,2026-02-07 13:11:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-01
+TXN-200397,2026-02-07 13:11:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-02
+TXN-200398,2026-02-07 13:07:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-02
+TXN-200399,2026-02-07 14:36:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-03
+TXN-200400,2026-02-07 14:34:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,takeaway,EMP-02
+TXN-200400,2026-02-07 14:34:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,takeaway,EMP-02
+TXN-200401,2026-02-07 14:39:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-01
+TXN-200402,2026-02-07 14:12:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,delivery,EMP-02
+TXN-200403,2026-02-07 14:26:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200403,2026-02-07 14:26:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-01
+TXN-200404,2026-02-07 14:17:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-03
+TXN-200405,2026-02-07 14:47:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-03
+TXN-200406,2026-02-07 14:52:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-01
+TXN-200407,2026-02-07 15:53:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-02
+TXN-200407,2026-02-07 15:53:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-02
+TXN-200408,2026-02-07 15:55:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-03
+TXN-200409,2026-02-07 15:44:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-01
+TXN-200410,2026-02-07 15:50:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-02
+TXN-200411,2026-02-07 15:34:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,delivery,EMP-02
+TXN-200412,2026-02-07 16:54:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-01
+TXN-200412,2026-02-07 16:54:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-01
+TXN-200413,2026-02-07 16:15:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-02
+TXN-200414,2026-02-07 16:31:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-02
+TXN-200415,2026-02-07 16:04:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-03
+TXN-200415,2026-02-07 16:04:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-02
+TXN-200416,2026-02-07 16:20:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-02
+TXN-200416,2026-02-07 16:20:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-02
+TXN-200417,2026-02-07 16:13:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-02
+TXN-200418,2026-02-07 17:36:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,delivery,EMP-01
+TXN-200419,2026-02-07 17:02:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,dine_in,EMP-01
+TXN-200420,2026-02-07 17:28:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-03
+TXN-200421,2026-02-07 17:58:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-01
+TXN-200422,2026-02-07 17:41:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,takeaway,EMP-03
+TXN-200423,2026-02-07 18:40:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-01
+TXN-200424,2026-02-07 18:45:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-01
+TXN-200425,2026-02-07 19:33:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,dine_in,EMP-03
+TXN-200425,2026-02-07 19:33:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-03
+TXN-200426,2026-02-07 19:08:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-01
+TXN-200427,2026-02-07 19:46:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-02
+TXN-200428,2026-02-07 20:52:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,delivery,EMP-03
+TXN-200429,2026-02-07 20:00:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-03
+TXN-200429,2026-02-07 20:00:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-03
+TXN-200430,2026-02-07 21:13:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,dine_in,EMP-03
+TXN-200431,2026-02-08 06:27:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,takeaway,EMP-03
+TXN-200432,2026-02-08 07:38:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-02
+TXN-200432,2026-02-08 07:38:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-02
+TXN-200433,2026-02-08 08:50:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200434,2026-02-08 08:31:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-02
+TXN-200434,2026-02-08 08:31:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-02
+TXN-200435,2026-02-08 08:23:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-01
+TXN-200435,2026-02-08 08:23:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-01
+TXN-200436,2026-02-08 08:02:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,delivery,EMP-03
+TXN-200437,2026-02-08 08:32:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,dine_in,EMP-03
+TXN-200438,2026-02-08 08:34:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,dine_in,EMP-02
+TXN-200438,2026-02-08 08:34:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,dine_in,EMP-03
+TXN-200439,2026-02-08 09:40:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-02
+TXN-200439,2026-02-08 09:40:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,dine_in,EMP-01
+TXN-200440,2026-02-08 09:59:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-03
+TXN-200441,2026-02-08 09:03:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,dine_in,EMP-03
+TXN-200442,2026-02-08 09:08:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-02
+TXN-200442,2026-02-08 09:08:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-01
+TXN-200443,2026-02-08 09:47:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-02
+TXN-200444,2026-02-08 10:16:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,takeaway,EMP-03
+TXN-200444,2026-02-08 10:16:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-03
+TXN-200445,2026-02-08 10:10:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,dine_in,EMP-03
+TXN-200446,2026-02-08 10:43:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,delivery,EMP-03
+TXN-200446,2026-02-08 10:43:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-01
+TXN-200447,2026-02-08 10:02:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-01
+TXN-200448,2026-02-08 10:59:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-01
+TXN-200449,2026-02-08 11:20:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-03
+TXN-200450,2026-02-08 11:43:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-01
+TXN-200451,2026-02-08 11:25:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-02
+TXN-200452,2026-02-08 11:05:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,takeaway,EMP-01
+TXN-200452,2026-02-08 11:05:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-03
+TXN-200453,2026-02-08 11:15:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-03
+TXN-200454,2026-02-08 11:57:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,dine_in,EMP-02
+TXN-200454,2026-02-08 11:57:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-02
+TXN-200455,2026-02-08 11:40:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-03
+TXN-200455,2026-02-08 11:40:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,dine_in,EMP-01
+TXN-200456,2026-02-08 11:33:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,dine_in,EMP-01
+TXN-200457,2026-02-08 11:45:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-03
+TXN-200458,2026-02-08 11:26:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-01
+TXN-200458,2026-02-08 11:26:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,delivery,EMP-02
+TXN-200459,2026-02-08 12:03:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,takeaway,EMP-02
+TXN-200460,2026-02-08 12:54:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-02
+TXN-200461,2026-02-08 13:12:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,dine_in,EMP-01
+TXN-200462,2026-02-08 13:28:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-03
+TXN-200463,2026-02-08 13:22:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-02
+TXN-200464,2026-02-08 13:54:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,delivery,EMP-02
+TXN-200465,2026-02-08 14:54:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,delivery,EMP-01
+TXN-200466,2026-02-08 15:03:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-01
+TXN-200466,2026-02-08 15:03:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-03
+TXN-200467,2026-02-08 15:35:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,dine_in,EMP-01
+TXN-200468,2026-02-08 15:07:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-01
+TXN-200469,2026-02-08 15:52:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-03
+TXN-200470,2026-02-08 15:16:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-03
+TXN-200471,2026-02-08 15:28:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-01
+TXN-200472,2026-02-08 16:59:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,takeaway,EMP-01
+TXN-200472,2026-02-08 16:59:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,dine_in,EMP-02
+TXN-200473,2026-02-08 16:13:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-01
+TXN-200474,2026-02-08 16:02:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-02
+TXN-200474,2026-02-08 16:02:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,dine_in,EMP-02
+TXN-200475,2026-02-08 16:24:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-03
+TXN-200476,2026-02-08 16:15:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-02
+TXN-200476,2026-02-08 16:15:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,takeaway,EMP-03
+TXN-200477,2026-02-08 17:17:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-01
+TXN-200478,2026-02-08 17:01:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-02
+TXN-200479,2026-02-08 17:49:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,dine_in,EMP-01
+TXN-200479,2026-02-08 17:49:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-03
+TXN-200480,2026-02-08 17:03:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,dine_in,EMP-01
+TXN-200481,2026-02-08 17:15:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-01
+TXN-200481,2026-02-08 17:15:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-01
+TXN-200482,2026-02-08 17:53:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-01
+TXN-200483,2026-02-08 17:05:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,dine_in,EMP-03
+TXN-200484,2026-02-08 18:58:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-03
+TXN-200484,2026-02-08 18:58:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,dine_in,EMP-01
+TXN-200485,2026-02-08 18:09:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,delivery,EMP-02
+TXN-200485,2026-02-08 18:09:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-03
+TXN-200486,2026-02-08 18:25:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-02
+TXN-200486,2026-02-08 18:25:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-02
+TXN-200487,2026-02-08 18:50:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-03
+TXN-200487,2026-02-08 18:50:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-03
+TXN-200488,2026-02-08 18:52:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,delivery,EMP-03
+TXN-200489,2026-02-08 19:46:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,dine_in,EMP-03
+TXN-200490,2026-02-08 19:20:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,takeaway,EMP-01
+TXN-200490,2026-02-08 19:20:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-02
+TXN-200491,2026-02-08 19:20:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-01
+TXN-200492,2026-02-08 19:16:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,takeaway,EMP-02
+TXN-200493,2026-02-08 20:03:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-02
+TXN-200494,2026-02-08 20:31:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-02
+TXN-200495,2026-02-08 20:50:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-01
+TXN-200495,2026-02-08 20:50:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-02
+TXN-200496,2026-02-09 07:04:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-03
+TXN-200496,2026-02-09 07:04:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,takeaway,EMP-03
+TXN-200497,2026-02-09 07:10:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,dine_in,EMP-01
+TXN-200497,2026-02-09 07:10:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,dine_in,EMP-02
+TXN-200498,2026-02-09 07:44:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-01
+TXN-200498,2026-02-09 07:44:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-03
+TXN-200499,2026-02-09 07:35:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-01
+TXN-200500,2026-02-09 07:27:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-01
+TXN-200501,2026-02-09 08:40:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,dine_in,EMP-02
+TXN-200502,2026-02-09 09:57:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-03
+TXN-200502,2026-02-09 09:57:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-02
+TXN-200503,2026-02-09 09:23:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,takeaway,EMP-02
+TXN-200504,2026-02-09 09:29:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-01
+TXN-200505,2026-02-09 09:09:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,delivery,EMP-02
+TXN-200505,2026-02-09 09:09:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-01
+TXN-200506,2026-02-09 09:53:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-01
+TXN-200507,2026-02-09 09:30:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-01
+TXN-200508,2026-02-09 09:32:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-01
+TXN-200508,2026-02-09 09:32:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-01
+TXN-200509,2026-02-09 10:43:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-02
+TXN-200510,2026-02-09 11:58:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-02
+TXN-200511,2026-02-09 11:35:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-03
+TXN-200512,2026-02-09 11:39:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,takeaway,EMP-01
+TXN-200512,2026-02-09 11:39:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,dine_in,EMP-03
+TXN-200513,2026-02-09 11:49:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-02
+TXN-200514,2026-02-09 11:24:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200514,2026-02-09 11:24:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-03
+TXN-200515,2026-02-09 11:38:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,takeaway,EMP-02
+TXN-200515,2026-02-09 11:38:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-02
+TXN-200516,2026-02-09 11:58:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,takeaway,EMP-02
+TXN-200517,2026-02-09 11:19:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,dine_in,EMP-01
+TXN-200518,2026-02-09 12:28:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-03
+TXN-200519,2026-02-09 12:05:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-03
+TXN-200520,2026-02-09 12:31:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,delivery,EMP-01
+TXN-200520,2026-02-09 12:31:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-03
+TXN-200521,2026-02-09 12:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-01
+TXN-200522,2026-02-09 12:53:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,takeaway,EMP-01
+TXN-200523,2026-02-09 12:58:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-02
+TXN-200524,2026-02-09 12:32:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-02
+TXN-200525,2026-02-09 12:31:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-03
+TXN-200525,2026-02-09 12:31:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,dine_in,EMP-02
+TXN-200526,2026-02-09 13:24:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-03
+TXN-200527,2026-02-09 13:14:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-02
+TXN-200527,2026-02-09 13:14:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-01
+TXN-200528,2026-02-09 14:00:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-03
+TXN-200529,2026-02-09 14:41:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,takeaway,EMP-02
+TXN-200530,2026-02-09 14:16:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,delivery,EMP-03
+TXN-200531,2026-02-09 14:52:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,dine_in,EMP-03
+TXN-200531,2026-02-09 14:52:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,takeaway,EMP-03
+TXN-200532,2026-02-09 15:21:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,takeaway,EMP-03
+TXN-200533,2026-02-09 15:45:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-03
+TXN-200533,2026-02-09 15:45:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-02
+TXN-200534,2026-02-09 16:46:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-02
+TXN-200535,2026-02-09 16:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-03
+TXN-200536,2026-02-09 16:45:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,delivery,EMP-02
+TXN-200537,2026-02-09 16:54:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,dine_in,EMP-02
+TXN-200538,2026-02-09 16:08:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-02
+TXN-200538,2026-02-09 16:08:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-01
+TXN-200539,2026-02-09 16:47:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-02
+TXN-200540,2026-02-09 16:37:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,takeaway,EMP-01
+TXN-200541,2026-02-09 17:12:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-02
+TXN-200541,2026-02-09 17:12:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,dine_in,EMP-01
+TXN-200542,2026-02-09 17:12:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,dine_in,EMP-02
+TXN-200543,2026-02-09 18:31:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,delivery,EMP-01
+TXN-200544,2026-02-09 18:00:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-03
+TXN-200545,2026-02-09 18:48:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,dine_in,EMP-03
+TXN-200546,2026-02-09 18:27:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,takeaway,EMP-02
+TXN-200546,2026-02-09 18:27:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,dine_in,EMP-03
+TXN-200547,2026-02-09 19:00:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-01
+TXN-200548,2026-02-09 19:40:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-02
+TXN-200548,2026-02-09 19:40:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-02
+TXN-200549,2026-02-09 19:32:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-01
+TXN-200549,2026-02-09 19:32:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-03
+TXN-200550,2026-02-09 19:33:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,delivery,EMP-01
+TXN-200550,2026-02-09 19:33:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,takeaway,EMP-01
+TXN-200551,2026-02-09 19:10:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-03
+TXN-200552,2026-02-09 20:01:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-03
+TXN-200552,2026-02-09 20:01:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-02
+TXN-200553,2026-02-09 20:49:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-01
+TXN-200553,2026-02-09 20:49:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-01
+TXN-200554,2026-02-10 07:13:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,takeaway,EMP-03
+TXN-200554,2026-02-10 07:13:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-03
+TXN-200555,2026-02-10 07:44:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,delivery,EMP-03
+TXN-200556,2026-02-10 07:39:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,dine_in,EMP-02
+TXN-200557,2026-02-10 07:12:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-01
+TXN-200557,2026-02-10 07:12:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,takeaway,EMP-01
+TXN-200558,2026-02-10 07:02:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-02
+TXN-200558,2026-02-10 07:02:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,dine_in,EMP-01
+TXN-200559,2026-02-10 07:42:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,dine_in,EMP-01
+TXN-200560,2026-02-10 07:49:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-03
+TXN-200560,2026-02-10 07:49:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-02
+TXN-200561,2026-02-10 07:29:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,dine_in,EMP-02
+TXN-200562,2026-02-10 07:23:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,delivery,EMP-01
+TXN-200562,2026-02-10 07:23:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-01
+TXN-200563,2026-02-10 07:42:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,takeaway,EMP-02
+TXN-200563,2026-02-10 07:42:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,takeaway,EMP-02
+TXN-200564,2026-02-10 08:25:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-02
+TXN-200565,2026-02-10 08:51:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,dine_in,EMP-03
+TXN-200566,2026-02-10 09:54:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-02
+TXN-200567,2026-02-10 09:51:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-02
+TXN-200567,2026-02-10 09:51:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,delivery,EMP-03
+TXN-200568,2026-02-10 10:31:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,dine_in,EMP-01
+TXN-200569,2026-02-10 10:16:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,delivery,EMP-03
+TXN-200569,2026-02-10 10:16:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-03
+TXN-200570,2026-02-10 10:44:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-03
+TXN-200570,2026-02-10 10:44:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-03
+TXN-200571,2026-02-10 11:52:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-01
+TXN-200571,2026-02-10 11:52:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200572,2026-02-10 11:48:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,takeaway,EMP-02
+TXN-200573,2026-02-10 11:03:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-01
+TXN-200573,2026-02-10 11:03:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,takeaway,EMP-03
+TXN-200574,2026-02-10 11:28:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,takeaway,EMP-01
+TXN-200575,2026-02-10 11:31:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-02
+TXN-200575,2026-02-10 11:31:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-03
+TXN-200576,2026-02-10 12:35:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-01
+TXN-200577,2026-02-10 12:52:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,delivery,EMP-03
+TXN-200578,2026-02-10 12:38:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,dine_in,EMP-01
+TXN-200579,2026-02-10 12:48:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,takeaway,EMP-02
+TXN-200579,2026-02-10 12:48:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-01
+TXN-200580,2026-02-10 12:02:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-03
+TXN-200581,2026-02-10 12:46:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-01
+TXN-200582,2026-02-10 12:12:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-01
+TXN-200583,2026-02-10 13:26:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,takeaway,EMP-03
+TXN-200584,2026-02-10 13:37:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-03
+TXN-200584,2026-02-10 13:37:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-02
+TXN-200585,2026-02-10 13:59:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-01
+TXN-200585,2026-02-10 13:59:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-03
+TXN-200586,2026-02-10 13:38:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-03
+TXN-200587,2026-02-10 14:21:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,dine_in,EMP-02
+TXN-200588,2026-02-10 14:38:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-03
+TXN-200588,2026-02-10 14:38:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,dine_in,EMP-03
+TXN-200589,2026-02-10 14:45:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,delivery,EMP-03
+TXN-200590,2026-02-10 14:11:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,takeaway,EMP-03
+TXN-200590,2026-02-10 14:11:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,delivery,EMP-03
+TXN-200591,2026-02-10 15:54:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-02
+TXN-200592,2026-02-10 15:09:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-01
+TXN-200593,2026-02-10 15:18:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-03
+TXN-200593,2026-02-10 15:18:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-01
+TXN-200594,2026-02-10 15:22:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,delivery,EMP-03
+TXN-200595,2026-02-10 15:35:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-03
+TXN-200596,2026-02-10 15:03:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-02
+TXN-200597,2026-02-10 15:35:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-03
+TXN-200598,2026-02-10 15:55:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-03
+TXN-200599,2026-02-10 16:12:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-01
+TXN-200600,2026-02-10 16:11:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,dine_in,EMP-02
+TXN-200601,2026-02-10 16:17:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-03
+TXN-200601,2026-02-10 16:17:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,takeaway,EMP-02
+TXN-200602,2026-02-10 16:45:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-03
+TXN-200603,2026-02-10 16:03:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-03
+TXN-200603,2026-02-10 16:03:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,delivery,EMP-02
+TXN-200604,2026-02-10 17:11:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-03
+TXN-200604,2026-02-10 17:11:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,takeaway,EMP-01
+TXN-200605,2026-02-10 17:56:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,takeaway,EMP-02
+TXN-200606,2026-02-10 17:13:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,dine_in,EMP-03
+TXN-200606,2026-02-10 17:13:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,dine_in,EMP-03
+TXN-200607,2026-02-10 17:39:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-02
+TXN-200607,2026-02-10 17:39:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,takeaway,EMP-02
+TXN-200608,2026-02-10 17:34:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-02
+TXN-200608,2026-02-10 17:34:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-02
+TXN-200609,2026-02-10 17:57:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-01
+TXN-200609,2026-02-10 17:57:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,delivery,EMP-03
+TXN-200610,2026-02-10 17:00:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,delivery,EMP-03
+TXN-200610,2026-02-10 17:00:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,dine_in,EMP-01
+TXN-200611,2026-02-10 18:56:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,delivery,EMP-03
+TXN-200611,2026-02-10 18:56:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-03
+TXN-200612,2026-02-10 18:21:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-01
+TXN-200613,2026-02-10 18:50:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-02
+TXN-200614,2026-02-10 18:24:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,takeaway,EMP-01
+TXN-200615,2026-02-10 18:24:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,delivery,EMP-03
+TXN-200615,2026-02-10 18:24:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,delivery,EMP-01
+TXN-200616,2026-02-10 18:22:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-02
+TXN-200616,2026-02-10 18:22:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-02
+TXN-200617,2026-02-10 18:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-03
+TXN-200617,2026-02-10 18:25:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-02
+TXN-200618,2026-02-10 18:50:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-03
+TXN-200618,2026-02-10 18:50:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,delivery,EMP-03
+TXN-200619,2026-02-10 18:09:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-03
+TXN-200620,2026-02-10 18:25:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-03
+TXN-200620,2026-02-10 18:25:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,takeaway,EMP-03
+TXN-200621,2026-02-10 18:54:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-01
+TXN-200621,2026-02-10 18:54:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-01
+TXN-200622,2026-02-10 18:42:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-03
+TXN-200622,2026-02-10 18:42:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-01
+TXN-200623,2026-02-10 19:46:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-01
+TXN-200623,2026-02-10 19:46:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,takeaway,EMP-03
+TXN-200624,2026-02-10 19:04:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,takeaway,EMP-02
+TXN-200625,2026-02-10 19:39:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-03
+TXN-200625,2026-02-10 19:39:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,takeaway,EMP-01
+TXN-200626,2026-02-10 20:50:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-01
+TXN-200627,2026-02-10 21:56:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,takeaway,EMP-02
+TXN-200628,2026-02-11 07:05:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,takeaway,EMP-03
+TXN-200629,2026-02-11 07:56:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-03
+TXN-200629,2026-02-11 07:56:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-01
+TXN-200630,2026-02-11 07:58:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-01
+TXN-200631,2026-02-11 07:23:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-02
+TXN-200632,2026-02-11 08:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-03
+TXN-200633,2026-02-11 08:10:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-01
+TXN-200633,2026-02-11 08:10:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-01
+TXN-200634,2026-02-11 08:14:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,takeaway,EMP-02
+TXN-200635,2026-02-11 08:14:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-02
+TXN-200636,2026-02-11 08:58:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-02
+TXN-200637,2026-02-11 08:06:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-03
+TXN-200637,2026-02-11 08:06:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-02
+TXN-200638,2026-02-11 08:23:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-01
+TXN-200638,2026-02-11 08:23:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-02
+TXN-200639,2026-02-11 08:50:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-01
+TXN-200640,2026-02-11 08:14:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-01
+TXN-200641,2026-02-11 09:45:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-03
+TXN-200642,2026-02-11 09:07:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-03
+TXN-200643,2026-02-11 09:10:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,dine_in,EMP-01
+TXN-200643,2026-02-11 09:10:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-03
+TXN-200644,2026-02-11 10:36:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-01
+TXN-200645,2026-02-11 10:33:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-01
+TXN-200646,2026-02-11 10:28:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200646,2026-02-11 10:28:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-01
+TXN-200647,2026-02-11 10:39:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-03
+TXN-200647,2026-02-11 10:39:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,delivery,EMP-03
+TXN-200648,2026-02-11 10:04:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,dine_in,EMP-01
+TXN-200649,2026-02-11 11:55:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-01
+TXN-200649,2026-02-11 11:55:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-03
+TXN-200650,2026-02-11 12:34:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-03
+TXN-200650,2026-02-11 12:34:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,delivery,EMP-03
+TXN-200651,2026-02-11 12:27:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,dine_in,EMP-03
+TXN-200651,2026-02-11 12:27:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-02
+TXN-200652,2026-02-11 13:47:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,dine_in,EMP-02
+TXN-200652,2026-02-11 13:47:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,dine_in,EMP-02
+TXN-200653,2026-02-11 13:38:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,dine_in,EMP-01
+TXN-200653,2026-02-11 13:38:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-01
+TXN-200654,2026-02-11 13:24:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-02
+TXN-200654,2026-02-11 13:24:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-03
+TXN-200655,2026-02-11 13:37:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-02
+TXN-200656,2026-02-11 13:39:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-03
+TXN-200657,2026-02-11 13:50:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-03
+TXN-200657,2026-02-11 13:50:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-03
+TXN-200658,2026-02-11 13:22:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-01
+TXN-200658,2026-02-11 13:22:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-01
+TXN-200659,2026-02-11 14:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-03
+TXN-200660,2026-02-11 14:00:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-02
+TXN-200661,2026-02-11 15:14:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,delivery,EMP-02
+TXN-200662,2026-02-11 16:33:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-02
+TXN-200663,2026-02-11 16:28:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-01
+TXN-200664,2026-02-11 16:50:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-01
+TXN-200664,2026-02-11 16:50:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,delivery,EMP-01
+TXN-200665,2026-02-11 16:10:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-03
+TXN-200666,2026-02-11 16:25:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-03
+TXN-200667,2026-02-11 16:04:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-02
+TXN-200668,2026-02-11 16:14:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-03
+TXN-200668,2026-02-11 16:14:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-02
+TXN-200669,2026-02-11 16:32:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-01
+TXN-200670,2026-02-11 17:56:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-03
+TXN-200670,2026-02-11 17:56:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-02
+TXN-200671,2026-02-11 17:43:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-02
+TXN-200672,2026-02-11 17:04:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-02
+TXN-200673,2026-02-11 17:22:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-02
+TXN-200673,2026-02-11 17:22:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-03
+TXN-200674,2026-02-11 17:52:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-02
+TXN-200675,2026-02-11 17:22:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-03
+TXN-200676,2026-02-11 17:59:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,dine_in,EMP-03
+TXN-200677,2026-02-11 17:15:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,dine_in,EMP-01
+TXN-200678,2026-02-11 17:53:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,dine_in,EMP-01
+TXN-200678,2026-02-11 17:53:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-01
+TXN-200679,2026-02-11 17:48:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-03
+TXN-200679,2026-02-11 17:48:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,delivery,EMP-02
+TXN-200680,2026-02-11 17:31:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-03
+TXN-200681,2026-02-11 17:08:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-01
+TXN-200682,2026-02-11 18:55:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-03
+TXN-200682,2026-02-11 18:55:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,delivery,EMP-01
+TXN-200683,2026-02-11 18:00:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-01
+TXN-200683,2026-02-11 18:00:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,delivery,EMP-02
+TXN-200684,2026-02-11 18:11:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-02
+TXN-200684,2026-02-11 18:11:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,dine_in,EMP-02
+TXN-200685,2026-02-11 18:27:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-02
+TXN-200686,2026-02-11 18:17:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-03
+TXN-200687,2026-02-11 18:14:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-02
+TXN-200688,2026-02-11 18:54:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-01
+TXN-200689,2026-02-11 18:30:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-01
+TXN-200690,2026-02-11 19:20:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-03
+TXN-200691,2026-02-11 19:03:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,dine_in,EMP-01
+TXN-200692,2026-02-11 19:52:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,takeaway,EMP-03
+TXN-200693,2026-02-11 19:21:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,delivery,EMP-03
+TXN-200694,2026-02-11 19:59:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,takeaway,EMP-01
+TXN-200695,2026-02-11 19:22:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-02
+TXN-200695,2026-02-11 19:22:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,delivery,EMP-02
+TXN-200696,2026-02-11 19:56:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-03
+TXN-200697,2026-02-11 19:09:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,delivery,EMP-03
+TXN-200698,2026-02-11 19:36:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-02
+TXN-200699,2026-02-11 20:41:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-02
+TXN-200700,2026-02-11 20:49:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200701,2026-02-11 20:54:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-02
+TXN-200702,2026-02-11 20:47:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,dine_in,EMP-02
+TXN-200702,2026-02-11 20:47:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-02
+TXN-200703,2026-02-12 07:39:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,takeaway,EMP-01
+TXN-200704,2026-02-12 08:28:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-01
+TXN-200704,2026-02-12 08:28:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-02
+TXN-200705,2026-02-12 08:55:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,delivery,EMP-02
+TXN-200706,2026-02-12 08:35:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-03
+TXN-200707,2026-02-12 08:29:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-02
+TXN-200707,2026-02-12 08:29:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,takeaway,EMP-02
+TXN-200708,2026-02-12 08:23:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-01
+TXN-200709,2026-02-12 09:48:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,takeaway,EMP-03
+TXN-200710,2026-02-12 10:31:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,takeaway,EMP-02
+TXN-200711,2026-02-12 11:35:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-02
+TXN-200712,2026-02-12 11:25:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-01
+TXN-200713,2026-02-12 11:16:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-03
+TXN-200714,2026-02-12 11:51:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-03
+TXN-200714,2026-02-12 11:51:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-01
+TXN-200715,2026-02-12 11:11:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-02
+TXN-200716,2026-02-12 12:39:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-01
+TXN-200717,2026-02-12 12:03:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-02
+TXN-200717,2026-02-12 12:03:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-02
+TXN-200718,2026-02-12 12:46:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,dine_in,EMP-01
+TXN-200719,2026-02-12 12:31:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,takeaway,EMP-02
+TXN-200720,2026-02-12 12:23:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-01
+TXN-200721,2026-02-12 12:03:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,delivery,EMP-02
+TXN-200722,2026-02-12 13:53:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,dine_in,EMP-03
+TXN-200723,2026-02-12 13:15:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-01
+TXN-200724,2026-02-12 13:12:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-02
+TXN-200725,2026-02-12 14:10:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-02
+TXN-200725,2026-02-12 14:10:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-01
+TXN-200726,2026-02-12 14:55:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,dine_in,EMP-03
+TXN-200726,2026-02-12 14:55:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,dine_in,EMP-01
+TXN-200727,2026-02-12 14:50:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,dine_in,EMP-01
+TXN-200728,2026-02-12 14:02:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-01
+TXN-200728,2026-02-12 14:02:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-01
+TXN-200729,2026-02-12 14:43:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,dine_in,EMP-02
+TXN-200729,2026-02-12 14:43:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,dine_in,EMP-02
+TXN-200730,2026-02-12 14:14:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,delivery,EMP-01
+TXN-200731,2026-02-12 14:01:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,delivery,EMP-01
+TXN-200731,2026-02-12 14:01:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,takeaway,EMP-03
+TXN-200732,2026-02-12 14:28:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-03
+TXN-200732,2026-02-12 14:28:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,takeaway,EMP-03
+TXN-200733,2026-02-12 15:53:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,delivery,EMP-01
+TXN-200733,2026-02-12 15:53:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-03
+TXN-200734,2026-02-12 15:23:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-01
+TXN-200735,2026-02-12 15:56:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,takeaway,EMP-03
+TXN-200736,2026-02-12 15:04:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-03
+TXN-200736,2026-02-12 15:04:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-02
+TXN-200737,2026-02-12 15:20:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,dine_in,EMP-03
+TXN-200738,2026-02-12 15:42:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-01
+TXN-200739,2026-02-12 16:12:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-02
+TXN-200740,2026-02-12 16:33:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,takeaway,EMP-01
+TXN-200740,2026-02-12 16:33:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-03
+TXN-200741,2026-02-12 17:53:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,takeaway,EMP-03
+TXN-200742,2026-02-12 17:47:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,delivery,EMP-02
+TXN-200743,2026-02-12 17:33:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-01
+TXN-200744,2026-02-12 17:33:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,delivery,EMP-02
+TXN-200745,2026-02-12 17:12:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-03
+TXN-200746,2026-02-12 17:35:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-02
+TXN-200747,2026-02-12 17:44:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,dine_in,EMP-01
+TXN-200747,2026-02-12 17:44:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,delivery,EMP-01
+TXN-200748,2026-02-12 17:34:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-03
+TXN-200748,2026-02-12 17:34:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,takeaway,EMP-03
+TXN-200749,2026-02-12 17:27:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,delivery,EMP-03
+TXN-200749,2026-02-12 17:27:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-03
+TXN-200750,2026-02-12 17:16:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,takeaway,EMP-01
+TXN-200751,2026-02-12 17:46:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-01
+TXN-200752,2026-02-12 17:56:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-01
+TXN-200753,2026-02-12 18:52:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-01
+TXN-200753,2026-02-12 18:52:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-01
+TXN-200754,2026-02-12 18:16:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-02
+TXN-200755,2026-02-12 18:05:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-01
+TXN-200755,2026-02-12 18:05:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,dine_in,EMP-02
+TXN-200756,2026-02-12 19:19:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,dine_in,EMP-02
+TXN-200757,2026-02-12 19:22:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,dine_in,EMP-03
+TXN-200758,2026-02-12 20:40:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-01
+TXN-200759,2026-02-13 07:43:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-03
+TXN-200759,2026-02-13 07:43:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-02
+TXN-200760,2026-02-13 07:50:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,takeaway,EMP-01
+TXN-200761,2026-02-13 07:30:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-01
+TXN-200761,2026-02-13 07:30:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-01
+TXN-200762,2026-02-13 08:12:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-03
+TXN-200763,2026-02-13 08:47:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,dine_in,EMP-02
+TXN-200763,2026-02-13 08:47:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,delivery,EMP-03
+TXN-200764,2026-02-13 08:05:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,takeaway,EMP-02
+TXN-200765,2026-02-13 09:38:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-02
+TXN-200765,2026-02-13 09:38:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-01
+TXN-200766,2026-02-13 09:59:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-03
+TXN-200767,2026-02-13 09:54:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-03
+TXN-200768,2026-02-13 10:52:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-01
+TXN-200769,2026-02-13 10:19:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,takeaway,EMP-01
+TXN-200770,2026-02-13 10:47:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-03
+TXN-200770,2026-02-13 10:47:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-03
+TXN-200771,2026-02-13 10:09:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-03
+TXN-200771,2026-02-13 10:09:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-01
+TXN-200772,2026-02-13 11:44:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,takeaway,EMP-03
+TXN-200772,2026-02-13 11:44:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-03
+TXN-200773,2026-02-13 11:17:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,dine_in,EMP-02
+TXN-200773,2026-02-13 11:17:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-03
+TXN-200774,2026-02-13 11:45:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,delivery,EMP-03
+TXN-200775,2026-02-13 11:05:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-03
+TXN-200776,2026-02-13 13:31:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-03
+TXN-200777,2026-02-13 13:22:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-02
+TXN-200778,2026-02-13 13:51:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-03
+TXN-200779,2026-02-13 13:17:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,takeaway,EMP-03
+TXN-200780,2026-02-13 13:08:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-01
+TXN-200781,2026-02-13 13:36:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,delivery,EMP-02
+TXN-200782,2026-02-13 13:28:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-01
+TXN-200782,2026-02-13 13:28:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,takeaway,EMP-03
+TXN-200783,2026-02-13 13:45:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-03
+TXN-200783,2026-02-13 13:45:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,dine_in,EMP-03
+TXN-200784,2026-02-13 14:07:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,delivery,EMP-01
+TXN-200785,2026-02-13 14:48:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,takeaway,EMP-02
+TXN-200786,2026-02-13 14:47:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,dine_in,EMP-01
+TXN-200786,2026-02-13 14:47:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-03
+TXN-200787,2026-02-13 14:39:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,dine_in,EMP-03
+TXN-200788,2026-02-13 14:01:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,dine_in,EMP-03
+TXN-200789,2026-02-13 14:54:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-02
+TXN-200789,2026-02-13 14:54:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200790,2026-02-13 14:12:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-02
+TXN-200791,2026-02-13 14:26:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,dine_in,EMP-01
+TXN-200792,2026-02-13 14:59:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-01
+TXN-200793,2026-02-13 14:27:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-02
+TXN-200794,2026-02-13 14:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-02
+TXN-200794,2026-02-13 14:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-03
+TXN-200795,2026-02-13 14:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-03
+TXN-200795,2026-02-13 14:25:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-02
+TXN-200796,2026-02-13 14:25:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,dine_in,EMP-02
+TXN-200797,2026-02-13 15:03:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-02
+TXN-200797,2026-02-13 15:03:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-03
+TXN-200798,2026-02-13 15:57:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-02
+TXN-200798,2026-02-13 15:57:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,dine_in,EMP-02
+TXN-200799,2026-02-13 15:37:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,dine_in,EMP-02
+TXN-200799,2026-02-13 15:37:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,delivery,EMP-03
+TXN-200800,2026-02-13 15:07:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-02
+TXN-200801,2026-02-13 15:05:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,takeaway,EMP-03
+TXN-200801,2026-02-13 15:05:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,dine_in,EMP-02
+TXN-200802,2026-02-13 15:36:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-01
+TXN-200802,2026-02-13 15:36:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-02
+TXN-200803,2026-02-13 16:11:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-03
+TXN-200804,2026-02-13 16:48:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-02
+TXN-200805,2026-02-13 16:34:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,dine_in,EMP-03
+TXN-200806,2026-02-13 16:42:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,takeaway,EMP-01
+TXN-200807,2026-02-13 16:38:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-02
+TXN-200807,2026-02-13 16:38:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,dine_in,EMP-01
+TXN-200808,2026-02-13 16:03:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,dine_in,EMP-01
+TXN-200808,2026-02-13 16:03:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-01
+TXN-200809,2026-02-13 17:11:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-03
+TXN-200810,2026-02-13 17:37:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-02
+TXN-200811,2026-02-13 18:52:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,mada,takeaway,EMP-02
+TXN-200812,2026-02-13 18:08:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-02
+TXN-200813,2026-02-13 18:33:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,dine_in,EMP-03
+TXN-200814,2026-02-13 18:46:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-03
+TXN-200814,2026-02-13 18:46:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-02
+TXN-200815,2026-02-13 18:16:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,delivery,EMP-03
+TXN-200815,2026-02-13 18:16:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,takeaway,EMP-01
+TXN-200816,2026-02-13 18:56:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,dine_in,EMP-01
+TXN-200816,2026-02-13 18:56:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-03
+TXN-200817,2026-02-13 18:50:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-01
+TXN-200818,2026-02-13 18:21:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-01
+TXN-200819,2026-02-13 18:44:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,takeaway,EMP-02
+TXN-200820,2026-02-13 19:49:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-02
+TXN-200821,2026-02-13 19:46:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-02
+TXN-200821,2026-02-13 19:46:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,takeaway,EMP-01
+TXN-200822,2026-02-13 19:41:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-02
+TXN-200823,2026-02-13 19:57:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,takeaway,EMP-03
+TXN-200823,2026-02-13 19:57:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-03
+TXN-200824,2026-02-13 19:43:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-03
+TXN-200825,2026-02-13 19:21:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-01
+TXN-200826,2026-02-13 19:21:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-03
+TXN-200827,2026-02-13 19:07:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,takeaway,EMP-02
+TXN-200828,2026-02-13 19:05:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-02
+TXN-200829,2026-02-13 20:11:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,dine_in,EMP-01
+TXN-200830,2026-02-13 20:28:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-01
+TXN-200830,2026-02-13 20:28:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-03
+TXN-200831,2026-02-13 20:55:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-01
+TXN-200831,2026-02-13 20:55:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-01
+TXN-200832,2026-02-13 20:29:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,takeaway,EMP-01
+TXN-200833,2026-02-13 21:55:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,dine_in,EMP-01
+TXN-200834,2026-02-14 06:47:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,delivery,EMP-01
+TXN-200835,2026-02-14 07:18:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,delivery,EMP-01
+TXN-200836,2026-02-14 07:17:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,dine_in,EMP-01
+TXN-200837,2026-02-14 07:39:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,delivery,EMP-02
+TXN-200837,2026-02-14 07:39:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,dine_in,EMP-03
+TXN-200838,2026-02-14 07:51:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,dine_in,EMP-02
+TXN-200839,2026-02-14 08:03:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-01
+TXN-200840,2026-02-14 08:06:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-02
+TXN-200841,2026-02-14 08:11:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-02
+TXN-200841,2026-02-14 08:11:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,takeaway,EMP-03
+TXN-200842,2026-02-14 08:08:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,takeaway,EMP-02
+TXN-200843,2026-02-14 08:43:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-01
+TXN-200843,2026-02-14 08:43:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,takeaway,EMP-02
+TXN-200844,2026-02-14 08:11:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,takeaway,EMP-02
+TXN-200844,2026-02-14 08:11:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-01
+TXN-200845,2026-02-14 09:54:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,delivery,EMP-03
+TXN-200846,2026-02-14 09:08:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-01
+TXN-200846,2026-02-14 09:08:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,takeaway,EMP-03
+TXN-200847,2026-02-14 09:29:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-01
+TXN-200848,2026-02-14 09:35:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,dine_in,EMP-02
+TXN-200849,2026-02-14 09:13:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-02
+TXN-200849,2026-02-14 09:13:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,delivery,EMP-03
+TXN-200850,2026-02-14 09:04:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,delivery,EMP-03
+TXN-200850,2026-02-14 09:04:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,delivery,EMP-01
+TXN-200851,2026-02-14 10:25:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,takeaway,EMP-02
+TXN-200852,2026-02-14 10:41:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-01
+TXN-200852,2026-02-14 10:41:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-01
+TXN-200853,2026-02-14 10:28:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-03
+TXN-200853,2026-02-14 10:28:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,dine_in,EMP-03
+TXN-200854,2026-02-14 10:56:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-03
+TXN-200855,2026-02-14 10:58:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,delivery,EMP-03
+TXN-200856,2026-02-14 10:25:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,takeaway,EMP-03
+TXN-200857,2026-02-14 11:35:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,dine_in,EMP-01
+TXN-200858,2026-02-14 12:25:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,takeaway,EMP-02
+TXN-200858,2026-02-14 12:25:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,delivery,EMP-01
+TXN-200859,2026-02-14 12:30:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-02
+TXN-200860,2026-02-14 12:09:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-01
+TXN-200861,2026-02-14 12:41:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-02
+TXN-200862,2026-02-14 12:08:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-03
+TXN-200863,2026-02-14 12:38:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-02
+TXN-200864,2026-02-14 12:35:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,dine_in,EMP-01
+TXN-200865,2026-02-14 12:27:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-01
+TXN-200865,2026-02-14 12:27:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-03
+TXN-200866,2026-02-14 12:23:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-02
+TXN-200867,2026-02-14 13:44:00,ESP-003,Flat White,1,17.0,0.0,17.0,cash,takeaway,EMP-03
+TXN-200868,2026-02-14 13:05:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,apple_pay,takeaway,EMP-03
+TXN-200868,2026-02-14 13:05:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,delivery,EMP-01
+TXN-200869,2026-02-14 13:57:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,takeaway,EMP-03
+TXN-200870,2026-02-14 14:21:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,takeaway,EMP-01
+TXN-200871,2026-02-14 14:02:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-03
+TXN-200871,2026-02-14 14:02:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-01
+TXN-200872,2026-02-14 14:42:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,takeaway,EMP-01
+TXN-200873,2026-02-14 14:08:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,cash,takeaway,EMP-01
+TXN-200873,2026-02-14 14:08:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-01
+TXN-200874,2026-02-14 14:47:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,delivery,EMP-02
+TXN-200875,2026-02-14 14:23:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-01
+TXN-200876,2026-02-14 14:51:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,dine_in,EMP-01
+TXN-200876,2026-02-14 14:51:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,takeaway,EMP-02
+TXN-200877,2026-02-14 14:15:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,dine_in,EMP-03
+TXN-200877,2026-02-14 14:15:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,delivery,EMP-02
+TXN-200878,2026-02-14 14:48:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-02
+TXN-200879,2026-02-14 15:47:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-03
+TXN-200879,2026-02-14 15:47:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,takeaway,EMP-01
+TXN-200880,2026-02-14 15:33:00,ESP-001,Espresso,1,12.0,0.0,12.0,cash,takeaway,EMP-02
+TXN-200881,2026-02-14 15:43:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-03
+TXN-200882,2026-02-14 15:22:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-02
+TXN-200883,2026-02-14 15:51:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-03
+TXN-200884,2026-02-14 15:47:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,delivery,EMP-03
+TXN-200885,2026-02-14 15:11:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,dine_in,EMP-01
+TXN-200886,2026-02-14 16:06:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-03
+TXN-200886,2026-02-14 16:06:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,dine_in,EMP-01
+TXN-200887,2026-02-14 16:01:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,delivery,EMP-03
+TXN-200887,2026-02-14 16:01:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-01
+TXN-200888,2026-02-14 16:05:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-03
+TXN-200888,2026-02-14 16:05:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,delivery,EMP-01
+TXN-200889,2026-02-14 16:16:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,delivery,EMP-02
+TXN-200890,2026-02-14 16:59:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,takeaway,EMP-01
+TXN-200891,2026-02-14 17:03:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,cash,dine_in,EMP-02
+TXN-200892,2026-02-14 18:04:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,dine_in,EMP-03
+TXN-200893,2026-02-14 18:31:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-03
+TXN-200894,2026-02-14 18:41:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,dine_in,EMP-01
+TXN-200895,2026-02-14 19:46:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,takeaway,EMP-01
+TXN-200896,2026-02-14 20:42:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-02
+TXN-200897,2026-02-15 06:49:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,visa,takeaway,EMP-03
+TXN-200898,2026-02-15 07:00:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,delivery,EMP-03
+TXN-200899,2026-02-15 07:59:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,cash,takeaway,EMP-01
+TXN-200900,2026-02-15 08:54:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,takeaway,EMP-03
+TXN-200901,2026-02-15 08:12:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-01
+TXN-200902,2026-02-15 09:57:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,visa,dine_in,EMP-03
+TXN-200903,2026-02-15 09:28:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,apple_pay,dine_in,EMP-01
+TXN-200903,2026-02-15 09:28:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-02
+TXN-200904,2026-02-15 09:04:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,delivery,EMP-02
+TXN-200904,2026-02-15 09:04:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,takeaway,EMP-01
+TXN-200905,2026-02-15 09:21:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-01
+TXN-200905,2026-02-15 09:21:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-03
+TXN-200906,2026-02-15 09:14:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,takeaway,EMP-03
+TXN-200907,2026-02-15 09:01:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,delivery,EMP-03
+TXN-200908,2026-02-15 10:40:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,takeaway,EMP-03
+TXN-200909,2026-02-15 11:04:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,delivery,EMP-03
+TXN-200910,2026-02-15 11:14:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,takeaway,EMP-03
+TXN-200911,2026-02-15 11:43:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,mada,delivery,EMP-03
+TXN-200912,2026-02-15 11:34:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,dine_in,EMP-03
+TXN-200913,2026-02-15 12:07:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-03
+TXN-200914,2026-02-15 12:23:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,dine_in,EMP-03
+TXN-200914,2026-02-15 12:23:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-03
+TXN-200915,2026-02-15 12:39:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-01
+TXN-200916,2026-02-15 14:37:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,visa,delivery,EMP-01
+TXN-200917,2026-02-15 14:13:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,visa,takeaway,EMP-01
+TXN-200918,2026-02-15 15:02:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-01
+TXN-200918,2026-02-15 15:02:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,cash,takeaway,EMP-01
+TXN-200919,2026-02-15 15:35:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,delivery,EMP-01
+TXN-200920,2026-02-15 15:39:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,visa,delivery,EMP-03
+TXN-200921,2026-02-15 15:13:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-01
+TXN-200922,2026-02-15 16:10:00,ESP-001,Espresso,1,12.0,0.0,12.0,mada,delivery,EMP-02
+TXN-200922,2026-02-15 16:10:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-02
+TXN-200923,2026-02-15 16:21:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,mada,dine_in,EMP-03
+TXN-200923,2026-02-15 16:21:00,ESP-001,Espresso,1,12.0,0.0,12.0,apple_pay,dine_in,EMP-01
+TXN-200924,2026-02-15 16:31:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,mada,dine_in,EMP-03
+TXN-200924,2026-02-15 16:31:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,cash,takeaway,EMP-01
+TXN-200925,2026-02-15 16:47:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,dine_in,EMP-02
+TXN-200925,2026-02-15 16:47:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,mada,dine_in,EMP-03
+TXN-200926,2026-02-15 16:26:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,dine_in,EMP-02
+TXN-200927,2026-02-15 16:37:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,dine_in,EMP-01
+TXN-200928,2026-02-15 16:59:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,takeaway,EMP-02
+TXN-200928,2026-02-15 16:59:00,ESP-003,Flat White,1,17.0,0.0,17.0,visa,delivery,EMP-01
+TXN-200929,2026-02-15 16:40:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,takeaway,EMP-01
+TXN-200930,2026-02-15 17:03:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-02
+TXN-200931,2026-02-15 17:26:00,ICE-103,Coconut Cold Brew,1,20.0,0.0,20.0,apple_pay,takeaway,EMP-03
+TXN-200932,2026-02-15 18:40:00,ESP-003,Flat White,1,17.0,0.0,17.0,apple_pay,dine_in,EMP-02
+TXN-200932,2026-02-15 18:40:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-02
+TXN-200933,2026-02-15 18:53:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,mada,delivery,EMP-02
+TXN-200934,2026-02-15 18:47:00,ICE-101,Iced Americano,1,14.0,0.0,14.0,cash,takeaway,EMP-03
+TXN-200935,2026-02-15 18:14:00,ESP-003,Flat White,1,17.0,0.0,17.0,mada,takeaway,EMP-01
+TXN-200935,2026-02-15 18:14:00,ESP-001,Espresso,1,12.0,0.0,12.0,visa,delivery,EMP-03
+TXN-200936,2026-02-15 19:25:00,ESP-002,Cappuccino,1,16.0,0.0,16.0,visa,takeaway,EMP-01
+TXN-200937,2026-02-15 20:00:00,FOD-101,Almond Croissant,1,15.0,0.0,15.0,apple_pay,dine_in,EMP-02
+TXN-200937,2026-02-15 20:00:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-01
+TXN-200938,2026-02-15 20:01:00,ICE-102,Iced Mocha,1,19.0,0.0,19.0,apple_pay,delivery,EMP-02
+TXN-200939,2026-02-15 21:01:00,FOD-102,Date Muffin,1,11.0,0.0,11.0,apple_pay,delivery,EMP-02

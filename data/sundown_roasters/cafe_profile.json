@@ -1,0 +1,26 @@
+{
+  "cafe_name": "Sundown Roasters",
+  "city": "Jeddah",
+  "governorate": "Jeddah",
+  "region": "Makkah Region",
+  "country": "Saudi Arabia",
+  "coordinates": {
+    "lat": 21.5433,
+    "lng": 39.1728
+  },
+  "timezone": "Asia/Riyadh",
+  "seats": 28,
+  "opened": "2024-09-15",
+  "opening_hours": {
+    "default": "06:30-22:00",
+    "ramadan": "15:00-00:30"
+  },
+  "instagram": "@sundown.roasters",
+  "tiktok": "@sundownroasters",
+  "currency": "SAR",
+  "weekend_days": [
+    "Friday",
+    "Saturday"
+  ],
+  "notes": "Coastal specialty roastery. Young professional crowd. Bilingual audience skewing English-forward."
+}
