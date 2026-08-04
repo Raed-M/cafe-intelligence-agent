@@ -158,7 +158,17 @@ def run_analyst(
     input_refs = list(available.values())
 
     notes: list[str] = []
-    code = gen(system_prompt, context)
+    try:
+        code = gen(system_prompt, context)
+    except Exception as e:  # noqa: BLE001
+        # A model/LLM-layer failure (auth error, network error, etc.) must not
+        # crash the whole graph -- one analyst degrades to "failed", exactly
+        # like a code-execution failure would.
+        return AnalystRunResult(
+            analyst_name=spec.name, findings=[], status="failed", attempts=0,
+            notes=[f"code generation call failed: {type(e).__name__}: {e}"],
+        )
+
     last_stderr = ""
     exec_result = None
     for attempt in range(1, max_attempts + 1):
@@ -173,7 +183,11 @@ def run_analyst(
         last_stderr = exec_result["stderr"] or f"execution status: {exec_result['status']}"
         notes.append(f"attempt {attempt} failed ({exec_result['status']}): {last_stderr[:200]}")
         if attempt < max_attempts:
-            code = repair(code, last_stderr, context)
+            try:
+                code = repair(code, last_stderr, context)
+            except Exception as e:  # noqa: BLE001
+                notes.append(f"repair call failed: {type(e).__name__}: {e}")
+                break
 
     if exec_result is None or exec_result["status"] != "success":
         return AnalystRunResult(

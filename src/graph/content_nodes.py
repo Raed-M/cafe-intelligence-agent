@@ -27,14 +27,22 @@ def content_agent_node(state: CafeIntelligenceState) -> dict[str, Any]:
     except Exception:  # noqa: BLE001
         pass
 
-    ideas = generate_content_ideas(
-        final_findings=final_findings,
-        context_bundle=state["context_bundle"],
-        menu_artifact=cleaned.get("menu"),
-        analysis_period_end=state["analysis_period"]["end"],
-        model_name=config.app_settings.models.content,
-        recent_memory=recent_memory,
-    )
+    try:
+        ideas = generate_content_ideas(
+            final_findings=final_findings,
+            context_bundle=state["context_bundle"],
+            menu_artifact=cleaned.get("menu"),
+            analysis_period_end=state["analysis_period"]["end"],
+            model_name=config.app_settings.models.content,
+            recent_memory=recent_memory,
+        )
+    except Exception as e:  # noqa: BLE001
+        # A model-layer failure here must not crash the whole graph; the
+        # validator/report path already handles an empty idea list honestly.
+        return {
+            "content_ideas": [], "step_count": 1,
+            "errors": [{"node": "content_agent", "error": f"{type(e).__name__}: {e}"}],
+        }
     return {"content_ideas": ideas, "step_count": 1}
 
 
