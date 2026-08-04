@@ -1,0 +1,21 @@
+ data/sundown_roasters/cafe_profile.json            |   26 +
+ data/sundown_roasters/customer_reviews.json        |  212 ++++
+ data/sundown_roasters/foot_traffic.csv             |  225 ++++
+ data/sundown_roasters/inventory_weekly.xlsx        |  Bin 0 -> 6168 bytes
+ data/sundown_roasters/menu_items.csv               |    9 +
+ data/sundown_roasters/pos_transactions.csv         | 1260 ++++++++++++++++++++
+ data/sundown_roasters/staff_shifts.csv             |   43 +
+ .../supplier_emails/2026-01-20_01.txt              |    5 +
+ .../supplier_emails/2026-01-28_02.txt              |    5 +
+ .../supplier_emails/2026-02-01_03.txt              |    5 +
+ 10 files changed, 1790 insertions(+)
+data/sundown_roasters/cafe_profile.json
+data/sundown_roasters/customer_reviews.json
+data/sundown_roasters/foot_traffic.csv
+data/sundown_roasters/inventory_weekly.xlsx
+data/sundown_roasters/menu_items.csv
+data/sundown_roasters/pos_transactions.csv
+data/sundown_roasters/staff_shifts.csv
+data/sundown_roasters/supplier_emails/2026-01-20_01.txt
+data/sundown_roasters/supplier_emails/2026-01-28_02.txt
+data/sundown_roasters/supplier_emails/2026-02-01_03.txt

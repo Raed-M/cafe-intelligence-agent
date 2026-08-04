@@ -5,6 +5,6 @@ __pycache__/
 db/*.sqlite
 outputs/artifacts/
 outputs/reports/
-outputs/test_evidence/
+outputs/test_evidence/*.sqlite
 outputs/graph.mmd
 .pytest_cache/

@@ -1,0 +1,6 @@
+metric,formula,filters,manual_value,agent_value,abs_diff,pass
+net_revenue,"sum(line_total_sar) after independent double-swipe dedup, including refunds","timestamp in [2026-01-05, 2026-01-12)",40658.15,40658.15,0.0,True
+valid_transaction_count,count(distinct transaction_id) with >=1 positive line and net basket revenue > 0,"timestamp in [2026-01-05, 2026-01-12)",1231.0,1231.0,0.0,True
+conversion_rate,valid_transaction_count / sum(door_count) excluding full-zero (dead sensor) days,"date in [2026-01-05, 2026-01-12), dead_days_excluded=[]",0.2323518308795772,0.2323518308795772,0.0,True
+gross_profit[HOT-001],sum(line_total_sar) - sum(quantity * menu.unit_cost_sar=5.2),"sku=HOT-001, timestamp in [2026-01-05, 2026-01-12)",3497.6999999999994,3497.6999999999994,0.0,True
+known_waste_cost,sum(units_wasted * unit_cost_sar) where units_wasted is not null,"week_starting=2026-01-05, 0 unknown-waste rows excluded",1050.7,1050.7,0.0,True
