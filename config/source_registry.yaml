@@ -1,0 +1,30 @@
+sources:
+  - name: pos
+    parser: parse_pos
+    path: pos_transactions.csv
+    required_for: [sales, margin, operations, anomaly]
+  - name: menu
+    parser: parse_menu
+    path: menu_items.csv
+    required_for: [sales, margin, operations]
+  - name: traffic
+    parser: parse_traffic
+    path: foot_traffic.csv
+    required_for: [operations, anomaly]
+  - name: staff
+    parser: parse_staff
+    path: staff_shifts.csv
+    required_for: [operations]
+  - name: inventory
+    parser: parse_inventory
+    path: inventory_weekly.xlsx
+    sheet: weekly_counts
+    required_for: [margin, operations, anomaly]
+  - name: emails
+    parser: parse_emails
+    path: supplier_emails/*.txt
+    required_for: [margin, content]
+  - name: reviews
+    parser: parse_reviews
+    path: customer_reviews.json
+    required_for: [customer, anomaly]

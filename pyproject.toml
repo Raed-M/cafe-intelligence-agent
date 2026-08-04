@@ -1,0 +1,33 @@
+[project]
+name = "cafe-intelligence-agent"
+version = "0.1.0"
+description = "Generic multi-agent LangGraph cafe intelligence system."
+requires-python = ">=3.11"
+dependencies = [
+    "langgraph>=1.0,<2.0",
+    "langchain>=1.0,<2.0",
+    "langchain-openai",
+    "langchain-anthropic",
+    "langchain-core",
+    "pandas",
+    "pyarrow",
+    "openpyxl",
+    "pydantic>=2.0",
+    "pydantic-settings",
+    "pyyaml",
+    "apscheduler",
+    "jinja2",
+    "matplotlib",
+    "tavily-python",
+    "python-dotenv",
+    "hijridate",
+    "astral",
+    "langgraph-checkpoint-sqlite",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-timeout"]
+pdf = ["weasyprint"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{ cafe_name }} — Weekly Intelligence Report</title>
+<style>
+  body { font-family: "Segoe UI", Tahoma, Arial, sans-serif; margin: 2rem; color: #1a1a1a; }
+  h1, h2 { color: #3b2a1a; }
+  .rtl { direction: rtl; text-align: right; font-family: "Segoe UI", Tahoma, Arial, sans-serif; }
+  .ltr { direction: ltr; text-align: left; }
+  section { margin-bottom: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 1rem; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  .finding { background: #faf6f0; padding: 1rem; margin-bottom: 1rem; border-radius: 6px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.8em; }
+  .badge-success { background: #d7f0d7; }
+  .badge-partial { background: #fff2c7; }
+  .badge-failed { background: #f6d6d6; }
+  .idea { border: 1px solid #ddd; padding: 1rem; margin-bottom: 1rem; }
+  .muted { color: #777; font-size: 0.9em; }
+</style>
+</head>
+<body>
+  <section>
+    <h1>{{ cafe_name }} — Weekly Intelligence Report</h1>
+    <p>Run: {{ run_id }} | Generated: {{ generated_at }}</p>
+    <p>Analysis period: {{ analysis_period.start }} → {{ analysis_period.end }}</p>
+    <p>Recommendation period: {{ recommendation_period.start }} → {{ recommendation_period.end }}</p>
+    <p>Status: <span class="badge badge-{{ run_status }}">{{ run_status }}</span></p>
+  </section>
+
+  <section>
+    <h2>Executive Summary</h2>
+    <div class="rtl">{{ whatsapp_summary_ar | e }}</div>
+    <div class="ltr">{{ whatsapp_summary_en | e }}</div>
+  </section>
+
+  <section>
+    <h2>Data Quality</h2>
+    <p>Successful: {{ data_quality.sources_successful | join(', ') }}</p>
+    <p>Partial: {{ data_quality.sources_partial | join(', ') if data_quality.sources_partial else 'none' }}</p>
+    <p>Failed: {{ data_quality.sources_failed | join(', ') if data_quality.sources_failed else 'none' }}</p>
+    <table>
+      <tr><th>Source</th><th>In</th><th>Accepted</th><th>Dropped</th><th>Repaired</th><th>Quarantined</th><th>Issues</th></tr>
+      {% for s in data_quality.source_summaries %}
+      <tr>
+        <td>{{ s.source_name }}</td><td>{{ s.rows_in }}</td><td>{{ s.rows_accepted }}</td>
+        <td>{{ s.rows_dropped }}</td><td>{{ s.rows_repaired }}</td><td>{{ s.rows_quarantined }}</td>
+        <td>{{ s.issue_counts }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </section>
+
+  <section>
+    <h2>Findings ({{ final_findings | length }})</h2>
+    {% for f in final_findings %}
+    <div class="finding">
+      <h3>{{ f.title | e }}</h3>
+      <p>{{ f.claim | e }}</p>
+      <p class="muted">Sources: {{ f.source_names | join(', ') }} | Confidence: {{ "%.2f"|format(f.confidence) }} |
+         Sample size: {{ f.sample_size }}</p>
+      <p class="muted">Code: {{ f.code_artifact.path }} | Result: {{ f.result_artifact.path }}</p>
+      {% if f.assumptions %}<p class="muted">Assumptions: {{ f.assumptions | join('; ') }}</p>{% endif %}
+    </div>
+    {% else %}
+    <p>No findings met the evidence bar this week (insufficient evidence).</p>
+    {% endfor %}
+  </section>
+
+  {% if menu_engineering_chart %}
+  <section>
+    <h2>Menu Engineering</h2>
+    <img src="{{ menu_engineering_chart }}" alt="Menu engineering quadrants" style="max-width:100%;">
+  </section>
+  {% endif %}
+
+  <section>
+    <h2>Content Ideas ({{ content_ideas | length }})</h2>
+    {% for idea in content_ideas %}
+    <div class="idea">
+      <p class="muted">{{ idea.format }} | {{ idea.post_date }} {{ idea.post_time_local }}</p>
+      <div class="rtl"><strong>{{ idea.hook_ar | e }}</strong><br>{{ idea.rationale_ar | e }}</div>
+      <div class="ltr"><strong>{{ idea.hook_en | e }}</strong><br>{{ idea.rationale_en | e }}</div>
+      <p class="muted">Product: {{ idea.product_name_en | e }} ({{ idea.product_sku }}) | Finding: {{ idea.finding_id }}</p>
+    </div>
+    {% else %}
+    <p>No content ideas were produced (insufficient approved evidence or validation failure).</p>
+    {% endfor %}
+  </section>
+
+  {% if trend_statements %}
+  <section>
+    <h2>Comparison With Prior Comparable Weeks</h2>
+    <ul>
+    {% for t in trend_statements %}
+      <li>{{ t.statement_en }} <span class="muted">({{ t.metric_key }}, {{ t.consecutive_periods }} periods: {{ t.values }})</span></li>
+    {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <section>
+    <h2>Local, Calendar &amp; Prayer Context</h2>
+    <p>Search status: {{ context_bundle.search_status }}</p>
+    {% if context_bundle.warnings %}<p class="muted">{{ context_bundle.warnings | join('; ') }}</p>{% endif %}
+    <ul>
+    {% for e in context_bundle.evidence %}
+      <li>[{{ e.kind }}] {{ e.title | e }} — {{ e.summary | e }} <span class="muted">({{ e.source }})</span></li>
+    {% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h2>Limitations &amp; Assumptions</h2>
+    <ul>
+      {% for w in data_quality.warnings %}<li>{{ w | e }}</li>{% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h2>Appendix — Run Metrics</h2>
+    <p>Steps: {{ step_count }} | Cost: ${{ "%.4f"|format(cost_usd) }} | Critic rejections: {{ critic_rejections }}</p>
+    <p>Sources: {{ source_statuses }}</p>
+  </section>
+</body>
+</html>

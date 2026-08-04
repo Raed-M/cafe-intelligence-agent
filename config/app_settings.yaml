@@ -1,0 +1,27 @@
+schedule:
+  day_of_week: mon
+  hour: 6
+  minute: 0
+
+limits:
+  max_graph_steps: 60
+  max_cost_usd: 2.00
+  analyst_code_attempts: 3
+  critic_revision_rounds: 2
+  content_repair_attempts: 1
+  max_candidate_findings_per_analyst: 3
+  max_final_findings: 5
+  code_timeout_seconds: 30
+
+models:
+  analyst: ${ANALYST_MODEL}
+  critic: ${CRITIC_MODEL}
+  content: ${CONTENT_MODEL}
+  temperature: 0
+
+report:
+  whatsapp_max_chars: 500
+  pdf_optional: true
+
+prayer_times:
+  calculation_method: umm_al_qura

@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+db/*.sqlite
+outputs/artifacts/
+outputs/reports/
+outputs/test_evidence/
+outputs/graph.mmd
+.pytest_cache/
