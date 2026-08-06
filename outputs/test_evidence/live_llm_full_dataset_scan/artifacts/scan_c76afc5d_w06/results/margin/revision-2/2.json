@@ -1,0 +1,148 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item - Analysis Period",
+      "claim": "Item 'Chicken Sandwich' generated the highest gross profit of 3336.60 SAR during the analysis period (2026-02-16 to 2026-02-23), with 206 units sold across 184 transactions and a gross margin of 63.0%.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Chicken Sandwich",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "total_gross_profit_sar": {
+          "value": 3336.6,
+          "unit": "SAR",
+          "numerator": 3336.6,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "total_revenue_sar": {
+          "value": 5293.6,
+          "unit": "SAR",
+          "numerator": 5293.6,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "total_cogs_sar": {
+          "value": 1957.0,
+          "unit": "SAR",
+          "numerator": 1957.0,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "total_quantity": {
+          "value": 206,
+          "unit": "units",
+          "numerator": 206,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "basket_count": {
+          "value": 184,
+          "unit": "transactions",
+          "numerator": 184,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "gross_margin_pct": {
+          "value": 63.0,
+          "unit": "%",
+          "numerator": 63.0,
+          "denominator": 100,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 184,
+      "coverage_notes": [
+        "Analysis period: 2026-02-16 to 2026-02-23",
+        "Excludes refunds (is_refund == False)",
+        "COGS calculated from menu.unit_cost_sar × quantity",
+        "Gross profit = line_total_sar - COGS",
+        "Only items with non-null unit_cost_sar included"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar values are current and accurate for the analysis period",
+        "No recipe/BOM adjustments applied",
+        "Line totals reflect actual revenue after discounts"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Highest Waste Cost Item - Analysis Week",
+      "claim": "Item 'Butter Croissant' incurred the highest waste cost of 240.00 SAR during the week of 2026-02-16, with 60 units wasted at a unit cost of 4.00 SAR.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "item_name": {
+          "value": "Butter Croissant",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "waste_cost_sar": {
+          "value": 240.0,
+          "unit": "SAR",
+          "numerator": 240.0,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "units_wasted": {
+          "value": 60,
+          "unit": "units",
+          "numerator": 60,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "unit_cost_sar": {
+          "value": 4.0,
+          "unit": "SAR/unit",
+          "numerator": 4.0,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "total_waste_cost_week": {
+          "value": 1056.5,
+          "unit": "SAR",
+          "numerator": 1056.5,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis week: 2026-02-16 to 2026-02-23",
+        "Only non-null waste cost observations included",
+        "Waste cost calculated from inventory.known_waste_cost_sar",
+        "Total items with waste in period: 6"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar values are accurate and complete",
+        "Waste represents spoilage/disposal cost at unit_cost_sar"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

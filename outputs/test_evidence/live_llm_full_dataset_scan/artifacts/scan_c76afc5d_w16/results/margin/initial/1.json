@@ -1,0 +1,157 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item - Analysis Period",
+      "claim": "Iced Spanish Latte generated the highest gross profit of 3160.80 SAR with 71.8% margin",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Iced Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "total_revenue": {
+          "value": 4404.0,
+          "unit": "SAR",
+          "numerator": 4404.0,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "total_cogs": {
+          "value": 1243.2,
+          "unit": "SAR",
+          "numerator": 1243.2,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "gross_profit": {
+          "value": 3160.8,
+          "unit": "SAR",
+          "numerator": 3160.8,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "gross_margin_pct": {
+          "value": 71.77,
+          "unit": "%",
+          "numerator": 3160.8,
+          "denominator": 4404.0,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "total_quantity": {
+          "value": 222,
+          "unit": "units",
+          "numerator": 222,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "basket_count": {
+          "value": 204,
+          "unit": "transactions",
+          "numerator": 204,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2310,
+      "coverage_notes": [
+        "Analysis period: 2026-04-27 to 2026-05-04",
+        "Excludes refund transactions",
+        "Unit costs from menu_items.unit_cost_sar",
+        "Revenue from line_total_sar (net of discounts)"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and applicable to analysis period",
+        "No recipe/BOM available; using menu-level unit costs",
+        "Discount amounts are deducted from revenue"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Supplier Price Change - Procurement Impact",
+      "claim": "full-fat milk price changed by 18.3% (from 7.10 to 8.40 SAR/L) effective 2026-05-01",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "ingredient": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": 7.1,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": 8.4,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "price_change_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 18.31,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "effective_date": {
+          "value": "2026-05-01",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "confidence_level": {
+          "value": 0.95,
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Analysis period: 2026-04-27 to 2026-05-04",
+        "Supplier price changes extracted from email communications",
+        "No recipe/BOM available; cannot calculate per-drink impact",
+        "Standing order quantities not confirmed in available emails"
+      ],
+      "assumptions": [
+        "Email extraction confidence reflects data quality",
+        "Price change applies to relevant products",
+        "Effective date marks when price change takes effect",
+        "No standing order volume data available for procurement scenario calculation"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

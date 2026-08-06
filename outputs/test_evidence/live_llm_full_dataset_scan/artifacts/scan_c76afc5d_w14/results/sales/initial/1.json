@@ -1,0 +1,167 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Revenue Performance vs Previous Week",
+      "claim": "Total revenue in analysis period (2026-04-13 to 2026-04-20) was SAR 42889.20, representing a -6.7% change from previous week's SAR 45957.10.",
+      "finding_type": "revenue_change",
+      "metrics": {
+        "analysis_period_revenue": {
+          "value": 42889.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 45957.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "revenue_change": {
+          "value": -3067.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "revenue_pct_change": {
+          "value": -6.68,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1263,
+      "coverage_notes": [
+        "Analysis period transactions: 1263",
+        "Previous period transactions: 1370",
+        "Analysis period refunds: SAR -347.85",
+        "Previous period refunds: SAR -401.70"
+      ],
+      "assumptions": [
+        "Revenue includes refunds as negative values",
+        "Transaction counted by unique transaction_id",
+        "All line_total_sar values used as-is from cleaned POS data"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Transaction Volume Change",
+      "claim": "Transaction count in analysis period was 1263, representing a -7.8% change from previous week's 1370 transactions.",
+      "finding_type": "transaction_volume",
+      "metrics": {
+        "analysis_period_transactions": {
+          "value": 1263,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "previous_period_transactions": {
+          "value": 1370,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "transaction_change": {
+          "value": -107,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "transaction_pct_change": {
+          "value": -7.81,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1263,
+      "coverage_notes": [
+        "Transactions counted by unique transaction_id",
+        "Analysis period: 2133 line items from 1263 transactions",
+        "Previous period: 2355 line items from 1370 transactions"
+      ],
+      "assumptions": [
+        "Each unique transaction_id represents one basket/transaction",
+        "Refunds included in transaction count"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value Change",
+      "claim": "Average order value in analysis period was SAR 33.96, representing a 1.2% change from previous week's SAR 33.55.",
+      "finding_type": "aov_change",
+      "metrics": {
+        "analysis_period_aov": {
+          "value": 33.96,
+          "unit": "SAR",
+          "numerator": 42889.2,
+          "denominator": 1263,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "previous_period_aov": {
+          "value": 33.55,
+          "unit": "SAR",
+          "numerator": 45957.1,
+          "denominator": 1370,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "aov_change": {
+          "value": 0.41,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "aov_pct_change": {
+          "value": 1.23,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1263,
+      "coverage_notes": [
+        "AOV calculated as total revenue / unique transaction count",
+        "Analysis period: SAR 42889.20 / 1263 transactions",
+        "Previous period: SAR 45957.10 / 1370 transactions"
+      ],
+      "assumptions": [
+        "AOV = Total Revenue / Transaction Count",
+        "Revenue includes refunds as negative values",
+        "Transaction counted by unique transaction_id"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

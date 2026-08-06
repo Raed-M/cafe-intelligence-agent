@@ -1,0 +1,116 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item - Exact Item Economics",
+      "claim": "Item 'Iced Spanish Latte' (SKU: ICE-001) generated the highest gross profit of 4011.00 SAR during the analysis period with 285 units sold at 71.5% gross margin.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "gross_profit_sar": {
+          "value": 4011.0,
+          "unit": "SAR",
+          "numerator": 5607.0,
+          "denominator": 1596.0,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "units_sold": {
+          "value": 285,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "gross_margin_percent": {
+          "value": 71.5,
+          "unit": "%",
+          "numerator": 4011.0,
+          "denominator": 5607.0,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "unit_cost_sar": {
+          "value": 5.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 285,
+      "coverage_notes": [
+        "Analysis period: 2026-05-11 to 2026-05-18",
+        "Includes all non-refund transactions",
+        "Unit costs sourced from menu.parquet",
+        "Revenue calculated from line_total_sar"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and accurate for the analysis period",
+        "All POS line_total_sar values are correct",
+        "No recipe/BOM adjustments applied"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Supplier Price Change Detected",
+      "claim": "Price change for full-fat milk: 7.10 SAR → 8.40 SAR per L (effective 2026-05-01), representing a +18.3% change. This is a supplier-level fact; impact on menu items depends on recipe/BOM and order volumes.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "old_price_sar": {
+          "value": 7.1,
+          "unit": "SAR per L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        },
+        "new_price_sar": {
+          "value": 8.4,
+          "unit": "SAR per L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        },
+        "price_delta_sar": {
+          "value": 1.3,
+          "unit": "SAR per L",
+          "numerator": 1.3,
+          "denominator": 7.1,
+          "period_start": null,
+          "period_end": null
+        },
+        "percent_change": {
+          "value": 18.3,
+          "unit": "%",
+          "numerator": 1.3,
+          "denominator": 7.1,
+          "period_start": null,
+          "period_end": null
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Most recent price change for full-fat milk",
+        "Effective date: 2026-05-01",
+        "Supplier-level fact only; no recipe/BOM available for menu item impact calculation"
+      ],
+      "assumptions": [
+        "Email extraction accurately captured old_price, new_price, and effective_date",
+        "Price change applies to the specified entity/ingredient",
+        "No recipe/BOM data available to calculate per-drink impact",
+        "Standing order volumes and payment terms are unknown"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

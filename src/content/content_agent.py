@@ -7,13 +7,12 @@ downstream by the content validator (Module 6, second validation layer).
 from __future__ import annotations
 
 import json
-import re
 import uuid
 from pathlib import Path
 from typing import Any, Callable
 
 from src.schemas.artifacts import ArtifactRef
-from src.schemas.content import ContentIdea
+from src.schemas.content import ContentIdea, ContentIdeasOutput
 from src.schemas.context import ContextBundle
 from src.schemas.findings import AnalystFinding
 from src.tools.artifact_io import read_dataframe
@@ -37,18 +36,17 @@ def _default_llm_generator(model_name: str) -> ContentGenerator:
         from src.tools.llm_factory import get_chat_model
 
         llm = get_chat_model(model_name, temperature=0)
+        structured_llm = llm.with_structured_output(ContentIdeasOutput)
         user_prompt = (
             f"Context:\n{json.dumps(context, indent=2, default=str)}\n\n"
-            "Return a JSON array of exactly 3 ContentIdea objects (idea_id, hook_ar, hook_en, format, "
+            "Produce exactly 3 distinct ContentIdea objects in `items` (idea_id, hook_ar, hook_en, format, "
             "product_sku, product_name_ar, product_name_en, finding_id, cited_metric_keys, "
             "local_context_ids, calendar_context_ids, posting_window_id, timing_metric_keys, "
             "rationale_ar, rationale_en, post_date, post_time_local, timing_reason, "
-            "inventory_suitability). No prose outside the JSON array."
+            "inventory_suitability)."
         )
-        resp = llm.invoke([("system", system_prompt), ("user", user_prompt)])
-        content = resp.content if isinstance(resp.content, str) else str(resp.content)
-        match = re.search(r"\[.*\]", content, re.DOTALL)
-        return json.loads(match.group(0) if match else content)
+        result = structured_llm.invoke([("system", system_prompt), ("user", user_prompt)])
+        return result["items"] if isinstance(result, dict) else result.items  # type: ignore[union-attr]
 
     return _generate
 

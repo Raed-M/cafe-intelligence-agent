@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Daily Revenue Anomaly on 2026-01-31",
+      "claim": "Daily revenue of 8580.95 SAR on 2026-01-31 is 2.21 standard deviations from baseline mean of 6033.74 SAR",
+      "finding_type": "revenue_anomaly",
+      "metrics": {
+        "daily_revenue": {
+          "value": 8580.95,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-31T00:00:00+03:00",
+          "period_end": "2026-01-31T23:59:59+03:00"
+        },
+        "baseline_mean_daily_revenue": {
+          "value": 6033.74,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2025-12-29T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "z_score": {
+          "value": 2.21,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-31T00:00:00+03:00",
+          "period_end": "2026-01-31T23:59:59+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-01-26 to 2026-02-02",
+        "Baseline: 4 weeks of historical data from 2025-12-29 to 2026-01-26",
+        "Baseline sample size: 21 daily observations"
+      ],
+      "assumptions": [
+        "Normal distribution of daily revenue",
+        "Z-score threshold of 2.0 (95% confidence)",
+        "Refunds included in net revenue calculation",
+        "No product launches or known events during baseline"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

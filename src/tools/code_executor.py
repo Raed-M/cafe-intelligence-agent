@@ -28,7 +28,8 @@ from src.tools.artifact_io import write_json
 
 DEFAULT_ALLOWED_IMPORTS = {
     "pandas", "numpy", "json", "math", "statistics", "datetime", "collections",
-    "itertools", "re", "zoneinfo", "decimal", "os",
+    "itertools", "re", "zoneinfo", "decimal", "os", "typing", "pathlib",
+    "functools", "dataclasses",
 }
 
 MAX_OUTPUT_BYTES = 2_000_000

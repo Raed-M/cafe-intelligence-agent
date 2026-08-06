@@ -1,0 +1,144 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution and Average Sentiment",
+      "claim": "During the analysis period (2026-03-16 to 2026-03-23), customers provided 14 reviews with an average rating of 4.64 out of 5. High ratings (4-5 stars) represent 13 reviews (92.9%), while low ratings (1-2 stars) represent 1 reviews (7.1%).",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.64,
+          "unit": "stars",
+          "numerator": 14,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 14,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "high_ratings_pct": {
+          "value": 92.9,
+          "unit": "percent",
+          "numerator": 13,
+          "denominator": 14,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "low_ratings_pct": {
+          "value": 7.1,
+          "unit": "percent",
+          "numerator": 1,
+          "denominator": 14,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Reviews from 3 source(s)",
+        "Language distribution: {'en': np.int64(7), 'ar': np.int64(7)}"
+      ],
+      "assumptions": [
+        "Rating scale is 1-5 stars",
+        "High ratings defined as 4-5 stars",
+        "Low ratings defined as 1-2 stars"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Analysis by Language",
+      "claim": "Review sentiment varies by language. en: 7 reviews (avg 4.71 stars), ar: 7 reviews (avg 4.57 stars).",
+      "finding_type": "language_sentiment_comparison",
+      "metrics": {
+        "avg_rating_en": {
+          "value": 4.71,
+          "unit": "stars",
+          "numerator": 7,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "avg_rating_ar": {
+          "value": 4.57,
+          "unit": "stars",
+          "numerator": 7,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Language coverage: {'en': np.int64(7), 'ar': np.int64(7)}"
+      ],
+      "assumptions": [
+        "Language field accurately reflects review language",
+        "Rating scale is consistent across languages"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Review Content Analysis - Positive vs Negative Sentiment Indicators",
+      "claim": "Analysis of 14 non-empty reviews reveals 13 positive reviews (rating 4-5) and 1 negative reviews (rating 1-2). Positive reviews contain 4 mentions of quality indicators, while negative reviews contain 0 mentions of quality concerns.",
+      "finding_type": "content_sentiment_analysis",
+      "metrics": {
+        "positive_reviews_count": {
+          "value": 13,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "negative_reviews_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "non_empty_reviews": {
+          "value": 14,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Analysis based on 14 reviews with text content",
+        "Language distribution in analysis: English 0, Arabic 0"
+      ],
+      "assumptions": [
+        "Keyword matching is case-insensitive",
+        "Keywords are indicative of sentiment but not exhaustive",
+        "Text field contains original customer language"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (2026-05-25 to 2026-06-01), the average rating across 21 reviews is 4.71 out of 5, with 16 five-star and 0 one-star reviews.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.71,
+          "unit": "stars",
+          "numerator": 21,
+          "denominator": 21,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 16,
+          "unit": "reviews",
+          "numerator": 16,
+          "denominator": 21,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 0,
+          "unit": "reviews",
+          "numerator": 0,
+          "denominator": 21,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": 21,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-05-25 to 2026-06-01",
+        "Total reviews in dataset: 520",
+        "Reviews in analysis period: 21",
+        "Sources represented: google, talabat, instagram"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid (1-5 scale)",
+        "Review dates are accurate and in UTC",
+        "All reviews in the analysis period are included regardless of language"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Of 21 reviews in the analysis period, 12 are in English and 9 are in Arabic.",
+      "finding_type": "language_coverage",
+      "metrics": {
+        "english_reviews": {
+          "value": 12,
+          "unit": "reviews",
+          "numerator": 12,
+          "denominator": 21,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 9,
+          "unit": "reviews",
+          "numerator": 9,
+          "denominator": 21,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "english_percentage": {
+          "value": 57.1,
+          "unit": "percent",
+          "numerator": 12,
+          "denominator": 21,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-05-25 to 2026-06-01",
+        "Language field populated for all 21 reviews"
+      ],
+      "assumptions": [
+        "Language classification is accurate",
+        "Language values are either 'en' or 'ar'"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Topic Frequency",
+      "claim": "Among 21 reviews in the analysis period, the most frequently mentioned topics are: taste (3 mentions), speed (3 mentions), and quality (2 mentions).",
+      "finding_type": "topic_frequency",
+      "metrics": {
+        "taste_mentions": {
+          "value": 3,
+          "unit": "mentions",
+          "numerator": 3,
+          "denominator": 21,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "speed_mentions": {
+          "value": 3,
+          "unit": "mentions",
+          "numerator": 3,
+          "denominator": 21,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "quality_mentions": {
+          "value": 2,
+          "unit": "mentions",
+          "numerator": 2,
+          "denominator": 21,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-05-25 to 2026-06-01",
+        "Topic detection based on keyword matching in review text",
+        "Reviews with non-empty text: 21"
+      ],
+      "assumptions": [
+        "Topic keywords are representative of each category",
+        "A review can mention multiple topics",
+        "Keyword matching is case-insensitive",
+        "Both English and Arabic keywords are included"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Revenue and Transaction Performance Week-over-Week",
+      "claim": "Analysis period (Jan 12-19, 2026) generated 43432.70 SAR across 1294 transactions with AOV of 33.56 SAR, compared to previous period (Jan 5-12, 2026) with 40832.15 SAR, 1237 transactions, and AOV of 33.01 SAR.",
+      "finding_type": "revenue_and_transaction_performance",
+      "metrics": {
+        "analysis_period_revenue": {
+          "value": 43432.7,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 40832.15,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "revenue_change_sar": {
+          "value": 2600.55,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": 6.37,
+          "unit": "%",
+          "numerator": 2600.55,
+          "denominator": 40832.15,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "analysis_period_transactions": {
+          "value": 1294,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "previous_period_transactions": {
+          "value": 1237,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "transaction_change_pct": {
+          "value": 4.61,
+          "unit": "%",
+          "numerator": 57,
+          "denominator": 1237,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "analysis_period_aov": {
+          "value": 33.56,
+          "unit": "SAR",
+          "numerator": 43432.7,
+          "denominator": 1294,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "previous_period_aov": {
+          "value": 33.01,
+          "unit": "SAR",
+          "numerator": 40832.15,
+          "denominator": 1237,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "aov_change_pct": {
+          "value": 1.68,
+          "unit": "%",
+          "numerator": 0.56,
+          "denominator": 33.01,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2157,
+      "coverage_notes": [
+        "Analysis period: 2157 non-refund line items from 1294 transactions",
+        "Previous period: 2051 non-refund line items from 1237 transactions",
+        "Refunds excluded from revenue calculations per standard revenue quality practices"
+      ],
+      "assumptions": [
+        "Revenue mix analysis uses line_total_sar EXCLUDING refunds",
+        "Valid transactions counted as unique transaction_id values",
+        "AOV calculated as total net revenue divided by transaction count"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

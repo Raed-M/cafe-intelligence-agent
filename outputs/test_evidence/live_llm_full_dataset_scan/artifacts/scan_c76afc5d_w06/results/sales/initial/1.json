@@ -1,0 +1,197 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Transaction Count and Revenue Change Week-over-Week",
+      "claim": "Analysis period (2026-02-16 to 2026-02-23) shows -197 transactions (-14.9%) and -5319.45 SAR revenue (-12.2%) vs previous week (2026-02-09 to 2026-02-16).",
+      "finding_type": "revenue_and_transaction_change",
+      "metrics": {
+        "analysis_transaction_count": {
+          "value": 1127,
+          "unit": "transactions",
+          "numerator": 1127,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "previous_transaction_count": {
+          "value": 1324,
+          "unit": "transactions",
+          "numerator": 1324,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "transaction_count_change": {
+          "value": -197,
+          "unit": "transactions",
+          "numerator": -197,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "transaction_count_pct_change": {
+          "value": -14.88,
+          "unit": "%",
+          "numerator": -197,
+          "denominator": 1324,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "analysis_revenue": {
+          "value": 38206.75,
+          "unit": "SAR",
+          "numerator": 38206.75,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "previous_revenue": {
+          "value": 43526.2,
+          "unit": "SAR",
+          "numerator": 43526.2,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "revenue_change": {
+          "value": -5319.45,
+          "unit": "SAR",
+          "numerator": -5319.449999999997,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "revenue_pct_change": {
+          "value": -12.22,
+          "unit": "%",
+          "numerator": -5319.449999999997,
+          "denominator": 43526.2,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1127,
+      "coverage_notes": [
+        "Analysis period: 1967 line items from 1127 unique transactions",
+        "Previous period: 2203 line items from 1324 unique transactions",
+        "Refunds included in net revenue calculations"
+      ],
+      "assumptions": [
+        "transaction_id uniquely identifies a basket",
+        "line_total_sar represents net revenue after discounts",
+        "Timestamp filtering uses UTC+3 timezone as provided"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value Change",
+      "claim": "Average order value in analysis period is 33.90 SAR vs 32.87 SAR in previous week, a change of +1.03 SAR (+3.1%).",
+      "finding_type": "average_order_value_change",
+      "metrics": {
+        "analysis_aov": {
+          "value": 33.9,
+          "unit": "SAR",
+          "numerator": 38206.75,
+          "denominator": 1127,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "previous_aov": {
+          "value": 32.87,
+          "unit": "SAR",
+          "numerator": 43526.2,
+          "denominator": 1324,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "aov_change": {
+          "value": 1.03,
+          "unit": "SAR",
+          "numerator": 1.0265131876998836,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "aov_pct_change": {
+          "value": 3.12,
+          "unit": "%",
+          "numerator": 1.0265131876998836,
+          "denominator": 32.87477341389728,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1127,
+      "coverage_notes": [
+        "Analysis period AOV calculated from 1127 transactions",
+        "Previous period AOV calculated from 1324 transactions",
+        "Refunds included in net revenue"
+      ],
+      "assumptions": [
+        "AOV = total revenue / unique transaction count",
+        "line_total_sar includes all discounts and refunds"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Category Mix Shift: hot_coffee",
+      "claim": "Category 'hot_coffee' revenue changed from 15256.65 SAR to 11874.50 SAR (-22.2%) between previous week and analysis period.",
+      "finding_type": "category_mix_change",
+      "metrics": {
+        "analysis_category_revenue": {
+          "value": 11874.5,
+          "unit": "SAR",
+          "numerator": 11874.5,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "previous_category_revenue": {
+          "value": 15256.65,
+          "unit": "SAR",
+          "numerator": 15256.65,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "category_revenue_change": {
+          "value": -3382.15,
+          "unit": "SAR",
+          "numerator": -3382.1499999999996,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "category_revenue_pct_change": {
+          "value": -22.17,
+          "unit": "%",
+          "numerator": -3382.1499999999996,
+          "denominator": 15256.65,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 587,
+      "coverage_notes": [
+        "Analysis period: 587 line items in category 'hot_coffee'",
+        "Previous period: 753 line items in category 'hot_coffee'",
+        "Refunds included in net revenue"
+      ],
+      "assumptions": [
+        "Category assignment from cleaned POS data",
+        "line_total_sar represents net revenue"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

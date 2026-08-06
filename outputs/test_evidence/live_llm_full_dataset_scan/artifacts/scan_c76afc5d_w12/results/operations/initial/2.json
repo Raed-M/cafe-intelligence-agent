@@ -1,0 +1,128 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate - Analysis Period",
+      "claim": "During the analysis period (Mar 30 - Apr 6, 2026), the cafe achieved a conversion rate of 25.26%, with 1411 valid transactions from 5585 footfall entries.",
+      "finding_type": "conversion_metric",
+      "metrics": {
+        "conversion_rate": {
+          "value": 0.2526,
+          "unit": "ratio",
+          "numerator": 1411,
+          "denominator": 5585,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 5585,
+      "coverage_notes": [
+        "Excluded 0 dead sensor days from denominator",
+        "Used 119 valid traffic days"
+      ],
+      "assumptions": [
+        "Transaction ID uniqueness represents distinct customer baskets",
+        "Refunds excluded from valid transaction count",
+        "Dead sensor days excluded from footfall denominator"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Labour Cost to Sales Ratio",
+      "claim": "During the analysis period, total labour costs were 6272.00 SAR against 47758.95 SAR in net sales, yielding a labour-to-sales ratio of 13.13%.",
+      "finding_type": "labour_efficiency",
+      "metrics": {
+        "labour_to_sales_ratio": {
+          "value": 0.1313,
+          "unit": "ratio",
+          "numerator": "6272",
+          "denominator": 47758.95,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "total_labour_cost_sar": {
+          "value": "6272",
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "total_net_sales_sar": {
+          "value": 47758.95,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "staff"
+      ],
+      "sample_size": 37,
+      "coverage_notes": [
+        "Staff records: 37 entries for analysis period",
+        "POS records: 2411 line items for analysis period",
+        "Refunds netted against sales"
+      ],
+      "assumptions": [
+        "Labour cost includes all computed duration-based costs",
+        "Sales include all payment methods",
+        "No imputation for missing cashier linkage"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Known Waste Analysis",
+      "claim": "During the analysis period, 2749 units were wasted with a known cost of 16552.90 SAR. The waste-to-total-units ratio was 18.88%, indicating 18.9% of inventory was wasted.",
+      "finding_type": "waste_metric",
+      "metrics": {
+        "total_waste_units": {
+          "value": 2749,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "known_waste_cost_sar": {
+          "value": 16552.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "waste_to_total_ratio": {
+          "value": 0.1888,
+          "unit": "ratio",
+          "numerator": 2749,
+          "denominator": 14564,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Only known waste values included",
+        "Unknown waste values excluded per requirements",
+        "Analysis covers 6 items with recorded waste"
+      ],
+      "assumptions": [
+        "Inventory week_starting dates align with analysis period",
+        "Known waste cost is accurate and complete",
+        "Unknown waste values are not imputed"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

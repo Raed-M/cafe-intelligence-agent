@@ -1,0 +1,159 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Weekly Revenue Performance",
+      "claim": "Net revenue for week of 2026-02-23 to 2026-03-02 was 35144.95 SAR, representing a -7.2% change from previous week (37861.85 SAR)",
+      "finding_type": "revenue_change",
+      "metrics": {
+        "analysis_period_net_revenue": {
+          "value": 35144.95,
+          "unit": "SAR",
+          "numerator": 35144.95,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "previous_period_net_revenue": {
+          "value": 37861.85,
+          "unit": "SAR",
+          "numerator": 37861.85,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": -7.18,
+          "unit": "%",
+          "numerator": -2716.9,
+          "denominator": 37861.85,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1046,
+      "coverage_notes": [
+        "Analysis period transactions: 1046",
+        "Previous period transactions: 1127",
+        "Refunds included in net revenue calculation"
+      ],
+      "assumptions": [
+        "line_total_sar represents net revenue after discounts",
+        "is_refund flag correctly identifies refund transactions",
+        "All transactions within period boundaries are valid"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Transaction Volume and Average Order Value",
+      "claim": "Transaction count increased by -7.2% (1046 vs 1127), while AOV changed by 0.0% (33.60 SAR vs 33.60 SAR)",
+      "finding_type": "transaction_and_aov_change",
+      "metrics": {
+        "analysis_period_transactions": {
+          "value": 1046,
+          "unit": "count",
+          "numerator": 1046,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "previous_period_transactions": {
+          "value": 1127,
+          "unit": "count",
+          "numerator": 1127,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "analysis_period_aov": {
+          "value": 33.6,
+          "unit": "SAR",
+          "numerator": 35144.95,
+          "denominator": 1046,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "previous_period_aov": {
+          "value": 33.6,
+          "unit": "SAR",
+          "numerator": 37861.85,
+          "denominator": 1127,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "aov_change_pct": {
+          "value": 0.01,
+          "unit": "%",
+          "numerator": 0.0,
+          "denominator": 33.6,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1046,
+      "coverage_notes": [
+        "Unique transaction_id used for basket counting",
+        "AOV calculated as net revenue divided by transaction count",
+        "Refunds included in net revenue"
+      ],
+      "assumptions": [
+        "transaction_id uniquely identifies a basket",
+        "line_total_sar is the final transaction amount",
+        "All transactions are valid and complete"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Category Mix Shift",
+      "claim": "Category 'hot_coffee' showed the largest revenue change: 10428.25 SAR (analysis period) vs 11874.50 SAR (previous period), a -12.2% change",
+      "finding_type": "category_mix_change",
+      "metrics": {
+        "analysis_period_category_revenue": {
+          "value": 10428.25,
+          "unit": "SAR",
+          "numerator": 10428.25,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "previous_period_category_revenue": {
+          "value": 11874.5,
+          "unit": "SAR",
+          "numerator": 11874.5,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "category_revenue_change_pct": {
+          "value": -12.18,
+          "unit": "%",
+          "numerator": -1446.25,
+          "denominator": 11874.5,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1046,
+      "coverage_notes": [
+        "Category revenue aggregated from line_total_sar",
+        "All 6 categories analyzed",
+        "Refunds included in category totals"
+      ],
+      "assumptions": [
+        "category field correctly classifies all products",
+        "line_total_sar represents final transaction amount",
+        "Category assignments are consistent across periods"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

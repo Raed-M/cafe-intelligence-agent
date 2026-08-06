@@ -44,12 +44,16 @@ class ModelSettings(BaseModel):
     analyst: str
     critic: str
     content: str
+    content_validator: str
+    report_summary: str
+    email_extractor: str
     temperature: float
 
 
 class ReportSettings(BaseModel):
     whatsapp_max_chars: int
     pdf_optional: bool
+    use_llm_summary_compression: bool = False
 
 
 class PrayerTimesSettings(BaseModel):

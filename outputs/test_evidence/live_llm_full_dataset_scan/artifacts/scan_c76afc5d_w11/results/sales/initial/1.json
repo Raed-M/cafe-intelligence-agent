@@ -1,0 +1,251 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Weekly Revenue and Transaction Volume Change",
+      "claim": "Week of 2026-03-23 generated SAR 45104.05 in net revenue across 1353 transactions (AOV: SAR 33.34), compared to SAR 52076.05 across 1556 transactions (AOV: SAR 33.47) in the prior week.",
+      "finding_type": "revenue_and_volume",
+      "metrics": {
+        "net_revenue_sar": {
+          "value": 45104.05,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "valid_transaction_count": {
+          "value": 1353,
+          "unit": "baskets",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "average_order_value_sar": {
+          "value": 33.34,
+          "unit": "SAR",
+          "numerator": 45104.05,
+          "denominator": 1353,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "revenue_change_sar": {
+          "value": -6972.0,
+          "unit": "SAR",
+          "numerator": 45104.05,
+          "denominator": 52076.05,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": -13.39,
+          "unit": "%",
+          "numerator": -6972.0,
+          "denominator": 52076.05,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "transaction_count_change": {
+          "value": -203,
+          "unit": "baskets",
+          "numerator": 1353,
+          "denominator": 1556,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "transaction_count_change_pct": {
+          "value": -13.05,
+          "unit": "%",
+          "numerator": -203,
+          "denominator": 1556,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "aov_change_sar": {
+          "value": -0.13,
+          "unit": "SAR",
+          "numerator": 33.34,
+          "denominator": 33.47,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "aov_change_pct": {
+          "value": -0.39,
+          "unit": "%",
+          "numerator": -0.13,
+          "denominator": 33.47,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2287,
+      "coverage_notes": [
+        "Analysis period: 2026-03-23 to 2026-03-30",
+        "Previous period: 2026-03-16 to 2026-03-23",
+        "Refunds excluded from revenue calculations",
+        "Transaction count based on unique transaction_id"
+      ],
+      "assumptions": [
+        "business_date field used for period filtering",
+        "is_refund flag correctly identifies refund transactions",
+        "line_total_sar represents net realized revenue"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Category Mix Shift",
+      "claim": "Category 'hot_other' generated SAR 4162.60 (9.2% of category revenue) in the analysis week, versus SAR 5465.45 (10.5% of category revenue) in the prior week, representing a -23.8% change in category revenue and -1.3 percentage point shift in overall mix.",
+      "finding_type": "category_mix",
+      "metrics": {
+        "category_name": {
+          "value": "hot_other",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "category_revenue_sar": {
+          "value": 4162.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "category_revenue_pct_of_total": {
+          "value": 9.23,
+          "unit": "%",
+          "numerator": 4162.6,
+          "denominator": 45104.05,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "category_revenue_change_sar": {
+          "value": -1302.85,
+          "unit": "SAR",
+          "numerator": 4162.6,
+          "denominator": 5465.45,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "category_revenue_change_pct": {
+          "value": -23.84,
+          "unit": "%",
+          "numerator": -1302.85,
+          "denominator": 5465.45,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "category_mix_change_pct": {
+          "value": -1.27,
+          "unit": "percentage points",
+          "numerator": 9.23,
+          "denominator": 10.5,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2287,
+      "coverage_notes": [
+        "Analysis period: 2026-03-23 to 2026-03-30",
+        "Previous period: 2026-03-16 to 2026-03-23",
+        "Refunds excluded from revenue calculations",
+        "Category field from cleaned POS data"
+      ],
+      "assumptions": [
+        "Category classification is accurate and consistent",
+        "line_total_sar represents net realized revenue per line item"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Top SKU Performance Change",
+      "claim": "SKU FOD-003 (Date Cake) generated SAR 2358.90 across 132 units in 123 baskets during the analysis week, versus SAR 3645.90 across 205 units in 181 baskets in the prior week, representing a -35.3% change in SKU revenue.",
+      "finding_type": "product_performance",
+      "metrics": {
+        "sku": {
+          "value": "FOD-003",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "item_name": {
+          "value": "Date Cake",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "sku_revenue_sar": {
+          "value": 2358.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "sku_quantity_sold": {
+          "value": 132,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "sku_baskets": {
+          "value": 123,
+          "unit": "baskets",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "sku_revenue_change_sar": {
+          "value": -1287.0,
+          "unit": "SAR",
+          "numerator": 2358.9,
+          "denominator": 3645.9,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "sku_revenue_change_pct": {
+          "value": -35.3,
+          "unit": "%",
+          "numerator": -1287.0,
+          "denominator": 3645.9,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Analysis period: 2026-03-23 to 2026-03-30",
+        "Previous period: 2026-03-16 to 2026-03-23",
+        "Refunds excluded from revenue calculations",
+        "Only products active in both periods included",
+        "Comparison includes 18 SKUs active in both periods"
+      ],
+      "assumptions": [
+        "SKU and item_name fields correctly identify products",
+        "launch_date and retire_date fields accurately reflect product availability",
+        "line_total_sar represents net realized revenue per line item"
+      ],
+      "confidence": 0.88
+    }
+  ]
+}

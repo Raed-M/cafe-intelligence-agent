@@ -28,6 +28,7 @@ def critic_node(state: CafeIntelligenceState) -> dict[str, Any]:
     result = run_critic(
         state.get("candidate_findings", []), round_, limits.critic_revision_rounds,
         valid_periods=_valid_periods(state),
+        model_name=state["config"].app_settings.models.critic,
     )
     return {"critic_results": result, "critic_round": round_ + 1, "step_count": 1}
 

@@ -1,0 +1,257 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Weekly Revenue and Transaction Performance",
+      "claim": "Analysis week (2026-05-18 to 2026-05-25) generated SAR 50672.40 in net revenue across 1434 valid transactions, representing a 12.3% change from previous week (SAR 45136.20, 1313 transactions). Refunds totaled SAR 515.25 (26 transactions) in analysis week vs SAR 328.30 (17 transactions) previously.",
+      "finding_type": "revenue_and_transaction_performance",
+      "metrics": {
+        "analysis_week_revenue": {
+          "value": 50672.4,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "analysis_week_transactions": {
+          "value": 1434,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "previous_week_revenue": {
+          "value": 45136.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "previous_week_transactions": {
+          "value": 1313,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "revenue_change_sar": {
+          "value": 5536.2,
+          "unit": "SAR",
+          "numerator": 5536.2,
+          "denominator": 45136.2,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": 12.3,
+          "unit": "%",
+          "numerator": 5536.2,
+          "denominator": 45136.2,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "transaction_change": {
+          "value": 121,
+          "unit": "count",
+          "numerator": 121,
+          "denominator": 1313,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "transaction_change_pct": {
+          "value": 9.2,
+          "unit": "%",
+          "numerator": 121,
+          "denominator": 1313,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "analysis_week_refund_revenue": {
+          "value": -515.25,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "previous_week_refund_revenue": {
+          "value": -328.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1434,
+      "coverage_notes": [
+        "Analysis period: 2026-05-18 to 2026-05-25 (7 days)",
+        "Previous period: 2026-05-11 to 2026-05-18 (7 days)",
+        "Refunds included in net revenue calculations",
+        "Valid transactions counted by unique transaction_id excluding refund-only transactions"
+      ],
+      "assumptions": [
+        "line_total_sar represents realized net revenue",
+        "is_refund flag correctly identifies refund transactions",
+        "transaction_id uniquely identifies a basket"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value Trend",
+      "claim": "Average order value in analysis week was SAR 35.34 per transaction, compared to SAR 34.38 in previous week, representing a 2.8% change. Trailing 4-week baseline AOV was SAR 34.01.",
+      "finding_type": "average_order_value",
+      "metrics": {
+        "analysis_week_aov": {
+          "value": 35.34,
+          "unit": "SAR",
+          "numerator": 50672.4,
+          "denominator": 1434,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "previous_week_aov": {
+          "value": 34.38,
+          "unit": "SAR",
+          "numerator": 45136.2,
+          "denominator": 1313,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "trailing_4week_aov": {
+          "value": 34.01,
+          "unit": "SAR",
+          "numerator": 181555.35,
+          "denominator": 5338,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "aov_change_sar": {
+          "value": 0.96,
+          "unit": "SAR",
+          "numerator": 0.96,
+          "denominator": 34.38,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "aov_change_pct": {
+          "value": 2.8,
+          "unit": "%",
+          "numerator": 0.96,
+          "denominator": 34.38,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1434,
+      "coverage_notes": [
+        "AOV calculated as net revenue divided by valid transaction count",
+        "Refunds included in net revenue",
+        "Trailing baseline spans 4 weeks: 2026-04-20 to 2026-05-18"
+      ],
+      "assumptions": [
+        "line_total_sar represents realized net revenue per line item",
+        "transaction_id uniquely identifies a basket",
+        "is_refund flag correctly identifies refund transactions"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Top Product Performance",
+      "claim": "Top revenue product Iced Spanish Latte (SKU: ICE-001) generated SAR 7265.00 across 366 units in analysis week, compared to SAR 5607.00 (285 units) in previous week, a 29.6% change. Product eligibility verified through menu launch/retire dates.",
+      "finding_type": "product_performance",
+      "metrics": {
+        "analysis_week_product_revenue": {
+          "value": 7265.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "analysis_week_product_quantity": {
+          "value": 366,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "previous_week_product_revenue": {
+          "value": 5607.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "previous_week_product_quantity": {
+          "value": 285,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "product_revenue_change_sar": {
+          "value": 1658.0,
+          "unit": "SAR",
+          "numerator": 1658.0,
+          "denominator": 5607.0,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "product_revenue_change_pct": {
+          "value": 29.6,
+          "unit": "%",
+          "numerator": 1658.0,
+          "denominator": 5607.0,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "product_sku": {
+          "value": "ICE-001",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "product_name": {
+          "value": "Iced Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 366,
+      "coverage_notes": [
+        "Product eligibility verified: launched before analysis period start and not retired",
+        "Top product identified by revenue in analysis week",
+        "Comparison includes only products eligible in both periods"
+      ],
+      "assumptions": [
+        "Menu launch_date and retire_date fields correctly indicate product availability",
+        "line_total_sar represents realized net revenue",
+        "SKU correctly links POS and menu records"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

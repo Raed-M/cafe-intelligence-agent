@@ -1,0 +1,50 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Daily Revenue Anomaly",
+      "claim": "Daily revenue on 2026-01-31 was 2.21 standard deviations from baseline mean",
+      "finding_type": "revenue_anomaly",
+      "metrics": {
+        "daily_revenue": {
+          "value": 8580.95,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-31T00:00:00",
+          "period_end": "2026-02-01T00:00:00"
+        },
+        "baseline_mean_daily_revenue": {
+          "value": 6033.74,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-05T00:00:00+03:00"
+        },
+        "z_score": {
+          "value": 2.21,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-05T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Baseline calculated from 21 daily observations across 4 trailing weeks",
+        "Analysis period: 2026-01-26T00:00:00+03:00 to 2026-02-02T00:00:00+03:00"
+      ],
+      "assumptions": [
+        "Daily revenue follows approximately normal distribution",
+        "Baseline periods are representative of normal operations",
+        "Z-score threshold of 2.0 (95% confidence) used to identify anomalies"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

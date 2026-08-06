@@ -1,0 +1,271 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Net Revenue and Transaction Volume Week-over-Week",
+      "claim": "Net revenue in analysis week (Apr 13-20) was 42889.20 SAR across 1263 transactions (AOV 33.96 SAR), compared to 45957.10 SAR across 1370 transactions (AOV 33.55 SAR) in the previous week (Apr 6-13). Revenue changed by -3067.90 SAR (-6.68%), transaction count changed by -107 (-7.81%), and AOV increased by 0.41 SAR (1.23%).",
+      "finding_type": "revenue_and_transaction_mix",
+      "metrics": {
+        "analysis_revenue_sar": {
+          "value": 42889.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "analysis_transactions": {
+          "value": 1263,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "analysis_aov_sar": {
+          "value": 33.96,
+          "unit": "SAR",
+          "numerator": 42889.2,
+          "denominator": 1263,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "previous_revenue_sar": {
+          "value": 45957.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "previous_transactions": {
+          "value": 1370,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "previous_aov_sar": {
+          "value": 33.55,
+          "unit": "SAR",
+          "numerator": 45957.1,
+          "denominator": 1370,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "revenue_change_sar": {
+          "value": -3067.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "revenue_pct_change": {
+          "value": -6.68,
+          "unit": "%",
+          "numerator": -3067.9,
+          "denominator": 45957.1,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "transaction_change": {
+          "value": -107,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "transaction_pct_change": {
+          "value": -7.81,
+          "unit": "%",
+          "numerator": -107,
+          "denominator": 1370,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "aov_change_sar": {
+          "value": 0.41,
+          "unit": "SAR",
+          "numerator": 0.41,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "aov_pct_change": {
+          "value": 1.23,
+          "unit": "%",
+          "numerator": 0.41,
+          "denominator": 33.55,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1263,
+      "coverage_notes": [
+        "Analysis period: 1263 unique transactions, 2133 line items",
+        "Previous period: 1370 unique transactions, 2355 line items",
+        "Analysis period refunds: 18 line items totaling -347.85 SAR",
+        "Previous period refunds: 21 line items totaling -401.70 SAR",
+        "Revenue includes refunds as negative values per metric definition"
+      ],
+      "assumptions": [
+        "Unique transaction_id used to count baskets (valid transactions)",
+        "line_total_sar includes refunds as negative values",
+        "AOV calculated as net revenue divided by transaction count",
+        "Periods are consecutive weeks with no gaps",
+        "All rows with known_sku=True and valid transaction_id included"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Category Mix Shift: Largest Percentage Point Change",
+      "claim": "Category 'hot_coffee' represented 26.20% of revenue in the analysis week (Apr 13-20), compared to 30.17% in the previous week (Apr 6-13), a change of -3.97 percentage points. Absolute revenue for this category changed from 13864.75 SAR to 11238.80 SAR (-2625.95 SAR change).",
+      "finding_type": "product_category_mix",
+      "metrics": {
+        "analysis_category_revenue_sar": {
+          "value": 11238.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "analysis_category_pct": {
+          "value": 26.2,
+          "unit": "%",
+          "numerator": 11238.8,
+          "denominator": 42889.2,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "previous_category_revenue_sar": {
+          "value": 13864.75,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "previous_category_pct": {
+          "value": 30.17,
+          "unit": "%",
+          "numerator": 13864.75,
+          "denominator": 45957.1,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "category_pct_point_change": {
+          "value": -3.97,
+          "unit": "percentage points",
+          "numerator": -3.97,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "category_revenue_change_sar": {
+          "value": -2625.95,
+          "unit": "SAR",
+          "numerator": -2625.95,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 490,
+      "coverage_notes": [
+        "Category 'hot_coffee' analysis period: 565 line items",
+        "Category 'hot_coffee' previous period: 712 line items",
+        "Total categories in analysis period: 6",
+        "Revenue includes refunds as negative values"
+      ],
+      "assumptions": [
+        "Category field populated from cleaned POS data",
+        "Revenue calculated as sum of line_total_sar per category",
+        "Percentage calculated as category revenue / total revenue",
+        "Comparison is week-over-week consecutive periods"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Channel Mix Shift: Largest Percentage Point Change",
+      "claim": "Channel 'takeaway' represented 44.28% of revenue in the analysis week (Apr 13-20), compared to 42.46% in the previous week (Apr 6-13), a change of 1.82 percentage points. Absolute revenue for this channel changed from 19514.00 SAR to 18992.70 SAR (-521.30 SAR change).",
+      "finding_type": "channel_mix",
+      "metrics": {
+        "analysis_channel_revenue_sar": {
+          "value": 18992.7,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "analysis_channel_pct": {
+          "value": 44.28,
+          "unit": "%",
+          "numerator": 18992.7,
+          "denominator": 42889.2,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "previous_channel_revenue_sar": {
+          "value": 19514.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "previous_channel_pct": {
+          "value": 42.46,
+          "unit": "%",
+          "numerator": 19514.0,
+          "denominator": 45957.1,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "channel_pct_point_change": {
+          "value": 1.82,
+          "unit": "percentage points",
+          "numerator": 1.82,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "channel_revenue_change_sar": {
+          "value": -521.3,
+          "unit": "SAR",
+          "numerator": -521.3,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 539,
+      "coverage_notes": [
+        "Channel 'takeaway' analysis period: 941 line items",
+        "Channel 'takeaway' previous period: 1020 line items",
+        "Total channels in analysis period: 3",
+        "Revenue includes refunds as negative values"
+      ],
+      "assumptions": [
+        "Channel field populated from cleaned POS data",
+        "Revenue calculated as sum of line_total_sar per channel",
+        "Percentage calculated as channel revenue / total revenue",
+        "Comparison is week-over-week consecutive periods"
+      ],
+      "confidence": 0.92
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Net Revenue and Transaction Volume Change (Week of 2026-03-23 vs 2026-03-16)",
+      "claim": "Net revenue decreased by SAR 7048.45 (-13.59%) from SAR 51850.25 to SAR 44801.80. Valid transaction count decreased by 213 baskets (-13.60%) from 1566 to 1353. Average order value declined by SAR 0.00 (0.01%) from SAR 33.11 to SAR 33.11.",
+      "finding_type": "revenue_and_transaction_change",
+      "metrics": {
+        "analysis_net_revenue_sar": {
+          "value": 44801.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "previous_net_revenue_sar": {
+          "value": 51850.25,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "revenue_change_sar": {
+          "value": -7048.45,
+          "unit": "SAR",
+          "numerator": -7048.45,
+          "denominator": 51850.25,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": -13.59,
+          "unit": "%",
+          "numerator": -7048.45,
+          "denominator": 51850.25,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "analysis_baskets": {
+          "value": 1353,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "previous_baskets": {
+          "value": 1566,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "basket_change": {
+          "value": -213,
+          "unit": "count",
+          "numerator": -213,
+          "denominator": 1566,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "basket_change_pct": {
+          "value": -13.6,
+          "unit": "%",
+          "numerator": -213,
+          "denominator": 1566,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "analysis_aov_sar": {
+          "value": 33.11,
+          "unit": "SAR",
+          "numerator": 44801.8,
+          "denominator": 1353,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "previous_aov_sar": {
+          "value": 33.11,
+          "unit": "SAR",
+          "numerator": 51850.25,
+          "denominator": 1566,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "aov_change_sar": {
+          "value": 0.0,
+          "unit": "SAR",
+          "numerator": 0.0,
+          "denominator": 33.11,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "aov_change_pct": {
+          "value": 0.01,
+          "unit": "%",
+          "numerator": 0.0,
+          "denominator": 33.11,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2287,
+      "coverage_notes": [
+        "Analysis period: 2287 line items across 1353 unique transactions",
+        "Previous period: 2635 line items across 1566 unique transactions",
+        "Refunds included in net revenue calculations: analysis refunds SAR -302.25, previous refunds SAR -645.80"
+      ],
+      "assumptions": [
+        "transaction_id uniqueness defines a basket",
+        "line_total_sar includes all discounts and refunds",
+        "is_refund flag correctly identifies refund transactions",
+        "Refunds are negative values and included in net revenue"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Category Mix Shift: hot_other (Week of 2026-03-23 vs 2026-03-16)",
+      "claim": "The hot_other category declined from 10.47% to 9.19% of total revenue, a -1.28 percentage point shift. Revenue for hot_other decreased from SAR 5426.45 to SAR 4116.60, a decline of SAR -1309.85 (-24.14%).",
+      "finding_type": "category_mix_change",
+      "metrics": {
+        "analysis_category_pct": {
+          "value": 9.19,
+          "unit": "%",
+          "numerator": 4116.6,
+          "denominator": 44801.8,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "previous_category_pct": {
+          "value": 10.47,
+          "unit": "%",
+          "numerator": 5426.45,
+          "denominator": 51850.25,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "category_mix_change_pct_points": {
+          "value": -1.28,
+          "unit": "percentage points",
+          "numerator": -1.28,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "analysis_category_revenue_sar": {
+          "value": 4116.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "previous_category_revenue_sar": {
+          "value": 5426.45,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "category_revenue_change_sar": {
+          "value": -1309.85,
+          "unit": "SAR",
+          "numerator": -1309.85,
+          "denominator": 5426.45,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "category_revenue_change_pct": {
+          "value": -24.14,
+          "unit": "%",
+          "numerator": -1309.85,
+          "denominator": 5426.45,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2287,
+      "coverage_notes": [
+        "Analysis period hot_other revenue: SAR 4116.60 from 325 line items",
+        "Previous period hot_other revenue: SAR 5426.45 from 437 line items",
+        "Total analysis period revenue: SAR 44801.80",
+        "Total previous period revenue: SAR 51850.25"
+      ],
+      "assumptions": [
+        "Category field is populated and consistent across both periods",
+        "line_total_sar represents net revenue including refunds",
+        "Percentage point change calculated as (current_pct - prior_pct)"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Top SKU Performance: Spanish Latte (HOT-001) (Week of 2026-03-23 vs 2026-03-16)",
+      "claim": "The top-performing SKU Spanish Latte (HOT-001) generated SAR 5428.80 in the analysis week, compared to SAR 5555.70 in the previous week, a change of SAR -126.90 (-2.28%). Units sold changed from 313 to 305 (-2.56%), and basket penetration changed from 287 to 275 baskets.",
+      "finding_type": "sku_performance_change",
+      "metrics": {
+        "analysis_sku_revenue_sar": {
+          "value": 5428.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "previous_sku_revenue_sar": {
+          "value": 5555.7,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "sku_revenue_change_sar": {
+          "value": -126.9,
+          "unit": "SAR",
+          "numerator": -126.9,
+          "denominator": 5555.7,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "sku_revenue_change_pct": {
+          "value": -2.28,
+          "unit": "%",
+          "numerator": -126.9,
+          "denominator": 5555.7,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "analysis_sku_quantity": {
+          "value": 305,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "previous_sku_quantity": {
+          "value": 313,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "sku_quantity_change": {
+          "value": -8,
+          "unit": "units",
+          "numerator": -8,
+          "denominator": 313,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "sku_quantity_change_pct": {
+          "value": -2.56,
+          "unit": "%",
+          "numerator": -8,
+          "denominator": 313,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "analysis_sku_baskets": {
+          "value": 275,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "previous_sku_baskets": {
+          "value": 287,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 275,
+      "coverage_notes": [
+        "Analysis period: 275 line items for SKU HOT-001",
+        "Previous period: 288 line items for SKU HOT-001",
+        "SKU name resolved from menu artifact: Spanish Latte",
+        "Top SKU identified by highest revenue in analysis period"
+      ],
+      "assumptions": [
+        "SKU {top_sku} is the highest-revenue product in the analysis week",
+        "Menu SKU reference provides authoritative product naming",
+        "transaction_id uniqueness defines basket penetration",
+        "line_total_sar includes all discounts and refunds"
+      ],
+      "confidence": 0.93
+    }
+  ]
+}

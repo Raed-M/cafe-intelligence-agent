@@ -1,0 +1,122 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Analysis Period Rating Distribution",
+      "claim": "During the analysis period (2026-04-20 to 2026-04-27), the average rating across all review sources was 4.38 out of 5, based on 16 reviews.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating_analysis_period": {
+          "value": 4.38,
+          "unit": "stars",
+          "numerator": 16,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "total_reviews_analysis_period": {
+          "value": 16,
+          "unit": "count",
+          "numerator": 16,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Reviews from 3 source(s): google, instagram, talabat",
+        "Language distribution: {'en': np.int64(12), 'ar': np.int64(4)}"
+      ],
+      "assumptions": [
+        "All reviews in the artifact are valid and represent genuine customer feedback",
+        "Rating scale is 1-5 stars",
+        "No filtering applied for review quality or authenticity"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Language Distribution in Reviews",
+      "claim": "During the analysis period, 16 reviews were received across 2 language(s). en: 12 reviews, ar: 4 reviews.",
+      "finding_type": "language_coverage",
+      "metrics": {
+        "total_reviews_analysis_period": {
+          "value": 16,
+          "unit": "count",
+          "numerator": 16,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Language breakdown: {'en': 12, 'ar': 4}",
+        "All 3 sources represented: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Language field accurately reflects the language of each review",
+        "Reviews are not translated; original language is preserved"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Rating Trend: Analysis vs Previous Period",
+      "claim": "Average rating in the analysis period (2026-04-20 to 2026-04-27) was 4.38 stars (16 reviews), compared to 4.61 stars (23 reviews) in the previous period (2026-04-13 to 2026-04-20), representing a change of -0.23 stars.",
+      "finding_type": "rating_trend",
+      "metrics": {
+        "average_rating_analysis_period": {
+          "value": 4.38,
+          "unit": "stars",
+          "numerator": 16,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "average_rating_previous_period": {
+          "value": 4.61,
+          "unit": "stars",
+          "numerator": 23,
+          "denominator": 23,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "rating_change": {
+          "value": -0.23,
+          "unit": "stars",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Analysis period: 16 reviews from 3 source(s)",
+        "Previous period: 23 reviews from 3 source(s)",
+        "Sources: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Both periods have comparable review volume and source distribution",
+        "Rating scale is consistent across both periods",
+        "No systematic bias in review collection between periods"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

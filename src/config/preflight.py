@@ -12,6 +12,7 @@ import openpyxl
 import pandas as pd
 
 from src.config.runtime_config import RuntimeCafeConfig
+from src.tools.llm_factory import provider_env_var
 
 # Expected columns per source, taken from the exact supplied schemas (plan section 9).
 _EXPECTED_COLUMNS = {
@@ -31,8 +32,14 @@ _EXPECTED_COLUMNS = {
     },
 }
 
-_REQUIRED_ENV_VARS = ["OPENAI_API_KEY"]
 _OPTIONAL_ENV_VARS = ["TAVILY_API_KEY", "LANGCHAIN_API_KEY"]
+
+
+def _required_env_vars() -> list[str]:
+    # Whichever provider LLM_PROVIDER selects (default anthropic) is the one
+    # whose key is actually required; switching providers switches this too.
+    env_var = provider_env_var()
+    return [env_var] if env_var else []
 
 
 @dataclass
@@ -125,7 +132,7 @@ def run_preflight(config: RuntimeCafeConfig) -> PreflightReport:
         if check["status"] not in ("ok",):
             report.errors.append(f"{source.name}: {check['status']}")
 
-    for var in _REQUIRED_ENV_VARS:
+    for var in _required_env_vars():
         if not os.environ.get(var):
             report.missing_env.append(var)
     for var in _OPTIONAL_ENV_VARS:

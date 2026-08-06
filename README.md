@@ -23,9 +23,16 @@ cp .env.example .env               # then fill in real keys
 ```
 
 Required env vars (see `.env.example`):
-- `OPENAI_API_KEY` — model calls for analysts/critic/content/email extraction.
+- `OPENAI_API_KEY` — model calls for analysts/critic/content/content
+  validator/email extraction/(optional) report summary compression.
   (`LLM_PROVIDER=anthropic` + `ANTHROPIC_API_KEY` also supported; see
   `src/tools/llm_factory.py`.)
+- `ANALYST_MODEL` / `CRITIC_MODEL` / `CONTENT_MODEL` / `CONTENT_VALIDATOR_MODEL`
+  / `REPORT_SUMMARY_MODEL` — per-agent model names (plan section 16 prompt
+  pack); the critic and content-validator LLM passes are additive to their
+  deterministic gates and degrade to deterministic-only if unset/unavailable,
+  the report-summary pass stays off unless `report.use_llm_summary_compression`
+  is also set to `true` in `config/app_settings.yaml`.
 - `TAVILY_API_KEY` — optional; local-context search degrades gracefully without it.
 - `LANGCHAIN_API_KEY` / `LANGCHAIN_TRACING_V2=true` — optional LangSmith tracing.
 
@@ -122,14 +129,20 @@ rationale. Key modules:
   analysts that generate and execute real Python in a restricted subprocess,
   self-correcting on failure (`src/graph/analysis_subgraph.py`).
 - `src/validation/finding_critic.py` + `finding_ranker.py` — deterministic
-  provenance verification, targeted revision routing (max 2 rounds), ranking
-  capped at 5 findings.
+  provenance verification (load-bearing) plus an optional constrained-LLM
+  semantic pass (`prompts/critic.md`) for nuance a regex cannot judge, targeted
+  revision routing (max 2 rounds), ranking capped at 5 findings.
 - `src/context/` — Hijri calendar (Ramadan/Eid), deterministic prayer times,
   Tavily local search with graceful degradation, posting-window derivation.
 - `src/content/content_agent.py` + `src/validation/content_validator.py` —
-  exactly 3 bilingual ideas, independently re-validated (second layer).
+  exactly 3 bilingual ideas, independently re-validated (second layer:
+  deterministic structural checks plus an optional constrained-LLM
+  Arabic/English semantic-alignment check, `prompts/content_validator.md`).
 - `src/reporting/` — deterministic Jinja2 HTML (Arabic RTL + English), chart
-  rendering, WhatsApp-length summary, best-effort PDF.
+  rendering, WhatsApp-length summary (optional constrained-LLM compression of
+  the already-approved text per `prompts/report_summary.md`, disabled by
+  default per plan section 16.12's stated preference for the deterministic
+  template), best-effort PDF.
 - `src/persistence/` — SQLite checkpointer (HITL pause/resume) + separate
   long-term memory DB (cross-run history, idempotent delivery receipts).
 - `src/graph/main_graph.py` — assembles all of the above into one

@@ -26,6 +26,26 @@ class _FakeMessage:
         self.content = content
 
 
+class _FakeStructuredChatModel:
+    """Return value of _FakeChatModel.with_structured_output(schema): mirrors
+    the real ChatModel.with_structured_output(...).invoke(...) contract (a
+    dict shaped like `schema`), reusing the same prompt-sniffing fake content
+    as .invoke() so both call styles produce consistent fake data."""
+
+    def __init__(self, fake_model: "_FakeChatModel", schema: type):
+        self._fake_model = fake_model
+        self._schema_name = getattr(schema, "__name__", "")
+
+    def invoke(self, messages):
+        if self._schema_name == "SemanticReviewResult":
+            return {"decision": "approve", "explanation": "", "required_fix": ""}
+        if self._schema_name == "AlignmentCheckResult":
+            return {"aligned": True, "explanation": ""}
+        # EmailExtractionOutput / ContentIdeasOutput: both wrap a bare list under "items".
+        raw = self._fake_model.invoke(messages).content
+        return {"items": json.loads(raw)}
+
+
 class _FakeChatModel:
     def invoke(self, messages):
         system_prompt = messages[0][1] if messages and isinstance(messages[0], tuple) else ""
@@ -37,6 +57,9 @@ class _FakeChatModel:
             return _FakeMessage(self._fake_email_extraction())
         # Default: analyst code-generation / repair prompt.
         return _FakeMessage(self._fake_analyst_code(user_prompt))
+
+    def with_structured_output(self, schema, **kwargs):
+        return _FakeStructuredChatModel(self, schema)
 
     @staticmethod
     def _fake_analyst_code(user_prompt: str) -> str:
@@ -84,7 +107,7 @@ json.dump(result, open(meta["output_path"], "w"))
     @staticmethod
     def _fake_content_ideas(user_prompt: str) -> str:
         ctx_start = user_prompt.find("Context:\n") + len("Context:\n")
-        ctx_end = user_prompt.find("\n\nReturn a JSON array")
+        ctx_end = user_prompt.find("\n\nProduce exactly 3")
         ctx = json.loads(user_prompt[ctx_start:ctx_end]) if ctx_start >= 0 and ctx_end > 0 else {}
         findings = ctx.get("approved_findings", [])
         finding_id = findings[0]["finding_id"] if findings else ""

@@ -1,0 +1,294 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Revenue and Transaction Performance Week-over-Week",
+      "claim": "Analysis period (2026-05-25 to 2026-06-01) generated SAR 63083.10 in net revenue across 1794 valid transactions, compared to SAR 51187.65 across 1434 transactions in the previous week. Revenue increased by SAR 11895.45 (23.2%), while transaction count changed by 360 (25.1%). Average order value increased from SAR 35.70 to SAR 35.16 (-1.5% change).",
+      "finding_type": "revenue_and_transaction_analysis",
+      "metrics": {
+        "analysis_period_revenue": {
+          "value": 63083.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "analysis_period_transactions": {
+          "value": 1794,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 51187.65,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "previous_period_transactions": {
+          "value": 1434,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "revenue_change_absolute": {
+          "value": 11895.45,
+          "unit": "SAR",
+          "numerator": 63083.1,
+          "denominator": 51187.65,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "revenue_change_percent": {
+          "value": 23.24,
+          "unit": "%",
+          "numerator": 11895.45,
+          "denominator": 51187.65,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "transaction_change_absolute": {
+          "value": 360,
+          "unit": "count",
+          "numerator": 1794,
+          "denominator": 1434,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "transaction_change_percent": {
+          "value": 25.1,
+          "unit": "%",
+          "numerator": 360,
+          "denominator": 1434,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "analysis_aov": {
+          "value": 35.16,
+          "unit": "SAR",
+          "numerator": 63083.1,
+          "denominator": 1794,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "previous_aov": {
+          "value": 35.7,
+          "unit": "SAR",
+          "numerator": 51187.65,
+          "denominator": 1434,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "aov_change_percent": {
+          "value": -1.49,
+          "unit": "%",
+          "numerator": -0.53,
+          "denominator": 35.7,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 3067,
+      "coverage_notes": [
+        "Analysis period: 2026-05-25 to 2026-06-01",
+        "Previous period: 2026-05-18 to 2026-05-25",
+        "Refunds excluded from revenue and transaction counts",
+        "Valid transactions identified by unique transaction_id",
+        "Revenue calculated using line_total_sar"
+      ],
+      "assumptions": [
+        "Refunds are correctly marked in is_refund column",
+        "transaction_id uniquely identifies a basket",
+        "line_total_sar represents net revenue after discounts",
+        "Timestamp conversion to UTC+3 is accurate"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Top Category Revenue Performance",
+      "claim": "The iced_coffee category generated SAR 21390.90 in the analysis period (2026-05-25 to 2026-06-01), representing 33.9% of total revenue. This represents a change of SAR 4516.85 (26.8%) compared to SAR 16874.05 (33.0% of total) in the previous week.",
+      "finding_type": "category_mix_analysis",
+      "metrics": {
+        "analysis_top_category": {
+          "value": "iced_coffee",
+          "unit": "category",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "analysis_top_category_revenue": {
+          "value": 21390.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "analysis_top_category_percent": {
+          "value": 33.91,
+          "unit": "%",
+          "numerator": 21390.9,
+          "denominator": 63083.1,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "previous_top_category_revenue": {
+          "value": 16874.05,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "previous_top_category_percent": {
+          "value": 32.97,
+          "unit": "%",
+          "numerator": 16874.05,
+          "denominator": 51187.65,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "category_revenue_change": {
+          "value": 4516.85,
+          "unit": "SAR",
+          "numerator": 21390.9,
+          "denominator": 16874.05,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "category_revenue_change_percent": {
+          "value": 26.77,
+          "unit": "%",
+          "numerator": 4516.85,
+          "denominator": 16874.05,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 3067,
+      "coverage_notes": [
+        "Analysis period: 2026-05-25 to 2026-06-01",
+        "Previous period: 2026-05-18 to 2026-05-25",
+        "Refunds excluded from category revenue calculations",
+        "Revenue calculated using line_total_sar"
+      ],
+      "assumptions": [
+        "Category field is accurately populated in POS data",
+        "Refunds are correctly marked in is_refund column",
+        "line_total_sar represents net revenue after discounts"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Primary Channel Revenue and Transaction Performance",
+      "claim": "The dine_in channel generated SAR 28034.15 across 792 transactions in the analysis period (2026-05-25 to 2026-06-01), representing 44.4% of total revenue. This represents a change of SAR 4787.40 (20.6%) compared to SAR 23246.75 across 656 transactions (45.4% of total) in the previous week.",
+      "finding_type": "channel_mix_analysis",
+      "metrics": {
+        "analysis_top_channel": {
+          "value": "dine_in",
+          "unit": "channel",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "analysis_top_channel_revenue": {
+          "value": 28034.15,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "analysis_top_channel_transactions": {
+          "value": 792,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "analysis_top_channel_percent": {
+          "value": 44.44,
+          "unit": "%",
+          "numerator": 28034.15,
+          "denominator": 63083.1,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "previous_top_channel_revenue": {
+          "value": 23246.75,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "previous_top_channel_transactions": {
+          "value": 656,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "previous_top_channel_percent": {
+          "value": 45.41,
+          "unit": "%",
+          "numerator": 23246.75,
+          "denominator": 51187.65,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "channel_revenue_change": {
+          "value": 4787.4,
+          "unit": "SAR",
+          "numerator": 28034.15,
+          "denominator": 23246.75,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "channel_revenue_change_percent": {
+          "value": 20.59,
+          "unit": "%",
+          "numerator": 4787.4,
+          "denominator": 23246.75,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 3067,
+      "coverage_notes": [
+        "Analysis period: 2026-05-25 to 2026-06-01",
+        "Previous period: 2026-05-18 to 2026-05-25",
+        "Refunds excluded from channel revenue and transaction counts",
+        "Valid transactions identified by unique transaction_id",
+        "Revenue calculated using line_total_sar"
+      ],
+      "assumptions": [
+        "Channel field is accurately populated in POS data",
+        "Refunds are correctly marked in is_refund column",
+        "transaction_id uniquely identifies a basket",
+        "line_total_sar represents net revenue after discounts"
+      ],
+      "confidence": 0.93
+    }
+  ]
+}

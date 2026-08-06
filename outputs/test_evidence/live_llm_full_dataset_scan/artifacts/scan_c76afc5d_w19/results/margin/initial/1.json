@@ -1,0 +1,216 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Contributor - Item Economics",
+      "claim": "Iced Spanish Latte generated the highest gross profit of 5215.40 SAR during the analysis week, with 366 units sold at 71.8% gross margin.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Iced Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "total_revenue": {
+          "value": 7265.0,
+          "unit": "SAR",
+          "numerator": 7265.0,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "total_cogs": {
+          "value": 2049.6,
+          "unit": "SAR",
+          "numerator": 2049.6,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "gross_profit": {
+          "value": 5215.4,
+          "unit": "SAR",
+          "numerator": 5215.4,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "gross_margin_pct": {
+          "value": 71.79,
+          "unit": "%",
+          "numerator": 5215.4,
+          "denominator": 7265.0,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "units_sold": {
+          "value": 366,
+          "unit": "units",
+          "numerator": 366,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "baskets": {
+          "value": 335,
+          "unit": "transactions",
+          "numerator": 335,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 335,
+      "coverage_notes": [
+        "Analysis period: 2026-05-18 to 2026-05-25",
+        "Item SKU: ICE-001",
+        "Unit cost from menu: 5.6 SAR",
+        "Menu price: 20.0 SAR"
+      ],
+      "assumptions": [
+        "Unit cost from menu_items.unit_cost_sar applied uniformly to all units sold",
+        "No recipe/BOM available; cost is item-level only",
+        "Refunds included in net calculations per POS line_total_sar"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost - Week of 2026-05-18",
+      "claim": "Identified 6 items with quantified waste during the analysis week. Butter Croissant had the highest waste cost of 368.00 SAR from 92 wasted units.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_waste_cost": {
+          "value": 1270.3,
+          "unit": "SAR",
+          "numerator": 1270.3,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "total_units_wasted": {
+          "value": 214,
+          "unit": "units",
+          "numerator": 214,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "items_with_waste": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "top_waste_item": {
+          "value": "Butter Croissant",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "top_waste_cost": {
+          "value": 368.0,
+          "unit": "SAR",
+          "numerator": 368.0,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Only non-null waste_cost_sar values included",
+        "Week starting: 2026-05-18",
+        "Blank waste values treated as unknown, not zero"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar from inventory reflects actual waste cost",
+        "Waste cost calculation methodology from source system is accurate"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Supplier Price Change - Procurement Cost Pressure",
+      "claim": "Supplier email dated 2026-05-04 indicates a increase in full-fat milk price from 7.1 to 8.4 SAR per L, effective 2026-05-01. This represents a 18.3% increase.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "ingredient": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR",
+          "numerator": 7.1,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR",
+          "numerator": 8.4,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "price_change_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 1.3,
+          "denominator": 7.1,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "unit": {
+          "value": "L",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "effective_date": {
+          "value": "2026-05-01",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Email date: 2026-05-04",
+        "Sender: orders@qatifdairy.com",
+        "Confidence level from extraction: 0.95"
+      ],
+      "assumptions": [
+        "No recipe/BOM available; cannot calculate per-drink impact without ingredient quantities",
+        "Standing order quantities and payment terms not confirmed; procurement cost scenario would require additional supplier communication",
+        "Price change applies only to the named ingredient; cross-product impact unknown"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

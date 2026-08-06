@@ -1,0 +1,169 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Average Order Value Change Week-over-Week",
+      "claim": "Average order value changed from 33.44 SAR (week of 2026-02-09) to 34.30 SAR (week of 2026-02-16), a change of 0.86 SAR (2.58%).",
+      "finding_type": "AOV_CHANGE",
+      "metrics": {
+        "analysis_aov": {
+          "value": 34.3,
+          "unit": "SAR",
+          "numerator": 38551.65,
+          "denominator": 1124,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "previous_aov": {
+          "value": 33.44,
+          "unit": "SAR",
+          "numerator": 44035.2,
+          "denominator": 1317,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "aov_change": {
+          "value": 0.86,
+          "unit": "SAR",
+          "numerator": 0.86,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "aov_pct_change": {
+          "value": 2.58,
+          "unit": "%",
+          "numerator": 0.86,
+          "denominator": 33.44,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1124,
+      "coverage_notes": [
+        "Refunds excluded from net revenue calculations",
+        "Analysis period: 1124 valid transactions",
+        "Previous period: 1317 valid transactions"
+      ],
+      "assumptions": [
+        "line_total_sar is net of discounts and excludes refunds",
+        "transaction_id uniqueness identifies distinct baskets",
+        "is_refund flag accurately identifies refund transactions"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Category Revenue Change: hot_coffee",
+      "claim": "Revenue from hot_coffee category changed from 15407.65 SAR (week of 2026-02-09) to 11940.50 SAR (week of 2026-02-16), a change of -3467.15 SAR (-22.50%).",
+      "finding_type": "CATEGORY_REVENUE_CHANGE",
+      "metrics": {
+        "analysis_category_revenue": {
+          "value": 11940.5,
+          "unit": "SAR",
+          "numerator": 11940.5,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "previous_category_revenue": {
+          "value": 15407.65,
+          "unit": "SAR",
+          "numerator": 15407.65,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "category_revenue_change": {
+          "value": -3467.15,
+          "unit": "SAR",
+          "numerator": -3467.15,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "category_revenue_pct_change": {
+          "value": -22.5,
+          "unit": "%",
+          "numerator": -3467.15,
+          "denominator": 15407.65,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1951,
+      "coverage_notes": [
+        "Refunds excluded from net revenue calculations",
+        "Category: hot_coffee",
+        "Analysis period line items: 1951"
+      ],
+      "assumptions": [
+        "line_total_sar is net of discounts and excludes refunds",
+        "category field accurately classifies products",
+        "is_refund flag accurately identifies refund transactions"
+      ],
+      "confidence": 0.88
+    },
+    {
+      "title": "Product Revenue Change: Chicken Sandwich",
+      "claim": "Revenue from Chicken Sandwich (SKU: FOD-005) changed from 3961.10 SAR (week of 2026-02-09) to 5293.60 SAR (week of 2026-02-16), a change of 1332.50 SAR (33.64%).",
+      "finding_type": "PRODUCT_REVENUE_CHANGE",
+      "metrics": {
+        "product_current_revenue": {
+          "value": 5293.6,
+          "unit": "SAR",
+          "numerator": 5293.6,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "product_previous_revenue": {
+          "value": 3961.1,
+          "unit": "SAR",
+          "numerator": 3961.1,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "product_revenue_change": {
+          "value": 1332.5,
+          "unit": "SAR",
+          "numerator": 1332.5,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "product_revenue_pct_change": {
+          "value": 33.64,
+          "unit": "%",
+          "numerator": 1332.5,
+          "denominator": 3961.1,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1951,
+      "coverage_notes": [
+        "Refunds excluded from net revenue calculations",
+        "Product: Chicken Sandwich (SKU: FOD-005)",
+        "Product launch/retire dates respected in eligibility"
+      ],
+      "assumptions": [
+        "line_total_sar is net of discounts and excludes refunds",
+        "SKU-to-product-name mapping from menu is authoritative",
+        "is_refund flag accurately identifies refund transactions",
+        "launch_date and retire_date fields define product eligibility windows"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

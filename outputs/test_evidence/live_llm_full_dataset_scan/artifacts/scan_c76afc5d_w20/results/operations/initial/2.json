@@ -1,0 +1,153 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Decline Week-over-Week",
+      "claim": "Conversion rate decreased from 25.60% (week of 2026-05-18) to 23.67% (week of 2026-05-25), a -7.5% decline.",
+      "finding_type": "performance_metric",
+      "metrics": {
+        "conversion_rate_analysis": {
+          "value": 0.2367,
+          "unit": "ratio",
+          "numerator": 1794,
+          "denominator": 7580,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "conversion_rate_previous": {
+          "value": 0.256,
+          "unit": "ratio",
+          "numerator": 1434,
+          "denominator": 5602,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "conversion_change_pct": {
+          "value": -7.5,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 1794,
+      "coverage_notes": [
+        "Analysis period: 119 traffic records (dead sensor days excluded)",
+        "Previous period: 119 traffic records (dead sensor days excluded)",
+        "Refunds excluded from transaction count"
+      ],
+      "assumptions": [
+        "Each unique transaction_id represents one customer visit",
+        "Dead sensor days correctly identified in traffic data",
+        "Timezone conversion to Asia/Riyadh applied consistently"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Labour Cost Ratio Increase",
+      "claim": "Labour cost as percentage of revenue increased from 14.6% (week of 2026-05-18) to 11.1% (week of 2026-05-25), an increase of -3.5 percentage points.",
+      "finding_type": "cost_efficiency",
+      "metrics": {
+        "labour_cost_pct_analysis": {
+          "value": 11.1,
+          "unit": "percent",
+          "numerator": "6944",
+          "denominator": 62642.5,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "labour_cost_pct_previous": {
+          "value": 14.6,
+          "unit": "percent",
+          "numerator": "7390",
+          "denominator": 50672.4,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "labour_cost_pct_change": {
+          "value": -3.5,
+          "unit": "percentage_points",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "staff",
+        "pos"
+      ],
+      "sample_size": 39,
+      "coverage_notes": [
+        "Analysis period: 39 staff records, 3067 POS records",
+        "Previous period: 42 staff records, 2505 POS records",
+        "Revenue includes refunds (net line_total_sar)"
+      ],
+      "assumptions": [
+        "Labour cost calculated from staff shift records with computed_duration_hours",
+        "Revenue calculated as sum of line_total_sar (includes discounts and refunds)",
+        "All staff records have valid labour_cost_sar values"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Known Waste Cost Increase",
+      "claim": "Known waste cost increased from 1270.30 SAR (week of 2026-05-18) to 1029.00 SAR (week of 2026-05-25), an increase of -241.30 SAR. 6 items had measurable waste in the analysis week.",
+      "finding_type": "inventory_efficiency",
+      "metrics": {
+        "known_waste_cost_analysis": {
+          "value": 1029.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "known_waste_cost_previous": {
+          "value": 1270.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "waste_cost_change": {
+          "value": -241.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "items_with_waste_analysis": {
+          "value": 6,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: 6 inventory records, 6 with measurable waste",
+        "Previous period: 6 inventory records, 6 with measurable waste",
+        "Only known_waste_cost_sar included; unknown waste values excluded per requirements"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar accurately reflects waste cost for each SKU",
+        "Inventory counts are weekly snapshots (Sunday counts per schema)",
+        "Unit cost and waste calculations are deterministic"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

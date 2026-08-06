@@ -1,0 +1,156 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (2026-03-09 to 2026-03-16), the average rating across 14 reviews is 4.43 out of 5, with 8 five-star ratings and 0 one-star ratings.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.43,
+          "unit": "stars",
+          "numerator": 14,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 8,
+          "unit": "reviews",
+          "numerator": 8,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 0,
+          "unit": "reviews",
+          "numerator": 0,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Analysis period: 2026-03-09 to 2026-03-16",
+        "Total reviews in dataset: 520",
+        "Reviews in analysis period: 14",
+        "Sources represented: google, talabat, instagram"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid (1-5 scale)",
+        "Review dates are accurate and in UTC+3 timezone",
+        "All reviews in the dataset are included in the distribution"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Of 14 reviews in the analysis period, 12 are in English and 2 are in Arabic.",
+      "finding_type": "language_distribution",
+      "metrics": {
+        "english_reviews": {
+          "value": 12,
+          "unit": "reviews",
+          "numerator": 12,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 2,
+          "unit": "reviews",
+          "numerator": 2,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "english_percentage": {
+          "value": 85.7,
+          "unit": "percent",
+          "numerator": 12,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Analysis period: 2026-03-09 to 2026-03-16",
+        "Language field populated for all 14 reviews"
+      ],
+      "assumptions": [
+        "Language classification is accurate",
+        "Language values are either 'en' or 'ar'"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Indicators in Reviews",
+      "claim": "Among 14 reviews in the analysis period, 11 contain positive sentiment indicators and 0 contain negative sentiment indicators based on keyword analysis.",
+      "finding_type": "sentiment_analysis",
+      "metrics": {
+        "positive_sentiment_count": {
+          "value": 11,
+          "unit": "reviews",
+          "numerator": 11,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "negative_sentiment_count": {
+          "value": 0,
+          "unit": "reviews",
+          "numerator": 0,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "neutral_sentiment_count": {
+          "value": 3,
+          "unit": "reviews",
+          "numerator": 3,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Analysis period: 2026-03-09 to 2026-03-16",
+        "Sentiment classification based on keyword matching in review text",
+        "English and Arabic keywords used for respective language reviews"
+      ],
+      "assumptions": [
+        "Keyword presence indicates sentiment (simple heuristic)",
+        "Review text field is populated and meaningful",
+        "Language classification is accurate for keyword matching"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

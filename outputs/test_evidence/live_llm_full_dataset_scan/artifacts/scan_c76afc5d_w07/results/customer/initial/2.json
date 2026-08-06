@@ -1,0 +1,138 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution (Analysis Period)",
+      "claim": "Average rating is 4.50 across 10 reviews in the analysis period (2026-02-23 to 2026-03-02). Distribution: {2: np.int64(1), 3: np.int64(1), 5: np.int64(8)}",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.5,
+          "unit": "stars",
+          "numerator": 45.0,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 10,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 10,
+      "coverage_notes": [
+        "Reviews from 3 source(s)",
+        "Language distribution: {'en': np.int64(9), 'ar': np.int64(1)}"
+      ],
+      "assumptions": [
+        "Rating values are valid numeric ratings",
+        "Review dates are accurate and in UTC+3 timezone"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution by Language",
+      "claim": "Of 10 reviews, 9 (90.0%) are in en. Sentiment distribution: {'positive': np.int64(8), 'negative': np.int64(1), 'neutral': np.int64(1)}",
+      "finding_type": "sentiment_by_language",
+      "metrics": {
+        "total_reviews_analyzed": {
+          "value": 10,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "positive_sentiment_count": {
+          "value": 8,
+          "unit": "count",
+          "numerator": 8,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "negative_sentiment_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 10,
+      "coverage_notes": [
+        "Language coverage: {'en': np.int64(9), 'ar': np.int64(1)}",
+        "Sentiment by language: {\"ar\": {\"positive\": 1}, \"en\": {\"positive\": 7, \"negative\": 1, \"neutral\": 1}}"
+      ],
+      "assumptions": [
+        "Sentiment classified by rating threshold: 4+ = positive, 3 = neutral, <3 = negative",
+        "Language field accurately reflects review language"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Rating Trend: Week-over-Week Change",
+      "claim": "Average rating changed from 4.54 (previous week) to 4.50 (analysis week), a change of -0.04 stars (-0.8%)",
+      "finding_type": "rating_trend",
+      "metrics": {
+        "average_rating_current_period": {
+          "value": 4.5,
+          "unit": "stars",
+          "numerator": 45.0,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "average_rating_previous_period": {
+          "value": 4.54,
+          "unit": "stars",
+          "numerator": 59.0,
+          "denominator": 13,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "rating_change": {
+          "value": -0.04,
+          "unit": "stars",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 10,
+      "coverage_notes": [
+        "Current period reviews: 10",
+        "Previous period reviews: 13",
+        "Current period language distribution: {'en': np.int64(9), 'ar': np.int64(1)}",
+        "Previous period language distribution: {'en': np.int64(10), 'ar': np.int64(3)}"
+      ],
+      "assumptions": [
+        "Review dates are accurate",
+        "Both periods have sufficient sample size for comparison",
+        "No systematic bias in review collection between periods"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

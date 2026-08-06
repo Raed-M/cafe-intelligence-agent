@@ -1,0 +1,237 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 3 Items by Gross Profit (Analysis Week)",
+      "claim": "The top 3 items by gross profit contribution in week of 2026-02-09 are: Spanish Latte, V60 Filter, Halloumi Toast with combined gross profit of 9470.00 SAR",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_1_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "top_item_1_gross_profit_sar": {
+          "value": 3706.7,
+          "unit": "SAR",
+          "numerator": 3706.7,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "top_item_1_quantity": {
+          "value": 295,
+          "unit": "units",
+          "numerator": 295,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "top_item_1_margin_pct": {
+          "value": 70.73,
+          "unit": "%",
+          "numerator": 70.73,
+          "denominator": 100,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "top_item_2_name": {
+          "value": "V60 Filter",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "top_item_2_gross_profit_sar": {
+          "value": 2938.1,
+          "unit": "SAR",
+          "numerator": 2938.1,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "top_item_3_name": {
+          "value": "Halloumi Toast",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "top_item_3_gross_profit_sar": {
+          "value": 2825.2,
+          "unit": "SAR",
+          "numerator": 2825.2,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "total_gross_profit_all_items": {
+          "value": 30792.3,
+          "unit": "SAR",
+          "numerator": 30792.3,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2179,
+      "coverage_notes": [
+        "Analysis period: 2026-02-09 to 2026-02-16",
+        "Total transactions analyzed: 1317",
+        "Total line items: 2179",
+        "Refunds excluded from revenue calculations",
+        "Unit costs sourced from menu.parquet",
+        "COGS calculated as quantity × unit_cost_sar"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar values are current and accurate for the analysis period",
+        "No recipe/BOM adjustments applied",
+        "Waste costs not included in item-level COGS (tracked separately in inventory)"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost Impact (Analysis Week)",
+      "claim": "Known waste cost in week of 2026-02-09 totals 1192.50 SAR across 5 items with waste observations",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_known_waste_cost_sar": {
+          "value": 1192.5,
+          "unit": "SAR",
+          "numerator": 1192.5,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "items_with_waste_observations": {
+          "value": 5,
+          "unit": "count",
+          "numerator": 5,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "highest_waste_item": {
+          "value": "Chicken Sandwich",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "highest_waste_cost_sar": {
+          "value": 351.5,
+          "unit": "SAR",
+          "numerator": 351.5,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "waste_as_pct_of_gross_profit": {
+          "value": 3.87,
+          "unit": "%",
+          "numerator": 1192.5,
+          "denominator": 30792.3,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 5,
+      "coverage_notes": [
+        "Analysis period: 2026-02-09 to 2026-02-16",
+        "Only non-null waste cost observations included",
+        "Blank waste values treated as unknown, not zero",
+        "Items with waste data: 5 out of 6 total inventory records"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar values are accurate and complete for reported waste",
+        "Waste cost represents actual loss to business"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Supplier Price Change Detection",
+      "claim": "Email evidence shows full-fat milk price change from 7.1 to 8.4 SAR/L, effective 2026-05-01, representing a 18.31% change",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "ingredient_name": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": 7.1,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": 8.4,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "price_change_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 18.31,
+          "denominator": 100,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "effective_date": {
+          "value": "2026-05-01T00:00:00",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "sender": {
+          "value": "orders@qatifdairy.com",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Total price change events detected: 3",
+        "Only price changes with both old and new prices included",
+        "Effective dates extracted from email evidence",
+        "No standing order quantities available to calculate procurement cost impact"
+      ],
+      "assumptions": [
+        "Email extraction accurately captured price change facts",
+        "Price changes apply to ingredients/suppliers mentioned",
+        "No recipe/BOM data available to calculate per-drink impact",
+        "Standing order volumes and payment terms unknown"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

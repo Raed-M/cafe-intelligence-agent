@@ -1,0 +1,5 @@
+{
+  "status": "insufficient_data",
+  "findings": [],
+  "error": "Invalid comparison between dtype=datetime64[us] and Timestamp"
+}

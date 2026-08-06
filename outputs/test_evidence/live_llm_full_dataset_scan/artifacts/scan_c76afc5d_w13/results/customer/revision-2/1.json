@@ -1,0 +1,91 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (2026-04-06 to 2026-04-13), the average rating across 15 reviews is 4.33 out of 5, with 9 five-star and 0 one-star reviews.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.33,
+          "unit": "stars",
+          "numerator": 15,
+          "denominator": 15,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 9,
+          "unit": "reviews",
+          "numerator": 9,
+          "denominator": 15,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 0,
+          "unit": "reviews",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Analysis period: 2026-04-06 to 2026-04-13",
+        "Total reviews in analysis period: 15",
+        "Sources represented: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Review dates are accurate and in UTC",
+        "All reviews in the period are included"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Of 15 reviews in the analysis period, 0 are in English and 0 are in Arabic.",
+      "finding_type": "language_coverage",
+      "metrics": {
+        "english_reviews": {
+          "value": 0,
+          "unit": "reviews",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 0,
+          "unit": "reviews",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Language distribution across 15 reviews",
+        "Bilingual coverage: en, ar"
+      ],
+      "assumptions": [
+        "Language field is accurately populated",
+        "Language values are either 'English' or 'Arabic'"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

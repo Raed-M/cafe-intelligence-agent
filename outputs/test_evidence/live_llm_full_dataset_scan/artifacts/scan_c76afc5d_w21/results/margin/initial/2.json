@@ -1,0 +1,196 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 3 Items by Gross Profit Contribution (Week of 2026-06-01)",
+      "claim": "The top 3 items by gross profit contribution are Matcha Latte, Iced Spanish Latte, Iced Americano, collectively generating 12936.55 SAR in gross profit from 923 units sold across 832 baskets.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_1_name": {
+          "value": "Matcha Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        },
+        "top_item_1_gross_profit": {
+          "value": 4953.0,
+          "unit": "SAR",
+          "numerator": 4953.0,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        },
+        "top_item_1_quantity": {
+          "value": 309,
+          "unit": "units",
+          "numerator": 309,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        },
+        "top_item_1_margin_pct": {
+          "value": 67.27,
+          "unit": "%",
+          "numerator": 67.27,
+          "denominator": 100,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        },
+        "top_3_combined_gross_profit": {
+          "value": 12936.55,
+          "unit": "SAR",
+          "numerator": 12936.55,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        },
+        "top_3_combined_baskets": {
+          "value": 832,
+          "unit": "baskets",
+          "numerator": 832,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2387,
+      "coverage_notes": [
+        "Analysis period: 2026-06-01 to 2026-06-08",
+        "Excludes refunds (is_refund=False)",
+        "Unit costs sourced from menu.parquet",
+        "COGS = quantity × unit_cost_sar",
+        "Gross profit = line_total_sar - COGS",
+        "Total items analyzed: 19"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and applicable to all transactions in period",
+        "No recipe/BOM adjustments applied",
+        "Waste costs not included in item-level COGS (tracked separately in inventory)"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost Impact (Week of 2026-06-01)",
+      "claim": "Known waste cost for the week of 2026-06-01 totals 873.10 SAR across 148 units wasted, representing direct margin erosion.",
+      "finding_type": "waste_economics",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 873.1,
+          "unit": "SAR",
+          "numerator": 873.1,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        },
+        "total_waste_units": {
+          "value": 148,
+          "unit": "units",
+          "numerator": 148,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        },
+        "waste_cost_per_unit": {
+          "value": 5.9,
+          "unit": "SAR/unit",
+          "numerator": 873.1,
+          "denominator": 148,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 5,
+      "coverage_notes": [
+        "Analysis period: week starting 2026-06-01",
+        "Only non-null known_waste_cost_sar values included",
+        "Items with waste data: 5",
+        "Waste cost represents COGS of discarded inventory"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar reflects actual unit cost of wasted items",
+        "Waste is not recovered or donated (full cost impact)"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Supplier Price Change: Significant Cost Pressure Detected",
+      "claim": "Supplier email evidence shows roasted coffee price change from 88.00 to 96.00 SAR/kg, effective 2026-04-15, representing a 9.1% change. This is a documented supplier fact; impact on menu item COGS depends on order volume and payment terms.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "ingredient": {
+          "value": "roasted coffee",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        },
+        "old_price": {
+          "value": 88.0,
+          "unit": "SAR/kg",
+          "numerator": 88.0,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        },
+        "new_price": {
+          "value": 96.0,
+          "unit": "SAR/kg",
+          "numerator": 96.0,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        },
+        "price_delta": {
+          "value": 8.0,
+          "unit": "SAR/kg",
+          "numerator": 8.0,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        },
+        "pct_change": {
+          "value": 9.09,
+          "unit": "%",
+          "numerator": 9.09,
+          "denominator": 100,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        },
+        "effective_date": {
+          "value": "2026-04-15",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00Z",
+          "period_end": "2026-06-08T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Total price change emails with effective dates: 3",
+        "Showing highest absolute price delta",
+        "Email extraction confidence: 0.95",
+        "No recipe/BOM data available to calculate per-drink impact"
+      ],
+      "assumptions": [
+        "Email extraction accurately reflects supplier communication",
+        "Price change applies to future orders; current menu costs may not yet reflect change",
+        "Standing order volume and payment terms are unknown; actual margin impact requires procurement data"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (2026-03-16 to 2026-03-23), the average rating across 14 reviews was 4.64 out of 5.0, with 11 five-star and 0 one-star reviews.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.64,
+          "unit": "stars",
+          "numerator": "65",
+          "denominator": 14,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 11,
+          "unit": "count",
+          "numerator": 11,
+          "denominator": 14,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 14,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Language distribution: {'en': 7, 'ar': 7}",
+        "Sources represented: instagram, google, talabat",
+        "Analysis period: 2026-03-16 to 2026-03-23"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Review dates are accurate and in UTC+3 timezone",
+        "All reviews in the artifact are included without filtering by source or language"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution by Language",
+      "claim": "Among 7 English reviews, 7 (100.0%) were positive (4-5 stars). Among 7 Arabic reviews, 6 (85.7%) were positive.",
+      "finding_type": "sentiment_by_language",
+      "metrics": {
+        "english_positive_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 7,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "english_total_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "arabic_positive_count": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": 7,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "arabic_total_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "English reviews: 7",
+        "Arabic reviews: 7",
+        "Sentiment classification: 4-5 stars = positive, 3 stars = neutral, 1-2 stars = negative"
+      ],
+      "assumptions": [
+        "Sentiment is derived from rating thresholds, not text analysis",
+        "Language field is accurate",
+        "Rating values are valid numeric"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Low Rating Frequency",
+      "claim": "During the analysis period, 1 reviews (7.1% of 14 total) had ratings of 1-2 stars, indicating dissatisfaction.",
+      "finding_type": "low_rating_frequency",
+      "metrics": {
+        "low_rating_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 14,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "low_rating_percentage": {
+          "value": 7.1,
+          "unit": "percent",
+          "numerator": 1,
+          "denominator": 14,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Low-rating reviews (1-2 stars): 1",
+        "Total reviews analyzed: 14",
+        "No text content available"
+      ],
+      "assumptions": [
+        "Low rating defined as 1-2 stars",
+        "Text content may be missing for some reviews",
+        "Keyword extraction is basic and language-agnostic"
+      ],
+      "confidence": 0.92
+    }
+  ]
+}

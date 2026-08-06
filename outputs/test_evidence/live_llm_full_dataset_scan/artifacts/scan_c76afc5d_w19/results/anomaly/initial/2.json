@@ -1,0 +1,97 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Unusual Daily Revenue",
+      "claim": "Daily revenue on 2026-05-22 was 9686.85 SAR, 2.28 standard deviations from baseline mean of 6484.12 SAR",
+      "finding_type": "revenue_anomaly",
+      "metrics": {
+        "daily_revenue": {
+          "value": 9686.85,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-22T00:00:00",
+          "period_end": "2026-05-23T00:00:00"
+        },
+        "baseline_mean": {
+          "value": 6484.12,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00",
+          "period_end": "2026-04-27T00:00:00"
+        },
+        "z_score": {
+          "value": 2.28,
+          "unit": "std_dev",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-22T00:00:00",
+          "period_end": "2026-05-23T00:00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 28,
+      "coverage_notes": [
+        "Analysis period: 2026-05-18 to 2026-05-25",
+        "Baseline: 4 weeks of historical data",
+        "Baseline sample size: 28 daily observations"
+      ],
+      "assumptions": [
+        "Normal distribution of daily revenue",
+        "No structural breaks in baseline period",
+        "Threshold: |z-score| > 2.0"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Unusual Daily Transaction Count",
+      "claim": "Daily transaction count on 2026-05-22 was 309, 3.05 standard deviations from baseline mean of 191",
+      "finding_type": "transaction_anomaly",
+      "metrics": {
+        "daily_transaction_count": {
+          "value": 309,
+          "unit": "transactions",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-22T00:00:00",
+          "period_end": "2026-05-23T00:00:00"
+        },
+        "baseline_mean": {
+          "value": 191.18,
+          "unit": "transactions",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00",
+          "period_end": "2026-04-27T00:00:00"
+        },
+        "z_score": {
+          "value": 3.05,
+          "unit": "std_dev",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-22T00:00:00",
+          "period_end": "2026-05-23T00:00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 28,
+      "coverage_notes": [
+        "Analysis period: 2026-05-18 to 2026-05-25",
+        "Baseline: 4 weeks of historical data",
+        "Baseline sample size: 28 daily observations"
+      ],
+      "assumptions": [
+        "Normal distribution of daily transaction counts",
+        "No structural breaks in baseline period",
+        "Threshold: |z-score| > 2.0"
+      ],
+      "confidence": 0.82
+    }
+  ]
+}

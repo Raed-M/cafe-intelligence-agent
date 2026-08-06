@@ -1,0 +1,195 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (2026-03-23 to 2026-03-30), the average rating across 19 reviews is 4.79 stars, with distribution: {3: 1, 4: 2, 5: 16}.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.79,
+          "unit": "stars",
+          "numerator": 91.0,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 19,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "rating_5_count": {
+          "value": 16,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "rating_4_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "rating_3_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "rating_2_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "rating_1_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "Analysis period: 2026-03-23 to 2026-03-30",
+        "Total reviews in dataset: 520",
+        "Reviews in analysis period: 19",
+        "Sources represented: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Review dates are accurate and in UTC+3 timezone",
+        "All reviews in the analysis period are included regardless of language"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Of 19 reviews in the analysis period, 12 are in English and 7 are in Arabic.",
+      "finding_type": "language_coverage",
+      "metrics": {
+        "english_reviews": {
+          "value": 12,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 7,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "english_percentage": {
+          "value": 63.2,
+          "unit": "percent",
+          "numerator": 12,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "arabic_percentage": {
+          "value": 36.8,
+          "unit": "percent",
+          "numerator": 7,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "Language distribution across 19 reviews",
+        "Bilingual review dataset with 520 total reviews"
+      ],
+      "assumptions": [
+        "Language field accurately reflects review language",
+        "No reviews are in languages other than English and Arabic"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Polarity: High vs Low Ratings",
+      "claim": "In the analysis period, 18 reviews have ratings of 4-5 stars (positive), while 0 reviews have ratings of 1-2 stars (negative), out of 19 total reviews.",
+      "finding_type": "sentiment_polarity",
+      "metrics": {
+        "high_rating_count": {
+          "value": 18,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "low_rating_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "high_rating_percentage": {
+          "value": 94.7,
+          "unit": "percent",
+          "numerator": 18,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "low_rating_percentage": {
+          "value": 0.0,
+          "unit": "percent",
+          "numerator": 0,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "High ratings defined as 4-5 stars",
+        "Low ratings defined as 1-2 stars",
+        "Neutral ratings (3 stars) excluded from this polarity analysis"
+      ],
+      "assumptions": [
+        "Rating scale is 1-5 stars",
+        "4-5 stars represent positive sentiment, 1-2 stars represent negative sentiment"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

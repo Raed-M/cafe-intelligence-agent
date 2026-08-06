@@ -20,7 +20,7 @@ from typing import Any, Callable
 from src.config.runtime_config import RuntimeCafeConfig
 from src.schemas.artifacts import ArtifactRef
 from src.schemas.findings import AnalystFinding, MetricEvidence
-from src.tools.artifact_io import artifact_dir
+from src.tools.artifact_io import artifact_columns, artifact_dir
 from src.tools.code_executor import CodeExecutionRequest, execute_python_code
 
 CommonPromptPath = Path("prompts/analysts/common.md")
@@ -58,11 +58,16 @@ def _default_llm_code_generator(model_name: str):
         user_prompt = (
             "Context (artifact paths, schemas, periods):\n"
             f"{json.dumps(context, indent=2, default=str)}\n\n"
-            "Write one complete Python program. Read os.environ['ANALYST_INPUTS_JSON'] "
-            "to get {'inputs': {artifact_name: path}, 'output_path': path}. Read only "
-            "the listed parquet/json input artifacts with pandas/json. Write your final "
-            "result as JSON to output_path. Do not print secrets. Return ONLY the code, "
-            "no markdown fences, no prose."
+            "Write one complete Python program. os.environ['ANALYST_INPUTS_JSON'] is a "
+            "FILE PATH, not JSON content -- open and json.load() that file to get "
+            "{'inputs': {artifact_name: path}, 'output_path': path}, e.g.:\n"
+            "    with open(os.environ['ANALYST_INPUTS_JSON']) as f:\n"
+            "        run_meta = json.load(f)\n"
+            "    inputs = run_meta['inputs']; output_path = run_meta['output_path']\n"
+            "Read only the listed parquet/json input artifacts with pandas/json, using the "
+            "exact column names given in each input artifact's `columns` list above -- never "
+            "guess or invent a column name. Write your final result as JSON to output_path. "
+            "Do not print secrets. Return ONLY the code, no markdown fences, no prose."
         )
         resp = llm.invoke([("system", system_prompt), ("user", user_prompt)])
         content = resp.content if isinstance(resp.content, str) else str(resp.content)
@@ -136,7 +141,10 @@ def run_analyst(
         "analysis_period": analysis_period,
         "previous_period": previous_period,
         "trailing_baseline_periods": trailing_baseline_periods,
-        "input_artifacts": {k: {"path": v["path"], "row_count": v["row_count"]} for k, v in available.items()},
+        "input_artifacts": {
+            k: {"path": v["path"], "row_count": v["row_count"], "columns": artifact_columns(v)}
+            for k, v in available.items()
+        },
         "required_output_schema": {
             "status": "success | insufficient_data",
             "findings": [{

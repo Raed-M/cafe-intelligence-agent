@@ -1,0 +1,162 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Overall Revenue Change",
+      "claim": "Total revenue in analysis period (2026-04-20 to 2026-04-27) was SAR 45789.20, compared to SAR 42889.20 in previous period (2026-04-13 to 2026-04-20), representing a 6.8% change.",
+      "finding_type": "revenue_change",
+      "metrics": {
+        "analysis_period_revenue": {
+          "value": 45789.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+00:00",
+          "period_end": "2026-04-27T00:00:00+00:00"
+        },
+        "previous_period_revenue": {
+          "value": 42889.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+00:00",
+          "period_end": "2026-04-20T00:00:00+00:00"
+        },
+        "revenue_change": {
+          "value": 2900.0,
+          "unit": "SAR",
+          "numerator": 2900.0,
+          "denominator": 42889.2,
+          "period_start": "2026-04-13T00:00:00+00:00",
+          "period_end": "2026-04-27T00:00:00+00:00"
+        },
+        "revenue_change_pct": {
+          "value": 6.76,
+          "unit": "%",
+          "numerator": 2900.0,
+          "denominator": 42889.2,
+          "period_start": "2026-04-13T00:00:00+00:00",
+          "period_end": "2026-04-27T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1344,
+      "coverage_notes": [
+        "Analysis period: 2281 line items from 1344 unique transactions",
+        "Previous period: 2133 line items from 1263 unique transactions"
+      ],
+      "assumptions": [
+        "line_total_sar includes refunds as negative values",
+        "transaction_id uniqueness defines basket count",
+        "Periods are non-overlapping and consecutive"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value Change",
+      "claim": "Average order value in analysis period was SAR 34.07, compared to SAR 33.96 in previous period, representing a 0.3% change.",
+      "finding_type": "aov_change",
+      "metrics": {
+        "analysis_period_aov": {
+          "value": 34.07,
+          "unit": "SAR",
+          "numerator": 45789.2,
+          "denominator": 1344,
+          "period_start": "2026-04-20T00:00:00+00:00",
+          "period_end": "2026-04-27T00:00:00+00:00"
+        },
+        "previous_period_aov": {
+          "value": 33.96,
+          "unit": "SAR",
+          "numerator": 42889.2,
+          "denominator": 1263,
+          "period_start": "2026-04-13T00:00:00+00:00",
+          "period_end": "2026-04-20T00:00:00+00:00"
+        },
+        "aov_change": {
+          "value": 0.11,
+          "unit": "SAR",
+          "numerator": 0.11,
+          "denominator": 33.96,
+          "period_start": "2026-04-13T00:00:00+00:00",
+          "period_end": "2026-04-27T00:00:00+00:00"
+        },
+        "aov_change_pct": {
+          "value": 0.33,
+          "unit": "%",
+          "numerator": 0.11,
+          "denominator": 33.96,
+          "period_start": "2026-04-13T00:00:00+00:00",
+          "period_end": "2026-04-27T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1344,
+      "coverage_notes": [
+        "Analysis period: 1344 unique transactions",
+        "Previous period: 1263 unique transactions"
+      ],
+      "assumptions": [
+        "AOV calculated as total revenue divided by unique transaction_id count",
+        "line_total_sar includes refunds as negative values"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Category Mix Shift: iced_coffee",
+      "claim": "The iced_coffee category generated SAR 11521.55 in the analysis period, compared to SAR 8524.65 in the previous period, representing a 35.2% change.",
+      "finding_type": "category_mix_change",
+      "metrics": {
+        "analysis_period_category_revenue": {
+          "value": 11521.55,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+00:00",
+          "period_end": "2026-04-27T00:00:00+00:00"
+        },
+        "previous_period_category_revenue": {
+          "value": 8524.65,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+00:00",
+          "period_end": "2026-04-20T00:00:00+00:00"
+        },
+        "category_revenue_change": {
+          "value": 2996.9,
+          "unit": "SAR",
+          "numerator": 2996.9,
+          "denominator": 8524.65,
+          "period_start": "2026-04-13T00:00:00+00:00",
+          "period_end": "2026-04-27T00:00:00+00:00"
+        },
+        "category_revenue_change_pct": {
+          "value": 35.16,
+          "unit": "%",
+          "numerator": 2996.9,
+          "denominator": 8524.65,
+          "period_start": "2026-04-13T00:00:00+00:00",
+          "period_end": "2026-04-27T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 504,
+      "coverage_notes": [
+        "Analysis period: 504 transactions in iced_coffee",
+        "Previous period: 388 transactions in iced_coffee"
+      ],
+      "assumptions": [
+        "Category assignment from POS data",
+        "line_total_sar includes refunds as negative values"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

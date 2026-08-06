@@ -23,3 +23,15 @@ class ContentIdea(TypedDict):
     post_time_local: str
     timing_reason: str
     inventory_suitability: Literal["supported", "unknown", "not_applicable"]
+
+
+class ContentIdeasOutput(TypedDict):
+    """Wrapped in a top-level object because .with_structured_output()
+    constrains one schema per call and the content agent must return exactly
+    three ideas, not a bare top-level array."""
+    items: list[ContentIdea]
+
+
+class AlignmentCheckResult(TypedDict):
+    aligned: bool
+    explanation: str

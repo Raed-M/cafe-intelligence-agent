@@ -1,0 +1,67 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 5 Items by Gross Profit (Week of 2026-03-16)",
+      "claim": "The top 5 items by gross profit generated SAR 16381.70 in gross profit from 1143 units sold during the analysis week.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_1_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+00:00",
+          "period_end": "2026-03-23T00:00:00+00:00"
+        },
+        "top_item_1_gross_profit": {
+          "value": 3975.5,
+          "unit": "SAR",
+          "numerator": 3975.5,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+00:00",
+          "period_end": "2026-03-23T00:00:00+00:00"
+        },
+        "top_item_1_quantity": {
+          "value": 316,
+          "unit": "units",
+          "numerator": 316,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+00:00",
+          "period_end": "2026-03-23T00:00:00+00:00"
+        },
+        "top_item_1_margin_pct": {
+          "value": 70.75,
+          "unit": "%",
+          "numerator": 3975.5,
+          "denominator": 5618.7,
+          "period_start": "2026-03-16T00:00:00+00:00",
+          "period_end": "2026-03-23T00:00:00+00:00"
+        },
+        "top_5_total_gross_profit": {
+          "value": 16381.7,
+          "unit": "SAR",
+          "numerator": 16381.7,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+00:00",
+          "period_end": "2026-03-23T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1143,
+      "coverage_notes": [
+        "Analysis covers POS transactions from 2026-03-16 to 2026-03-23",
+        "Only items with menu unit costs are included",
+        "Refunds excluded from revenue calculation"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar represents actual COGS per unit",
+        "POS line_total_sar is accurate revenue after discounts"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

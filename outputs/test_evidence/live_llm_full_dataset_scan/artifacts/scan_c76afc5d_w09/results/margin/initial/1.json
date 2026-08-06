@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 3 Items by Gross Profit Contribution (Week of 2026-03-09)",
+      "claim": "The top 3 items by gross profit contribution in the analysis week are Chicken Sandwich, Halloumi Toast, Spanish Latte, collectively generating 8567.90 SAR in gross profit.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_1_name": {
+          "value": "Chicken Sandwich",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "top_item_1_gross_profit_sar": {
+          "value": 2999.6,
+          "unit": "SAR",
+          "numerator": 4747.6,
+          "denominator": 1748.0,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "top_item_1_gross_margin_pct": {
+          "value": 63.18,
+          "unit": "%",
+          "numerator": 2999.6,
+          "denominator": 4747.6,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "top_item_1_quantity": {
+          "value": 184,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "top_item_2_name": {
+          "value": "Halloumi Toast",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "top_item_2_gross_profit_sar": {
+          "value": 2922.2,
+          "unit": "SAR",
+          "numerator": 4455.6,
+          "denominator": 1533.4,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "top_item_3_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "top_item_3_gross_profit_sar": {
+          "value": 2646.1,
+          "unit": "SAR",
+          "numerator": 3748.5,
+          "denominator": 1102.4,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "total_top_3_gross_profit_sar": {
+          "value": 8567.9,
+          "unit": "SAR",
+          "numerator": 12951.7,
+          "denominator": 4383.8,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1897,
+      "coverage_notes": [
+        "Analysis covers POS transactions from 2026-03-09 to 2026-03-16",
+        "Excludes refund transactions (is_refund=True)",
+        "Unit costs sourced from menu.parquet",
+        "Revenue calculated from line_total_sar (includes discounts)"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and applicable to analysis period",
+        "POS line_total_sar accurately reflects actual revenue after discounts",
+        "No recipe/BOM data available; analysis is at item level only"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Supplier Price Change Detection",
+      "claim": "Email evidence shows full-fat milk price change from 7.1 to 8.4 SAR/L, effective 2026-05-01 00:00:00, representing a 18.31% change.",
+      "finding_type": "supplier_pricing",
+      "metrics": {
+        "ingredient_or_entity": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "price_change_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 1.3,
+          "denominator": 7.1,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "effective_date": {
+          "value": "2026-05-01 00:00:00",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "sender": {
+          "value": "orders@qatifdairy.com",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Total price change records in emails: 3",
+        "Analysis shows most significant price change by percentage",
+        "Only includes records with both old_price and new_price and effective_date"
+      ],
+      "assumptions": [
+        "Email extraction accurately captured supplier price information",
+        "Effective date represents when price change takes effect",
+        "No recipe/BOM data available; cannot calculate per-drink impact without standing order quantities"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

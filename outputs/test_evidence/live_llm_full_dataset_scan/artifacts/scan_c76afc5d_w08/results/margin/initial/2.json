@@ -1,0 +1,130 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item (Week of 2026-03-02)",
+      "claim": "Halloumi Toast generated the highest gross profit of 3842.20 SAR with 65.7% margin from 245 units sold.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Halloumi Toast",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00Z",
+          "period_end": "2026-03-09T00:00:00Z"
+        },
+        "gross_profit_sar": {
+          "value": 3842.2,
+          "unit": "SAR",
+          "numerator": 3842.2,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00Z",
+          "period_end": "2026-03-09T00:00:00Z"
+        },
+        "gross_margin_pct": {
+          "value": 65.67,
+          "unit": "%",
+          "numerator": 65.67,
+          "denominator": 100,
+          "period_start": "2026-03-02T00:00:00Z",
+          "period_end": "2026-03-09T00:00:00Z"
+        },
+        "units_sold": {
+          "value": 245,
+          "unit": "units",
+          "numerator": 245,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00Z",
+          "period_end": "2026-03-09T00:00:00Z"
+        },
+        "revenue_sar": {
+          "value": 5851.2,
+          "unit": "SAR",
+          "numerator": 5851.2,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00Z",
+          "period_end": "2026-03-09T00:00:00Z"
+        },
+        "cogs_sar": {
+          "value": 2009.0,
+          "unit": "SAR",
+          "numerator": 2009.0,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00Z",
+          "period_end": "2026-03-09T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 218,
+      "coverage_notes": [
+        "Analysis period: 2026-03-02 to 2026-03-09",
+        "Excludes refunds (is_refund=False)",
+        "Unit costs from menu.unit_cost_sar",
+        "Revenue from POS line_total_sar"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and accurate",
+        "POS line_total_sar reflects actual revenue after discounts",
+        "No recipe/BOM adjustments applied"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Highest Waste Cost Item (Week of 2026-03-02)",
+      "claim": "Chicken Sandwich incurred 418.00 SAR in waste cost from 44 wasted units.",
+      "finding_type": "waste_analysis",
+      "metrics": {
+        "item_name": {
+          "value": "Chicken Sandwich",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00Z",
+          "period_end": "2026-03-09T00:00:00Z"
+        },
+        "waste_cost_sar": {
+          "value": 418.0,
+          "unit": "SAR",
+          "numerator": 418.0,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00Z",
+          "period_end": "2026-03-09T00:00:00Z"
+        },
+        "units_wasted": {
+          "value": 44,
+          "unit": "units",
+          "numerator": 44,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00Z",
+          "period_end": "2026-03-09T00:00:00Z"
+        },
+        "total_waste_cost_sar": {
+          "value": 1132.1,
+          "unit": "SAR",
+          "numerator": 1132.1,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00Z",
+          "period_end": "2026-03-09T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: 2026-03-02 to 2026-03-09",
+        "Only includes items with non-null known_waste_cost_sar",
+        "Waste cost from inventory.known_waste_cost_sar"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar accurately reflects waste value",
+        "Waste data is complete for reported items"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

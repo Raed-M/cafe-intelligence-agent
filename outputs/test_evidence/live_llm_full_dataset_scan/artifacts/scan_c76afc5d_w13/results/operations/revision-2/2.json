@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Known Waste Rate Decreased Week-over-Week",
+      "claim": "Known waste rate decreased from 0.1937 (167.0 units wasted / 862.0 total units) in the previous period to 0.1804 (153.0 units wasted / 848.0 total units) in the analysis period, a 6.9% decreased change. Known waste cost in analysis period: 894.50 SAR.",
+      "finding_type": "operational_metric",
+      "metrics": {
+        "waste_rate_analysis": {
+          "value": 0.1804,
+          "unit": "ratio",
+          "numerator": 153.0,
+          "denominator": 848.0,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "waste_rate_previous": {
+          "value": 0.1937,
+          "unit": "ratio",
+          "numerator": 167.0,
+          "denominator": 862.0,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "waste_cost_analysis": {
+          "value": 894.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: 6 inventory records",
+        "Previous period: 6 inventory records",
+        "Waste rate calculated from units_wasted / (units_sold + units_wasted)",
+        "Waste cost from known_waste_cost_sar field"
+      ],
+      "assumptions": [
+        "Inventory week_starting dates are timezone-aligned to UTC+3",
+        "Known waste values are accurate; unknown waste is excluded",
+        "Units sold and wasted are mutually exclusive categories"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

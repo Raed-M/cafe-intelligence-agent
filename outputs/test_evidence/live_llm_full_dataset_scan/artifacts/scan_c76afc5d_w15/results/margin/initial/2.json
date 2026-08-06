@@ -1,0 +1,187 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Revenue Item Economics (Analysis Week)",
+      "claim": "Item 'Iced Spanish Latte' (SKU: ICE-001) generated 5159.00 SAR revenue with 3703.00 SAR gross profit and 71.8% margin during the analysis week.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "total_revenue_sar": {
+          "value": 5159.0,
+          "unit": "SAR",
+          "numerator": 5159.0,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00Z",
+          "period_end": "2026-04-27T00:00:00Z"
+        },
+        "total_cogs_sar": {
+          "value": 1456.0,
+          "unit": "SAR",
+          "numerator": 1456.0,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00Z",
+          "period_end": "2026-04-27T00:00:00Z"
+        },
+        "gross_profit_sar": {
+          "value": 3703.0,
+          "unit": "SAR",
+          "numerator": 3703.0,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00Z",
+          "period_end": "2026-04-27T00:00:00Z"
+        },
+        "gross_margin_pct": {
+          "value": 71.78,
+          "unit": "%",
+          "numerator": 71.78,
+          "denominator": 100,
+          "period_start": "2026-04-20T00:00:00Z",
+          "period_end": "2026-04-27T00:00:00Z"
+        },
+        "units_sold": {
+          "value": 260,
+          "unit": "units",
+          "numerator": 260,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00Z",
+          "period_end": "2026-04-27T00:00:00Z"
+        },
+        "unit_cost_sar": {
+          "value": 5.6,
+          "unit": "SAR",
+          "numerator": 5.6,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00Z",
+          "period_end": "2026-04-27T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 233,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20 to 2026-04-27",
+        "Refunds excluded from revenue calculation",
+        "Unit cost from menu.unit_cost_sar",
+        "COGS calculated as total_quantity × unit_cost_sar"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is accurate and constant during period",
+        "POS line_total_sar reflects actual revenue after discounts",
+        "No recipe/BOM available; using menu-level unit costs"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost Impact (Analysis Week)",
+      "claim": "Known waste cost totaled 922.10 SAR across 157 units during the analysis week, representing 5.86% of related item revenue.",
+      "finding_type": "waste_economics",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 922.1,
+          "unit": "SAR",
+          "numerator": 922.1,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00Z",
+          "period_end": "2026-04-27T00:00:00Z"
+        },
+        "waste_units": {
+          "value": 157,
+          "unit": "units",
+          "numerator": 157,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00Z",
+          "period_end": "2026-04-27T00:00:00Z"
+        },
+        "waste_impact_pct": {
+          "value": 5.86,
+          "unit": "%",
+          "numerator": 5.86,
+          "denominator": 100,
+          "period_start": "2026-04-20T00:00:00Z",
+          "period_end": "2026-04-27T00:00:00Z"
+        },
+        "related_revenue_sar": {
+          "value": 15734.0,
+          "unit": "SAR",
+          "numerator": 15734.0,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00Z",
+          "period_end": "2026-04-27T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "inventory",
+        "pos"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Only non-null waste cost observations included",
+        "Analysis week: 2026-04-20",
+        "Waste cost from inventory.known_waste_cost_sar",
+        "Related revenue calculated from POS for waste item SKUs"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar accurately reflects waste value",
+        "Waste items match POS SKUs for revenue correlation"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Supplier Price Change Detection",
+      "claim": "Supplier price change for 'roasted coffee': 88.00 SAR → 96.00 SAR per kg (effective 2026-04-15), representing 9.1% change.",
+      "finding_type": "supplier_pricing",
+      "metrics": {
+        "old_price": {
+          "value": 88.0,
+          "unit": "SAR",
+          "numerator": 88.0,
+          "denominator": null,
+          "period_start": "2026-04-15",
+          "period_end": "2026-04-15"
+        },
+        "new_price": {
+          "value": 96.0,
+          "unit": "SAR",
+          "numerator": 96.0,
+          "denominator": null,
+          "period_start": "2026-04-15",
+          "period_end": "2026-04-15"
+        },
+        "price_delta": {
+          "value": 8.0,
+          "unit": "SAR",
+          "numerator": 8.0,
+          "denominator": null,
+          "period_start": "2026-04-15",
+          "period_end": "2026-04-15"
+        },
+        "price_delta_pct": {
+          "value": 9.09,
+          "unit": "%",
+          "numerator": 9.09,
+          "denominator": 100,
+          "period_start": "2026-04-15",
+          "period_end": "2026-04-15"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Ingredient: roasted coffee",
+        "Unit: kg",
+        "Effective date: 2026-04-15",
+        "Confidence: 0.95"
+      ],
+      "assumptions": [
+        "Email extraction accurately captured price and effective date",
+        "Price change applies to specified ingredient only",
+        "No recipe/BOM available; per-drink impact cannot be calculated"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

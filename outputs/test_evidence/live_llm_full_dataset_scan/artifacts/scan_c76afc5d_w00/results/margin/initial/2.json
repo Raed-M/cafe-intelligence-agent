@@ -1,0 +1,85 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item - Week of 2026-01-05",
+      "claim": "Spanish Latte generated the highest gross profit of 3164.90 SAR with 70.9% margin",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+00:00",
+          "period_end": "2026-01-12T00:00:00+00:00"
+        },
+        "total_revenue": {
+          "value": 4464.9,
+          "unit": "SAR",
+          "numerator": 4464.9,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+00:00",
+          "period_end": "2026-01-12T00:00:00+00:00"
+        },
+        "total_cogs": {
+          "value": 1300.0,
+          "unit": "SAR",
+          "numerator": 1300.0,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+00:00",
+          "period_end": "2026-01-12T00:00:00+00:00"
+        },
+        "gross_profit": {
+          "value": 3164.9,
+          "unit": "SAR",
+          "numerator": 3164.9,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+00:00",
+          "period_end": "2026-01-12T00:00:00+00:00"
+        },
+        "gross_margin_pct": {
+          "value": 70.88,
+          "unit": "%",
+          "numerator": 3164.9,
+          "denominator": 4464.9,
+          "period_start": "2026-01-05T00:00:00+00:00",
+          "period_end": "2026-01-12T00:00:00+00:00"
+        },
+        "units_sold": {
+          "value": 250,
+          "unit": "units",
+          "numerator": 250,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+00:00",
+          "period_end": "2026-01-12T00:00:00+00:00"
+        },
+        "baskets": {
+          "value": 229,
+          "unit": "transactions",
+          "numerator": 229,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+00:00",
+          "period_end": "2026-01-12T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 229,
+      "coverage_notes": [
+        "Analysis period: 2026-01-05 to 2026-01-12",
+        "Excludes refunds from revenue calculation",
+        "Unit costs from menu.unit_cost_sar",
+        "Revenue from POS line_total_sar"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and applicable to all sales in period",
+        "POS line_total_sar accurately reflects actual revenue",
+        "No recipe/BOM available; using menu-level unit costs only"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

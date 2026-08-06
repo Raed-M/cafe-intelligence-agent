@@ -1,0 +1,184 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Analysis",
+      "claim": "Conversion rate in analysis week (0.3649) compared to previous week (0.3750)",
+      "finding_type": "conversion_metric",
+      "metrics": {
+        "analysis_conversion": {
+          "value": 0.3649,
+          "unit": "transactions_per_visitor",
+          "numerator": 1090,
+          "denominator": "2987",
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "previous_conversion": {
+          "value": 0.375,
+          "unit": "transactions_per_visitor",
+          "numerator": 1155,
+          "denominator": "3080",
+          "period_start": "2026-03-02T00:00:00+00:00",
+          "period_end": "2026-03-09T00:00:00+00:00"
+        },
+        "conversion_change_percent": {
+          "value": -2.69,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": "2987",
+      "coverage_notes": [
+        "Analysis period: 1090 transactions from 2987 valid footfall",
+        "Previous period: 1155 transactions from 3080 valid footfall",
+        "Dead sensor days excluded from footfall denominator"
+      ],
+      "assumptions": [
+        "Refunds excluded from transaction count",
+        "Valid footfall excludes dead sensor intervals",
+        "One transaction_id = one basket"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Revenue Performance Comparison",
+      "claim": "Total revenue in analysis week (SAR 37391.85) compared to previous week (SAR 40207.00)",
+      "finding_type": "revenue_metric",
+      "metrics": {
+        "analysis_total_revenue": {
+          "value": 37391.85,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "analysis_avg_transaction": {
+          "value": 34.3,
+          "unit": "SAR",
+          "numerator": 37391.850000000006,
+          "denominator": 1090,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "previous_total_revenue": {
+          "value": 40207.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00+00:00",
+          "period_end": "2026-03-09T00:00:00+00:00"
+        },
+        "previous_avg_transaction": {
+          "value": 34.81,
+          "unit": "SAR",
+          "numerator": 40207.0,
+          "denominator": 1155,
+          "period_start": "2026-03-02T00:00:00+00:00",
+          "period_end": "2026-03-09T00:00:00+00:00"
+        },
+        "revenue_change_percent": {
+          "value": -7.0,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1090,
+      "coverage_notes": [
+        "Analysis period: 1090 transactions",
+        "Previous period: 1155 transactions",
+        "Refunds excluded from revenue calculations"
+      ],
+      "assumptions": [
+        "Refunds treated as negative revenue",
+        "Line totals used as transaction values",
+        "No imputation for missing values"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Labour Cost and Staffing Hours",
+      "claim": "Analysis week staffing: 237.0 hours (SAR 5836.00) vs previous week: 246.0 hours (SAR 5840.00)",
+      "finding_type": "staffing_metric",
+      "metrics": {
+        "analysis_total_hours": {
+          "value": 237.0,
+          "unit": "hours",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "analysis_total_cost": {
+          "value": "5836",
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "analysis_cost_per_hour": {
+          "value": 24.62,
+          "unit": "SAR/hour",
+          "numerator": "5836",
+          "denominator": 237.0,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "previous_total_hours": {
+          "value": 246.0,
+          "unit": "hours",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00+00:00",
+          "period_end": "2026-03-09T00:00:00+00:00"
+        },
+        "previous_total_cost": {
+          "value": "5840",
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00+00:00",
+          "period_end": "2026-03-09T00:00:00+00:00"
+        },
+        "previous_cost_per_hour": {
+          "value": 23.74,
+          "unit": "SAR/hour",
+          "numerator": "5840",
+          "denominator": 246.0,
+          "period_start": "2026-03-02T00:00:00+00:00",
+          "period_end": "2026-03-09T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "staff"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: 6 unique employees",
+        "Previous period: 6 unique employees",
+        "Hours calculated from computed_duration_hours field"
+      ],
+      "assumptions": [
+        "Shift overlap computed from shift_start and shift_end times",
+        "Labour cost includes all hourly rates and computed durations",
+        "No imputation for missing shift data"
+      ],
+      "confidence": 0.88
+    }
+  ]
+}

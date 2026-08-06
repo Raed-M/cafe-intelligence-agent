@@ -1,0 +1,185 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Iced Spanish Latte: 71.78% gross margin",
+      "claim": "Item Iced Spanish Latte (SKU: ICE-001) generated 5159.00 SAR revenue with 1456.00 SAR COGS and 3703.00 SAR gross profit (71.78% margin) during analysis period.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "revenue_sar": {
+          "value": 5159.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "quantity_units": {
+          "value": 260,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "unit_cost_sar": {
+          "value": 5.6,
+          "unit": "SAR/unit",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "cogs_sar": {
+          "value": 1456.0,
+          "unit": "SAR",
+          "numerator": 260,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "gross_profit_sar": {
+          "value": 3703.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "gross_margin_pct": {
+          "value": 71.78,
+          "unit": "%",
+          "numerator": 3703.0,
+          "denominator": 5159.0,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 233,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20 to 2026-04-27 (7 days)",
+        "Item ICE-001 had 233 transactions with 260 units sold",
+        "Refunds excluded from revenue calculation",
+        "Unit cost sourced from menu_items.unit_cost_sar"
+      ],
+      "assumptions": [
+        "Analysis uses menu-defined unit costs (SAR per unit); actual COGS may vary due to portion control, ingredient waste, or supplier cost changes not captured in menu data",
+        "No recipe/BOM available; using menu-level unit costs",
+        "This is a menu-level margin analysis; item-level supplier cost optimization would require recipe/BOM evidence"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Supplier price change: roasted coffee +9.1%",
+      "claim": "Supplier email dated 2026-04-01 reports roasted coffee price change from 88.0 SAR/kg to 96.0 SAR/kg (effective 2026-04-15), representing a +9.09% change.",
+      "finding_type": "supplier_cost_change",
+      "metrics": {
+        "old_price": {
+          "value": 88.0,
+          "unit": "SAR/kg",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": "2026-04-15T00:00:00"
+        },
+        "new_price": {
+          "value": 96.0,
+          "unit": "SAR/kg",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": "2026-04-15T00:00:00"
+        },
+        "price_delta": {
+          "value": 8.0,
+          "unit": "SAR/kg",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": "2026-04-15T00:00:00"
+        },
+        "price_delta_pct": {
+          "value": 9.09,
+          "unit": "%",
+          "numerator": 8.0,
+          "denominator": 88.0,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": "2026-04-15T00:00:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Supplier email dated 2026-04-01",
+        "Effective date: 2026-04-15",
+        "Entity/ingredient: roasted coffee",
+        "Extraction confidence: 0.95"
+      ],
+      "assumptions": [
+        "Price change applies to future procurement; impact on current period depends on inventory timing and payment terms",
+        "No standing order quantity or payment terms confirmed in email; actual margin impact requires volume and timing data"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Supplier price change: full-fat milk +18.3%",
+      "claim": "Supplier email dated 2026-05-04 reports full-fat milk price change from 7.1 SAR/L to 8.4 SAR/L (effective 2026-05-01), representing a +18.31% change.",
+      "finding_type": "supplier_cost_change",
+      "metrics": {
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        },
+        "price_delta": {
+          "value": 1.3,
+          "unit": "SAR/L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        },
+        "price_delta_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 1.3,
+          "denominator": 7.1,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Supplier email dated 2026-05-04",
+        "Effective date: 2026-05-01",
+        "Entity/ingredient: full-fat milk",
+        "Extraction confidence: 0.95"
+      ],
+      "assumptions": [
+        "Price change applies to future procurement; impact on current period depends on inventory timing and payment terms",
+        "No standing order quantity or payment terms confirmed in email; actual margin impact requires volume and timing data"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Rating Distribution and Average (Analysis Period)",
+      "claim": "During the analysis period (2026-02-09 to 2026-02-16), the average rating across 21 reviews is 4.19 out of 5, with 10 five-star ratings and 1 one-star ratings.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.19,
+          "unit": "stars",
+          "numerator": 88.0,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 10,
+          "unit": "count",
+          "numerator": 10,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-02-09 to 2026-02-16",
+        "Language distribution: {'en': 17, 'ar': 4}",
+        "Sources represented: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Date filtering uses UTC+3 timezone as specified",
+        "All reviews in the artifact are included without exclusion"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Sentiment Distribution by Language",
+      "claim": "Among 21 reviews in the analysis period, 18 are positive (rating ≥4), 1 are neutral (rating=3), and 2 are negative (rating <3). English reviews: 17, Arabic reviews: 4.",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "positive_sentiment_count": {
+          "value": 18,
+          "unit": "count",
+          "numerator": 18,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "neutral_sentiment_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "negative_sentiment_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "english_reviews_count": {
+          "value": 17,
+          "unit": "count",
+          "numerator": 17,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "arabic_reviews_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Sentiment classification based on rating thresholds",
+        "Language coverage: 17 English, 4 Arabic",
+        "Topics identified: {'quality': 2, 'service': 1, 'price': 4, 'taste': 1, 'speed': 2}"
+      ],
+      "assumptions": [
+        "Sentiment classification: positive (≥4 stars), neutral (3 stars), negative (<3 stars)",
+        "Topic extraction uses keyword matching in both English and Arabic",
+        "Empty or null text fields are treated as having no identifiable topics"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Rating Trend: Analysis Period vs Previous Period",
+      "claim": "Average rating changed from 4.47 (previous period: 15 reviews) to 4.19 (analysis period: 21 reviews), a change of -0.28 stars.",
+      "finding_type": "rating_trend",
+      "metrics": {
+        "previous_period_avg_rating": {
+          "value": 4.47,
+          "unit": "stars",
+          "numerator": 67.0,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "analysis_period_avg_rating": {
+          "value": 4.19,
+          "unit": "stars",
+          "numerator": 88.0,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "rating_change": {
+          "value": -0.28,
+          "unit": "stars",
+          "numerator": -0.28,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "previous_period_review_count": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "analysis_period_review_count": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Previous period: 2026-02-02 to 2026-02-09 (15 reviews)",
+        "Analysis period: 2026-02-09 to 2026-02-16 (21 reviews)",
+        "Sources in previous period: ['google', 'instagram', 'talabat']",
+        "Sources in analysis period: ['google', 'instagram', 'talabat']"
+      ],
+      "assumptions": [
+        "Periods are non-overlapping and consecutive",
+        "Rating values are numeric and comparable across periods",
+        "No data quality issues affect the comparison"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Daily Average Revenue Comparison",
+      "claim": "Daily average revenue in analysis period (2026-01-26 to 2026-02-02, 8 days) was SAR 6824.99, compared to SAR 6161.23 in previous period (2026-01-19 to 2026-01-26, 7 days), representing a 10.77% change. Daily normalization enables fair comparison across unequal period lengths. Revenue figures exclude refunds.",
+      "finding_type": "revenue_performance",
+      "metrics": {
+        "analysis_daily_revenue": {
+          "value": 6824.99,
+          "unit": "SAR",
+          "numerator": 47774.9,
+          "denominator": 7,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_daily_revenue": {
+          "value": 6161.23,
+          "unit": "SAR",
+          "numerator": 43128.6,
+          "denominator": 7,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "daily_revenue_change": {
+          "value": 663.76,
+          "unit": "SAR",
+          "numerator": 663.76,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "daily_revenue_pct_change": {
+          "value": 10.77,
+          "unit": "%",
+          "numerator": 663.76,
+          "denominator": 6161.23,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2682,
+      "coverage_notes": [
+        "Analysis period: 1412 valid transactions across 7 days",
+        "Previous period: 1270 valid transactions across 7 days",
+        "Revenue excludes refund transactions (is_refund=True)",
+        "Analysis period refunds: SAR -356.60",
+        "Previous period refunds: SAR -297.20"
+      ],
+      "assumptions": [
+        "transaction_id uniqueness identifies distinct baskets",
+        "line_total_sar represents net transaction value",
+        "is_refund flag correctly identifies refund transactions",
+        "Refunds are excluded from revenue calculations",
+        "Daily normalization is appropriate for fair period comparison given unequal period lengths"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Average Order Value Change",
+      "claim": "Average order value in analysis period was SAR 33.83, compared to SAR 33.96 in previous period, representing a -0.37% change. Revenue figures exclude refunds.",
+      "finding_type": "aov_performance",
+      "metrics": {
+        "analysis_aov": {
+          "value": 33.83,
+          "unit": "SAR",
+          "numerator": 47774.9,
+          "denominator": 1412,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_aov": {
+          "value": 33.96,
+          "unit": "SAR",
+          "numerator": 43128.6,
+          "denominator": 1270,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "aov_change": {
+          "value": -0.12,
+          "unit": "SAR",
+          "numerator": -0.12,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "aov_pct_change": {
+          "value": -0.37,
+          "unit": "%",
+          "numerator": -0.12,
+          "denominator": 33.96,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2682,
+      "coverage_notes": [
+        "Analysis period: 1412 valid transactions",
+        "Previous period: 1270 valid transactions",
+        "Revenue excludes refund transactions (is_refund=True)",
+        "AOV calculated as net revenue divided by valid transaction count"
+      ],
+      "assumptions": [
+        "transaction_id uniqueness identifies distinct baskets",
+        "line_total_sar represents net transaction value",
+        "is_refund flag correctly identifies refund transactions",
+        "Refunds are excluded from revenue calculations",
+        "AOV comparison is valid across periods"
+      ],
+      "confidence": 0.88
+    },
+    {
+      "title": "Category Mix Shift: hot_coffee",
+      "claim": "The hot_coffee category generated SAR 16733.50 in analysis period (2026-01-26 to 2026-02-02) versus SAR 15253.75 in previous period (2026-01-19 to 2026-01-26), a change of SAR 1479.75 (9.70%). Transaction count changed from 637 to 706 (10.83%). Revenue figures exclude refunds.",
+      "finding_type": "category_mix",
+      "metrics": {
+        "analysis_category_revenue": {
+          "value": 16733.5,
+          "unit": "SAR",
+          "numerator": 16733.5,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_category_revenue": {
+          "value": 15253.75,
+          "unit": "SAR",
+          "numerator": 15253.75,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "category_revenue_change": {
+          "value": 1479.75,
+          "unit": "SAR",
+          "numerator": 1479.75,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "category_revenue_pct_change": {
+          "value": 9.7,
+          "unit": "%",
+          "numerator": 1479.75,
+          "denominator": 15253.75,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "analysis_transactions": {
+          "value": 706,
+          "unit": "count",
+          "numerator": 706,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_transactions": {
+          "value": 637,
+          "unit": "count",
+          "numerator": 637,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1343,
+      "coverage_notes": [
+        "Analysis period: 706 hot_coffee transactions",
+        "Previous period: 637 hot_coffee transactions",
+        "Revenue excludes refund transactions (is_refund=True)",
+        "Category assignment from POS data merged with menu reference"
+      ],
+      "assumptions": [
+        "transaction_id uniqueness identifies distinct baskets",
+        "line_total_sar represents net transaction value",
+        "is_refund flag correctly identifies refund transactions",
+        "Refunds are excluded from revenue calculations",
+        "Category classification is consistent across both periods"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

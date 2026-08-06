@@ -1,0 +1,221 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution and Average (Apr 20-27, 2026)",
+      "claim": "During the analysis period, the average review rating was 4.38 out of 5, based on 16 reviews. Rating distribution shows 10 five-star, 4 four-star, 1 three-star, 0 two-star, and 1 one-star reviews.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.38,
+          "unit": "stars",
+          "numerator": 16,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 16,
+          "unit": "count",
+          "numerator": 16,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 10,
+          "unit": "count",
+          "numerator": 10,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "four_star_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "three_star_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "two_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20T00:00:00+03:00 to 2026-04-27T00:00:00+03:00",
+        "Language distribution: {'en': np.int64(12), 'ar': np.int64(4)}",
+        "Total reviews in dataset: 520"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Date filtering uses UTC+3 timezone as specified",
+        "All reviews in the dataset are included without exclusion criteria"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution by Language (Apr 20-27, 2026)",
+      "claim": "Among 16 reviews, 14 (87.5%) were positive (4-5 stars), 1 (6.2%) were neutral (3 stars), and 1 (6.2%) were negative (1-2 stars). English reviews: 12, Arabic reviews: 4.",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "positive_reviews_count": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "positive_reviews_percentage": {
+          "value": 87.5,
+          "unit": "percent",
+          "numerator": 14,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "neutral_reviews_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "negative_reviews_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "english_reviews_count": {
+          "value": 12,
+          "unit": "count",
+          "numerator": 12,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "arabic_reviews_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "non_empty_reviews_count": {
+          "value": 16,
+          "unit": "count",
+          "numerator": 16,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20T00:00:00+03:00 to 2026-04-27T00:00:00+03:00",
+        "English reviews: 12, Arabic reviews: 4",
+        "Reviews with text content: 16",
+        "Sentiment classification based on rating values only"
+      ],
+      "assumptions": [
+        "Positive sentiment = rating 4-5 stars",
+        "Neutral sentiment = rating 3 stars",
+        "Negative sentiment = rating 1-2 stars",
+        "Language field accurately reflects review language"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Review Source Distribution (Apr 20-27, 2026)",
+      "claim": "Reviews were collected from 3 sources during the analysis period. Distribution: google: 11, instagram: 4, talabat: 1.",
+      "finding_type": "source_distribution",
+      "metrics": {
+        "total_sources": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "google_count": {
+          "value": 11,
+          "unit": "count",
+          "numerator": 11,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "instagram_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "talabat_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20T00:00:00+03:00 to 2026-04-27T00:00:00+03:00",
+        "Source breakdown: {'google': np.int64(11), 'instagram': np.int64(4), 'talabat': np.int64(1)}"
+      ],
+      "assumptions": [
+        "Source field accurately identifies review platform/channel",
+        "All reviews in the dataset are included"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

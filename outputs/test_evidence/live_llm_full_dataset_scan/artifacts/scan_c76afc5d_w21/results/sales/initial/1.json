@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Net Revenue Change: Analysis Week vs Previous Week",
+      "claim": "Net revenue in analysis period (2026-06-01 to 2026-06-08) was SAR 48951.95, compared to SAR 62642.50 in previous period (2026-05-25 to 2026-06-01), representing a -21.9% change.",
+      "finding_type": "revenue_change",
+      "metrics": {
+        "analysis_net_revenue": {
+          "value": 48951.95,
+          "unit": "SAR",
+          "numerator": 49255.95,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-08T00:00:00+03:00"
+        },
+        "previous_net_revenue": {
+          "value": 62642.5,
+          "unit": "SAR",
+          "numerator": 63083.1,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "revenue_change_sar": {
+          "value": -13690.55,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-08T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": -21.86,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-08T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2402,
+      "coverage_notes": [
+        "Analysis period rows: 2402",
+        "Previous period rows: 3067",
+        "Analysis transactions: 1425",
+        "Previous transactions: 1801",
+        "Refunds included in net calculation: Analysis SAR -304.00, Previous SAR -440.60"
+      ],
+      "assumptions": [
+        "Refunds are negative line_total_sar values and included in net revenue",
+        "Valid transactions identified by unique transaction_id",
+        "All rows in cleaned POS are valid for analysis"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value Change: Analysis Week vs Previous Week",
+      "claim": "Average order value in analysis period was SAR 34.35 per transaction, compared to SAR 34.78 in previous period, representing a -1.2% change.",
+      "finding_type": "aov_change",
+      "metrics": {
+        "analysis_aov": {
+          "value": 34.35,
+          "unit": "SAR",
+          "numerator": 48951.95,
+          "denominator": 1425,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-08T00:00:00+03:00"
+        },
+        "previous_aov": {
+          "value": 34.78,
+          "unit": "SAR",
+          "numerator": 62642.5,
+          "denominator": 1801,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "aov_change_sar": {
+          "value": -0.43,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-08T00:00:00+03:00"
+        },
+        "aov_change_pct": {
+          "value": -1.24,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-08T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1425,
+      "coverage_notes": [
+        "Analysis transactions: 1425",
+        "Previous transactions: 1801",
+        "AOV calculated as net revenue / unique transaction count"
+      ],
+      "assumptions": [
+        "AOV = net revenue / unique transaction_id count",
+        "Refunds included in net revenue calculation"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Category Mix Shift: iced_other",
+      "claim": "Category 'iced_other' represented 21.7% of sales revenue in analysis period (SAR 10711.95), compared to 18.8% in previous period (SAR 11841.20), a change of 3.0 percentage points.",
+      "finding_type": "category_mix_change",
+      "metrics": {
+        "category_name": {
+          "value": "iced_other",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-08T00:00:00+03:00"
+        },
+        "analysis_category_pct": {
+          "value": 21.75,
+          "unit": "%",
+          "numerator": 10711.95,
+          "denominator": 49255.95,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-08T00:00:00+03:00"
+        },
+        "previous_category_pct": {
+          "value": 18.77,
+          "unit": "%",
+          "numerator": 11841.2,
+          "denominator": 63083.1,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "pct_point_change": {
+          "value": 2.98,
+          "unit": "percentage points",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-08T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2387,
+      "coverage_notes": [
+        "Analysis period sales rows (non-refund): 2387",
+        "Previous period sales rows (non-refund): 3046",
+        "Category data joined from menu SKU reference",
+        "Analysis total revenue: SAR 49255.95",
+        "Previous total revenue: SAR 63083.10"
+      ],
+      "assumptions": [
+        "Category sourced from menu SKU reference where available",
+        "Refunds excluded from category mix calculation",
+        "Revenue-weighted category analysis"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

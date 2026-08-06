@@ -1,0 +1,230 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 5 Items by Gross Profit (Analysis Week)",
+      "claim": "The top 5 items by gross profit contribution generated SAR 16504.50 from 1152 units across 5 SKUs during the analysis week.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_5_total_gross_profit_sar": {
+          "value": 16504.5,
+          "unit": "SAR",
+          "numerator": 16504.5,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_5_total_quantity": {
+          "value": 1152,
+          "unit": "units",
+          "numerator": 1152,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_5_total_revenue_sar": {
+          "value": 24326.8,
+          "unit": "SAR",
+          "numerator": 24326.8,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_5_avg_margin_pct": {
+          "value": 67.84,
+          "unit": "%",
+          "numerator": 16504.5,
+          "denominator": 24326.8,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2603,
+      "coverage_notes": [
+        "POS data filtered to analysis period 2026-03-16 to 2026-03-23",
+        "Refunds excluded (is_refund == False)",
+        "Menu unit_cost_sar merged by SKU",
+        "Top 5 items ranked by gross profit descending",
+        "All 5 items have non-null unit_cost_sar values"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and applicable to analysis period",
+        "POS line_total_sar is net of discounts and represents actual revenue",
+        "Gross profit = line_total_sar - (quantity × unit_cost_sar)",
+        "No recipe/BOM adjustments applied"
+      ],
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "sku": "HOT-001",
+          "item_en": "Spanish Latte",
+          "quantity": 320,
+          "revenue_sar": 5681.7,
+          "cogs_sar": 1664.0,
+          "gross_profit_sar": 4017.7,
+          "gross_margin_pct": 70.71,
+          "baskets": 281
+        },
+        {
+          "sku": "FOD-006",
+          "item_en": "Halloumi Toast",
+          "quantity": 244,
+          "revenue_sar": 5817.6,
+          "cogs_sar": 2000.8,
+          "gross_profit_sar": 3816.8,
+          "gross_margin_pct": 65.61,
+          "baskets": 210
+        },
+        {
+          "sku": "FOD-005",
+          "item_en": "Chicken Sandwich",
+          "quantity": 215,
+          "revenue_sar": 5526.3,
+          "cogs_sar": 2042.5,
+          "gross_profit_sar": 3483.8,
+          "gross_margin_pct": 63.04,
+          "baskets": 193
+        },
+        {
+          "sku": "HOT-004",
+          "item_en": "V60 Filter",
+          "quantity": 168,
+          "revenue_sar": 3655.3,
+          "cogs_sar": 1008.0,
+          "gross_profit_sar": 2647.3,
+          "gross_margin_pct": 72.42,
+          "baskets": 145
+        },
+        {
+          "sku": "FOD-003",
+          "item_en": "Date Cake",
+          "quantity": 205,
+          "revenue_sar": 3645.9,
+          "cogs_sar": 1107.0,
+          "gross_profit_sar": 2538.9,
+          "gross_margin_pct": 69.64,
+          "baskets": 181
+        }
+      ]
+    },
+    {
+      "title": "Quantified Waste Cost (Analysis Week)",
+      "claim": "Measurable waste cost for the analysis week totaled SAR 0.00 across 0 items with recorded waste observations.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 0.0,
+          "unit": "SAR",
+          "numerator": 0.0,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "total_waste_units": {
+          "value": 0,
+          "unit": "units",
+          "numerator": 0,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "items_with_waste": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 0,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 0,
+      "coverage_notes": [
+        "Inventory data for week starting 2026-03-16",
+        "Items with non-null known_waste_cost_sar: 0",
+        "Items with null/unknown waste: 0",
+        "Blank waste values treated as unknown, not zero",
+        "Only non-null waste costs included in total"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar field represents actual waste cost (not estimated)",
+        "Waste data is complete for items with non-null values",
+        "No refunds or credits are included in waste cost",
+        "All items in inventory were active during the week"
+      ],
+      "confidence": 0.85,
+      "evidence": []
+    },
+    {
+      "title": "Supplier Price Changes Detected",
+      "claim": "Email evidence documents 3 supplier price changes with effective dates and percentage deltas.",
+      "finding_type": "supplier_pricing",
+      "metrics": {
+        "price_changes_detected": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 20,
+      "coverage_notes": [
+        "Email records with old_price, new_price, and effective_date: 3",
+        "Price changes sorted by effective_date",
+        "No standing-order quantities found in email facts for procurement scenario"
+      ],
+      "assumptions": [
+        "Email extraction confidence scores reflect reliability of price data",
+        "Effective dates are accurate as stated in supplier communications",
+        "Price changes apply to supplier-level costs, not menu prices"
+      ],
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "ingredient": "roasted coffee",
+          "old_price": 88.0,
+          "new_price": 96.0,
+          "unit": "kg",
+          "currency": "SAR",
+          "price_change_pct": 9.09,
+          "effective_date": "2026-04-15T00:00:00",
+          "email_date": "2026-04-01T00:00:00",
+          "confidence": 0.95
+        },
+        {
+          "ingredient": "full-fat milk",
+          "old_price": 7.1,
+          "new_price": 8.4,
+          "unit": "L",
+          "currency": "SAR",
+          "price_change_pct": 18.31,
+          "effective_date": "2026-05-01T00:00:00",
+          "email_date": "2026-05-04T00:00:00",
+          "confidence": 0.95
+        },
+        {
+          "ingredient": "Barista oat",
+          "old_price": 15.4,
+          "new_price": 17.9,
+          "unit": "L",
+          "currency": "SAR",
+          "price_change_pct": 16.23,
+          "effective_date": "2026-05-01T00:00:00",
+          "email_date": "2026-05-04T00:00:00",
+          "confidence": 0.95
+        }
+      ]
+    }
+  ]
+}

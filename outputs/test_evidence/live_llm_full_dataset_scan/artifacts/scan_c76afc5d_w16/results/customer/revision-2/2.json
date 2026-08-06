@@ -1,0 +1,201 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (2026-04-27 to 2026-05-04), customer ratings averaged 3.76 out of 5, with 21 reviews collected from 3 source(s): google, instagram, talabat.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 3.76,
+          "unit": "stars",
+          "numerator": 79.0,
+          "denominator": 21,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 21,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "rating_1_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "rating_2_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "rating_3_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "rating_4_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "rating_5_count": {
+          "value": 10,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-04-27 to 2026-05-04 (8 days)",
+        "Total reviews in analysis period: 21",
+        "Sources represented: google, instagram, talabat",
+        "Language distribution: {'en': np.int64(15), 'ar': np.int64(6)}"
+      ],
+      "assumptions": [
+        "Review dates are accurate and converted to UTC for comparison",
+        "All reviews in the artifact are valid and complete",
+        "Rating scale is 1-5 stars"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution by Language",
+      "claim": "Among 21 reviews in the analysis period, 14 were positive (rating ≥4), 2 neutral (rating=3), and 5 negative (rating <3). English reviews: 15, Arabic reviews: 6. Sources: google, instagram, talabat.",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "positive_count": {
+          "value": 14,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "neutral_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "negative_count": {
+          "value": 5,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "english_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 6,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Sentiment classification based on rating thresholds (positive: ≥4, neutral: 3, negative: <3)",
+        "English reviews: 15 (71.4%)",
+        "Arabic reviews: 6 (28.6%)",
+        "Topics identified through keyword matching in original language text"
+      ],
+      "assumptions": [
+        "Rating-based sentiment classification is appropriate for this dataset",
+        "Text analysis uses simple keyword matching in original language",
+        "Empty or missing review text is treated as no topic indicators"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "High vs Low Rating Review Volume",
+      "claim": "In the analysis period, 14 reviews had ratings ≥4 (high satisfaction), while 5 reviews had ratings ≤2 (low satisfaction), indicating a 73.7% positive-to-total ratio among extreme ratings. Sources: google, instagram, talabat.",
+      "finding_type": "rating_comparison",
+      "metrics": {
+        "high_rating_count": {
+          "value": 14,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "low_rating_count": {
+          "value": 5,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "positive_ratio": {
+          "value": 73.7,
+          "unit": "percent",
+          "numerator": 14,
+          "denominator": 19,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "High rating (≥4): 14 reviews",
+        "Low rating (≤2): 5 reviews",
+        "Sample high-rating review IDs: ['REV-3189', 'REV-3357', 'REV-3182']",
+        "Sample low-rating review IDs: ['REV-3224', 'REV-3484', 'REV-3046']",
+        "Neutral ratings (3): 2 (excluded from this comparison)"
+      ],
+      "assumptions": [
+        "Rating scale is 1-5 stars",
+        "High satisfaction defined as rating ≥4",
+        "Low satisfaction defined as rating ≤2"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

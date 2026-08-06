@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Jan 26 - Feb 2, 2026)",
+      "claim": "During the analysis period (Jan 26 - Feb 2, 2026), 17 reviews were collected with an average rating of 4.76 out of 5. Rating distribution: {3: 1, 4: 2, 5: 14}",
+      "finding_type": "rating_analysis",
+      "metrics": {
+        "average_rating": {
+          "value": 4.76,
+          "unit": "stars",
+          "numerator": 81.0,
+          "denominator": 17,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 17,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "talabat",
+        "google"
+      ],
+      "sample_size": 17,
+      "coverage_notes": [
+        "Total reviews in analysis period: 17",
+        "Sources covered: instagram, talabat, google",
+        "Language distribution: {'en': 10, 'ar': 7}"
+      ],
+      "assumptions": [
+        "Rating values are valid integers between 1 and 5",
+        "All reviews in the specified date range are included"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Review Topic Analysis (Jan 26 - Feb 2, 2026)",
+      "claim": "Among 17 reviews analyzed (Jan 26 - Feb 2, 2026), keyword analysis identified topics in 7 reviews. The most frequently mentioned topics were: taste (4 mentions), service (2 mentions), price (1 mentions). Note: 10 reviews contained no extractable topics using the keyword matching approach. Analysis covered both English and Arabic text.",
+      "finding_type": "topic_analysis",
+      "metrics": {
+        "taste_mentions": {
+          "value": 4,
+          "unit": "mentions",
+          "numerator": 4,
+          "denominator": 7,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "service_mentions": {
+          "value": 2,
+          "unit": "mentions",
+          "numerator": 2,
+          "denominator": 7,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "price_mentions": {
+          "value": 1,
+          "unit": "mentions",
+          "numerator": 1,
+          "denominator": 7,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "reviews_with_topics": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 17,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat"
+      ],
+      "sample_size": 7,
+      "coverage_notes": [
+        "Total reviews analyzed: 17",
+        "Reviews with extractable topics: 7",
+        "Reviews with no extractable topics: 10",
+        "Topic extraction method: keyword matching in English and Arabic",
+        "Language coverage: {'ar': 4, 'en': 3}"
+      ],
+      "assumptions": [
+        "Empty or missing review text is excluded from topic analysis",
+        "Keyword matching approach may miss nuanced or implicit topic references; manual validation of a sample is recommended to assess precision",
+        "Each review can contain multiple topics",
+        "Keywords are case-insensitive"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

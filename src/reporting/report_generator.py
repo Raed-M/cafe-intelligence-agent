@@ -39,6 +39,8 @@ def generate_report(state: CafeIntelligenceState) -> dict[str, Any]:
     whatsapp_text, whatsapp_len = build_whatsapp_summary(
         config.raw_profile.cafe_name, run_status, state["analysis_period"],
         final_findings, content_ideas, report_ref, whatsapp_max,
+        use_llm_compression=config.app_settings.report.use_llm_summary_compression,
+        model_name=config.app_settings.models.report_summary,
     )
     whatsapp_parts = whatsapp_text.split("\n\n", 1)
     whatsapp_ar = whatsapp_parts[0]

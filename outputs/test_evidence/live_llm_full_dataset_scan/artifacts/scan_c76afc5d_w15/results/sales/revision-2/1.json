@@ -1,0 +1,111 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Revenue Change vs Previous Week",
+      "claim": "Total revenue in analysis period (2026-04-20 to 2026-04-27) was 45789.20 SAR, compared to 42889.20 SAR in previous period (2026-04-13 to 2026-04-20), representing a 6.8% change.",
+      "finding_type": "revenue_change",
+      "metrics": {
+        "analysis_period_revenue": {
+          "value": 45789.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 42889.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "revenue_change": {
+          "value": 2900.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": 6.8,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2281,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20 to 2026-04-27",
+        "Previous period: 2026-04-13 to 2026-04-20",
+        "Includes refunds as negative revenue"
+      ],
+      "assumptions": [
+        "line_total_sar represents net revenue including refunds",
+        "All transactions in period are valid"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Transaction Count Change vs Previous Week",
+      "claim": "Valid transaction count in analysis period (2026-04-20 to 2026-04-27) was 1339, compared to 1257 in previous period (2026-04-13 to 2026-04-20), representing a 6.5% change.",
+      "finding_type": "transaction_count_change",
+      "metrics": {
+        "analysis_period_transactions": {
+          "value": 1339,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "previous_period_transactions": {
+          "value": 1257,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "transaction_count_change": {
+          "value": 82,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "transaction_count_change_pct": {
+          "value": 6.5,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2281,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20 to 2026-04-27",
+        "Previous period: 2026-04-13 to 2026-04-20",
+        "Excludes refund transactions from count"
+      ],
+      "assumptions": [
+        "transaction_id uniquely identifies a basket",
+        "is_refund flag correctly identifies refund transactions"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

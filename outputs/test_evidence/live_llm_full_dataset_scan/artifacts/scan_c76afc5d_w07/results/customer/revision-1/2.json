@@ -1,0 +1,132 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During 2026-02-23T00:00:00+03:00 to 2026-03-02T00:00:00+03:00, reviews averaged 4.50 stars across 10 reviews from sources: google, instagram, talabat.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.5,
+          "unit": "stars",
+          "numerator": 45.0,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 10,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 10,
+      "coverage_notes": [
+        "Analysis period: 2026-02-23T00:00:00+03:00 to 2026-03-02T00:00:00+03:00",
+        "Total reviews in analysis period: 10",
+        "Sources represented: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Date field is accurate and in UTC+3",
+        "All reviews in artifact are from the specified sources"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Of 10 reviews in the analysis period, 9 are in English and 1 are in Arabic.",
+      "finding_type": "language_coverage",
+      "metrics": {
+        "english_reviews": {
+          "value": 9,
+          "unit": "count",
+          "numerator": 9,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 10,
+      "coverage_notes": [
+        "Language distribution: {'en': np.int64(9), 'ar': np.int64(1)}",
+        "Bilingual coverage enables sentiment analysis in both languages"
+      ],
+      "assumptions": [
+        "Language field accurately reflects review language",
+        "Reviews are classified as either 'en' or 'ar'"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Sentiment Distribution (Non-Empty Reviews)",
+      "claim": "Of 10 non-empty reviews in the analysis period, sentiment analysis indicates 3 positive, 1 negative, and 6 neutral/mixed sentiments.",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "positive_sentiment_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "negative_sentiment_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "neutral_sentiment_count": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 10,
+      "coverage_notes": [
+        "Non-empty reviews: 10 of 10 total",
+        "Sentiment classification based on keyword matching in review text",
+        "Both English and Arabic reviews included in analysis"
+      ],
+      "assumptions": [
+        "Sentiment keywords are representative of positive/negative intent",
+        "Keyword matching is a proxy for sentiment (not a trained model)",
+        "Reviews with both positive and negative keywords are classified as neutral/mixed",
+        "Empty or whitespace-only reviews are excluded from sentiment analysis"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

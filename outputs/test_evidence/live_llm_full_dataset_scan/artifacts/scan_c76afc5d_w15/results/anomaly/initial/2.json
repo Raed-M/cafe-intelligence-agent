@@ -1,0 +1,51 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Daily Revenue Anomaly on 2026-04-25",
+      "claim": "Daily revenue of 9177.80 SAR on 2026-04-25 deviates 2.47 standard deviations from baseline mean of 6443.83 SAR",
+      "finding_type": "revenue_anomaly",
+      "metrics": {
+        "observed_daily_revenue": {
+          "value": 9177.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-25T00:00:00",
+          "period_end": "2026-04-26T00:00:00"
+        },
+        "baseline_mean_daily_revenue": {
+          "value": 6443.83,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00",
+          "period_end": "2026-04-20T00:00:00"
+        },
+        "z_score": {
+          "value": 2.47,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-25T00:00:00",
+          "period_end": "2026-04-26T00:00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 28,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20T00:00:00 to 2026-04-27T00:00:00",
+        "Baseline: 4 weeks of historical data (2026-03-23 to 2026-04-20)",
+        "Daily transactions on anomaly date: 250"
+      ],
+      "assumptions": [
+        "Z-score threshold of 2.0 standard deviations used to identify anomalies",
+        "Baseline calculated from 4 complete weeks of historical data",
+        "Refunds included in net revenue calculation per metric definition"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

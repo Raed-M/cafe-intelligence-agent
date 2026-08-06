@@ -45,6 +45,13 @@ def _clean_pos(
     df, n_bad_ts = normalise_pos_timestamps(
         df, config.raw_profile.timezone, config.raw_profile.opening_hours
     )
+    # Same repair convention as item_name/cashier_id: `timestamp` becomes the
+    # cleaned, uniformly-parseable value (same content as timestamp_local);
+    # `timestamp_raw` keeps the original, inconsistently-formatted string.
+    # The source data mixes "%Y-%m-%d %H:%M:%S" and "%d-%b-%Y %H:%M" rows, so
+    # leaving `timestamp` unparsed made pd.to_datetime(df["timestamp"]) raise
+    # for any caller that didn't know to use timestamp_local instead.
+    df["timestamp"] = df["timestamp_local"]
 
     dedup_df, dedup_audit = dedup_double_swipes(df)
 

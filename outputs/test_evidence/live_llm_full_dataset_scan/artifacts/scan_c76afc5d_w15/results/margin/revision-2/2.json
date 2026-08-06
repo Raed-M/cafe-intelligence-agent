@@ -1,0 +1,227 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Revenue Item (Iced Spanish Latte): 71.78% Gross Margin",
+      "claim": "Item ICE-001 (Iced Spanish Latte) generated 5159.00 SAR revenue from 260 units sold during analysis period. With menu unit cost of 5.60 SAR/unit, COGS totals 1456.00 SAR, yielding gross profit of 3703.00 SAR and margin of 71.78%.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "revenue": {
+          "value": 5159.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "units_sold": {
+          "value": 260,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "unit_cost_sar": {
+          "value": 5.6,
+          "unit": "SAR/unit",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "cogs": {
+          "value": 1456.0,
+          "unit": "SAR",
+          "numerator": 260,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "gross_profit": {
+          "value": 3703.0,
+          "unit": "SAR",
+          "numerator": 5159.0,
+          "denominator": 1456.0,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "margin_pct": {
+          "value": 71.78,
+          "unit": "%",
+          "numerator": 3703.0,
+          "denominator": 5159.0,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "basket_count": {
+          "value": 233,
+          "unit": "transactions",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 233,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20T00:00:00+03:00 to 2026-04-27T00:00:00+03:00",
+        "Refunds excluded from revenue and unit calculations",
+        "Menu unit cost of 5.60 SAR/unit used for COGS calculation",
+        "Top item by revenue among 19 items with known unit costs"
+      ],
+      "assumptions": [
+        "No recipe/BOM available; using menu-level unit costs",
+        "Unit cost sourced from menu data only; actual ingredient costs may differ",
+        "Menu unit cost is constant across analysis period",
+        "Recommend validation against supplier invoices and recipe BOM when available"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Quantified Waste Cost: 922.10 SAR",
+      "claim": "During week of 2026-04-20, 6 items with known waste observations incurred 922.10 SAR in waste cost from 157 units wasted. Average waste cost per item: 153.68 SAR.",
+      "finding_type": "waste_economics",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 922.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "total_units_wasted": {
+          "value": 157,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "items_with_waste": {
+          "value": 6,
+          "unit": "items",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "avg_waste_cost_per_item": {
+          "value": 153.68,
+          "unit": "SAR",
+          "numerator": 922.1,
+          "denominator": 6,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20T00:00:00+03:00 to 2026-04-27T00:00:00+03:00",
+        "Only items with non-null known_waste_cost_sar included",
+        "Week starting: 2026-04-20",
+        "Blank waste values excluded per data quality rules"
+      ],
+      "assumptions": [
+        "Waste cost reflects actual unit cost at time of waste",
+        "No recipe/BOM adjustments applied"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Supplier Price Change: roasted coffee (+9.09%)",
+      "claim": "Email from sales@easternbeans.sa dated 2026-04-01 reports price change for roasted coffee: 88.00 SAR/kg → 96.00 SAR/kg, effective 2026-04-15. Price delta: +8.00 SAR (+9.09%). No standing order quantity found in email; procurement cost impact cannot be quantified without order volume data.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "old_price": {
+          "value": 88.0,
+          "unit": "SAR/kg",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "new_price": {
+          "value": 96.0,
+          "unit": "SAR/kg",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "price_delta": {
+          "value": 8.0,
+          "unit": "SAR/kg",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "price_delta_pct": {
+          "value": 9.09,
+          "unit": "%",
+          "numerator": 8.0,
+          "denominator": 88.0,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Email date: 2026-04-01",
+        "Effective date: 2026-04-15",
+        "Sender: sales@easternbeans.sa",
+        "No standing order quantity found in email text",
+        "Procurement cost impact cannot be calculated without order volume"
+      ],
+      "assumptions": [
+        "Price change applies to specified entity/ingredient only",
+        "No recipe/BOM available to map ingredient to menu items",
+        "Standing order quantity and payment terms unknown"
+      ],
+      "confidence": 0.95
+    }
+  ],
+  "result_data": {
+    "item_ICE-001_analysis_period": {
+      "sku": "ICE-001",
+      "item_en": "Iced Spanish Latte",
+      "units_sold": 260,
+      "revenue": 5159.0,
+      "unit_cost_sar": 5.6,
+      "cogs": 1456.0,
+      "gross_profit": 3703.0,
+      "margin_pct": 71.78,
+      "basket_count": 233
+    },
+    "waste_cost_analysis_period": {
+      "total_waste_cost_sar": 922.1,
+      "total_units_wasted": 157,
+      "items_with_waste": 6,
+      "avg_waste_cost_per_item": 153.68
+    },
+    "price_change_roasted coffee": {
+      "entity": "roasted coffee",
+      "old_price": 88.0,
+      "new_price": 96.0,
+      "currency": "SAR",
+      "unit": "kg",
+      "price_delta": 8.0,
+      "price_delta_pct": 9.09,
+      "effective_date": "2026-04-15",
+      "sender": "sales@easternbeans.sa",
+      "confidence": 0.95
+    }
+  }
+}

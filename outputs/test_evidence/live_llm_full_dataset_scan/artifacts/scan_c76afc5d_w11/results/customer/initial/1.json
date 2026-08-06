@@ -1,0 +1,139 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution (Mar 23-30, 2026)",
+      "claim": "Average customer rating is 4.79 out of 5, based on 19 reviews during the analysis period.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.79,
+          "unit": "stars",
+          "numerator": 91.0,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 19,
+          "unit": "count",
+          "numerator": 19,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "talabat",
+        "google",
+        "instagram"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "Reviews from 3 source(s)",
+        "Language distribution: {'en': np.int64(12), 'ar': np.int64(7)}"
+      ],
+      "assumptions": [
+        "All reviews in the artifact are valid and represent genuine customer feedback",
+        "Rating scale is 1-5 stars",
+        "Reviews are independent observations"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution by Language",
+      "claim": "Sentiment analysis shows 18 positive, 1 neutral, and 0 negative reviews. English reviews: 12, Arabic reviews: 7.",
+      "finding_type": "sentiment_classification",
+      "metrics": {
+        "positive_reviews": {
+          "value": "18",
+          "unit": "count",
+          "numerator": "18",
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "english_review_count": {
+          "value": 12,
+          "unit": "count",
+          "numerator": 12,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "arabic_review_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "talabat",
+        "google",
+        "instagram"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "Bilingual coverage: 12 English, 7 Arabic",
+        "Sentiment classification based on rating thresholds (4-5: positive, 3: neutral, 1-2: negative)"
+      ],
+      "assumptions": [
+        "Sentiment is derived from rating values only",
+        "Rating scale is 1-5 stars",
+        "Language field accurately reflects review language"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Review Text Topics and Themes",
+      "claim": "Analysis of 19 reviews with text content identifies mentions of quality, service, price, taste, and speed. Topic mentions detected: quality: 3, service: 2, taste: 1.",
+      "finding_type": "topic_analysis",
+      "metrics": {
+        "reviews_with_text": {
+          "value": 19,
+          "unit": "count",
+          "numerator": 19,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "empty_reviews": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "talabat",
+        "google",
+        "instagram"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "Text analysis covers 19 of 19 reviews (100.0%)",
+        "Bilingual keyword matching applied to both English and Arabic text",
+        "Topic detection uses simple keyword presence, not frequency weighting"
+      ],
+      "assumptions": [
+        "Keyword presence indicates topic relevance",
+        "Text field contains original customer language",
+        "Empty text fields represent reviews with rating only"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

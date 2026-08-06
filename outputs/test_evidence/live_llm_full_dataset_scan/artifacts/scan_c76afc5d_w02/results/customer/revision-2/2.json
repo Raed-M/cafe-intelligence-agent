@@ -1,0 +1,186 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (2026-01-19T00:00:00+03:00 to 2026-01-26T00:00:00+03:00), the average rating across all reviews is 4.32 out of 5, with 25 reviews collected.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.32,
+          "unit": "stars",
+          "numerator": 108.0,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 25,
+          "unit": "count",
+          "numerator": 25,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "rating_1_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "rating_2_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "rating_3_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "rating_4_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "rating_5_count": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 25,
+      "coverage_notes": [
+        "Analysis period: 2026-01-19T00:00:00+03:00 to 2026-01-26T00:00:00+03:00",
+        "Total reviews in dataset: 520",
+        "Reviews in analysis period: 25",
+        "Sources included: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid (1-5 scale)",
+        "Date field is properly parsed",
+        "All reviews in the dataset are included regardless of language"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "During the analysis period, 17 reviews were in English and 8 reviews were in Arabic out of 25 total reviews.",
+      "finding_type": "language_distribution",
+      "metrics": {
+        "english_reviews": {
+          "value": 17,
+          "unit": "count",
+          "numerator": 17,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 8,
+          "unit": "count",
+          "numerator": 8,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "english_percentage": {
+          "value": 68.0,
+          "unit": "percent",
+          "numerator": 17,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "arabic_percentage": {
+          "value": 32.0,
+          "unit": "percent",
+          "numerator": 8,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 25,
+      "coverage_notes": [
+        "Analysis period: 2026-01-19T00:00:00+03:00 to 2026-01-26T00:00:00+03:00",
+        "Language values found: ['en', 'ar']"
+      ],
+      "assumptions": [
+        "Language field contains valid ISO 639-1 codes (en/ar)",
+        "Language classification is accurate as provided in the dataset"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Review Source Distribution",
+      "claim": "During the analysis period, reviews were collected from 3 sources: google (17), instagram (4), talabat (4).",
+      "finding_type": "source_distribution",
+      "metrics": {
+        "google_count": {
+          "value": 17,
+          "unit": "count",
+          "numerator": 17,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "instagram_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "talabat_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 25,
+      "coverage_notes": [
+        "Analysis period: 2026-01-19T00:00:00+03:00 to 2026-01-26T00:00:00+03:00",
+        "Sources in analysis period: ['google', 'instagram', 'talabat']"
+      ],
+      "assumptions": [
+        "Source field accurately identifies the platform/channel from which reviews were collected",
+        "All sources in the dataset are represented"
+      ],
+      "confidence": 1.0
+    }
+  ]
+}

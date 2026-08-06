@@ -1,0 +1,144 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item - Exact Item Economics",
+      "claim": "Item 'Spanish Latte' (SKU: HOT-001) generated the highest gross profit of 3872.70 SAR during the analysis period, with 306 units sold at 70.9% gross margin.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "gross_profit_sar": {
+          "value": 3872.7,
+          "unit": "SAR",
+          "numerator": 5463.9,
+          "denominator": 1591.2,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "units_sold": {
+          "value": 306,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "gross_margin_percent": {
+          "value": 70.9,
+          "unit": "%",
+          "numerator": 3872.7,
+          "denominator": 5463.9,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2411,
+      "coverage_notes": [
+        "Analysis includes all non-refund POS transactions during 2026-01-26 to 2026-02-02",
+        "Only items with non-null unit_cost_sar in menu are included",
+        "Gross profit = Revenue - (Quantity × Unit Cost)"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar represents actual COGS per unit",
+        "POS line_total_sar is accurate revenue after discounts",
+        "No waste adjustments applied (waste data not linked to POS items)"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost Impact",
+      "claim": "Known waste cost of 1136.50 SAR was recorded for 188 units during the week of 2026-01-26, representing 5.64% of revenue from affected items.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 1136.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "units_wasted": {
+          "value": 188,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "waste_as_pct_of_revenue": {
+          "value": 5.64,
+          "unit": "%",
+          "numerator": 1136.5,
+          "denominator": 20161.5,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory",
+        "pos"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Only non-null known_waste_cost_sar values included",
+        "Waste data from inventory week 2026-01-26",
+        "Revenue calculated from POS for affected SKUs"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar accurately reflects waste value",
+        "Waste items correspond to POS SKUs"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Supplier Price Change Detection",
+      "claim": "Supplier price change detected for full-fat milk: 7.10 SAR/L → 8.40 SAR/L (+18.3%), effective 2026-05-01.",
+      "finding_type": "supplier_cost",
+      "metrics": {
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        },
+        "price_change_percent": {
+          "value": 18.3,
+          "unit": "%",
+          "numerator": 1.3,
+          "denominator": 7.1,
+          "period_start": null,
+          "period_end": null
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Most recent price change from supplier emails",
+        "No standing order quantities found to calculate procurement cost scenario",
+        "Price change may not yet be reflected in current menu costs"
+      ],
+      "assumptions": [
+        "Email extraction accurately captured price and effective date",
+        "Price change applies to future purchases",
+        "No recipe/BOM available to calculate per-drink impact"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

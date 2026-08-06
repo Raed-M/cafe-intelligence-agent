@@ -1,0 +1,174 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Change Week-over-Week",
+      "claim": "Conversion rate changed by -3.97% from previous week to analysis week",
+      "finding_type": "operational_metric",
+      "metrics": {
+        "analysis_conversion_rate": {
+          "value": 0.2312,
+          "unit": "transactions_per_visitor",
+          "numerator": 1313,
+          "denominator": 5679,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "previous_conversion_rate": {
+          "value": 0.2408,
+          "unit": "transactions_per_visitor",
+          "numerator": 1311,
+          "denominator": 5445,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "conversion_change_pct": {
+          "value": -3.97,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 1313,
+      "coverage_notes": [
+        "Analysis period: 1313 valid transactions from 5679 footfall events",
+        "Previous period: 1311 valid transactions from 5445 footfall events",
+        "Dead sensor days excluded from footfall denominator"
+      ],
+      "assumptions": [
+        "Conversion = unique valid sales transactions / valid footfall",
+        "Refunds excluded from transaction count",
+        "Dead sensor days excluded from footfall calculation"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Labour Cost Change Week-over-Week",
+      "claim": "Total labour cost changed by 26.64% from previous week to analysis week",
+      "finding_type": "operational_metric",
+      "metrics": {
+        "analysis_labour_cost_sar": {
+          "value": "7568",
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "analysis_staff_hours": {
+          "value": 340.0,
+          "unit": "hours",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "previous_labour_cost_sar": {
+          "value": "5976",
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "previous_staff_hours": {
+          "value": 272.0,
+          "unit": "hours",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "labour_cost_change_pct": {
+          "value": 26.64,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "staff"
+      ],
+      "sample_size": 44,
+      "coverage_notes": [
+        "Analysis period: 44 staff records with total cost 7568.00 SAR",
+        "Previous period: 34 staff records with total cost 5976.00 SAR"
+      ],
+      "assumptions": [
+        "Labour cost calculated from computed_duration_hours and hourly_rate_sar",
+        "Staff shifts computed using shift_start and shift_end overlap"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Known Waste Cost and Ratio Analysis",
+      "claim": "Known waste cost was 1194.10 SAR in analysis week vs 741.20 SAR in previous week",
+      "finding_type": "operational_metric",
+      "metrics": {
+        "analysis_known_waste_cost_sar": {
+          "value": 1194.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "analysis_waste_ratio": {
+          "value": 0.2173,
+          "unit": "ratio",
+          "numerator": 193,
+          "denominator": 888,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "previous_known_waste_cost_sar": {
+          "value": 741.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "previous_waste_ratio": {
+          "value": 0.1736,
+          "unit": "ratio",
+          "numerator": 146,
+          "denominator": 841,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "waste_ratio_change_pct": {
+          "value": 25.2,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: 6 inventory records",
+        "Previous period: 6 inventory records",
+        "Only known waste values included; unknown waste preserved"
+      ],
+      "assumptions": [
+        "Waste ratio = units_wasted / (units_sold + units_wasted)",
+        "Known waste cost calculated from units_wasted and unit_cost_sar",
+        "Sunday inventory counts treated as weekly snapshots, not real-time"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

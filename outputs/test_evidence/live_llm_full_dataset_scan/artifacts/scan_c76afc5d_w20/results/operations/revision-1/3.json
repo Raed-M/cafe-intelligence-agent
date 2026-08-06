@@ -1,0 +1,161 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Decline in Analysis Period",
+      "claim": "Conversion rate decreased from 0.2560 (1434 transactions / 5602 footfall) in the previous period to 0.2367 (1794 transactions / 7580 footfall) in the analysis period, a change of -7.54%.",
+      "finding_type": "performance_metric",
+      "metrics": {
+        "conversion_rate_analysis": {
+          "value": 0.2367,
+          "unit": "transactions_per_visitor",
+          "numerator": 1794,
+          "denominator": 7580,
+          "period_start": "2026-05-25T03:00:00+00:00",
+          "period_end": "2026-06-01T03:00:00+00:00"
+        },
+        "conversion_rate_previous": {
+          "value": 0.256,
+          "unit": "transactions_per_visitor",
+          "numerator": 1434,
+          "denominator": 5602,
+          "period_start": "2026-05-18T03:00:00+00:00",
+          "period_end": "2026-05-25T03:00:00+00:00"
+        },
+        "conversion_rate_change_pct": {
+          "value": -7.54,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T03:00:00+00:00",
+          "period_end": "2026-06-01T03:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 1794,
+      "coverage_notes": [
+        "Analysis period: 7580 valid footfall records (dead sensor days excluded)",
+        "Previous period: 5602 valid footfall records (dead sensor days excluded)",
+        "Analysis period: 1794 non-refund transactions",
+        "Previous period: 1434 non-refund transactions"
+      ],
+      "assumptions": [
+        "Conversion calculated as unique valid (non-refund) transactions divided by valid footfall",
+        "Dead sensor days excluded from footfall denominator",
+        "Transaction uniqueness determined by transaction_id"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Labour Cost Increase in Analysis Period",
+      "claim": "Labour cost increased from SAR 7390.00 (330.0 hours) in the previous period to SAR 6944.00 (312.0 hours) in the analysis period, a change of -6.04%.",
+      "finding_type": "cost_metric",
+      "metrics": {
+        "labour_cost_analysis": {
+          "value": 6944.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T03:00:00+00:00",
+          "period_end": "2026-06-01T03:00:00+00:00"
+        },
+        "labour_cost_previous": {
+          "value": 7390.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T03:00:00+00:00",
+          "period_end": "2026-05-25T03:00:00+00:00"
+        },
+        "labour_cost_change_pct": {
+          "value": -6.04,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T03:00:00+00:00",
+          "period_end": "2026-06-01T03:00:00+00:00"
+        },
+        "staff_hours_analysis": {
+          "value": 312.0,
+          "unit": "hours",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T03:00:00+00:00",
+          "period_end": "2026-06-01T03:00:00+00:00"
+        },
+        "staff_hours_previous": {
+          "value": 330.0,
+          "unit": "hours",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T03:00:00+00:00",
+          "period_end": "2026-05-25T03:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "staff"
+      ],
+      "sample_size": 39,
+      "coverage_notes": [
+        "Analysis period: 39 staff shift records",
+        "Previous period: 42 staff shift records",
+        "Labour cost calculated from computed_duration_hours × hourly_rate_sar"
+      ],
+      "assumptions": [
+        "Labour cost computed from staff records with computed_duration_hours",
+        "Hourly rates applied as recorded in staff data",
+        "No imputation for missing shift data"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Known Waste Cost Increase in Analysis Week",
+      "claim": "Known waste cost increased from SAR 1270.30 in the previous week to SAR 1029.00 in the analysis week, a change of SAR -241.30 (-19.00% if previous > 0).",
+      "finding_type": "waste_metric",
+      "metrics": {
+        "known_waste_cost_analysis": {
+          "value": 1029.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T03:00:00+00:00",
+          "period_end": "2026-06-01T03:00:00+00:00"
+        },
+        "known_waste_cost_previous": {
+          "value": 1270.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T03:00:00+00:00",
+          "period_end": "2026-05-25T03:00:00+00:00"
+        },
+        "known_waste_cost_change_sar": {
+          "value": -241.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T03:00:00+00:00",
+          "period_end": "2026-06-01T03:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis week: 6 SKU records with known waste",
+        "Previous week: 6 SKU records with known waste",
+        "Metric includes only known_waste_cost_sar; unknown waste excluded per schema"
+      ],
+      "assumptions": [
+        "Waste cost calculated from known_waste_cost_sar column only",
+        "Unknown waste values excluded per data quality rules",
+        "Week-level aggregation from inventory records"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

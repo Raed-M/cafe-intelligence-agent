@@ -46,6 +46,18 @@ def read_dataframe(ref: ArtifactRef) -> pd.DataFrame:
     return pd.read_parquet(ref["path"])
 
 
+def artifact_columns(ref: ArtifactRef) -> list[str] | None:
+    """Column names for a parquet artifact, read from its schema only (no
+    row data loaded). Lets analyst code-gen see the real cleaned/derived
+    column names -- e.g. `business_date`/`timestamp_local`, added during
+    cleaning -- instead of guessing them from prose alone."""
+    if ref["media_type"] != "application/x-parquet":
+        return None
+    import pyarrow.parquet as pq
+
+    return pq.ParquetFile(ref["path"]).schema_arrow.names
+
+
 def write_json(obj: Any, path: Path, schema_version: str = "1.0", row_count: int | None = None) -> ArtifactRef:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, ensure_ascii=False, indent=2, default=str), encoding="utf-8")

@@ -1,0 +1,229 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Revenue and Transaction Performance",
+      "claim": "Analysis period (Feb 16-23) generated SAR 38206.75 in revenue across 1127 transactions, compared to SAR 43526.20 across 1324 transactions in the previous week. Revenue changed by SAR -5319.45 (-12.22%), while transaction count changed by -197 (-14.88%). Average order value increased from SAR 32.87 to SAR 33.90, a change of SAR 1.03 (3.12%).",
+      "finding_type": "revenue_and_transaction_analysis",
+      "metrics": {
+        "analysis_revenue": {
+          "value": 38206.75,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "analysis_transactions": {
+          "value": 1127,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "previous_revenue": {
+          "value": 43526.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "previous_transactions": {
+          "value": 1324,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "revenue_change": {
+          "value": -5319.45,
+          "unit": "SAR",
+          "numerator": -5319.45,
+          "denominator": 43526.2,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "revenue_pct_change": {
+          "value": -12.22,
+          "unit": "%",
+          "numerator": -5319.45,
+          "denominator": 43526.2,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "transaction_change": {
+          "value": -197,
+          "unit": "count",
+          "numerator": -197,
+          "denominator": 1324,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "transaction_pct_change": {
+          "value": -14.88,
+          "unit": "%",
+          "numerator": -197,
+          "denominator": 1324,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "analysis_aov": {
+          "value": 33.9,
+          "unit": "SAR",
+          "numerator": 38206.75,
+          "denominator": 1127,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "previous_aov": {
+          "value": 32.87,
+          "unit": "SAR",
+          "numerator": 43526.2,
+          "denominator": 1324,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "aov_change": {
+          "value": 1.03,
+          "unit": "SAR",
+          "numerator": 1.03,
+          "denominator": 32.87,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "aov_pct_change": {
+          "value": 3.12,
+          "unit": "%",
+          "numerator": 1.03,
+          "denominator": 32.87,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1967,
+      "coverage_notes": [
+        "Refunds included in net revenue calculations",
+        "Analysis period refunds: SAR -344.90",
+        "Previous period refunds: SAR -509.00",
+        "All valid transactions counted using unique transaction_id"
+      ],
+      "assumptions": [
+        "line_total_sar represents net revenue (including refunds)",
+        "AOV = total revenue / unique transaction count",
+        "Periods are non-overlapping and consecutive weeks"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Category Revenue Change: hot_coffee",
+      "claim": "The hot_coffee category experienced a revenue change from SAR 15256.65 in the previous week to SAR 11874.50 in the analysis period, representing a change of SAR -3382.15 (-22.17%). This is the largest absolute category revenue change between the two periods.",
+      "finding_type": "category_mix_analysis",
+      "metrics": {
+        "category_current_revenue": {
+          "value": 11874.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "category_previous_revenue": {
+          "value": 15256.65,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "category_revenue_change": {
+          "value": -3382.15,
+          "unit": "SAR",
+          "numerator": -3382.15,
+          "denominator": 15256.65,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "category_revenue_pct_change": {
+          "value": -22.17,
+          "unit": "%",
+          "numerator": -3382.15,
+          "denominator": 15256.65,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1967,
+      "coverage_notes": [
+        "Refunds included in net revenue calculations",
+        "Category analysis based on POS line items"
+      ],
+      "assumptions": [
+        "line_total_sar represents net revenue (including refunds)",
+        "Category classification from POS data is accurate"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Top Product Revenue Change: Chicken Sandwich",
+      "claim": "SKU FOD-005 (Chicken Sandwich) showed the largest absolute revenue change, moving from SAR 3883.10 in the previous week to SAR 5224.70 in the analysis period, a change of SAR 1341.60 (34.55%).",
+      "finding_type": "product_performance_analysis",
+      "metrics": {
+        "product_current_revenue": {
+          "value": 5224.7,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "product_previous_revenue": {
+          "value": 3883.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "product_revenue_change": {
+          "value": 1341.6,
+          "unit": "SAR",
+          "numerator": 1341.6,
+          "denominator": 3883.1,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "product_revenue_pct_change": {
+          "value": 34.55,
+          "unit": "%",
+          "numerator": 1341.6,
+          "denominator": 3883.1,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1967,
+      "coverage_notes": [
+        "Refunds included in net revenue calculations",
+        "Product name resolved from menu SKU reference"
+      ],
+      "assumptions": [
+        "line_total_sar represents net revenue (including refunds)",
+        "SKU to product name mapping from menu is accurate"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

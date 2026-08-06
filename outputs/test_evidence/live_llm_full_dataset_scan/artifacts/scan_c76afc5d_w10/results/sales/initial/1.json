@@ -1,0 +1,136 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Weekly Revenue Change",
+      "claim": "Net revenue in analysis week (2026-03-16 to 2026-03-23) was 51430.25 SAR, representing a 38.7% change from previous week (37092.85 SAR). Valid transaction count: 1556 vs 1095 baskets.",
+      "finding_type": "revenue_change",
+      "metrics": {
+        "analysis_week_revenue": {
+          "value": 51430.25,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_week_revenue": {
+          "value": 37092.85,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "revenue_change_sar": {
+          "value": 14337.4,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": 38.7,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "analysis_baskets": {
+          "value": 1556,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_baskets": {
+          "value": 1095,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2618,
+      "coverage_notes": [
+        "Analysis period: 2026-03-16 to 2026-03-23",
+        "Previous period: 2026-03-09 to 2026-03-16",
+        "Baskets counted using unique transaction_id",
+        "Revenue includes refunds in net calculation"
+      ],
+      "assumptions": [
+        "business_date field used for period filtering",
+        "line_total_sar represents net revenue after discounts",
+        "transaction_id uniqueness indicates distinct baskets"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Category Mix Shift: hot_coffee",
+      "claim": "Category 'hot_coffee' revenue was 16796.75 SAR (32.7% of total) in analysis week vs 10428.15 SAR (28.1% of total) in previous week, a 61.1% change.",
+      "finding_type": "category_mix_change",
+      "metrics": {
+        "analysis_category_revenue": {
+          "value": 16796.75,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_category_revenue": {
+          "value": 10428.15,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "analysis_category_pct": {
+          "value": 32.7,
+          "unit": "%",
+          "numerator": 16796.75,
+          "denominator": 51430.25,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_category_pct": {
+          "value": 28.1,
+          "unit": "%",
+          "numerator": 10428.15,
+          "denominator": 37092.85,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "category_change_pct": {
+          "value": 61.1,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2618,
+      "coverage_notes": [
+        "Category: hot_coffee",
+        "Revenue aggregated by category field from POS"
+      ],
+      "assumptions": [
+        "category field accurately represents product grouping",
+        "line_total_sar represents net revenue"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item - Week of 2026-05-18",
+      "claim": "Item 'Iced Spanish Latte' (SKU: ICE-001) generated the highest gross profit of 4817.20 SAR during the analysis week, with 338 units sold across 304 transactions, achieving a 71.8% gross margin.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Iced Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "sku": {
+          "value": "ICE-001",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "total_quantity": {
+          "value": "338",
+          "unit": "units",
+          "numerator": "338",
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "total_revenue": {
+          "value": 6710.0,
+          "unit": "SAR",
+          "numerator": 6710.0,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "total_cogs": {
+          "value": 1892.8,
+          "unit": "SAR",
+          "numerator": 1892.8,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "gross_profit": {
+          "value": 4817.2,
+          "unit": "SAR",
+          "numerator": 4817.2,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "gross_margin_pct": {
+          "value": 71.79,
+          "unit": "%",
+          "numerator": 4817.2,
+          "denominator": 6710.0,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "basket_count": {
+          "value": "304",
+          "unit": "transactions",
+          "numerator": "304",
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2479,
+      "coverage_notes": [
+        "Analysis period: 2026-05-18 to 2026-05-25",
+        "Excludes refunds (is_refund == False)",
+        "Unit costs sourced from menu.parquet",
+        "Revenue calculated from line_total_sar",
+        "COGS = quantity × unit_cost_sar",
+        "Gross profit = revenue - COGS"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and accurate for the analysis period",
+        "POS line_total_sar reflects actual transaction amounts",
+        "No adjustments for waste or shrinkage beyond inventory records"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Supplier Price Notification – Full-Fat Milk Cost Increase (May 2026)",
+      "claim": "Supplier email dated 2026-05-04 from orders@qatifdairy.com notifies of a full-fat milk price increase from 7.1 to 8.4 SAR per L, effective 2026-05-01, representing an 18.31% increase. Procurement cost impact on cafe margin cannot be quantified without recipe/BOM data and standing order volumes.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "entity": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": 7.1,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": 8.4,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "price_change_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 1.3000000000000007,
+          "denominator": 7.1,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "email_date": {
+          "value": "2026-05-04",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "effective_date": {
+          "value": "2026-05-01",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        },
+        "sender": {
+          "value": "orders@qatifdairy.com",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00Z",
+          "period_end": "2026-05-25T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Evidence observation period (2026-05-18 to 2026-05-25) reflects when price change was confirmed in cafe records",
+        "Email notification dated {latest_milk_email['date'].strftime('%Y-%m-%d')}",
+        "Extraction confidence: {latest_milk_email['confidence']}"
+      ],
+      "assumptions": [
+        "Email extraction confidence: 0.95",
+        "Actual procurement volumes and payment terms unknown",
+        "Per-drink cost impact requires recipe/BOM data",
+        "Standing order volumes and continued order assumptions not verified"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

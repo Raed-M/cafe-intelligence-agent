@@ -1,0 +1,216 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Decline Week-over-Week",
+      "claim": "Conversion rate declined from 0.3686 (1101 transactions / 2987 visitors) in the previous period to 0.2718 (1570 transactions / 5777 visitors) in the analysis period, representing a -26.27% decrease.",
+      "finding_type": "performance_metric",
+      "metrics": {
+        "conversion_rate_analysis_period": {
+          "value": 0.2718,
+          "unit": "ratio",
+          "numerator": 1570,
+          "denominator": 5777,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "conversion_rate_previous_period": {
+          "value": 0.3686,
+          "unit": "ratio",
+          "numerator": 1101,
+          "denominator": 2987,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "conversion_change_percent": {
+          "value": -26.27,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 2671,
+      "coverage_notes": [
+        "Analysis period (2026-03-16 to 2026-03-23): 99 valid traffic days, 0 dead sensor days excluded",
+        "Previous period (2026-03-09 to 2026-03-16): 84 valid traffic days, 0 dead sensor days excluded",
+        "Total transactions analyzed: 2671",
+        "Total footfall: 8764 visitors"
+      ],
+      "assumptions": [
+        "Conversion = unique valid sales transactions / valid footfall",
+        "Dead sensor days excluded from footfall denominator",
+        "Refunds excluded from transaction count",
+        "Timezone: Asia/Riyadh (UTC+3)"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Labour Efficiency Decline",
+      "claim": "Labour cost to demand ratio increased from 0.1541 (SAR 5836.00 / SAR 37876.10) in the previous period to 0.1020 (SAR 5376.00 / SAR 52689.35) in the analysis period, indicating -33.78% deterioration in labour efficiency.",
+      "finding_type": "operational_efficiency",
+      "metrics": {
+        "labour_cost_analysis_period": {
+          "value": 5376.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "demand_analysis_period": {
+          "value": 52689.35,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "labour_to_demand_ratio_analysis_period": {
+          "value": 0.102,
+          "unit": "ratio",
+          "numerator": 5376.0,
+          "denominator": 52689.35,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "labour_cost_previous_period": {
+          "value": 5836.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "demand_previous_period": {
+          "value": 37876.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "labour_to_demand_ratio_previous_period": {
+          "value": 0.1541,
+          "unit": "ratio",
+          "numerator": 5836.0,
+          "denominator": 37876.1,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "labour_to_demand_change_percent": {
+          "value": -33.78,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "staff"
+      ],
+      "sample_size": 62,
+      "coverage_notes": [
+        "Analysis period (2026-03-16 to 2026-03-23): 31 staff records",
+        "Previous period (2026-03-09 to 2026-03-16): 31 staff records",
+        "Labour cost calculated from staff hourly rates and computed duration",
+        "Demand calculated from non-refund POS transactions"
+      ],
+      "assumptions": [
+        "Labour cost = sum of hourly_rate_sar × computed_duration_hours",
+        "Demand = sum of line_total_sar for non-refund transactions",
+        "Staff shifts computed using shift_start and shift_end overlap",
+        "Timezone: Asia/Riyadh (UTC+3)"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Known Waste Cost Ratio Improvement",
+      "claim": "Known waste cost per unit sold decreased from SAR 1.5735 (1093.60 SAR / 695 units) in the previous period to SAR 1.2078 (839.40 SAR / 695 units) in the analysis period, representing a -23.24% improvement.",
+      "finding_type": "cost_efficiency",
+      "metrics": {
+        "known_waste_cost_analysis_period": {
+          "value": 839.4,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "units_sold_analysis_period": {
+          "value": 695,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "waste_ratio_analysis_period": {
+          "value": 1.2078,
+          "unit": "SAR/unit",
+          "numerator": 839.4,
+          "denominator": 695,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "known_waste_cost_previous_period": {
+          "value": 1093.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "units_sold_previous_period": {
+          "value": 695,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "waste_ratio_previous_period": {
+          "value": 1.5735,
+          "unit": "SAR/unit",
+          "numerator": 1093.6,
+          "denominator": 695,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "waste_ratio_change_percent": {
+          "value": -23.24,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 12,
+      "coverage_notes": [
+        "Analysis period (2026-03-16 to 2026-03-23): 6 inventory records, 695 units sold",
+        "Previous period (2026-03-09 to 2026-03-16): 6 inventory records, 695 units sold",
+        "Known waste cost includes only documented waste with unit cost",
+        "Unknown waste values excluded per data quality requirements"
+      ],
+      "assumptions": [
+        "Waste ratio = known_waste_cost_sar / units_sold",
+        "Only known waste (with documented unit cost) included",
+        "Unknown waste values excluded from analysis",
+        "Inventory data aggregated by week_starting date",
+        "Period-specific units_sold denominators used for each period"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

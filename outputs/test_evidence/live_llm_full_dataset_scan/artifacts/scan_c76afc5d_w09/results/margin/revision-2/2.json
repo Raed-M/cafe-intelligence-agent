@@ -1,0 +1,220 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item: Item-Level Economics",
+      "claim": "The highest-margin item by absolute gross profit contribution is Chicken Sandwich (SKU: FOD-005), generating SAR 3370.00 gross profit from 207 units sold at SAR 26.00 per unit, with unit cost of SAR 9.50, yielding 63.2% gross margin.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Chicken Sandwich",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "quantity_sold": {
+          "value": 207,
+          "unit": "units",
+          "numerator": 207,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "revenue": {
+          "value": 5336.5,
+          "unit": "SAR",
+          "numerator": 5336.5,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "unit_cost_sar": {
+          "value": 9.5,
+          "unit": "SAR",
+          "numerator": 9.5,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "total_cogs": {
+          "value": 1966.5,
+          "unit": "SAR",
+          "numerator": 1966.5,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "gross_profit": {
+          "value": 3370.0,
+          "unit": "SAR",
+          "numerator": 3370.0,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "gross_margin_pct": {
+          "value": 63.2,
+          "unit": "%",
+          "numerator": 63.2,
+          "denominator": 100,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "transactions": {
+          "value": 187,
+          "unit": "baskets",
+          "numerator": 187,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 187,
+      "coverage_notes": [
+        "Analysis period: 2026-03-09 to 2026-03-16 (7 days)",
+        "POS data: 1915 line items, 1095 transactions",
+        "Menu data: 19 items with unit costs",
+        "Refunds excluded from net revenue and profit calculations",
+        "Unit costs sourced from menu.unit_cost_sar (declared supplier costs)"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar represents actual COGS per unit",
+        "POS line_total_sar is accurate and consistent",
+        "No recipe/BOM data available; per-drink ingredient costs not calculated",
+        "Waste costs not included in item-level COGS (only in inventory waste tracking)"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost Impact",
+      "claim": "Known waste cost in analysis period totals SAR 1093.60 across 184 units, representing 5.89% of revenue from affected items. This is a direct margin pressure from non-saleable inventory.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 1093.6,
+          "unit": "SAR",
+          "numerator": 1093.6,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "total_waste_units": {
+          "value": 184,
+          "unit": "units",
+          "numerator": 184,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "waste_as_pct_revenue": {
+          "value": 5.89,
+          "unit": "%",
+          "numerator": 5.89,
+          "denominator": 100,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "affected_items": {
+          "value": 6,
+          "unit": "SKUs",
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "inventory",
+        "pos"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Only non-null waste_cost_sar values included (known waste only)",
+        "Inventory records: 6 items with waste cost data",
+        "Blank waste values treated as unknown, not zero",
+        "Waste cost sourced from inventory.known_waste_cost_sar"
+      ],
+      "assumptions": [
+        "Inventory waste_cost_sar accurately reflects disposal/loss value",
+        "Waste occurred during analysis period (week_starting date used as proxy)",
+        "No recipe/BOM data; cannot allocate waste to specific drink types"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Supplier Price Change Announcement: full-fat milk",
+      "claim": "Email from orders@qatifdairy.com announces full-fat milk price change from SAR 7.10 to SAR 8.40 per L (+18.31%), announced for future implementation on 2026-05-01. Email receipt status: unknown. Supplier relationship and standing order applicability not independently verified. Impact on cafe margins cannot be quantified without standing order volume data and recipe/BOM information.",
+      "finding_type": "supplier_price_change_announcement",
+      "metrics": {
+        "ingredient": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": 7.1,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": 8.4,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "price_change_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 18.31,
+          "denominator": 100,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        },
+        "effective_date": {
+          "value": "2026-05-01",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+00:00",
+          "period_end": "2026-03-16T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Email source: supplier communication",
+        "Email receipt status: unknown (not confirmed in cafe systems)",
+        "Supplier identity and standing order applicability not confirmed in structured data",
+        "No recipe/BOM data available to calculate per-drink cost impact",
+        "Standing order volume not available in email or structured data",
+        "Effective date 2026-05-01 is after analysis period 2026-03-09 to 2026-03-16",
+        "This finding documents a supplier communication for reference only; it does not represent a confirmed cost change affecting historical operations"
+      ],
+      "assumptions": [
+        "Email sender is authoritative supplier (not independently verified)",
+        "Price change applies to cafe's standing orders (not confirmed)",
+        "Standing order volume remains constant (actual volume unknown)",
+        "No recipe/BOM data; cannot calculate per-drink margin impact",
+        "Email receipt and acknowledgment by cafe not confirmed",
+        "Effective date temporal relationship to analysis period is as stated"
+      ],
+      "confidence": 0.3
+    }
+  ]
+}

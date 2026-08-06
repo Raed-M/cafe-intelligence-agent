@@ -1,0 +1,323 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 5 Items by Gross Profit (Analysis Week)",
+      "claim": "The top 5 items by gross profit in the analysis period (2026-03-16 to 2026-03-23) generated SAR 16504.50 in total gross profit from 1152 units sold across 1010 baskets.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_7_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_7_gross_profit": {
+          "value": 4017.7,
+          "unit": "SAR",
+          "numerator": 4017.7,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_7_quantity": {
+          "value": 320,
+          "unit": "units",
+          "numerator": 320,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_7_margin_pct": {
+          "value": 70.71,
+          "unit": "%",
+          "numerator": 4017.7,
+          "denominator": 5681.7,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_6_name": {
+          "value": "Halloumi Toast",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_6_gross_profit": {
+          "value": 3816.8,
+          "unit": "SAR",
+          "numerator": 3816.8,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_6_quantity": {
+          "value": 244,
+          "unit": "units",
+          "numerator": 244,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_6_margin_pct": {
+          "value": 65.61,
+          "unit": "%",
+          "numerator": 3816.8,
+          "denominator": 5817.6,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_5_name": {
+          "value": "Chicken Sandwich",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_5_gross_profit": {
+          "value": 3483.8,
+          "unit": "SAR",
+          "numerator": 3483.8,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_5_quantity": {
+          "value": 215,
+          "unit": "units",
+          "numerator": 215,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_5_margin_pct": {
+          "value": 63.04,
+          "unit": "%",
+          "numerator": 3483.8,
+          "denominator": 5526.3,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_10_name": {
+          "value": "V60 Filter",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_10_gross_profit": {
+          "value": 2647.3,
+          "unit": "SAR",
+          "numerator": 2647.3,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_10_quantity": {
+          "value": 168,
+          "unit": "units",
+          "numerator": 168,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_10_margin_pct": {
+          "value": 72.42,
+          "unit": "%",
+          "numerator": 2647.3,
+          "denominator": 3655.3,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_3_name": {
+          "value": "Date Cake",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_3_gross_profit": {
+          "value": 2538.9,
+          "unit": "SAR",
+          "numerator": 2538.9,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_3_quantity": {
+          "value": 205,
+          "unit": "units",
+          "numerator": 205,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "top_item_3_margin_pct": {
+          "value": 69.64,
+          "unit": "%",
+          "numerator": 2538.9,
+          "denominator": 3645.9,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "total_top_5_gross_profit": {
+          "value": 16504.5,
+          "unit": "SAR",
+          "numerator": 16504.5,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "total_top_5_quantity": {
+          "value": 1152,
+          "unit": "units",
+          "numerator": 1152,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1010,
+      "coverage_notes": [
+        "Analysis period: 2026-03-16 to 2026-03-23",
+        "POS rows analyzed: 2603",
+        "Items with valid unit costs: 5",
+        "Refunds excluded from calculations",
+        "Unit costs sourced from menu.parquet"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is accurate and current for analysis period",
+        "POS line_total_sar reflects actual revenue after discounts",
+        "No recipe/BOM data available; using menu unit costs as-is"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost (Week of 2026-03-16)",
+      "claim": "Known waste in the week of 2026-03-16 totaled SAR 839.40 across 155 units, representing measurable cost leakage from 6 items.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 839.4,
+          "unit": "SAR",
+          "numerator": 839.4,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "total_waste_units": {
+          "value": 155,
+          "unit": "units",
+          "numerator": 155,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "items_with_waste": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: week starting 2026-03-16",
+        "Only non-null waste_cost_sar values included",
+        "Blank waste values treated as unknown, not zero",
+        "Items with measurable waste: 6 out of 6 total items"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar reflects actual cost of wasted inventory",
+        "Waste data is complete for items with non-null values"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Supplier Price Change Alert",
+      "claim": "Supplier email dated 2026-05-04 documents a 18.3% price change for full-fat milk (from 7.10 to 8.40 SAR/L), effective 2026-05-01. This represents a material cost pressure requiring menu or procurement review.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "ingredient": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": null
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": 7.1,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00",
+          "period_end": "2026-05-04T00:00:00"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": 8.4,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": null
+        },
+        "price_change_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 18.31,
+          "denominator": 100,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": null
+        },
+        "email_date": {
+          "value": "2026-05-04",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00",
+          "period_end": "2026-05-04T00:00:00"
+        },
+        "effective_date": {
+          "value": "2026-05-01",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": null
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Email source: orders@qatifdairy.com",
+        "Subject: IMPORTANT: price increase effective 1 May",
+        "Price change extracted from supplier communication",
+        "No standing order quantity data available for procurement scenario calculation"
+      ],
+      "assumptions": [
+        "Email extraction accurately captured old and new prices",
+        "Effective date represents when price change takes effect",
+        "Price applies to the specified ingredient/entity only"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

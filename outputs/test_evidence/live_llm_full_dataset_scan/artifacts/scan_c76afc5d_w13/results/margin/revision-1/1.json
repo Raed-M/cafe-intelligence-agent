@@ -1,0 +1,204 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Item-Level Gross Profit and Margin Analysis (Analysis Period)",
+      "claim": "During the analysis period (2026-04-06 to 2026-04-13), total gross profit across 19 items with valid cost data was 32479.60 SAR with an overall gross margin of 70.06%. Top contributor: Spanish Latte with 3870.90 SAR gross profit.",
+      "finding_type": "margin_analysis",
+      "metrics": {
+        "total_revenue_sar": {
+          "value": 46358.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "total_cogs_sar": {
+          "value": 13879.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "total_gross_profit_sar": {
+          "value": 32479.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "overall_gross_margin_pct": {
+          "value": 70.06,
+          "unit": "%",
+          "numerator": 32479.6,
+          "denominator": 46358.8,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "items_with_valid_cost_count": {
+          "value": 19,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "top_profit_item_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "top_profit_item_gross_profit_sar": {
+          "value": 3870.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2334,
+      "coverage_notes": [
+        "Analysis period: 2026-04-06 to 2026-04-13",
+        "POS transactions analyzed: 2334 line items",
+        "Items with valid unit cost data: 19 of 19 menu items",
+        "Refunds excluded from revenue and COGS calculations",
+        "Unit costs sourced from menu.parquet"
+      ],
+      "assumptions": [
+        "Unit cost from menu applies uniformly to all sales in period",
+        "No recipe/BOM data available; per-drink ingredient impact not calculated",
+        "Blank waste values treated as unknown, not zero"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost (Analysis Period)",
+      "claim": "During the week of 2026-04-06, 6 items with recorded waste had a total known waste cost of 894.50 SAR, representing 153 units wasted.",
+      "finding_type": "waste_analysis",
+      "metrics": {
+        "total_known_waste_cost_sar": {
+          "value": 894.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "total_units_wasted": {
+          "value": 153.0,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "items_with_waste_cost_recorded": {
+          "value": 6,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: week starting 2026-04-06",
+        "Inventory records with waste data: 6",
+        "Records with non-null known_waste_cost_sar: 6",
+        "Only non-null waste cost values included in total"
+      ],
+      "assumptions": [
+        "Blank waste cost values treated as unknown, not zero",
+        "known_waste_cost_sar represents actual cost of wasted units"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Supplier Price Change Detected",
+      "claim": "Email evidence from sales@easternbeans.sa dated 2026-04-01 documents a price change for roasted coffee: 88.0 SAR/kg → 96.0 SAR/kg (effective 2026-04-15), representing a 9.09% change.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "entity_or_ingredient": {
+          "value": "roasted coffee",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": "2026-04-15T00:00:00"
+        },
+        "old_price": {
+          "value": 88.0,
+          "unit": "SAR/kg",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": "2026-04-15T00:00:00"
+        },
+        "new_price": {
+          "value": 96.0,
+          "unit": "SAR/kg",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": "2026-04-15T00:00:00"
+        },
+        "price_change_pct": {
+          "value": 9.09,
+          "unit": "%",
+          "numerator": 8.0,
+          "denominator": 88.0,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": "2026-04-15T00:00:00"
+        },
+        "effective_date": {
+          "value": "2026-04-15",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": "2026-04-15T00:00:00"
+        },
+        "sender": {
+          "value": "sales@easternbeans.sa",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": "2026-04-15T00:00:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Total emails with price change data: 3",
+        "Email date: 2026-04-01",
+        "Effective date: 2026-04-15",
+        "No recipe/BOM available; per-product cost impact not calculated",
+        "Standing order quantities not confirmed in email evidence"
+      ],
+      "assumptions": [
+        "Email extraction confidence: 0.95",
+        "Price change applies to specified ingredient only",
+        "No assumption made about standing order volumes or payment terms without explicit evidence"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

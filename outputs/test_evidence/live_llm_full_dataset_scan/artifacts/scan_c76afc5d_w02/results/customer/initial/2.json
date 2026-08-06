@@ -1,0 +1,156 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (Jan 19-26, 2026), the average rating across 25 reviews was 4.32 out of 5, with 14 five-star and 0 one-star reviews.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.32,
+          "unit": "stars",
+          "numerator": 25,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 25,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 25,
+      "coverage_notes": [
+        "Reviews from 3 source(s)",
+        "Language distribution: {'en': np.int64(17), 'ar': np.int64(8)}",
+        "Analysis period: 2026-01-19 to 2026-01-26"
+      ],
+      "assumptions": [
+        "Rating values are valid integers between 1-5",
+        "Date field represents review submission date",
+        "All reviews in artifact are from the specified sources"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Topics and Sentiment Themes",
+      "claim": "Among 17 English reviews, the most frequent topics were {'quality': 3, 'price': 3, 'service': 2}. Among 8 Arabic reviews, topics included {'taste': 7, 'quality': 1}.",
+      "finding_type": "topic_analysis",
+      "metrics": {
+        "english_reviews_count": {
+          "value": 17,
+          "unit": "count",
+          "numerator": 17,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "arabic_reviews_count": {
+          "value": 8,
+          "unit": "count",
+          "numerator": 8,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "top_english_topic": {
+          "value": "quality",
+          "unit": "topic",
+          "numerator": 3,
+          "denominator": 17,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "top_arabic_topic": {
+          "value": "taste",
+          "unit": "topic",
+          "numerator": 7,
+          "denominator": 8,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 25,
+      "coverage_notes": [
+        "English reviews: 17",
+        "Arabic reviews: 8",
+        "Topic identification based on keyword matching in original language",
+        "Multiple topics may be present in single review"
+      ],
+      "assumptions": [
+        "Keyword matching is a proxy for topic presence",
+        "Language field accurately reflects review language",
+        "Text field contains substantive content for analysis"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "title": "Low Rating Reviews (1-2 Stars)",
+      "claim": "During the analysis period, 2 reviews (8.0% of total) were rated 1-2 stars. These came from 1 source(s), with {'en': np.int64(2)} language distribution.",
+      "finding_type": "low_rating_analysis",
+      "metrics": {
+        "low_rating_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "low_rating_percentage": {
+          "value": 8.0,
+          "unit": "percent",
+          "numerator": 2,
+          "denominator": 25,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google"
+      ],
+      "sample_size": 2,
+      "coverage_notes": [
+        "Low rating sources: {'google': np.int64(2)}",
+        "Language distribution in low ratings: {'en': np.int64(2)}",
+        "Low ratings defined as 1-2 stars"
+      ],
+      "assumptions": [
+        "Rating scale is 1-5 stars",
+        "Low ratings (1-2) indicate dissatisfaction",
+        "Source field accurately identifies review platform"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

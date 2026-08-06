@@ -1,0 +1,138 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Item-Level COGS and Gross Profit Analysis (Mar 23-30, 2026)",
+      "claim": "During the analysis period (Mar 23-30, 2026), total gross profit across all items was SAR 31516.75 on revenue of SAR 45104.05, representing a 69.88% gross margin. Top 3 profit contributors: Spanish Latte (SAR 3855.60), Chicken Sandwich (SAR 3055.20), Halloumi Toast (SAR 2772.60).",
+      "finding_type": "item_economics",
+      "metrics": {
+        "total_revenue_sar": {
+          "value": 45104.05,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "total_cogs_sar": {
+          "value": 13587.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "total_gross_profit_sar": {
+          "value": 31516.75,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "gross_margin_pct": {
+          "value": 69.88,
+          "unit": "%",
+          "numerator": 31516.75,
+          "denominator": 45104.05,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "top_profit_item_1_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "top_profit_item_1_sar": {
+          "value": 3855.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1346,
+      "coverage_notes": [
+        "Analysis period: 2026-03-23T00:00:00+03:00 to 2026-03-30T00:00:00+03:00",
+        "Transactions: 1346 unique baskets, 2272 line items",
+        "Refunds explicitly excluded from revenue and COGS calculations",
+        "Unit costs sourced from menu.unit_cost_sar",
+        "All items with known SKU and menu cost included"
+      ],
+      "assumptions": [
+        "Menu unit costs are current and applicable to analysis period",
+        "Line-item unit_price_sar and quantity are accurate",
+        "No adjustments for waste, shrinkage, or promotional cost-absorption beyond recorded discounts"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost Impact (Mar 23-30, 2026)",
+      "claim": "During the analysis period, 6 items with non-null waste records incurred a total known waste cost of SAR 1363.30 (3.02% of period revenue). This represents 217 units wasted. Waste cost is calculated from inventory.known_waste_cost_sar for records with units_wasted > 0 only.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 1363.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "total_waste_units": {
+          "value": 217.0,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "waste_cost_pct_of_revenue": {
+          "value": 3.02,
+          "unit": "%",
+          "numerator": 1363.3,
+          "denominator": 45104.05,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "waste_items_count": {
+          "value": 6,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory",
+        "pos"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: 2026-03-23T00:00:00+03:00 to 2026-03-30T00:00:00+03:00",
+        "Only non-null waste records (units_wasted > 0) included",
+        "Only records with known_waste_cost_sar populated included",
+        "Waste items: 6 SKUs",
+        "Revenue denominator: POS sales (refunds excluded) for same period",
+        "Waste records sourced from inventory.known_waste_cost_sar; no refund or data quality filtering applied at inventory level"
+      ],
+      "assumptions": [
+        "Waste units include all non-null inventory loss records, which may include spoilage, disposal, shrinkage, and potential data entry errors",
+        "known_waste_cost_sar reflects recorded economic cost of waste",
+        "No recovery value assumed for wasted units",
+        "Inventory waste records are period-aligned with POS sales",
+        "Unit costs in inventory records are current as of analysis period start (2026-03-23)"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

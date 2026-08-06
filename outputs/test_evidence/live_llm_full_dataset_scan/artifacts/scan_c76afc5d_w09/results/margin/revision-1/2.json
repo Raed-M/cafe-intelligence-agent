@@ -1,0 +1,209 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 5 Items by Gross Profit Contribution (Week 9-16 Mar 2026)",
+      "claim": "During the analysis period (2026-03-09 to 2026-03-16), the top 5 items by gross profit contribution generated 14003.50 SAR in total gross profit across 1059 baskets, representing 54.0% of total cafe gross profit.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_5_total_gross_profit_sar": {
+          "value": 14003.5,
+          "unit": "SAR",
+          "numerator": 14003.5,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "top_5_contribution_pct": {
+          "value": 54.0,
+          "unit": "%",
+          "numerator": 14003.5,
+          "denominator": 25931.65,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "top_5_basket_count": {
+          "value": 1059,
+          "unit": "baskets",
+          "numerator": 1059,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "cafe_total_gross_profit_sar": {
+          "value": 25931.65,
+          "unit": "SAR",
+          "numerator": 25931.65,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1899,
+      "coverage_notes": [
+        "POS data filtered to analysis period 2026-03-09 to 2026-03-16",
+        "Refunds excluded from revenue and profit calculations",
+        "Menu unit costs merged on SKU; items without menu cost data excluded",
+        "Total POS line items in analysis period: 1899",
+        "Unique items analyzed: 18"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and applicable to analysis period",
+        "Line totals in POS are net of discounts and represent actual revenue",
+        "COGS = quantity × unit_cost_sar from menu",
+        "Gross profit = line_total_sar - line_cogs_sar"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost Impact (Week 9-16 Mar 2026)",
+      "claim": "Known waste cost during the analysis period totaled 1093.60 SAR across 6 inventory records, representing 2.93% of cafe revenue. Top waste contributor: Butter Croissant (268.00 SAR).",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_known_waste_cost_sar": {
+          "value": 1093.6,
+          "unit": "SAR",
+          "numerator": 1093.6,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "waste_cost_pct_revenue": {
+          "value": 2.93,
+          "unit": "%",
+          "numerator": 1093.6,
+          "denominator": 37301.85,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "waste_records_count": {
+          "value": 6,
+          "unit": "records",
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "top_waste_item": {
+          "value": "Butter Croissant",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "top_waste_cost_sar": {
+          "value": 268.0,
+          "unit": "SAR",
+          "numerator": 268.0,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory",
+        "pos"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Inventory data filtered to analysis period 2026-03-09 to 2026-03-16",
+        "Only non-null, positive known_waste_cost_sar values included",
+        "Inventory records with waste cost: 6 out of 6 total",
+        "Blank waste values excluded per schema guidance",
+        "Total cafe revenue (net of refunds): 37301.85 SAR"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar in inventory is accurate and complete for non-null entries",
+        "Waste cost represents actual COGS loss",
+        "Revenue includes all non-refund POS transactions"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Supplier Price Change: Full-Fat Milk (Most Recent)",
+      "claim": "Email from orders@qatifdairy.com (received 2026-05-04) announces full-fat milk price change from 7.1 to 8.4 SAR/L, effective 2026-05-01. This represents a 18.31% price increase. Email receipt status: unknown. Impact on cafe margins cannot be quantified without standing order volume data and confirmed supplier relationship.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "price_change_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 1.3,
+          "denominator": 7.1,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "email_date": {
+          "value": "2026-05-04",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "effective_date": {
+          "value": "2026-05-01",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "email_receipt_status": {
+          "value": "unknown",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "effective_after_analysis_period": {
+          "value": "yes",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 4,
+      "coverage_notes": [
+        "Email extraction identified 4 price change records",
+        "Most recent price change analyzed: full-fat milk from orders@qatifdairy.com",
+        "Email receipt date is distinct from effective date; effective date is future-dated relative to analysis period",
+        "No recipe/BOM data available to calculate per-drink cost impact",
+        "Supplier identity and standing order applicability not confirmed in structured data"
+      ],
+      "assumptions": [
+        "Email sender is authoritative supplier (not independently verified)",
+        "Price change applies to cafe's standing orders (not confirmed)",
+        "No standing order volume data available; per-unit impact cannot be calculated",
+        "Effective date represents when price change takes effect; current period pricing unaffected"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

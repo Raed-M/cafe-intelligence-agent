@@ -1,0 +1,130 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Category Mix Shift: hot_coffee",
+      "claim": "Category 'hot_coffee' generated 15,226 SAR in analysis week vs 16,656 SAR in previous week, a change of -8.6%. This represents the most significant category-level shift between periods.",
+      "finding_type": "category_mix_analysis",
+      "metrics": {
+        "analysis_period_category_revenue": {
+          "value": 15225.55,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "previous_period_category_revenue": {
+          "value": 16656.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "category_revenue_change_pct": {
+          "value": -8.6,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "category_revenue_change_sar": {
+          "value": -1430.95,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2282,
+      "coverage_notes": [
+        "Analysis period category 'hot_coffee' revenue: 764 line items",
+        "Previous period category 'hot_coffee' revenue: 835 line items",
+        "Revenue includes refunds (net calculation)"
+      ],
+      "assumptions": [
+        "Category field in POS is accurate and consistent",
+        "line_total_sar represents net realized revenue",
+        "Category comparison is valid across both periods"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Channel Performance: dine_in",
+      "claim": "Channel 'dine_in' generated 20,210 SAR across 591 transactions in analysis week vs 21,499 SAR (639 txns) in previous week. Revenue change: -6.0%, transaction change: -7.5%.",
+      "finding_type": "channel_mix_analysis",
+      "metrics": {
+        "analysis_period_channel_revenue": {
+          "value": 20209.85,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "previous_period_channel_revenue": {
+          "value": 21499.05,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "channel_revenue_change_pct": {
+          "value": -6.0,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "analysis_period_channel_transactions": {
+          "value": 591,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "previous_period_channel_transactions": {
+          "value": 639,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "channel_transaction_change_pct": {
+          "value": -7.5,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2282,
+      "coverage_notes": [
+        "Analysis period channel 'dine_in': 1016 line items",
+        "Previous period channel 'dine_in': 1090 line items",
+        "Revenue includes refunds (net calculation)",
+        "Transactions counted as unique transaction_id per channel"
+      ],
+      "assumptions": [
+        "Channel field in POS is accurate and consistent",
+        "line_total_sar represents net realized revenue",
+        "transaction_id uniquely identifies a basket within a channel"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

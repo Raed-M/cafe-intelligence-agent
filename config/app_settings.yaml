@@ -17,11 +17,15 @@ models:
   analyst: ${ANALYST_MODEL}
   critic: ${CRITIC_MODEL}
   content: ${CONTENT_MODEL}
+  content_validator: ${CONTENT_VALIDATOR_MODEL}
+  report_summary: ${REPORT_SUMMARY_MODEL}
+  email_extractor: ${EMAIL_EXTRACTOR_MODEL}
   temperature: 0
 
 report:
   whatsapp_max_chars: 500
   pdf_optional: true
+  use_llm_summary_compression: false
 
 prayer_times:
   calculation_method: umm_al_qura

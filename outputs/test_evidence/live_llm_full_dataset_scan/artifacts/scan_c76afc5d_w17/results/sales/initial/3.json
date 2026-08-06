@@ -1,0 +1,60 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Revenue-Growing Product",
+      "claim": "Product Matcha Latte (SKU: ICE-005) generated SAR 3942.00 in the analysis week, up from SAR 3205.20 in the previous week, representing a 23.0% increase.",
+      "finding_type": "product_mix_analysis",
+      "metrics": {
+        "analysis_product_revenue": {
+          "value": 3942.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "previous_product_revenue": {
+          "value": 3205.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "product_revenue_change_pct": {
+          "value": 22.99,
+          "unit": "%",
+          "numerator": 736.8,
+          "denominator": 3205.2,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "analysis_product_pct_of_total": {
+          "value": 8.77,
+          "unit": "%",
+          "numerator": 3942.0,
+          "denominator": 44955.2,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 147,
+      "coverage_notes": [
+        "Product Matcha Latte appears in 147 transactions in analysis period",
+        "Product Matcha Latte appears in 118 transactions in previous period",
+        "Comparison limited to products with sales in both periods"
+      ],
+      "assumptions": [
+        "Product name from menu SKU reference",
+        "Launch date eligibility verified from menu",
+        "Revenue calculated from line_total_sar excluding refunds"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Analysis Period Review Rating Distribution",
+      "claim": "During the analysis period (2026-04-20 to 2026-04-27), 16 reviews were collected with an average rating of 4.38 out of 5.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.38,
+          "unit": "stars",
+          "numerator": 70.0,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 16,
+          "unit": "count",
+          "numerator": 16,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "rating_1_star": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "rating_2_star": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "rating_3_star": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "rating_4_star": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "rating_5_star": {
+          "value": 10,
+          "unit": "count",
+          "numerator": 10,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20 to 2026-04-27",
+        "Total reviews in analysis period: 16",
+        "Sources represented: google, talabat, instagram"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid (1-5 scale)",
+        "Review dates are accurate and in UTC+3 timezone",
+        "All reviews in the artifact are included without filtering"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "In the analysis period, 12 reviews were in English and 4 reviews were in Arabic out of 16 total reviews.",
+      "finding_type": "language_distribution",
+      "metrics": {
+        "english_reviews": {
+          "value": 12,
+          "unit": "count",
+          "numerator": 12,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "other_language_reviews": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20 to 2026-04-27",
+        "Language field populated for all 16 reviews"
+      ],
+      "assumptions": [
+        "Language classification is accurate",
+        "Language values are limited to 'en', 'ar', or other ISO codes"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Rating Trend: Analysis vs Baseline Period",
+      "claim": "Average rating in the analysis period (2026-04-20 to 2026-04-27) was 4.38, compared to 4.40 in the baseline period (2026-03-23 to 2026-04-20), a change of -0.03 points.",
+      "finding_type": "rating_comparison",
+      "metrics": {
+        "average_rating_analysis_period": {
+          "value": 4.38,
+          "unit": "stars",
+          "numerator": 70.0,
+          "denominator": 16,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "average_rating_baseline_period": {
+          "value": 4.4,
+          "unit": "stars",
+          "numerator": 352.0,
+          "denominator": 80,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "rating_change": {
+          "value": -0.03,
+          "unit": "stars",
+          "numerator": -0.03,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Analysis period sample size: 16 reviews",
+        "Baseline period sample size: 80 reviews",
+        "Baseline period: 2026-03-23 to 2026-04-20 (4 weeks)"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid (1-5 scale)",
+        "Review dates are accurate",
+        "Baseline period represents typical performance for comparison"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

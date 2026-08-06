@@ -1,0 +1,146 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Change",
+      "claim": "Conversion rate changed by -7.4% from previous period to analysis period",
+      "finding_type": "performance_metric",
+      "metrics": {
+        "analysis_conversion_rate": {
+          "value": 0.2529,
+          "unit": "transactions_per_visitor",
+          "numerator": 1316,
+          "denominator": "5204",
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "previous_conversion_rate": {
+          "value": 0.273,
+          "unit": "transactions_per_visitor",
+          "numerator": 1412,
+          "denominator": "5172",
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "conversion_rate_change_pct": {
+          "value": -7.37,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 1316,
+      "coverage_notes": [
+        "Analysis period: 1316 valid transactions from 2282 POS rows",
+        "Previous period: 1412 valid transactions from 2429 POS rows",
+        "Analysis footfall: 5204 from 119 valid traffic days",
+        "Previous footfall: 5172 from 119 valid traffic days",
+        "Excluded dead sensor days from traffic denominators"
+      ],
+      "assumptions": [
+        "Refunds excluded from transaction count",
+        "Dead sensor days excluded from footfall calculation",
+        "Each transaction_id represents one unique customer visit"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Daily Labour Cost Change",
+      "claim": "Average daily labour cost changed by 19.2% from previous period to analysis period",
+      "finding_type": "cost_metric",
+      "metrics": {
+        "analysis_daily_labour_cost": {
+          "value": 888.0,
+          "unit": "SAR",
+          "numerator": "6216",
+          "denominator": 7,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "previous_daily_labour_cost": {
+          "value": 745.14,
+          "unit": "SAR",
+          "numerator": "5216",
+          "denominator": 7,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "labour_cost_change_pct": {
+          "value": 19.17,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "staff"
+      ],
+      "sample_size": 33,
+      "coverage_notes": [
+        "Analysis period: 33 staff records across 7 days",
+        "Previous period: 26 staff records across 7 days",
+        "Labour cost calculated from computed_duration_hours and hourly_rate_sar"
+      ],
+      "assumptions": [
+        "Staff records represent actual shifts worked",
+        "Hourly rates are consistent within each period",
+        "No imputation for missing staff records"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Known Waste Cost Percentage",
+      "claim": "Known waste as percentage of total inventory cost changed by -3.90 percentage points",
+      "finding_type": "waste_metric",
+      "metrics": {
+        "analysis_waste_pct": {
+          "value": 15.57,
+          "unit": "percent",
+          "numerator": 867.0,
+          "denominator": 5568.4,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "previous_waste_pct": {
+          "value": 19.47,
+          "unit": "percent",
+          "numerator": 1136.5,
+          "denominator": 5837.9,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "waste_pct_change": {
+          "value": -3.9,
+          "unit": "percentage_points",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: 6 inventory records",
+        "Previous period: 6 inventory records",
+        "Only known waste costs included; unknown waste values excluded per requirements"
+      ],
+      "assumptions": [
+        "Inventory records represent complete weekly snapshots",
+        "Unit costs are consistent within each period",
+        "Known waste values are accurate and complete"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

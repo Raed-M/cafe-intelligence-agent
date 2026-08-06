@@ -1,0 +1,138 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution (Analysis Period)",
+      "claim": "Average rating is 4.26 out of 5 across 19 reviews in the analysis period (2026-03-02 to 2026-03-09).",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.26,
+          "unit": "stars",
+          "numerator": 81.0,
+          "denominator": 19,
+          "period_start": "2026-03-02T00:00:00+03:00",
+          "period_end": "2026-03-09T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 19,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00+03:00",
+          "period_end": "2026-03-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "Reviews from 3 source(s)",
+        "Language distribution: {'en': np.int64(12), 'ar': np.int64(7)}"
+      ],
+      "assumptions": [
+        "Rating values are valid integers between 1-5",
+        "Review dates are accurate and in UTC+3 timezone"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution by Language",
+      "claim": "Sentiment analysis of 19 reviews shows 15 positive, 3 neutral, and 1 negative reviews. English reviews: 12, Arabic reviews: 7.",
+      "finding_type": "sentiment_classification",
+      "metrics": {
+        "positive_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": 19,
+          "period_start": "2026-03-02T00:00:00+03:00",
+          "period_end": "2026-03-09T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 19,
+          "period_start": "2026-03-02T00:00:00+03:00",
+          "period_end": "2026-03-09T00:00:00+03:00"
+        },
+        "english_review_count": {
+          "value": 12,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00+03:00",
+          "period_end": "2026-03-09T00:00:00+03:00"
+        },
+        "arabic_review_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00+03:00",
+          "period_end": "2026-03-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "Bilingual coverage: 12 English, 7 Arabic",
+        "Sentiment based on rating thresholds: 4-5 stars = positive, 3 = neutral, 1-2 = negative"
+      ],
+      "assumptions": [
+        "Sentiment classification derived from numerical ratings only",
+        "Rating scale is consistent across all sources",
+        "Language field accurately reflects review language"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Common Topics in Customer Reviews",
+      "claim": "Analysis of 19 non-empty reviews identifies recurring topics. Most mentioned: fast (2 mentions).",
+      "finding_type": "topic_analysis",
+      "metrics": {
+        "reviews_with_text": {
+          "value": 19,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00+03:00",
+          "period_end": "2026-03-09T00:00:00+03:00"
+        },
+        "top_keyword": {
+          "value": "fast",
+          "unit": "keyword",
+          "numerator": 2,
+          "denominator": 19,
+          "period_start": "2026-03-02T00:00:00+03:00",
+          "period_end": "2026-03-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "Text analysis based on 19 reviews with non-empty text",
+        "Keyword matching performed in both English and Arabic",
+        "Top 5 keywords identified: fast (2), cold (1), قهوة (1), clean (1)"
+      ],
+      "assumptions": [
+        "Keyword matching is case-insensitive for English",
+        "Keywords are representative of common cafe topics",
+        "Text field contains original review text without translation"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

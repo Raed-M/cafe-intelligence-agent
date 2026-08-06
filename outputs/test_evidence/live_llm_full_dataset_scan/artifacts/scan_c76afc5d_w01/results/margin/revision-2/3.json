@@ -1,0 +1,167 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Item-Level Gross Profit Contribution (Analysis Period)",
+      "claim": "During 2026-01-12T00:00:00+03:00 to 2026-01-19T00:00:00+03:00, the cafe generated 30328.60 SAR gross profit across 2434 items sold in 1288 baskets. Top 5 items by gross profit contribution account for 13646.40 SAR (45.0% of total).",
+      "finding_type": "item_economics",
+      "metrics": {
+        "total_gross_profit_sar": {
+          "value": 30328.6,
+          "unit": "SAR",
+          "numerator": 30328.6,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "total_revenue_sar": {
+          "value": 43432.7,
+          "unit": "SAR",
+          "numerator": 43432.7,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "total_cogs_sar": {
+          "value": 13104.1,
+          "unit": "SAR",
+          "numerator": 13104.1,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "overall_gross_margin_pct": {
+          "value": 69.83,
+          "unit": "%",
+          "numerator": 30328.6,
+          "denominator": 43432.7,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "total_items_sold": {
+          "value": 2434,
+          "unit": "units",
+          "numerator": 2434,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "unique_baskets": {
+          "value": 1288,
+          "unit": "transactions",
+          "numerator": 1288,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "top_item_1_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "top_item_1_gross_profit_sar": {
+          "value": 3513.4,
+          "unit": "SAR",
+          "numerator": 3513.4,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "top_item_1_margin_pct": {
+          "value": 70.85,
+          "unit": "%",
+          "numerator": 3513.4,
+          "denominator": 4959.0,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1288,
+      "coverage_notes": [
+        "POS records in analysis period: 2177",
+        "Non-refund transactions: 2157",
+        "Unique items sold: 18",
+        "Menu items with unit cost data: 19",
+        "Refunds excluded from net revenue and profit calculations"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar values are current and apply to all sales in the period",
+        "Line totals are accurate and consistent with quantity × unit_price - discount",
+        "No recipe/BOM data available; unit costs are as-declared in menu"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Known Waste Cost (Analysis Period)",
+      "claim": "During 2026-01-12T00:00:00+03:00 to 2026-01-19T00:00:00+03:00, quantified waste cost totaled 867.10 SAR across 6 inventory items with recorded waste. Maximum single-item waste cost was 262.40 SAR (Halloumi Toast). Total units wasted: 151.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_known_waste_cost_sar": {
+          "value": 867.1,
+          "unit": "SAR",
+          "numerator": 867.1,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "waste_items_count": {
+          "value": 6,
+          "unit": "items",
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "total_units_wasted": {
+          "value": 151,
+          "unit": "units",
+          "numerator": 151,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "max_waste_item_name": {
+          "value": "Halloumi Toast",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "max_waste_item_cost_sar": {
+          "value": 262.4,
+          "unit": "SAR",
+          "numerator": 262.4,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Total inventory records in analysis period before filtering: 6",
+        "Records with non-null waste_cost_sar (known waste): 6",
+        "Records with null/blank waste_cost_sar (unknown waste): 0",
+        "Waste cost calculation includes only 6 items with known waste observations",
+        "Unknown waste (null waste_cost_sar values) excluded from this calculation"
+      ],
+      "assumptions": [
+        "Null waste_cost_sar values represent unknown/unmeasured waste, not zero waste",
+        "Recorded waste_cost_sar values are accurate and reflect actual disposal/loss cost",
+        "Waste cost is independent of sales volume and represents actual loss",
+        "Unknown waste (null waste_cost_sar values) are excluded from this 'known waste cost' calculation"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

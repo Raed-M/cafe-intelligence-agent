@@ -1,0 +1,161 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution and Average Sentiment",
+      "claim": "During the analysis period (Jan 12-19, 2026), customers provided 20 reviews with an average rating of 4.45/5. Positive reviews (4-5 stars) comprised 18 reviews, neutral (3 stars) 1, and negative (1-2 stars) 1.",
+      "finding_type": "customer_sentiment",
+      "metrics": {
+        "average_rating": {
+          "value": 4.45,
+          "unit": "stars",
+          "numerator": 20,
+          "denominator": 20,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "positive_reviews": {
+          "value": 18,
+          "unit": "count",
+          "numerator": 18,
+          "denominator": 20,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "neutral_reviews": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 20,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 20,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 20,
+      "coverage_notes": [
+        "Analysis period: 2026-01-12T00:00:00+03:00 to 2026-01-19T00:00:00+03:00",
+        "Total reviews in period: 20",
+        "Language distribution: {'en': np.int64(17), 'ar': np.int64(3)}"
+      ],
+      "assumptions": [
+        "Rating scale is 1-5 stars",
+        "Positive sentiment defined as 4-5 stars, neutral as 3 stars, negative as 1-2 stars",
+        "All reviews in the dataset are valid and complete"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Of 20 reviews collected during Jan 12-19, 2026, 17 were in English and 3 were in Arabic, indicating 15.0% Arabic language coverage.",
+      "finding_type": "data_coverage",
+      "metrics": {
+        "english_reviews": {
+          "value": 17,
+          "unit": "count",
+          "numerator": 17,
+          "denominator": 20,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 20,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "arabic_coverage_percent": {
+          "value": 15.0,
+          "unit": "percent",
+          "numerator": 3,
+          "denominator": 20,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 20,
+      "coverage_notes": [
+        "Bilingual review coverage: {'en': np.int64(17), 'ar': np.int64(3)}",
+        "Both English and Arabic reviews present in dataset"
+      ],
+      "assumptions": [
+        "Language field accurately reflects review language",
+        "All reviews are either English or Arabic"
+      ],
+      "confidence": 0.98
+    },
+    {
+      "title": "Review Source Distribution",
+      "claim": "During Jan 12-19, 2026, reviews were collected from 3 sources: google (10 reviews), instagram (7 reviews), talabat (3 reviews). This indicates diversified customer feedback channels.",
+      "finding_type": "data_coverage",
+      "metrics": {
+        "total_sources": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "google_reviews": {
+          "value": 10,
+          "unit": "count",
+          "numerator": 10,
+          "denominator": 20,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "instagram_reviews": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 20,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "talabat_reviews": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 20,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 20,
+      "coverage_notes": [
+        "Source breakdown: {'google': np.int64(10), 'instagram': np.int64(7), 'talabat': np.int64(3)}",
+        "Total reviews across all sources: 20"
+      ],
+      "assumptions": [
+        "Source field accurately identifies review platform/channel",
+        "All sources are equally reliable"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

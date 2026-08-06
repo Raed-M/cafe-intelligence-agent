@@ -1,0 +1,149 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Unusual Hourly Traffic Spike",
+      "claim": "Door count on 2026-05-01 at hour 1970-01-01 00:00:00.000000019 reached 135 visitors, 3.33 standard deviations from baseline mean of 44.92.",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "hourly_door_count_anomaly": {
+          "value": 135,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "1970-01-01T00:00:00+03:00",
+          "period_end": "1970-01-01T01:00:00+03:00"
+        },
+        "baseline_mean_traffic": {
+          "value": 44.92,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "z_score_traffic": {
+          "value": 3.33,
+          "unit": "std_dev",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "1970-01-01T00:00:00+03:00",
+          "period_end": "1970-01-01T01:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 119,
+      "coverage_notes": [
+        "Analysis period: 2026-04-27 to 2026-05-04",
+        "Baseline: week of 2026-04-20 to 2026-04-27",
+        "Dead sensor days excluded",
+        "Baseline sample size: 119 hourly observations"
+      ],
+      "assumptions": [
+        "Normal distribution of hourly traffic",
+        "2-sigma threshold for anomaly detection",
+        "Sensor data is reliable and consistent",
+        "No structural changes in store layout or hours"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Unusual Daily Revenue Spike",
+      "claim": "Daily revenue on 2026-05-02 reached 9680.20 SAR, 2.64 standard deviations from baseline mean of 6543.72 SAR.",
+      "finding_type": "revenue_anomaly",
+      "metrics": {
+        "daily_revenue_anomaly_date": {
+          "value": 9680.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-02T00:00:00+03:00",
+          "period_end": "2026-05-03T00:00:00+03:00"
+        },
+        "baseline_mean_revenue": {
+          "value": 6543.72,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "z_score_revenue": {
+          "value": 2.64,
+          "unit": "std_dev",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-02T00:00:00+03:00",
+          "period_end": "2026-05-03T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 28,
+      "coverage_notes": [
+        "Analysis period: 2026-04-27 to 2026-05-04",
+        "Baseline: 4 weeks prior (2026-03-30 to 2026-04-27)",
+        "Refunds excluded from revenue calculation",
+        "Baseline sample size: 28 daily observations"
+      ],
+      "assumptions": [
+        "Normal distribution of daily revenue",
+        "2-sigma threshold for anomaly detection",
+        "Baseline periods are representative of expected behavior",
+        "No structural breaks in business operations"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Unusual Daily Transaction Count",
+      "claim": "Daily transaction count on 2026-05-02 reached 273 baskets, 2.15 standard deviations from baseline mean of 192.75.",
+      "finding_type": "transaction_anomaly",
+      "metrics": {
+        "daily_transaction_count_anomaly": {
+          "value": 273,
+          "unit": "baskets",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-02T00:00:00+03:00",
+          "period_end": "2026-05-03T00:00:00+03:00"
+        },
+        "baseline_mean_transactions": {
+          "value": 192.75,
+          "unit": "baskets",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "z_score_transactions": {
+          "value": 2.15,
+          "unit": "std_dev",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-02T00:00:00+03:00",
+          "period_end": "2026-05-03T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 28,
+      "coverage_notes": [
+        "Analysis period: 2026-04-27 to 2026-05-04",
+        "Baseline: 4 weeks prior (2026-03-30 to 2026-04-27)",
+        "Transaction count includes all transactions (refunds and sales)",
+        "Baseline sample size: 28 daily observations"
+      ],
+      "assumptions": [
+        "Normal distribution of daily transaction counts",
+        "2-sigma threshold for anomaly detection",
+        "Baseline periods are representative of expected behavior",
+        "No changes in POS system or transaction recording"
+      ],
+      "confidence": 0.82
+    }
+  ]
+}

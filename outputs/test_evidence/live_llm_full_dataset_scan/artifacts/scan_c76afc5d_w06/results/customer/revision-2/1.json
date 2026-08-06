@@ -1,0 +1,125 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution and Average (Analysis Period)",
+      "claim": "During the analysis period (2026-02-16 to 2026-02-23), reviews averaged 4.54 stars with 13 total reviews across 3 source(s).",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.54,
+          "unit": "stars",
+          "numerator": "59",
+          "denominator": 13,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 13,
+          "unit": "count",
+          "numerator": 13,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 13,
+      "coverage_notes": [
+        "Analysis period: 2026-02-16 to 2026-02-23",
+        "Total reviews in dataset: 520",
+        "Reviews in analysis period: 13",
+        "Sources represented: google, talabat, instagram"
+      ],
+      "assumptions": [
+        "Review dates are accurate and in UTC+3 timezone",
+        "All reviews in the artifact are valid and complete",
+        "Rating scale is consistent across all sources"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Reviews in the analysis period are distributed across 2 language(s), with en being the most common (10 reviews).",
+      "finding_type": "language_distribution",
+      "metrics": {
+        "total_reviews_by_language": {
+          "value": {
+            "en": 10,
+            "ar": 3
+          },
+          "unit": "count",
+          "numerator": 13,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 13,
+      "coverage_notes": [
+        "Languages detected: en, ar",
+        "Total reviews analyzed: 13"
+      ],
+      "assumptions": [
+        "Language field is accurately populated in the reviews artifact",
+        "Language classification is consistent across all reviews"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Review Topic Frequency (Analysis Period)",
+      "claim": "Among 13 reviews with text content, 'service' was the most frequently mentioned topic (3 reviews).",
+      "finding_type": "topic_frequency",
+      "metrics": {
+        "topic_mentions": {
+          "value": {
+            "quality": 2,
+            "service": 3,
+            "price": 0,
+            "taste": 0
+          },
+          "unit": "count",
+          "numerator": 5,
+          "denominator": 13,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "reviews_with_text": {
+          "value": 13,
+          "unit": "count",
+          "numerator": 13,
+          "denominator": 13,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 13,
+      "coverage_notes": [
+        "Reviews with text content: 13 out of 13",
+        "Topic detection based on keyword matching (English and Arabic)",
+        "Topics analyzed: quality, service, price, taste"
+      ],
+      "assumptions": [
+        "Keyword matching is a proxy for topic presence",
+        "Single keyword occurrence indicates topic relevance",
+        "Reviews may mention multiple topics",
+        "Language-specific keywords are representative"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

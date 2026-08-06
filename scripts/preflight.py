@@ -8,6 +8,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).resolve().parents[1] / ".env")
+
 from src.config.preflight import run_preflight
 from src.config.runtime_config import resolve_runtime_config
 

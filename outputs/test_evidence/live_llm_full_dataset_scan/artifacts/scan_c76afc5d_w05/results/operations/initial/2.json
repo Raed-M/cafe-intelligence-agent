@@ -1,0 +1,7 @@
+{
+  "status": "insufficient_data",
+  "findings": [],
+  "execution_notes": [
+    "Error during analysis: Invalid comparison between dtype=datetime64[us] and date"
+  ]
+}

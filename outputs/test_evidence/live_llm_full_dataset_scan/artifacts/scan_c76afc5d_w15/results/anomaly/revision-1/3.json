@@ -1,0 +1,59 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Unusual Daily Revenue Spike",
+      "claim": "Daily revenue on 2026-04-25 reached 9258.80 SAR, 2.50 standard deviations above the 4-week baseline mean of 6498.89 SAR.",
+      "finding_type": "revenue_anomaly",
+      "metrics": {
+        "observed_daily_revenue": {
+          "value": 9258.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "baseline_mean_daily_revenue": {
+          "value": 6498.89,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "baseline_std_daily_revenue": {
+          "value": 1104.02,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "z_score": {
+          "value": 2.5,
+          "unit": "std_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 28,
+      "coverage_notes": [
+        "Analysis period: 2026-04-20 to 2026-04-27 (7 days)",
+        "Baseline: 4 weeks (2026-03-23 to 2026-04-20), 28 daily observations",
+        "Refunds excluded from revenue calculation"
+      ],
+      "assumptions": [
+        "Daily revenue follows approximately normal distribution",
+        "Baseline periods are representative of typical operations",
+        "Z-score threshold of 2.0 indicates statistical significance (p < 0.05)"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

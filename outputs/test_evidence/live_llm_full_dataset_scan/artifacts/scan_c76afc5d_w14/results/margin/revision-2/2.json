@@ -1,0 +1,194 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top item by gross profit contribution",
+      "claim": "In the week of 2026-04-13 to 2026-04-20, Spanish Latte generated the highest gross profit contribution at SAR 2937.20 with a gross margin of 70.9% based on menu-level unit costs.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        },
+        "top_item_gross_profit_sar": {
+          "value": 2937.2,
+          "unit": "SAR",
+          "numerator": 2937.2,
+          "denominator": null,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        },
+        "top_item_revenue_sar": {
+          "value": 4143.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        },
+        "top_item_units_sold": {
+          "value": 232,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        },
+        "top_item_baskets": {
+          "value": 204,
+          "unit": "transactions",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2115,
+      "coverage_notes": [
+        "Analysis period: 2026-04-13 to 2026-04-20",
+        "Refunds excluded from revenue and profit calculations",
+        "Unit costs sourced from menu.unit_cost_sar",
+        "Line totals from POS line_total_sar field",
+        "Item-level unit costs applied uniformly across all sales"
+      ],
+      "assumptions": [
+        "Unit costs from menu_items.unit_cost_sar applied uniformly across all sales",
+        "No recipe/BOM data available; per-drink ingredient costs not calculated",
+        "Gross profit = revenue - (quantity × unit_cost_sar)",
+        "Refunds are excluded from all calculations",
+        "Menu-level unit costs are approximations and do not account for actual ingredient consumption variability"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "title": "Cafe-level gross margin",
+      "claim": "During the week of 2026-04-13 to 2026-04-20, the cafe achieved a gross margin of 70.1% on total revenue of SAR 43237.05.",
+      "finding_type": "financial_performance",
+      "metrics": {
+        "cafe_gross_margin_pct": {
+          "value": 70.1,
+          "unit": "%",
+          "numerator": 30310.25,
+          "denominator": 43237.05,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        },
+        "cafe_total_revenue_sar": {
+          "value": 43237.05,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        },
+        "cafe_total_cogs_sar": {
+          "value": 12926.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        },
+        "cafe_gross_profit_sar": {
+          "value": 30310.25,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2115,
+      "coverage_notes": [
+        "Analysis period: 2026-04-13 to 2026-04-20",
+        "Refunds excluded from calculations",
+        "Unit costs sourced from menu.unit_cost_sar",
+        "All POS line items with known SKUs included"
+      ],
+      "assumptions": [
+        "Unit costs from menu applied uniformly",
+        "Gross profit = total revenue - total COGS",
+        "Refunds excluded from all calculations"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Quantified waste cost impact",
+      "claim": "During the week of 2026-04-13 to 2026-04-20, quantified waste cost totaled SAR 14657.90 across 6 items (2429 units). This represents 20.8% of inventory-based COGS (SAR 70521.00).",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "waste_cost_sar": {
+          "value": 14657.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        },
+        "waste_item_count": {
+          "value": 6,
+          "unit": "items",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        },
+        "waste_unit_count": {
+          "value": 2429,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        },
+        "waste_pct_of_inventory_cogs": {
+          "value": 20.8,
+          "unit": "%",
+          "numerator": 14657.9,
+          "denominator": 70521.0,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        },
+        "inventory_cogs_sar": {
+          "value": 70521.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13",
+          "period_end": "2026-04-20"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 86,
+      "coverage_notes": [
+        "Analysis period: 2026-04-13 to 2026-04-20",
+        "Only non-null waste_cost_sar values included",
+        "Waste cost sourced from inventory.known_waste_cost_sar",
+        "Coverage: 86 inventory records with waste data",
+        "Inventory COGS calculated from units_sold × unit_cost_sar across all inventory records for period"
+      ],
+      "assumptions": [
+        "Waste cost is incremental to COGS and represents lost margin",
+        "Null waste values are excluded (treated as unknown, not zero)",
+        "Inventory unit costs applied to sold units for COGS estimation",
+        "Waste percentage calculated against inventory-derived COGS",
+        "Inventory COGS represents the cost basis for waste percentage calculation"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

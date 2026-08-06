@@ -1,0 +1,231 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During 2026-02-02 to 2026-02-09, 15 reviews were collected with an average rating of 4.47 out of 5.0.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "total_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "average_rating": {
+          "value": 4.47,
+          "unit": "stars",
+          "numerator": "67",
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "rating_1_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "rating_2_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "rating_3_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "rating_4_star_count": {
+          "value": 8,
+          "unit": "count",
+          "numerator": 8,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "rating_5_star_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Analysis period: 2026-02-02 to 2026-02-09",
+        "Total reviews in analysis period: 15",
+        "Sources represented: google, instagram, talabat",
+        "Language distribution: {'en': np.int64(12), 'ar': np.int64(3)}"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid (1-5 scale)",
+        "Review dates are correctly parsed and timezone-aware",
+        "All reviews in the artifact are genuine and unfiltered"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Sentiment Distribution by Language",
+      "claim": "Among 15 reviews in the analysis period, 15 are positive (rating ≥4), 0 are neutral (rating=3), and 0 are negative (rating <3). English reviews: 12, Arabic reviews: 3.",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "positive_sentiment_count": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "neutral_sentiment_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "negative_sentiment_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "english_reviews_count": {
+          "value": 12,
+          "unit": "count",
+          "numerator": 12,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "arabic_reviews_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Sentiment classification based on rating scale: positive (≥4), neutral (=3), negative (<3)",
+        "English reviews: 12, Arabic reviews: 3",
+        "Reviews with non-empty text: 15"
+      ],
+      "assumptions": [
+        "Sentiment is derived from rating value, not text analysis",
+        "Language field is accurately populated",
+        "Rating scale is consistent (1-5)"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Topic Frequency in Review Text",
+      "claim": "Among 15 reviews with text content, the most frequently mentioned topics are: quality (4 mentions), speed (3 mentions), and service (1 mentions).",
+      "finding_type": "topic_frequency",
+      "metrics": {
+        "reviews_with_text_count": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "quality_mentions": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "service_mentions": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "price_mentions": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "taste_mentions": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "speed_mentions": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "cleanliness_mentions": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Topic extraction based on keyword matching in review text (bilingual)",
+        "Reviews with non-empty text: 15 out of 15 total",
+        "Keywords searched: quality, service, price, taste, speed, cleanliness (in English and Arabic)"
+      ],
+      "assumptions": [
+        "Keyword matching is case-insensitive and language-agnostic",
+        "A review may mention multiple topics",
+        "Presence of keyword indicates topic relevance (no semantic validation)",
+        "Empty or null text fields are excluded from topic analysis"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

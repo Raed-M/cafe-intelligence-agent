@@ -1,0 +1,121 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Revenue Growth Product",
+      "claim": "Product Matcha Latte (SKU: ICE-005) generated SAR 4611.60 in the analysis week compared to SAR 3870.00 in the previous week, representing a SAR 741.60 increase.",
+      "finding_type": "product_performance",
+      "metrics": {
+        "product_sku": {
+          "value": "ICE-005",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "product_name": {
+          "value": "Matcha Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "analysis_period_revenue": {
+          "value": 4611.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 3870.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "revenue_change": {
+          "value": 741.6,
+          "unit": "SAR",
+          "numerator": 741.6,
+          "denominator": 3870.0,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "Analysis covers 19 unique SKUs in analysis period",
+        "Product names sourced from menu reference",
+        "Launch and retirement dates checked for eligibility"
+      ],
+      "assumptions": [
+        "Product revenue calculated from line_total_sar",
+        "SKU-level aggregation used for product identification",
+        "Menu reference used for product name standardization"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Channel Performance Change",
+      "claim": "Channel 'delivery' generated SAR 7485.55 in the analysis week compared to SAR 6242.35 in the previous week, representing a SAR 1243.20 increase.",
+      "finding_type": "channel_mix_analysis",
+      "metrics": {
+        "channel_name": {
+          "value": "delivery",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "analysis_period_revenue": {
+          "value": 7485.55,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 6242.35,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "revenue_change": {
+          "value": 1243.2,
+          "unit": "SAR",
+          "numerator": 1243.2,
+          "denominator": 6242.35,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Analysis covers 3 unique channels",
+        "Channel data sourced from POS transaction records"
+      ],
+      "assumptions": [
+        "Channel classification from POS data",
+        "Revenue calculated from line_total_sar",
+        "All transactions with valid channel information included"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

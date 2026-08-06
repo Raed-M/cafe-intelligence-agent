@@ -1,0 +1,186 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item - Analysis Week",
+      "claim": "Spanish Latte generated 3872.70 SAR gross profit with 306 units sold at 70.88% gross margin during the analysis week.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26",
+          "period_end": "2026-02-02"
+        },
+        "units_sold": {
+          "value": 306,
+          "unit": "units",
+          "numerator": 306,
+          "denominator": null,
+          "period_start": "2026-01-26",
+          "period_end": "2026-02-02"
+        },
+        "revenue": {
+          "value": 5463.9,
+          "unit": "SAR",
+          "numerator": 5463.9,
+          "denominator": null,
+          "period_start": "2026-01-26",
+          "period_end": "2026-02-02"
+        },
+        "cogs": {
+          "value": 1591.2,
+          "unit": "SAR",
+          "numerator": 1591.2,
+          "denominator": null,
+          "period_start": "2026-01-26",
+          "period_end": "2026-02-02"
+        },
+        "gross_profit": {
+          "value": 3872.7,
+          "unit": "SAR",
+          "numerator": 3872.7,
+          "denominator": null,
+          "period_start": "2026-01-26",
+          "period_end": "2026-02-02"
+        },
+        "gross_margin_percent": {
+          "value": 70.88,
+          "unit": "%",
+          "numerator": 70.88,
+          "denominator": 100,
+          "period_start": "2026-01-26",
+          "period_end": "2026-02-02"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 306,
+      "coverage_notes": [
+        "Analysis period: 2026-01-26 to 2026-02-02",
+        "Refunds excluded from calculation",
+        "Menu unit_cost_sar applied to all units sold",
+        "Revenue calculated from POS line_total_sar (post-discount)"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is applicable to all units sold in analysis period",
+        "POS line_total_sar reflects actual revenue after discounts",
+        "No recipe/BOM available; unit cost is applied uniformly",
+        "Comparison is among all items with sales in analysis period"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost - Analysis Week",
+      "claim": "Known waste cost totaled 1136.50 SAR across 6 items (188 units wasted) during the analysis week.",
+      "finding_type": "waste_economics",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 1136.5,
+          "unit": "SAR",
+          "numerator": 1136.5,
+          "denominator": null,
+          "period_start": "2026-01-26",
+          "period_end": "2026-02-02"
+        },
+        "units_wasted": {
+          "value": 188,
+          "unit": "units",
+          "numerator": 188,
+          "denominator": null,
+          "period_start": "2026-01-26",
+          "period_end": "2026-02-02"
+        },
+        "items_with_waste": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-01-26",
+          "period_end": "2026-02-02"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: 2026-01-26 to 2026-02-02",
+        "Only non-null known_waste_cost_sar values included",
+        "Blank waste values treated as unknown, not zero"
+      ],
+      "assumptions": [
+        "Inventory known_waste_cost_sar is accurate and complete for recorded waste",
+        "Waste cost reflects actual unit cost at time of waste"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Supplier Price Change - Latest Evidence",
+      "claim": "Barista oat price changed from 15.40 to 17.90 SAR/L (effective 2026-05-01), representing a 16.23% change.",
+      "finding_type": "supplier_pricing",
+      "metrics": {
+        "ingredient": {
+          "value": "Barista oat",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01",
+          "period_end": "2026-05-01"
+        },
+        "old_price": {
+          "value": 15.4,
+          "unit": "SAR/L",
+          "numerator": 15.4,
+          "denominator": null,
+          "period_start": "2026-05-01",
+          "period_end": "2026-05-01"
+        },
+        "new_price": {
+          "value": 17.9,
+          "unit": "SAR/L",
+          "numerator": 17.9,
+          "denominator": null,
+          "period_start": "2026-05-01",
+          "period_end": "2026-05-01"
+        },
+        "price_change_percent": {
+          "value": 16.23,
+          "unit": "%",
+          "numerator": 16.23,
+          "denominator": 100,
+          "period_start": "2026-05-01",
+          "period_end": "2026-05-01"
+        },
+        "price_delta": {
+          "value": 2.5,
+          "unit": "SAR/L",
+          "numerator": 2.5,
+          "denominator": null,
+          "period_start": "2026-05-01",
+          "period_end": "2026-05-01"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Latest price change from supplier email evidence",
+        "Effective date: 2026-05-01",
+        "Email date: 2026-05-04",
+        "No recipe/BOM available; per-drink impact cannot be calculated without consumption rates"
+      ],
+      "assumptions": [
+        "Email extraction confidence: 0.95",
+        "Price change applies to future procurement at stated unit",
+        "No assumption made about standing order quantities or payment terms without explicit email evidence"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

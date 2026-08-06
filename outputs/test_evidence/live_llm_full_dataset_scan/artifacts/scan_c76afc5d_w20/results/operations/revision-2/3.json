@@ -1,0 +1,145 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Comparison: Analysis vs Previous Period",
+      "claim": "Conversion rate in analysis period (2026-05-25 to 2026-06-01) was 0.2367 transactions per visitor, compared to 0.2560 in previous period (2026-05-18 to 2026-05-25), representing a -7.54% change.",
+      "finding_type": "performance_metric",
+      "metrics": {
+        "conversion_rate_analysis_period": {
+          "value": 0.2367,
+          "unit": "transactions_per_visitor",
+          "numerator": 1794,
+          "denominator": 7580,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "conversion_rate_previous_period": {
+          "value": 0.256,
+          "unit": "transactions_per_visitor",
+          "numerator": 1434,
+          "denominator": 5602,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "conversion_rate_change_pct": {
+          "value": -7.54,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 3228,
+      "coverage_notes": [
+        "Dead sensor days excluded from traffic denominator",
+        "Refunds excluded from transaction count",
+        "Analysis period: 2026-05-25 to 2026-06-01",
+        "Previous period: 2026-05-18 to 2026-05-25"
+      ],
+      "assumptions": [
+        "Unique transaction_id represents one customer visit",
+        "Door count is valid footfall metric",
+        "is_dead_sensor_day flag is accurate"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Labour Cost Comparison: Analysis vs Previous Period",
+      "claim": "Total labour cost in analysis period (2026-05-25 to 2026-06-01) was 6944.00 SAR, compared to 7390.00 SAR in previous period (2026-05-18 to 2026-05-25), representing a -6.04% change.",
+      "finding_type": "cost_metric",
+      "metrics": {
+        "labour_cost_analysis_period": {
+          "value": 6944.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "labour_cost_previous_period": {
+          "value": 7390.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "labour_cost_change_pct": {
+          "value": -6.04,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "staff"
+      ],
+      "sample_size": 81,
+      "coverage_notes": [
+        "Labour cost calculated from staff shifts",
+        "Analysis period: 2026-05-25 to 2026-06-01",
+        "Previous period: 2026-05-18 to 2026-05-25",
+        "Analysis shifts: 39, Previous shifts: 42"
+      ],
+      "assumptions": [
+        "labour_cost_sar field is accurate",
+        "All shifts in period are captured"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Known Waste Cost Comparison: Analysis vs Previous Period",
+      "claim": "Known waste cost in analysis period (2026-05-25 to 2026-06-01) was 1029.00 SAR, compared to 1270.30 SAR in previous period (2026-05-18 to 2026-05-25), representing a -19.00% change.",
+      "finding_type": "waste_metric",
+      "metrics": {
+        "known_waste_cost_analysis_period": {
+          "value": 1029.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "known_waste_cost_previous_period": {
+          "value": 1270.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-05-25T00:00:00+03:00"
+        },
+        "known_waste_cost_change_pct": {
+          "value": -19.0,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-18T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 12,
+      "coverage_notes": [
+        "Known waste cost only; unknown waste excluded",
+        "Analysis period: 2026-05-25 to 2026-06-01",
+        "Previous period: 2026-05-18 to 2026-05-25",
+        "Analysis items: 6, Previous items: 6"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar field is accurate",
+        "Week-based inventory data aligns with analysis periods"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

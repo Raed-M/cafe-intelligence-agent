@@ -1,0 +1,51 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Hourly Traffic Anomaly on 2026-04-18 at 00:00",
+      "claim": "Door count of 159 at 1970-01-01 00:00 is 3.21 standard deviations from baseline mean of 49.5",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "hourly_door_count": {
+          "value": 159,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "1970-01-01T00:00:00.000000020",
+          "period_end": "1970-01-01T01:00:00.000000020"
+        },
+        "baseline_mean": {
+          "value": 49.5,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00",
+          "period_end": "2026-03-23T00:00:00"
+        },
+        "z_score": {
+          "value": 3.21,
+          "unit": "std_dev",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "1970-01-01T00:00:00.000000020",
+          "period_end": "1970-01-01T01:00:00.000000020"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 456,
+      "coverage_notes": [
+        "Baseline calculated from 456 hourly observations across 4 weeks",
+        "Dead sensor days excluded from analysis",
+        "Analysis period: 2026-04-13 to 2026-04-20"
+      ],
+      "assumptions": [
+        "Z-score threshold of 2.5 standard deviations used for traffic anomalies",
+        "Baseline calculated from trailing 4 weeks of valid sensor data",
+        "Dead sensor intervals excluded per data quality notes"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

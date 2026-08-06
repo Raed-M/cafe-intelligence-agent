@@ -1,0 +1,190 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Strong week-over-week revenue and basket growth",
+      "claim": "Valid basket count increased from 1093 to 1566 baskets (42.2% increase), with net revenue growing from SAR 36947.85 to SAR 51850.25 (38.7% increase) in the analysis week versus previous week.",
+      "finding_type": "revenue_and_transaction_growth",
+      "metrics": {
+        "analysis_basket_count": {
+          "value": 1566,
+          "unit": "baskets",
+          "numerator": 1566,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_basket_count": {
+          "value": 1093,
+          "unit": "baskets",
+          "numerator": 1093,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "basket_count_change_pct": {
+          "value": 43.3,
+          "unit": "%",
+          "numerator": 473,
+          "denominator": 1093,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "analysis_net_revenue": {
+          "value": 51850.25,
+          "unit": "SAR",
+          "numerator": 51850.25,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_net_revenue": {
+          "value": 36947.85,
+          "unit": "SAR",
+          "numerator": 36947.85,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": 40.3,
+          "unit": "%",
+          "numerator": 14902.4,
+          "denominator": 36947.85,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2635,
+      "coverage_notes": [
+        "Analysis period: 2026-03-16 to 2026-03-23 (7 days)",
+        "Previous period: 2026-03-09 to 2026-03-16 (7 days)",
+        "Revenue includes refunds in net calculation (refunds are negative line_total_sar values)",
+        "Analysis period refunds: 32 transactions, SAR -645.80",
+        "Previous period refunds: 18 transactions, SAR -354.00"
+      ],
+      "assumptions": [
+        "line_total_sar represents net revenue after discounts and refunds",
+        "transaction_id uniquely identifies a basket/transaction",
+        "All POS records in the analysis period are valid and complete",
+        "Refunds are included in net revenue calculations as per metric definition"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value increased week-over-week",
+      "claim": "Average Order Value (AOV) increased from SAR 33.80 to SAR 33.11, representing a -2.1% increase. This indicates stronger per-basket spending despite higher transaction volume.",
+      "finding_type": "aov_improvement",
+      "metrics": {
+        "analysis_aov": {
+          "value": 33.11,
+          "unit": "SAR",
+          "numerator": 51850.25,
+          "denominator": 1566,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_aov": {
+          "value": 33.8,
+          "unit": "SAR",
+          "numerator": 36947.85,
+          "denominator": 1093,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "aov_change_pct": {
+          "value": -2.1,
+          "unit": "%",
+          "numerator": -0.69,
+          "denominator": 33.8,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2635,
+      "coverage_notes": [
+        "AOV calculated as total net revenue divided by unique basket count",
+        "Both periods are 7-day weeks with comparable calendar structure"
+      ],
+      "assumptions": [
+        "AOV is a valid metric for comparing customer spending patterns",
+        "Basket composition and customer mix are comparable between periods"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Category 'iced_coffee' shows strongest revenue growth",
+      "claim": "The 'iced_coffee' category generated SAR 6555.10 in the analysis week versus SAR 2923.05 in the previous week, a 124.3% increase. Basket count in this category grew from 145 to 310.",
+      "finding_type": "category_performance",
+      "metrics": {
+        "category_name": {
+          "value": "iced_coffee",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "analysis_category_revenue": {
+          "value": 6555.1,
+          "unit": "SAR",
+          "numerator": 6555.1,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_category_revenue": {
+          "value": 2923.05,
+          "unit": "SAR",
+          "numerator": 2923.05,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "category_revenue_change_pct": {
+          "value": 124.3,
+          "unit": "%",
+          "numerator": 3632.05,
+          "denominator": 2923.05,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "analysis_category_baskets": {
+          "value": 310,
+          "unit": "baskets",
+          "numerator": 310,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_category_baskets": {
+          "value": 145,
+          "unit": "baskets",
+          "numerator": 145,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 323,
+      "coverage_notes": [
+        "Category 'iced_coffee' analysis based on POS line items",
+        "Revenue includes refunds in net calculation"
+      ],
+      "assumptions": [
+        "Category classification is consistent and accurate in POS data",
+        "Basket count represents unique transactions per category"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

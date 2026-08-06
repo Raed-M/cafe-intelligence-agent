@@ -1,0 +1,106 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Decline Week-over-Week",
+      "claim": "Conversion rate (valid sales transactions / footfall) decreased from 0.3642 to 0.2695, a -26.0% decline",
+      "finding_type": "conversion_metric",
+      "metrics": {
+        "conversion_rate_analysis": {
+          "value": 0.2695,
+          "unit": "transactions/visitor",
+          "numerator": 1557,
+          "denominator": 5777,
+          "period_start": "2026-03-15T21:00:00+00:00",
+          "period_end": "2026-03-22T21:00:00+00:00"
+        },
+        "conversion_rate_previous": {
+          "value": 0.3642,
+          "unit": "transactions/visitor",
+          "numerator": 1088,
+          "denominator": 2987,
+          "period_start": "2026-03-08T21:00:00+00:00",
+          "period_end": "2026-03-15T21:00:00+00:00"
+        },
+        "conversion_change_percent": {
+          "value": -26.0,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-15T21:00:00+00:00",
+          "period_end": "2026-03-22T21:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 5777,
+      "coverage_notes": [
+        "Excluded dead sensor days from traffic denominator",
+        "Counted unique transaction_ids as valid sales transactions",
+        "Excluded refunds from transaction count"
+      ],
+      "assumptions": [
+        "Door count represents unique visitors",
+        "Transaction_id uniqueness indicates distinct sales events",
+        "is_refund flag accurately identifies refund transactions"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Known Waste Cost Increase",
+      "claim": "Known waste cost increased from 1093.60 SAR to 18755.60 SAR, with waste ratio rising from 20.9% to 19.1%",
+      "finding_type": "inventory_waste",
+      "metrics": {
+        "known_waste_cost_analysis": {
+          "value": 18755.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-15T21:00:00+00:00",
+          "period_end": "2026-03-22T21:00:00+00:00"
+        },
+        "known_waste_cost_previous": {
+          "value": 1093.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-08T21:00:00+00:00",
+          "period_end": "2026-03-15T21:00:00+00:00"
+        },
+        "waste_ratio_analysis": {
+          "value": 0.1912,
+          "unit": "ratio",
+          "numerator": 3121,
+          "denominator": 16326,
+          "period_start": "2026-03-15T21:00:00+00:00",
+          "period_end": "2026-03-22T21:00:00+00:00"
+        },
+        "waste_ratio_previous": {
+          "value": 0.2093,
+          "unit": "ratio",
+          "numerator": 184,
+          "denominator": 879,
+          "period_start": "2026-03-08T21:00:00+00:00",
+          "period_end": "2026-03-15T21:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 114,
+      "coverage_notes": [
+        "Known waste cost calculated from inventory artifact",
+        "Unknown waste values excluded from analysis",
+        "Inventory counts are weekly snapshots, not real-time"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar accurately reflects waste value",
+        "units_wasted represents actual waste quantity",
+        "Weekly inventory counts are accurate"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

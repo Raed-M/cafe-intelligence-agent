@@ -1,0 +1,135 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution and Average Sentiment",
+      "claim": "During the analysis period (Feb 2-9, 2026), customers provided 15 reviews with an average rating of 4.47/5. Positive reviews (4-5 stars) comprise 15 reviews, neutral (3 stars) 0, and negative (1-2 stars) 0.",
+      "finding_type": "customer_sentiment",
+      "metrics": {
+        "average_rating": {
+          "value": 4.47,
+          "unit": "stars",
+          "numerator": 15,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "positive_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Reviews from 3 source(s)",
+        "Language distribution: {'en': np.int64(12), 'ar': np.int64(3)}"
+      ],
+      "assumptions": [
+        "Rating scale is 1-5 stars",
+        "Positive sentiment defined as 4-5 stars, neutral as 3 stars, negative as 1-2 stars"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution and Topic Frequency",
+      "claim": "Of 15 reviews, 12 are in English and 3 are in Arabic. Common topics mentioned include: quality (4 reviews), service (4 reviews), temperature (2 reviews).",
+      "finding_type": "customer_feedback_analysis",
+      "metrics": {
+        "english_reviews": {
+          "value": 12,
+          "unit": "count",
+          "numerator": 12,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 15,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Language coverage: English 12/15, Arabic 3/15",
+        "Topic analysis based on keyword matching in 15 non-empty reviews"
+      ],
+      "assumptions": [
+        "Topic keywords are representative of customer concerns",
+        "Single keyword match indicates topic mention"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Rating Differences by Review Language",
+      "claim": "English reviews (n=12) averaged 4.33 stars, while Arabic reviews (n=3) averaged 5.00 stars.",
+      "finding_type": "comparative_sentiment",
+      "metrics": {
+        "english_avg_rating": {
+          "value": 4.33,
+          "unit": "stars",
+          "numerator": 12,
+          "denominator": 12,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "arabic_avg_rating": {
+          "value": 5.0,
+          "unit": "stars",
+          "numerator": 3,
+          "denominator": 3,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "English sample: 12 reviews",
+        "Arabic sample: 3 reviews"
+      ],
+      "assumptions": [
+        "Language classification is accurate",
+        "Sample sizes are sufficient for comparison"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

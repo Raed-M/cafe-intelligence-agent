@@ -1,0 +1,244 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item - Analysis Period",
+      "claim": "Item 'Halloumi Toast' (SKU: FOD-006) generated the highest gross profit of 3027.80 SAR during the analysis period (Feb 23 - Mar 2, 2026), with 193 units sold across 175 transactions.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Halloumi Toast",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "sku": {
+          "value": "FOD-006",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "total_quantity_sold": {
+          "value": 193,
+          "unit": "units",
+          "numerator": 193,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "total_revenue": {
+          "value": 4610.4,
+          "unit": "SAR",
+          "numerator": 4610.4,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "total_cogs": {
+          "value": 1582.6,
+          "unit": "SAR",
+          "numerator": 1582.6,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "gross_profit": {
+          "value": 3027.8,
+          "unit": "SAR",
+          "numerator": 3027.8,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "gross_margin_pct": {
+          "value": 65.67,
+          "unit": "%",
+          "numerator": 3027.8,
+          "denominator": 4610.4,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "unit_cost_sar": {
+          "value": 8.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "basket_count": {
+          "value": 175,
+          "unit": "transactions",
+          "numerator": 175,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1808,
+      "coverage_notes": [
+        "Analysis period: 2026-02-23 to 2026-03-02",
+        "Includes all non-refund POS transactions",
+        "Unit costs sourced from menu.parquet",
+        "COGS calculated as quantity × unit_cost_sar",
+        "Gross profit = revenue - COGS"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and applicable to all sales in period",
+        "No recipe/BOM data available; using menu unit costs as-is",
+        "Refunds excluded from revenue calculations"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Highest Waste Cost Item - Analysis Week",
+      "claim": "Item 'Butter Croissant' (SKU: FOD-001) incurred the highest waste cost of 260.00 SAR during week of Feb 23, 2026, with 65 units wasted.",
+      "finding_type": "waste_analysis",
+      "metrics": {
+        "item_name": {
+          "value": "Butter Croissant",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "sku": {
+          "value": "FOD-001",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "units_wasted": {
+          "value": 65,
+          "unit": "units",
+          "numerator": 65,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "known_waste_cost_sar": {
+          "value": 260.0,
+          "unit": "SAR",
+          "numerator": 260.0,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "total_waste_cost_all_items": {
+          "value": 822.6,
+          "unit": "SAR",
+          "numerator": 822.6,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis week: Feb 23, 2026",
+        "Only items with non-null known_waste_cost_sar included",
+        "Total items with waste data: 6",
+        "Waste cost sourced from inventory.known_waste_cost_sar"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar represents actual waste cost incurred",
+        "Blank waste values treated as unknown, not zero"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Supplier Price Change - Potential Cost Impact",
+      "claim": "Supplier price change detected for 'roasted coffee': 88.00 SAR/kg → 96.00 SAR/kg (+9.09%), effective 2026-04-15. Impact on menu items requires standing order volume and payment terms confirmation.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "entity_or_ingredient": {
+          "value": "roasted coffee",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "old_price": {
+          "value": 88.0,
+          "unit": "SAR/kg",
+          "numerator": 88.0,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "new_price": {
+          "value": 96.0,
+          "unit": "SAR/kg",
+          "numerator": 96.0,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "price_change_pct": {
+          "value": 9.09,
+          "unit": "%",
+          "numerator": 8.0,
+          "denominator": 88.0,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "effective_date": {
+          "value": "2026-04-15",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "currency": {
+          "value": "SAR",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        },
+        "unit": {
+          "value": "kg",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+00:00",
+          "period_end": "2026-03-02T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Total supplier price changes detected: 3",
+        "Only changes with old_price, new_price, and effective_date included",
+        "No recipe/BOM data available to calculate per-drink impact",
+        "Standing order quantities not confirmed in email extraction"
+      ],
+      "assumptions": [
+        "Price change applies to future purchases only",
+        "No information on standing order volumes or payment terms",
+        "Actual margin impact depends on order volume and payment timing",
+        "No per-drink impact calculated without recipe data"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

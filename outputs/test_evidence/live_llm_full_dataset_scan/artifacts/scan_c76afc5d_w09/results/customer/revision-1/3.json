@@ -1,0 +1,154 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (2026-03-09T00:00:00+03:00 to 2026-03-16T00:00:00+03:00), 14 reviews were collected with an average rating of 4.43 out of 5.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "total_reviews": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "average_rating": {
+          "value": 4.43,
+          "unit": "stars",
+          "numerator": 62.0,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "rating_2_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "rating_4_count": {
+          "value": 5,
+          "unit": "count",
+          "numerator": 5,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "rating_5_count": {
+          "value": 8,
+          "unit": "count",
+          "numerator": 8,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Analysis period: 2026-03-09T00:00:00+03:00 to 2026-03-16T00:00:00+03:00",
+        "Total reviews in dataset: 520",
+        "Reviews in analysis period: 14",
+        "Sources represented: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Reviews are filtered by date within the analysis period",
+        "Rating values are numeric and valid",
+        "All reviews in the dataset have complete rating information"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Of 14 reviews in the analysis period, 12 are in English and 2 are in Arabic.",
+      "finding_type": "language_coverage",
+      "metrics": {
+        "english_reviews": {
+          "value": 12,
+          "unit": "count",
+          "numerator": 12,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Language distribution: {'en': 12, 'ar': 2}",
+        "Bilingual review coverage: 14 reviews with language specified"
+      ],
+      "assumptions": [
+        "Language field is accurately populated",
+        "Reviews are classified as either 'en' or 'ar'"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Review Source Distribution",
+      "claim": "Reviews in the analysis period come from 3 sources: google (7), talabat (4), instagram (3).",
+      "finding_type": "source_coverage",
+      "metrics": {
+        "source_google_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "source_talabat_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "source_instagram_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 14,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Source distribution: {'google': 7, 'talabat': 4, 'instagram': 3}",
+        "Total unique sources: 3"
+      ],
+      "assumptions": [
+        "Source field is accurately populated",
+        "All reviews have a source attribution"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

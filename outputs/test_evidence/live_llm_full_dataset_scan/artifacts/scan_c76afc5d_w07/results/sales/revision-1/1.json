@@ -1,0 +1,199 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Revenue Decline with Reduced Transaction Count",
+      "claim": "Net revenue declined -7.25% (from 38206.75 SAR to 35436.95 SAR) driven by a -7.19% decrease in valid transactions (from 1127 to 1046), while average order value remained flat at 33.88 SAR.",
+      "finding_type": "revenue_and_transaction_mix",
+      "metrics": {
+        "analysis_period_revenue": {
+          "value": 35436.95,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 38206.75,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": -7.25,
+          "unit": "%",
+          "numerator": -2769.8,
+          "denominator": 38206.75,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "analysis_period_transactions": {
+          "value": 1046,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "previous_period_transactions": {
+          "value": 1127,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "transaction_change_pct": {
+          "value": -7.19,
+          "unit": "%",
+          "numerator": -81,
+          "denominator": 1127,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "analysis_period_aov": {
+          "value": 33.88,
+          "unit": "SAR",
+          "numerator": 35436.95,
+          "denominator": 1046,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "previous_period_aov": {
+          "value": 33.9,
+          "unit": "SAR",
+          "numerator": 38206.75,
+          "denominator": 1127,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "aov_change_pct": {
+          "value": -0.07,
+          "unit": "%",
+          "numerator": -0.02,
+          "denominator": 33.9,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1804,
+      "coverage_notes": [
+        "Analysis period: 2026-02-23 to 2026-03-02 (7 days)",
+        "Previous period: 2026-02-16 to 2026-02-23 (7 days)",
+        "Refunds included in net revenue calculation (is_refund flag applied)",
+        "Transaction count based on unique transaction_id values",
+        "AOV calculated as total line_total_sar divided by unique transaction count"
+      ],
+      "assumptions": [
+        "is_refund flag correctly identifies refund transactions",
+        "line_total_sar represents net transaction value including refunds as negative amounts",
+        "transaction_id uniquely identifies a basket/transaction",
+        "Timestamp filtering uses UTC+3 timezone as specified in period definitions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Category Revenue Decline: hot_coffee",
+      "claim": "hot_coffee category revenue declined -11.77% (from 11940.50 SAR to 10535.25 SAR) week-over-week, representing the largest category decline.",
+      "finding_type": "category_mix",
+      "metrics": {
+        "analysis_period_category_revenue": {
+          "value": 10535.25,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "previous_period_category_revenue": {
+          "value": 11940.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "category_revenue_change_pct": {
+          "value": -11.77,
+          "unit": "%",
+          "numerator": -1405.25,
+          "denominator": 11940.5,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1789,
+      "coverage_notes": [
+        "Analysis period: 2026-02-23 to 2026-03-02 (7 days)",
+        "Previous period: 2026-02-16 to 2026-02-23 (7 days)",
+        "Refunds excluded from category revenue calculations",
+        "Category classification from cleaned POS data"
+      ],
+      "assumptions": [
+        "Category classification is consistent across both periods",
+        "line_total_sar represents net transaction value",
+        "is_refund flag correctly identifies refund transactions"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Top Product Growth: Saffron Latte",
+      "claim": "SKU HOT-006 (Saffron Latte) achieved the highest revenue growth at 4.63% (from 1927.80 SAR to 2017.05 SAR) week-over-week.",
+      "finding_type": "product_mix",
+      "metrics": {
+        "analysis_period_sku_revenue": {
+          "value": 2017.05,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "previous_period_sku_revenue": {
+          "value": 1927.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "sku_revenue_change_pct": {
+          "value": 4.63,
+          "unit": "%",
+          "numerator": 89.25,
+          "denominator": 1927.8,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1789,
+      "coverage_notes": [
+        "Analysis period: 2026-02-23 to 2026-03-02 (7 days)",
+        "Previous period: 2026-02-16 to 2026-02-23 (7 days)",
+        "Refunds excluded from SKU revenue calculations",
+        "SKU matched to menu reference for product naming",
+        "Only SKUs present in both periods included in comparison"
+      ],
+      "assumptions": [
+        "SKU codes are consistent across POS and menu artifacts",
+        "line_total_sar represents net transaction value",
+        "is_refund flag correctly identifies refund transactions",
+        "Product launch/retirement dates do not restrict analysis period eligibility"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

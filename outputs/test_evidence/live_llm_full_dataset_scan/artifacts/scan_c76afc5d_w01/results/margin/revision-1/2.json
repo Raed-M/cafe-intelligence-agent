@@ -1,0 +1,143 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Profit-Contributing Item",
+      "claim": "During the analysis week (2026-01-12 to 2026-01-19), Spanish Latte generated the highest gross profit of 3513.40 SAR with a gross margin of 70.8%, based on 278 units sold at 4959.00 SAR total revenue and 1445.60 SAR COGS.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "gross_profit_sar": {
+          "value": 3513.4,
+          "unit": "SAR",
+          "numerator": 3513.4,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "gross_margin_pct": {
+          "value": 70.8,
+          "unit": "%",
+          "numerator": 3513.4,
+          "denominator": 4959.0,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "units_sold": {
+          "value": 278,
+          "unit": "units",
+          "numerator": 278,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "total_revenue_sar": {
+          "value": 4959.0,
+          "unit": "SAR",
+          "numerator": 4959.0,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "total_cogs_sar": {
+          "value": 1445.6,
+          "unit": "SAR",
+          "numerator": 1445.6,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Analysis covers 2157 POS line items (excluding refunds) from 1288 transactions",
+        "Menu unit costs available for 18 items with sales",
+        "COGS calculated as quantity × unit_cost_sar from menu",
+        "Gross profit = line_total_sar - total_cogs"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar values are current and accurate for the analysis period",
+        "POS line_total_sar reflects actual revenue after discounts",
+        "No recipe/BOM data available; analysis is at item level only",
+        "Refunds excluded from revenue calculation"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Known Waste Cost in Analysis Period",
+      "claim": "Total known waste cost for the analysis week (2026-01-12 to 2026-01-19) is 867.10 SAR across 6 items with recorded waste observations out of 6 total inventory records in the period. This represents waste from 151 units across 6 SKUs. 0 inventory records had null/blank waste values and were excluded per methodology.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_known_waste_cost_sar": {
+          "value": 867.1,
+          "unit": "SAR",
+          "numerator": 867.1,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "items_with_waste": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": 6,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "total_units_wasted": {
+          "value": 151,
+          "unit": "units",
+          "numerator": 151,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "total_inventory_records": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "records_excluded_null_waste": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 6,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis includes 6 items with non-null, positive waste_cost_sar values",
+        "Total inventory records for period: 6",
+        "Records excluded due to null/blank waste values: 0",
+        "Known waste cost represents actual loss value from inventory.known_waste_cost_sar field",
+        "Includes only waste_cost_sar values >= 0 with non-null entries; excludes estimated, pending, or flagged waste"
+      ],
+      "assumptions": [
+        "Waste cost represents actual verified loss value",
+        "Null/blank waste values indicate no recorded waste observation (not zero waste)",
+        "known_waste_cost_sar field contains only verified waste costs",
+        "Analysis scope limited to records with explicit waste cost entries"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

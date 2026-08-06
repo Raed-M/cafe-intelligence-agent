@@ -1,0 +1,211 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 5 Items by Gross Profit Contribution (Analysis Week)",
+      "claim": "During the analysis week (2026-02-16T00:00:00+03:00 to 2026-02-23T00:00:00+03:00), the top 5 items by gross profit contribution generated 13949.70 SAR in total gross profit, representing 52.0% of total item-level gross profit.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_1_name": {
+          "value": "Chicken Sandwich",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "top_item_1_gross_profit_sar": {
+          "value": 3336.6,
+          "unit": "SAR",
+          "numerator": 3336.6,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "top_item_1_margin_pct": {
+          "value": 63.03,
+          "unit": "%",
+          "numerator": 63.03,
+          "denominator": 100,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "top_5_total_gross_profit_sar": {
+          "value": 13949.7,
+          "unit": "SAR",
+          "numerator": 13949.7,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "top_5_contribution_pct": {
+          "value": 52.0,
+          "unit": "%",
+          "numerator": 52.0,
+          "denominator": 100,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "total_items_analyzed": {
+          "value": 18,
+          "unit": null,
+          "numerator": 18,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1951,
+      "coverage_notes": [
+        "Analysis period: 2026-02-16 to 2026-02-23",
+        "Refunds excluded from calculations",
+        "Only items with known SKU and menu cost data included",
+        "Total non-refund transactions analyzed: 1951"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar represents actual COGS per unit",
+        "Line totals are accurate and consistent",
+        "No recipe/BOM data available; using menu-level unit costs only"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost (Analysis Week)",
+      "claim": "During the analysis week, quantified waste cost totaled 22860.40 SAR across 134 inventory records with non-null waste observations.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_known_waste_cost_sar": {
+          "value": 22860.4,
+          "unit": "SAR",
+          "numerator": 22860.4,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "waste_records_with_data": {
+          "value": 134,
+          "unit": null,
+          "numerator": 134,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "top_waste_item": {
+          "value": "Butter Croissant",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "top_waste_item_cost_sar": {
+          "value": 5636.0,
+          "unit": "SAR",
+          "numerator": 5636.0,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 134,
+      "coverage_notes": [
+        "Analysis period: 2026-02-16 to 2026-02-23",
+        "Only non-null waste cost observations included",
+        "Total inventory records in period: 138",
+        "Records with quantified waste: 134"
+      ],
+      "assumptions": [
+        "Blank waste values are treated as unknown, not zero",
+        "known_waste_cost_sar represents actual waste cost incurred"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Supplier Price Change Evidence",
+      "claim": "Email evidence documents a price change for Barista oat effective 2026-05-01T00:00:00+00:00: old price 15.4 SAR/L → new price 17.9 SAR/L, representing a 16.23% change.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "ingredient_or_entity": {
+          "value": "Barista oat",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+00:00",
+          "period_end": "2026-05-01T00:00:00+00:00"
+        },
+        "old_price": {
+          "value": 15.4,
+          "unit": "SAR/L",
+          "numerator": 15.4,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+00:00",
+          "period_end": "2026-05-01T00:00:00+00:00"
+        },
+        "new_price": {
+          "value": 17.9,
+          "unit": "SAR/L",
+          "numerator": 17.9,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00+00:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "price_change_sar": {
+          "value": 2.5,
+          "unit": "SAR",
+          "numerator": 2.5,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+00:00",
+          "period_end": "2026-05-01T00:00:00+00:00"
+        },
+        "price_change_pct": {
+          "value": 16.23,
+          "unit": "%",
+          "numerator": 16.23,
+          "denominator": 100,
+          "period_start": "2026-05-04T00:00:00+00:00",
+          "period_end": "2026-05-01T00:00:00+00:00"
+        },
+        "effective_date": {
+          "value": "2026-05-01T00:00:00+00:00",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+00:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "email_confidence": {
+          "value": 0.95,
+          "unit": null,
+          "numerator": 0.95,
+          "denominator": 1,
+          "period_start": "2026-05-04T00:00:00+00:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Total price change records in emails: 3",
+        "Email extraction confidence: 0.95",
+        "Email date: 2026-05-04T00:00:00+00:00",
+        "Effective date: 2026-05-01T00:00:00+00:00"
+      ],
+      "assumptions": [
+        "Email extraction is accurate for price and unit information",
+        "No recipe/BOM data available; cannot calculate per-drink impact without standing order quantities",
+        "Price change applies only to the specified ingredient/entity",
+        "Continued order volume and payment terms are not confirmed"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

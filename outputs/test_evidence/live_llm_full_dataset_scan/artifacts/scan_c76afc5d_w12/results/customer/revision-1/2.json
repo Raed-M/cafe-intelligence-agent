@@ -1,0 +1,202 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution and Average (Analysis Period)",
+      "claim": "During the analysis period (2026-03-30T00:00:00+03:00 to 2026-04-06T00:00:00+03:00), 23 reviews were collected with an average rating of 3.91 out of 5. Rating distribution: {1: 3, 2: 3, 4: 4, 5: 13}. Sources: {'google': 12, 'instagram': 10, 'talabat': 1}. Languages: {'en': 16, 'ar': 7}.",
+      "finding_type": "descriptive_metric",
+      "metrics": {
+        "total_reviews": {
+          "value": 23,
+          "unit": "count",
+          "numerator": 23,
+          "denominator": null,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "average_rating": {
+          "value": 3.91,
+          "unit": "stars (1-5)",
+          "numerator": 90.0,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "rating_1_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "rating_2_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "rating_3_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "rating_4_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "rating_5_count": {
+          "value": 13,
+          "unit": "count",
+          "numerator": 13,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 23,
+      "coverage_notes": [
+        "Analysis period: 2026-03-30T00:00:00+03:00 to 2026-04-06T00:00:00+03:00",
+        "Total reviews in artifact: 520",
+        "Reviews in analysis period: 23",
+        "Language distribution: {'en': 16, 'ar': 7}",
+        "Source distribution: {'google': 12, 'instagram': 10, 'talabat': 1}"
+      ],
+      "assumptions": [
+        "Review dates are accurate and timezone-aware",
+        "Rating values are integers from 1 to 5",
+        "All reviews in the artifact are valid and complete"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Sentiment Distribution by Language",
+      "claim": "Among 23 reviews in the analysis period, sentiment distribution is: {'positive': 17, 'negative': 6}. English reviews (16): {'positive': 11, 'negative': 5}. Arabic reviews (7): {'positive': 6, 'negative': 1}.",
+      "finding_type": "sentiment_classification",
+      "metrics": {
+        "positive_sentiment_count": {
+          "value": 17,
+          "unit": "count",
+          "numerator": 17,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "neutral_sentiment_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "negative_sentiment_count": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "english_reviews_count": {
+          "value": 16,
+          "unit": "count",
+          "numerator": 16,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "arabic_reviews_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 23,
+      "coverage_notes": [
+        "Analysis period: 2026-03-30T00:00:00+03:00 to 2026-04-06T00:00:00+03:00",
+        "Total reviews analyzed: 23",
+        "English reviews: 16",
+        "Arabic reviews: 7",
+        "Sentiment classified by rating: 4-5 stars = positive, 3 stars = neutral, 1-2 stars = negative"
+      ],
+      "assumptions": [
+        "Sentiment classification based on rating alone (no text analysis performed)",
+        "Language field is accurate",
+        "Rating-to-sentiment mapping is appropriate for this domain"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Review Text Availability",
+      "claim": "Of 23 reviews in the analysis period, 23 contain text content and 0 are empty or missing text.",
+      "finding_type": "data_quality_metric",
+      "metrics": {
+        "reviews_with_text": {
+          "value": 23,
+          "unit": "count",
+          "numerator": 23,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "reviews_without_text": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "text_coverage_percentage": {
+          "value": 100.0,
+          "unit": "percent",
+          "numerator": 23,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 23,
+      "coverage_notes": [
+        "Analysis period: 2026-03-30T00:00:00+03:00 to 2026-04-06T00:00:00+03:00",
+        "Total reviews: 23",
+        "Reviews with text: 23",
+        "Reviews without text: 0",
+        "Text availability affects sentiment analysis capability"
+      ],
+      "assumptions": [
+        "Empty or null text fields indicate missing review content",
+        "Text field presence is required for detailed sentiment/topic analysis"
+      ],
+      "confidence": 1.0
+    }
+  ]
+}

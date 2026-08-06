@@ -1,0 +1,143 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution (Jan 5-12, 2026)",
+      "claim": "Average customer rating is 4.43 out of 5, based on 14 reviews during the analysis period.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.43,
+          "unit": "stars",
+          "numerator": 62.0,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 14,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Reviews from 2 source(s)",
+        "Language distribution: {'ar': np.int64(7), 'en': np.int64(7)}"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Review dates are accurate and in UTC+3",
+        "All reviews in the period are included"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Customer Sentiment by Language (Jan 5-12, 2026)",
+      "claim": "English reviews (7 reviews) show 6 positive, 1 neutral, 0 negative sentiments. Arabic reviews (7 reviews) show 7 positive, 0 neutral, 0 negative sentiments.",
+      "finding_type": "sentiment_analysis",
+      "metrics": {
+        "english_positive_count": {
+          "value": 6,
+          "unit": "reviews",
+          "numerator": 6,
+          "denominator": 7,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "english_negative_count": {
+          "value": 0,
+          "unit": "reviews",
+          "numerator": 0,
+          "denominator": 7,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "arabic_positive_count": {
+          "value": 7,
+          "unit": "reviews",
+          "numerator": 7,
+          "denominator": 7,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "arabic_negative_count": {
+          "value": 0,
+          "unit": "reviews",
+          "numerator": 0,
+          "denominator": 7,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "English reviews: 7",
+        "Arabic reviews: 7",
+        "Total reviews analyzed: 14"
+      ],
+      "assumptions": [
+        "Sentiment derived from rating: 4-5 stars = positive, 3 = neutral, 1-2 = negative",
+        "Language classification is accurate",
+        "Review dates are in UTC+3 timezone"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Primary Review Source (Jan 5-12, 2026)",
+      "claim": "The primary review source is 'google' with 11 reviews (78.6% of total), averaging 4.55 stars.",
+      "finding_type": "source_analysis",
+      "metrics": {
+        "top_source_review_count": {
+          "value": 11,
+          "unit": "reviews",
+          "numerator": 11,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "top_source_average_rating": {
+          "value": 4.55,
+          "unit": "stars",
+          "numerator": 50.0,
+          "denominator": 11,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "source_percentage": {
+          "value": 78.6,
+          "unit": "percent",
+          "numerator": 11,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google"
+      ],
+      "sample_size": 11,
+      "coverage_notes": [
+        "Total sources: 2",
+        "Source distribution: {'google': np.int64(11), 'talabat': np.int64(3)}"
+      ],
+      "assumptions": [
+        "Source names are accurate and consistent",
+        "Review dates are in UTC+3 timezone",
+        "All reviews in the period are included"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

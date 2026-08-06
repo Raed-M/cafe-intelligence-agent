@@ -1,0 +1,206 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Transaction Volume and Revenue Growth Week-over-Week",
+      "claim": "Valid basket count increased from 1093 to 1566 baskets (43.3% increase), with net revenue growing from SAR 36947.85 to SAR 51850.25 (40.3% increase) in the analysis week versus previous week.",
+      "finding_type": "revenue_and_transaction_volume",
+      "metrics": {
+        "analysis_basket_count": {
+          "value": 1566,
+          "unit": "baskets",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_basket_count": {
+          "value": 1093,
+          "unit": "baskets",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "basket_count_change": {
+          "value": 43.27538883806039,
+          "unit": "%",
+          "numerator": 473,
+          "denominator": 1093,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "analysis_revenue": {
+          "value": 51850.25,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_revenue": {
+          "value": 36947.850000000006,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "revenue_change": {
+          "value": 40.333605338334955,
+          "unit": "%",
+          "numerator": 14902.399999999994,
+          "denominator": 36947.850000000006,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2635,
+      "coverage_notes": [
+        "Revenue includes refunds as negative line items in net calculation",
+        "Analysis period: 1566 unique transaction_ids from 2635 POS line items",
+        "Previous period: 1093 unique transaction_ids from 1917 POS line items",
+        "Refund transactions in analysis period: 32 items (SAR -645.80)",
+        "Refund transactions in previous period: 18 items (SAR -354.00)"
+      ],
+      "assumptions": [
+        "line_total_sar represents net revenue after discounts and includes refunds as negative values",
+        "transaction_id uniquely identifies a basket/transaction",
+        "Timestamps are in +03:00 timezone and correctly parsed",
+        "All POS records with valid transaction_id are counted"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value Decreased Week-over-Week",
+      "claim": "Average Order Value decreased from SAR 33.80 to SAR 33.11, representing a -2.1% change. This indicates weaker per-basket spending despite higher transaction volume.",
+      "finding_type": "average_order_value",
+      "metrics": {
+        "analysis_aov": {
+          "value": 33.10999361430396,
+          "unit": "SAR",
+          "numerator": 51850.25,
+          "denominator": 1566,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_aov": {
+          "value": 33.8040713632205,
+          "unit": "SAR",
+          "numerator": 36947.850000000006,
+          "denominator": 1093,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "aov_change": {
+          "value": -2.0532371425286704,
+          "unit": "%",
+          "numerator": -0.6940777489165413,
+          "denominator": 33.8040713632205,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2635,
+      "coverage_notes": [
+        "AOV calculated as net revenue divided by unique basket count",
+        "Revenue includes refunds as negative line items",
+        "Analysis period AOV based on 1566 baskets",
+        "Previous period AOV based on 1093 baskets"
+      ],
+      "assumptions": [
+        "line_total_sar represents net revenue after discounts and includes refunds as negative values",
+        "transaction_id uniquely identifies a basket",
+        "AOV is calculated as total revenue / total baskets"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Strongest Product Revenue Growth: Saffron Latte",
+      "claim": "Product 'Saffron Latte' (SKU: HOT-006, Category: hot_coffee) achieved the highest revenue growth, increasing from SAR 1529.85 to SAR 3207.75 (109.7% increase). Basket penetration grew from 70 to 134 baskets (91.4% increase).",
+      "finding_type": "product_mix_and_performance",
+      "metrics": {
+        "product_sku": {
+          "value": "HOT-006",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "product_name": {
+          "value": "Saffron Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "analysis_revenue": {
+          "value": 3207.75,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_revenue": {
+          "value": 1529.85,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": 109.67741935483872,
+          "unit": "%",
+          "numerator": 1677.9,
+          "denominator": 1529.85,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "analysis_basket_count": {
+          "value": 134,
+          "unit": "baskets",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "previous_basket_count": {
+          "value": 70,
+          "unit": "baskets",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2635,
+      "coverage_notes": [
+        "Product identified by SKU and joined with menu for category classification",
+        "Revenue includes refunds as negative line items",
+        "Product appears in 134 baskets in analysis period",
+        "Product appears in 70 baskets in previous period"
+      ],
+      "assumptions": [
+        "SKU uniquely identifies a product across POS and menu",
+        "line_total_sar represents net revenue after discounts and includes refunds as negative values",
+        "transaction_id uniquely identifies a basket",
+        "Product launch/retirement dates do not restrict this comparison"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

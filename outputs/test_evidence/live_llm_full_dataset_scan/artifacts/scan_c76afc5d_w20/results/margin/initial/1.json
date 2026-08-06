@@ -1,0 +1,185 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Contributors (Analysis Period)",
+      "claim": "The top 3 items by gross profit contribution during 2026-05-25 to 2026-06-01 are: Iced Spanish Latte, Matcha Latte, Iced Americano. Combined they generated 15481.65 SAR in gross profit from 1116 units sold.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_1_name": {
+          "value": "Iced Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+00:00",
+          "period_end": "2026-06-01T00:00:00+00:00"
+        },
+        "top_item_1_gross_profit": {
+          "value": 6124.0,
+          "unit": "SAR",
+          "numerator": 6124.0,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+00:00",
+          "period_end": "2026-06-01T00:00:00+00:00"
+        },
+        "top_item_1_quantity": {
+          "value": 430,
+          "unit": "units",
+          "numerator": 430,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+00:00",
+          "period_end": "2026-06-01T00:00:00+00:00"
+        },
+        "top_item_1_margin_pct": {
+          "value": 71.78,
+          "unit": "%",
+          "numerator": 71.78,
+          "denominator": 100,
+          "period_start": "2026-05-25T00:00:00+00:00",
+          "period_end": "2026-06-01T00:00:00+00:00"
+        },
+        "combined_top_3_gross_profit": {
+          "value": 15481.65,
+          "unit": "SAR",
+          "numerator": 15481.65,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+00:00",
+          "period_end": "2026-06-01T00:00:00+00:00"
+        },
+        "combined_top_3_quantity": {
+          "value": 1116,
+          "unit": "units",
+          "numerator": 1116,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+00:00",
+          "period_end": "2026-06-01T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1794,
+      "coverage_notes": [
+        "Analysis period: 2026-05-25 to 2026-06-01",
+        "Includes 3046 POS line items from 1794 transactions",
+        "Only items with non-null unit_cost_sar in menu included",
+        "Refunds excluded from revenue calculation"
+      ],
+      "assumptions": [
+        "Unit costs from menu_items.unit_cost_sar are accurate and current",
+        "POS line_total_sar reflects actual revenue after discounts",
+        "No recipe/BOM available; unit cost is applied uniformly per item"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost (Week of 2026-05-25)",
+      "claim": "During the week of 2026-05-25, 179 units were wasted with a known waste cost of 1029.00 SAR across 6 items.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_waste_cost": {
+          "value": 1029.0,
+          "unit": "SAR",
+          "numerator": 1029.0,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "total_units_wasted": {
+          "value": 179,
+          "unit": "units",
+          "numerator": 179,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "items_with_waste": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Only items with non-null known_waste_cost_sar included",
+        "Week of 2026-05-25 inventory data",
+        "Items with waste: Butter Croissant, Cinnamon Roll, Date Cake, Cheesecake Slice, Chicken Sandwich, Halloumi Toast"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar values are accurate and complete for reported waste",
+        "Null waste costs indicate unknown or unreported waste (excluded from calculation)"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Supplier Price Change Detected",
+      "claim": "Email evidence indicates full-fat milk price change from 7.1 to 8.4 SAR/L (effective 2026-05-01), representing a 18.31% change.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "ingredient": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": 7.1,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": 8.4,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        },
+        "percentage_change": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 18.31,
+          "denominator": 100,
+          "period_start": null,
+          "period_end": null
+        },
+        "effective_date": {
+          "value": "2026-05-01",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Total price changes detected: 3",
+        "Email sender: orders@qatifdairy.com",
+        "Email date: 2026-05-04",
+        "Confidence level: 0.95"
+      ],
+      "assumptions": [
+        "Email extraction accuracy depends on extraction_mode and confidence score",
+        "Price change applies to specified ingredient/entity only",
+        "No recipe/BOM available; cannot calculate per-drink impact without additional data"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

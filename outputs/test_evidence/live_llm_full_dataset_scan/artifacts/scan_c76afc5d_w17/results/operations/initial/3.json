@@ -1,0 +1,121 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Comparison",
+      "claim": "Conversion rate in analysis period (24.08%) compared to previous period (24.95%)",
+      "finding_type": "conversion_analysis",
+      "metrics": {
+        "conversion_rate_analysis": {
+          "value": 0.2408,
+          "unit": "ratio",
+          "numerator": 1311,
+          "denominator": 5445,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "conversion_rate_previous": {
+          "value": 0.2495,
+          "unit": "ratio",
+          "numerator": 1375,
+          "denominator": 5510,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 1311,
+      "coverage_notes": [
+        "Analysis period: 119 days with valid sensor data",
+        "Previous period: 119 days with valid sensor data",
+        "Excluded dead sensor days from footfall denominator"
+      ],
+      "assumptions": [
+        "Conversion = unique non-refund transactions / valid footfall",
+        "Dead sensor days excluded from both periods",
+        "Transaction_id used for unique transaction count"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Labour Cost Efficiency",
+      "claim": "Labour cost as % of sales: 13.29% (analysis) vs 11.99% (previous)",
+      "finding_type": "labour_efficiency",
+      "metrics": {
+        "labour_cost_ratio_analysis": {
+          "value": 0.1329,
+          "unit": "ratio",
+          "numerator": "5976",
+          "denominator": 44955.2,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "labour_cost_ratio_previous": {
+          "value": 0.1199,
+          "unit": "ratio",
+          "numerator": "5544",
+          "denominator": 46241.5,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "staff",
+        "pos"
+      ],
+      "sample_size": 34,
+      "coverage_notes": [
+        "Analysis period: 34 staff records",
+        "Previous period: 32 staff records",
+        "Labour cost includes computed_duration_hours * hourly_rate_sar"
+      ],
+      "assumptions": [
+        "Labour cost from staff.labour_cost_sar field",
+        "Sales excludes refunds (is_refund == False)",
+        "No imputation for missing staff records"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Inventory Waste Rate",
+      "claim": "Waste rate for analysis week: 17.36% of total units (sold + wasted)",
+      "finding_type": "inventory_waste",
+      "metrics": {
+        "waste_rate": {
+          "value": 0.1736,
+          "unit": "ratio",
+          "numerator": 146,
+          "denominator": 841,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "waste_cost_sar": {
+          "value": 741.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis week: 6 SKUs tracked",
+        "Known waste cost calculated from units_wasted * unit_cost_sar",
+        "Unknown waste values preserved as per schema"
+      ],
+      "assumptions": [
+        "Waste rate = units_wasted / (units_sold + units_wasted)",
+        "Only known waste costs included in total",
+        "Sunday inventory counts treated as weekly snapshot, not real-time"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

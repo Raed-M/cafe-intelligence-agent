@@ -1,0 +1,146 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Unusual Hourly Door Traffic",
+      "claim": "Door traffic on 2026-01-23 hour 20 was 3.58 standard deviations from baseline",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "hourly_door_count": {
+          "value": 144.0,
+          "unit": "persons",
+          "numerator": 144.0,
+          "denominator": null,
+          "period_start": "2025-12-22T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "baseline_mean_traffic": {
+          "value": 44.857142857142854,
+          "unit": "persons",
+          "numerator": 44.857142857142854,
+          "denominator": null,
+          "period_start": "2025-12-22T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "z_score_traffic": {
+          "value": 3.5836860748569075,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2025-12-22T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 238,
+      "coverage_notes": [
+        "Analysis period: 2026-01-19 to 2026-01-26",
+        "Baseline: 4 weeks prior (2025-12-22 to 2026-01-19)",
+        "Dead sensor days excluded",
+        "Baseline sample size: 238 hourly observations"
+      ],
+      "assumptions": [
+        "Z-score threshold: 2.5 (hourly data)",
+        "Baseline calculated from 4 trailing weeks",
+        "Dead sensor intervals excluded per metadata"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Unusual Hourly Door Traffic",
+      "claim": "Door traffic on 2026-01-23 hour 21 was 3.04 standard deviations from baseline",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "hourly_door_count": {
+          "value": 129.0,
+          "unit": "persons",
+          "numerator": 129.0,
+          "denominator": null,
+          "period_start": "2025-12-22T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "baseline_mean_traffic": {
+          "value": 44.857142857142854,
+          "unit": "persons",
+          "numerator": 44.857142857142854,
+          "denominator": null,
+          "period_start": "2025-12-22T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "z_score_traffic": {
+          "value": 3.041485732119191,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2025-12-22T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 238,
+      "coverage_notes": [
+        "Analysis period: 2026-01-19 to 2026-01-26",
+        "Baseline: 4 weeks prior (2025-12-22 to 2026-01-19)",
+        "Dead sensor days excluded",
+        "Baseline sample size: 238 hourly observations"
+      ],
+      "assumptions": [
+        "Z-score threshold: 2.5 (hourly data)",
+        "Baseline calculated from 4 trailing weeks",
+        "Dead sensor intervals excluded per metadata"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Unusual Hourly Door Traffic",
+      "claim": "Door traffic on 2026-01-23 hour 18 was 2.93 standard deviations from baseline",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "hourly_door_count": {
+          "value": 126.0,
+          "unit": "persons",
+          "numerator": 126.0,
+          "denominator": null,
+          "period_start": "2025-12-22T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "baseline_mean_traffic": {
+          "value": 44.857142857142854,
+          "unit": "persons",
+          "numerator": 44.857142857142854,
+          "denominator": null,
+          "period_start": "2025-12-22T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "z_score_traffic": {
+          "value": 2.9330456635716473,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2025-12-22T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 238,
+      "coverage_notes": [
+        "Analysis period: 2026-01-19 to 2026-01-26",
+        "Baseline: 4 weeks prior (2025-12-22 to 2026-01-19)",
+        "Dead sensor days excluded",
+        "Baseline sample size: 238 hourly observations"
+      ],
+      "assumptions": [
+        "Z-score threshold: 2.5 (hourly data)",
+        "Baseline calculated from 4 trailing weeks",
+        "Dead sensor intervals excluded per metadata"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

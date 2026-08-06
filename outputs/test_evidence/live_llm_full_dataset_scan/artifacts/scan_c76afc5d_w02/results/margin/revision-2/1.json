@@ -1,0 +1,236 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Contributor - Item Economics",
+      "claim": "Spanish Latte generated 3318.30 SAR gross profit from 261 units sold across 234 transactions, with 70.97% gross margin.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        },
+        "total_quantity_sold": {
+          "value": 261,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        },
+        "gross_revenue": {
+          "value": 4675.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        },
+        "total_cogs": {
+          "value": 1357.2,
+          "unit": "SAR",
+          "numerator": 5.2,
+          "denominator": 261,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        },
+        "gross_profit": {
+          "value": 3318.3,
+          "unit": "SAR",
+          "numerator": 4675.5,
+          "denominator": 1357.2,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        },
+        "gross_margin_pct": {
+          "value": 70.97,
+          "unit": "%",
+          "numerator": 3318.3,
+          "denominator": 4675.5,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        },
+        "basket_count": {
+          "value": 234,
+          "unit": "transactions",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 57,
+      "coverage_notes": [
+        "Analysis covers 2159 POS line items from 1270 transactions during 2026-01-19 to 2026-01-26",
+        "Refunds excluded from revenue calculation",
+        "Unit costs sourced from menu.parquet",
+        "Top item identified from 57 distinct SKUs with sales"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar represents actual COGS per unit",
+        "POS line_total_sar is accurate and consistent",
+        "No recipe/BOM adjustments applied"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Waste Cost Impact - Items with Recorded Waste",
+      "claim": "Waste cost of 983.90 SAR from 176 units across 6 SKUs with recorded waste represents 17.31% of total product cost (COGS + waste) for these waste-bearing items only during the week of 2026-01-19 to 2026-01-26. This percentage does not represent the cafe's overall waste impact, as it excludes SKUs with zero recorded waste and items without waste tracking.",
+      "finding_type": "waste_analysis",
+      "metrics": {
+        "total_waste_units": {
+          "value": 176,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        },
+        "total_waste_cost_sar": {
+          "value": 983.9,
+          "unit": "SAR",
+          "numerator": 983.9,
+          "denominator": null,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        },
+        "total_cogs_waste_items": {
+          "value": 4701.4,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        },
+        "total_product_cost": {
+          "value": 5685.3,
+          "unit": "SAR",
+          "numerator": 4701.4,
+          "denominator": 983.9,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        },
+        "waste_as_pct_of_total_product_cost": {
+          "value": 17.31,
+          "unit": "%",
+          "numerator": 983.9,
+          "denominator": 5685.3,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        },
+        "num_skus_with_waste": {
+          "value": 6,
+          "unit": "SKUs",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis covers 6 SKUs with recorded waste during 2026-01-19 to 2026-01-26",
+        "Only items with non-null and positive units_wasted values included",
+        "Unit costs sourced from inventory.parquet",
+        "Waste cost calculated as units_wasted × unit_cost_sar"
+      ],
+      "assumptions": [
+        "Null waste values represent items with no waste tracking or zero waste (not missing data)",
+        "Unit costs in inventory match actual product cost",
+        "Waste units are accurately recorded"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Supplier Price Change - Procurement Cost Pressure",
+      "claim": "full-fat milk price changed from 7.10 to 8.40 SAR per L (effective 2026-05-01), representing a 18.31% change. This is a dated supplier price change with no standing order quantity data available; actual procurement cost impact depends on order volume and payment terms.",
+      "finding_type": "supplier_pricing",
+      "metrics": {
+        "entity_or_ingredient": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19",
+          "period_end": "2026-01-26"
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR per L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR per L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        },
+        "price_change_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 1.3,
+          "denominator": 7.1,
+          "period_start": null,
+          "period_end": null
+        },
+        "effective_date": {
+          "value": "2026-05-01",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        },
+        "currency": {
+          "value": "SAR",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        },
+        "unit": {
+          "value": "L",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Analysis identified 3 supplier price changes effective on or after 2026-01-19",
+        "Top change selected by absolute percentage magnitude",
+        "No standing order quantities available in email data",
+        "No recipe/BOM data available to calculate per-drink impact"
+      ],
+      "assumptions": [
+        "Email extraction accurately captured old_price, new_price, and effective_date",
+        "Price change applies to cafe's procurement (not verified against actual orders)",
+        "No standing order volume or payment terms data available",
+        "Actual cost impact requires order volume and timing information not present in current data"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

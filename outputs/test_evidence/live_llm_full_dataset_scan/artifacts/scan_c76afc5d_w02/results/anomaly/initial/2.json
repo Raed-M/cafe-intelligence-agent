@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Hourly Traffic Anomaly on 2026-01-23 00:00",
+      "claim": "Door count of 144 visitors at 2026-01-23 00:00 deviates 3.59 standard deviations from baseline mean of 44.9",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "hourly_door_count": {
+          "value": 144,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-23T00:00:00",
+          "period_end": "2026-01-23T01:00:00"
+        },
+        "baseline_mean": {
+          "value": 44.9,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2025-12-22T00:00:00",
+          "period_end": "2026-01-19T00:00:00"
+        },
+        "z_score": {
+          "value": 3.59,
+          "unit": "std_dev",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-23T00:00:00",
+          "period_end": "2026-01-23T01:00:00"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 238,
+      "coverage_notes": [
+        "Analysis period: 2026-01-19T00:00:00 to 2026-01-26T00:00:00",
+        "Baseline: 4 weeks of hourly data (2025-12-22 to 2026-01-19)",
+        "Excluded dead sensor days per is_dead_sensor_day flag",
+        "Baseline sample size: 238 hourly observations"
+      ],
+      "assumptions": [
+        "Z-score threshold of 2.5 standard deviations used for traffic anomalies",
+        "Dead sensor intervals excluded from analysis",
+        "Baseline calculated from valid sensor readings only"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

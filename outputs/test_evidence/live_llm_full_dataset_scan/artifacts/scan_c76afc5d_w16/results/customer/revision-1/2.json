@@ -1,0 +1,146 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Rating Distribution and Average (Analysis Period)",
+      "claim": "During the analysis period (2026-04-27T00:00:00+03:00 to 2026-05-04T00:00:00+03:00), the average rating across 21 reviews is 3.76 out of 5, with 10 five-star, 4 four-star, 2 three-star, 2 two-star, and 3 one-star ratings.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 3.76,
+          "unit": "stars",
+          "numerator": 21,
+          "denominator": 21,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 10,
+          "unit": "reviews",
+          "numerator": 10,
+          "denominator": 21,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "four_star_count": {
+          "value": 4,
+          "unit": "reviews",
+          "numerator": 4,
+          "denominator": 21,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "three_star_count": {
+          "value": 2,
+          "unit": "reviews",
+          "numerator": 2,
+          "denominator": 21,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "two_star_count": {
+          "value": 2,
+          "unit": "reviews",
+          "numerator": 2,
+          "denominator": 21,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 3,
+          "unit": "reviews",
+          "numerator": 3,
+          "denominator": 21,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-04-27T00:00:00+03:00 to 2026-05-04T00:00:00+03:00",
+        "Language distribution: {'en': 15, 'ar': 6}",
+        "Total reviews in analysis period: 21"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid (1-5 scale)",
+        "All reviews in the analysis period are included",
+        "No filtering applied beyond date range"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Of 21 reviews in the analysis period, 15 are in English and 6 are in Arabic.",
+      "finding_type": "language_distribution",
+      "metrics": {
+        "english_reviews": {
+          "value": 15,
+          "unit": "reviews",
+          "numerator": 15,
+          "denominator": 21,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 6,
+          "unit": "reviews",
+          "numerator": 6,
+          "denominator": 21,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-04-27T00:00:00+03:00 to 2026-05-04T00:00:00+03:00",
+        "Total reviews analyzed: 21"
+      ],
+      "assumptions": [
+        "Language field is accurately populated",
+        "Only 'en' and 'ar' language codes are present"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Review Source Distribution",
+      "claim": "During the analysis period, reviews were collected from 3 source(s): google (11 reviews), instagram (6 reviews), talabat (4 reviews).",
+      "finding_type": "source_coverage",
+      "metrics": {
+        "total_sources": {
+          "value": 3,
+          "unit": "sources",
+          "numerator": 3,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-04-27T00:00:00+03:00 to 2026-05-04T00:00:00+03:00",
+        "Source breakdown: {'google': 11, 'instagram': 6, 'talabat': 4}",
+        "Total reviews: 21"
+      ],
+      "assumptions": [
+        "Source field is accurately populated",
+        "All reviews in the analysis period are included"
+      ],
+      "confidence": 1.0
+    }
+  ]
+}

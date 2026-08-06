@@ -1,21 +1,69 @@
-"""Content validator (Module 6, second validation layer). Purely deterministic:
-verifies references resolve and structural constraints hold. It does not
-create or revise content -- only approves or fails closed with exact repair
-instructions, per prompts/content_validator.md.
+"""Content validator (Module 6, second validation layer). Structural checks
+(references resolve, numbers are grounded, constraints hold) are purely
+deterministic and load-bearing on their own. One check the plan requires
+(prompts/content_validator.md, plan section 16.11: "Arabic and English hooks
+are semantically aligned") cannot be judged by a hard rule -- two independently
+written strings either say the same thing or they don't -- so an optional
+constrained-LLM pass handles only that judgment. It does not create or revise
+content, and a failure/absence of that pass never approves an idea the
+deterministic checks rejected; it can only add an additional issue.
 """
 from __future__ import annotations
 
+import json
 import re
-from typing import Any
+from pathlib import Path
+from typing import Any, Callable
 
 from src.business_time import parse_opening_hours
-from src.schemas.content import ContentIdea
+from src.schemas.content import AlignmentCheckResult, ContentIdea
 from src.schemas.context import ContextBundle
 from src.schemas.findings import AnalystFinding
 
 _SUPERLATIVE_RE = re.compile(r"\b(best|guaranteed|#1|number one|always|never fails)\b", re.IGNORECASE)
 _CAUSAL_RE = re.compile(r"\b(because|proves|causes|guarantees)\b", re.IGNORECASE)
 _MONEY_OR_PCT_RE = re.compile(r"(?:SAR\s*)?(\d+(?:\.\d+)?)\s*%|SAR\s*(\d+(?:\.\d+)?)", re.IGNORECASE)
+
+SemanticAligner = Callable[[str, dict[str, Any]], dict[str, Any]]
+
+CONTENT_VALIDATOR_PROMPT_PATH = Path("prompts/content_validator.md")
+
+
+def _default_llm_aligner(model_name: str) -> SemanticAligner:
+    def _check(system_prompt: str, context: dict[str, Any]) -> dict[str, Any]:
+        from src.tools.llm_factory import get_chat_model
+
+        llm = get_chat_model(model_name, temperature=0)
+        structured_llm = llm.with_structured_output(AlignmentCheckResult)
+        user_prompt = (
+            f"Idea texts:\n{json.dumps(context, indent=2, default=str)}\n\n"
+            "Judge only whether the Arabic and English hook/rationale pairs are semantically "
+            "aligned (same claim, same product, same timing)."
+        )
+        result = structured_llm.invoke([("system", system_prompt), ("user", user_prompt)])
+        return dict(result) if isinstance(result, dict) else result.__dict__
+
+    return _check
+
+
+def _semantic_alignment_issue(
+    idea: ContentIdea, model_name: str | None, aligner: SemanticAligner | None
+) -> str | None:
+    if aligner is None and not model_name:
+        return None
+    system_prompt = CONTENT_VALIDATOR_PROMPT_PATH.read_text(encoding="utf-8")
+    context = {
+        "hook_ar": idea.get("hook_ar", ""), "hook_en": idea.get("hook_en", ""),
+        "rationale_ar": idea.get("rationale_ar", ""), "rationale_en": idea.get("rationale_en", ""),
+    }
+    check = aligner or _default_llm_aligner(model_name)  # type: ignore[arg-type]
+    try:
+        out = check(system_prompt, context)
+    except Exception:  # noqa: BLE001
+        return None  # layer unavailable -- deterministic checks alone still gate this idea
+    if not out.get("aligned", True):
+        return f"Arabic/English hook or rationale not semantically aligned: {out.get('explanation', '')}"
+    return None
 
 
 def _acceptable_number_strings(evidence: list[dict[str, Any]], metric_keys: list[str]) -> set[float]:
@@ -68,6 +116,8 @@ def validate_content_ideas(
     active_skus: set[str],
     opening_hours: dict[str, str],
     skus_with_stock_risk: set[str] | None = None,
+    model_name: str | None = None,
+    aligner: SemanticAligner | None = None,
 ) -> dict[str, Any]:
     approved_finding_ids = {f["finding_id"] for f in final_findings}
     findings_by_id = {f["finding_id"]: f for f in final_findings}
@@ -119,6 +169,10 @@ def validate_content_ideas(
 
         if not idea.get("hook_ar") or not idea.get("hook_en"):
             idea_issues.append("both hook_ar and hook_en are required")
+        else:
+            alignment_issue = _semantic_alignment_issue(idea, model_name, aligner)
+            if alignment_issue:
+                idea_issues.append(alignment_issue)
 
         for field_name in ("hook_en", "rationale_en", "hook_ar", "rationale_ar"):
             text = idea.get(field_name, "")

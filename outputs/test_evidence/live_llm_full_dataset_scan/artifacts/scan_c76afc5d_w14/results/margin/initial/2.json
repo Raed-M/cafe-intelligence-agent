@@ -1,0 +1,147 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Item-Level Gross Profit Analysis (Week of 2026-04-13)",
+      "claim": "Top 3 items by gross profit contribution: Spanish Latte, Halloumi Toast, Iced Spanish Latte. Overall cafe gross margin: 70.1%.",
+      "finding_type": "margin_analysis",
+      "metrics": {
+        "total_revenue_sar": {
+          "value": 43237.05,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00Z",
+          "period_end": "2026-04-20T00:00:00Z"
+        },
+        "total_cogs_sar": {
+          "value": 12926.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00Z",
+          "period_end": "2026-04-20T00:00:00Z"
+        },
+        "total_gross_profit_sar": {
+          "value": 30310.25,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00Z",
+          "period_end": "2026-04-20T00:00:00Z"
+        },
+        "overall_gross_margin_pct": {
+          "value": 70.1,
+          "unit": "%",
+          "numerator": 30310.25,
+          "denominator": 43237.05,
+          "period_start": "2026-04-13T00:00:00Z",
+          "period_end": "2026-04-20T00:00:00Z"
+        },
+        "top_item_1_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00Z",
+          "period_end": "2026-04-20T00:00:00Z"
+        },
+        "top_item_1_gross_profit_sar": {
+          "value": 2937.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00Z",
+          "period_end": "2026-04-20T00:00:00Z"
+        },
+        "top_item_1_margin_pct": {
+          "value": 70.9,
+          "unit": "%",
+          "numerator": 2937.2,
+          "denominator": 4143.6,
+          "period_start": "2026-04-13T00:00:00Z",
+          "period_end": "2026-04-20T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2115,
+      "coverage_notes": [
+        "Analysis period: 2026-04-13 to 2026-04-20",
+        "Total POS transactions (non-refund): 2115",
+        "Menu items with cost data: 19",
+        "Refunds excluded from revenue calculation"
+      ],
+      "assumptions": [
+        "Unit costs from menu_items.unit_cost_sar applied uniformly across all sales",
+        "Line totals reflect actual revenue after discounts",
+        "No recipe/BOM data available; per-drink ingredient costs not calculated"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Supplier Price Change Detected (Week of 2026-04-13)",
+      "claim": "roasted coffee price changed from 88.0 to 96.0 SAR/kg (effective 2026-04-15), representing a +9.1% change.",
+      "finding_type": "supplier_cost_analysis",
+      "metrics": {
+        "entity_or_ingredient": {
+          "value": "roasted coffee",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00Z",
+          "period_end": "2026-04-20T00:00:00Z"
+        },
+        "old_price": {
+          "value": 88.0,
+          "unit": "SAR/kg",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00Z",
+          "period_end": "2026-04-20T00:00:00Z"
+        },
+        "new_price": {
+          "value": 96.0,
+          "unit": "SAR/kg",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00Z",
+          "period_end": "2026-04-20T00:00:00Z"
+        },
+        "price_change_pct": {
+          "value": 9.1,
+          "unit": "%",
+          "numerator": 8.0,
+          "denominator": 88.0,
+          "period_start": "2026-04-13T00:00:00Z",
+          "period_end": "2026-04-20T00:00:00Z"
+        },
+        "effective_date": {
+          "value": "2026-04-15",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00Z",
+          "period_end": "2026-04-20T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Price changes effective during analysis period: 1",
+        "Email extraction confidence varies by source",
+        "No standing order quantities available to calculate procurement cost scenario"
+      ],
+      "assumptions": [
+        "Price change applies to supplier invoices effective on stated date",
+        "No recipe/BOM data available; per-drink cost impact not calculated",
+        "Continued order volume and payment terms not confirmed"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

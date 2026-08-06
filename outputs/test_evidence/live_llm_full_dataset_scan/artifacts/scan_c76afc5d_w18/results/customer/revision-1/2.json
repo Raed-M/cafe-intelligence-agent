@@ -1,0 +1,232 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During 2026-05-11 to 2026-05-18, 22 reviews were collected with an average rating of 4.00. Rating distribution: {1: 2, 2: 3, 3: 1, 4: 3, 5: 13}. Language coverage: {'en': 14, 'ar': 8}.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "total_reviews": {
+          "value": 22,
+          "unit": "count",
+          "numerator": 22,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "average_rating": {
+          "value": 4.0,
+          "unit": "stars",
+          "numerator": 88.0,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "rating_5_count": {
+          "value": 13,
+          "unit": "count",
+          "numerator": 13,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "rating_4_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "rating_3_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "rating_2_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "rating_1_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "english_reviews": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 8,
+          "unit": "count",
+          "numerator": 8,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 22,
+      "coverage_notes": [
+        "Analysis period: 2026-05-11 to 2026-05-18",
+        "Total reviews in analysis period: 22",
+        "Sources represented: instagram, google, talabat",
+        "Language distribution: English=14, Arabic=8"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Date filtering uses exact period boundaries",
+        "All reviews in artifact are from valid sources"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Rating Polarity: High vs Low Ratings",
+      "claim": "In the analysis period, 16 reviews rated 4-5 stars (positive polarity) and 5 reviews rated 1-2 stars (negative polarity). High-rating reviews show presence of positive language; low-rating reviews show presence of negative language.",
+      "finding_type": "sentiment_polarity",
+      "metrics": {
+        "high_rating_count": {
+          "value": 16,
+          "unit": "count",
+          "numerator": 16,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "low_rating_count": {
+          "value": 5,
+          "unit": "count",
+          "numerator": 5,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "high_rating_percentage": {
+          "value": 72.7,
+          "unit": "percent",
+          "numerator": 16,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "low_rating_percentage": {
+          "value": 22.7,
+          "unit": "percent",
+          "numerator": 5,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 22,
+      "coverage_notes": [
+        "High-rating sample (4-5 stars): 16 reviews",
+        "Low-rating sample (1-2 stars): 5 reviews",
+        "Neutral/mid-range (3 stars): 1 reviews",
+        "Text analysis based on available review text fields"
+      ],
+      "assumptions": [
+        "Rating 4-5 indicates positive sentiment; 1-2 indicates negative",
+        "Text presence indicates customer provided feedback",
+        "Keyword matching is case-insensitive and language-agnostic for common terms"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Bilingual Review Coverage",
+      "claim": "Of 22 reviews in the analysis period, 14 (63.6%) are in English and 8 (36.4%) are in Arabic. Average rating for English reviews: 4.00 stars; Arabic reviews: 4.00 stars.",
+      "finding_type": "language_coverage",
+      "metrics": {
+        "english_review_count": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "arabic_review_count": {
+          "value": 8,
+          "unit": "count",
+          "numerator": 8,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "english_percentage": {
+          "value": 63.6,
+          "unit": "percent",
+          "numerator": 14,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "arabic_percentage": {
+          "value": 36.4,
+          "unit": "percent",
+          "numerator": 8,
+          "denominator": 22,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "english_avg_rating": {
+          "value": 4.0,
+          "unit": "stars",
+          "numerator": 56.0,
+          "denominator": 14,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "arabic_avg_rating": {
+          "value": 4.0,
+          "unit": "stars",
+          "numerator": 32.0,
+          "denominator": 8,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 22,
+      "coverage_notes": [
+        "English reviews: 14 (63.6%)",
+        "Arabic reviews: 8 (36.4%)",
+        "Other/unknown language: 0",
+        "Language field populated for all reviews in analysis period"
+      ],
+      "assumptions": [
+        "Language field accurately reflects review language",
+        "English and Arabic are the primary languages for customer feedback",
+        "Rating averages computed only for reviews with valid ratings"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

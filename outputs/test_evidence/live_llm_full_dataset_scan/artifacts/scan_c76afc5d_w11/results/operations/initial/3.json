@@ -1,0 +1,162 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Analysis",
+      "claim": "Conversion rate in analysis week was 0.2349 (transactions/visitor) compared to 0.2695 in previous week",
+      "finding_type": "performance_metric",
+      "metrics": {
+        "conversion_rate_analysis": {
+          "value": 0.2349,
+          "unit": "transactions_per_visitor",
+          "numerator": 1346,
+          "denominator": "5730",
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "conversion_rate_previous": {
+          "value": 0.2695,
+          "unit": "transactions_per_visitor",
+          "numerator": 1557,
+          "denominator": "5777",
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 1346,
+      "coverage_notes": [
+        "Analysis period: 1346 valid transactions from 5730 footfall",
+        "Previous period: 1557 valid transactions from 5777 footfall",
+        "Excluded refunds from transaction count",
+        "Excluded dead sensor days from footfall"
+      ],
+      "assumptions": [
+        "Conversion calculated as unique valid sales transactions divided by valid footfall",
+        "Refunds excluded from transaction count",
+        "Dead sensor intervals excluded from footfall denominator"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Revenue Performance Comparison",
+      "claim": "Total revenue in analysis week was 45104.05 SAR across 1346 transactions, compared to 52496.05 SAR in previous week",
+      "finding_type": "financial_metric",
+      "metrics": {
+        "total_revenue_analysis": {
+          "value": 45104.05,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "avg_transaction_value_analysis": {
+          "value": 33.51,
+          "unit": "SAR",
+          "numerator": 45104.05,
+          "denominator": 1346,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "total_revenue_previous": {
+          "value": 52496.05,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "avg_transaction_value_previous": {
+          "value": 33.72,
+          "unit": "SAR",
+          "numerator": 52496.05,
+          "denominator": 1557,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1346,
+      "coverage_notes": [
+        "Analysis period: 1346 valid transactions",
+        "Previous period: 1557 valid transactions",
+        "Refunds excluded from revenue calculations"
+      ],
+      "assumptions": [
+        "Revenue calculated from line_total_sar excluding refunds",
+        "Transaction identified by unique transaction_id",
+        "Average transaction value = total revenue / transaction count"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Labour Cost and Staffing Hours",
+      "claim": "Analysis week had 276.0 total staff hours costing 5960.00 SAR, compared to 242.0 hours costing 5376.00 SAR in previous week",
+      "finding_type": "operational_metric",
+      "metrics": {
+        "total_staff_hours_analysis": {
+          "value": 276.0,
+          "unit": "hours",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "total_labour_cost_analysis": {
+          "value": "5960",
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "cost_per_hour_analysis": {
+          "value": 21.59,
+          "unit": "SAR/hour",
+          "numerator": "5960",
+          "denominator": 276.0,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "total_staff_hours_previous": {
+          "value": 242.0,
+          "unit": "hours",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        },
+        "total_labour_cost_previous": {
+          "value": "5376",
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-16T00:00:00+03:00",
+          "period_end": "2026-03-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "staff"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: 6 unique employees",
+        "Previous period: 6 unique employees",
+        "Used computed_duration_hours for accurate shift duration",
+        "Labour cost calculated from hourly_rate_sar and computed duration"
+      ],
+      "assumptions": [
+        "Staff hours calculated using computed_duration_hours field",
+        "Labour cost = hourly_rate_sar × computed_duration_hours",
+        "Shift overlap computed from shift_start and shift_end timestamps"
+      ],
+      "confidence": 0.88
+    }
+  ]
+}

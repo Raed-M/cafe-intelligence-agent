@@ -1,0 +1,123 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Rating Distribution During Analysis Period",
+      "claim": "During the analysis period (Feb 23 - Mar 2, 2026), the average rating was 4.50 across 10 reviews from sources: google, instagram, talabat.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.5,
+          "unit": "stars",
+          "numerator": 10,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 10,
+          "unit": "count",
+          "numerator": 10,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 10,
+      "coverage_notes": [
+        "Analysis period: 2026-02-23T00:00:00+03:00 to 2026-03-02T00:00:00+03:00",
+        "Total reviews in analysis period: 10",
+        "Sources represented: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Review dates are accurate and in UTC+3 timezone",
+        "All reviews in the dataset are from the specified sources"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Language Distribution of Reviews",
+      "claim": "During the analysis period, reviews were submitted in 2 language(s): ar (1 reviews), en (9 reviews).",
+      "finding_type": "language_coverage",
+      "metrics": {
+        "total_reviews_by_language": {
+          "value": "{\"en\": 9, \"ar\": 1}",
+          "unit": "count",
+          "numerator": 10,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 10,
+      "coverage_notes": [
+        "Language distribution: {'en': 9, 'ar': 1}",
+        "Total reviews analyzed: 10"
+      ],
+      "assumptions": [
+        "Language field accurately reflects the language of the review text",
+        "All reviews have a valid language designation"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Indicators in Review Text",
+      "claim": "Among 10 reviews in the analysis period, basic keyword analysis suggests 4 positive-leaning, 0 negative-leaning, and 6 neutral/mixed reviews.",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "positive_sentiment_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "negative_sentiment_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "neutral_sentiment_count": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": 10,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 10,
+      "coverage_notes": [
+        "Sentiment classification based on keyword matching in original review text",
+        "Keywords checked in both English and Arabic based on review language field",
+        "Classification is indicative only and does not represent full NLP analysis"
+      ],
+      "assumptions": [
+        "Keyword presence indicates sentiment tendency",
+        "Review text field contains the actual review content",
+        "Language field correctly identifies the review language"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

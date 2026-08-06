@@ -1,0 +1,132 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (2026-03-23 to 2026-03-30), the average rating across 19 reviews is 4.79 out of 5, with 16 five-star ratings and 0 one-star ratings.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.79,
+          "unit": "stars",
+          "numerator": 19,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 16,
+          "unit": "reviews",
+          "numerator": 16,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 0,
+          "unit": "reviews",
+          "numerator": 0,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "talabat",
+        "google",
+        "instagram"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "Analysis period: 2026-03-23 to 2026-03-30",
+        "Total reviews in analysis period: 19",
+        "Sources represented: talabat, google, instagram"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Review dates are accurate and in UTC",
+        "All reviews in the dataset are from the specified sources"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Of 19 reviews in the analysis period, 12 are in English and 7 are in Arabic.",
+      "finding_type": "language_coverage",
+      "metrics": {
+        "english_reviews": {
+          "value": 12,
+          "unit": "reviews",
+          "numerator": 12,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 7,
+          "unit": "reviews",
+          "numerator": 7,
+          "denominator": 19,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "talabat",
+        "google",
+        "instagram"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "Language distribution across 19 reviews",
+        "Bilingual coverage enables sentiment analysis in both languages"
+      ],
+      "assumptions": [
+        "Language field accurately reflects review language",
+        "Reviews are classified as either 'en' or 'ar'"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution by Language",
+      "claim": "Among 12 English reviews, 11 are positive (rating ≥4). Among 7 Arabic reviews, 7 are positive (rating ≥4).",
+      "finding_type": "sentiment_by_language",
+      "metrics": {
+        "english_positive_count": {
+          "value": 11,
+          "unit": "reviews",
+          "numerator": 11,
+          "denominator": 12,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        },
+        "arabic_positive_count": {
+          "value": 7,
+          "unit": "reviews",
+          "numerator": 7,
+          "denominator": 7,
+          "period_start": "2026-03-23T00:00:00+03:00",
+          "period_end": "2026-03-30T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "talabat",
+        "google",
+        "instagram"
+      ],
+      "sample_size": 19,
+      "coverage_notes": [
+        "English reviews: 12",
+        "Arabic reviews: 7",
+        "Sentiment classified as positive (rating ≥4), neutral (rating 3), or negative (rating ≤2)"
+      ],
+      "assumptions": [
+        "Rating ≥4 indicates positive sentiment",
+        "Rating ≤2 indicates negative sentiment",
+        "Rating 3 indicates neutral sentiment",
+        "Language classification is accurate"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

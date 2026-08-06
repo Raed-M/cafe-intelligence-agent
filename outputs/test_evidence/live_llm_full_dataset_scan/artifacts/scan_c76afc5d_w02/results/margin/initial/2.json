@@ -1,0 +1,140 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Profit-Contributing Item (Analysis Week)",
+      "claim": "Spanish Latte generated the highest gross profit of 3650.60 SAR with 70.8% margin from 289 units sold across 258 transactions.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+00:00",
+          "period_end": "2026-01-26T00:00:00+00:00"
+        },
+        "total_quantity_sold": {
+          "value": 289,
+          "unit": "units",
+          "numerator": 289,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+00:00",
+          "period_end": "2026-01-26T00:00:00+00:00"
+        },
+        "net_revenue": {
+          "value": 5153.4,
+          "unit": "SAR",
+          "numerator": 5177.7,
+          "denominator": 24.3,
+          "period_start": "2026-01-19T00:00:00+00:00",
+          "period_end": "2026-01-26T00:00:00+00:00"
+        },
+        "total_cogs": {
+          "value": 1502.8,
+          "unit": "SAR",
+          "numerator": 289,
+          "denominator": 5.2,
+          "period_start": "2026-01-19T00:00:00+00:00",
+          "period_end": "2026-01-26T00:00:00+00:00"
+        },
+        "gross_profit": {
+          "value": 3650.6,
+          "unit": "SAR",
+          "numerator": 5153.4,
+          "denominator": 1502.8,
+          "period_start": "2026-01-19T00:00:00+00:00",
+          "period_end": "2026-01-26T00:00:00+00:00"
+        },
+        "gross_margin_percentage": {
+          "value": 70.84,
+          "unit": "%",
+          "numerator": 3650.6,
+          "denominator": 5153.4,
+          "period_start": "2026-01-19T00:00:00+00:00",
+          "period_end": "2026-01-26T00:00:00+00:00"
+        },
+        "basket_count": {
+          "value": 258,
+          "unit": "transactions",
+          "numerator": 258,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+00:00",
+          "period_end": "2026-01-26T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 258,
+      "coverage_notes": [
+        "Analysis covers POS transactions from 2026-01-19 to 2026-01-26",
+        "Excludes refunds (is_refund=False)",
+        "Unit costs sourced from menu.parquet",
+        "Net revenue calculated as gross_revenue - discount_sar"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and accurate for the analysis period",
+        "All POS line items have matching SKU in menu",
+        "Discount amounts are correctly recorded in POS"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost Impact (Week of 2026-01-19)",
+      "claim": "Documented waste totaled 176 units costing 983.90 SAR, representing 17.31% of total product cost (COGS + waste) for items with recorded waste.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_waste_units": {
+          "value": 176,
+          "unit": "units",
+          "numerator": 176,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+00:00",
+          "period_end": "2026-01-26T00:00:00+00:00"
+        },
+        "total_waste_cost_sar": {
+          "value": 983.9,
+          "unit": "SAR",
+          "numerator": 176,
+          "denominator": 6.53,
+          "period_start": "2026-01-19T00:00:00+00:00",
+          "period_end": "2026-01-26T00:00:00+00:00"
+        },
+        "waste_as_pct_of_total_product_cost": {
+          "value": 17.31,
+          "unit": "%",
+          "numerator": 983.9,
+          "denominator": 5685.3,
+          "period_start": "2026-01-19T00:00:00+00:00",
+          "period_end": "2026-01-26T00:00:00+00:00"
+        },
+        "items_with_waste_recorded": {
+          "value": 6,
+          "unit": "SKUs",
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+00:00",
+          "period_end": "2026-01-26T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis covers inventory week starting 2026-01-19",
+        "Only includes items with non-null units_wasted values",
+        "6 SKUs had documented waste",
+        "Waste cost calculated as units_wasted × unit_cost_sar"
+      ],
+      "assumptions": [
+        "Unit costs in inventory are accurate for waste valuation",
+        "Waste units are correctly recorded",
+        "Null waste values represent items with no waste (not missing data)"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

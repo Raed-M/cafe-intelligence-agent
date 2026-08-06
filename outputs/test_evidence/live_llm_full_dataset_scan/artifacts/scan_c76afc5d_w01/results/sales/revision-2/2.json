@@ -1,0 +1,291 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Transaction Count Change Week-over-Week",
+      "claim": "Valid transaction count increased from 1231 to 1288 (+4.6%)",
+      "finding_type": "transaction_volume",
+      "metrics": {
+        "analysis_period_transactions": {
+          "value": 1288,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "previous_period_transactions": {
+          "value": 1231,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "transaction_change": {
+          "value": 57,
+          "unit": "count",
+          "numerator": 1288,
+          "denominator": 1231,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "transaction_change_pct": {
+          "value": 4.6303818034118605,
+          "unit": "%",
+          "numerator": 57,
+          "denominator": 1231,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2157,
+      "coverage_notes": [
+        "Analysis period: 2157 line items, 1288 unique transactions",
+        "Previous period: 2051 line items, 1231 unique transactions",
+        "Refunds excluded from transaction count"
+      ],
+      "assumptions": [
+        "Transaction count uses unique transaction_id values",
+        "Refunds (is_refund=True) excluded from transaction count",
+        "Line items with is_refund=False represent valid sales"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Net Revenue Change Week-over-Week",
+      "claim": "Net revenue increased from SAR 40832.15 to SAR 43432.70 (+6.4%)",
+      "finding_type": "revenue",
+      "metrics": {
+        "analysis_period_revenue": {
+          "value": 43432.7,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 40832.15,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "revenue_change": {
+          "value": 2600.55,
+          "unit": "SAR",
+          "numerator": 43432.7,
+          "denominator": 40832.15,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": 6.3688784450488045,
+          "unit": "%",
+          "numerator": 2600.55,
+          "denominator": 40832.15,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2157,
+      "coverage_notes": [
+        "Analysis period: 2157 line items, SAR 43432.70 net revenue",
+        "Previous period: 2051 line items, SAR 40832.15 net revenue",
+        "Refunds excluded from revenue calculations"
+      ],
+      "assumptions": [
+        "Revenue uses line_total_sar column",
+        "Refunds (is_refund=True) excluded from revenue totals",
+        "Line items with is_refund=False represent valid sales"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value Change Week-over-Week",
+      "claim": "Average order value increased from SAR 33.17 to SAR 33.72 (+1.7%)",
+      "finding_type": "average_order_value",
+      "metrics": {
+        "analysis_period_aov": {
+          "value": 33.72,
+          "unit": "SAR",
+          "numerator": 43432.7,
+          "denominator": 1288,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "previous_period_aov": {
+          "value": 33.17,
+          "unit": "SAR",
+          "numerator": 40832.15,
+          "denominator": 1231,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "aov_change": {
+          "value": 0.55,
+          "unit": "SAR",
+          "numerator": 0.55,
+          "denominator": 1,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "aov_change_pct": {
+          "value": 1.6615600666576777,
+          "unit": "%",
+          "numerator": 0.55,
+          "denominator": 33.17,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2157,
+      "coverage_notes": [
+        "Analysis period: 1288 transactions, SAR 33.72 average",
+        "Previous period: 1231 transactions, SAR 33.17 average",
+        "Refunds excluded from AOV calculations"
+      ],
+      "assumptions": [
+        "AOV calculated as total net revenue / unique transaction count",
+        "Refunds (is_refund=True) excluded from revenue and transaction count",
+        "Each transaction_id represents one customer order"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Category Revenue Mix Shift Week-over-Week",
+      "claim": "Top category (hot_coffee) revenue mix shifted from 32.8% to 32.8% (+0.1 percentage points)",
+      "finding_type": "category_mix",
+      "metrics": {
+        "analysis_period_category_revenue": {
+          "value": 14258.95,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "previous_period_category_revenue": {
+          "value": 13377.35,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "analysis_period_category_mix_pct": {
+          "value": 32.82998754394731,
+          "unit": "%",
+          "numerator": 14258.95,
+          "denominator": 43432.7,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "previous_period_category_mix_pct": {
+          "value": 32.76180656663928,
+          "unit": "%",
+          "numerator": 13377.35,
+          "denominator": 40832.15,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "category_mix_shift_pct": {
+          "value": 0.06818097730803174,
+          "unit": "percentage points",
+          "numerator": 0.06818097730803174,
+          "denominator": 1,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2157,
+      "coverage_notes": [
+        "Analysis period: 2157 line items, SAR 43432.70 total net revenue",
+        "Previous period: 2051 line items, SAR 40832.15 total net revenue",
+        "Refunds excluded from category mix analysis"
+      ],
+      "assumptions": [
+        "Revenue mix analysis uses line_total_sar excluding refunds",
+        "Refunds (is_refund=True) excluded from revenue totals",
+        "Category mix percentages calculated as category revenue / total net revenue"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Channel Revenue Mix Shift Week-over-Week",
+      "claim": "Top channel (takeaway) revenue mix shifted from 43.5% to 44.9% (+1.4 percentage points)",
+      "finding_type": "channel_mix",
+      "metrics": {
+        "analysis_period_channel_revenue": {
+          "value": 19493.75,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "previous_period_channel_revenue": {
+          "value": 17759.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "analysis_period_channel_mix_pct": {
+          "value": 44.88265753683285,
+          "unit": "%",
+          "numerator": 19493.75,
+          "denominator": 43432.7,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        },
+        "previous_period_channel_mix_pct": {
+          "value": 43.49293387685928,
+          "unit": "%",
+          "numerator": 17759.1,
+          "denominator": 40832.15,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "channel_mix_shift_pct": {
+          "value": 1.3897236599735692,
+          "unit": "percentage points",
+          "numerator": 1.3897236599735692,
+          "denominator": 1,
+          "period_start": "2026-01-12T00:00:00+03:00",
+          "period_end": "2026-01-19T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2157,
+      "coverage_notes": [
+        "Analysis period: 2157 line items, SAR 43432.70 total net revenue",
+        "Previous period: 2051 line items, SAR 40832.15 total net revenue",
+        "Refunds excluded from channel mix analysis"
+      ],
+      "assumptions": [
+        "Revenue mix analysis uses line_total_sar excluding refunds",
+        "Refunds (is_refund=True) excluded from revenue totals",
+        "Channel mix percentages calculated as channel revenue / total net revenue"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

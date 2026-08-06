@@ -20,6 +20,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 from src.config.runtime_config import resolve_runtime_config
 from src.graph.main_graph import build_main_graph

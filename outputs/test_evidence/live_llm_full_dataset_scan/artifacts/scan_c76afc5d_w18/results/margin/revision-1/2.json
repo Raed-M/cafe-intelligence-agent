@@ -1,0 +1,205 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "High Gross Profit Item in Analysis Period",
+      "claim": "Iced Spanish Latte generated 4011.0 SAR gross profit (71.5% margin) from 285 units sold at 5607.0 SAR revenue during 2026-05-11 to 2026-05-18.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "units_sold": {
+          "value": 285,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "revenue_sar": {
+          "value": 5607.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "unit_cost_sar": {
+          "value": 5.6,
+          "unit": "SAR/unit",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "cogs_sar": {
+          "value": 1596.0,
+          "unit": "SAR",
+          "numerator": 285,
+          "denominator": 5.6,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "gross_profit_sar": {
+          "value": 4011.0,
+          "unit": "SAR",
+          "numerator": 5607.0,
+          "denominator": 1596.0,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "gross_margin_pct": {
+          "value": 71.5,
+          "unit": "%",
+          "numerator": 4011.0,
+          "denominator": 5607.0,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2210,
+      "coverage_notes": [
+        "Analysis period: 2026-05-11 to 2026-05-18 (7 days)",
+        "POS transactions analyzed: 2210 line items",
+        "Refunds excluded from analysis",
+        "Unit cost sourced from menu.parquet; no recipe/BOM available",
+        "Item Iced Spanish Latte (SKU: ICE-001) ranked among 19 items with valid costs"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and accurate for the analysis period",
+        "No recipe/BOM available; unit cost treated as declared in menu",
+        "Line totals in POS are accurate and reflect actual revenue",
+        "Discounts are already deducted in line_total_sar"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "title": "Significant Supplier Price Change Detected",
+      "claim": "Supplier price for roasted coffee changed from 88.00 SAR/kg to 96.00 SAR/kg (change: 9.09%), effective 2026-04-15. This represents a 8.00 SAR per-unit cost shift.",
+      "finding_type": "supplier_cost_change",
+      "metrics": {
+        "old_price": {
+          "value": 88.0,
+          "unit": "SAR/kg",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "new_price": {
+          "value": 96.0,
+          "unit": "SAR/kg",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "price_delta": {
+          "value": 8.0,
+          "unit": "SAR/kg",
+          "numerator": 96.0,
+          "denominator": 88.0,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "percent_change": {
+          "value": 9.09,
+          "unit": "%",
+          "numerator": 8.0,
+          "denominator": 88.0,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "effective_date": {
+          "value": "2026-04-15",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Email extraction identified 3 price change events",
+        "Filtered to 3 changes with effective dates on or before analysis period end",
+        "Ingredient/entity: roasted coffee",
+        "Confidence in extraction: 0.95"
+      ],
+      "assumptions": [
+        "Email extraction accurately captured supplier price change facts",
+        "Effective date represents when new price applies",
+        "No recipe/BOM available; cannot calculate per-drink cost impact without standing order volumes"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Highest Waste Cost Item in Analysis Period",
+      "claim": "Halloumi Toast (SKU: FOD-006) incurred 385.40 SAR in waste cost from 47 units wasted during 2026-05-11 to 2026-05-18. Total waste cost across all items: 1194.10 SAR.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "units_wasted": {
+          "value": 47,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "waste_cost_sar": {
+          "value": 385.4,
+          "unit": "SAR",
+          "numerator": 47,
+          "denominator": 8.2,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "unit_cost_sar": {
+          "value": 8.2,
+          "unit": "SAR/unit",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "total_waste_cost_all_items": {
+          "value": 1194.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "total_units_wasted_all_items": {
+          "value": 193,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Inventory records for week starting 2026-05-11",
+        "Only non-null waste cost values included in calculation",
+        "Total items with waste data: 6",
+        "Items with non-zero waste cost: 6"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar in inventory reflects actual waste cost",
+        "Blank waste values treated as zero (not missing)",
+        "Unit cost from inventory matches actual cost at time of waste"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item - Analysis Period",
+      "claim": "Item Iced Spanish Latte (SKU: ICE-001) generated the highest gross profit of 6124.00 SAR with 430 units sold at 71.8% margin rate during the analysis period.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Iced Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "sku": {
+          "value": "ICE-001",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "quantity_sold": {
+          "value": "430",
+          "unit": "units",
+          "numerator": "430",
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "total_revenue": {
+          "value": 8532.0,
+          "unit": "SAR",
+          "numerator": 8532.0,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "unit_cost_sar": {
+          "value": 5.6,
+          "unit": "SAR",
+          "numerator": 5.6,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "total_cogs": {
+          "value": 2408.0,
+          "unit": "SAR",
+          "numerator": 2408.0,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "gross_profit": {
+          "value": 6124.0,
+          "unit": "SAR",
+          "numerator": 6124.0,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "margin_rate_percent": {
+          "value": 71.77684013127052,
+          "unit": "%",
+          "numerator": 71.77684013127052,
+          "denominator": 100,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 3046,
+      "coverage_notes": [
+        "Analysis period: 2026-05-25T00:00:00+03:00 to 2026-06-01T00:00:00+03:00",
+        "Total POS transactions analyzed: 3046",
+        "Unique items in analysis: 19",
+        "Refunds excluded from revenue calculation",
+        "Unit costs sourced from menu.parquet"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar values are current and accurate for the analysis period",
+        "POS line_total_sar reflects actual revenue after discounts",
+        "No recipe/BOM available; item-level economics based on declared menu costs"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Highest Waste Cost Item - Analysis Week",
+      "claim": "Item Butter Croissant (SKU: FOD-001) incurred the highest known waste cost of 296.00 SAR with 74 units wasted during the analysis week.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "item_name": {
+          "value": "Butter Croissant",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "sku": {
+          "value": "FOD-001",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "units_wasted": {
+          "value": 74.0,
+          "unit": "units",
+          "numerator": 74.0,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "known_waste_cost_sar": {
+          "value": 296.0,
+          "unit": "SAR",
+          "numerator": 296.0,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        },
+        "total_waste_cost_all_items": {
+          "value": 1029.0,
+          "unit": "SAR",
+          "numerator": 1029.0,
+          "denominator": null,
+          "period_start": "2026-05-25T00:00:00+03:00",
+          "period_end": "2026-06-01T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis week: 2026-05-25T00:00:00+03:00 to 2026-06-01T00:00:00+03:00",
+        "Items with known waste cost: 6",
+        "Only non-null waste_cost_sar values included",
+        "Blank waste values excluded per data quality rules"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar values are accurate and complete for reported waste",
+        "Waste cost calculation based on unit_cost_sar from inventory records"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Significant Supplier Price Change Detected",
+      "claim": "Supplier orders@qatifdairy.com announced a price change for full-fat milk from 7.10 SAR/L to 8.40 SAR/L, effective 2026-05-01T00:00:00, representing a 18.3% change.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "supplier": {
+          "value": "orders@qatifdairy.com",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        },
+        "ingredient": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": 7.1,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": 8.4,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        },
+        "percentage_change": {
+          "value": 18.30985915492959,
+          "unit": "%",
+          "numerator": 18.30985915492959,
+          "denominator": 100,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        },
+        "effective_date": {
+          "value": "2026-05-01T00:00:00",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        },
+        "email_date": {
+          "value": "2026-05-04T00:00:00",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00",
+          "period_end": "2026-05-04T00:00:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Total supplier price changes detected: 3",
+        "Email extraction confidence: 0.95",
+        "Extraction mode: llm",
+        "Price changes with both old and new prices and effective dates included"
+      ],
+      "assumptions": [
+        "Email extraction accuracy as indicated by confidence score",
+        "Effective date represents when price change takes effect",
+        "No recipe/BOM available; impact on menu items cannot be calculated without standing order volumes",
+        "Standing order quantities and payment terms not confirmed from email facts"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

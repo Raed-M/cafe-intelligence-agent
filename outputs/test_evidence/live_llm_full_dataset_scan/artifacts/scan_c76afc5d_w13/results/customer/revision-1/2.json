@@ -1,0 +1,228 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Rating Distribution and Average (Analysis Period)",
+      "claim": "During the analysis period (2026-04-06T00:00:00+03:00 to 2026-04-13T00:00:00+03:00), reviews averaged 4.33 stars with 15 total reviews across 3 source(s).",
+      "finding_type": "customer_satisfaction",
+      "metrics": {
+        "average_rating": {
+          "value": 4.33,
+          "unit": "stars",
+          "numerator": 65.0,
+          "denominator": 15,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "rating_5_star_count": {
+          "value": 9,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "rating_4_star_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "rating_3_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "rating_2_star_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "rating_1_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "language_english_count": {
+          "value": 8,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "language_arabic_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Analysis period: 2026-04-06T00:00:00+03:00 to 2026-04-13T00:00:00+03:00",
+        "Language coverage: English=8, Arabic=7",
+        "Sources included: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Date filtering uses UTC+3 timezone as specified",
+        "All reviews in the artifact are included without exclusion"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "English Review Sentiment Distribution",
+      "claim": "Among 8 English-language reviews in the analysis period, sentiment classification shows 3 positive, 2 negative, and 3 neutral reviews.",
+      "finding_type": "sentiment_analysis",
+      "metrics": {
+        "english_reviews_total": {
+          "value": 8,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "english_positive_sentiment": {
+          "value": 3,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "english_negative_sentiment": {
+          "value": 2,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "english_neutral_sentiment": {
+          "value": 3,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "english_positive_percentage": {
+          "value": 37.5,
+          "unit": "percent",
+          "numerator": 3,
+          "denominator": 8,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 8,
+      "coverage_notes": [
+        "English reviews only; 8 of 15 total reviews",
+        "Sentiment classification based on keyword matching",
+        "Sources: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Sentiment classification uses keyword matching on review text",
+        "Empty or null review texts are classified as neutral",
+        "Keyword list is fixed and language-specific"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "title": "Arabic Review Sentiment Distribution",
+      "claim": "Among 7 Arabic-language reviews in the analysis period, sentiment classification shows 4 positive, 0 negative, and 3 neutral reviews.",
+      "finding_type": "sentiment_analysis",
+      "metrics": {
+        "arabic_reviews_total": {
+          "value": 7,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "arabic_positive_sentiment": {
+          "value": 4,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "arabic_negative_sentiment": {
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "arabic_neutral_sentiment": {
+          "value": 3,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "arabic_positive_percentage": {
+          "value": 57.1,
+          "unit": "percent",
+          "numerator": 4,
+          "denominator": 7,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram"
+      ],
+      "sample_size": 7,
+      "coverage_notes": [
+        "Arabic reviews only; 7 of 15 total reviews",
+        "Sentiment classification based on Arabic keyword matching",
+        "Sources: google, instagram"
+      ],
+      "assumptions": [
+        "Sentiment classification uses Arabic keyword matching on review text",
+        "Empty or null review texts are classified as neutral",
+        "Keyword list is fixed and language-specific"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Transaction Count Change Week-over-Week",
+      "claim": "Valid transaction count in analysis period (Jan 26 - Feb 2) was 1412, compared to 1270 in previous period (Jan 19-26), representing a 11.2% change.",
+      "finding_type": "transaction_volume",
+      "metrics": {
+        "analysis_period_transactions": {
+          "value": 1412,
+          "unit": "transactions",
+          "numerator": 1412,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_period_transactions": {
+          "value": 1270,
+          "unit": "transactions",
+          "numerator": 1270,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "transaction_change": {
+          "value": 142,
+          "unit": "transactions",
+          "numerator": 142,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "transaction_pct_change": {
+          "value": 11.18,
+          "unit": "%",
+          "numerator": 142,
+          "denominator": 1270,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1412,
+      "coverage_notes": [
+        "Excludes refund transactions (is_refund=True)",
+        "Uses unique transaction_id for basket counting",
+        "Analysis period: 2026-01-26 to 2026-02-02",
+        "Previous period: 2026-01-19 to 2026-01-26"
+      ],
+      "assumptions": [
+        "transaction_id uniquely identifies a basket",
+        "is_refund flag accurately marks refund transactions",
+        "timestamp field is reliable for period filtering"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Net Revenue Change Week-over-Week",
+      "claim": "Net revenue (excluding refunds) in analysis period was SAR 48131.50, compared to SAR 43425.80 in previous period, representing a 10.8% change.",
+      "finding_type": "revenue",
+      "metrics": {
+        "analysis_period_revenue": {
+          "value": 48131.5,
+          "unit": "SAR",
+          "numerator": 48131.5,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 43425.8,
+          "unit": "SAR",
+          "numerator": 43425.8,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "revenue_change": {
+          "value": 4705.7,
+          "unit": "SAR",
+          "numerator": 4705.699999999997,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "revenue_pct_change": {
+          "value": 10.84,
+          "unit": "%",
+          "numerator": 4705.699999999997,
+          "denominator": 43425.8,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1412,
+      "coverage_notes": [
+        "Uses line_total_sar for net revenue calculation",
+        "Excludes refund transactions (is_refund=True)",
+        "Refunds in analysis period: SAR 356.60",
+        "Refunds in previous period: SAR 297.20"
+      ],
+      "assumptions": [
+        "line_total_sar accurately reflects net transaction value",
+        "is_refund flag correctly identifies refund transactions",
+        "All transactions have valid line_total_sar values"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value Change Week-over-Week",
+      "claim": "Average order value in analysis period was SAR 34.09, compared to SAR 34.19 in previous period, representing a -0.3% change.",
+      "finding_type": "average_order_value",
+      "metrics": {
+        "analysis_period_aov": {
+          "value": 34.09,
+          "unit": "SAR",
+          "numerator": 48131.5,
+          "denominator": 1412,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_period_aov": {
+          "value": 34.19,
+          "unit": "SAR",
+          "numerator": 43425.8,
+          "denominator": 1270,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "aov_change": {
+          "value": -0.11,
+          "unit": "SAR",
+          "numerator": -0.10607871785148859,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "aov_pct_change": {
+          "value": -0.31,
+          "unit": "%",
+          "numerator": -0.10607871785148859,
+          "denominator": 34.193543307086614,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1412,
+      "coverage_notes": [
+        "Calculated as net revenue divided by valid transaction count",
+        "Excludes refund transactions",
+        "Based on line_total_sar and unique transaction_id"
+      ],
+      "assumptions": [
+        "Each transaction_id represents one basket/order",
+        "line_total_sar is accurate for all transactions",
+        "is_refund flag correctly identifies refunds"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

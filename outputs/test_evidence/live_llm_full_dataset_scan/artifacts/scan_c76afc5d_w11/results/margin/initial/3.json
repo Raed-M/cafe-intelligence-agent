@@ -1,0 +1,114 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Item-Level Gross Profit and Margin Analysis",
+      "claim": "During the analysis week (Mar 23-30, 2026), the cafe generated SAR 45104.05 in revenue across 1346 transactions with a gross profit of SAR 31516.75 and gross margin of 69.9%.",
+      "finding_type": "margin_analysis",
+      "metrics": {
+        "total_revenue_sar": {
+          "value": 45104.05,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+00:00",
+          "period_end": "2026-03-30T00:00:00+00:00"
+        },
+        "total_cogs_sar": {
+          "value": 13587.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+00:00",
+          "period_end": "2026-03-30T00:00:00+00:00"
+        },
+        "gross_profit_sar": {
+          "value": 31516.75,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+00:00",
+          "period_end": "2026-03-30T00:00:00+00:00"
+        },
+        "gross_margin_pct": {
+          "value": 69.9,
+          "unit": "%",
+          "numerator": 31516.75,
+          "denominator": 45104.05,
+          "period_start": "2026-03-23T00:00:00+00:00",
+          "period_end": "2026-03-30T00:00:00+00:00"
+        },
+        "unique_transactions": {
+          "value": 1346,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+00:00",
+          "period_end": "2026-03-30T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2272,
+      "coverage_notes": [
+        "Analysis includes all non-refund POS transactions during 2026-03-23 to 2026-03-30",
+        "COGS calculated using menu_items.unit_cost_sar × realized POS quantities",
+        "Refunds excluded from revenue and profit calculations per metric definitions"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar values are current and applicable to analysis period",
+        "POS line_total_sar reflects actual revenue after discounts",
+        "No inventory adjustments or waste costs included in this item-level analysis"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost Impact",
+      "claim": "During the week of Mar 23-30, 2026, documented waste totaled 217 units with a cost impact of SAR 1363.30, representing 3.02% of weekly revenue.",
+      "finding_type": "waste_analysis",
+      "metrics": {
+        "total_units_wasted": {
+          "value": 217.0,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+00:00",
+          "period_end": "2026-03-30T00:00:00+00:00"
+        },
+        "total_waste_cost_sar": {
+          "value": 1363.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-23T00:00:00+00:00",
+          "period_end": "2026-03-30T00:00:00+00:00"
+        },
+        "waste_cost_pct_of_revenue": {
+          "value": 3.02,
+          "unit": "%",
+          "numerator": 1363.3,
+          "denominator": 45104.05,
+          "period_start": "2026-03-23T00:00:00+00:00",
+          "period_end": "2026-03-30T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Only non-null waste observations included in calculation",
+        "Waste cost calculated using inventory unit_cost_sar × units_wasted",
+        "Data covers inventory records for week starting 2026-03-23"
+      ],
+      "assumptions": [
+        "Unit costs in inventory are accurate and applicable",
+        "Waste units represent actual spoilage/disposal",
+        "No recovery value assumed for wasted items"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Hourly Traffic Anomaly",
+      "claim": "Average hourly door count at hour 14 was 31.0, 7.86 standard deviations from baseline mean of 27.0.",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "observed_hourly_door_count": {
+          "value": 31.0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        },
+        "baseline_mean_hourly_door_count": {
+          "value": 27.0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "z_score_hourly_traffic": {
+          "value": 7.86,
+          "unit": "std_dev",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11T00:00:00+03:00",
+          "period_end": "2026-05-18T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 68,
+      "coverage_notes": [
+        "Analysis period: 2026-05-11 to 2026-05-18",
+        "Baseline: hourly averages from 4 trailing weeks (2026-05-04 to 2026-04-20)",
+        "Dead sensor days excluded",
+        "Threshold: 2.0 sigma"
+      ],
+      "assumptions": [
+        "Hourly traffic calculated as mean door_count per hour across valid days",
+        "Dead sensor days (is_dead_sensor_day=True) excluded from analysis",
+        "Normal distribution assumed for z-score calculation"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

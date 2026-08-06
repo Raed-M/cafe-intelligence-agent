@@ -1,0 +1,226 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Net Revenue Change: Analysis Week vs Previous Week",
+      "claim": "Net revenue in the analysis period (2026-01-26 to 2026-02-02) was 47774.90 SAR, compared to 43128.60 SAR in the previous week (2026-01-19 to 2026-01-26), representing a change of 4646.30 SAR (10.77%). Valid transaction count increased from 1270 to 1412 baskets.",
+      "finding_type": "revenue_change",
+      "metrics": {
+        "analysis_period_revenue": {
+          "value": 47774.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 43128.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "revenue_change_absolute": {
+          "value": 4646.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": 10.77,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "analysis_baskets": {
+          "value": 1412,
+          "unit": "transactions",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_baskets": {
+          "value": 1270,
+          "unit": "transactions",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "analysis_refunds_total": {
+          "value": -356.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_refunds_total": {
+          "value": -297.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2429,
+      "coverage_notes": [
+        "Analysis period: 2026-01-26 to 2026-02-02 (8 days)",
+        "Previous period: 2026-01-19 to 2026-01-26 (7 days)",
+        "Revenue includes refunds as negative values per metric definition",
+        "Analysis refunds: -356.60 SAR; Previous refunds: -297.20 SAR"
+      ],
+      "assumptions": [
+        "line_total_sar is accurate and includes refunds as negative values",
+        "transaction_id uniqueness identifies valid baskets",
+        "is_refund flag correctly identifies refund transactions",
+        "Timestamp conversion to Asia/Riyadh timezone is correct"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value (AOV) Change: Analysis Week vs Previous Week",
+      "claim": "Average order value in the analysis period was 33.83 SAR per basket, compared to 33.96 SAR in the previous week, representing a change of -0.12 SAR (-0.37%).",
+      "finding_type": "aov_change",
+      "metrics": {
+        "analysis_aov": {
+          "value": 33.83,
+          "unit": "SAR/basket",
+          "numerator": 47774.9,
+          "denominator": 1412,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_aov": {
+          "value": 33.96,
+          "unit": "SAR/basket",
+          "numerator": 43128.6,
+          "denominator": 1270,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "aov_change_absolute": {
+          "value": -0.12,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "aov_pct_change": {
+          "value": -0.37,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1412,
+      "coverage_notes": [
+        "AOV calculated as net revenue / valid transaction count",
+        "Refunds included in net revenue per metric definition",
+        "Basket count excludes refund-only transactions"
+      ],
+      "assumptions": [
+        "line_total_sar is accurate",
+        "transaction_id uniqueness identifies valid baskets",
+        "is_refund flag correctly identifies refund transactions"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Top Category Revenue Mix: Analysis Week vs Previous Week",
+      "claim": "The top revenue category in the analysis period was 'hot_coffee' with 16656.50 SAR (34.86% of total revenue). In the previous week, 'hot_coffee' generated 15175.75 SAR (35.19% of total revenue). The top category's share changed by -0.32 percentage points.",
+      "finding_type": "category_mix_change",
+      "metrics": {
+        "analysis_top_category": {
+          "value": "hot_coffee",
+          "unit": "category",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "analysis_top_category_revenue": {
+          "value": 16656.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "analysis_top_category_pct": {
+          "value": 34.86,
+          "unit": "%",
+          "numerator": 16656.5,
+          "denominator": 47774.9,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_top_category": {
+          "value": "hot_coffee",
+          "unit": "category",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "previous_top_category_revenue": {
+          "value": 15175.75,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "previous_top_category_pct": {
+          "value": 35.19,
+          "unit": "%",
+          "numerator": 15175.75,
+          "denominator": 43128.6,
+          "period_start": "2026-01-19T00:00:00+03:00",
+          "period_end": "2026-01-26T00:00:00+03:00"
+        },
+        "top_category_pct_change": {
+          "value": -0.32,
+          "unit": "percentage points",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2429,
+      "coverage_notes": [
+        "Category information joined from menu SKU reference",
+        "Revenue includes refunds as negative values",
+        "Top category identified by total revenue contribution"
+      ],
+      "assumptions": [
+        "Menu SKU reference is authoritative for category assignment",
+        "line_total_sar is accurate",
+        "Category field in menu is complete and accurate"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

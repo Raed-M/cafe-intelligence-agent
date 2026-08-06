@@ -1,0 +1,173 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution and Language Coverage",
+      "claim": "During the analysis period (Mar 30 - Apr 6, 2026), the average review rating was 3.91 out of 5, based on 23 reviews. English reviews comprised 16 reviews and Arabic reviews comprised 7 reviews.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 3.91,
+          "unit": "stars",
+          "numerator": 23,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 23,
+          "unit": "count",
+          "numerator": 23,
+          "denominator": null,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "english_reviews": {
+          "value": "16",
+          "unit": "count",
+          "numerator": "16",
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": "7",
+          "unit": "count",
+          "numerator": "7",
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 23,
+      "coverage_notes": [
+        "Analysis period: 2026-03-30T00:00:00+03:00 to 2026-04-06T00:00:00+03:00",
+        "Total reviews in dataset: 520",
+        "Reviews in analysis period: 23",
+        "Language distribution: {'en': np.int64(16), 'ar': np.int64(7)}"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Date field is accurate and timezone-aware",
+        "Language classification is accurate"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution by Language",
+      "claim": "Among 23 reviews in the analysis period, 17 were positive (rating ≥4), 6 were negative (rating ≤2), and 0 were neutral (rating 3). English reviews showed 11 positive, 5 negative, and 0 neutral sentiments. Arabic reviews showed 6 positive, 1 negative, and 0 neutral sentiments.",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "positive_reviews": {
+          "value": "17",
+          "unit": "count",
+          "numerator": "17",
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": "6",
+          "unit": "count",
+          "numerator": "6",
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "neutral_reviews": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "positive_percentage": {
+          "value": 73.9,
+          "unit": "percent",
+          "numerator": "17",
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "google",
+        "talabat"
+      ],
+      "sample_size": 23,
+      "coverage_notes": [
+        "Sentiment classification: positive (rating ≥4), neutral (rating=3), negative (rating ≤2)",
+        "English reviews: 16, Arabic reviews: 7",
+        "Total reviews analyzed: 23"
+      ],
+      "assumptions": [
+        "Rating thresholds for sentiment classification are appropriate",
+        "All reviews have valid rating values",
+        "Language classification is accurate"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Review Source Distribution",
+      "claim": "During the analysis period, reviews came from 3 different sources. The distribution was: google: 12 reviews, instagram: 10 reviews, talabat: 1 reviews.",
+      "finding_type": "source_distribution",
+      "metrics": {
+        "total_sources": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": null,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "google_count": {
+          "value": 12,
+          "unit": "count",
+          "numerator": 12,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "instagram_count": {
+          "value": 10,
+          "unit": "count",
+          "numerator": 10,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "talabat_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 23,
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 23,
+      "coverage_notes": [
+        "Source distribution: {'google': np.int64(12), 'instagram': np.int64(10), 'talabat': np.int64(1)}",
+        "Total reviews: 23",
+        "Analysis period: 2026-03-30T00:00:00+03:00 to 2026-04-06T00:00:00+03:00"
+      ],
+      "assumptions": [
+        "Source field is accurately populated",
+        "All reviews have a valid source"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Daily Revenue Anomaly on 2026-05-27",
+      "claim": "Daily revenue of 9763.30 SAR on 2026-05-27 deviates 2.16 standard deviations from baseline mean of 6658.52 SAR",
+      "finding_type": "revenue_anomaly",
+      "metrics": {
+        "observed_daily_revenue": {
+          "value": 9763.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-27T00:00:00",
+          "period_end": "2026-05-28T00:00:00"
+        },
+        "baseline_mean_daily_revenue": {
+          "value": 6658.52,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00",
+          "period_end": "2026-05-25T00:00:00"
+        },
+        "z_score": {
+          "value": 2.16,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-27T00:00:00",
+          "period_end": "2026-05-28T00:00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 28,
+      "coverage_notes": [
+        "Analysis period: 2026-05-25T00:00:00 to 2026-06-01T00:00:00",
+        "Baseline: 4 weeks prior (2026-04-27 to 2026-05-25)",
+        "Baseline sample size: 28 daily observations"
+      ],
+      "assumptions": [
+        "Z-score threshold of 2.0 standard deviations used to identify anomalies",
+        "Baseline calculated from 4 preceding weeks",
+        "Refunds included in net revenue calculation"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Daily Revenue Anomaly on 2026-05-28",
+      "claim": "Daily revenue of 9614.30 SAR on 2026-05-28 deviates 2.05 standard deviations from baseline mean of 6658.52 SAR",
+      "finding_type": "revenue_anomaly",
+      "metrics": {
+        "observed_daily_revenue": {
+          "value": 9614.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-28T00:00:00",
+          "period_end": "2026-05-29T00:00:00"
+        },
+        "baseline_mean_daily_revenue": {
+          "value": 6658.52,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00",
+          "period_end": "2026-05-25T00:00:00"
+        },
+        "z_score": {
+          "value": 2.05,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-28T00:00:00",
+          "period_end": "2026-05-29T00:00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 28,
+      "coverage_notes": [
+        "Analysis period: 2026-05-25T00:00:00 to 2026-06-01T00:00:00",
+        "Baseline: 4 weeks prior (2026-04-27 to 2026-05-25)",
+        "Baseline sample size: 28 daily observations"
+      ],
+      "assumptions": [
+        "Z-score threshold of 2.0 standard deviations used to identify anomalies",
+        "Baseline calculated from 4 preceding weeks",
+        "Refunds included in net revenue calculation"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Daily Revenue Anomaly on 2026-05-29",
+      "claim": "Daily revenue of 11331.50 SAR on 2026-05-29 deviates 3.24 standard deviations from baseline mean of 6658.52 SAR",
+      "finding_type": "revenue_anomaly",
+      "metrics": {
+        "observed_daily_revenue": {
+          "value": 11331.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-29T00:00:00",
+          "period_end": "2026-05-30T00:00:00"
+        },
+        "baseline_mean_daily_revenue": {
+          "value": 6658.52,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00",
+          "period_end": "2026-05-25T00:00:00"
+        },
+        "z_score": {
+          "value": 3.24,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-29T00:00:00",
+          "period_end": "2026-05-30T00:00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 28,
+      "coverage_notes": [
+        "Analysis period: 2026-05-25T00:00:00 to 2026-06-01T00:00:00",
+        "Baseline: 4 weeks prior (2026-04-27 to 2026-05-25)",
+        "Baseline sample size: 28 daily observations"
+      ],
+      "assumptions": [
+        "Z-score threshold of 2.0 standard deviations used to identify anomalies",
+        "Baseline calculated from 4 preceding weeks",
+        "Refunds included in net revenue calculation"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

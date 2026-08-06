@@ -24,7 +24,8 @@ def _result_ref(tmp_path, obj, name):
     }
 
 
-def _finding(finding_id, analyst_name, result_artifact, metric_key="net_revenue", claim="Net revenue changed."):
+def _finding(finding_id, analyst_name, result_artifact, metric_key="net_revenue",
+             claim="Net revenue for the week of 2026-01-05 was SAR 1,000, resolved directly from pos.result_key=net_revenue."):
     return {
         "finding_id": finding_id, "analyst_name": analyst_name, "title": f"title-{finding_id}",
         "claim": claim, "finding_type": "trend",

@@ -1,0 +1,185 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Jan 26 - Feb 2, 2026)",
+      "claim": "Average rating is 4.76 out of 5 across 17 reviews. Rating distribution shows 14 5-star, 2 4-star, 1 3-star, 0 2-star, and 0 1-star reviews.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.76,
+          "unit": "stars",
+          "numerator": 81.0,
+          "denominator": 17,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 17,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 14,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "four_star_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "three_star_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "two_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 17,
+      "coverage_notes": [
+        "Analysis period: 2026-01-26 to 2026-02-02",
+        "Language distribution: {'en': np.int64(10), 'ar': np.int64(7)}",
+        "All reviews with valid ratings included"
+      ],
+      "assumptions": [
+        "Rating scale is 1-5 stars",
+        "All reviews in the period are included",
+        "No filtering by source or language"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution by Rating (Jan 26 - Feb 2, 2026)",
+      "claim": "Sentiment analysis shows 16 positive reviews (rating ≥4), 1 neutral reviews (rating=3), and 0 negative reviews (rating <3) out of 17 total reviews.",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "positive_reviews": {
+          "value": 16,
+          "unit": "count",
+          "numerator": 16,
+          "denominator": 17,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "neutral_reviews": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 17,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 17,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "positive_percentage": {
+          "value": 94.1,
+          "unit": "percent",
+          "numerator": 16,
+          "denominator": 17,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 17,
+      "coverage_notes": [
+        "Analysis period: 2026-01-26 to 2026-02-02",
+        "Positive defined as rating ≥4, Neutral as rating=3, Negative as rating <3",
+        "All reviews with valid ratings included"
+      ],
+      "assumptions": [
+        "Rating-based sentiment classification",
+        "No text analysis for sentiment override",
+        "All reviews equally weighted"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Most Mentioned Topics in Reviews (Jan 26 - Feb 2, 2026)",
+      "claim": "Top topics mentioned in reviews are: service (2 mentions), taste (2 mentions), quality (1 mentions). These topics were identified through keyword analysis of review text in both English and Arabic.",
+      "finding_type": "topic_frequency",
+      "metrics": {
+        "service_mentions": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 17,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "taste_mentions": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 17,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "quality_mentions": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 17,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 17,
+      "coverage_notes": [
+        "Analysis period: 2026-01-26 to 2026-02-02",
+        "Total reviews analyzed: 17",
+        "Reviews with extractable topics: 6",
+        "Topic extraction based on keyword matching in English and Arabic"
+      ],
+      "assumptions": [
+        "Topic keywords are representative of actual topics",
+        "Keyword matching is sufficient for topic identification",
+        "Multiple topics can be mentioned in a single review",
+        "Empty or missing review text is excluded from topic analysis"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

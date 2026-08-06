@@ -1,0 +1,151 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution (Feb 16-23, 2026)",
+      "claim": "Average customer rating is 4.54 out of 5, based on 13 reviews during the analysis period.",
+      "finding_type": "rating_analysis",
+      "metrics": {
+        "average_rating": {
+          "value": 4.54,
+          "unit": "stars",
+          "numerator": 13,
+          "denominator": 13,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 13,
+          "unit": "count",
+          "numerator": 13,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 13,
+      "coverage_notes": [
+        "Analysis period: 2026-02-16T00:00:00+03:00 to 2026-02-23T00:00:00+03:00",
+        "Total reviews in dataset: 520",
+        "Reviews in analysis period: 13",
+        "Sources represented: google, talabat, instagram"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Review dates are accurate and in UTC+3 timezone",
+        "All reviews in the period are included regardless of language"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution and Topic Frequency",
+      "claim": "Among 13 reviews, 11 are positive (rating ≥4), 1 are neutral (rating 3), and 1 are negative (rating <3). Most frequently mentioned topic is 'quality' in 2 reviews.",
+      "finding_type": "sentiment_and_topic_analysis",
+      "metrics": {
+        "positive_reviews": {
+          "value": 11,
+          "unit": "count",
+          "numerator": 11,
+          "denominator": 13,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "neutral_reviews": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 13,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 13,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "top_topic": {
+          "value": "quality",
+          "unit": "string",
+          "numerator": 2,
+          "denominator": 13,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 13,
+      "coverage_notes": [
+        "Language distribution: 10 English, 3 Arabic",
+        "Sentiment classification based on rating thresholds (positive ≥4, neutral 3, negative <3)",
+        "Topic detection uses keyword matching in both English and Arabic",
+        "Reviews with empty text: 0"
+      ],
+      "assumptions": [
+        "Rating-based sentiment classification is appropriate for this dataset",
+        "Keyword matching captures topic mentions accurately",
+        "A review can mention multiple topics",
+        "Language field is accurate"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Review Language Coverage",
+      "claim": "Of 13 reviews in the analysis period, 10 are in English and 3 are in Arabic, providing bilingual coverage.",
+      "finding_type": "language_coverage",
+      "metrics": {
+        "english_reviews": {
+          "value": 10,
+          "unit": "count",
+          "numerator": 10,
+          "denominator": 13,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 13,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 13,
+          "unit": "count",
+          "numerator": 13,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 13,
+      "coverage_notes": [
+        "Analysis period: 2026-02-16T00:00:00+03:00 to 2026-02-23T00:00:00+03:00",
+        "Bilingual coverage enables sentiment analysis in both languages",
+        "Sources: google, talabat, instagram"
+      ],
+      "assumptions": [
+        "Language field accurately identifies review language",
+        "Both English and Arabic reviews are equally valid for analysis"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

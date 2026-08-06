@@ -1,0 +1,101 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Labour Cost Ratio Decreased Week-over-Week",
+      "claim": "Labour cost as percentage of revenue decreased from 12.3% to 11.4%, a change of -0.9 percentage points.",
+      "finding_type": "labour_efficiency_metric",
+      "metrics": {
+        "labour_cost_pct_previous": {
+          "value": 12.3,
+          "unit": "percent",
+          "numerator": 5800.0,
+          "denominator": 47269.1,
+          "period_start": "2026-03-30T03:00:00+03:00",
+          "period_end": "2026-04-06T03:00:00+03:00"
+        },
+        "labour_cost_pct_analysis": {
+          "value": 11.4,
+          "unit": "percent",
+          "numerator": 5272.0,
+          "denominator": 46358.8,
+          "period_start": "2026-04-06T03:00:00+03:00",
+          "period_end": "2026-04-13T03:00:00+03:00"
+        },
+        "labour_cost_pct_change": {
+          "value": -0.9,
+          "unit": "percentage_points",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-30T03:00:00+03:00",
+          "period_end": "2026-04-13T03:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "staff"
+      ],
+      "sample_size": 30,
+      "coverage_notes": [
+        "Analysis period staff records: 30",
+        "Previous period staff records: 34",
+        "Labour cost includes all shifts in period with computed_duration_hours",
+        "Revenue calculated from non-refund POS transactions"
+      ],
+      "assumptions": [
+        "Labour cost ratio = total labour cost / total revenue (non-refunds)",
+        "No imputation for missing staff records",
+        "Comparison periods may have different day-of-week distributions"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Known Product Waste Rate Increased",
+      "claim": "Known waste rate increased from 18.0% to 18.8%, with known waste cost of 995.50 SAR in analysis period.",
+      "finding_type": "waste_metric",
+      "metrics": {
+        "waste_rate_previous": {
+          "value": 0.1804,
+          "unit": "ratio",
+          "numerator": 153.0,
+          "denominator": 848.0,
+          "period_start": "2026-03-30T03:00:00+03:00",
+          "period_end": "2026-04-06T03:00:00+03:00"
+        },
+        "waste_rate_analysis": {
+          "value": 0.1881,
+          "unit": "ratio",
+          "numerator": 161.0,
+          "denominator": 856.0,
+          "period_start": "2026-04-06T03:00:00+03:00",
+          "period_end": "2026-04-13T03:00:00+03:00"
+        },
+        "waste_cost_analysis": {
+          "value": 995.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T03:00:00+03:00",
+          "period_end": "2026-04-13T03:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period inventory records: 6 SKUs",
+        "Previous period inventory records: 6 SKUs",
+        "Waste rate = units_wasted / (units_sold + units_wasted)",
+        "Known waste cost from inventory.known_waste_cost_sar column",
+        "Unknown waste values preserved; only known waste included"
+      ],
+      "assumptions": [
+        "Inventory counts reflect weekly aggregates, not real-time stock",
+        "Known waste is deterministic; unknown waste excluded from rate calculation",
+        "Units sold and wasted are accurate for the week"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

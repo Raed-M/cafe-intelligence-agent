@@ -1,0 +1,149 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Transaction Count Decline Week-over-Week",
+      "claim": "Valid transaction count declined 7.38% from 1124 baskets in the previous week to 1041 baskets in the analysis week (Feb 23 - Mar 2, 2026).",
+      "finding_type": "transaction_volume",
+      "metrics": {
+        "analysis_period_transactions": {
+          "value": 1041,
+          "unit": "baskets",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "previous_period_transactions": {
+          "value": 1124,
+          "unit": "baskets",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "transaction_change_pct": {
+          "value": -7.38,
+          "unit": "%",
+          "numerator": -83,
+          "denominator": 1124,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1041,
+      "coverage_notes": [
+        "Refunds excluded from transaction count (is_refund == False)",
+        "Transaction count based on unique transaction_id values",
+        "Periods are adjacent 7-day windows",
+        "All valid transactions included in denominator"
+      ],
+      "assumptions": [
+        "is_refund flag correctly identifies refund transactions",
+        "transaction_id uniquely identifies a basket",
+        "timestamp_utc correctly converts to local time for period filtering"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Largest Category Revenue Change: iced_other",
+      "claim": "The iced_other category experienced the largest revenue change at -16.01%, declining from 652.65 SAR to 548.15 SAR between the previous week and analysis week.",
+      "finding_type": "category_mix",
+      "metrics": {
+        "analysis_period_category_revenue": {
+          "value": 548.15,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "previous_period_category_revenue": {
+          "value": 652.65,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "category_revenue_change_pct": {
+          "value": -16.01,
+          "unit": "%",
+          "numerator": -104.5,
+          "denominator": 652.65,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 26,
+      "coverage_notes": [
+        "Refunds excluded from category revenue (is_refund == False)",
+        "Category totals based on line_total_sar sum",
+        "Periods are adjacent 7-day windows",
+        "All categories with sales in either period included in comparison"
+      ],
+      "assumptions": [
+        "category field correctly classifies products",
+        "is_refund flag correctly identifies refund transactions",
+        "line_total_sar represents net revenue per line item"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Largest SKU Revenue Change: V60 Filter",
+      "claim": "SKU HOT-004 (V60 Filter) showed the largest revenue change at -34.13%, moving from 2955.70 SAR to 1947.00 SAR between the previous week and analysis week.",
+      "finding_type": "product_performance",
+      "metrics": {
+        "analysis_period_sku_revenue": {
+          "value": 1947.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-23T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        },
+        "previous_period_sku_revenue": {
+          "value": 2955.7,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-02-23T00:00:00+03:00"
+        },
+        "sku_revenue_change_pct": {
+          "value": -34.13,
+          "unit": "%",
+          "numerator": -1008.7,
+          "denominator": 2955.7,
+          "period_start": "2026-02-16T00:00:00+03:00",
+          "period_end": "2026-03-02T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 84,
+      "coverage_notes": [
+        "Refunds excluded from SKU revenue (is_refund == False)",
+        "SKU revenue based on line_total_sar sum",
+        "Only SKUs active in both periods included",
+        "Periods are adjacent 7-day windows",
+        "Menu join used to verify product names and launch/retire dates"
+      ],
+      "assumptions": [
+        "sku field correctly identifies products",
+        "is_refund flag correctly identifies refund transactions",
+        "line_total_sar represents net revenue per line item",
+        "Product was active (post-launch, pre-retire) in both periods"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

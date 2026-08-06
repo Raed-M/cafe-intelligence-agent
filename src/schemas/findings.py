@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, TypedDict
+from typing import Any, Literal, TypedDict
 
 from src.schemas.artifacts import ArtifactRef
 
@@ -44,6 +44,12 @@ class RevisionRequest(TypedDict):
     finding_id: str
     analyst_name: str
     reason_code: str
+    explanation: str
+    required_fix: str
+
+
+class SemanticReviewResult(TypedDict):
+    decision: Literal["approve", "revise", "reject", "insufficient_evidence"]
     explanation: str
     required_fix: str
 

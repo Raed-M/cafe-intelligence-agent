@@ -1,0 +1,166 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution and Average (Feb 9-16, 2026)",
+      "claim": "During the analysis period, customers provided 21 reviews with an average rating of 4.19 out of 5. Rating distribution shows {1: 1, 2: 1, 3: 1, 4: 8, 5: 10} across the scale.",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.19,
+          "unit": "stars",
+          "numerator": 21,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "english_reviews": {
+          "value": 17,
+          "unit": "count",
+          "numerator": 17,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-02-09 to 2026-02-16",
+        "Total reviews in dataset: 520",
+        "Reviews in analysis period: 21",
+        "Language coverage: en: 17, ar: 4"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Date filtering uses UTC+3 timezone as specified",
+        "All reviews in the period are included regardless of source"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Classification by Language (Feb 9-16, 2026)",
+      "claim": "Sentiment analysis of 21 reviews shows 18 positive (rating ≥4), 1 neutral (rating=3), and 2 negative (rating <3) reviews. Distribution varies by language.",
+      "finding_type": "sentiment_classification",
+      "metrics": {
+        "positive_reviews": {
+          "value": 18,
+          "unit": "count",
+          "numerator": 18,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "neutral_reviews": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "positive_sentiment_rate": {
+          "value": 85.7,
+          "unit": "percent",
+          "numerator": 18,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Sentiment classification based on rating thresholds: positive (≥4), neutral (=3), negative (<3)",
+        "Language distribution: {'en': np.int64(17), 'ar': np.int64(4)}",
+        "All reviews in analysis period included"
+      ],
+      "assumptions": [
+        "Sentiment classification uses rating-based thresholds",
+        "Rating values are numeric and valid",
+        "No text analysis performed; classification based solely on numeric rating"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Review Volume Comparison (Week-over-Week)",
+      "claim": "Review volume in the analysis period (Feb 9-16) was 21 compared to 15 in the previous week (Feb 2-9), representing a +40.0% change.",
+      "finding_type": "volume_trend",
+      "metrics": {
+        "analysis_period_reviews": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": null,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "previous_period_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "week_over_week_change": {
+          "value": 40.0,
+          "unit": "percent",
+          "numerator": 6,
+          "denominator": 15,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 36,
+      "coverage_notes": [
+        "Analysis period: 2026-02-09 to 2026-02-16 (21 reviews)",
+        "Previous period: 2026-02-02 to 2026-02-09 (15 reviews)",
+        "Total reviews in dataset: 520"
+      ],
+      "assumptions": [
+        "Date filtering uses UTC+3 timezone",
+        "Week-over-week comparison uses consecutive 7-day periods",
+        "All reviews in both periods are included"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

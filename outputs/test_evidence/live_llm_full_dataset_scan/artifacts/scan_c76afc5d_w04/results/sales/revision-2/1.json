@@ -1,0 +1,292 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Revenue and Transaction Performance vs Previous Week",
+      "claim": "Analysis week (Feb 2-9, 2026) generated 45431.05 SAR in net revenue across 1318 transactions, representing a -4.9% change in revenue and -7.0% change in transaction count compared to the previous week (Jan 26-Feb 2, 2026).",
+      "finding_type": "revenue_and_transaction_performance",
+      "metrics": {
+        "analysis_period_revenue": {
+          "value": 45431.05,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "analysis_period_transactions": {
+          "value": 1318,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 47774.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "previous_period_transactions": {
+          "value": 1417,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "revenue_change_sar": {
+          "value": -2343.85,
+          "unit": "SAR",
+          "numerator": -2343.85,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "revenue_pct_change": {
+          "value": -4.91,
+          "unit": "%",
+          "numerator": -2343.85,
+          "denominator": 47774.9,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "transaction_change": {
+          "value": -99,
+          "unit": "count",
+          "numerator": -99,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "transaction_pct_change": {
+          "value": -6.99,
+          "unit": "%",
+          "numerator": -99,
+          "denominator": 1417,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "analysis_aov": {
+          "value": 34.47,
+          "unit": "SAR",
+          "numerator": 45431.05,
+          "denominator": 1318,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "previous_aov": {
+          "value": 33.72,
+          "unit": "SAR",
+          "numerator": 47774.9,
+          "denominator": 1417,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "aov_change": {
+          "value": 0.75,
+          "unit": "SAR",
+          "numerator": 0.75,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2282,
+      "coverage_notes": [
+        "Revenue includes refunds as negative line items (net calculation)",
+        "Transaction count based on unique transaction_id values",
+        "AOV calculated as total revenue divided by transaction count",
+        "Analysis period contains 15 refund line items totaling -292.00 SAR",
+        "Previous period contains 18 refund line items totaling -356.60 SAR"
+      ],
+      "assumptions": [
+        "line_total_sar represents net realized revenue including refunds",
+        "Each unique transaction_id represents one customer basket",
+        "Refunds are included as negative values in line_total_sar",
+        "Periods are non-overlapping and aligned to calendar weeks"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Category Performance: hot_coffee Revenue Change",
+      "claim": "The hot_coffee category generated 15225.55 SAR in the analysis week (Feb 2-9, 2026) compared to 16656.50 SAR in the previous week (Jan 26-Feb 2, 2026), representing a -8.6% change. Transaction count changed from 708 to 649 transactions (-8.3% change).",
+      "finding_type": "category_performance",
+      "metrics": {
+        "category_name": {
+          "value": "hot_coffee",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "analysis_revenue": {
+          "value": 15225.55,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "previous_revenue": {
+          "value": 16656.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "revenue_change": {
+          "value": -1430.95,
+          "unit": "SAR",
+          "numerator": -1430.95,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "revenue_pct_change": {
+          "value": -8.59,
+          "unit": "%",
+          "numerator": -1430.95,
+          "denominator": 16656.5,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "analysis_transactions": {
+          "value": 649,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "previous_transactions": {
+          "value": 708,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "transaction_pct_change": {
+          "value": -8.33,
+          "unit": "%",
+          "numerator": -59,
+          "denominator": 708,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2282,
+      "coverage_notes": [
+        "Category-level analysis based on POS transaction data",
+        "Revenue includes refunds as negative line items",
+        "Transaction count represents unique transaction_id per category",
+        "Categories derived from cleaned POS data"
+      ],
+      "assumptions": [
+        "Category assignments are accurate in cleaned POS data",
+        "Revenue figures are net of refunds",
+        "Transactions are properly attributed to categories"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Channel Performance: dine_in Revenue Change",
+      "claim": "The dine_in channel generated 20209.85 SAR in the analysis week (Feb 2-9, 2026) compared to 21499.05 SAR in the previous week (Jan 26-Feb 2, 2026), representing a -6.0% change. Transaction count changed from 639 to 591 transactions (-7.5% change).",
+      "finding_type": "channel_performance",
+      "metrics": {
+        "channel_name": {
+          "value": "dine_in",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "analysis_revenue": {
+          "value": 20209.85,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "previous_revenue": {
+          "value": 21499.05,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "revenue_change": {
+          "value": -1289.2,
+          "unit": "SAR",
+          "numerator": -1289.2,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "revenue_pct_change": {
+          "value": -6.0,
+          "unit": "%",
+          "numerator": -1289.2,
+          "denominator": 21499.05,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "analysis_transactions": {
+          "value": 591,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        },
+        "previous_transactions": {
+          "value": 639,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-26T00:00:00+03:00",
+          "period_end": "2026-02-02T00:00:00+03:00"
+        },
+        "transaction_pct_change": {
+          "value": -7.51,
+          "unit": "%",
+          "numerator": -48,
+          "denominator": 639,
+          "period_start": "2026-02-02T00:00:00+03:00",
+          "period_end": "2026-02-09T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2282,
+      "coverage_notes": [
+        "Channel-level analysis based on POS transaction data",
+        "Revenue includes refunds as negative line items",
+        "Transaction count represents unique transaction_id per channel",
+        "Channels derived from cleaned POS data"
+      ],
+      "assumptions": [
+        "Channel assignments are accurate in cleaned POS data",
+        "Revenue figures are net of refunds",
+        "Transactions are properly attributed to channels"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

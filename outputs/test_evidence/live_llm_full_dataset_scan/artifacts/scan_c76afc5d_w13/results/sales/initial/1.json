@@ -1,0 +1,213 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Revenue and Transaction Performance Week-over-Week",
+      "claim": "Analysis week (Apr 6-13) generated SAR 46,358.80 in net revenue across 1366 transactions, compared to SAR 47,269.10 across 1411 transactions in the previous week. Revenue changed by SAR -910.30 (-1.9%), while transaction count changed by -45 (-3.2%). Average order value increased from SAR 33.50 to SAR 33.94, a change of SAR +0.44 (+1.3%).",
+      "finding_type": "revenue_and_transaction_analysis",
+      "metrics": {
+        "analysis_period_revenue": {
+          "value": 46358.8,
+          "unit": "SAR",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 47269.1,
+          "unit": "SAR",
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "revenue_change_absolute": {
+          "value": -910.3,
+          "unit": "SAR",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "revenue_change_percent": {
+          "value": -1.93,
+          "unit": "%",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "analysis_period_transactions": {
+          "value": 1366,
+          "unit": "count",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "previous_period_transactions": {
+          "value": 1411,
+          "unit": "count",
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "transaction_change_absolute": {
+          "value": -45,
+          "unit": "count",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "transaction_change_percent": {
+          "value": -3.19,
+          "unit": "%",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "analysis_aov": {
+          "value": 33.94,
+          "unit": "SAR",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "previous_aov": {
+          "value": 33.5,
+          "unit": "SAR",
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "aov_change": {
+          "value": 0.44,
+          "unit": "SAR",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2355,
+      "coverage_notes": [
+        "Analysis period: 2355 POS line items from 1366 unique transactions",
+        "Previous period: 2411 POS line items from 1411 unique transactions",
+        "Refunds excluded from revenue and transaction counts",
+        "Line totals used as reported in cleaned POS data"
+      ],
+      "assumptions": [
+        "business_date field accurately represents transaction date",
+        "is_refund flag correctly identifies refund transactions",
+        "line_total_sar represents net revenue after discounts",
+        "transaction_id uniquely identifies a basket/transaction"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Top Category Performance: hot_coffee",
+      "claim": "The hot_coffee category generated SAR 14,022.45 in the analysis week, up from SAR 15,096.65 in the previous week, representing a change of SAR -1,074.20 (-7.1%). This category's share of total revenue increased from 31.9% to 30.2%.",
+      "finding_type": "category_mix_analysis",
+      "metrics": {
+        "analysis_category_revenue": {
+          "value": 14022.45,
+          "unit": "SAR",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "previous_category_revenue": {
+          "value": 15096.65,
+          "unit": "SAR",
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "category_revenue_change": {
+          "value": -1074.2,
+          "unit": "SAR",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "category_revenue_change_percent": {
+          "value": -7.12,
+          "unit": "%",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "analysis_category_share": {
+          "value": 30.25,
+          "unit": "%",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "previous_category_share": {
+          "value": 31.94,
+          "unit": "%",
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2355,
+      "coverage_notes": [
+        "Analysis period category breakdown based on 2355 line items",
+        "Previous period category breakdown based on 2411 line items",
+        "Refunds excluded from category revenue calculations",
+        "Top category identified as: hot_coffee"
+      ],
+      "assumptions": [
+        "category field accurately represents product category",
+        "is_refund flag correctly identifies refund transactions",
+        "line_total_sar represents net revenue after discounts"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Top Channel Performance: dine_in",
+      "claim": "The dine_in channel generated SAR 20,245.40 in the analysis week, compared to SAR 19,778.75 in the previous week, representing a change of SAR +466.65 (+2.4%). This channel's share of total revenue changed from 41.8% to 43.7%.",
+      "finding_type": "channel_mix_analysis",
+      "metrics": {
+        "analysis_channel_revenue": {
+          "value": 20245.4,
+          "unit": "SAR",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "previous_channel_revenue": {
+          "value": 19778.75,
+          "unit": "SAR",
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        },
+        "channel_revenue_change": {
+          "value": 466.65,
+          "unit": "SAR",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "channel_revenue_change_percent": {
+          "value": 2.36,
+          "unit": "%",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "analysis_channel_share": {
+          "value": 43.67,
+          "unit": "%",
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "previous_channel_share": {
+          "value": 41.84,
+          "unit": "%",
+          "period_start": "2026-03-30T00:00:00+03:00",
+          "period_end": "2026-04-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2355,
+      "coverage_notes": [
+        "Analysis period channel breakdown based on 2355 line items",
+        "Previous period channel breakdown based on 2411 line items",
+        "Refunds excluded from channel revenue calculations",
+        "Top channel identified as: dine_in"
+      ],
+      "assumptions": [
+        "channel field accurately represents sales channel",
+        "is_refund flag correctly identifies refund transactions",
+        "line_total_sar represents net revenue after discounts"
+      ],
+      "confidence": 0.92
+    }
+  ]
+}

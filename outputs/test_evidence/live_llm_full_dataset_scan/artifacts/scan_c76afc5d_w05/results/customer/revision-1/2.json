@@ -1,0 +1,180 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution and Average (Analysis Period)",
+      "claim": "During 2026-02-09 to 2026-02-16, the average rating across 21 reviews was 4.19 out of 5, with 10 five-star, 8 four-star, 1 three-star, 1 two-star, and 1 one-star ratings.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.19,
+          "unit": "stars",
+          "numerator": 21,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 10,
+          "unit": "reviews",
+          "numerator": 10,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "four_star_count": {
+          "value": 8,
+          "unit": "reviews",
+          "numerator": 8,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "three_star_count": {
+          "value": 1,
+          "unit": "reviews",
+          "numerator": 1,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "two_star_count": {
+          "value": 1,
+          "unit": "reviews",
+          "numerator": 1,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 1,
+          "unit": "reviews",
+          "numerator": 1,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-02-09 to 2026-02-16",
+        "Total reviews in analysis period: 21",
+        "Language distribution: {'en': np.int64(17), 'ar': np.int64(4)}",
+        "Sources represented: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid (1-5 scale)",
+        "All reviews in the analysis period are included",
+        "No filtering applied beyond date range"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Of 21 reviews in the analysis period, 17 were in English and 4 were in Arabic.",
+      "finding_type": "language_distribution",
+      "metrics": {
+        "english_reviews": {
+          "value": 17,
+          "unit": "reviews",
+          "numerator": 17,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 4,
+          "unit": "reviews",
+          "numerator": 4,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "english_percentage": {
+          "value": 81.0,
+          "unit": "percent",
+          "numerator": 17,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "arabic_percentage": {
+          "value": 19.0,
+          "unit": "percent",
+          "numerator": 4,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-02-09 to 2026-02-16",
+        "Total reviews analyzed: 21"
+      ],
+      "assumptions": [
+        "Language field is accurately populated",
+        "Language values are either 'en' or 'ar'"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Review Source Distribution",
+      "claim": "During the analysis period, reviews came from 3 source(s): google (15 reviews), talabat (4 reviews), instagram (2 reviews).",
+      "finding_type": "source_distribution",
+      "metrics": {
+        "google_count": {
+          "value": 15,
+          "unit": "reviews",
+          "numerator": 15,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "talabat_count": {
+          "value": 4,
+          "unit": "reviews",
+          "numerator": 4,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        },
+        "instagram_count": {
+          "value": 2,
+          "unit": "reviews",
+          "numerator": 2,
+          "denominator": 21,
+          "period_start": "2026-02-09T00:00:00+03:00",
+          "period_end": "2026-02-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-02-09 to 2026-02-16",
+        "Total reviews: 21",
+        "Number of sources: 3",
+        "Sources: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Source field is accurately populated",
+        "All reviews in the analysis period are included"
+      ],
+      "confidence": 1.0
+    }
+  ]
+}

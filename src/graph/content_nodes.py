@@ -67,6 +67,7 @@ def validate_content_node(state: CafeIntelligenceState) -> dict[str, Any]:
     validation = validate_content_ideas(
         ideas, state.get("final_findings", []), state["context_bundle"], active_skus,
         config.raw_profile.opening_hours, stock_risk,
+        model_name=config.app_settings.models.content_validator,
     )
     attempts = state.get("content_repair_attempts", 0)
     return {"content_validation": validation, "content_repair_attempts": attempts, "step_count": 1}

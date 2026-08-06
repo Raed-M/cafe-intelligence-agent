@@ -1,0 +1,159 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "Average rating is 4.33 out of 5 across 15 reviews in the analysis period (2026-04-06 to 2026-04-13). Rating distribution shows 9 five-star, 4 four-star, 0 three-star, 2 two-star, and 0 one-star reviews.",
+      "finding_type": "customer_sentiment",
+      "metrics": {
+        "average_rating": {
+          "value": 4.33,
+          "unit": "stars",
+          "numerator": 65.0,
+          "denominator": 15,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 9,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Reviews from 3 sources",
+        "Language distribution: {'en': 8, 'ar': 7}",
+        "Analysis period: 2026-04-06 to 2026-04-13"
+      ],
+      "assumptions": [
+        "Rating scale is 1-5 stars",
+        "All reviews in the dataset are valid and complete",
+        "Review dates are accurate and in the specified timezone"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "title": "Sentiment Classification (Analysis Period)",
+      "claim": "Sentiment analysis of 15 reviews shows 13 positive (86.7%), 0 neutral (0.0%), and 2 negative (13.3%) reviews based on rating thresholds (4-5 stars = positive, 3 = neutral, 1-2 = negative).",
+      "finding_type": "customer_sentiment",
+      "metrics": {
+        "positive_reviews": {
+          "value": 13,
+          "unit": "count",
+          "numerator": 13,
+          "denominator": 15,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 15,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "neutral_reviews": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "positive_percentage": {
+          "value": 86.7,
+          "unit": "percent",
+          "numerator": 13,
+          "denominator": 15,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Sentiment classification based on rating thresholds",
+        "Language distribution: {'en': 8, 'ar': 7}",
+        "All 15 reviews classified"
+      ],
+      "assumptions": [
+        "Rating 4-5 = positive sentiment",
+        "Rating 3 = neutral sentiment",
+        "Rating 1-2 = negative sentiment",
+        "No text analysis required for sentiment classification"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "title": "Most Mentioned Topics in Reviews (Analysis Period)",
+      "claim": "Topic analysis of 15 reviews identifies 5 distinct topics. Most frequently mentioned: taste (6 mentions), quality (4 mentions), temperature (2 mentions). Topics extracted from review text using keyword matching in both English and Arabic.",
+      "finding_type": "customer_feedback_themes",
+      "metrics": {
+        "total_topics_identified": {
+          "value": 5,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        },
+        "top_topic_mentions": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": 15,
+          "period_start": "2026-04-06T00:00:00+03:00",
+          "period_end": "2026-04-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Topics extracted from 15 reviews with text",
+        "Language distribution: {'en': 8, 'ar': 7}",
+        "Topic keywords matched in both English and Arabic"
+      ],
+      "assumptions": [
+        "Topic extraction uses predefined keyword lists",
+        "Multiple topics can be identified in a single review",
+        "Keyword matching is case-insensitive",
+        "Topics are language-agnostic (same keywords searched in both languages)"
+      ],
+      "confidence": 0.6
+    }
+  ]
+}

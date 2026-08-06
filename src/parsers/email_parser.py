@@ -1,21 +1,22 @@
 """Supplier email ingestion.
 
 Headers (From/Date/Subject) are parsed deterministically. Body facts are extracted
-using an LLM (see prompts/email_extractor.md) when OPENAI_API_KEY is configured;
-otherwise a deterministic regex-based fallback extractor runs so the system still
-produces evidence-backed facts offline. The fallback is always disclosed via a
-warning and a lower confidence band -- never silently treated as equal quality.
+using an LLM (see prompts/email_extractor.md) when the active LLM_PROVIDER's API key
+is configured; otherwise a deterministic regex-based fallback extractor runs so the
+system still produces evidence-backed facts offline. The fallback is always disclosed
+via a warning and a lower confidence band -- never silently treated as equal quality.
 """
 from __future__ import annotations
 
 import glob
-import os
 import re
 from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 import pandas as pd
+
+from src.tools.llm_factory import has_provider_key
 
 from src.config.source_registry import SourceConfig
 from src.parsers.base import RunContext
@@ -120,33 +121,54 @@ def _extract_deterministic(email_file: str, parsed: dict[str, Any]) -> list[dict
     return facts
 
 
+def _normalize_facts_field(value: Any) -> list[str]:
+    """The model is instructed to return facts as list[str], but in practice
+    sometimes returns a bare string or a list of {"fact": ...} objects. This
+    normalizes either shape to list[str] so every row has a uniform column
+    type -- pyarrow otherwise raises on a mixed str/list "facts" column."""
+    if value is None:
+        return []
+    if isinstance(value, str):
+        return [value]
+    if isinstance(value, list):
+        out = []
+        for item in value:
+            if isinstance(item, str):
+                out.append(item)
+            elif isinstance(item, dict):
+                out.append(str(item.get("fact") or item.get("evidence_text") or item))
+            else:
+                out.append(str(item))
+        return out
+    return [str(value)]
+
+
 def _extract_with_llm(email_file: str, parsed: dict[str, Any], model_name: str) -> list[dict[str, Any]] | None:
-    if not os.environ.get("OPENAI_API_KEY"):
+    if not has_provider_key():
         return None
     try:
+        from src.schemas.emails import EmailExtractionOutput
         from src.tools.llm_factory import get_chat_model
 
         prompt_path = Path("prompts/email_extractor.md")
         system_prompt = prompt_path.read_text(encoding="utf-8") if prompt_path.exists() else (
-            "Extract structured supplier-email facts. Return JSON list of facts."
+            "Extract structured supplier-email facts."
         )
         llm = get_chat_model(model_name, temperature=0)
+        structured_llm = llm.with_structured_output(EmailExtractionOutput)
         user_content = (
             f"email_file: {email_file}\nsender: {parsed['sender']}\ndate: {parsed['date']}\n"
             f"subject: {parsed['subject']}\nbody:\n{parsed['body']}\n\n"
-            "Return a JSON array of fact objects matching the EmailExtractionOutput schema "
+            "Extract one or more facts into `items`, each matching the fact schema "
             "(email_file, sender, date, subject, category, entity_or_ingredient, old_price, "
             "new_price, currency, unit, effective_date, event_start, event_end, location, "
             "facts, confidence, evidence_text). Use null for absent fields."
         )
-        resp = llm.invoke([("system", system_prompt), ("user", user_content)])
-        import json as _json
-
-        content = resp.content if isinstance(resp.content, str) else str(resp.content)
-        match = re.search(r"\[.*\]", content, re.DOTALL)
-        raw = _json.loads(match.group(0) if match else content)
+        result = structured_llm.invoke([("system", system_prompt), ("user", user_content)])
+        raw = result["items"] if isinstance(result, dict) else result.items  # type: ignore[union-attr]
         for r in raw:
             r["extraction_mode"] = "llm"
+            r["facts"] = _normalize_facts_field(r.get("facts"))  # belt-and-suspenders, see docstring above
         return raw
     except Exception:  # noqa: BLE001
         return None
@@ -159,7 +181,7 @@ def parse_emails(source: SourceConfig, ctx: RunContext) -> SourceResult:
     all_facts: list[dict[str, Any]] = []
     failed_files: list[str] = []
 
-    model_name = ctx.config.app_settings.models.content
+    model_name = ctx.config.app_settings.models.email_extractor
 
     for fpath in files:
         try:

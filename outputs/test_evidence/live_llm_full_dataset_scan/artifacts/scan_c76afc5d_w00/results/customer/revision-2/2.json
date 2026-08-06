@@ -1,0 +1,174 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Rating Distribution and Average (Analysis Period)",
+      "claim": "During the analysis period (2026-01-05 to 2026-01-12), the average rating across 14 reviews is 4.43 out of 5, with distribution: {3: 1, 4: 6, 5: 7}. Language coverage: {'ar': 7, 'en': 7}.",
+      "finding_type": "customer_satisfaction_metric",
+      "metrics": {
+        "average_rating": {
+          "value": 4.43,
+          "unit": "stars",
+          "numerator": "62",
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 14,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "rating_5_star_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "rating_4_star_count": {
+          "value": 6,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "rating_3_star_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "rating_2_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "rating_1_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "english_reviews": {
+          "value": 7,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 7,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Analysis period: 2026-01-05 to 2026-01-12 (7 days)",
+        "Total reviews in analysis period: 14",
+        "Language distribution: {'ar': 7, 'en': 7}",
+        "Sources represented: ['google', 'talabat']"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid (1-5 scale)",
+        "Date field is accurate and timezone-aware",
+        "Language field correctly identifies review language"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution by Language",
+      "claim": "During the analysis period, sentiment distribution across 14 reviews shows: {'positive': 13, 'neutral': 1}. English reviews: 7, Arabic reviews: 7.",
+      "finding_type": "sentiment_analysis",
+      "metrics": {
+        "positive_sentiment_count": {
+          "value": 13,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "neutral_sentiment_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "negative_sentiment_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "english_review_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "arabic_review_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "positive_sentiment_percentage": {
+          "value": 92.9,
+          "unit": "percent",
+          "numerator": 13,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Sentiment classified based on rating: 4-5 stars = positive, 3 stars = neutral, 1-2 stars = negative",
+        "English reviews: 7 (50.0%)",
+        "Arabic reviews: 7 (50.0%)",
+        "Topics identified via keyword matching (not exhaustive)"
+      ],
+      "assumptions": [
+        "Rating-based sentiment classification is appropriate",
+        "Text field contains meaningful review content",
+        "Language field correctly identifies review language",
+        "Keyword matching captures main topics discussed"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

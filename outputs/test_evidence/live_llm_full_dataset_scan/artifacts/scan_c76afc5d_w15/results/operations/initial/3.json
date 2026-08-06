@@ -1,0 +1,155 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Comparison",
+      "claim": "Conversion rate in analysis week (Apr 20-27) was 0.2505 vs 0.2295 in previous week, a change of +0.0210",
+      "finding_type": "performance_metric",
+      "metrics": {
+        "conversion_rate_analysis": {
+          "value": 0.2505,
+          "unit": "transactions_per_visitor",
+          "numerator": 1339,
+          "denominator": 5345,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "conversion_rate_previous": {
+          "value": 0.2295,
+          "unit": "transactions_per_visitor",
+          "numerator": 1257,
+          "denominator": 5476,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "conversion_change": {
+          "value": 0.021,
+          "unit": "transactions_per_visitor",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 1339,
+      "coverage_notes": [
+        "Analysis period: 7 valid traffic days (dead sensor days excluded)",
+        "Previous period: 7 valid traffic days (dead sensor days excluded)",
+        "Transactions counted using transaction_id (refunds excluded)"
+      ],
+      "assumptions": [
+        "Dead sensor days excluded from traffic denominator",
+        "Refunds excluded from transaction count",
+        "Timezone: Asia/Riyadh (UTC+3)"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Labour Cost Efficiency",
+      "claim": "Labour cost as % of revenue was 13.58% in analysis week vs 13.77% in previous week, a change of -0.19 percentage points",
+      "finding_type": "cost_efficiency",
+      "metrics": {
+        "labour_cost_pct_analysis": {
+          "value": 13.58,
+          "unit": "percent",
+          "numerator": 6296.0,
+          "denominator": 46359.2,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "labour_cost_pct_previous": {
+          "value": 13.77,
+          "unit": "percent",
+          "numerator": 5952.0,
+          "denominator": 43237.05,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "labour_cost_pct_change": {
+          "value": -0.19,
+          "unit": "percentage_points",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "staff",
+        "pos"
+      ],
+      "sample_size": 7,
+      "coverage_notes": [
+        "Analysis period: 7 days with staff data",
+        "Previous period: 7 days with staff data",
+        "Revenue calculated from non-refund transactions",
+        "Labour cost from staff.labour_cost_sar"
+      ],
+      "assumptions": [
+        "Labour cost includes computed_duration_hours * hourly_rate_sar",
+        "Revenue excludes refunds and includes discounts as negative",
+        "Timezone: Asia/Riyadh (UTC+3)"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Inventory Waste Rate",
+      "claim": "Waste rate (units wasted / total units) was 0.1843 (18.43%) in analysis week vs 0.1881 (18.81%) in previous week, a change of -0.0038",
+      "finding_type": "waste_metric",
+      "metrics": {
+        "waste_rate_analysis": {
+          "value": 0.1843,
+          "unit": "ratio",
+          "numerator": 157,
+          "denominator": 852,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "waste_rate_previous": {
+          "value": 0.1881,
+          "unit": "ratio",
+          "numerator": 161,
+          "denominator": 856,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "waste_cost_analysis": {
+          "value": 922.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-20T00:00:00+03:00",
+          "period_end": "2026-04-27T00:00:00+03:00"
+        },
+        "waste_cost_previous": {
+          "value": 995.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: 6 SKUs tracked",
+        "Previous period: 6 SKUs tracked",
+        "Waste cost calculated from known_waste_cost_sar (unknown waste excluded)",
+        "Units wasted includes only known waste values"
+      ],
+      "assumptions": [
+        "Inventory counts are weekly snapshots (week_starting date)",
+        "Known waste cost is deterministic; unknown waste excluded per requirements",
+        "Waste rate = units_wasted / (units_sold + units_wasted)"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

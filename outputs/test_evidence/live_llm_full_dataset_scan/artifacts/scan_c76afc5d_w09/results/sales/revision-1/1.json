@@ -1,0 +1,124 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Net Revenue Change: Analysis Week vs Previous Week",
+      "claim": "Net revenue in analysis week (Mar 9-16) was SAR 36947.85, compared to SAR 40310.20 in previous week (Mar 2-9), representing a change of SAR -3362.35 (-8.3%).",
+      "finding_type": "revenue_change",
+      "metrics": {
+        "net_revenue_analysis": {
+          "value": 36947.85,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "net_revenue_previous": {
+          "value": 40310.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00+03:00",
+          "period_end": "2026-03-09T00:00:00+03:00"
+        },
+        "revenue_change_sar": {
+          "value": -3362.35,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": -8.3,
+          "unit": "%",
+          "numerator": -3362.35,
+          "denominator": 40310.2,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1917,
+      "coverage_notes": [
+        "Analysis period: 2026-03-09 to 2026-03-16",
+        "Previous period: 2026-03-02 to 2026-03-09",
+        "Refunds included in net revenue calculation",
+        "Analysis period transaction count: 1088",
+        "Previous period transaction count: 1169"
+      ],
+      "assumptions": [
+        "line_total_sar represents net realized revenue including refunds",
+        "transaction_id uniqueness defines basket count",
+        "Timestamp filtering uses UTC+3 timezone as provided"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Category Mix Shift: hot_coffee",
+      "claim": "The hot_coffee category represented 28.4% of revenue in analysis week (SAR 10483.15), compared to 30.3% in previous week (SAR 12212.50), a shift of -1.9 percentage points.",
+      "finding_type": "category_mix_shift",
+      "metrics": {
+        "category_pct_analysis": {
+          "value": 28.4,
+          "unit": "%",
+          "numerator": 10483.15,
+          "denominator": 36947.85,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "category_pct_previous": {
+          "value": 30.3,
+          "unit": "%",
+          "numerator": 12212.5,
+          "denominator": 40310.2,
+          "period_start": "2026-03-02T00:00:00+03:00",
+          "period_end": "2026-03-09T00:00:00+03:00"
+        },
+        "category_revenue_analysis": {
+          "value": 10483.15,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        },
+        "category_revenue_previous": {
+          "value": 12212.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-03-02T00:00:00+03:00",
+          "period_end": "2026-03-09T00:00:00+03:00"
+        },
+        "pct_point_change": {
+          "value": -1.9,
+          "unit": "percentage points",
+          "numerator": -1.9,
+          "denominator": null,
+          "period_start": "2026-03-09T00:00:00+03:00",
+          "period_end": "2026-03-16T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1917,
+      "coverage_notes": [
+        "Analysis period total revenue: SAR 36947.85",
+        "Previous period total revenue: SAR 40310.20",
+        "Category percentages calculated from net revenue (refunds included)",
+        "Top category in analysis period: hot_coffee"
+      ],
+      "assumptions": [
+        "Category mix percentages use total net revenue as denominator",
+        "Refunds are included in both numerator and denominator",
+        "Category assignment from POS data is authoritative"
+      ],
+      "confidence": 0.92
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During 2026-01-05T00:00:00+03:00 to 2026-01-12T00:00:00+03:00, 14 reviews were collected with an average rating of 4.43 out of 5.0.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "total_reviews": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": null,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "average_rating": {
+          "value": 4.43,
+          "unit": "stars",
+          "numerator": 62.0,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Reviews filtered to analysis period 2026-01-05T00:00:00+03:00 to 2026-01-12T00:00:00+03:00",
+        "Sources represented: google, talabat",
+        "Language distribution: {'ar': np.int64(7), 'en': np.int64(7)}"
+      ],
+      "assumptions": [
+        "Rating values are valid integers between 1 and 5",
+        "Date field is accurate and timezone-aware",
+        "All reviews in artifact are from valid sources"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution by Language",
+      "claim": "Among 14 reviews in the analysis period, sentiment distribution shows 13 positive, 1 neutral, and 0 negative reviews. English reviews: 7, Arabic reviews: 7.",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "positive_reviews": {
+          "value": 13,
+          "unit": "count",
+          "numerator": 13,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "neutral_reviews": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "english_reviews": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "Sentiment classified by rating threshold: 4-5 stars = positive, 3 stars = neutral, 1-2 stars = negative",
+        "Language coverage: 7 English, 7 Arabic",
+        "All reviews in analysis period 2026-01-05T00:00:00+03:00 to 2026-01-12T00:00:00+03:00"
+      ],
+      "assumptions": [
+        "Rating-based sentiment classification is appropriate for this dataset",
+        "Language field is accurately populated",
+        "No reviews have missing rating values in analysis period"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "High vs Low Rating Review Frequency",
+      "claim": "In the analysis period, 13 reviews (92.9%) were rated 4-5 stars (high satisfaction), while 0 reviews (0.0%) were rated 1-2 stars (low satisfaction).",
+      "finding_type": "rating_frequency",
+      "metrics": {
+        "high_rating_count": {
+          "value": 13,
+          "unit": "count",
+          "numerator": 13,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "high_rating_percentage": {
+          "value": 92.9,
+          "unit": "percent",
+          "numerator": 13,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "low_rating_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        },
+        "low_rating_percentage": {
+          "value": 0.0,
+          "unit": "percent",
+          "numerator": 0,
+          "denominator": 14,
+          "period_start": "2026-01-05T00:00:00+03:00",
+          "period_end": "2026-01-12T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat"
+      ],
+      "sample_size": 14,
+      "coverage_notes": [
+        "High rating defined as 4-5 stars, low rating as 1-2 stars",
+        "Analysis period: 2026-01-05T00:00:00+03:00 to 2026-01-12T00:00:00+03:00",
+        "Total reviews analyzed: 14"
+      ],
+      "assumptions": [
+        "Rating scale is 1-5 stars",
+        "High and low rating thresholds are appropriate for business context",
+        "All reviews have valid rating values"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

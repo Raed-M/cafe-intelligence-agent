@@ -1,0 +1,137 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Item-level Gross Profit Contribution & Cafe Margin",
+      "claim": "Top item by gross profit contribution: Spanish Latte (SAR 2937.20, 70.9% margin). Overall cafe gross margin: 70.1% (SAR 30310.25 on SAR 43237.05 revenue). Item-level costs based on menu unit costs rather than recipe-level ingredient analysis.",
+      "finding_type": "margin_analysis",
+      "metrics": {
+        "top_item_1_name": {
+          "value": "Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "top_item_1_gross_profit_sar": {
+          "value": 2937.2,
+          "unit": "SAR",
+          "numerator": 2937.2,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "top_item_1_margin_pct": {
+          "value": 70.9,
+          "unit": "%",
+          "numerator": 70.9,
+          "denominator": 100,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "overall_gross_profit_sar": {
+          "value": 30310.25,
+          "unit": "SAR",
+          "numerator": 30310.25,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "overall_gross_margin_pct": {
+          "value": 70.1,
+          "unit": "%",
+          "numerator": 70.1,
+          "denominator": 100,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "total_revenue_sar": {
+          "value": 43237.05,
+          "unit": "SAR",
+          "numerator": 43237.05,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "total_cogs_sar": {
+          "value": 12926.8,
+          "unit": "SAR",
+          "numerator": 12926.8,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2115,
+      "coverage_notes": [
+        "19 of 19 items sold have menu unit cost data",
+        "Analysis period: 2026-04-13T00:00:00+03:00 to 2026-04-20T00:00:00+03:00",
+        "Refunds excluded from revenue and profit calculations"
+      ],
+      "assumptions": [
+        "Item-level unit costs sourced from menu.unit_cost_sar applied uniformly across all sales",
+        "No recipe/BOM data available; per-drink ingredient costs not calculated",
+        "Line totals used as-is from POS; discount_sar already reflected in line_total_sar"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Waste Cost Impact on COGS",
+      "claim": "Quantified waste cost: SAR 995.50 across 6 items (161 units). Waste represents 7.70% of total COGS. Only non-null waste observations included.",
+      "finding_type": "waste_analysis",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 995.5,
+          "unit": "SAR",
+          "numerator": 995.5,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "waste_items_count": {
+          "value": 6,
+          "unit": null,
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "total_units_wasted": {
+          "value": 161.0,
+          "unit": "units",
+          "numerator": 161.0,
+          "denominator": null,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        },
+        "waste_pct_of_cogs": {
+          "value": 7.7,
+          "unit": "%",
+          "numerator": 7.7,
+          "denominator": 100,
+          "period_start": "2026-04-13T00:00:00+03:00",
+          "period_end": "2026-04-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Only inventory records with non-null known_waste_cost_sar included",
+        "Analysis period: 2026-04-13T00:00:00+03:00 to 2026-04-20T00:00:00+03:00",
+        "Blank waste values treated as missing, not zero"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar values are accurate and complete for reported waste",
+        "Waste cost is incremental to COGS and represents lost margin"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

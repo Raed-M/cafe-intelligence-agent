@@ -1,0 +1,232 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution and Average (Analysis Period)",
+      "claim": "During the analysis period (2026-05-04T00:00:00+03:00 to 2026-05-11T00:00:00+03:00), 15 reviews were collected with an average rating of 3.67 out of 5. Rating distribution shows {1: 1, 2: 3, 3: 2, 4: 3, 5: 6}. Language coverage: {'en': 10, 'ar': 5}.",
+      "finding_type": "voice_of_customer_metric",
+      "metrics": {
+        "total_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "average_rating": {
+          "value": 3.67,
+          "unit": "stars",
+          "numerator": 55.0,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "rating_5_count": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "rating_4_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "rating_3_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "rating_2_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "rating_1_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "english_reviews": {
+          "value": 10,
+          "unit": "count",
+          "numerator": 10,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 5,
+          "unit": "count",
+          "numerator": 5,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Analysis period: 2026-05-04T00:00:00+03:00 to 2026-05-11T00:00:00+03:00",
+        "Total reviews in analysis period: 15",
+        "Sources represented: google, instagram, talabat",
+        "Language distribution: English=10, Arabic=5"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid (1-5 scale)",
+        "Review dates are accurate and in UTC+3 timezone",
+        "Language classification is accurate"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Sentiment Distribution by Rating",
+      "claim": "Among 15 reviews in the analysis period, 9 reviews (60.0%) have ratings 4-5 (positive), while 4 reviews (26.7%) have ratings 1-2 (negative). English reviews: 10, Arabic reviews: 5.",
+      "finding_type": "voice_of_customer_sentiment",
+      "metrics": {
+        "positive_reviews_4_5": {
+          "value": 9,
+          "unit": "count",
+          "numerator": 9,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "positive_reviews_percentage": {
+          "value": 60.0,
+          "unit": "percent",
+          "numerator": 9,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "negative_reviews_1_2": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "negative_reviews_percentage": {
+          "value": 26.7,
+          "unit": "percent",
+          "numerator": 4,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "english_review_count": {
+          "value": 10,
+          "unit": "count",
+          "numerator": 10,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "arabic_review_count": {
+          "value": 5,
+          "unit": "count",
+          "numerator": 5,
+          "denominator": 15,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Analysis period: 2026-05-04T00:00:00+03:00 to 2026-05-11T00:00:00+03:00",
+        "Positive reviews (4-5 stars): 9 (60.0%)",
+        "Negative reviews (1-2 stars): 4 (26.7%)",
+        "Neutral reviews (3 stars): 2",
+        "Bilingual coverage: 10 English, 5 Arabic"
+      ],
+      "assumptions": [
+        "Rating 4-5 indicates positive sentiment, 1-2 indicates negative, 3 is neutral",
+        "Review text may be empty but rating is always present",
+        "Language field accurately reflects review language"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Review Volume Comparison: Analysis Period vs Previous Period",
+      "claim": "Review volume in the analysis period (2026-05-04T00:00:00+03:00 to 2026-05-11T00:00:00+03:00) was 15 reviews, compared to 21 reviews in the previous period (2026-04-27T00:00:00+03:00 to 2026-05-04T00:00:00+03:00), representing a change of -6 reviews (-28.6%).",
+      "finding_type": "voice_of_customer_volume",
+      "metrics": {
+        "analysis_period_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "previous_period_reviews": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00"
+        },
+        "volume_change": {
+          "value": -6,
+          "unit": "count",
+          "numerator": -6,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        },
+        "volume_change_percentage": {
+          "value": -28.6,
+          "unit": "percent",
+          "numerator": -6,
+          "denominator": 21,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Analysis period: 2026-05-04T00:00:00+03:00 to 2026-05-11T00:00:00+03:00 (15 reviews)",
+        "Previous period: 2026-04-27T00:00:00+03:00 to 2026-05-04T00:00:00+03:00 (21 reviews)",
+        "Volume change: -6 reviews (-28.6%)"
+      ],
+      "assumptions": [
+        "Review dates are accurate and in UTC+3 timezone",
+        "Both periods have complete data coverage",
+        "Review volume is a valid indicator of customer engagement"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}
