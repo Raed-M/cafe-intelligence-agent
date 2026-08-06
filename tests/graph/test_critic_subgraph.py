@@ -56,7 +56,15 @@ def _cfg():
     )
 
 
+def _no_llm_reviewer(system_prompt, context):
+    """Semantic-review layer stubbed to always approve -- these tests exercise
+    the deterministic critic gate and the revision-loop routing, not the LLM
+    semantic layer, so no real model call should ever be made here."""
+    return {"decision": "approve", "explanation": "", "required_fix": ""}
+
+
 def test_good_finding_reaches_rank_without_revision(monkeypatch, tmp_path):
+    monkeypatch.setattr("src.validation.finding_critic._default_llm_reviewer", lambda model_name: _no_llm_reviewer)
     config = _cfg()
     good_result = _result_ref(tmp_path, {"findings": [{"metrics": {"net_revenue": {"value": 1000}}}]}, "good.json")
     graph = build_critic_subgraph()
@@ -76,6 +84,7 @@ def test_hallucinated_finding_triggers_targeted_revision_then_rejected_after_cap
     must only ever rerun `margin` (never `sales`), and after exhausting the
     revision cap the finding is rejected (non-zero rejection count) rather than
     looping forever."""
+    monkeypatch.setattr("src.validation.finding_critic._default_llm_reviewer", lambda model_name: _no_llm_reviewer)
     config = _cfg()
     bad_result = _result_ref(tmp_path, {"findings": [{"metrics": {}}]}, "bad.json")  # net_revenue unresolvable
     good_result = _result_ref(tmp_path, {"findings": [{"metrics": {"net_revenue": {"value": 500}}}]}, "good2.json")

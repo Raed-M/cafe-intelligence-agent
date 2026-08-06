@@ -23,12 +23,20 @@ def _valid_periods(state: CafeIntelligenceState) -> set[tuple[str, str]]:
 
 
 def critic_node(state: CafeIntelligenceState) -> dict[str, Any]:
+    from src.analysis.correlation_hints import cross_analyst_coincidences
+
     limits = state["config"].app_settings.limits
     round_ = state.get("critic_round", 0)
+    candidate_findings = state.get("candidate_findings", [])
+    try:
+        cross_domain_hints = cross_analyst_coincidences(candidate_findings)
+    except Exception:  # noqa: BLE001
+        cross_domain_hints = []
     result = run_critic(
-        state.get("candidate_findings", []), round_, limits.critic_revision_rounds,
+        candidate_findings, round_, limits.critic_revision_rounds,
         valid_periods=_valid_periods(state),
         model_name=state["config"].app_settings.models.critic,
+        cross_domain_hints=cross_domain_hints,
     )
     return {"critic_results": result, "critic_round": round_ + 1, "step_count": 1}
 

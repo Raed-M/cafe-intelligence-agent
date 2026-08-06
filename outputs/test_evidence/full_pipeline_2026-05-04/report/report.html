@@ -1,0 +1,428 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Qahwa Saihat — Weekly Intelligence Report</title>
+<style>
+  body { font-family: "Segoe UI", Tahoma, Arial, sans-serif; margin: 2rem; color: #1a1a1a; }
+  h1, h2 { color: #3b2a1a; }
+  .rtl { direction: rtl; text-align: right; font-family: "Segoe UI", Tahoma, Arial, sans-serif; }
+  .ltr { direction: ltr; text-align: left; }
+  section { margin-bottom: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 1rem; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+  .finding { background: #faf6f0; padding: 1rem; margin-bottom: 1rem; border-radius: 6px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.8em; }
+  .badge-success { background: #d7f0d7; }
+  .badge-partial { background: #fff2c7; }
+  .badge-failed { background: #f6d6d6; }
+  .idea { border: 1px solid #ddd; padding: 1rem; margin-bottom: 1rem; }
+  .muted { color: #777; font-size: 0.9em; }
+</style>
+</head>
+<body>
+  <section>
+    <h1>Qahwa Saihat — Weekly Intelligence Report</h1>
+    <p>Run: fullpipe_3e7f9b19 | Generated: 2026-08-06T17:55:23.027161+00:00</p>
+    <p>Analysis period: 2026-05-04T00:00:00+03:00 → 2026-05-11T00:00:00+03:00</p>
+    <p>Recommendation period: 2026-05-11T00:00:00+03:00 → 2026-05-18T00:00:00+03:00</p>
+    <p>Status: <span class="badge badge-succeeded">succeeded</span></p>
+  </section>
+
+  <section>
+    <h2>Executive Summary</h2>
+    <div class="rtl">تقرير Qahwa Saihat (2026-05-04 - 2026-05-11):
+- Menu Engineering: Star Items
+- Net Revenue Performance
+- Transaction Volume Change</div>
+    <div class="ltr">Qahwa Saihat report (2026-05-04 - 2026-05-11):
+- Menu Engineering: Star Items: Items identified as &#39;stars&#39; (high popularity, high margin) include 5 items: Karak Tea, Iced Spanish Latte, Iced Americano, Cold Brew, Mojito Passion.
+- Net Revenue Performance: Net revenue for the period was 46000.90 SAR, representing a change of 0.40% compared to the previous period&#39;s 4…</div>
+  </section>
+
+  <section>
+    <h2>Data Quality</h2>
+    <p>Successful: pos, menu, traffic, staff, inventory, emails, reviews</p>
+    <p>Partial: none</p>
+    <p>Failed: none</p>
+    <table>
+      <tr><th>Source</th><th>In</th><th>Accepted</th><th>Dropped</th><th>Repaired</th><th>Quarantined</th><th>Issues</th></tr>
+      
+      <tr>
+        <td>pos</td><td>66195</td><td>65574</td>
+        <td>621</td><td>1592</td><td>0</td>
+        <td>{'unparseable_timestamp': 0, 'double_swipe_transactions': 382, 'double_swipe_rows_removed': 621, 'unknown_sku_rows': 0, 'line_total_inconsistent': 38, 'refund_rows': 530}</td>
+      </tr>
+      
+      <tr>
+        <td>traffic</td><td>3296</td><td>3296</td>
+        <td>0</td><td>0</td><td>51</td>
+        <td>{'dead_sensor_days': 3}</td>
+      </tr>
+      
+      <tr>
+        <td>staff</td><td>1036</td><td>1036</td>
+        <td>0</td><td>0</td><td>0</td>
+        <td>{'shift_duration_mismatch': 0}</td>
+      </tr>
+      
+      <tr>
+        <td>inventory</td><td>174</td><td>174</td>
+        <td>0</td><td>0</td><td>0</td>
+        <td>{'unknown_waste_weeks': 5}</td>
+      </tr>
+      
+      <tr>
+        <td>menu</td><td>19</td><td>19</td>
+        <td>0</td><td>0</td><td>0</td>
+        <td>{}</td>
+      </tr>
+      
+      <tr>
+        <td>emails</td><td>19</td><td>19</td>
+        <td>0</td><td>0</td><td>0</td>
+        <td>{}</td>
+      </tr>
+      
+      <tr>
+        <td>reviews</td><td>520</td><td>520</td>
+        <td>0</td><td>0</td><td>0</td>
+        <td>{}</td>
+      </tr>
+      
+    </table>
+  </section>
+
+  <section>
+    <h2>Findings (5)</h2>
+    
+    <div class="finding">
+      <h3>Menu Engineering: Star Items</h3>
+      <p>Items identified as &#39;stars&#39; (high popularity, high margin) include 5 items: Karak Tea, Iced Spanish Latte, Iced Americano, Cold Brew, Mojito Passion.</p>
+      <p class="muted">Sources: pos, menu | Confidence: 0.90 |
+         Sample size: 1311</p>
+      <p class="muted">Code: c:\Users\User\Desktop\Week 6\Cafe Intelligence Agent\cafe-intelligence-agent\outputs\artifacts\fullpipe_3e7f9b19\code\margin\initial\1.py | Result: c:\Users\User\Desktop\Week 6\Cafe Intelligence Agent\cafe-intelligence-agent\outputs\artifacts\fullpipe_3e7f9b19\results\margin\initial\1.json</p>
+      <p class="muted">Assumptions: Gross margin calculated using menu unit costs.</p>
+    </div>
+    
+    <div class="finding">
+      <h3>Net Revenue Performance</h3>
+      <p>Net revenue for the period was 46000.90 SAR, representing a change of 0.40% compared to the previous period&#39;s 45816.75 SAR.</p>
+      <p class="muted">Sources: pos | Confidence: 1.00 |
+         Sample size: 1344</p>
+      <p class="muted">Code: c:\Users\User\Desktop\Week 6\Cafe Intelligence Agent\cafe-intelligence-agent\outputs\artifacts\fullpipe_3e7f9b19\code\sales\initial\1.py | Result: c:\Users\User\Desktop\Week 6\Cafe Intelligence Agent\cafe-intelligence-agent\outputs\artifacts\fullpipe_3e7f9b19\results\sales\initial\1.json</p>
+      <p class="muted">Assumptions: Assumes transaction_id uniquely identifies a basket.</p>
+    </div>
+    
+    <div class="finding">
+      <h3>Transaction Volume Change</h3>
+      <p>Transaction volume shifted by -1.97%, moving from 1371 transactions to 1344 transactions.</p>
+      <p class="muted">Sources: pos | Confidence: 1.00 |
+         Sample size: 1344</p>
+      <p class="muted">Code: c:\Users\User\Desktop\Week 6\Cafe Intelligence Agent\cafe-intelligence-agent\outputs\artifacts\fullpipe_3e7f9b19\code\sales\initial\1.py | Result: c:\Users\User\Desktop\Week 6\Cafe Intelligence Agent\cafe-intelligence-agent\outputs\artifacts\fullpipe_3e7f9b19\results\sales\initial\1.json</p>
+      <p class="muted">Assumptions: Assumes transaction_id is consistent across the period.</p>
+    </div>
+    
+    <div class="finding">
+      <h3>Customer Sentiment Analysis</h3>
+      <p>During the analysis period, the cafe received 15 reviews with an average rating of 3.67. The sentiment distribution consists of 9 positive, 2 neutral, and 4 negative reviews.</p>
+      <p class="muted">Sources: reviews | Confidence: 1.00 |
+         Sample size: 15</p>
+      <p class="muted">Code: c:\Users\User\Desktop\Week 6\Cafe Intelligence Agent\cafe-intelligence-agent\outputs\artifacts\fullpipe_3e7f9b19\code\customer\revision-1\1.py | Result: c:\Users\User\Desktop\Week 6\Cafe Intelligence Agent\cafe-intelligence-agent\outputs\artifacts\fullpipe_3e7f9b19\results\customer\revision-1\1.json</p>
+      <p class="muted">Assumptions: Sentiment is classified based on rating thresholds: 4-5 positive, 3 neutral, 1-2 negative.</p>
+    </div>
+    
+    <div class="finding">
+      <h3>Procurement Cost Pressure</h3>
+      <p>Supplier price increases for oat and milk ingredients create a weekly procurement cost pressure of 256 SAR, assuming standing-order volumes remain constant.</p>
+      <p class="muted">Sources: emails, inventory | Confidence: 0.95 |
+         Sample size: None</p>
+      <p class="muted">Code: c:\Users\User\Desktop\Week 6\Cafe Intelligence Agent\cafe-intelligence-agent\outputs\artifacts\fullpipe_3e7f9b19\code\margin\initial\1.py | Result: c:\Users\User\Desktop\Week 6\Cafe Intelligence Agent\cafe-intelligence-agent\outputs\artifacts\fullpipe_3e7f9b19\results\margin\initial\1.json</p>
+      <p class="muted">Assumptions: Assumes standing-order quantities of 40L oat and 120L milk remain unchanged.</p>
+    </div>
+    
+  </section>
+
+  
+
+  <section>
+    <h2>Content Ideas (3)</h2>
+    
+    <div class="idea">
+      <p class="muted">reel | 2026-05-15 19:00</p>
+      <div class="rtl"><strong>هل جربت الانتعاش الحقيقي في هذا الحر؟</strong><br>استغلال ذروة الحرارة في صيهات للترويج لأكثر مشروباتنا مبيعاً ومربحاً.</div>
+      <div class="ltr"><strong>Need a real refresh in this heat?</strong><br>Leveraging the extreme heat in Saihat to promote our top-selling, high-margin star item.</div>
+      <p class="muted">Product: Iced Spanish Latte (ICE-001) | Finding: F-margin-f25f3f31</p>
+    </div>
+    
+    <div class="idea">
+      <p class="muted">carousel | 2026-05-16 20:00</p>
+      <div class="rtl"><strong>أجواء الصيف تحتاج لموجيتو منعش!</strong><br>ربط المشروب الصيفي بقائمة الزيارات الصيفية في المنطقة الشرقية.</div>
+      <div class="ltr"><strong>Summer vibes call for a refreshing Mojito!</strong><br>Connecting our summer drink to the Eastern Province summer visit list.</div>
+      <p class="muted">Product: Mojito Passion (ICE-006) | Finding: F-margin-f25f3f31</p>
+    </div>
+    
+    <div class="idea">
+      <p class="muted">trend_audio | 2026-05-14 21:00</p>
+      <div class="rtl"><strong>قهوتك المفضلة بلمسة باردة ومميزة.</strong><br>التركيز على الكولد برو كخيار مثالي لمواجهة درجات الحرارة المرتفعة.</div>
+      <div class="ltr"><strong>Your favorite coffee with a cool, unique twist.</strong><br>Highlighting Cold Brew as the perfect choice to combat high temperatures.</div>
+      <p class="muted">Product: Cold Brew (ICE-004) | Finding: F-margin-f25f3f31</p>
+    </div>
+    
+  </section>
+
+  
+
+  <section>
+    <h2>Local, Calendar &amp; Prayer Context</h2>
+    <p>Search status: success</p>
+    
+    <ul>
+    
+      <li>[prayer] Prayer times 2026-05-11 — Fajr 03:28, Dhuhr 11:36, Asr 15:06, Maghrib 18:17, Isha 19:47 <span class="muted">(deterministic:umm_al_qura)</span></li>
+    
+      <li>[prayer] Prayer times 2026-05-12 — Fajr 03:27, Dhuhr 11:36, Asr 15:06, Maghrib 18:18, Isha 19:48 <span class="muted">(deterministic:umm_al_qura)</span></li>
+    
+      <li>[prayer] Prayer times 2026-05-13 — Fajr 03:26, Dhuhr 11:36, Asr 15:06, Maghrib 18:18, Isha 19:48 <span class="muted">(deterministic:umm_al_qura)</span></li>
+    
+      <li>[prayer] Prayer times 2026-05-14 — Fajr 03:25, Dhuhr 11:36, Asr 15:06, Maghrib 18:19, Isha 19:49 <span class="muted">(deterministic:umm_al_qura)</span></li>
+    
+      <li>[prayer] Prayer times 2026-05-15 — Fajr 03:24, Dhuhr 11:36, Asr 15:06, Maghrib 18:19, Isha 19:49 <span class="muted">(deterministic:umm_al_qura)</span></li>
+    
+      <li>[prayer] Prayer times 2026-05-16 — Fajr 03:24, Dhuhr 11:36, Asr 15:06, Maghrib 18:20, Isha 19:50 <span class="muted">(deterministic:umm_al_qura)</span></li>
+    
+      <li>[prayer] Prayer times 2026-05-17 — Fajr 03:23, Dhuhr 11:36, Asr 15:05, Maghrib 18:20, Isha 19:50 <span class="muted">(deterministic:umm_al_qura)</span></li>
+    
+      <li>[email_event] Ramadan night market — vendor slots — The Saihat corniche night market runs nightly 20:00-01:00 through Eid. <span class="muted">(c:\Users\User\Desktop\Week 6\Cafe Intelligence Agent\cafe-intelligence-agent\data\qahwa_saihat\supplier_emails\2026-03-02_04.txt)</span></li>
+    
+      <li>[email_event] Summer Nights Qatif — sponsorship — The Summer Nights programme runs 10 July - 8 August across Qatif and Saihat waterfront. Expected footfall 8,000+ nightly. Beverage sponsor packages start at SAR 4,500. <span class="muted">(c:\Users\User\Desktop\Week 6\Cafe Intelligence Agent\cafe-intelligence-agent\data\qahwa_saihat\supplier_emails\2026-07-06_12.txt)</span></li>
+    
+      <li>[event] Saudi Arabia Events Calendar 2026 — Month-by-Month Guide — The Taif Rose Festival celebrates the annual harvest of millions of Taif Damascus roses, which bloom between March and April in the cool highland climate of Saudi Arabia’s “City of Roses.” The festival runs for approximately 45 days and includes the Rose Market, scenic Rose Mountain tours, parades, live performances, flower displays, theatre shows, and workshops on traditional rose oil distillation. Taif rose oil is among the most expensive essential oils in the world, and the city has been [... <span class="muted">(tavily)</span></li>
+    
+      <li>[event] The Qatif Municipality has officially announced the launch of ... — Video by Mubeena on August 03, 2026. May be an image of map, outdoors and text that says &#39;Your Eastern Province Summer visit list: DAMMAM 1. Dolphin Village 2. Gravity 3. Mahara Karting Adventure World 5. Toryland 6. Water Island 7. King Fahd Park (Life Park) 8. Fabyland (Othaim Mall) 9. Fabyland (West Avenue Mall) 10. Dammam Corniche 11. Marjan Island 12. Heritage Village 13. 13.Α AI Jowharah museum Talesol_ba&#39;. [...] talesof\_khobar
+
+The Qatif Municipality has officially announced the launch o <span class="muted">(tavily)</span></li>
+    
+      <li>[event] THE 15 BEST Middle East Cultural Events (2026) — ### 7. Narcis Persian Night [...] ### 1. Janadriyah Festival [...] ### 6. Sheikh Zayed Festival <span class="muted">(tavily)</span></li>
+    
+      <li>[event] Qatif Flower Festival 2026 (season 5) Location: Al Meshari ... — nahdasherin&#39;s profile picture
+jiyasliving&#39;s profile picture
+woman_in_riyadh&#39;s profile picture
+t0__taste&#39;s profile picture
+ngmm.shk8&#39;s profile picture
+Video by 𝘴ꫝꫀ𝘳𝓲ꪀ on July 04, 2024.
+Video by 𝘴ꫝꫀ𝘳𝓲ꪀ on July 07, 2024.
+Video by 𝘴ꫝꫀ𝘳𝓲ꪀ on July 22, 2024.
+Photo by 𝘴ꫝꫀ𝘳𝓲ꪀ on May 15, 2026.
+Photo by 𝘴ꫝꫀ𝘳𝓲ꪀ on May 12, 2026.
+Photo by 𝘴ꫝꫀ𝘳𝓲ꪀ on May 08, 2026.
+Photo by 𝘴ꫝꫀ𝘳𝓲ꪀ on April 27, 2026.
+Video by 𝘴ꫝꫀ𝘳𝓲ꪀ on April 21, 2026.
+Video by 𝘴ꫝꫀ𝘳𝓲ꪀ on April 14, 2026. [...] memory__lane___&#39;s profile picture
+Vide <span class="muted">(tavily)</span></li>
+    
+      <li>[event] The Qatif Municipality has officially announced the launch of the 5th ... — ## Dammam Dammam Hai Yaar&#39;s post
+
+### Dammam Dammam Hai Yaar
+
+11 February  ·
+
+The Qatif Municipality has officially announced the launch of the 5th Flower Festival 🌺🎊 on 13 February, 2026
+
+• Location: Al-Mishari Corniche, Qatif.
+
+• Opening Hours: Daily from 4:00 PM to 11:00 PM.
+
+#Qatif #Dammam
+
+No photo description available. [...] All reactions:
+
+10
+
+1 share [...] &#39;/%3E%3Cpath d=&#39;M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 <span class="muted">(tavily)</span></li>
+    
+      <li>[event] Weather in Saihat — {&#39;location&#39;: {&#39;name&#39;: &#39;Saihat&#39;, &#39;region&#39;: &#39;Ash Sharqiyah&#39;, &#39;country&#39;: &#39;Saudi Arabia&#39;, &#39;lat&#39;: 26.4794, &#39;lon&#39;: 50.045, &#39;tz_id&#39;: &#39;Asia/Riyadh&#39;, &#39;localtime_epoch&#39;: 1786038754, &#39;localtime&#39;: &#39;2026-08-06 20:52&#39;}, &#39;current&#39;: {&#39;last_updated_epoch&#39;: 1786038300, &#39;last_updated&#39;: &#39;2026-08-06 20:45&#39;, &#39;temp_c&#39;: 37.2, &#39;temp_f&#39;: 99.0, &#39;is_day&#39;: 0, &#39;condition&#39;: {&#39;text&#39;: &#39;Clear&#39;, &#39;icon&#39;: &#39;//cdn.weatherapi.com/weather/64x64/night/113.png&#39;, &#39;code&#39;: 1000}, &#39;wind_mph&#39;: 4.3, &#39;wind_kph&#39;: 6.8, &#39;wind_degree&#39;: 67, &#39;wind_di <span class="muted">(tavily)</span></li>
+    
+      <li>[event] Saihat Saudi Arabia, 14 days Weather forecast, Radar &amp; Photos — 4.8+      5,000,000+ Download  
+
+ No Ads
+ No tracking
+ Beautiful Forecast
+ Widgets
+ Powerful Customize
+
+© 2026 Weawow      English
+
+Sign up | Log in
+
+1. Weawow
+2. Discover
+3. Marketplace
+4. Cart
+5. Units
+6. Theme Color
+7. Weather Icon
+8. Weather Provider
+9. About Weawow
+10. Privacy Policy
+11. Terms of use
+12. Cookie Policy
+13. Help
+14. Contact
+15. © 2026 Weawow
+
+### Units
+
+1. Temperature
+
+   °C°F
+2. Rain, Snow
+
+   mm, cmin
+3. Distance
+
+   kmmi
+4. Wind speed
+
+   m/skm/hmphknotsBf
+5. Pressure [... <span class="muted">(tavily)</span></li>
+    
+      <li>[event] Sayhat Weather - Weather Forecast for Sayhat , Saudi Arabia | ArabiaWeather — 2026.08.03
+
+The most severe since the beginning of summer 2026: A heat wave hits 8 Arab countries, with temperatures reaching nearly 50 degrees Celsius.
+
+The most severe since the beginning of summer 2026: A heat wave hits 8 Arab countries, with temperatures reaching nearly 50 degrees Celsius.
+
+ 2026.07.15 
+
+arabiaweather
+
+Al-Musnad: Promising indicators for an active rainy season in the Arabian Peninsula
+
+2026.07.14  arabiaweather [...] Arab regions, including two capital cities, will be among  <span class="muted">(tavily)</span></li>
+    
+      <li>[event] Weather - Sayhat - 14-Day Forecast &amp; Rain — |  |  |
+ --- |
+| clear sky | 107.6 °F |
+|  |
+| Wind speed   10 mph |
+
+|  |  |
+ --- |
+| Air pressure | 29.4 inHg |
+| Visibility | 4 mi |
+| Clouds | 0 % |
+
+Calculated from nearby stations (18:00 08/04/2026)
+
+Open Radar Map
+
+1Warning
+
+moderate temperature
+
+## Weather for the next 24 hours [...] ## Forecast
+
+ Wed   
+   clear sky   
+   113 °F
+ Thu   
+   clear sky   
+   117 °F
+ Fri   
+   clear sky   
+   111 °F
+ Sat   
+   clear sky   
+   109 °F
+ Sun   
+   clear sky   
+   111 °F
+ Mon   
+   clear sky   
+ <span class="muted">(tavily)</span></li>
+    
+      <li>[event] Saihat Weather Forecast - Saudi Arabia (Eastern Region) : free 15 day ... — ### This afternoon in Saihat, Skies with few clouds. Temperatures will vary between 35 and 45°C, it will be heatwave in the afternoon. The reliability of the situation is very good.
+
+#### This afternoon
+
+##### Slightly cloudy
+
+45° Feels Like 51° due to the sun
+
+20 km/h  Gusts 25 km/h
+
+##### Good weather with few clouds.
+
+##### No precipitation.
+
+##### No risk of rain
+
+##### UV index 9 Very high
+
+#### This evening
+
+##### Sunny
+
+36° Feels Like 35°
+
+10 km/h  Gusts 20 km/h [...] ##### Good weather w <span class="muted">(tavily)</span></li>
+    
+      <li>[event] Qatif flower festival season 5 🎫 Free entry Spectacular ... — Photo by Explore with Nourah 🇸🇦🇦🇪 on May 09, 2026.
+Photo by Explore with Nourah 🇸🇦🇦🇪 on May 06, 2026.
+Video by Explore with Nourah 🇸🇦🇦🇪 on March 23, 2026.
+Photo by Explore with Nourah 🇸🇦🇦🇪 on February 27, 2026.
+Photo by Explore with Nourah 🇸🇦🇦🇪 on February 26, 2026. [...] explorewithnourah&#39;s profile picture
+Photo by Explore with Nourah 🇸🇦🇦🇪 on February 16, 2026.
+explorewithnourah&#39;s profile picture
+explorewithnourah&#39;s profile picture
+hemanthkumarmani&#39;s profile picture
+explorewithnourah&#39;s profile  <span class="muted">(tavily)</span></li>
+    
+      <li>[event] Qatif Flower Festival 2026 (season 5) Location: Al Meshari ... — nahdasherin&#39;s profile picture
+jiyasliving&#39;s profile picture
+woman_in_riyadh&#39;s profile picture
+t0__taste&#39;s profile picture
+ngmm.shk8&#39;s profile picture
+Video by 𝘴ꫝꫀ𝘳𝓲ꪀ on July 04, 2024.
+Video by 𝘴ꫝꫀ𝘳𝓲ꪀ on July 07, 2024.
+Video by 𝘴ꫝꫀ𝘳𝓲ꪀ on July 22, 2024.
+Photo by 𝘴ꫝꫀ𝘳𝓲ꪀ on May 15, 2026.
+Photo by 𝘴ꫝꫀ𝘳𝓲ꪀ on May 12, 2026.
+Photo by 𝘴ꫝꫀ𝘳𝓲ꪀ on May 08, 2026.
+Photo by 𝘴ꫝꫀ𝘳𝓲ꪀ on April 27, 2026.
+Video by 𝘴ꫝꫀ𝘳𝓲ꪀ on April 21, 2026.
+Video by 𝘴ꫝꫀ𝘳𝓲ꪀ on April 14, 2026. [...] memory__lane___&#39;s profile picture
+Vide <span class="muted">(tavily)</span></li>
+    
+      <li>[event] The Qatif Municipality has officially announced the launch of ... — Video by Mubeena on August 03, 2026. May be an image of map, outdoors and text that says &#39;Your Eastern Province Summer visit list: DAMMAM 1. Dolphin Village 2. Gravity 3. Mahara Karting Adventure World 5. Toryland 6. Water Island 7. King Fahd Park (Life Park) 8. Fabyland (Othaim Mall) 9. Fabyland (West Avenue Mall) 10. Dammam Corniche 11. Marjan Island 12. Heritage Village 13. 13.Α AI Jowharah museum Talesol_ba&#39;. [...] talesof\_khobar
+
+The Qatif Municipality has officially announced the launch o <span class="muted">(tavily)</span></li>
+    
+      <li>[event] Saudi Arabia Events Calendar 2026 — Month-by-Month Guide — The Taif Rose Festival celebrates the annual harvest of millions of Taif Damascus roses, which bloom between March and April in the cool highland climate of Saudi Arabia’s “City of Roses.” The festival runs for approximately 45 days and includes the Rose Market, scenic Rose Mountain tours, parades, live performances, flower displays, theatre shows, and workshops on traditional rose oil distillation. Taif rose oil is among the most expensive essential oils in the world, and the city has been [... <span class="muted">(tavily)</span></li>
+    
+      <li>[event] Complete Calendar of Festivals, Concerts, and Exhibitions — Jeddah Season 2026 is particularly special because of the coastal location. Therefore, visitors can enjoy beach activities during the day and world-class concerts at night. The summer events in Saudi Arabia 2026 calendar would not be complete without the vibrant energy of Jeddah.
+
+#### Eastern Province Summer Events
+
+The Eastern Province is also hosting major events during summer 2026. [...] | Event Name | Dates | Venue | Type |
+ ---  --- |
+| Dammam Summer Festival | July 1 – August 15 | Dammam  <span class="muted">(tavily)</span></li>
+    
+    </ul>
+  </section>
+
+  <section>
+    <h2>Limitations &amp; Assumptions</h2>
+    <ul>
+      <li>5 rows have unknown (blank) units_wasted; treated as unrecorded, not zero</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Appendix — Run Metrics</h2>
+    <p>Steps: 25 | Cost: $0.0000 | Critic rejections: 5</p>
+    <p>Sources: {'pos': 'success', 'menu': 'success', 'traffic': 'success', 'staff': 'success', 'inventory': 'success', 'emails': 'success', 'reviews': 'success'}</p>
+  </section>
+</body>
+</html>

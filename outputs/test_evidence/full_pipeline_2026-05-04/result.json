@@ -1,0 +1,2350 @@
+{
+  "run_id": "fullpipe_3e7f9b19",
+  "analysis_period": {
+    "start": "2026-05-04T00:00:00+03:00",
+    "end": "2026-05-11T00:00:00+03:00"
+  },
+  "source_results": [
+    {
+      "source_name": "pos",
+      "status": "success",
+      "raw_row_count": 66195,
+      "accepted_row_count": 66195,
+      "rejected_row_count": 0,
+      "artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\parsed\\pos.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "bfce4962290c4e9c054b3e3fa1d730610532e2a2f32b2a474d68c39513fd8234",
+        "schema_version": "1.0",
+        "row_count": 66195,
+        "byte_size": 1309164,
+        "created_at": "2026-08-06T17:24:09.190485+00:00"
+      },
+      "schema_version": "1.0",
+      "date_min": null,
+      "date_max": null,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "source_name": "menu",
+      "status": "success",
+      "raw_row_count": 19,
+      "accepted_row_count": 19,
+      "rejected_row_count": 0,
+      "artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\parsed\\menu.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "fba270ce185cdf43135bedae5d5f3dd40aaba5d94072e27cf4bb2072f7d524c1",
+        "schema_version": "1.0",
+        "row_count": 19,
+        "byte_size": 6346,
+        "created_at": "2026-08-06T17:24:08.938105+00:00"
+      },
+      "schema_version": "1.0",
+      "date_min": null,
+      "date_max": null,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "source_name": "traffic",
+      "status": "success",
+      "raw_row_count": 3296,
+      "accepted_row_count": 3296,
+      "rejected_row_count": 0,
+      "artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\parsed\\traffic.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "ef2c8730f8d7c2f2864be81ff2ca3607e90020769e6e341566f0d864c701014e",
+        "schema_version": "1.0",
+        "row_count": 3296,
+        "byte_size": 7981,
+        "created_at": "2026-08-06T17:24:08.982583+00:00"
+      },
+      "schema_version": "1.0",
+      "date_min": "2026-01-05",
+      "date_max": "2026-07-26",
+      "warnings": [],
+      "error": null
+    },
+    {
+      "source_name": "staff",
+      "status": "success",
+      "raw_row_count": 1036,
+      "accepted_row_count": 1036,
+      "rejected_row_count": 0,
+      "artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\parsed\\staff.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "42cb9eb639373b16b7608443731a20f623948c4b1644935ee6f52b3afb85bdbe",
+        "schema_version": "1.0",
+        "row_count": 1036,
+        "byte_size": 9011,
+        "created_at": "2026-08-06T17:24:08.994612+00:00"
+      },
+      "schema_version": "1.0",
+      "date_min": "2026-01-05",
+      "date_max": "2026-07-26",
+      "warnings": [],
+      "error": null
+    },
+    {
+      "source_name": "inventory",
+      "status": "success",
+      "raw_row_count": 174,
+      "accepted_row_count": 174,
+      "rejected_row_count": 0,
+      "artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\parsed\\inventory.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "3b05cfc643d59e262467ea094913879a4a26ca3638a29ef67a0640ffdf4aa511",
+        "schema_version": "1.0",
+        "row_count": 174,
+        "byte_size": 7037,
+        "created_at": "2026-08-06T17:24:08.938105+00:00"
+      },
+      "schema_version": "1.0",
+      "date_min": "2026-01-05",
+      "date_max": "2026-07-20",
+      "warnings": [
+        "5 rows have unknown (blank) units_wasted; treated as unrecorded, not zero"
+      ],
+      "error": null
+    },
+    {
+      "source_name": "emails",
+      "status": "success",
+      "raw_row_count": 13,
+      "accepted_row_count": 13,
+      "rejected_row_count": 0,
+      "artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\parsed\\emails.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "5cb562ef21efc452e6ca8939ded5a882aeda13aeee1f164b20c25e7cdf30513b",
+        "schema_version": "1.0",
+        "row_count": 19,
+        "byte_size": 15989,
+        "created_at": "2026-08-06T17:33:13.845170+00:00"
+      },
+      "schema_version": "1.0",
+      "date_min": "2026-01-12",
+      "date_max": "2026-07-15",
+      "warnings": [],
+      "error": null
+    },
+    {
+      "source_name": "reviews",
+      "status": "success",
+      "raw_row_count": 520,
+      "accepted_row_count": 520,
+      "rejected_row_count": 0,
+      "artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\parsed\\reviews.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "e1506ff06cc0e1eec76f03fcc3c8392296b493d86f15592a642495bb6dbfa058",
+        "schema_version": "1.0",
+        "row_count": 520,
+        "byte_size": 9772,
+        "created_at": "2026-08-06T17:24:08.995583+00:00"
+      },
+      "schema_version": "1.0",
+      "date_min": "2026-01-05",
+      "date_max": "2026-07-26",
+      "warnings": [],
+      "error": null
+    }
+  ],
+  "data_quality": {
+    "source_summaries": [
+      {
+        "source_name": "pos",
+        "rows_in": 66195,
+        "rows_accepted": 65574,
+        "rows_dropped": 621,
+        "rows_repaired": 1592,
+        "rows_quarantined": 0,
+        "null_counts": {
+          "cashier_id": 5327,
+          "item_name_raw": 1592
+        },
+        "issue_counts": {
+          "unparseable_timestamp": 0,
+          "double_swipe_transactions": 382,
+          "double_swipe_rows_removed": 621,
+          "unknown_sku_rows": 0,
+          "line_total_inconsistent": 38,
+          "refund_rows": 530
+        },
+        "excluded_periods": [],
+        "examples": [
+          {
+            "transaction_id": "TXN-100178",
+            "multiplicity": 2,
+            "rows_before": 2,
+            "rows_after": 1,
+            "cashier_ids_seen": [
+              "EMP-03"
+            ]
+          },
+          {
+            "transaction_id": "TXN-100235",
+            "multiplicity": 2,
+            "rows_before": 2,
+            "rows_after": 1,
+            "cashier_ids_seen": [
+              "EMP-02",
+              "EMP-05"
+            ]
+          },
+          {
+            "transaction_id": "TXN-100280",
+            "multiplicity": 2,
+            "rows_before": 2,
+            "rows_after": 1,
+            "cashier_ids_seen": [
+              "EMP-02",
+              "EMP-05"
+            ]
+          },
+          {
+            "transaction_id": "TXN-100365",
+            "multiplicity": 2,
+            "rows_before": 2,
+            "rows_after": 1,
+            "cashier_ids_seen": [
+              "EMP-06"
+            ]
+          },
+          {
+            "transaction_id": "TXN-100507",
+            "multiplicity": 2,
+            "rows_before": 2,
+            "rows_after": 1,
+            "cashier_ids_seen": [
+              "EMP-03"
+            ]
+          },
+          {
+            "transaction_id": "TXN-100596",
+            "multiplicity": 2,
+            "rows_before": 4,
+            "rows_after": 2,
+            "cashier_ids_seen": [
+              "EMP-02",
+              "EMP-04",
+              "EMP-05",
+              "EMP-06"
+            ]
+          },
+          {
+            "transaction_id": "TXN-100639",
+            "multiplicity": 2,
+            "rows_before": 2,
+            "rows_after": 1,
+            "cashier_ids_seen": [
+              "EMP-04"
+            ]
+          },
+          {
+            "transaction_id": "TXN-100647",
+            "multiplicity": 2,
+            "rows_before": 2,
+            "rows_after": 1,
+            "cashier_ids_seen": [
+              "EMP-04",
+              "EMP-05"
+            ]
+          },
+          {
+            "transaction_id": "TXN-100781",
+            "multiplicity": 2,
+            "rows_before": 2,
+            "rows_after": 1,
+            "cashier_ids_seen": [
+              "EMP-03",
+              "EMP-05"
+            ]
+          },
+          {
+            "transaction_id": "TXN-100818",
+            "multiplicity": 2,
+            "rows_before": 4,
+            "rows_after": 2,
+            "cashier_ids_seen": [
+              "EMP-02",
+              "EMP-03",
+              "EMP-04"
+            ]
+          }
+        ]
+      },
+      {
+        "source_name": "traffic",
+        "rows_in": 3296,
+        "rows_accepted": 3296,
+        "rows_dropped": 0,
+        "rows_repaired": 0,
+        "rows_quarantined": 51,
+        "null_counts": {},
+        "issue_counts": {
+          "dead_sensor_days": 3
+        },
+        "excluded_periods": [
+          {
+            "date": "2026-06-08"
+          },
+          {
+            "date": "2026-06-09"
+          },
+          {
+            "date": "2026-06-10"
+          }
+        ],
+        "examples": []
+      },
+      {
+        "source_name": "staff",
+        "rows_in": 1036,
+        "rows_accepted": 1036,
+        "rows_dropped": 0,
+        "rows_repaired": 0,
+        "rows_quarantined": 0,
+        "null_counts": {},
+        "issue_counts": {
+          "shift_duration_mismatch": 0
+        },
+        "excluded_periods": [],
+        "examples": []
+      },
+      {
+        "source_name": "inventory",
+        "rows_in": 174,
+        "rows_accepted": 174,
+        "rows_dropped": 0,
+        "rows_repaired": 0,
+        "rows_quarantined": 0,
+        "null_counts": {
+          "units_wasted": 5
+        },
+        "issue_counts": {
+          "unknown_waste_weeks": 5
+        },
+        "excluded_periods": [],
+        "examples": []
+      },
+      {
+        "source_name": "menu",
+        "rows_in": 19,
+        "rows_accepted": 19,
+        "rows_dropped": 0,
+        "rows_repaired": 0,
+        "rows_quarantined": 0,
+        "null_counts": {},
+        "issue_counts": {},
+        "examples": [],
+        "excluded_periods": []
+      },
+      {
+        "source_name": "emails",
+        "rows_in": 19,
+        "rows_accepted": 19,
+        "rows_dropped": 0,
+        "rows_repaired": 0,
+        "rows_quarantined": 0,
+        "null_counts": {},
+        "issue_counts": {},
+        "examples": [],
+        "excluded_periods": []
+      },
+      {
+        "source_name": "reviews",
+        "rows_in": 520,
+        "rows_accepted": 520,
+        "rows_dropped": 0,
+        "rows_repaired": 0,
+        "rows_quarantined": 0,
+        "null_counts": {},
+        "issue_counts": {},
+        "examples": [],
+        "excluded_periods": []
+      }
+    ],
+    "sources_successful": [
+      "pos",
+      "menu",
+      "traffic",
+      "staff",
+      "inventory",
+      "emails",
+      "reviews"
+    ],
+    "sources_partial": [],
+    "sources_failed": [],
+    "critical_dependencies_missing": [],
+    "total_rows_in": 71259,
+    "total_rows_dropped": 621,
+    "total_rows_repaired": 1592,
+    "warnings": [
+      "5 rows have unknown (blank) units_wasted; treated as unrecorded, not zero"
+    ]
+  },
+  "candidate_findings": [
+    {
+      "finding_id": "F-sales-0444258d",
+      "analyst_name": "sales",
+      "title": "Net Revenue Performance",
+      "claim": "Net revenue for the period was 46000.90 SAR, representing a change of 0.40% compared to the previous period's 45816.75 SAR.",
+      "finding_type": "revenue_analysis",
+      "evidence": [
+        {
+          "metric_name": "rev_curr",
+          "value": 46000.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+          "result_key": "rev_curr"
+        },
+        {
+          "metric_name": "rev_prev",
+          "value": 45816.75,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+          "result_key": "rev_prev"
+        },
+        {
+          "metric_name": "rev_pct",
+          "value": 0.4,
+          "unit": "%",
+          "numerator": 184.15,
+          "denominator": 45816.75,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+          "result_key": "rev_pct"
+        }
+      ],
+      "source_names": [
+        "pos"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\sales\\initial\\1.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 3583,
+        "created_at": "2026-08-06T17:34:12.996034+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+        "media_type": "application/json",
+        "sha256": "032f502d823a8b49d39ea7624e1d233afb0aae30c745915830e7f3aed3189e17",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2511,
+        "created_at": "2026-08-06T17:34:13.925206+00:00"
+      },
+      "sample_size": 1344,
+      "coverage_notes": [
+        "Includes all valid POS transactions; refunds are netted."
+      ],
+      "assumptions": [
+        "Assumes transaction_id uniquely identifies a basket."
+      ],
+      "confidence": 1.0,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 0,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:34:13.926610+00:00"
+      }
+    },
+    {
+      "finding_id": "F-sales-944f4f67",
+      "analyst_name": "sales",
+      "title": "Transaction Volume Change",
+      "claim": "Transaction volume shifted by -1.97%, moving from 1371 transactions to 1344 transactions.",
+      "finding_type": "volume_analysis",
+      "evidence": [
+        {
+          "metric_name": "tx_curr",
+          "value": 1344,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+          "result_key": "tx_curr"
+        },
+        {
+          "metric_name": "tx_prev",
+          "value": 1371,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+          "result_key": "tx_prev"
+        },
+        {
+          "metric_name": "tx_pct",
+          "value": -1.97,
+          "unit": "%",
+          "numerator": -27,
+          "denominator": 1371,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+          "result_key": "tx_pct"
+        }
+      ],
+      "source_names": [
+        "pos"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\sales\\initial\\1.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 3583,
+        "created_at": "2026-08-06T17:34:12.996034+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+        "media_type": "application/json",
+        "sha256": "032f502d823a8b49d39ea7624e1d233afb0aae30c745915830e7f3aed3189e17",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2511,
+        "created_at": "2026-08-06T17:34:13.925206+00:00"
+      },
+      "sample_size": 1344,
+      "coverage_notes": [
+        "Transaction count based on unique transaction_id."
+      ],
+      "assumptions": [
+        "Assumes transaction_id is consistent across the period."
+      ],
+      "confidence": 1.0,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 0,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:34:13.926610+00:00"
+      }
+    },
+    {
+      "finding_id": "F-margin-4dccf419",
+      "analyst_name": "margin",
+      "title": "Procurement Cost Pressure",
+      "claim": "Supplier price increases for oat and milk ingredients create a weekly procurement cost pressure of 256 SAR, assuming standing-order volumes remain constant.",
+      "finding_type": "cost_analysis",
+      "evidence": [
+        {
+          "metric_name": "total_procurement_pressure",
+          "value": 256.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "emails",
+            "inventory"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+          "result_key": "total_procurement_pressure"
+        }
+      ],
+      "source_names": [
+        "emails",
+        "inventory"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\margin\\initial\\1.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 4145,
+        "created_at": "2026-08-06T17:34:12.125001+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+        "media_type": "application/json",
+        "sha256": "bd4d8623097d896c53b31f1ed2a0591cdd26ef5b86dd6a5e984d651a2d2934c0",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2309,
+        "created_at": "2026-08-06T17:34:13.149150+00:00"
+      },
+      "sample_size": null,
+      "coverage_notes": [
+        "Based on supplier email price changes for barista oat and full-fat milk."
+      ],
+      "assumptions": [
+        "Assumes standing-order quantities of 40L oat and 120L milk remain unchanged."
+      ],
+      "confidence": 0.95,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 0,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:34:13.151717+00:00"
+      }
+    },
+    {
+      "finding_id": "F-margin-f25f3f31",
+      "analyst_name": "margin",
+      "title": "Menu Engineering: Star Items",
+      "claim": "Items identified as 'stars' (high popularity, high margin) include 5 items: Karak Tea, Iced Spanish Latte, Iced Americano, Cold Brew, Mojito Passion.",
+      "finding_type": "menu_engineering",
+      "evidence": [
+        {
+          "metric_name": "star_count",
+          "value": 5,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos",
+            "menu"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+          "result_key": "star_count"
+        },
+        {
+          "metric_name": "median_units",
+          "value": 112.0,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos",
+            "menu"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+          "result_key": "median_units"
+        },
+        {
+          "metric_name": "median_margin_pct",
+          "value": 70.7,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos",
+            "menu"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+          "result_key": "median_margin_pct"
+        },
+        {
+          "metric_name": "star_names",
+          "value": "Karak Tea, Iced Spanish Latte, Iced Americano, Cold Brew, Mojito Passion",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos",
+            "menu"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+          "result_key": "star_names"
+        }
+      ],
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\margin\\initial\\1.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 4145,
+        "created_at": "2026-08-06T17:34:12.125001+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+        "media_type": "application/json",
+        "sha256": "bd4d8623097d896c53b31f1ed2a0591cdd26ef5b86dd6a5e984d651a2d2934c0",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2309,
+        "created_at": "2026-08-06T17:34:13.149150+00:00"
+      },
+      "sample_size": 1311,
+      "coverage_notes": [
+        "Thresholds: median units sold = <<median_units>>, median gross margin = <<median_margin_pct>>%."
+      ],
+      "assumptions": [
+        "Gross margin calculated using menu unit costs."
+      ],
+      "confidence": 0.9,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 0,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:34:13.151717+00:00"
+      }
+    },
+    {
+      "finding_id": "F-operations-634daa99",
+      "analyst_name": "operations",
+      "title": "Reduction in Known Waste Costs",
+      "claim": "Known waste costs decreased by 0% compared to the previous week.",
+      "finding_type": "Operational Efficiency",
+      "evidence": [
+        {
+          "metric_name": "waste_delta_pct",
+          "value": 0,
+          "unit": "percent",
+          "numerator": 0.0,
+          "denominator": 0.0,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "inventory"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\operations\\initial\\2.json",
+          "result_key": "waste_delta_pct"
+        }
+      ],
+      "source_names": [
+        "inventory"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\operations\\initial\\2.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 1877,
+        "created_at": "2026-08-06T17:34:55.207264+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\operations\\initial\\2.json",
+        "media_type": "application/json",
+        "sha256": "78f9d1b136fc2c428cc3cc600ba25d819146452d72d6b8b553398c1dfcdc30ef",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 906,
+        "created_at": "2026-08-06T17:34:56.082899+00:00"
+      },
+      "sample_size": 0,
+      "coverage_notes": [
+        "Covers all items listed in inventory artifacts for the specified weeks."
+      ],
+      "assumptions": [
+        "Known waste cost is calculated as the sum of known_waste_cost_sar per item."
+      ],
+      "confidence": 0.95,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 0,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:34:56.099045+00:00"
+      }
+    },
+    {
+      "finding_id": "F-customer-1faf1fb3",
+      "analyst_name": "customer",
+      "title": "Customer Sentiment Analysis",
+      "claim": "During the analysis period, the average customer rating was 3.67 across 15 reviews, with a sentiment distribution of 5 positive and 0 negative reviews.",
+      "finding_type": "sentiment_analysis",
+      "evidence": [
+        {
+          "metric_name": "avg_rating",
+          "value": 3.67,
+          "unit": "stars",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\initial\\1.json",
+          "result_key": "avg_rating"
+        },
+        {
+          "metric_name": "total_reviews",
+          "value": 15,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\initial\\1.json",
+          "result_key": "total_reviews"
+        },
+        {
+          "metric_name": "pos_count",
+          "value": 5,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\initial\\1.json",
+          "result_key": "pos_count"
+        },
+        {
+          "metric_name": "neg_count",
+          "value": 0,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\initial\\1.json",
+          "result_key": "neg_count"
+        }
+      ],
+      "source_names": [
+        "reviews"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\customer\\initial\\1.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 3021,
+        "created_at": "2026-08-06T17:34:10.438698+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\initial\\1.json",
+        "media_type": "application/json",
+        "sha256": "939f579bce379933099398152ea355c866b19ec3a5aacdeb32ec304a25811a82",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 1425,
+        "created_at": "2026-08-06T17:34:11.397332+00:00"
+      },
+      "sample_size": 15,
+      "coverage_notes": [
+        "Covers all reviews submitted between 2026-05-04 and 2026-05-11."
+      ],
+      "assumptions": [
+        "Sentiment classification is based on simple keyword matching in English and Arabic."
+      ],
+      "confidence": 0.85,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 0,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:34:11.397332+00:00"
+      }
+    },
+    {
+      "finding_id": "F-customer-35079662",
+      "analyst_name": "customer",
+      "title": "Customer Sentiment Analysis",
+      "claim": "During the analysis period, the cafe received 15 reviews with an average rating of 3.67. The sentiment distribution consists of 9 positive, 2 neutral, and 4 negative reviews.",
+      "finding_type": "Customer Sentiment",
+      "evidence": [
+        {
+          "metric_name": "total_reviews",
+          "value": 15,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-1\\1.json",
+          "result_key": "total_reviews"
+        },
+        {
+          "metric_name": "avg_rating",
+          "value": 3.67,
+          "unit": "stars",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-1\\1.json",
+          "result_key": "avg_rating"
+        },
+        {
+          "metric_name": "pos_count",
+          "value": 9,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-1\\1.json",
+          "result_key": "pos_count"
+        },
+        {
+          "metric_name": "neu_count",
+          "value": 2,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-1\\1.json",
+          "result_key": "neu_count"
+        },
+        {
+          "metric_name": "neg_count",
+          "value": 4,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-1\\1.json",
+          "result_key": "neg_count"
+        }
+      ],
+      "source_names": [
+        "reviews"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\customer\\revision-1\\1.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2363,
+        "created_at": "2026-08-06T17:39:22.010637+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-1\\1.json",
+        "media_type": "application/json",
+        "sha256": "c4fc991b8ec1ad4db19122e9d5650706c620c8c29aacbe1a97683b6f0e969384",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 1634,
+        "created_at": "2026-08-06T17:39:22.803176+00:00"
+      },
+      "sample_size": 15,
+      "coverage_notes": [
+        "Covers all reviews recorded in the system for the specified week."
+      ],
+      "assumptions": [
+        "Sentiment is classified based on rating thresholds: 4-5 positive, 3 neutral, 1-2 negative."
+      ],
+      "confidence": 1.0,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 1,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:39:22.818800+00:00"
+      }
+    },
+    {
+      "finding_id": "F-operations-a519a3ff",
+      "analyst_name": "operations",
+      "title": "Known Waste Costs Analysis",
+      "claim": "Known waste costs were 0 SAR compared to 0 SAR in the previous week, representing a change of 0%.",
+      "finding_type": "operational_efficiency",
+      "evidence": [
+        {
+          "metric_name": "waste_curr",
+          "value": 0.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-03T21:00:00+00:00",
+          "period_end": "2026-05-10T21:00:00+00:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "inventory"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\operations\\revision-1\\3.json",
+          "result_key": "waste_curr"
+        },
+        {
+          "metric_name": "waste_prev",
+          "value": 0.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-26T21:00:00+00:00",
+          "period_end": "2026-05-03T21:00:00+00:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "inventory"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\operations\\revision-1\\3.json",
+          "result_key": "waste_prev"
+        },
+        {
+          "metric_name": "waste_delta_pct",
+          "value": 0.0,
+          "unit": "percent",
+          "numerator": 0.0,
+          "denominator": 0.0,
+          "period_start": "2026-05-03T21:00:00+00:00",
+          "period_end": "2026-05-10T21:00:00+00:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "inventory"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\operations\\revision-1\\3.json",
+          "result_key": "waste_delta_pct"
+        }
+      ],
+      "source_names": [
+        "inventory"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\operations\\revision-1\\3.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 4305,
+        "created_at": "2026-08-06T17:40:47.585940+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\operations\\revision-1\\3.json",
+        "media_type": "application/json",
+        "sha256": "fff28e902493f81a1f94e9ad9c079633020648b36fc56d8f6a654bf55355c18b",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2604,
+        "created_at": "2026-08-06T17:40:48.655663+00:00"
+      },
+      "sample_size": 0,
+      "coverage_notes": [
+        "Includes all items with recorded waste costs in the inventory artifact."
+      ],
+      "assumptions": [
+        "Assumes inventory records are accurate for the specified weeks."
+      ],
+      "confidence": 0.95,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 1,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:40:48.655663+00:00"
+      }
+    },
+    {
+      "finding_id": "F-operations-45022b28",
+      "analyst_name": "operations",
+      "title": "Conversion Rate Stability",
+      "claim": "The conversion rate was 0.24 compared to 0.25 in the previous period.",
+      "finding_type": "customer_behavior",
+      "evidence": [
+        {
+          "metric_name": "conv_curr",
+          "value": 0.24150596877869604,
+          "unit": "ratio",
+          "numerator": 1315.0,
+          "denominator": 5445.0,
+          "period_start": "2026-05-03T21:00:00+00:00",
+          "period_end": "2026-05-10T21:00:00+00:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos",
+            "traffic"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\operations\\revision-1\\3.json",
+          "result_key": "conv_curr"
+        },
+        {
+          "metric_name": "conv_prev",
+          "value": 0.2500907441016334,
+          "unit": "ratio",
+          "numerator": 1378.0,
+          "denominator": 5510.0,
+          "period_start": "2026-04-26T21:00:00+00:00",
+          "period_end": "2026-05-03T21:00:00+00:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos",
+            "traffic"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\operations\\revision-1\\3.json",
+          "result_key": "conv_prev"
+        }
+      ],
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\operations\\revision-1\\3.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 4305,
+        "created_at": "2026-08-06T17:40:47.585940+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\operations\\revision-1\\3.json",
+        "media_type": "application/json",
+        "sha256": "fff28e902493f81a1f94e9ad9c079633020648b36fc56d8f6a654bf55355c18b",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2604,
+        "created_at": "2026-08-06T17:40:48.655663+00:00"
+      },
+      "sample_size": 2693,
+      "coverage_notes": [
+        "Excludes days marked as dead sensor days in traffic data."
+      ],
+      "assumptions": [
+        "Assumes door counts are representative of total foot traffic."
+      ],
+      "confidence": 0.9,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 1,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:40:48.655663+00:00"
+      }
+    },
+    {
+      "finding_id": "F-customer-8c6576df",
+      "analyst_name": "customer",
+      "title": "Customer Sentiment Analysis",
+      "claim": "During the analysis period, the cafe received 15 reviews with an average rating of 3.67. The sentiment distribution consists of 9 positive, 2 neutral, and 4 negative reviews.",
+      "finding_type": "Customer Sentiment",
+      "evidence": [
+        {
+          "metric_name": "total_reviews",
+          "value": 15,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-2\\1.json",
+          "result_key": "total_reviews"
+        },
+        {
+          "metric_name": "avg_rating",
+          "value": 3.67,
+          "unit": "stars",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-2\\1.json",
+          "result_key": "avg_rating"
+        },
+        {
+          "metric_name": "pos_count",
+          "value": 9,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-2\\1.json",
+          "result_key": "pos_count"
+        },
+        {
+          "metric_name": "neu_count",
+          "value": 2,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-2\\1.json",
+          "result_key": "neu_count"
+        },
+        {
+          "metric_name": "neg_count",
+          "value": 4,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-2\\1.json",
+          "result_key": "neg_count"
+        }
+      ],
+      "source_names": [
+        "reviews"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\customer\\revision-2\\1.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2363,
+        "created_at": "2026-08-06T17:45:57.993857+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-2\\1.json",
+        "media_type": "application/json",
+        "sha256": "c4fc991b8ec1ad4db19122e9d5650706c620c8c29aacbe1a97683b6f0e969384",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 1634,
+        "created_at": "2026-08-06T17:45:58.940860+00:00"
+      },
+      "sample_size": 15,
+      "coverage_notes": [
+        "Covers all reviews recorded in the system for the specified week."
+      ],
+      "assumptions": [
+        "Sentiment is classified based on rating thresholds: 4-5 positive, 3 neutral, 1-2 negative."
+      ],
+      "confidence": 1.0,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 2,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:45:58.943063+00:00"
+      }
+    }
+  ],
+  "critic_results": {
+    "approved_findings": [
+      "F-sales-0444258d",
+      "F-sales-944f4f67",
+      "F-margin-4dccf419",
+      "F-margin-f25f3f31",
+      "F-customer-35079662"
+    ],
+    "rejected_findings": [
+      "F-operations-634daa99",
+      "F-customer-1faf1fb3",
+      "F-operations-a519a3ff",
+      "F-operations-45022b28",
+      "F-customer-8c6576df"
+    ],
+    "revision_requests": [],
+    "removed_after_cap": [
+      "F-operations-634daa99",
+      "F-customer-1faf1fb3",
+      "F-operations-a519a3ff",
+      "F-operations-45022b28"
+    ],
+    "total_rejections": 5,
+    "notes": [
+      "F-operations-634daa99 rejected after exhausting 2 revision rounds: semantic review: The claim states a 0% decrease, but the evidence provided shows a denominator of 0.0, which makes the calculation mathematically undefined or invalid. Furthermore, a 0% change is not a reduction, and the lack of a comparison period makes the claim logically inconsistent.",
+      "F-customer-1faf1fb3 rejected after exhausting 2 revision rounds: semantic review: The claim states there are 15 total reviews, but the sentiment distribution provided (5 positive, 0 negative) only accounts for 5 reviews. The remaining 10 reviews are unaccounted for, making the sentiment distribution claim mathematically inconsistent with the total review count.",
+      "F-operations-a519a3ff rejected after exhausting 2 revision rounds: metric 'waste_curr' period ('2026-05-03', '2026-05-10') does not match any known analysis/previous/trailing-baseline period for this run; metric 'waste_prev' period ('2026-04-26', '2026-05-03') does not match any known analysis/previous/trailing-baseline period for this run; metric 'waste_delta_pct' period ('2026-05-03', '2026-05-10') does not match any known analysis/previous/trailing-baseline period for this run",
+      "F-operations-45022b28 rejected after exhausting 2 revision rounds: metric 'conv_curr' period ('2026-05-03', '2026-05-10') does not match any known analysis/previous/trailing-baseline period for this run; metric 'conv_prev' period ('2026-04-26', '2026-05-03') does not match any known analysis/previous/trailing-baseline period for this run",
+      "F-customer-8c6576df rejected as duplicate of F-customer-35079662"
+    ]
+  },
+  "final_findings": [
+    {
+      "finding_id": "F-margin-f25f3f31",
+      "analyst_name": "margin",
+      "title": "Menu Engineering: Star Items",
+      "claim": "Items identified as 'stars' (high popularity, high margin) include 5 items: Karak Tea, Iced Spanish Latte, Iced Americano, Cold Brew, Mojito Passion.",
+      "finding_type": "menu_engineering",
+      "evidence": [
+        {
+          "metric_name": "star_count",
+          "value": 5,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos",
+            "menu"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+          "result_key": "star_count"
+        },
+        {
+          "metric_name": "median_units",
+          "value": 112.0,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos",
+            "menu"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+          "result_key": "median_units"
+        },
+        {
+          "metric_name": "median_margin_pct",
+          "value": 70.7,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos",
+            "menu"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+          "result_key": "median_margin_pct"
+        },
+        {
+          "metric_name": "star_names",
+          "value": "Karak Tea, Iced Spanish Latte, Iced Americano, Cold Brew, Mojito Passion",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos",
+            "menu"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+          "result_key": "star_names"
+        }
+      ],
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\margin\\initial\\1.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 4145,
+        "created_at": "2026-08-06T17:34:12.125001+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+        "media_type": "application/json",
+        "sha256": "bd4d8623097d896c53b31f1ed2a0591cdd26ef5b86dd6a5e984d651a2d2934c0",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2309,
+        "created_at": "2026-08-06T17:34:13.149150+00:00"
+      },
+      "sample_size": 1311,
+      "coverage_notes": [
+        "Thresholds: median units sold = <<median_units>>, median gross margin = <<median_margin_pct>>%."
+      ],
+      "assumptions": [
+        "Gross margin calculated using menu unit costs."
+      ],
+      "confidence": 0.9,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 0,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:34:13.151717+00:00"
+      }
+    },
+    {
+      "finding_id": "F-sales-0444258d",
+      "analyst_name": "sales",
+      "title": "Net Revenue Performance",
+      "claim": "Net revenue for the period was 46000.90 SAR, representing a change of 0.40% compared to the previous period's 45816.75 SAR.",
+      "finding_type": "revenue_analysis",
+      "evidence": [
+        {
+          "metric_name": "rev_curr",
+          "value": 46000.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+          "result_key": "rev_curr"
+        },
+        {
+          "metric_name": "rev_prev",
+          "value": 45816.75,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+          "result_key": "rev_prev"
+        },
+        {
+          "metric_name": "rev_pct",
+          "value": 0.4,
+          "unit": "%",
+          "numerator": 184.15,
+          "denominator": 45816.75,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+          "result_key": "rev_pct"
+        }
+      ],
+      "source_names": [
+        "pos"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\sales\\initial\\1.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 3583,
+        "created_at": "2026-08-06T17:34:12.996034+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+        "media_type": "application/json",
+        "sha256": "032f502d823a8b49d39ea7624e1d233afb0aae30c745915830e7f3aed3189e17",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2511,
+        "created_at": "2026-08-06T17:34:13.925206+00:00"
+      },
+      "sample_size": 1344,
+      "coverage_notes": [
+        "Includes all valid POS transactions; refunds are netted."
+      ],
+      "assumptions": [
+        "Assumes transaction_id uniquely identifies a basket."
+      ],
+      "confidence": 1.0,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 0,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:34:13.926610+00:00"
+      }
+    },
+    {
+      "finding_id": "F-sales-944f4f67",
+      "analyst_name": "sales",
+      "title": "Transaction Volume Change",
+      "claim": "Transaction volume shifted by -1.97%, moving from 1371 transactions to 1344 transactions.",
+      "finding_type": "volume_analysis",
+      "evidence": [
+        {
+          "metric_name": "tx_curr",
+          "value": 1344,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+          "result_key": "tx_curr"
+        },
+        {
+          "metric_name": "tx_prev",
+          "value": 1371,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-27T00:00:00+03:00",
+          "period_end": "2026-05-04T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+          "result_key": "tx_prev"
+        },
+        {
+          "metric_name": "tx_pct",
+          "value": -1.97,
+          "unit": "%",
+          "numerator": -27,
+          "denominator": 1371,
+          "period_start": "2026-05-04T00:00:00+03:00",
+          "period_end": "2026-05-11T00:00:00+03:00",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "pos"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+          "result_key": "tx_pct"
+        }
+      ],
+      "source_names": [
+        "pos"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\sales\\initial\\1.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 3583,
+        "created_at": "2026-08-06T17:34:12.996034+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\sales\\initial\\1.json",
+        "media_type": "application/json",
+        "sha256": "032f502d823a8b49d39ea7624e1d233afb0aae30c745915830e7f3aed3189e17",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2511,
+        "created_at": "2026-08-06T17:34:13.925206+00:00"
+      },
+      "sample_size": 1344,
+      "coverage_notes": [
+        "Transaction count based on unique transaction_id."
+      ],
+      "assumptions": [
+        "Assumes transaction_id is consistent across the period."
+      ],
+      "confidence": 1.0,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 0,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:34:13.926610+00:00"
+      }
+    },
+    {
+      "finding_id": "F-customer-35079662",
+      "analyst_name": "customer",
+      "title": "Customer Sentiment Analysis",
+      "claim": "During the analysis period, the cafe received 15 reviews with an average rating of 3.67. The sentiment distribution consists of 9 positive, 2 neutral, and 4 negative reviews.",
+      "finding_type": "Customer Sentiment",
+      "evidence": [
+        {
+          "metric_name": "total_reviews",
+          "value": 15,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-1\\1.json",
+          "result_key": "total_reviews"
+        },
+        {
+          "metric_name": "avg_rating",
+          "value": 3.67,
+          "unit": "stars",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-1\\1.json",
+          "result_key": "avg_rating"
+        },
+        {
+          "metric_name": "pos_count",
+          "value": 9,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-1\\1.json",
+          "result_key": "pos_count"
+        },
+        {
+          "metric_name": "neu_count",
+          "value": 2,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-1\\1.json",
+          "result_key": "neu_count"
+        },
+        {
+          "metric_name": "neg_count",
+          "value": 4,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "reviews"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-1\\1.json",
+          "result_key": "neg_count"
+        }
+      ],
+      "source_names": [
+        "reviews"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\customer\\revision-1\\1.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2363,
+        "created_at": "2026-08-06T17:39:22.010637+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\customer\\revision-1\\1.json",
+        "media_type": "application/json",
+        "sha256": "c4fc991b8ec1ad4db19122e9d5650706c620c8c29aacbe1a97683b6f0e969384",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 1634,
+        "created_at": "2026-08-06T17:39:22.803176+00:00"
+      },
+      "sample_size": 15,
+      "coverage_notes": [
+        "Covers all reviews recorded in the system for the specified week."
+      ],
+      "assumptions": [
+        "Sentiment is classified based on rating thresholds: 4-5 positive, 3 neutral, 1-2 negative."
+      ],
+      "confidence": 1.0,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 1,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:39:22.818800+00:00"
+      }
+    },
+    {
+      "finding_id": "F-margin-4dccf419",
+      "analyst_name": "margin",
+      "title": "Procurement Cost Pressure",
+      "claim": "Supplier price increases for oat and milk ingredients create a weekly procurement cost pressure of 256 SAR, assuming standing-order volumes remain constant.",
+      "finding_type": "cost_analysis",
+      "evidence": [
+        {
+          "metric_name": "total_procurement_pressure",
+          "value": 256.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-04",
+          "period_end": "2026-05-11",
+          "comparison_period_start": null,
+          "comparison_period_end": null,
+          "source_names": [
+            "emails",
+            "inventory"
+          ],
+          "result_path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+          "result_key": "total_procurement_pressure"
+        }
+      ],
+      "source_names": [
+        "emails",
+        "inventory"
+      ],
+      "code_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\code\\margin\\initial\\1.py",
+        "media_type": "text/x-python",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 4145,
+        "created_at": "2026-08-06T17:34:12.125001+00:00"
+      },
+      "result_artifact": {
+        "path": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\outputs\\artifacts\\fullpipe_3e7f9b19\\results\\margin\\initial\\1.json",
+        "media_type": "application/json",
+        "sha256": "bd4d8623097d896c53b31f1ed2a0591cdd26ef5b86dd6a5e984d651a2d2934c0",
+        "schema_version": "1.0",
+        "row_count": null,
+        "byte_size": 2309,
+        "created_at": "2026-08-06T17:34:13.149150+00:00"
+      },
+      "sample_size": null,
+      "coverage_notes": [
+        "Based on supplier email price changes for barista oat and full-fat milk."
+      ],
+      "assumptions": [
+        "Assumes standing-order quantities of 40L oat and 120L milk remain unchanged."
+      ],
+      "confidence": 0.95,
+      "business_impact_score": 0.5,
+      "actionability_score": 0.5,
+      "revision_count": 0,
+      "execution_metadata": {
+        "generated_at": "2026-08-06T17:34:13.151717+00:00"
+      }
+    }
+  ],
+  "context_bundle": {
+    "recommendation_period_start": "2026-05-11T00:00:00+03:00",
+    "recommendation_period_end": "2026-05-18T00:00:00+03:00",
+    "search_queries": [
+      "events near Saihat, Qatif, Eastern Province during 2026-05-11 to 2026-05-18",
+      "weather Saihat 2026-05-11 to 2026-05-18",
+      "seasonal events near Saihat, Qatif, Eastern Province during 2026-05-11 to 2026-05-18"
+    ],
+    "evidence": [
+      {
+        "context_id": "prayer-2026-05-11",
+        "kind": "prayer",
+        "title": "Prayer times 2026-05-11",
+        "date_start": "2026-05-11",
+        "date_end": "2026-05-11",
+        "location": "Saihat",
+        "source": "deterministic:umm_al_qura",
+        "source_url_or_artifact": null,
+        "retrieved_at": "2026-08-06T17:52:37.421609+00:00",
+        "summary": "Fajr 03:28, Dhuhr 11:36, Asr 15:06, Maghrib 18:17, Isha 19:47"
+      },
+      {
+        "context_id": "prayer-2026-05-12",
+        "kind": "prayer",
+        "title": "Prayer times 2026-05-12",
+        "date_start": "2026-05-12",
+        "date_end": "2026-05-12",
+        "location": "Saihat",
+        "source": "deterministic:umm_al_qura",
+        "source_url_or_artifact": null,
+        "retrieved_at": "2026-08-06T17:52:37.421609+00:00",
+        "summary": "Fajr 03:27, Dhuhr 11:36, Asr 15:06, Maghrib 18:18, Isha 19:48"
+      },
+      {
+        "context_id": "prayer-2026-05-13",
+        "kind": "prayer",
+        "title": "Prayer times 2026-05-13",
+        "date_start": "2026-05-13",
+        "date_end": "2026-05-13",
+        "location": "Saihat",
+        "source": "deterministic:umm_al_qura",
+        "source_url_or_artifact": null,
+        "retrieved_at": "2026-08-06T17:52:37.421609+00:00",
+        "summary": "Fajr 03:26, Dhuhr 11:36, Asr 15:06, Maghrib 18:18, Isha 19:48"
+      },
+      {
+        "context_id": "prayer-2026-05-14",
+        "kind": "prayer",
+        "title": "Prayer times 2026-05-14",
+        "date_start": "2026-05-14",
+        "date_end": "2026-05-14",
+        "location": "Saihat",
+        "source": "deterministic:umm_al_qura",
+        "source_url_or_artifact": null,
+        "retrieved_at": "2026-08-06T17:52:37.421609+00:00",
+        "summary": "Fajr 03:25, Dhuhr 11:36, Asr 15:06, Maghrib 18:19, Isha 19:49"
+      },
+      {
+        "context_id": "prayer-2026-05-15",
+        "kind": "prayer",
+        "title": "Prayer times 2026-05-15",
+        "date_start": "2026-05-15",
+        "date_end": "2026-05-15",
+        "location": "Saihat",
+        "source": "deterministic:umm_al_qura",
+        "source_url_or_artifact": null,
+        "retrieved_at": "2026-08-06T17:52:37.421609+00:00",
+        "summary": "Fajr 03:24, Dhuhr 11:36, Asr 15:06, Maghrib 18:19, Isha 19:49"
+      },
+      {
+        "context_id": "prayer-2026-05-16",
+        "kind": "prayer",
+        "title": "Prayer times 2026-05-16",
+        "date_start": "2026-05-16",
+        "date_end": "2026-05-16",
+        "location": "Saihat",
+        "source": "deterministic:umm_al_qura",
+        "source_url_or_artifact": null,
+        "retrieved_at": "2026-08-06T17:52:37.421609+00:00",
+        "summary": "Fajr 03:24, Dhuhr 11:36, Asr 15:06, Maghrib 18:20, Isha 19:50"
+      },
+      {
+        "context_id": "prayer-2026-05-17",
+        "kind": "prayer",
+        "title": "Prayer times 2026-05-17",
+        "date_start": "2026-05-17",
+        "date_end": "2026-05-17",
+        "location": "Saihat",
+        "source": "deterministic:umm_al_qura",
+        "source_url_or_artifact": null,
+        "retrieved_at": "2026-08-06T17:52:37.421609+00:00",
+        "summary": "Fajr 03:23, Dhuhr 11:36, Asr 15:05, Maghrib 18:20, Isha 19:50"
+      },
+      {
+        "context_id": "email-event-cef6a69d",
+        "kind": "email_event",
+        "title": "Ramadan night market \u2014 vendor slots",
+        "date_start": "20:00",
+        "date_end": "01:00",
+        "location": "Saihat corniche",
+        "source": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\data\\qahwa_saihat\\supplier_emails\\2026-03-02_04.txt",
+        "source_url_or_artifact": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\data\\qahwa_saihat\\supplier_emails\\2026-03-02_04.txt",
+        "retrieved_at": "2026-08-06T17:52:37.433637+00:00",
+        "summary": "The Saihat corniche night market runs nightly 20:00-01:00 through Eid."
+      },
+      {
+        "context_id": "email-event-d30106d5",
+        "kind": "email_event",
+        "title": "Summer Nights Qatif \u2014 sponsorship",
+        "date_start": "2026-07-10",
+        "date_end": "2026-08-08",
+        "location": "Qatif and Saihat waterfront",
+        "source": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\data\\qahwa_saihat\\supplier_emails\\2026-07-06_12.txt",
+        "source_url_or_artifact": "c:\\Users\\User\\Desktop\\Week 6\\Cafe Intelligence Agent\\cafe-intelligence-agent\\data\\qahwa_saihat\\supplier_emails\\2026-07-06_12.txt",
+        "retrieved_at": "2026-08-06T17:52:37.433637+00:00",
+        "summary": "The Summer Nights programme runs 10 July - 8 August across Qatif and Saihat waterfront. Expected footfall 8,000+ nightly. Beverage sponsor packages start at SAR 4,500."
+      },
+      {
+        "context_id": "tavily-6097e50b",
+        "kind": "event",
+        "title": "Saudi Arabia Events Calendar 2026 \u2014 Month-by-Month Guide",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://houseofsaud.com/travel/saudi-arabia-events-2026",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "The Taif Rose Festival celebrates the annual harvest of millions of Taif Damascus roses, which bloom between March and April in the cool highland climate of Saudi Arabia\u2019s \u201cCity of Roses.\u201d The festival runs for approximately 45 days and includes the Rose Market, scenic Rose Mountain tours, parades, live performances, flower displays, theatre shows, and workshops on traditional rose oil distillation. Taif rose oil is among the most expensive essential oils in the world, and the city has been [..."
+      },
+      {
+        "context_id": "tavily-9a64c001",
+        "kind": "event",
+        "title": "The Qatif Municipality has officially announced the launch of ...",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://www.instagram.com/reel/DUu_noTiDah?hl=en",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "Video by Mubeena on August 03, 2026. May be an image of map, outdoors and text that says 'Your Eastern Province Summer visit list: DAMMAM 1. Dolphin Village 2. Gravity 3. Mahara Karting Adventure World 5. Toryland 6. Water Island 7. King Fahd Park (Life Park) 8. Fabyland (Othaim Mall) 9. Fabyland (West Avenue Mall) 10. Dammam Corniche 11. Marjan Island 12. Heritage Village 13. 13.\u0391 AI Jowharah museum Talesol_ba'. [...] talesof\\_khobar\n\nThe Qatif Municipality has officially announced the launch o"
+      },
+      {
+        "context_id": "tavily-b0d62532",
+        "kind": "event",
+        "title": "THE 15 BEST Middle East Cultural Events (2026)",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://www.tripadvisor.com/Attractions-g21-Activities-c62-t282-Middle_East.html",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "### 7. Narcis Persian Night [...] ### 1. Janadriyah Festival [...] ### 6. Sheikh Zayed Festival"
+      },
+      {
+        "context_id": "tavily-487ce9de",
+        "kind": "event",
+        "title": "Qatif Flower Festival 2026 (season 5) Location: Al Meshari ...",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://www.instagram.com/reel/DUvw1d1COBb?hl=en",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "nahdasherin's profile picture\njiyasliving's profile picture\nwoman_in_riyadh's profile picture\nt0__taste's profile picture\nngmm.shk8's profile picture\nVideo by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on July 04, 2024.\nVideo by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on July 07, 2024.\nVideo by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on July 22, 2024.\nPhoto by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on May 15, 2026.\nPhoto by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on May 12, 2026.\nPhoto by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on May 08, 2026.\nPhoto by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on April 27, 2026.\nVideo by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on April 21, 2026.\nVideo by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on April 14, 2026. [...] memory__lane___'s profile picture\nVide"
+      },
+      {
+        "context_id": "tavily-aae36d27",
+        "kind": "event",
+        "title": "The Qatif Municipality has officially announced the launch of the 5th ...",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://www.facebook.com/Officialddhy/posts/the-qatif-municipality-has-officially-announced-the-launch-of-the-5th-flower-fes/1027513283772198",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "## Dammam Dammam Hai Yaar's post\n\n### Dammam Dammam Hai Yaar\n\n11 February  \u00b7\n\nThe Qatif Municipality has officially announced the launch of the 5th Flower Festival \ud83c\udf3a\ud83c\udf8a on 13 February, 2026\n\n\u2022 Location: Al-Mishari Corniche, Qatif.\n\n\u2022 Opening Hours: Daily from 4:00 PM to 11:00 PM.\n\n#Qatif #Dammam\n\nNo photo description available. [...] All reactions:\n\n10\n\n1 share [...] '/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16"
+      },
+      {
+        "context_id": "tavily-634380a2",
+        "kind": "event",
+        "title": "Weather in Saihat",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://www.weatherapi.com/",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "{'location': {'name': 'Saihat', 'region': 'Ash Sharqiyah', 'country': 'Saudi Arabia', 'lat': 26.4794, 'lon': 50.045, 'tz_id': 'Asia/Riyadh', 'localtime_epoch': 1786038754, 'localtime': '2026-08-06 20:52'}, 'current': {'last_updated_epoch': 1786038300, 'last_updated': '2026-08-06 20:45', 'temp_c': 37.2, 'temp_f': 99.0, 'is_day': 0, 'condition': {'text': 'Clear', 'icon': '//cdn.weatherapi.com/weather/64x64/night/113.png', 'code': 1000}, 'wind_mph': 4.3, 'wind_kph': 6.8, 'wind_degree': 67, 'wind_di"
+      },
+      {
+        "context_id": "tavily-8ac9f835",
+        "kind": "event",
+        "title": "Saihat Saudi Arabia, 14 days Weather forecast, Radar & Photos",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://weawow.com/c9195413",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "4.8+      5,000,000+ Download  \n\n No Ads\n No tracking\n Beautiful Forecast\n Widgets\n Powerful Customize\n\n\u00a9 2026 Weawow      English\n\nSign up | Log in\n\n1. Weawow\n2. Discover\n3. Marketplace\n4. Cart\n5. Units\n6. Theme Color\n7. Weather Icon\n8. Weather Provider\n9. About Weawow\n10. Privacy Policy\n11. Terms of use\n12. Cookie Policy\n13. Help\n14. Contact\n15. \u00a9 2026 Weawow\n\n### Units\n\n1. Temperature\n\n   \u00b0C\u00b0F\n2. Rain, Snow\n\n   mm, cmin\n3. Distance\n\n   kmmi\n4. Wind speed\n\n   m/skm/hmphknotsBf\n5. Pressure [..."
+      },
+      {
+        "context_id": "tavily-3807578c",
+        "kind": "event",
+        "title": "Sayhat Weather - Weather Forecast for Sayhat , Saudi Arabia | ArabiaWeather",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://www.arabiaweather.com/en/weather-forecast/sayhat/414/sa",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "2026.08.03\n\nThe most severe since the beginning of summer 2026: A heat wave hits 8 Arab countries, with temperatures reaching nearly 50 degrees Celsius.\n\nThe most severe since the beginning of summer 2026: A heat wave hits 8 Arab countries, with temperatures reaching nearly 50 degrees Celsius.\n\n 2026.07.15 \n\narabiaweather\n\nAl-Musnad: Promising indicators for an active rainy season in the Arabian Peninsula\n\n2026.07.14  arabiaweather [...] Arab regions, including two capital cities, will be among "
+      },
+      {
+        "context_id": "tavily-e32751fb",
+        "kind": "event",
+        "title": "Weather - Sayhat - 14-Day Forecast & Rain",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://www.ventusky.com/sayhat",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "|  |  |\n --- |\n| clear sky | 107.6 \u00b0F |\n|  |\n| Wind speed   10 mph |\n\n|  |  |\n --- |\n| Air pressure | 29.4 inHg |\n| Visibility | 4 mi |\n| Clouds | 0 % |\n\nCalculated from nearby stations (18:00 08/04/2026)\n\nOpen Radar Map\n\n1Warning\n\nmoderate temperature\n\n## Weather for the next 24 hours [...] ## Forecast\n\n Wed   \n   clear sky   \n   113 \u00b0F\n Thu   \n   clear sky   \n   117 \u00b0F\n Fri   \n   clear sky   \n   111 \u00b0F\n Sat   \n   clear sky   \n   109 \u00b0F\n Sun   \n   clear sky   \n   111 \u00b0F\n Mon   \n   clear sky   \n"
+      },
+      {
+        "context_id": "tavily-6554cdee",
+        "kind": "event",
+        "title": "Saihat Weather Forecast - Saudi Arabia (Eastern Region) : free 15 day ...",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://www.weathercrave.com/weather-forecast-saudi-arabia/city-6091/weather-forecast-saihat-today",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "### This afternoon in Saihat, Skies with few clouds. Temperatures will vary between 35 and 45\u00b0C, it will be heatwave in the afternoon. The reliability of the situation is very good.\n\n#### This afternoon\n\n##### Slightly cloudy\n\n45\u00b0 Feels Like 51\u00b0 due to the sun\n\n20 km/h  Gusts 25 km/h\n\n##### Good weather with few clouds.\n\n##### No precipitation.\n\n##### No risk of rain\n\n##### UV index 9 Very high\n\n#### This evening\n\n##### Sunny\n\n36\u00b0 Feels Like 35\u00b0\n\n10 km/h  Gusts 20 km/h [...] ##### Good weather w"
+      },
+      {
+        "context_id": "tavily-3b1c6779",
+        "kind": "event",
+        "title": "Qatif flower festival season 5 \ud83c\udfab Free entry Spectacular ...",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://www.instagram.com/p/DU0pZDmiAfq",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "Photo by Explore with Nourah \ud83c\uddf8\ud83c\udde6\ud83c\udde6\ud83c\uddea on May 09, 2026.\nPhoto by Explore with Nourah \ud83c\uddf8\ud83c\udde6\ud83c\udde6\ud83c\uddea on May 06, 2026.\nVideo by Explore with Nourah \ud83c\uddf8\ud83c\udde6\ud83c\udde6\ud83c\uddea on March 23, 2026.\nPhoto by Explore with Nourah \ud83c\uddf8\ud83c\udde6\ud83c\udde6\ud83c\uddea on February 27, 2026.\nPhoto by Explore with Nourah \ud83c\uddf8\ud83c\udde6\ud83c\udde6\ud83c\uddea on February 26, 2026. [...] explorewithnourah's profile picture\nPhoto by Explore with Nourah \ud83c\uddf8\ud83c\udde6\ud83c\udde6\ud83c\uddea on February 16, 2026.\nexplorewithnourah's profile picture\nexplorewithnourah's profile picture\nhemanthkumarmani's profile picture\nexplorewithnourah's profile "
+      },
+      {
+        "context_id": "tavily-a5b2ee5a",
+        "kind": "event",
+        "title": "Qatif Flower Festival 2026 (season 5) Location: Al Meshari ...",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://www.instagram.com/reel/DUvw1d1COBb?hl=en",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "nahdasherin's profile picture\njiyasliving's profile picture\nwoman_in_riyadh's profile picture\nt0__taste's profile picture\nngmm.shk8's profile picture\nVideo by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on July 04, 2024.\nVideo by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on July 07, 2024.\nVideo by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on July 22, 2024.\nPhoto by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on May 15, 2026.\nPhoto by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on May 12, 2026.\nPhoto by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on May 08, 2026.\nPhoto by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on April 27, 2026.\nVideo by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on April 21, 2026.\nVideo by \ud835\ude34\uaadd\uaac0\ud835\ude33\ud835\udcf2\uaa80 on April 14, 2026. [...] memory__lane___'s profile picture\nVide"
+      },
+      {
+        "context_id": "tavily-3991aa5e",
+        "kind": "event",
+        "title": "The Qatif Municipality has officially announced the launch of ...",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://www.instagram.com/reel/DUu_noTiDah?hl=en",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "Video by Mubeena on August 03, 2026. May be an image of map, outdoors and text that says 'Your Eastern Province Summer visit list: DAMMAM 1. Dolphin Village 2. Gravity 3. Mahara Karting Adventure World 5. Toryland 6. Water Island 7. King Fahd Park (Life Park) 8. Fabyland (Othaim Mall) 9. Fabyland (West Avenue Mall) 10. Dammam Corniche 11. Marjan Island 12. Heritage Village 13. 13.\u0391 AI Jowharah museum Talesol_ba'. [...] talesof\\_khobar\n\nThe Qatif Municipality has officially announced the launch o"
+      },
+      {
+        "context_id": "tavily-d040d6af",
+        "kind": "event",
+        "title": "Saudi Arabia Events Calendar 2026 \u2014 Month-by-Month Guide",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://houseofsaud.com/travel/saudi-arabia-events-2026",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "The Taif Rose Festival celebrates the annual harvest of millions of Taif Damascus roses, which bloom between March and April in the cool highland climate of Saudi Arabia\u2019s \u201cCity of Roses.\u201d The festival runs for approximately 45 days and includes the Rose Market, scenic Rose Mountain tours, parades, live performances, flower displays, theatre shows, and workshops on traditional rose oil distillation. Taif rose oil is among the most expensive essential oils in the world, and the city has been [..."
+      },
+      {
+        "context_id": "tavily-814f4551",
+        "kind": "event",
+        "title": "Complete Calendar of Festivals, Concerts, and Exhibitions",
+        "date_start": null,
+        "date_end": null,
+        "location": null,
+        "source": "tavily",
+        "source_url_or_artifact": "https://www.bmeventsksa.com/saudi-summer-events-2026-complete-calendar-of-festivals-concerts-and-exhibitions",
+        "retrieved_at": "2026-08-06T17:52:31.493933+00:00",
+        "summary": "Jeddah Season 2026 is particularly special because of the coastal location. Therefore, visitors can enjoy beach activities during the day and world-class concerts at night. The summer events in Saudi Arabia 2026 calendar would not be complete without the vibrant energy of Jeddah.\n\n#### Eastern Province Summer Events\n\nThe Eastern Province is also hosting major events during summer 2026. [...] | Event Name | Dates | Venue | Type |\n ---  --- |\n| Dammam Summer Festival | July 1 \u2013 August 15 | Dammam "
+      }
+    ],
+    "posting_windows": [
+      {
+        "window_id": "pw-2026-05-11",
+        "post_date": "2026-05-11",
+        "start_time_local": "21:00",
+        "end_time_local": "22:00",
+        "busy_metric_keys": [
+          "hourly_valid_transaction_count"
+        ],
+        "demand_score": 531.0,
+        "prayer_relation": null,
+        "event_context_ids": [],
+        "rationale": "Historically busiest hour (21:00) on this weekday based on unique valid transactions observed across the available POS history."
+      },
+      {
+        "window_id": "pw-2026-05-12",
+        "post_date": "2026-05-12",
+        "start_time_local": "20:00",
+        "end_time_local": "21:00",
+        "busy_metric_keys": [
+          "hourly_valid_transaction_count"
+        ],
+        "demand_score": 517.0,
+        "prayer_relation": null,
+        "event_context_ids": [],
+        "rationale": "Historically busiest hour (20:00) on this weekday based on unique valid transactions observed across the available POS history."
+      },
+      {
+        "window_id": "pw-2026-05-13",
+        "post_date": "2026-05-13",
+        "start_time_local": "20:00",
+        "end_time_local": "21:00",
+        "busy_metric_keys": [
+          "hourly_valid_transaction_count"
+        ],
+        "demand_score": 501.0,
+        "prayer_relation": null,
+        "event_context_ids": [],
+        "rationale": "Historically busiest hour (20:00) on this weekday based on unique valid transactions observed across the available POS history."
+      },
+      {
+        "window_id": "pw-2026-05-14",
+        "post_date": "2026-05-14",
+        "start_time_local": "21:00",
+        "end_time_local": "22:00",
+        "busy_metric_keys": [
+          "hourly_valid_transaction_count"
+        ],
+        "demand_score": 501.0,
+        "prayer_relation": null,
+        "event_context_ids": [],
+        "rationale": "Historically busiest hour (21:00) on this weekday based on unique valid transactions observed across the available POS history."
+      },
+      {
+        "window_id": "pw-2026-05-15",
+        "post_date": "2026-05-15",
+        "start_time_local": "19:00",
+        "end_time_local": "20:00",
+        "busy_metric_keys": [
+          "hourly_valid_transaction_count"
+        ],
+        "demand_score": 768.0,
+        "prayer_relation": null,
+        "event_context_ids": [],
+        "rationale": "Historically busiest hour (19:00) on this weekday based on unique valid transactions observed across the available POS history."
+      },
+      {
+        "window_id": "pw-2026-05-16",
+        "post_date": "2026-05-16",
+        "start_time_local": "20:00",
+        "end_time_local": "21:00",
+        "busy_metric_keys": [
+          "hourly_valid_transaction_count"
+        ],
+        "demand_score": 759.0,
+        "prayer_relation": null,
+        "event_context_ids": [],
+        "rationale": "Historically busiest hour (20:00) on this weekday based on unique valid transactions observed across the available POS history."
+      },
+      {
+        "window_id": "pw-2026-05-17",
+        "post_date": "2026-05-17",
+        "start_time_local": "20:00",
+        "end_time_local": "21:00",
+        "busy_metric_keys": [
+          "hourly_valid_transaction_count"
+        ],
+        "demand_score": 390.0,
+        "prayer_relation": null,
+        "event_context_ids": [],
+        "rationale": "Historically busiest hour (20:00) on this weekday based on unique valid transactions observed across the available POS history."
+      }
+    ],
+    "search_status": "success",
+    "warnings": []
+  },
+  "content_ideas": [
+    {
+      "idea_id": "star-iced-latte-001",
+      "hook_ar": "\u0647\u0644 \u062c\u0631\u0628\u062a \u0627\u0644\u0627\u0646\u062a\u0639\u0627\u0634 \u0627\u0644\u062d\u0642\u064a\u0642\u064a \u0641\u064a \u0647\u0630\u0627 \u0627\u0644\u062d\u0631\u061f",
+      "hook_en": "Need a real refresh in this heat?",
+      "format": "reel",
+      "product_sku": "ICE-001",
+      "product_name_ar": "\u0622\u064a\u0633 \u0633\u0628\u0627\u0646\u064a\u0634 \u0644\u0627\u062a\u064a\u0647",
+      "product_name_en": "Iced Spanish Latte",
+      "finding_id": "F-margin-f25f3f31",
+      "cited_metric_keys": [
+        "star_names",
+        "median_margin_pct"
+      ],
+      "local_context_ids": [
+        "tavily-634380a2"
+      ],
+      "calendar_context_ids": [
+        "prayer-2026-05-15"
+      ],
+      "posting_window_id": "pw-2026-05-15",
+      "timing_metric_keys": [
+        "hourly_valid_transaction_count"
+      ],
+      "rationale_ar": "\u0627\u0633\u062a\u063a\u0644\u0627\u0644 \u0630\u0631\u0648\u0629 \u0627\u0644\u062d\u0631\u0627\u0631\u0629 \u0641\u064a \u0635\u064a\u0647\u0627\u062a \u0644\u0644\u062a\u0631\u0648\u064a\u062c \u0644\u0623\u0643\u062b\u0631 \u0645\u0634\u0631\u0648\u0628\u0627\u062a\u0646\u0627 \u0645\u0628\u064a\u0639\u0627\u064b \u0648\u0645\u0631\u0628\u062d\u0627\u064b.",
+      "rationale_en": "Leveraging the extreme heat in Saihat to promote our top-selling, high-margin star item.",
+      "post_date": "2026-05-15",
+      "post_time_local": "19:00",
+      "timing_reason": "Historically busiest hour on this weekday, aligning with evening cooling after the heatwave.",
+      "inventory_suitability": "supported"
+    },
+    {
+      "idea_id": "summer-vibes-mojito-002",
+      "hook_ar": "\u0623\u062c\u0648\u0627\u0621 \u0627\u0644\u0635\u064a\u0641 \u062a\u062d\u062a\u0627\u062c \u0644\u0645\u0648\u062c\u064a\u062a\u0648 \u0645\u0646\u0639\u0634!",
+      "hook_en": "Summer vibes call for a refreshing Mojito!",
+      "format": "carousel",
+      "product_sku": "ICE-006",
+      "product_name_ar": "\u0645\u0648\u0647\u064a\u062a\u0648 \u0628\u0627\u0634\u0646",
+      "product_name_en": "Mojito Passion",
+      "finding_id": "F-margin-f25f3f31",
+      "cited_metric_keys": [
+        "star_count",
+        "median_units"
+      ],
+      "local_context_ids": [
+        "tavily-3991aa5e"
+      ],
+      "calendar_context_ids": [
+        "prayer-2026-05-16"
+      ],
+      "posting_window_id": "pw-2026-05-16",
+      "timing_metric_keys": [
+        "hourly_valid_transaction_count"
+      ],
+      "rationale_ar": "\u0631\u0628\u0637 \u0627\u0644\u0645\u0634\u0631\u0648\u0628 \u0627\u0644\u0635\u064a\u0641\u064a \u0628\u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0632\u064a\u0627\u0631\u0627\u062a \u0627\u0644\u0635\u064a\u0641\u064a\u0629 \u0641\u064a \u0627\u0644\u0645\u0646\u0637\u0642\u0629 \u0627\u0644\u0634\u0631\u0642\u064a\u0629.",
+      "rationale_en": "Connecting our summer drink to the Eastern Province summer visit list.",
+      "post_date": "2026-05-16",
+      "post_time_local": "20:00",
+      "timing_reason": "Peak transaction volume window on a weekend evening.",
+      "inventory_suitability": "supported"
+    },
+    {
+      "idea_id": "cold-brew-refresh-003",
+      "hook_ar": "\u0642\u0647\u0648\u062a\u0643 \u0627\u0644\u0645\u0641\u0636\u0644\u0629 \u0628\u0644\u0645\u0633\u0629 \u0628\u0627\u0631\u062f\u0629 \u0648\u0645\u0645\u064a\u0632\u0629.",
+      "hook_en": "Your favorite coffee with a cool, unique twist.",
+      "format": "trend_audio",
+      "product_sku": "ICE-004",
+      "product_name_ar": "\u0643\u0648\u0644\u062f \u0628\u0631\u0648",
+      "product_name_en": "Cold Brew",
+      "finding_id": "F-margin-f25f3f31",
+      "cited_metric_keys": [
+        "star_names",
+        "median_margin_pct"
+      ],
+      "local_context_ids": [
+        "tavily-e32751fb"
+      ],
+      "calendar_context_ids": [
+        "prayer-2026-05-14"
+      ],
+      "posting_window_id": "pw-2026-05-14",
+      "timing_metric_keys": [
+        "hourly_valid_transaction_count"
+      ],
+      "rationale_ar": "\u0627\u0644\u062a\u0631\u0643\u064a\u0632 \u0639\u0644\u0649 \u0627\u0644\u0643\u0648\u0644\u062f \u0628\u0631\u0648 \u0643\u062e\u064a\u0627\u0631 \u0645\u062b\u0627\u0644\u064a \u0644\u0645\u0648\u0627\u062c\u0647\u0629 \u062f\u0631\u062c\u0627\u062a \u0627\u0644\u062d\u0631\u0627\u0631\u0629 \u0627\u0644\u0645\u0631\u062a\u0641\u0639\u0629.",
+      "rationale_en": "Highlighting Cold Brew as the perfect choice to combat high temperatures.",
+      "post_date": "2026-05-14",
+      "post_time_local": "21:00",
+      "timing_reason": "High transaction volume window during the late evening.",
+      "inventory_suitability": "supported"
+    }
+  ],
+  "content_validation": {
+    "valid": true,
+    "issues": {}
+  },
+  "report": {
+    "html_path": "outputs\\reports\\fullpipe_3e7f9b19\\report.html",
+    "pdf_path": null,
+    "pdf_warning": "PDF generation unavailable/failed: No module named 'weasyprint'",
+    "whatsapp_summary": "\u062a\u0642\u0631\u064a\u0631 Qahwa Saihat (2026-05-04 - 2026-05-11):\n- Menu Engineering: Star Items\n- Net Revenue Performance\n- Transaction Volume Change\n\nQahwa Saihat report (2026-05-04 - 2026-05-11):\n- Menu Engineering: Star Items: Items identified as 'stars' (high popularity, high margin) include 5 items: Karak Tea, Iced Spanish Latte, Iced Americano, Cold Brew, Mojito Passion.\n- Net Revenue Performance: Net revenue for the period was 46000.90 SAR, representing a change of 0.40% compared to the previous period's 4\u2026",
+    "whatsapp_char_count": 500,
+    "generated_at": "2026-08-06T17:55:23.027161+00:00",
+    "context": {
+      "chart_path": null
+    }
+  },
+  "run_status": "succeeded",
+  "paused_before": [
+    "human_gate"
+  ],
+  "step_count": 26,
+  "cost_usd": 0.0,
+  "token_usage": {},
+  "errors": []
+}

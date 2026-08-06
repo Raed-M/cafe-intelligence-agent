@@ -10,6 +10,7 @@ successful, schema-valid structured result -- never from prose.
 from __future__ import annotations
 
 import json
+import math
 import re
 import uuid
 from dataclasses import dataclass, field
@@ -25,6 +26,29 @@ from src.tools.code_executor import CodeExecutionRequest, execute_python_code
 
 CommonPromptPath = Path("prompts/analysts/common.md")
 CodeRepairPromptPath = Path("prompts/code_repair.md")
+
+
+def _build_correlation_hints(
+    cleaned_artifacts: dict[str, ArtifactRef], analysis_period: dict[str, str], previous_period: dict[str, str]
+) -> dict[str, Any]:
+    """Deterministic, code-only cross-source hints (no LLM) -- see
+    src/analysis/correlation_hints.py. Additive scaffolding only: the analyst
+    must still independently compute and cite any number it uses from these
+    in its own executed code before a finding can cite it."""
+    try:
+        from src.analysis.correlation_hints import calendar_overlaps, procurement_cost_scenarios, weekly_signal_deltas
+
+        hints: dict[str, Any] = {
+            "signal_deltas": weekly_signal_deltas(cleaned_artifacts, analysis_period, previous_period),
+            "calendar_overlaps": calendar_overlaps(analysis_period),
+        }
+        if "emails" in cleaned_artifacts:
+            from src.tools.artifact_io import read_dataframe
+
+            hints["procurement_cost_scenarios"] = procurement_cost_scenarios(read_dataframe(cleaned_artifacts["emails"]))
+        return hints
+    except Exception:  # noqa: BLE001
+        return {}
 
 
 @dataclass
@@ -52,7 +76,7 @@ to exercise the repair loop deterministically without network access."""
 
 def _default_llm_code_generator(model_name: str):
     def _generate(system_prompt: str, context: dict[str, Any]) -> str:
-        from src.tools.llm_factory import get_chat_model
+        from src.tools.llm_factory import extract_text, get_chat_model
 
         llm = get_chat_model(model_name, temperature=0)
         user_prompt = (
@@ -70,8 +94,7 @@ def _default_llm_code_generator(model_name: str):
             "Do not print secrets. Return ONLY the code, no markdown fences, no prose."
         )
         resp = llm.invoke([("system", system_prompt), ("user", user_prompt)])
-        content = resp.content if isinstance(resp.content, str) else str(resp.content)
-        return _strip_code_fences(content)
+        return _strip_code_fences(extract_text(resp))
 
     return _generate
 
@@ -81,9 +104,44 @@ def _strip_code_fences(text: str) -> str:
     return m.group(1) if m else text
 
 
+_CLAIM_PLACEHOLDER_RE = re.compile(r"<<([a-zA-Z0-9_]+)>>")
+
+
+def _format_metric_value(value: Any) -> str:
+    if isinstance(value, float):
+        if math.isnan(value) or math.isinf(value):
+            return str(value)
+        return str(int(value)) if value == int(value) else f"{value:.2f}"
+    return str(value)
+
+
+def _substitute_claim_placeholders(claim: str, metrics: dict[str, Any]) -> tuple[str, list[str]]:
+    """Replaces <<metric_key>> tokens in a claim with the literal value from this
+    finding's own metrics dict, so a restated number can never drift from the
+    evidence it cites -- the model names which fact to state, our code supplies
+    the digit. Returns (substituted_claim, unresolved_keys); an unresolved key
+    means the finding must be dropped (see _build_findings). A NaN/inf value
+    (e.g. a 0/0 division that slipped through generated code) is treated as
+    unresolved too -- substituting the literal string "nan" into a claim would
+    just be a different flavour of the same restatement problem this exists to
+    prevent, so drop the finding instead."""
+    unresolved: list[str] = []
+
+    def _sub(m: re.Match) -> str:
+        key = m.group(1)
+        metric = metrics.get(key)
+        value = metric.get("value") if isinstance(metric, dict) else None
+        if value is None or (isinstance(value, float) and (math.isnan(value) or math.isinf(value))):
+            unresolved.append(key)
+            return m.group(0)
+        return _format_metric_value(value)
+
+    return _CLAIM_PLACEHOLDER_RE.sub(_sub, claim), unresolved
+
+
 def _repair_code_generator(model_name: str):
     def _repair(previous_code: str, stderr: str, context: dict[str, Any]) -> str:
-        from src.tools.llm_factory import get_chat_model
+        from src.tools.llm_factory import extract_text, get_chat_model
 
         system_prompt = CodeRepairPromptPath.read_text(encoding="utf-8")
         llm = get_chat_model(model_name, temperature=0)
@@ -94,8 +152,7 @@ def _repair_code_generator(model_name: str):
             "Return ONLY the complete replacement program, no markdown fences, no prose."
         )
         resp = llm.invoke([("system", system_prompt), ("user", user_prompt)])
-        content = resp.content if isinstance(resp.content, str) else str(resp.content)
-        return _strip_code_fences(content)
+        return _strip_code_fences(extract_text(resp))
 
     return _repair
 
@@ -137,6 +194,8 @@ def run_analyst(
     role_prompt = spec.prompt_path.read_text(encoding="utf-8")
     system_prompt = f"{common_prompt}\n\n---\n\n{role_prompt}"
 
+    correlation_hints = _build_correlation_hints(cleaned_artifacts, analysis_period, previous_period)
+
     context = {
         "analysis_period": analysis_period,
         "previous_period": previous_period,
@@ -145,10 +204,15 @@ def run_analyst(
             k: {"path": v["path"], "row_count": v["row_count"], "columns": artifact_columns(v)}
             for k, v in available.items()
         },
+        "correlation_hints": correlation_hints,
         "required_output_schema": {
             "status": "success | insufficient_data",
             "findings": [{
-                "title": "str", "claim": "str", "finding_type": "str",
+                "title": "str",
+                "claim": "str (use <<metric_key>> placeholders for evidence-backed numbers, "
+                         "substituted from this finding's own metrics after you return -- see "
+                         "common.md rule 13; never type the literal digit yourself)",
+                "finding_type": "str",
                 "metrics": {"<result_key>": {"value": "number|string|null", "unit": "str|null",
                                               "numerator": "number|null", "denominator": "number|null",
                                               "period_start": "iso", "period_end": "iso"}},
@@ -213,20 +277,49 @@ def run_analyst(
         notes.append(result_obj.get("explanation", "insufficient_data"))
         return AnalystRunResult(analyst_name=spec.name, findings=[], status="insufficient_data", attempts=exec_result["attempt"], notes=notes)
 
-    findings = _build_findings(
-        spec, result_obj, exec_result["code_artifact"], exec_result["result_artifact"], limits.max_candidate_findings_per_analyst
-    )
+    try:
+        findings, build_notes = _build_findings(
+            spec, result_obj, exec_result["code_artifact"], exec_result["result_artifact"], limits.max_candidate_findings_per_analyst
+        )
+    except Exception as e:  # noqa: BLE001
+        # A malformed-but-schema-passing result (e.g. an unexpected value type
+        # in metrics) must degrade this one analyst to "failed", not crash the
+        # whole graph run -- same principle as the code-gen/repair try/excepts above.
+        return AnalystRunResult(
+            analyst_name=spec.name, findings=[], status="failed", attempts=exec_result["attempt"],
+            notes=notes + [f"finding construction failed: {type(e).__name__}: {e}"],
+        )
+    notes.extend(build_notes)
     return AnalystRunResult(analyst_name=spec.name, findings=findings, status="success", attempts=exec_result["attempt"], notes=notes)
 
 
 def _build_findings(
     spec: AnalystSpec, result_obj: dict[str, Any], code_artifact: ArtifactRef,
     result_artifact: ArtifactRef, max_findings: int,
-) -> list[AnalystFinding]:
+) -> tuple[list[AnalystFinding], list[str]]:
     findings: list[AnalystFinding] = []
+    notes: list[str] = []
     for raw in result_obj.get("findings", [])[:max_findings]:
+        metrics_raw = raw.get("metrics", {})
+        claim_text, unresolved = _substitute_claim_placeholders(raw.get("claim", ""), metrics_raw)
+        coverage_notes: list[str] = []
+        for note in raw.get("coverage_notes", []):
+            substituted, bad = _substitute_claim_placeholders(note, metrics_raw)
+            coverage_notes.append(substituted)
+            unresolved.extend(bad)
+        assumptions: list[str] = []
+        for assumption in raw.get("assumptions", []):
+            substituted, bad = _substitute_claim_placeholders(assumption, metrics_raw)
+            assumptions.append(substituted)
+            unresolved.extend(bad)
+        if unresolved:
+            notes.append(
+                f"finding {raw.get('title', '')!r} dropped: claim/coverage_notes/assumptions reference "
+                f"placeholder(s) {unresolved} not present in this finding's own metrics"
+            )
+            continue
         evidence: list[MetricEvidence] = []
-        for key, m in raw.get("metrics", {}).items():
+        for key, m in metrics_raw.items():
             evidence.append(MetricEvidence(
                 metric_name=key, value=m.get("value"), unit=m.get("unit"),
                 numerator=m.get("numerator"), denominator=m.get("denominator"),
@@ -238,15 +331,15 @@ def _build_findings(
             ))
         findings.append(AnalystFinding(
             finding_id=f"F-{spec.name}-{uuid.uuid4().hex[:8]}",
-            analyst_name=spec.name, title=raw.get("title", ""), claim=raw.get("claim", ""),
+            analyst_name=spec.name, title=raw.get("title", ""), claim=claim_text,
             finding_type=raw.get("finding_type", "trend"), evidence=evidence,
             source_names=raw.get("source_names", []), code_artifact=code_artifact,
             result_artifact=result_artifact, sample_size=raw.get("sample_size"),
-            coverage_notes=raw.get("coverage_notes", []), assumptions=raw.get("assumptions", []),
+            coverage_notes=coverage_notes, assumptions=assumptions,
             confidence=float(raw.get("confidence", 0.5)),
             business_impact_score=float(raw.get("business_impact_score", 0.5)),
             actionability_score=float(raw.get("actionability_score", 0.5)),
             revision_count=0,
             execution_metadata={"generated_at": datetime.now(timezone.utc).isoformat()},
         ))
-    return findings
+    return findings, notes

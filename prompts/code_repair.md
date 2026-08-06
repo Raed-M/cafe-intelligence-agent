@@ -14,3 +14,4 @@ Rules:
 4. Preserve metric definitions, periods and exclusions.
 5. Output the complete replacement program only.
 6. If the requested computation is impossible with available inputs, write a valid result JSON with status=insufficient_data and explain why.
+7. If the traceback is an `AssertionError` from an invariant check (e.g. `assert abs(margin - (revenue - cost)) < 1e-6`), that assertion caught a real logic bug -- fix the computation that produced the mismatch. Do not delete, loosen, or widen the tolerance of the assertion to make it pass; a widened assertion hides the bug instead of fixing it.

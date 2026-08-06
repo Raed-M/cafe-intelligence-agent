@@ -33,12 +33,12 @@ def count_unicode_chars(text: str) -> int:
 
 def _default_llm_compressor(model_name: str) -> Compressor:
     def _compress(system_prompt: str, deterministic_text: str) -> str:
-        from src.tools.llm_factory import get_chat_model
+        from src.tools.llm_factory import extract_text, get_chat_model
 
         llm = get_chat_model(model_name, temperature=0)
         user_prompt = f"Text to compress:\n{deterministic_text}"
         resp = llm.invoke([("system", system_prompt), ("user", user_prompt)])
-        return resp.content if isinstance(resp.content, str) else str(resp.content)
+        return extract_text(resp)
 
     return _compress
 

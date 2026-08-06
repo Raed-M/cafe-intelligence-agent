@@ -386,3 +386,145 @@ Total weeks to scan: 29
     * [customer] Review Rating Distribution and Average (Jun 1-8, 2026): During the analysis period (Jun 1-8, 2026), the cafe received 20 reviews with an average rating of 3.85 out of 5. Rating distribution shows 10 five-star, 4 four-star, 1 three-star, 3 two-star, and 2 one-star reviews.
     * [customer] Sentiment Distribution by Language (Jun 1-8, 2026): Sentiment analysis of 20 reviews shows 14 positive, 1 neutral, and 5 negative reviews. English reviews (13): {'positive': np.int64(9), 'negative': np.int64(3), 'neutral': np.int64(1)}. Arabic reviews (7): {'positive': np.int64(5), 'negative': np.int64(2)}.
     * [customer] Review Source Distribution (Jun 1-8, 2026): Reviews were collected from 3 sources during the analysis period. Distribution: {'google': np.int64(13), 'instagram': np.int64(6), 'talabat': np.int64(1)}. This represents 20 total reviews with coverage across multiple platforms.
+  final (critic-approved, ranked) findings: 5
+    -> [margin] Top 3 Items by Gross Profit Contribution (Week of 2026-06-01): The top 3 items by gross profit contribution are Matcha Latte, Iced Spanish Latte, Iced Americano, collectively generating 12936.55 SAR in gross profit from 923 units sold across 832 baskets.
+    -> [sales] Category Mix Shift: iced_other: Category 'iced_other' represented 21.7% of sales revenue in analysis period (SAR 10711.95), compared to 18.8% in previous period (SAR 11841.20), a change of 3.0 percentage points.
+    -> [sales] Top Product Matcha Latte Revenue Change: Revenue from Matcha Latte in analysis period was SAR 7363.20, compared to SAR 7995.60 in previous period, representing a -7.91% change.
+    -> [sales] Net Revenue Decline Week-over-Week: Net revenue in analysis period (2026-06-01 to 2026-06-08) was SAR 48951.95, compared to SAR 62642.50 in previous period (2026-05-25 to 2026-06-01), representing a -21.86% decline.
+    -> [sales] Average Order Value Slight Decline: Average order value in analysis period was SAR 34.50 per transaction, compared to SAR 34.92 in previous period, representing a -1.20% change.
+
+=== Week 23/29: 2026-06-08 .. 2026-06-15 ===
+  candidate findings: 13
+    * [sales] Weekly Revenue and Transaction Performance: Week of 2026-06-08 generated SAR 44116.00 in net revenue across 1268 transactions (AOV: SAR 34.79), compared to SAR 48951.95 across 1425 transactions (AOV: SAR 34.35) in the previous week.
+    * [sales] Top Category Revenue Performance vs Trailing Baseline: The iced_coffee category generated SAR 15626.25 in the analysis week (2026-06-08 to 2026-06-15) across 654 transactions, compared to a trailing 4-week average of SAR 17017.44 across 738 transactions.
+    * [sales] Channel Revenue Performance Change: The dine_in channel generated SAR 19566.20 in the analysis week (2026-06-08 to 2026-06-15) across 574 transactions, compared to SAR 22007.10 across 636 transactions in the previous week.
+    * [margin] Top 3 Items by Gross Profit (Analysis Period): During 2026-06-08 to 2026-06-15, the top 3 items by absolute gross profit contribution are Matcha Latte, Iced Spanish Latte, Iced Americano. Total gross profit across all items: 31437.80 SAR.
+    * [margin] Quantified Waste Cost (Analysis Period): During the week of 2026-06-08, quantified waste cost totaled 6443.70 SAR across 39 inventory records. Top waste contributor: Chicken Sandwich (1643.50 SAR).
+    * [margin] Recent Supplier Price Change: Email evidence from orders@qatifdairy.com dated 2026-05-04 documents a price change for full-fat milk: 7.1 SAR/L → 8.4 SAR/L (effective 2026-05-01). This represents a 18.31% change.
+    * [operations] Conversion Rate Comparison: Analysis Week vs Previous Week: Conversion rate in analysis period (Jun 8-15) was 0.3621 vs 0.2546 in previous period (Jun 1-8), a change of 42.2%
+    * [operations] Labour Cost Efficiency: Analysis Period vs Previous Period: Labour cost as % of revenue was 15.35% in analysis period vs 14.21% in previous period, a change of 8.0%
+    * [operations] Known Waste Rate: Analysis Period vs Previous Period: Known waste rate was 17.57% of units (sold + wasted) in analysis period vs 17.56% in previous period, a change of 0.1%
+    * [customer] Review Rating Distribution (Jun 8-15, 2026): During the analysis period, 16 reviews were collected with an average rating of 4.44 out of 5. The distribution shows 9 5-star, 6 4-star, 0 3-star, 1 2-star, and 0 1-star ratings.
+    * [customer] Review Language Distribution (Jun 8-15, 2026): Of 16 reviews collected during the analysis period, 10 (62.5%) were in English and 6 (37.5%) were in Arabic.
+    * [customer] Review Source Distribution (Jun 8-15, 2026): Reviews were collected from 3 source(s) during the analysis period. The distribution is: instagram: 8, google: 7, talabat: 1.
+    * [anomaly] Hourly Traffic Anomaly on 2026-06-12 00:00: Hourly door count of 177 on 2026-06-12 00:00 deviates 3.56 standard deviations from baseline mean of 51
+  final (critic-approved, ranked) findings: 4
+    -> [margin] Top 3 Items by Gross Profit (Analysis Period): During 2026-06-08 to 2026-06-15, the top 3 items by absolute gross profit contribution are Matcha Latte, Iced Spanish Latte, Iced Americano. Total gross profit across all items: 31437.80 SAR.
+    -> [sales] Weekly Revenue and Transaction Performance: Week of 2026-06-08 generated SAR 44116.00 in net revenue across 1268 transactions (AOV: SAR 34.79), compared to SAR 48951.95 across 1425 transactions (AOV: SAR 34.35) in the previous week.
+    -> [margin] Quantified Waste Cost (Analysis Period): During the week of 2026-06-08, quantified waste cost totaled 6443.70 SAR across 39 inventory records. Top waste contributor: Chicken Sandwich (1643.50 SAR).
+    -> [margin] Recent Supplier Price Change: Email evidence from orders@qatifdairy.com dated 2026-05-04 documents a price change for full-fat milk: 7.1 SAR/L → 8.4 SAR/L (effective 2026-05-01). This represents a 18.31% change.
+
+=== Week 24/29: 2026-06-15 .. 2026-06-22 ===
+  candidate findings: 10
+    * [sales] Category Mix Shift: Category 'food' revenue changed from 3674.80 SAR to 4932.80 SAR (+34.2%) between analysis and previous week.
+    * [sales] Top Product Revenue Growth: Product 'Chicken Sandwich' (SKU: FOD-005) generated 2756.00 SAR in analysis week vs 1814.80 SAR in previous week, representing +51.9% change.
+    * [margin] Top 5 Items by Gross Profit (Analysis Week): The top 5 items by gross profit contribution generated SAR 17242.30 in gross profit from SAR 23893.70 in revenue during the analysis week (2026-06-15 to 2026-06-22).
+    * [margin] Supplier Price Change Detection: Supplier email evidence shows 2 price changes effective between 2026-05-01 and 2026-06-22. The largest change is Barista oat: 15.40 → 17.90 SAR/L (16.2%), effective 2026-05-01.
+    * [operations] Conversion Rate Decline Week-over-Week: Conversion rate (valid transactions / footfall) decreased from 0.3621 (36.21%) in the previous week to 0.2329 (23.29%) in the analysis week, a decline of -35.7%.
+    * [operations] Labour Cost Ratio Increase: Labour cost as a percentage of net sales revenue increased from 14.94% in the previous week to 15.64% in the analysis week, an increase of 4.7%. This indicates either higher staffing levels or lower sales efficiency.
+    * [operations] Known Waste Cost Increase: Known waste cost increased from 689.60 SAR in the previous week to 1174.80 SAR in the analysis week. Waste ratio (units wasted / total units handled) increased from 16.47% to 21.82%, a change of 32.5%.
+    * [customer] Review Rating Distribution (Analysis Period): During the analysis period (June 15-22, 2026), the average rating across 16 reviews was 4.56 out of 5, with the majority of reviews rated 5 stars.
+    * [customer] Sentiment Analysis by Rating: Of 16 reviews in the analysis period, 15 (93.8%) were positive (rating 4-5), 1 (6.2%) were neutral (rating 3), and 0 (0.0%) were negative (rating 1-2).
+    * [customer] Most Frequent Review Topics: The most frequently mentioned topics in reviews during the analysis period were: taste_quality (3 mentions), temperature (3 mentions), service_speed (1 mentions).
+  final (critic-approved, ranked) findings: 5
+    -> [margin] Top 5 Items by Gross Profit (Analysis Week): The top 5 items by gross profit contribution generated SAR 17242.30 in gross profit from SAR 23893.70 in revenue during the analysis week (2026-06-15 to 2026-06-22).
+    -> [sales] Top Product Revenue Growth: Product 'Chicken Sandwich' (SKU: FOD-005) generated 2756.00 SAR in analysis week vs 1814.80 SAR in previous week, representing +51.9% change.
+    -> [customer] Review Rating Distribution (Analysis Period): During the analysis period (June 15-22, 2026), the average rating across 16 reviews was 4.56 out of 5, with the majority of reviews rated 5 stars.
+    -> [sales] Category Mix Shift: Category 'food' revenue changed from 3674.80 SAR to 4932.80 SAR (+34.2%) between analysis and previous week.
+    -> [customer] Sentiment Analysis by Rating: Of 16 reviews in the analysis period, 15 (93.8%) were positive (rating 4-5), 1 (6.2%) were neutral (rating 3), and 0 (0.0%) were negative (rating 1-2).
+
+=== Week 25/29: 2026-06-22 .. 2026-06-29 ===
+  candidate findings: 10
+    * [sales] Net Revenue Change Week-over-Week: Net revenue in analysis week (Jun 22-29) was SAR 47103.80, compared to SAR 44202.70 in previous week (Jun 15-22), representing a 6.6% change.
+    * [sales] Valid Transaction Count Change: Valid transaction count in analysis week (Jun 22-29) was 1309, compared to 1265 in previous week (Jun 15-22), representing a 3.5% change.
+    * [sales] Average Order Value Change: Average order value in analysis week (Jun 22-29) was SAR 35.98, compared to SAR 34.94 in previous week (Jun 15-22), representing a 3.0% change.
+    * [margin] Top 3 Items by Gross Profit (Analysis Week): During the analysis week (2026-06-22 to 2026-06-29), the top 3 items by gross profit contribution are: Matcha Latte, Iced Spanish Latte, Iced Americano. Total gross profit from these items: 13875.20 SAR.
+    * [margin] Quantified Waste Cost (Analysis Week): During the analysis week (2026-06-22 to 2026-06-29), quantified waste cost totaled 1322.10 SAR across 6 items with known waste observations. Top waste contributor: Chicken Sandwich (418.00 SAR).
+    * [margin] Supplier Price Changes and Margin Pressure: Supplier price changes detected for 3 ingredients/items effective through analysis week. Largest change: full-fat milk (7.10 → 8.40 SAR, +18.3% effective 2026-05-01). Impact on menu items requires recipe/BOM data to quantify.
+    * [customer] Review Rating Distribution (Jun 22-29, 2026): Average rating is 3.90 out of 5 across 21 reviews during the analysis period.
+    * [customer] Sentiment Distribution by Language (Jun 22-29, 2026): Sentiment distribution shows 15 positive, 0 neutral, and 6 negative reviews. English reviews: 14, Arabic reviews: 7.
+    * [customer] Most Mentioned Topics in Reviews (Jun 22-29, 2026): The most frequently mentioned topics are: quality (3 mentions), speed (1 mentions), taste (1 mentions).
+    * [anomaly] Hourly Traffic Anomaly at 00:00: Door count of 146 at 00:00 is 2.60 standard deviations from baseline mean of 51.9
+  final (critic-approved, ranked) findings: 5
+    -> [margin] Top 3 Items by Gross Profit (Analysis Week): During the analysis week (2026-06-22 to 2026-06-29), the top 3 items by gross profit contribution are: Matcha Latte, Iced Spanish Latte, Iced Americano. Total gross profit from these items: 13875.20 SAR.
+    -> [margin] Item-Level Gross Profit Analysis (Analysis Week): Top 5 items by gross profit contribution account for 18532.30 SAR of 33469.90 SAR total gross profit (55.4%). Overall cafe gross margin: 70.6%.
+    -> [sales] Net Revenue Change Week-over-Week: Net revenue in analysis week (Jun 22-29) was SAR 47103.80, compared to SAR 44202.70 in previous week (Jun 15-22), representing a 6.6% change.
+    -> [sales] Valid Transaction Count Change: Valid transaction count in analysis week (Jun 22-29) was 1309, compared to 1265 in previous week (Jun 15-22), representing a 3.5% change.
+    -> [sales] Average Order Value Change: Average order value in analysis week (Jun 22-29) was SAR 35.98, compared to SAR 34.94 in previous week (Jun 15-22), representing a 3.0% change.
+
+=== Week 26/29: 2026-06-29 .. 2026-07-06 ===
+  candidate findings: 6
+    * [margin] Top 3 Items by Gross Profit (Analysis Period): The top 3 items by gross profit contribution during 2026-06-29 to 2026-07-06 are Matcha Latte, Iced Spanish Latte, Cold Brew with combined gross profit of 14872.20 SAR
+    * [margin] Quantified Waste Cost (Week of 2026-06-29): Known waste cost for the week of 2026-06-29 totals 455.60 SAR across 65 units wasted
+    * [margin] Recent Supplier Price Change Detected: Supplier price change for full-fat milk: 7.1 → 8.4 SAR/L (effective 2026-05-01 00:00:00), representing a 18.3% change
+    * [anomaly] Daily Revenue Anomaly: Daily revenue on 2026-07-04 was 9880.85 SAR, which is 2.38 standard deviations from the baseline mean of 6584.80 SAR.
+    * [anomaly] Hourly Traffic Anomaly: Door count at 1970-01-01 00:00 was 150, which is 3.53 standard deviations from the baseline mean of 46.54.
+    * [anomaly] Weekly Waste Cost Anomaly: Weekly waste cost for week starting 2026-06-29 was 455.60 SAR, which is 2.26 standard deviations from the baseline mean of 1014.90 SAR.
+  final (critic-approved, ranked) findings: 5
+    -> [margin] Top 3 Items by Gross Profit (Analysis Period): The top 3 items by gross profit contribution during 2026-06-29 to 2026-07-06 are Matcha Latte, Iced Spanish Latte, Cold Brew with combined gross profit of 14872.20 SAR
+    -> [margin] Top 5 Items by Gross Profit (Analysis Week): Five items generated 20218.8 SAR in gross profit during the analysis week (2026-06-29 to 2026-07-06).
+    -> [margin] Waste Cost Comparison (Analysis Week vs Previous Week): Known waste cost in analysis week was 455.6 SAR (5 items), compared to 1322.1 SAR (6 items) in previous week, a change of -65.54%.
+    -> [margin] Quantified Waste Cost (Week of 2026-06-29): Known waste cost for the week of 2026-06-29 totals 455.60 SAR across 65 units wasted
+    -> [margin] Quantified Waste Cost (Analysis Week): Known waste cost totaled 455.60 SAR across 5 items during the analysis week.
+
+=== Week 27/29: 2026-07-06 .. 2026-07-13 ===
+  candidate findings: 9
+    * [sales] Weekly Revenue Performance vs Previous Week: Analysis week (2026-07-06 to 2026-07-13) generated SAR 45792.10 in net revenue, a -7.3% change from previous week's SAR 49394.30.
+    * [sales] Average Order Value Trend: Average order value in analysis week was SAR 35.78, compared to SAR 35.95 in previous week, representing a -0.5% change.
+    * [sales] Category Revenue Mix Shift: Category 'iced_coffee' generated SAR 16221.10 in analysis week vs SAR 17851.70 in previous week, a -9.1% change.
+    * [margin] Top Gross Profit Item - Week of 2026-07-06: Matcha Latte generated the highest gross profit of 6238.80 SAR with 67.1% margin
+    * [margin] Highest Waste Cost Item - Week of 2026-07-06: Chicken Sandwich incurred 161.50 SAR in waste cost from 17 units wasted
+    * [margin] Supplier Price Change - full-fat milk: full-fat milk price changed from 7.1 to 8.4 SAR per L (effective 2026-05-01), a 18.3% change
+    * [customer] Customer Rating Distribution and Average Sentiment: During the analysis period (2026-07-06 to 2026-07-13), customers provided 18 reviews with an average rating of 4.39 out of 5. The majority of reviews (16 out of 18) were positive (rating ≥4).
+    * [customer] Review Language Distribution and Topic Mentions: Among 18 reviews, 14 were in English and 4 were in Arabic. The most frequently mentioned topics in reviews with text (18 reviews) were quality (4 mentions), service (4 mentions), and taste (3 mentions).
+    * [customer] Average Rating by Review Language: English-language reviews (n=14) had an average rating of 4.36, while Arabic-language reviews (n=4) had an average rating of 4.50.
+  final (critic-approved, ranked) findings: 5
+    -> [margin] Top Gross Profit Item - Week of 2026-07-06: Matcha Latte generated the highest gross profit of 6238.80 SAR with 67.1% margin
+    -> [margin] Top Gross Profit Item - Analysis Period: Item Matcha Latte generated the highest gross profit of 6238.80 SAR during the analysis period, with 392 units sold at 67.1% gross margin.
+    -> [sales] Top Category Revenue Change: iced_coffee: Revenue from iced_coffee category in analysis week was SAR 16095.10, compared to SAR 17689.20 in previous week, representing a -9.01% change
+    -> [sales] Weekly Revenue Performance vs Previous Week: Analysis week (2026-07-06 to 2026-07-13) generated SAR 45792.10 in net revenue, a -7.3% change from previous week's SAR 49394.30.
+    -> [sales] Net Revenue Change: Analysis Week vs Previous Week: Net revenue in analysis week (2026-07-06 to 2026-07-13) was SAR 45496.10, compared to SAR 48988.60 in previous week (2026-06-29 to 2026-07-06), representing a change of SAR -3492.50 (-7.13%)
+
+=== Week 28/29: 2026-07-13 .. 2026-07-20 ===
+  candidate findings: 15
+    * [sales] Weekly Revenue Change: Net revenue for week of 2026-07-13 to 2026-07-20 was SAR 47502.45, representing a 3.7% change from previous week (SAR 45792.10). Refunds totaled SAR 298.10 in analysis period vs SAR 296.00 previously.
+    * [sales] Average Order Value Change: Average order value increased from SAR 35.78 (previous week) to SAR 36.57 (analysis week), a change of SAR 0.79 (2.2%). This reflects 1299 baskets in analysis period vs 1280 in previous period.
+    * [sales] Top Category Revenue Growth: Category 'iced_coffee' generated SAR 17737.60 in analysis week vs SAR 16221.10 previously, a 9.3% increase. This category represented 37.3% of weekly revenue.
+    * [margin] Top Gross Profit Contributor - Item Economics: Matcha Latte generated the highest gross profit of 5522.40 SAR during the analysis period, with 346 units sold across 307 transactions at a 67.2% gross margin.
+    * [margin] Quantified Waste Cost Impact: Known waste cost for the week of 2026-07-13 totaled 1147.90 SAR across 6 items, with Halloumi Toast accounting for 311.60 SAR (38 units wasted).
+    * [margin] Supplier Price Change Detection: Supplier price change detected for full-fat milk: 7.10 SAR/L → 8.40 SAR/L (+18.3%), effective 2026-05-01.
+    * [operations] Conversion Rate Comparison: Conversion rate in analysis week (Jul 13-20) was 0.2419 vs 0.2300 in previous week, a change of +0.0119
+    * [operations] Labour Cost as Percentage of Revenue: Average daily labour cost was 14.2% of revenue in analysis week vs 16.7% in previous week
+    * [operations] Known Waste Cost as Percentage of Revenue: Known waste cost was 5.03% of revenue in analysis week vs 0.90% in previous week
+    * [customer] Review Rating Distribution (Jul 13-20, 2026): Average rating is 4.73/5 across 15 reviews during the analysis period, with 15 positive, 0 neutral, and 0 negative reviews.
+    * [customer] Most Frequently Mentioned Topics in Reviews: The most discussed topics in customer reviews are service (3 mentions), coffee_quality (2 mentions), temperature (2 mentions).
+    * [customer] Sentiment Distribution by Review Platform: Platform 'google' has the highest proportion of positive reviews with 10 positive out of 11.0 total reviews.
+    * [anomaly] Unusual Hourly Traffic on 2026-07-17 at 00:00: Door count of 167 at 1970-01-01 00:00 deviates 4.38 standard deviations from baseline mean of 45.7
+    * [anomaly] Unusual Hourly Traffic on 2026-07-17 at 00:00: Door count of 142 at 1970-01-01 00:00 deviates 3.47 standard deviations from baseline mean of 45.7
+    * [anomaly] Unusual Hourly Traffic on 2026-07-17 at 00:00: Door count of 140 at 1970-01-01 00:00 deviates 3.40 standard deviations from baseline mean of 45.7
+  final (critic-approved, ranked) findings: 5
+    -> [margin] Top Gross Profit Contributor - Item Economics: Matcha Latte generated the highest gross profit of 5522.40 SAR during the analysis period, with 346 units sold across 307 transactions at a 67.2% gross margin.
+    -> [margin] Top 3 Items by Gross Profit Contribution (Week 27): The top 3 items by gross profit contribution in the analysis period are Matcha Latte, Iced Spanish Latte, Iced Americano, collectively generating 14361.25 SAR in gross profit.
+    -> [margin] Top Gross Profit Item: Exact Item Economics: Matcha Latte generated 6133.20 SAR gross profit (67.19% margin) from 384 units across 338 transactions during Week 27.
+    -> [sales] Top Category Revenue Growth: Category 'iced_coffee' generated SAR 17737.60 in analysis week vs SAR 16221.10 previously, a 9.3% increase. This category represented 37.3% of weekly revenue.
+    -> [operations] Labour Cost as Percentage of Revenue: Average daily labour cost was 14.2% of revenue in analysis week vs 16.7% in previous week
+
+=== Week 29/29: 2026-07-20 .. 2026-07-27 ===
+  candidate findings: 9
+    * [margin] Top 3 Items by Gross Profit Contribution (Analysis Period): During 2026-07-20 to 2026-07-27, the top 3 items by gross profit contribution generated 13944.85 SAR in total gross profit, representing 41.4% of total item-level gross profit.
+    * [margin] Quantified Waste Cost (Week of 2026-07-20): During the week of 2026-07-20, 194 units were wasted across 6 items with known waste costs, totaling 1243.70 SAR in waste cost.
+    * [margin] Supplier Price Change Evidence: Email evidence documents a price change for roasted coffee: from 88.0 to 96.0 SAR per kg, effective 2026-04-15. This represents a 9.1% change.
+    * [customer] Customer Rating Distribution (Analysis Period): Average rating is 4.33 out of 5.0 across 18 reviews in the analysis period (2026-07-20 to 2026-07-27).
+    * [customer] Review Language Distribution: Reviews are distributed across 2 languages, with en being the most common (11 reviews, 61.1%).
+    * [customer] Review Source Platform Distribution: Customer reviews originate from 3 platforms, with google accounting for 9 reviews (50.0% of total).
+    * [anomaly] Hourly Traffic Anomaly on 2026-07-24 00:00: Door count of 117 at 2026-07-24 00:00 deviates 2.54 standard deviations from baseline mean of 45.6
+    * [anomaly] Hourly Traffic Anomaly on 2026-07-24 00:00: Door count of 159 at 2026-07-24 00:00 deviates 4.04 standard deviations from baseline mean of 45.6
+    * [anomaly] Hourly Traffic Anomaly on 2026-07-24 00:00: Door count of 140 at 2026-07-24 00:00 deviates 3.36 standard deviations from baseline mean of 45.6
+  final (critic-approved, ranked) findings: 5
+    -> [margin] Top 3 Items by Gross Profit Contribution (Analysis Period): During 2026-07-20 to 2026-07-27, the top 3 items by gross profit contribution generated 13944.85 SAR in total gross profit, representing 41.4% of total item-level gross profit.
+    -> [margin] Gross Profit & Margin Analysis (Analysis Period): During the analysis period (2026-07-20 to 2026-07-27), the cafe generated net revenue of 47179.30 SAR with total COGS of 13847.80 SAR, resulting in gross profit of 33331.50 SAR and a gross margin of 70.65%.
+    -> [margin] Quantified Waste Cost Impact: Known waste cost in analysis week was 1243.70 SAR (194 units), representing a +8.3% change from previous week (1147.90 SAR).
+    -> [margin] Quantified Waste Cost (Week of 2026-07-20): During the week of 2026-07-20, 194 units were wasted across 6 items with known waste costs, totaling 1243.70 SAR in waste cost.
+    -> [customer] Customer Rating Distribution (Analysis Period): Average rating is 4.33 out of 5.0 across 18 reviews in the analysis period (2026-07-20 to 2026-07-27).
+
+Done. Wrote C:\Users\User\AppData\Local\Temp\claude\c--Users-User-Desktop-Week-6-Cafe-Intelligence-Agent\f54bdf77-2c79-4698-b22d-f03835596c2e\scratchpad\full_dataset_scan_results.json
