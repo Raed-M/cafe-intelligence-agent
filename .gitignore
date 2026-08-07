@@ -2,14 +2,35 @@
 __pycache__/
 *.pyc
 .env
+*.env
+
+# Secrets & API Keys
+*_API.txt
+*.pem
+*.key
+db/*.dpapi
+
+# Databases
 db/*.sqlite
+db/*.sqlite3
+db/*.db
+data/**/*.sqlite3
+outputs/test_evidence/*.sqlite3
+
+# Outputs & Artifacts
 outputs/artifacts/
 outputs/reports/
-outputs/test_evidence/*.sqlite
+outputs/uploads/
+outputs/test_evidence/
 outputs/graph.mmd
 .pytest_cache/
+test-results/
+temp_reviews.txt
 
-# langgraph dev server state: ephemeral run/thread checkpoints. Committing it
-# makes an old pending run resumable on the next `langgraph dev` start, which
-# fires real LLM calls unprompted.
+# LangGraph state
 .langgraph_api/
+
+# Node / Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/

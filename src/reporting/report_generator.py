@@ -111,6 +111,45 @@ def generate_report(state: CafeIntelligenceState) -> dict[str, Any]:
     except Exception:  # noqa: BLE001
         trend_statements = []
 
+    inventory_summary = None
+    try:
+        inventory_path = state.get("cleaned_artifacts", {}).get("inventory", {}).get("path")
+        if inventory_path and Path(inventory_path).exists():
+            import pandas as pd
+            df = pd.read_parquet(inventory_path)
+            if not df.empty:
+                max_week = df['week_starting'].max()
+                df_week = df[df['week_starting'] == max_week].copy()
+                
+                df_week['percent_sold'] = (df_week['units_sold'] / df_week['units_ordered'].replace(0, 1) * 100).round(1)
+                
+                def get_rec(row):
+                    sold_pct = row['percent_sold']
+                    if sold_pct >= 90: return "Increase Order"
+                    elif sold_pct >= 80: return "Maintain Order"
+                    else: return "Decrease Order"
+                
+                def get_suggested_order(row):
+                    rec = row['recommendation']
+                    if rec == "Decrease Order":
+                        return max(1, int(round(row['units_sold'] * 0.92)))
+                    elif rec == "Increase Order":
+                        return max(1, int(round(row['units_ordered'] * 1.15)))
+                    else:
+                        return max(1, int(round(row['units_ordered'])))
+
+                df_week['recommendation'] = df_week.apply(get_rec, axis=1)
+                df_week['needs_restock'] = df_week['percent_sold'].apply(lambda x: "Yes" if x >= 90 else "No")
+                df_week['suggested_order'] = df_week.apply(get_suggested_order, axis=1)
+                
+                # Sort by units sold descending to highlight top sellers first
+                df_week = df_week.sort_values('units_sold', ascending=False)
+                
+                table_data = df_week[['item', 'units_ordered', 'units_sold', 'percent_sold', 'estimated_remaining_units', 'recommendation', 'needs_restock', 'suggested_order']].to_dict('records')
+                inventory_summary = {"table_data": table_data}
+    except Exception:
+        pass
+
     env = Environment(loader=FileSystemLoader(str(TEMPLATE_DIR)), autoescape=select_autoescape(["html"]))
     template = env.get_template("report.html.j2")
     html = template.render(
@@ -127,6 +166,7 @@ def generate_report(state: CafeIntelligenceState) -> dict[str, Any]:
         menu_engineering_chart=(Path(chart_path).name if chart_path else None),
         content_ideas=content_ideas,
         context_bundle=context_bundle,
+        inventory_summary=inventory_summary,
         step_count=state.get("step_count", 0),
         cost_usd=state.get("cost_usd", 0.0),
         critic_rejections=critic_results.get("total_rejections", 0),

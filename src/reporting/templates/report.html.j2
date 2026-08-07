@@ -1,127 +1,222 @@
 <!doctype html>
-<html>
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <title>{{ cafe_name }} — Weekly Intelligence Report</title>
 <style>
-  body { font-family: "Segoe UI", Tahoma, Arial, sans-serif; margin: 2rem; color: #1a1a1a; }
-  h1, h2 { color: #3b2a1a; }
-  .rtl { direction: rtl; text-align: right; font-family: "Segoe UI", Tahoma, Arial, sans-serif; }
-  .ltr { direction: ltr; text-align: left; }
-  section { margin-bottom: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 1rem; }
-  table { border-collapse: collapse; width: 100%; }
-  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
-  .finding { background: #faf6f0; padding: 1rem; margin-bottom: 1rem; border-radius: 6px; }
-  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.8em; }
-  .badge-success { background: #d7f0d7; }
-  .badge-partial { background: #fff2c7; }
-  .badge-failed { background: #f6d6d6; }
-  .idea { border: 1px solid #ddd; padding: 1rem; margin-bottom: 1rem; }
-  .muted { color: #777; font-size: 0.9em; }
+  :root { --ink: #17212b; --muted: #5e6872; --paper: #fbfaf7; --line: #d9d5cc; --copper: #a85f2e; --palm: #2f6b55; --night: #0b2036; }
+  body { font-family: "Segoe UI", Tahoma, Arial, sans-serif; margin: 2rem; color: #1a1a1a; line-height: 1.6; }
+  h1, h2, h3 { color: #3b2a1a; margin-top: 1.5rem; }
+  h1 { border-bottom: 2px solid var(--copper); padding-bottom: 0.5rem; }
+  h2 { border-bottom: 1px solid var(--line); padding-bottom: 0.3rem; margin-bottom: 1rem; }
+  
+  section { margin-bottom: 2.5rem; }
+  
+  /* Summary Cards */
+  .meta-grid { display: flex; gap: 20px; margin-bottom: 2rem; flex-wrap: wrap; }
+  .meta-card { background: #fff; border: 1px solid var(--line); padding: 15px 20px; border-radius: 8px; min-width: 200px; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+  .meta-card strong { display: block; color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .meta-card span { font-size: 1.1rem; font-weight: 500; }
+  
+  /* Findings */
+  .finding { background: #faf6f0; border-left: 4px solid var(--palm); padding: 1.2rem; margin-bottom: 1rem; border-radius: 4px; }
+  .finding h3 { margin-top: 0; margin-bottom: 0.5rem; color: var(--night); }
+  .finding p { margin: 0 0 0.5rem 0; }
+  .finding .muted { font-size: 0.85rem; margin-bottom: 0; }
+  
+  /* Data Health */
+  .health-pill { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; margin-right: 8px; margin-bottom: 8px; }
+  .health-success { background: #e0f2e9; color: #206a46; }
+  .health-warning { background: #fff4ce; color: #8a6a1c; }
+  .health-error { background: #fde8e8; color: #9b1c1c; }
+  
+  .issue-list { margin-top: 10px; padding: 12px; background: #fff; border: 1px solid #ffcdd2; border-radius: 6px; }
+  .issue-list ul { margin: 0; padding-left: 20px; }
+  .issue-list li { color: #b71c1c; font-size: 0.9rem; }
+  
+  /* Ideas */
+  .idea { background: white; border: 1px solid var(--line); padding: 1.2rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); }
+  .idea .hook { font-size: 1.1rem; font-weight: 600; color: var(--night); margin-bottom: 0.5rem; }
+  .idea .rationale { color: var(--ink); margin-bottom: 0.5rem; }
+  .idea .meta { font-size: 0.85rem; color: var(--muted); display: flex; justify-content: space-between; border-top: 1px dashed var(--line); padding-top: 0.8rem; margin-top: 0.8rem; }
+  
+  .muted { color: var(--muted); }
 </style>
 </head>
 <body>
   <section>
     <h1>{{ cafe_name }} — Weekly Intelligence Report</h1>
-    <p>Run: {{ run_id }} | Generated: {{ generated_at }}</p>
-    <p>Analysis period: {{ analysis_period.start }} → {{ analysis_period.end }}</p>
-    <p>Recommendation period: {{ recommendation_period.start }} → {{ recommendation_period.end }}</p>
-    <p>Status: <span class="badge badge-{{ run_status }}">{{ run_status }}</span></p>
+    
+    <div class="meta-grid">
+      <div class="meta-card">
+        <strong>Analysis Period</strong>
+        <span>{{ analysis_period.start[:10] }} to {{ analysis_period.end[:10] }}</span>
+      </div>
+      <div class="meta-card">
+        <strong>Report Generated</strong>
+        <span>{{ generated_at[:10] }}</span>
+      </div>
+      <div class="meta-card">
+        <strong>Status</strong>
+        <span style="text-transform: capitalize;">{{ run_status }}</span>
+      </div>
+    </div>
   </section>
 
   <section>
     <h2>Executive Summary</h2>
-    <div class="rtl">{{ whatsapp_summary_ar | e }}</div>
-    <div class="ltr">{{ whatsapp_summary_en | e }}</div>
-  </section>
-
-  <section>
-    <h2>Data Quality</h2>
-    <p>Successful: {{ data_quality.sources_successful | join(', ') }}</p>
-    <p>Partial: {{ data_quality.sources_partial | join(', ') if data_quality.sources_partial else 'none' }}</p>
-    <p>Failed: {{ data_quality.sources_failed | join(', ') if data_quality.sources_failed else 'none' }}</p>
-    <table>
-      <tr><th>Source</th><th>In</th><th>Accepted</th><th>Dropped</th><th>Repaired</th><th>Quarantined</th><th>Issues</th></tr>
-      {% for s in data_quality.source_summaries %}
-      <tr>
-        <td>{{ s.source_name }}</td><td>{{ s.rows_in }}</td><td>{{ s.rows_accepted }}</td>
-        <td>{{ s.rows_dropped }}</td><td>{{ s.rows_repaired }}</td><td>{{ s.rows_quarantined }}</td>
-        <td>{{ s.issue_counts }}</td>
-      </tr>
-      {% endfor %}
-    </table>
-  </section>
-
-  <section>
-    <h2>Findings ({{ final_findings | length }})</h2>
-    {% for f in final_findings %}
-    <div class="finding">
-      <h3>{{ f.title | e }}</h3>
-      <p>{{ f.claim | e }}</p>
-      <p class="muted">Sources: {{ f.source_names | join(', ') }} | Confidence: {{ "%.2f"|format(f.confidence) }} |
-         Sample size: {{ f.sample_size }}</p>
-      <p class="muted">Code: {{ f.code_artifact.path }} | Result: {{ f.result_artifact.path }}</p>
-      {% if f.assumptions %}<p class="muted">Assumptions: {{ f.assumptions | join('; ') }}</p>{% endif %}
+    <div style="font-size: 1.1rem; line-height: 1.8;">
+      {{ whatsapp_summary_en | e | replace('\n', '<br>') }}
     </div>
-    {% else %}
-    <p>No findings met the evidence bar this week (insufficient evidence).</p>
-    {% endfor %}
   </section>
+
+  <section>
+    <h2>Key Findings</h2>
+    {% if final_findings %}
+      {% for f in final_findings %}
+      <div class="finding">
+        <h3>{{ f.title | e }}</h3>
+        <p>{{ f.claim | e }}</p>
+        <p class="muted">Based on: {{ f.source_names | join(', ') | title }} data.</p>
+        {% if f.assumptions %}<p class="muted"><em>Note: {{ f.assumptions | join('; ') }}</em></p>{% endif %}
+      </div>
+      {% endfor %}
+    {% else %}
+      <p class="muted">No significant findings met the confidence threshold this week.</p>
+    {% endif %}
+  </section>
+
+  {% if inventory_summary %}
+  <section>
+    <h2>Inventory Overview & Recommendations</h2>
+    <div style="overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse; min-width: 600px; font-size: 0.95rem;">
+        <thead>
+          <tr style="background-color: var(--paper); border-bottom: 2px solid var(--line); text-align: left;">
+            <th style="padding: 12px; color: var(--ink);">Item</th>
+            <th style="padding: 12px; color: var(--ink);">Ordered</th>
+            <th style="padding: 12px; color: var(--ink);">Sold</th>
+            <th style="padding: 12px; color: var(--ink);">% Sold</th>
+            <th style="padding: 12px; color: var(--ink);">Remaining</th>
+            <th style="padding: 12px; color: var(--ink);">Recommendation</th>
+            <th style="padding: 12px; color: var(--ink);">Needs Restock</th>
+            <th style="padding: 12px; color: var(--ink);">Suggested Order</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in inventory_summary.table_data %}
+          <tr style="border-bottom: 1px solid var(--line); background-color: white;">
+            <td style="padding: 12px; font-weight: bold;">{{ row.item | e }}</td>
+            <td style="padding: 12px;">{{ row.units_ordered }}</td>
+            <td style="padding: 12px; color: var(--palm); font-weight: bold;">{{ row.units_sold }}</td>
+            <td style="padding: 12px;">{{ row.percent_sold }}%</td>
+            <td style="padding: 12px; font-weight: bold; color: {% if row.estimated_remaining_units <= 0 %}#c62828{% else %}inherit{% endif %};">
+              {{ row.estimated_remaining_units }}
+            </td>
+            <td style="padding: 12px; font-weight: 500; color: {% if row.recommendation == 'Increase Order' %}var(--palm){% elif row.recommendation == 'Decrease Order' %}#c62828{% else %}inherit{% endif %};">
+              {{ row.recommendation }}
+            </td>
+            <td style="padding: 12px; font-weight: bold; color: {% if row.needs_restock == 'Yes' %}#c62828{% else %}inherit{% endif %};">
+              {{ row.needs_restock }}
+            </td>
+            <td style="padding: 12px; font-weight: bold; color: var(--ocean);">
+              {{ row.suggested_order }}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  {% endif %}
 
   {% if menu_engineering_chart %}
   <section>
-    <h2>Menu Engineering</h2>
-    <img src="{{ menu_engineering_chart }}" alt="Menu engineering quadrants" style="max-width:100%;">
+    <h2>Menu Performance</h2>
+    <p class="muted">Visualizing product performance based on popularity (sales volume) and profitability.</p>
+    <img src="{{ menu_engineering_chart }}" alt="Menu engineering matrix" style="max-width:100%; border: 1px solid #ddd; border-radius: 8px;">
   </section>
   {% endif %}
 
   <section>
-    <h2>Content Ideas ({{ content_ideas | length }})</h2>
-    {% for idea in content_ideas %}
-    <div class="idea">
-      <p class="muted">{{ idea.format }} | {{ idea.post_date }} {{ idea.post_time_local }}</p>
-      <div class="rtl"><strong>{{ idea.hook_ar | e }}</strong><br>{{ idea.rationale_ar | e }}</div>
-      <div class="ltr"><strong>{{ idea.hook_en | e }}</strong><br>{{ idea.rationale_en | e }}</div>
-      <p class="muted">Product: {{ idea.product_name_en | e }} ({{ idea.product_sku }}) | Finding: {{ idea.finding_id }}</p>
-    </div>
+    <h2>Actionable Content Ideas</h2>
+    {% if content_ideas %}
+      {% for idea in content_ideas %}
+      <div class="idea">
+        <div class="hook">"{{ idea.hook_en | e }}"</div>
+        <div class="rationale">{{ idea.rationale_en | e }}</div>
+        <div class="meta">
+          <span><strong>Format:</strong> {{ idea.format | title }}</span>
+          <span><strong>Post on:</strong> {{ idea.post_date }} at {{ idea.post_time_local }}</span>
+        </div>
+      </div>
+      {% endfor %}
     {% else %}
-    <p>No content ideas were produced (insufficient approved evidence or validation failure).</p>
-    {% endfor %}
+      <p class="muted">No content recommendations were generated for this period.</p>
+    {% endif %}
   </section>
 
   {% if trend_statements %}
   <section>
-    <h2>Comparison With Prior Comparable Weeks</h2>
-    <ul>
+    <h2>Historical Trends</h2>
+    <ul style="line-height: 1.8;">
     {% for t in trend_statements %}
-      <li>{{ t.statement_en }} <span class="muted">({{ t.metric_key }}, {{ t.consecutive_periods }} periods: {{ t.values }})</span></li>
+      <li>{{ t.statement_en }}</li>
     {% endfor %}
     </ul>
   </section>
   {% endif %}
 
   <section>
+    <h2>Data Health</h2>
+    <div>
+      {% if data_quality.sources_successful %}
+        <span class="health-pill health-success">Healthy: {{ data_quality.sources_successful | join(', ') | title }}</span>
+      {% endif %}
+      
+      {% if data_quality.sources_partial %}
+        <span class="health-pill health-warning">Partial: {{ data_quality.sources_partial | join(', ') | title }}</span>
+      {% endif %}
+      
+      {% if data_quality.sources_failed %}
+        <span class="health-pill health-error">Failed: {{ data_quality.sources_failed | join(', ') | title }}</span>
+      {% endif %}
+    </div>
+
+    {% set has_any_issues = false %}
+    {% for s in data_quality.source_summaries %}
+      {% for k, v in s.issue_counts.items() %}
+        {% if v > 0 %}
+          {% set has_any_issues = true %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+    {% if has_any_issues %}
+    <div class="issue-list">
+      <strong>Data irregularities detected:</strong>
+      <ul>
+      {% for s in data_quality.source_summaries %}
+        {% for k, v in s.issue_counts.items() %}
+          {% if v > 0 %}
+            <li>{{ s.source_name | title }}: {{ v }} records with {{ k | replace('_', ' ') }}</li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </section>
+
+  <section>
     <h2>Local, Calendar &amp; Prayer Context</h2>
-    <p>Search status: {{ context_bundle.search_status }}</p>
-    {% if context_bundle.warnings %}<p class="muted">{{ context_bundle.warnings | join('; ') }}</p>{% endif %}
-    <ul>
+    <p class="muted">Search status: {{ context_bundle.search_status }}</p>
+    {% if context_bundle.warnings %}<p class="muted" style="color: #c62828;">{{ context_bundle.warnings | join('; ') }}</p>{% endif %}
+    <ul style="font-size: 0.9rem;">
     {% for e in context_bundle.evidence %}
-      <li>[{{ e.kind }}] {{ e.title | e }} — {{ e.summary | e }} <span class="muted">({{ e.source }})</span></li>
+      <li><strong>{{ e.kind | title }}:</strong> {{ e.title | e }} — {{ e.summary | e }}</li>
     {% endfor %}
     </ul>
-  </section>
-
-  <section>
-    <h2>Limitations &amp; Assumptions</h2>
-    <ul>
-      {% for w in data_quality.warnings %}<li>{{ w | e }}</li>{% endfor %}
-    </ul>
-  </section>
-
-  <section>
-    <h2>Appendix — Run Metrics</h2>
-    <p>Steps: {{ step_count }} | Cost: ${{ "%.4f"|format(cost_usd) }} | Critic rejections: {{ critic_rejections }}</p>
-    <p>Sources: {{ source_statuses }}</p>
   </section>
 </body>
 </html>
