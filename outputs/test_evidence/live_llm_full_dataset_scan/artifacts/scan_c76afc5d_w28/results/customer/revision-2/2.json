@@ -1,0 +1,117 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Language Distribution",
+      "claim": "Reviews are distributed across 2 languages, with en being the most common (11 out of 18 reviews, 61.1%).",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "total_reviews": {
+          "value": 18,
+          "unit": "count",
+          "numerator": 18,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "language_distribution": {
+          "value": "{\"en\": {\"count\": 11, \"percentage\": 61.1}, \"ar\": {\"count\": 7, \"percentage\": 38.9}}",
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Total reviews in analysis period: 18",
+        "Languages detected: en, ar",
+        "Language distribution: {\"en\": {\"count\": 11, \"percentage\": 61.1}, \"ar\": {\"count\": 7, \"percentage\": 38.9}}"
+      ],
+      "assumptions": [
+        "Language field in reviews artifact is accurate and complete",
+        "Review dates are correctly parsed"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Rating Distribution and Average",
+      "claim": "Average rating across 18 reviews is 4.33 out of 5, with complete distribution across 1-5 scale: {1: 1, 2: 0, 3: 0, 4: 8, 5: 9}. Rating 5 is most common with 9 reviews.",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "average_rating": {
+          "value": 4.33,
+          "unit": "out of 5",
+          "numerator": 78,
+          "denominator": 18,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "rating_distribution": {
+          "value": "{\"1\": 1, \"2\": 0, \"3\": 0, \"4\": 8, \"5\": 9}",
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Total reviews analyzed: 18",
+        "Complete rating distribution (1-5 scale): {\"1\": 1, \"2\": 0, \"3\": 0, \"4\": 8, \"5\": 9}",
+        "No reviews received ratings of 2, 3"
+      ],
+      "assumptions": [
+        "Rating field contains valid 1-5 scale values",
+        "All reviews have a rating value",
+        "Rating scale is consistent across all review sources"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Platform Distribution",
+      "claim": "Reviews come from 3 platforms, with google being the primary source (9 out of 18 reviews, 50.0%).",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "total_reviews_by_platform": {
+          "value": "{\"google\": 9, \"instagram\": 6, \"talabat\": 3}",
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "primary_platform": {
+          "value": "google",
+          "unit": "platform",
+          "numerator": 9,
+          "denominator": 18,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Total reviews in analysis period: 18",
+        "Platforms detected: google, instagram, talabat",
+        "Platform distribution: {\"google\": 9, \"instagram\": 6, \"talabat\": 3}"
+      ],
+      "assumptions": [
+        "Source field in reviews artifact accurately identifies review platform",
+        "All reviews have a source/platform value"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

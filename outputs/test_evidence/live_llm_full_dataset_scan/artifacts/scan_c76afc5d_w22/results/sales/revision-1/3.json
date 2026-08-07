@@ -1,0 +1,223 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Dine-in Channel Revenue Decline Week-over-Week",
+      "claim": "The dine_in channel, which showed the largest absolute revenue change, generated SAR 19566.20 (net of refunds) in the analysis week (2026-06-08 to 2026-06-15) across 574 transactions, compared to SAR 22007.10 (net of refunds) across 636 transactions in the previous week (2026-06-01 to 2026-06-08), representing a decline of SAR 2440.90 or 11.09%.",
+      "finding_type": "channel_revenue_change",
+      "metrics": {
+        "analysis_week_dine_in_revenue": {
+          "value": 19566.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "previous_week_dine_in_revenue": {
+          "value": 22007.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+00:00",
+          "period_end": "2026-06-08T00:00:00+00:00"
+        },
+        "dine_in_revenue_change": {
+          "value": -2440.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "dine_in_revenue_pct_change": {
+          "value": -11.09,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "analysis_week_dine_in_transactions": {
+          "value": 574,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "previous_week_dine_in_transactions": {
+          "value": 636,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+00:00",
+          "period_end": "2026-06-08T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1210,
+      "coverage_notes": [
+        "Revenue figures are net of refunds (refunds included as negative values in line_total_sar)",
+        "Dine_in channel selected as the channel with largest absolute revenue change",
+        "Transaction counts derived from unique transaction_id values",
+        "All line_total_sar values included in revenue calculations"
+      ],
+      "assumptions": [
+        "Timestamp field accurately represents transaction time",
+        "Channel field correctly identifies transaction channel",
+        "line_total_sar represents net revenue after discounts and refunds",
+        "Refunds are included in line_total_sar as negative values",
+        "Selection of dine_in channel based on largest absolute change may introduce selection bias"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value Decline Week-over-Week",
+      "claim": "Average order value declined from SAR 34.35 in the previous week (2026-06-01 to 2026-06-08) to SAR 34.79 in the analysis week (2026-06-08 to 2026-06-15), representing a decline of SAR 0.44 or 1.28%. This decline occurred across 1268 transactions in the analysis week compared to 1425 transactions in the previous week.",
+      "finding_type": "aov_change",
+      "metrics": {
+        "analysis_week_aov": {
+          "value": 34.79,
+          "unit": "SAR",
+          "numerator": 44116.0,
+          "denominator": 1268,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "previous_week_aov": {
+          "value": 34.35,
+          "unit": "SAR",
+          "numerator": 48951.95,
+          "denominator": 1425,
+          "period_start": "2026-06-01T00:00:00+00:00",
+          "period_end": "2026-06-08T00:00:00+00:00"
+        },
+        "aov_change": {
+          "value": 0.44,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "aov_pct_change": {
+          "value": 1.28,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "analysis_week_transactions": {
+          "value": 1268,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "previous_week_transactions": {
+          "value": 1425,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+00:00",
+          "period_end": "2026-06-08T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2693,
+      "coverage_notes": [
+        "AOV calculated as total revenue divided by unique transaction count",
+        "Revenue includes refunds in net calculation (refunds as negative values)",
+        "All transactions with valid transaction_id included",
+        "Calculation uses line_total_sar for revenue"
+      ],
+      "assumptions": [
+        "Timestamp field accurately represents transaction time",
+        "line_total_sar represents net revenue after discounts and refunds",
+        "Each transaction_id represents a unique basket",
+        "No data quality issues affecting revenue or transaction counts"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Category Revenue Change: bakery",
+      "claim": "The bakery category showed the largest absolute revenue change, generating SAR 5008.10 (net of refunds) in the analysis week (2026-06-08 to 2026-06-15) compared to SAR 6597.60 in the previous week (2026-06-01 to 2026-06-08), representing a change of SAR -1589.50 or -24.09%.",
+      "finding_type": "category_revenue_change",
+      "metrics": {
+        "analysis_week_category_revenue": {
+          "value": 5008.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "previous_week_category_revenue": {
+          "value": 6597.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+00:00",
+          "period_end": "2026-06-08T00:00:00+00:00"
+        },
+        "category_revenue_change": {
+          "value": -1589.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "category_revenue_pct_change": {
+          "value": -24.09,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "analysis_week_category_transactions": {
+          "value": 259,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "previous_week_category_transactions": {
+          "value": 331,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+00:00",
+          "period_end": "2026-06-08T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 590,
+      "coverage_notes": [
+        "Category selected as the category with largest absolute revenue change",
+        "Revenue includes refunds in net calculation (refunds as negative values)",
+        "Transaction counts derived from unique transaction_id values",
+        "All line_total_sar values included in revenue calculations"
+      ],
+      "assumptions": [
+        "Category field correctly identifies product category",
+        "line_total_sar represents net revenue after discounts and refunds",
+        "Refunds are included in line_total_sar as negative values",
+        "Each transaction_id represents a unique basket",
+        "Selection of category based on largest absolute change may introduce selection bias"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

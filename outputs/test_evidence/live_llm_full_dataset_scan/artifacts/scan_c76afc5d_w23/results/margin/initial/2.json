@@ -1,0 +1,142 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 5 Items by Gross Profit (Analysis Week)",
+      "claim": "The top 5 items by gross profit contribution generated SAR 17242.30 in gross profit from SAR 23893.70 in revenue during the analysis week (2026-06-15 to 2026-06-22).",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_1_name": {
+          "value": "Matcha Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00Z",
+          "period_end": "2026-06-22T00:00:00Z"
+        },
+        "top_item_1_gross_profit": {
+          "value": 4951.8,
+          "unit": "SAR",
+          "numerator": 4951.8,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00Z",
+          "period_end": "2026-06-22T00:00:00Z"
+        },
+        "top_item_1_margin_pct": {
+          "value": 67.12,
+          "unit": "%",
+          "numerator": 67.12,
+          "denominator": 100,
+          "period_start": "2026-06-15T00:00:00Z",
+          "period_end": "2026-06-22T00:00:00Z"
+        },
+        "top_5_total_gross_profit": {
+          "value": 17242.3,
+          "unit": "SAR",
+          "numerator": 17242.3,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00Z",
+          "period_end": "2026-06-22T00:00:00Z"
+        },
+        "top_5_total_revenue": {
+          "value": 23893.7,
+          "unit": "SAR",
+          "numerator": 23893.7,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00Z",
+          "period_end": "2026-06-22T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2120,
+      "coverage_notes": [
+        "Analysis period: 2026-06-15 to 2026-06-22",
+        "Total POS transactions in period: 2136",
+        "Sales lines (excluding refunds): 2120",
+        "Unique items sold: 19",
+        "Menu items with unit cost data: 19"
+      ],
+      "assumptions": [
+        "Unit costs from menu_items.unit_cost_sar are current and applicable to all sales in the period",
+        "Refunds are excluded from revenue and COGS calculations",
+        "Line totals in POS are accurate and include discounts"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Supplier Price Change Detection",
+      "claim": "Supplier email evidence shows 2 price changes effective between 2026-05-01 and 2026-06-22. The largest change is Barista oat: 15.40 → 17.90 SAR/L (16.2%), effective 2026-05-01.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "total_price_changes_detected": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00Z",
+          "period_end": "2026-06-22T00:00:00Z"
+        },
+        "largest_change_ingredient": {
+          "value": "Barista oat",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00Z",
+          "period_end": "2026-06-22T00:00:00Z"
+        },
+        "largest_change_old_price": {
+          "value": 15.4,
+          "unit": "SAR/L",
+          "numerator": 15.4,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00Z",
+          "period_end": "2026-06-22T00:00:00Z"
+        },
+        "largest_change_new_price": {
+          "value": 17.9,
+          "unit": "SAR/L",
+          "numerator": 17.9,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00Z",
+          "period_end": "2026-06-22T00:00:00Z"
+        },
+        "largest_change_pct": {
+          "value": 16.23,
+          "unit": "%",
+          "numerator": 16.23,
+          "denominator": 100,
+          "period_start": "2026-05-01T00:00:00Z",
+          "period_end": "2026-06-22T00:00:00Z"
+        },
+        "effective_date": {
+          "value": "2026-05-01",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00Z",
+          "period_end": "2026-06-22T00:00:00Z"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 2,
+      "coverage_notes": [
+        "Price changes detected from supplier emails: 2",
+        "Analysis window: 2026-05-01 to 2026-06-22",
+        "Only changes with both old_price and new_price values are included",
+        "No recipe/BOM data available to calculate per-drink impact"
+      ],
+      "assumptions": [
+        "Supplier email extraction is accurate",
+        "Effective dates in emails are correct",
+        "Price changes apply to relevant menu items (not verified without recipe data)",
+        "Standing order quantities and payment terms are not confirmed in available data"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

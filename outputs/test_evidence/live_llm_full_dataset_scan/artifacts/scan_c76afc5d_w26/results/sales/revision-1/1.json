@@ -1,0 +1,193 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Net Revenue Change: Analysis Week vs Previous Week",
+      "claim": "Net revenue in analysis week (2026-07-06 to 2026-07-13) was SAR 45496.10, compared to SAR 48988.60 in previous week (2026-06-29 to 2026-07-06), representing a change of SAR -3492.50 (-7.13%)",
+      "finding_type": "revenue_change",
+      "metrics": {
+        "analysis_week_revenue": {
+          "value": 45496.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "previous_week_revenue": {
+          "value": 48988.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "revenue_change_sar": {
+          "value": -3492.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": -7.13,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 2197,
+      "coverage_notes": [
+        "Analysis period: 2026-07-06 to 2026-07-13",
+        "Previous period: 2026-06-29 to 2026-07-06",
+        "Net revenue includes refunds as per metric definition",
+        "Analysis week transactions: 1280",
+        "Previous week transactions: 1374"
+      ],
+      "assumptions": [
+        "Unique transaction_id identifies distinct baskets",
+        "line_total_sar represents net realized revenue including refunds",
+        "Refunds are included in net calculations per metric definition",
+        "Timestamp field is reliable for period filtering"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value Change: Analysis Week vs Previous Week",
+      "claim": "Average order value in analysis week was SAR 35.54, compared to SAR 35.65 in previous week, representing a -0.31% change",
+      "finding_type": "aov_change",
+      "metrics": {
+        "analysis_week_aov": {
+          "value": 35.54,
+          "unit": "SAR",
+          "numerator": 45496.1,
+          "denominator": 1280,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "previous_week_aov": {
+          "value": 35.65,
+          "unit": "SAR",
+          "numerator": 48988.6,
+          "denominator": 1374,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "aov_change_sar": {
+          "value": -0.11,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "aov_change_pct": {
+          "value": -0.31,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1280,
+      "coverage_notes": [
+        "Analysis period: 2026-07-06 to 2026-07-13",
+        "Previous period: 2026-06-29 to 2026-07-06",
+        "AOV calculated as net revenue / unique transaction count",
+        "Refunds included in net revenue per metric definition"
+      ],
+      "assumptions": [
+        "Unique transaction_id identifies distinct baskets",
+        "line_total_sar represents net realized revenue",
+        "Refunds are included in net calculations",
+        "Non-refund transactions used for basket count"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Top Category Revenue Change: iced_coffee",
+      "claim": "Revenue from iced_coffee category in analysis week was SAR 16095.10, compared to SAR 17689.20 in previous week, representing a -9.01% change",
+      "finding_type": "category_mix_change",
+      "metrics": {
+        "analysis_week_category_revenue": {
+          "value": 16095.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "previous_week_category_revenue": {
+          "value": 17689.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "category_revenue_change_sar": {
+          "value": -1594.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "category_revenue_change_pct": {
+          "value": -9.01,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "analysis_week_category_transactions": {
+          "value": 669,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "previous_week_category_transactions": {
+          "value": 733,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 804,
+      "coverage_notes": [
+        "Top category: iced_coffee",
+        "Analysis period: 2026-07-06 to 2026-07-13",
+        "Previous period: 2026-06-29 to 2026-07-06",
+        "Revenue includes refunds as per metric definition",
+        "Analysis week transactions in category: 669",
+        "Previous week transactions in category: 733"
+      ],
+      "assumptions": [
+        "Category field from POS is accurate",
+        "line_total_sar represents net realized revenue",
+        "Refunds included in net calculations",
+        "Unique transaction_id identifies distinct baskets"
+      ],
+      "confidence": 0.92
+    }
+  ]
+}

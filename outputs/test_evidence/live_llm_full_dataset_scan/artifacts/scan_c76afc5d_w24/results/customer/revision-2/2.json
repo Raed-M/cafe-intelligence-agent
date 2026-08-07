@@ -1,0 +1,192 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Rating Distribution and Average (Analysis Period)",
+      "claim": "During the analysis period (2026-06-22 to 2026-06-29), the average rating across 21 reviews is 3.90 out of 5, with distribution: {1: 2, 2: 4, 4: 3, 5: 12}",
+      "finding_type": "rating_analysis",
+      "metrics": {
+        "average_rating": {
+          "value": 3.9,
+          "unit": "stars",
+          "numerator": 21,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "rating_5_star_count": {
+          "value": 12,
+          "unit": "count",
+          "numerator": 12,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "rating_4_star_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "rating_3_star_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "rating_2_star_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "rating_1_star_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-06-22 to 2026-06-29",
+        "Total reviews in analysis period: 21",
+        "Sources represented: google, instagram, talabat",
+        "Language distribution: {'en': 14, 'ar': 7}"
+      ],
+      "assumptions": [
+        "Rating values are numeric and valid",
+        "Review dates are accurate and converted to UTC for comparison",
+        "All reviews in the dataset are legitimate customer feedback"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Language Distribution of Reviews",
+      "claim": "During the analysis period, 21 reviews were submitted in the following languages: {'en': 14, 'ar': 7}",
+      "finding_type": "language_coverage",
+      "metrics": {
+        "total_reviews": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "reviews_en_count": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "reviews_ar_count": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Language distribution: {'en': 14, 'ar': 7}",
+        "Analysis period: 2026-06-22 to 2026-06-29",
+        "All reviews in analysis period included"
+      ],
+      "assumptions": [
+        "Language field is accurately populated",
+        "Language codes are standardized (e.g., 'en', 'ar')"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Text Availability and Sentiment Indicators",
+      "claim": "Of 21 reviews in the analysis period, 21 contain text. Preliminary keyword analysis suggests 6 reviews contain positive sentiment indicators and 0 contain negative sentiment indicators.",
+      "finding_type": "text_availability",
+      "metrics": {
+        "total_reviews": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "reviews_with_text": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "reviews_with_positive_keywords": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "reviews_with_negative_keywords": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-06-22 to 2026-06-29",
+        "Total reviews: 21",
+        "Reviews with text content: 21",
+        "Text availability rate: 100.0%",
+        "Sentiment analysis based on simple keyword matching, not NLP"
+      ],
+      "assumptions": [
+        "Text field contains original review text",
+        "Keyword matching is a proxy for sentiment (not comprehensive)",
+        "Keywords are case-insensitive",
+        "A review can contain both positive and negative keywords"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

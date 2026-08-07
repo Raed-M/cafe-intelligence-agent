@@ -1,0 +1,207 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 3 Items by Gross Profit Contribution (Analysis Period)",
+      "claim": "During 2026-07-20 to 2026-07-27, the top 3 items by gross profit contribution generated 13944.85 SAR in total gross profit, representing 41.4% of total item-level gross profit.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_1_name": {
+          "value": "Matcha Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+00:00",
+          "period_end": "2026-07-27T00:00:00+00:00"
+        },
+        "top_item_1_gross_profit": {
+          "value": 6333.6,
+          "unit": "SAR",
+          "numerator": 6333.6,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+00:00",
+          "period_end": "2026-07-27T00:00:00+00:00"
+        },
+        "top_item_1_margin_pct": {
+          "value": 67.22,
+          "unit": "%",
+          "numerator": 67.22,
+          "denominator": 100,
+          "period_start": "2026-07-20T00:00:00+00:00",
+          "period_end": "2026-07-27T00:00:00+00:00"
+        },
+        "top_item_2_name": {
+          "value": "Iced Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+00:00",
+          "period_end": "2026-07-27T00:00:00+00:00"
+        },
+        "top_item_2_gross_profit": {
+          "value": 4791.8,
+          "unit": "SAR",
+          "numerator": 4791.8,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+00:00",
+          "period_end": "2026-07-27T00:00:00+00:00"
+        },
+        "top_item_3_name": {
+          "value": "Iced Americano",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+00:00",
+          "period_end": "2026-07-27T00:00:00+00:00"
+        },
+        "top_item_3_gross_profit": {
+          "value": 2819.45,
+          "unit": "SAR",
+          "numerator": 2819.45,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+00:00",
+          "period_end": "2026-07-27T00:00:00+00:00"
+        },
+        "total_items_analyzed": {
+          "value": 19,
+          "unit": "count",
+          "numerator": 19,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+00:00",
+          "period_end": "2026-07-27T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2269,
+      "coverage_notes": [
+        "Analysis covers 2269 non-refund POS line items from 2026-07-20 to 2026-07-27",
+        "Menu unit costs available for 2269 of 2269 items (100.0%)",
+        "Refunds excluded from analysis (is_refund=True)"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar represents actual COGS per unit",
+        "Line totals are net of discounts",
+        "No recipe/BOM adjustments applied"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost (Week of 2026-07-20)",
+      "claim": "During the week of 2026-07-20, 194 units were wasted across 6 items with known waste costs, totaling 1243.70 SAR in waste cost.",
+      "finding_type": "waste_analysis",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 1243.7,
+          "unit": "SAR",
+          "numerator": 1243.7,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "total_units_wasted": {
+          "value": 194,
+          "unit": "units",
+          "numerator": 194,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "items_with_waste": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Only 6 of 6 inventory items have non-null known_waste_cost_sar values",
+        "Blank waste values are excluded per methodology",
+        "Week starting 2026-07-20 only"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar represents actual waste cost",
+        "Waste items are independent observations"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Supplier Price Change Evidence",
+      "claim": "Email evidence documents a price change for roasted coffee: from 88.0 to 96.0 SAR per kg, effective 2026-04-15. This represents a 9.1% change.",
+      "finding_type": "supplier_pricing",
+      "metrics": {
+        "ingredient_name": {
+          "value": "roasted coffee",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": null
+        },
+        "old_price": {
+          "value": 88.0,
+          "unit": "SAR",
+          "numerator": 88.0,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": null
+        },
+        "new_price": {
+          "value": 96.0,
+          "unit": "SAR",
+          "numerator": 96.0,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": null
+        },
+        "price_change_pct": {
+          "value": 9.09,
+          "unit": "%",
+          "numerator": 9.09,
+          "denominator": 100,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": null
+        },
+        "unit_of_measure": {
+          "value": "kg",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": null
+        },
+        "total_price_changes_identified": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": null,
+          "period_start": "2026-04-15T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Email extraction identified 3 price changes with old/new prices and effective dates",
+        "Price changes span from {price_changes['effective_date'].min().date()} to {price_changes['effective_date'].max().date()}",
+        "No standing order quantities found in email facts to calculate procurement cost scenarios"
+      ],
+      "assumptions": [
+        "Email extraction confidence scores are reliable",
+        "Effective dates represent actual implementation dates",
+        "Price changes apply to supplier invoices going forward"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

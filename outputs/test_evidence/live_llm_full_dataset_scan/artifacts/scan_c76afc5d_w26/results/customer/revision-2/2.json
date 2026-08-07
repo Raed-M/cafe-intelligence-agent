@@ -1,0 +1,166 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution and Sentiment",
+      "claim": "During the analysis period (2026-07-06 to 2026-07-13), the cafe received 18 reviews with an average rating of 4.39/5. 16 reviews were positive (4-5 stars), 0 were neutral (3 stars), and 2 were negative (1-2 stars).",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "total_reviews": {
+          "value": 18,
+          "unit": "count",
+          "numerator": 18,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "average_rating": {
+          "value": 4.39,
+          "unit": "stars",
+          "numerator": 79.0,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "positive_reviews_count": {
+          "value": 16,
+          "unit": "count",
+          "numerator": 16,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "neutral_reviews_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "negative_reviews_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Analysis covers 18 reviews from 3 review platforms",
+        "Language distribution: {'en': np.int64(14), 'ar': np.int64(4)}"
+      ],
+      "assumptions": [
+        "Rating scale is 1-5 stars",
+        "Positive sentiment defined as 4-5 stars, neutral as 3 stars, negative as 1-2 stars",
+        "All reviews in the artifact are valid and complete"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Source Platform Distribution",
+      "claim": "Reviews during the analysis period came from 3 different platforms. The distribution shows google: 12 reviews, talabat: 3 reviews, instagram: 3 reviews.",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "total_review_platforms": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "google_review_count": {
+          "value": 12,
+          "unit": "count",
+          "numerator": 12,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "talabat_review_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "instagram_review_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Platform breakdown: {'google': np.int64(12), 'talabat': np.int64(3), 'instagram': np.int64(3)}"
+      ],
+      "assumptions": [
+        "Platform names in 'source' column represent distinct review channels",
+        "All reviews are properly attributed to their source platform"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Customer reviews were submitted in 2 languages. en: 14 reviews, ar: 4 reviews.",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "total_languages": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "en_review_count": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "ar_review_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Language breakdown: {'en': np.int64(14), 'ar': np.int64(4)}"
+      ],
+      "assumptions": [
+        "Language field accurately reflects the language of each review",
+        "Reviews are classified as either Arabic or English"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

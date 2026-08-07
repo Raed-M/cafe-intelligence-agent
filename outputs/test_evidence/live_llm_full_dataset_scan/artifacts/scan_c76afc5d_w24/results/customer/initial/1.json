@@ -1,0 +1,154 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Jun 22-29, 2026)",
+      "claim": "Average rating is 3.90 out of 5 across 21 reviews during the analysis period.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 3.9,
+          "unit": "stars",
+          "numerator": 21,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Reviews from 3 source(s)",
+        "Language distribution: {'en': np.int64(14), 'ar': np.int64(7)}"
+      ],
+      "assumptions": [
+        "Rating values are valid integers between 1-5",
+        "Review dates are accurate and in UTC+3 timezone"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Distribution by Language (Jun 22-29, 2026)",
+      "claim": "Sentiment distribution shows 15 positive, 0 neutral, and 6 negative reviews. English reviews: 14, Arabic reviews: 7.",
+      "finding_type": "sentiment_analysis",
+      "metrics": {
+        "positive_reviews": {
+          "value": "15",
+          "unit": "count",
+          "numerator": "15",
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "neutral_reviews": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": "6",
+          "unit": "count",
+          "numerator": "6",
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "english_reviews": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Sentiment classified based on rating thresholds (4-5: positive, 3: neutral, 1-2: negative)",
+        "Language coverage: 14 English, 7 Arabic"
+      ],
+      "assumptions": [
+        "Sentiment classification based on rating values only",
+        "Topic extraction uses simple keyword matching",
+        "Review text may be empty or missing for some reviews"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Most Mentioned Topics in Reviews (Jun 22-29, 2026)",
+      "claim": "The most frequently mentioned topics are: quality (3 mentions), speed (1 mentions), taste (1 mentions).",
+      "finding_type": "topic_analysis",
+      "metrics": {
+        "top_topic_1": {
+          "value": "quality",
+          "unit": "topic",
+          "numerator": 3,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "top_topic_2": {
+          "value": "speed",
+          "unit": "topic",
+          "numerator": 1,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "top_topic_3": {
+          "value": "taste",
+          "unit": "topic",
+          "numerator": 1,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Topics identified through keyword matching in review text",
+        "Total topic mentions: 6",
+        "Unique topics identified: 4"
+      ],
+      "assumptions": [
+        "Topic keywords are predefined and may not capture all variations",
+        "A single review may mention multiple topics",
+        "Keyword matching is case-insensitive"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

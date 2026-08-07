@@ -1,0 +1,143 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Unusual Hourly Traffic on 2026-07-17 at 00:00",
+      "claim": "Door count of 167 at 1970-01-01 00:00 deviates 4.38 standard deviations from baseline mean of 45.7",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "observed_hourly_door_count": {
+          "value": 167,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "1970-01-01T00:00:00.000000017",
+          "period_end": "1970-01-01T01:00:00.000000017"
+        },
+        "baseline_mean_hourly_door_count": {
+          "value": 45.7,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00",
+          "period_end": "2026-06-22T00:00:00"
+        },
+        "z_score": {
+          "value": 4.38,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "1970-01-01T00:00:00.000000017",
+          "period_end": "1970-01-01T01:00:00.000000017"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 476,
+      "coverage_notes": [
+        "Baseline calculated from 476 hourly observations across 4 weeks",
+        "Excluded hours marked as dead_sensor_day",
+        "Analysis period: 2026-07-13 to 2026-07-20"
+      ],
+      "assumptions": [
+        "Hourly traffic follows approximately normal distribution",
+        "Baseline periods are representative of normal operations",
+        "Z-score threshold of 2.5 used for hourly anomaly detection"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Unusual Hourly Traffic on 2026-07-17 at 00:00",
+      "claim": "Door count of 142 at 1970-01-01 00:00 deviates 3.47 standard deviations from baseline mean of 45.7",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "observed_hourly_door_count": {
+          "value": 142,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "1970-01-01T00:00:00.000000019",
+          "period_end": "1970-01-01T01:00:00.000000019"
+        },
+        "baseline_mean_hourly_door_count": {
+          "value": 45.7,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00",
+          "period_end": "2026-06-22T00:00:00"
+        },
+        "z_score": {
+          "value": 3.47,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "1970-01-01T00:00:00.000000019",
+          "period_end": "1970-01-01T01:00:00.000000019"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 476,
+      "coverage_notes": [
+        "Baseline calculated from 476 hourly observations across 4 weeks",
+        "Excluded hours marked as dead_sensor_day",
+        "Analysis period: 2026-07-13 to 2026-07-20"
+      ],
+      "assumptions": [
+        "Hourly traffic follows approximately normal distribution",
+        "Baseline periods are representative of normal operations",
+        "Z-score threshold of 2.5 used for hourly anomaly detection"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Unusual Hourly Traffic on 2026-07-17 at 00:00",
+      "claim": "Door count of 140 at 1970-01-01 00:00 deviates 3.40 standard deviations from baseline mean of 45.7",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "observed_hourly_door_count": {
+          "value": 140,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "1970-01-01T00:00:00.000000020",
+          "period_end": "1970-01-01T01:00:00.000000020"
+        },
+        "baseline_mean_hourly_door_count": {
+          "value": 45.7,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00",
+          "period_end": "2026-06-22T00:00:00"
+        },
+        "z_score": {
+          "value": 3.4,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "1970-01-01T00:00:00.000000020",
+          "period_end": "1970-01-01T01:00:00.000000020"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 476,
+      "coverage_notes": [
+        "Baseline calculated from 476 hourly observations across 4 weeks",
+        "Excluded hours marked as dead_sensor_day",
+        "Analysis period: 2026-07-13 to 2026-07-20"
+      ],
+      "assumptions": [
+        "Hourly traffic follows approximately normal distribution",
+        "Baseline periods are representative of normal operations",
+        "Z-score threshold of 2.5 used for hourly anomaly detection"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

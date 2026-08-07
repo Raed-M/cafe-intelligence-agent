@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Unusual Hourly Door Traffic",
+      "claim": "Hourly door count on 2026-07-17 at hour 17 was 167 visitors, 4.38 standard deviations from baseline mean of 45.7.",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "observed_hourly_door_count": {
+          "value": 167,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-17T17:00:00+03:00",
+          "period_end": "2026-07-17T18:00:00+03:00"
+        },
+        "baseline_mean_hourly_door_count": {
+          "value": 45.7,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "z_score": {
+          "value": 4.38,
+          "unit": "std_dev",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-17T17:00:00+03:00",
+          "period_end": "2026-07-17T18:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 476,
+      "coverage_notes": [
+        "Analysis period: 2026-07-13 to 2026-07-20",
+        "Baseline: 4 trailing weeks (2026-06-15 to 2026-07-13)",
+        "Excluded dead sensor days",
+        "Threshold: |z-score| > 2.5"
+      ],
+      "assumptions": [
+        "Hourly door counts follow approximately normal distribution",
+        "Baseline periods represent typical traffic patterns",
+        "Sensor is functioning correctly during analysis period"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Unusual Hourly Traffic",
+      "claim": "Door count on 2026-06-12 hour 19 was 177 visitors, 4.19 standard deviations from baseline mean of 46.8.",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "observed_hourly_door_count": {
+          "value": 177,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-12T19:00:00",
+          "period_end": "2026-06-12T19:59:59"
+        },
+        "baseline_mean_hourly_door_count": {
+          "value": 46.8,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00",
+          "period_end": "2026-06-08T00:00:00"
+        },
+        "z_score": {
+          "value": 4.19,
+          "unit": "std_dev",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-12T19:00:00",
+          "period_end": "2026-06-12T19:59:59"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 119,
+      "coverage_notes": [
+        "Baseline period: 2026-06-01 to 2026-06-08",
+        "Analysis period: 2026-06-08 to 2026-06-15",
+        "Dead sensor days excluded",
+        "Baseline sample size: 119 hourly observations"
+      ],
+      "assumptions": [
+        "Hourly door count follows normal distribution",
+        "Z-score threshold of 2.0 (95% confidence)",
+        "Dead sensor intervals excluded"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Unusual Hourly Traffic",
+      "claim": "Door count on 2026-06-13 hour 19 was 137 visitors, 2.91 standard deviations from baseline mean of 46.8.",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "observed_hourly_door_count": {
+          "value": 137,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-13T19:00:00",
+          "period_end": "2026-06-13T19:59:59"
+        },
+        "baseline_mean_hourly_door_count": {
+          "value": 46.8,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00",
+          "period_end": "2026-06-08T00:00:00"
+        },
+        "z_score": {
+          "value": 2.91,
+          "unit": "std_dev",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-13T19:00:00",
+          "period_end": "2026-06-13T19:59:59"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 119,
+      "coverage_notes": [
+        "Baseline period: 2026-06-01 to 2026-06-08",
+        "Analysis period: 2026-06-08 to 2026-06-15",
+        "Dead sensor days excluded",
+        "Baseline sample size: 119 hourly observations"
+      ],
+      "assumptions": [
+        "Hourly door count follows normal distribution",
+        "Z-score threshold of 2.0 (95% confidence)",
+        "Dead sensor intervals excluded"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Unusual Hourly Traffic",
+      "claim": "Door count on 2026-06-12 hour 17 was 135 visitors, 2.84 standard deviations from baseline mean of 46.8.",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "observed_hourly_door_count": {
+          "value": 135,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-12T17:00:00",
+          "period_end": "2026-06-12T17:59:59"
+        },
+        "baseline_mean_hourly_door_count": {
+          "value": 46.8,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00",
+          "period_end": "2026-06-08T00:00:00"
+        },
+        "z_score": {
+          "value": 2.84,
+          "unit": "std_dev",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-12T17:00:00",
+          "period_end": "2026-06-12T17:59:59"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 119,
+      "coverage_notes": [
+        "Baseline period: 2026-06-01 to 2026-06-08",
+        "Analysis period: 2026-06-08 to 2026-06-15",
+        "Dead sensor days excluded",
+        "Baseline sample size: 119 hourly observations"
+      ],
+      "assumptions": [
+        "Hourly door count follows normal distribution",
+        "Z-score threshold of 2.0 (95% confidence)",
+        "Dead sensor intervals excluded"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

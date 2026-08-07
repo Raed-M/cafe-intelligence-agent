@@ -1,0 +1,133 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution and Sentiment",
+      "claim": "During the analysis period (2026-07-13 to 2026-07-20), the cafe received 15 reviews with an average rating of 4.73 out of 5. Positive reviews (rating ≥4) comprise 15 reviews (100.0%), while negative reviews (rating ≤2) comprise 0 reviews (0.0%).",
+      "finding_type": "customer_sentiment",
+      "metrics": {
+        "total_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "average_rating": {
+          "value": 4.73,
+          "unit": "stars",
+          "numerator": 71.0,
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "positive_ratio": {
+          "value": 1.0,
+          "unit": "proportion",
+          "numerator": 15,
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "negative_ratio": {
+          "value": 0.0,
+          "unit": "proportion",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Analysis period: 2026-07-13 to 2026-07-20 (7 days)",
+        "Total reviews in artifact: 520",
+        "Reviews in analysis period: 15",
+        "Language distribution: {'en': np.int64(9), 'ar': np.int64(6)}"
+      ],
+      "assumptions": [
+        "Rating scale is 1-5 stars",
+        "Positive sentiment defined as rating ≥4",
+        "Negative sentiment defined as rating ≤2",
+        "Review dates are in UTC+3 timezone as specified"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Platform Distribution",
+      "claim": "Reviews in the analysis period come from 3 platforms. google is the primary source with 10 reviews (66.7% of total).",
+      "finding_type": "channel_analysis",
+      "metrics": {
+        "total_platforms": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "primary_platform": {
+          "value": "google",
+          "unit": "platform_name",
+          "numerator": "10",
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Platform breakdown: {'google': np.int64(10), 'instagram': np.int64(3), 'talabat': np.int64(2)}",
+        "Analysis period: 2026-07-13 to 2026-07-20"
+      ],
+      "assumptions": [
+        "Platform names in 'source' column are accurate",
+        "Each review is attributed to exactly one platform"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Customer reviews are submitted in 2 languages. en reviews comprise 9 reviews (60.0% of total), indicating en-speaking customers are the primary review source.",
+      "finding_type": "customer_demographics",
+      "metrics": {
+        "total_languages": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "primary_language": {
+          "value": "en",
+          "unit": "language_code",
+          "numerator": "9",
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Language breakdown: {'en': np.int64(9), 'ar': np.int64(6)}",
+        "Analysis period: 2026-07-13 to 2026-07-20"
+      ],
+      "assumptions": [
+        "Language classification in 'language' column is accurate",
+        "Each review is classified as exactly one language"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

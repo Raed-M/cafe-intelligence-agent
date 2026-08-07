@@ -1,0 +1,142 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Jul 13-20, 2026)",
+      "claim": "Average rating is 4.73/5 across 15 reviews during the analysis period, with 15 positive, 0 neutral, and 0 negative reviews.",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "average_rating": {
+          "value": 4.73,
+          "unit": "stars",
+          "numerator": 15,
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "positive_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Analysis period: 2026-07-13 to 2026-07-20",
+        "Total reviews in period: 15",
+        "Language distribution: {'en': 9, 'ar': 6}",
+        "Platform distribution: {'google': 10, 'instagram': 3, 'talabat': 2}"
+      ],
+      "assumptions": [
+        "Rating >= 4 classified as positive, rating = 3 as neutral, rating < 3 as negative",
+        "All reviews with valid ratings included in sentiment classification",
+        "Review date field used to filter analysis period"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Most Frequently Mentioned Topics in Reviews",
+      "claim": "The most discussed topics in customer reviews are service (3 mentions), coffee_quality (2 mentions), temperature (2 mentions).",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "top_topic_1": {
+          "value": "service",
+          "unit": "topic",
+          "numerator": 3,
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "top_topic_2": {
+          "value": "coffee_quality",
+          "unit": "topic",
+          "numerator": 2,
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "top_topic_3": {
+          "value": "temperature",
+          "unit": "topic",
+          "numerator": 2,
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Topic extraction based on keyword matching in review text",
+        "Total unique topics identified: 5",
+        "Reviews with extractable text: 15"
+      ],
+      "assumptions": [
+        "Topics identified through keyword matching in review text",
+        "Multiple topics can be mentioned in a single review",
+        "Topic keywords are case-insensitive"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Sentiment Distribution by Review Platform",
+      "claim": "Platform 'google' has the highest proportion of positive reviews with 10 positive out of 11.0 total reviews.",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "best_platform": {
+          "value": "google",
+          "unit": "platform",
+          "numerator": 10,
+          "denominator": 11.0,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "positive_ratio": {
+          "value": 0.91,
+          "unit": "ratio",
+          "numerator": 10,
+          "denominator": 11.0,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Platforms analyzed: ['google', 'instagram', 'talabat']",
+        "Platform distribution: {'google': 10, 'instagram': 3, 'talabat': 2}"
+      ],
+      "assumptions": [
+        "Sentiment classification based on rating thresholds",
+        "Platform refers to review source platform (google, instagram, talabat, etc.)"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

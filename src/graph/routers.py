@@ -22,6 +22,18 @@ def _valid_periods(state: CafeIntelligenceState) -> set[tuple[str, str]]:
     return {(p["start"][:10], p["end"][:10]) for p in periods}
 
 
+def _excluded_days_by_source(state: CafeIntelligenceState) -> dict[str, list[str]]:
+    """Per-source dead-sensor/excluded dates from the cleaning step's data
+    quality report, keyed by source name -- lets the critic's deterministic
+    day-count-normalization check (finding_critic._rule_unequal_valid_days_not_normalized)
+    tell whether two periods a finding compares were affected unequally."""
+    summaries = state.get("data_quality", {}).get("source_summaries", [])
+    return {
+        s["source_name"]: [p["date"] for p in s.get("excluded_periods", [])]
+        for s in summaries if s.get("excluded_periods")
+    }
+
+
 def critic_node(state: CafeIntelligenceState) -> dict[str, Any]:
     from src.analysis.correlation_hints import cross_analyst_coincidences
 
@@ -37,6 +49,7 @@ def critic_node(state: CafeIntelligenceState) -> dict[str, Any]:
         valid_periods=_valid_periods(state),
         model_name=state["config"].app_settings.models.critic,
         cross_domain_hints=cross_domain_hints,
+        excluded_days_by_source=_excluded_days_by_source(state),
     )
     return {"critic_results": result, "critic_round": round_ + 1, "step_count": 1}
 

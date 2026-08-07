@@ -1,0 +1,157 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Increase in Analysis Period",
+      "claim": "Conversion rate in analysis period (Jun 8-15) was 0.3621 vs 0.2546 in previous period (Jun 1-8), representing a 42.2% relative increase (or 0.1075 absolute increase). This indicates improved conversion performance.",
+      "finding_type": "conversion_performance",
+      "metrics": {
+        "analysis_conversion_rate": {
+          "value": 0.3621,
+          "unit": "ratio",
+          "numerator": 1264,
+          "denominator": "3491",
+          "period_start": "2026-06-08T00:00:00+03:00",
+          "period_end": "2026-06-15T00:00:00+03:00"
+        },
+        "previous_conversion_rate": {
+          "value": 0.2546,
+          "unit": "ratio",
+          "numerator": 1419,
+          "denominator": "5573",
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-08T00:00:00+03:00"
+        },
+        "conversion_rate_change_relative_pct": {
+          "value": 42.2,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-15T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 2683,
+      "coverage_notes": [
+        "Dead sensor days excluded from traffic denominator",
+        "Refunds excluded from transaction count",
+        "Analysis period: Jun 8-15, 2026",
+        "Previous period: Jun 1-8, 2026",
+        "Analysis footfall: 3491 visitors across 68 hourly records",
+        "Previous footfall: 5573 visitors across 119 hourly records"
+      ],
+      "assumptions": [
+        "Traffic sensor accuracy and consistency within non-dead-sensor intervals",
+        "Transaction_id uniqueness represents distinct customer baskets",
+        "Timezone conversion to Asia/Riyadh is correct",
+        "Period boundaries are exclusive of end date"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "title": "Labour Cost Efficiency Decline",
+      "claim": "Labour cost as % of revenue increased from 14.21% in the previous period to 15.35% in the analysis period, representing a relative increase of 8.0% (or 1.14 percentage points). This indicates labour cost efficiency declined during the analysis period.",
+      "finding_type": "labour_efficiency",
+      "metrics": {
+        "analysis_labour_cost_pct_revenue": {
+          "value": 15.35,
+          "unit": "percent",
+          "numerator": "6800",
+          "denominator": 44288.2,
+          "period_start": "2026-06-08T00:00:00+03:00",
+          "period_end": "2026-06-15T00:00:00+03:00"
+        },
+        "previous_labour_cost_pct_revenue": {
+          "value": 14.21,
+          "unit": "percent",
+          "numerator": "7000",
+          "denominator": 49255.95,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-08T00:00:00+03:00"
+        },
+        "labour_cost_efficiency_change_relative_pct": {
+          "value": 8.0,
+          "unit": "percent",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-15T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "staff",
+        "pos"
+      ],
+      "sample_size": 81,
+      "coverage_notes": [
+        "Labour cost calculated from staff shift records with computed_duration_hours",
+        "Revenue excludes refunds",
+        "Analysis period staff records: 41",
+        "Previous period staff records: 40",
+        "Analysis period revenue: 44288.20 SAR",
+        "Previous period revenue: 49255.95 SAR"
+      ],
+      "assumptions": [
+        "Staff labour_cost_sar field is accurate and complete",
+        "Hourly rates and shift durations are correctly recorded",
+        "Period comparability: both periods have similar operational patterns",
+        "Refunds are correctly marked and excluded from revenue"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "title": "Known Waste Rate Consistency",
+      "claim": "Known waste rate was 16.47% in the analysis period vs 17.56% in the previous period, a change of -1.09 percentage points, indicating stable waste management practices.",
+      "finding_type": "waste_management",
+      "metrics": {
+        "analysis_waste_rate_pct": {
+          "value": 16.47,
+          "unit": "percent",
+          "numerator": 137,
+          "denominator": 832,
+          "period_start": "2026-06-08T00:00:00+03:00",
+          "period_end": "2026-06-15T00:00:00+03:00"
+        },
+        "previous_waste_rate_pct": {
+          "value": 17.56,
+          "unit": "percent",
+          "numerator": 148,
+          "denominator": 843,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-08T00:00:00+03:00"
+        },
+        "waste_rate_change_pp": {
+          "value": -1.09,
+          "unit": "percentage_points",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-01T00:00:00+03:00",
+          "period_end": "2026-06-15T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 12,
+      "coverage_notes": [
+        "Sunday inventory counts treated as weekly snapshots, not real-time stock",
+        "Analysis period inventory records: 6 SKUs",
+        "Previous period inventory records: 6 SKUs",
+        "Analysis period total units: 832",
+        "Previous period total units: 843",
+        "Known waste only; unknown waste excluded from calculation"
+      ],
+      "assumptions": [
+        "Known waste values are accurately recorded",
+        "Weekly inventory snapshots represent full period activity",
+        "Units_wasted field captures all documented waste",
+        "Period boundaries align with inventory week-starting dates"
+      ],
+      "confidence": 0.65
+    }
+  ]
+}

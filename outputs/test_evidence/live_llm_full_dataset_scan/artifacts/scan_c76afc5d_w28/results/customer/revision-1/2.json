@@ -1,0 +1,101 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Language Distribution",
+      "claim": "Reviews are distributed across 2 languages, with en being the most common (11 out of 18 reviews, 61.1%).",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "language_distribution": {
+          "value": "{\"en\": 11, \"ar\": 7}",
+          "unit": "count",
+          "numerator": 11,
+          "denominator": 18,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Total reviews in analysis period: 18",
+        "Language distribution: {'en': 11, 'ar': 7}",
+        "Language field populated for all reviews"
+      ],
+      "assumptions": [
+        "Language field values are accurate as provided in cleaned artifact",
+        "Review date field is reliable for period filtering"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Rating Distribution",
+      "claim": "Average rating across 18 reviews is 4.33 out of 5, with distribution: {\"1\": 1, \"4\": 8, \"5\": 9}.",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "average_rating": {
+          "value": 4.33,
+          "unit": "stars",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "rating_distribution": {
+          "value": "{\"1\": 1, \"4\": 8, \"5\": 9}",
+          "unit": "count",
+          "numerator": 18,
+          "denominator": 18,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Total reviews with ratings: 18",
+        "Rating distribution: {1: 1, 4: 8, 5: 9}",
+        "All reviews have rating values"
+      ],
+      "assumptions": [
+        "Rating field values are accurate and on standard 1-5 scale",
+        "Missing ratings treated as non-rated"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Topics Mentioned",
+      "claim": "Among 18 reviews with text content, 5 topics were detected, with 'taste' being most frequently mentioned (5 reviews).",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "topics_detected": {
+          "value": "{\"quality\": 4, \"service\": 3, \"taste\": 5, \"speed\": 1, \"cleanliness\": 2}",
+          "unit": "count",
+          "numerator": 5,
+          "denominator": 18,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Reviews with text content: 18",
+        "Topics detected: {'quality': 4, 'service': 3, 'taste': 5, 'speed': 1, 'cleanliness': 2}",
+        "Keyword-based detection across English and Arabic terms"
+      ],
+      "assumptions": [
+        "Topic detection based on keyword matching in review text",
+        "Multiple topics can be mentioned in single review",
+        "Keyword list covers common cafe-related topics"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

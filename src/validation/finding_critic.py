@@ -29,6 +29,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from src.schemas.findings import AnalystFinding, CriticOutput, RevisionRequest, SemanticReviewResult
+from src.tools.concurrency import bounded_map
 
 SemanticReviewer = Callable[[str, dict[str, Any]], dict[str, Any]]
 
@@ -124,12 +125,156 @@ def _resolve_metric(result_obj: dict[str, Any], metric_name: str, result_key: st
     return False
 
 
-def _deterministic_check(
-    finding: AnalystFinding, valid_periods: set[tuple[str, str]] | None = None
-) -> tuple[bool, list[str]]:
-    """Returns (ok, reasons). ok=False means reject or revise."""
-    reasons: list[str] = []
+DeterministicRuleContext = dict[str, Any]
+"""Passed to every rule in _DETERMINISTIC_RULES: {"result_obj", "valid_periods",
+"excluded_days_by_source"}. Adding a new deterministic check means adding one
+function with this signature and appending it to the list below -- nothing
+else in this module needs to change, which is the point: previously every new
+rule was one more `if` bolted onto a single growing function."""
 
+
+def _rule_metric_evidence_resolves(finding: AnalystFinding, ctx: DeterministicRuleContext) -> list[str]:
+    reasons: list[str] = []
+    for ev in finding["evidence"]:
+        if not _resolve_metric(ctx["result_obj"], ev["metric_name"], ev["result_key"]):
+            reasons.append(f"metric '{ev['result_key']}' does not resolve in stored result")
+        if ev["value"] is None:
+            reasons.append(f"metric '{ev['result_key']}' has null value")
+        if not ev.get("period_start") or not ev.get("period_end"):
+            reasons.append(f"metric '{ev['result_key']}' missing period bounds")
+        elif ctx["valid_periods"] is not None:
+            period_key = (ev["period_start"][:10], ev["period_end"][:10])
+            if period_key not in ctx["valid_periods"]:
+                reasons.append(
+                    f"metric '{ev['result_key']}' period {period_key} does not match any known "
+                    f"analysis/previous/trailing-baseline period for this run"
+                )
+    return reasons
+
+
+def _rule_known_source_names(finding: AnalystFinding, ctx: DeterministicRuleContext) -> list[str]:
+    unknown_sources = set(finding.get("source_names", [])) - KNOWN_SOURCE_NAMES
+    if unknown_sources:
+        return [f"unknown source names: {sorted(unknown_sources)}"]
+    return []
+
+
+def _rule_claim_numbers_grounded(finding: AnalystFinding, ctx: DeterministicRuleContext) -> list[str]:
+    ungrounded_numbers = _claim_numbers_are_grounded(finding)
+    if ungrounded_numbers:
+        return [
+            f"claim states number(s) {ungrounded_numbers} that do not match any evidence value on "
+            f"this finding -- the prose claim must restate what the executed code actually computed"
+        ]
+    return []
+
+
+def _rule_confidence_in_range(finding: AnalystFinding, ctx: DeterministicRuleContext) -> list[str]:
+    if not (0.0 <= finding.get("confidence", -1) <= 1.0):
+        return ["confidence out of [0,1] range"]
+    return []
+
+
+def _rule_causal_claim_disclosure(finding: AnalystFinding, ctx: DeterministicRuleContext) -> list[str]:
+    claim = finding.get("claim", "")
+    if not _CAUSAL_PATTERNS.search(claim):
+        return []
+    if len(finding.get("source_names", [])) < 2:
+        return ["causal language used with only a single source; explanations require joined evidence"]
+    if not finding.get("evidence"):
+        return []
+    ev0 = finding["evidence"][0]
+    confounds = _calendar_confound(ev0.get("period_start", ""), ev0.get("period_end", ""))
+    if not confounds:
+        return []
+    disclosed_text = f"{claim} {' '.join(finding.get('assumptions', []))} {' '.join(finding.get('coverage_notes', []))}".lower()
+    disclosed = any(
+        name.lower() in disclosed_text or name.lower().replace(" al-", "-") in disclosed_text
+        for name in confounds
+    )
+    if disclosed:
+        return []
+    return [
+        f"causal claim's period overlaps {' / '.join(confounds)}, a calendar swing large enough to "
+        f"dominate most operational metrics on its own; the claim/assumptions must disclose or "
+        f"control for at least one of these before this explanation is trustworthy"
+    ]
+
+
+def _rule_item_level_cost_requires_bom(finding: AnalystFinding, ctx: DeterministicRuleContext) -> list[str]:
+    claim = finding.get("claim", "")
+    if finding.get("analyst_name") != "margin" or not _ITEM_LEVEL_COST_PATTERNS.search(claim):
+        return []
+    assumptions_text = " ".join(finding.get("assumptions", [])).lower()
+    if "estimate" not in assumptions_text and "bom" not in assumptions_text:
+        return ["item-level supplier-cost claim lacks recipe/BOM evidence or explicit estimate label"]
+    return []
+
+
+_NORMALIZATION_DISCLOSURE_KEYWORDS = (
+    "per day", "per-day", "daily average", "daily rate", "average per", "normalized", "normalised",
+)
+
+
+def _rule_unequal_valid_days_not_normalized(finding: AnalystFinding, ctx: DeterministicRuleContext) -> list[str]:
+    """A period-over-period comparison that sums a metric over unequal numbers
+    of valid days (e.g. one period lost 3 days to a dead sensor, the other
+    didn't) is apples-to-oranges even when every number is individually
+    grounded -- the raw totals aren't comparable, only a per-day rate is.
+    Proven necessary: a footfall finding for week 2026-06-08 claimed a
+    "significant drop" from a 7-valid-day previous period to a 4-valid-day
+    current period; the daily average actually rose (873/day vs 796/day) once
+    corrected. Requires excluded_days_by_source (per-source dead/excluded
+    dates from data_quality) to be supplied -- a no-op otherwise."""
+    excluded_days_by_source: dict[str, list[str]] | None = ctx.get("excluded_days_by_source")
+    if not excluded_days_by_source:
+        return []
+    periods = {(ev.get("period_start", "")[:10], ev.get("period_end", "")[:10]) for ev in finding.get("evidence", [])}
+    periods.discard(("", ""))
+    if len(periods) < 2:
+        return []
+    relevant_sources = [s for s in finding.get("source_names", []) if excluded_days_by_source.get(s)]
+    if not relevant_sources:
+        return []
+    excluded_counts = set()
+    for p_start, p_end in periods:
+        n_excluded = sum(
+            1 for src in relevant_sources for d in excluded_days_by_source[src] if p_start <= d < p_end
+        )
+        excluded_counts.add(n_excluded)
+    if len(excluded_counts) < 2:
+        return []  # both periods equally affected (or unaffected) -- raw sums stay comparable
+    text = f"{finding.get('claim', '')} {' '.join(finding.get('assumptions', []))} {' '.join(finding.get('coverage_notes', []))}".lower()
+    if any(kw in text for kw in _NORMALIZATION_DISCLOSURE_KEYWORDS):
+        return []
+    return [
+        "finding compares raw totals across periods with a different number of excluded/dead-sensor days "
+        "for its cited source(s) -- this is an apples-to-oranges comparison; state a per-day rate instead of "
+        "(or in addition to) the raw total, or explicitly disclose the day-count mismatch"
+    ]
+
+
+_DETERMINISTIC_RULES: list[Callable[[AnalystFinding, DeterministicRuleContext], list[str]]] = [
+    _rule_metric_evidence_resolves,
+    _rule_known_source_names,
+    _rule_claim_numbers_grounded,
+    _rule_confidence_in_range,
+    _rule_causal_claim_disclosure,
+    _rule_item_level_cost_requires_bom,
+    _rule_unequal_valid_days_not_normalized,
+]
+
+
+def _deterministic_check(
+    finding: AnalystFinding,
+    valid_periods: set[tuple[str, str]] | None = None,
+    excluded_days_by_source: dict[str, list[str]] | None = None,
+) -> tuple[bool, list[str]]:
+    """Returns (ok, reasons). ok=False means reject or revise. A few checks
+    are hard prerequisites the rules below all depend on (artifact exists,
+    parses as JSON, has evidence at all) and short-circuit immediately;
+    everything past that runs every rule in _DETERMINISTIC_RULES and unions
+    their reasons, so adding a new check never means editing this function."""
     if not finding.get("code_artifact") or not finding.get("result_artifact"):
         return False, ["missing code_artifact or result_artifact"]
 
@@ -144,59 +289,13 @@ def _deterministic_check(
     if not finding.get("evidence"):
         return False, ["finding has no metric evidence to resolve"]
 
-    for ev in finding["evidence"]:
-        if not _resolve_metric(result_obj, ev["metric_name"], ev["result_key"]):
-            reasons.append(f"metric '{ev['result_key']}' does not resolve in stored result")
-        if ev["value"] is None:
-            reasons.append(f"metric '{ev['result_key']}' has null value")
-        if not ev.get("period_start") or not ev.get("period_end"):
-            reasons.append(f"metric '{ev['result_key']}' missing period bounds")
-        elif valid_periods is not None:
-            period_key = (ev["period_start"][:10], ev["period_end"][:10])
-            if period_key not in valid_periods:
-                reasons.append(
-                    f"metric '{ev['result_key']}' period {period_key} does not match any known "
-                    f"analysis/previous/trailing-baseline period for this run"
-                )
-
-    unknown_sources = set(finding.get("source_names", [])) - KNOWN_SOURCE_NAMES
-    if unknown_sources:
-        reasons.append(f"unknown source names: {sorted(unknown_sources)}")
-
-    ungrounded_numbers = _claim_numbers_are_grounded(finding)
-    if ungrounded_numbers:
-        reasons.append(
-            f"claim states number(s) {ungrounded_numbers} that do not match any evidence value on "
-            f"this finding -- the prose claim must restate what the executed code actually computed"
-        )
-
-    if not (0.0 <= finding.get("confidence", -1) <= 1.0):
-        reasons.append("confidence out of [0,1] range")
-
-    claim = finding.get("claim", "")
-    if _CAUSAL_PATTERNS.search(claim) and len(finding.get("source_names", [])) < 2:
-        reasons.append("causal language used with only a single source; explanations require joined evidence")
-    elif _CAUSAL_PATTERNS.search(claim) and finding.get("evidence"):
-        ev0 = finding["evidence"][0]
-        confounds = _calendar_confound(ev0.get("period_start", ""), ev0.get("period_end", ""))
-        if confounds:
-            disclosed_text = f"{claim} {' '.join(finding.get('assumptions', []))} {' '.join(finding.get('coverage_notes', []))}".lower()
-            disclosed = any(
-                name.lower() in disclosed_text or name.lower().replace(" al-", "-") in disclosed_text
-                for name in confounds
-            )
-            if not disclosed:
-                reasons.append(
-                    f"causal claim's period overlaps {' / '.join(confounds)}, a calendar swing large enough to "
-                    f"dominate most operational metrics on its own; the claim/assumptions must disclose or "
-                    f"control for at least one of these before this explanation is trustworthy"
-                )
-
-    if finding.get("analyst_name") == "margin" and _ITEM_LEVEL_COST_PATTERNS.search(claim):
-        assumptions_text = " ".join(finding.get("assumptions", [])).lower()
-        if "estimate" not in assumptions_text and "bom" not in assumptions_text:
-            reasons.append("item-level supplier-cost claim lacks recipe/BOM evidence or explicit estimate label")
-
+    ctx: DeterministicRuleContext = {
+        "result_obj": result_obj, "valid_periods": valid_periods,
+        "excluded_days_by_source": excluded_days_by_source,
+    }
+    reasons: list[str] = []
+    for rule in _DETERMINISTIC_RULES:
+        reasons.extend(rule(finding, ctx))
     return (len(reasons) == 0), reasons
 
 
@@ -257,6 +356,7 @@ def run_critic(
     model_name: str | None = None,
     reviewer: SemanticReviewer | None = None,
     cross_domain_hints: list[str] | None = None,
+    excluded_days_by_source: dict[str, list[str]] | None = None,
 ) -> CriticOutput:
     approved: list[str] = []
     rejected: list[str] = []
@@ -264,12 +364,29 @@ def run_critic(
     removed_after_cap: list[str] = []
     notes: list[str] = []
 
+    # Deterministic checks are cheap pure-python and must run in order (no
+    # shared state issue either way), but the semantic-review LLM call per
+    # finding is independent and was previously one-at-a-time -- run those
+    # concurrently (bounded, still centrally rate-limited) instead, then
+    # recombine in original order below so dedupe/revision-cap bookkeeping
+    # stays exactly as order-dependent as before. See src/tools/concurrency.py.
+    deterministic_results: dict[str, tuple[bool, list[str]]] = {
+        finding["finding_id"]: _deterministic_check(finding, valid_periods, excluded_days_by_source)
+        for finding in candidate_findings
+    }
+    needs_semantic_review = [f for f in candidate_findings if deterministic_results[f["finding_id"]][0]]
+
+    def _review_one(finding: AnalystFinding):
+        return finding["finding_id"], _semantic_review(finding, model_name, reviewer, cross_domain_hints)
+
+    semantic_results: dict[str, tuple[bool, str, str] | None] = dict(bounded_map(_review_one, needs_semantic_review))
+
     seen_titles: dict[str, str] = {}
     for finding in candidate_findings:
-        ok, reasons = _deterministic_check(finding, valid_periods)
+        ok, reasons = deterministic_results[finding["finding_id"]]
         semantic_fix = ""
         if ok:
-            semantic = _semantic_review(finding, model_name, reviewer, cross_domain_hints)
+            semantic = semantic_results.get(finding["finding_id"])
             if semantic is not None:
                 sem_ok, sem_explanation, sem_fix = semantic
                 if not sem_ok:

@@ -1,0 +1,160 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution and Average Sentiment",
+      "claim": "During the analysis period (2026-07-06 to 2026-07-13), customers provided 18 reviews with an average rating of 4.39 out of 5. The majority of reviews (16 out of 18) were positive (rating ≥4).",
+      "finding_type": "customer_sentiment",
+      "metrics": {
+        "average_rating": {
+          "value": 4.39,
+          "unit": "stars",
+          "numerator": 79.0,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 18,
+          "unit": "count",
+          "numerator": 18,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "positive_reviews": {
+          "value": 16,
+          "unit": "count",
+          "numerator": 16,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "negative_reviews": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Reviews from 3 source(s)",
+        "Language distribution: {'en': np.int64(14), 'ar': np.int64(4)}"
+      ],
+      "assumptions": [
+        "Rating ≥4 classified as positive, rating=3 as neutral, rating <3 as negative",
+        "All reviews in the period are included regardless of text content"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution and Topic Mentions",
+      "claim": "Among 18 reviews, 14 were in English and 4 were in Arabic. The most frequently mentioned topics in reviews with text (18 reviews) were quality (4 mentions), service (4 mentions), and taste (3 mentions).",
+      "finding_type": "review_composition",
+      "metrics": {
+        "english_reviews": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "reviews_with_text": {
+          "value": 18,
+          "unit": "count",
+          "numerator": 18,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "quality_mentions": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "service_mentions": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 18,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Text analysis based on 18 reviews with non-empty text",
+        "Topic detection uses keyword matching in both English and Arabic"
+      ],
+      "assumptions": [
+        "Topic keywords are case-insensitive and include both English and Arabic terms",
+        "A review can mention multiple topics",
+        "Keyword presence indicates topic relevance without sentiment analysis"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "title": "Average Rating by Review Language",
+      "claim": "English-language reviews (n=14) had an average rating of 4.36, while Arabic-language reviews (n=4) had an average rating of 4.50.",
+      "finding_type": "language_comparison",
+      "metrics": {
+        "english_avg_rating": {
+          "value": 4.36,
+          "unit": "stars",
+          "numerator": 61.0,
+          "denominator": 14,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "arabic_avg_rating": {
+          "value": 4.5,
+          "unit": "stars",
+          "numerator": 18.0,
+          "denominator": 4,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "English reviews: 14 reviews",
+        "Arabic reviews: 4 reviews"
+      ],
+      "assumptions": [
+        "Language classification is as provided in the source data",
+        "Rating differences may reflect different customer segments or review sources"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

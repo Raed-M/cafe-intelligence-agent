@@ -1,0 +1,144 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (2026-07-13 to 2026-07-20), the cafe received 15 reviews with an average rating of 4.73 out of 5.0.",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "total_reviews": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "average_rating": {
+          "value": 4.73,
+          "unit": "stars",
+          "numerator": 71.0,
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Analysis period: 2026-07-13 to 2026-07-20 (7 days)",
+        "Total reviews in artifact: 520",
+        "Reviews in analysis period: 15",
+        "Language distribution: {'en': 9, 'ar': 6}"
+      ],
+      "assumptions": [
+        "Review dates are accurate and timezone-normalized to +03:00",
+        "Rating values are numeric and on a 1-5 scale",
+        "All reviews in the artifact are valid and complete"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Platform with Highest Positive Review Ratio",
+      "claim": "Among the 3 platforms analyzed, 'instagram' has the highest proportion of positive reviews, with 3 positive reviews out of 3 total reviews on the instagram platform (100.0% positive ratio).",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "best_platform": {
+          "value": "instagram",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "positive_ratio": {
+          "value": 1.0,
+          "unit": "proportion",
+          "numerator": 3,
+          "denominator": 3,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "positive_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "total_on_platform": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Analysis period: 2026-07-13 to 2026-07-20",
+        "Platforms in analysis period: ['google', 'instagram', 'talabat']",
+        "Platform distribution: google: 10, instagram: 3, talabat: 2",
+        "Positive defined as rating >= 4"
+      ],
+      "assumptions": [
+        "Rating values are numeric and on a 1-5 scale",
+        "Positive sentiment threshold is rating >= 4",
+        "All platforms have equal validity and completeness"
+      ],
+      "confidence": 0.65
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "During the analysis period, reviews were submitted in 2 language(s). en reviews comprise 9 out of 15 reviews (60.0%).",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "total_languages": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "primary_language": {
+          "value": "en",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "primary_language_count": {
+          "value": 9,
+          "unit": "count",
+          "numerator": 9,
+          "denominator": 15,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 15,
+      "coverage_notes": [
+        "Analysis period: 2026-07-13 to 2026-07-20",
+        "Language distribution: en: 9, ar: 6",
+        "Total reviews analyzed: 15"
+      ],
+      "assumptions": [
+        "Language field is accurately populated in the reviews artifact",
+        "Language classification is reliable and consistent"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 5 Items by Gross Profit (Analysis Week)",
+      "claim": "Five items generated 20218.8 SAR in gross profit during the analysis week (2026-06-29 to 2026-07-06).",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_5_gross_profit_sar": {
+          "value": 20218.8,
+          "unit": "SAR",
+          "numerator": 20218.8,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "top_5_revenue_sar": {
+          "value": 28125.6,
+          "unit": "SAR",
+          "numerator": 28125.6,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-005_gp_sar": {
+          "value": 6831.6,
+          "unit": "SAR",
+          "numerator": 6831.6,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-005_margin_pct": {
+          "value": 67.28,
+          "unit": "%",
+          "numerator": 6831.6,
+          "denominator": 10154.4,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-001_gp_sar": {
+          "value": 4996.4,
+          "unit": "SAR",
+          "numerator": 4996.4,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-001_margin_pct": {
+          "value": 71.77,
+          "unit": "%",
+          "numerator": 4996.4,
+          "denominator": 6962.0,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-004_gp_sar": {
+          "value": 3044.2,
+          "unit": "SAR",
+          "numerator": 3044.2,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-004_margin_pct": {
+          "value": 75.11,
+          "unit": "%",
+          "numerator": 3044.2,
+          "denominator": 4053.0,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-002_gp_sar": {
+          "value": 2926.1,
+          "unit": "SAR",
+          "numerator": 2926.1,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-002_margin_pct": {
+          "value": 77.07,
+          "unit": "%",
+          "numerator": 2926.1,
+          "denominator": 3796.5,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-006_gp_sar": {
+          "value": 2420.5,
+          "unit": "SAR",
+          "numerator": 2420.5,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-006_margin_pct": {
+          "value": 76.61,
+          "unit": "%",
+          "numerator": 2420.5,
+          "denominator": 3159.7,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 5,
+      "coverage_notes": [
+        "Analysis period: 2026-06-29 to 2026-07-06",
+        "Refunds excluded from revenue and quantity calculations",
+        "Unit costs from menu_items.unit_cost_sar applied uniformly",
+        "No recipe/BOM available; ingredient-level variance not captured"
+      ],
+      "assumptions": [
+        "Unit cost from menu_items.unit_cost_sar applied uniformly to all sales",
+        "No recipe/BOM available; actual ingredient costs may vary by supplier or preparation method",
+        "Discount amounts already deducted in line_total_sar"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost (Analysis Week)",
+      "claim": "Known waste cost totaled 455.60 SAR across 5 items during the analysis week.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "waste_cost_sar": {
+          "value": 455.6,
+          "unit": "SAR",
+          "numerator": 455.6,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "waste_items_count": {
+          "value": 5,
+          "unit": "count",
+          "numerator": 5,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 5,
+      "coverage_notes": [
+        "Only non-null waste cost observations included (known_waste_cost_sar)",
+        "Blank waste values treated as unknown, not zero",
+        "Analysis period: 2026-06-29 to 2026-07-06"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar field represents actual quantified waste cost",
+        "Missing waste values indicate unknown waste, not zero waste"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

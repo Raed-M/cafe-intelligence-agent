@@ -1,0 +1,165 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 3 Items by Gross Profit (Analysis Week)",
+      "claim": "During the analysis week (2026-07-06 to 2026-07-13), the top 3 items by gross profit contribution are: Matcha Latte, Iced Spanish Latte, Iced Americano. These items generated 14079.75 SAR in total gross profit across 878 transactions.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_1_name": {
+          "value": "Matcha Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "top_item_1_gross_profit_sar": {
+          "value": 6238.8,
+          "unit": "SAR",
+          "numerator": 6238.8,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "top_item_1_quantity_sold": {
+          "value": 392,
+          "unit": "units",
+          "numerator": 392,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "top_item_1_gross_margin_pct": {
+          "value": 67.11,
+          "unit": "%",
+          "numerator": 67.11,
+          "denominator": 100,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "top_item_2_name": {
+          "value": "Iced Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "top_item_2_gross_profit_sar": {
+          "value": 4776.4,
+          "unit": "SAR",
+          "numerator": 4776.4,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "top_item_3_name": {
+          "value": "Iced Americano",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "top_item_3_gross_profit_sar": {
+          "value": 3064.55,
+          "unit": "SAR",
+          "numerator": 3064.55,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "total_gross_profit_top_3_sar": {
+          "value": 14079.75,
+          "unit": "SAR",
+          "numerator": 14079.75,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1280,
+      "coverage_notes": [
+        "Analysis period: 2026-07-06 to 2026-07-13",
+        "Total POS transactions in period: 1280",
+        "Total line items analyzed: 2180",
+        "Items with menu cost data: 2197 out of 2180",
+        "Refunds excluded from net calculations"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar values are current and applicable to analysis period",
+        "POS line_total_sar includes all discounts and is accurate",
+        "Quantity represents actual units sold"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost (Analysis Week)",
+      "claim": "During the analysis week (2026-07-06 to 2026-07-13), documented waste totaled 55 units with a known waste cost of 410.00 SAR. This represents a change of -45.60 SAR compared to the previous week.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_waste_units": {
+          "value": 55.0,
+          "unit": "units",
+          "numerator": 55.0,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "total_waste_cost_sar": {
+          "value": 410.0,
+          "unit": "SAR",
+          "numerator": 410.0,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "previous_week_waste_cost_sar": {
+          "value": 455.6,
+          "unit": "SAR",
+          "numerator": 455.6,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "waste_cost_change_sar": {
+          "value": -45.6,
+          "unit": "SAR",
+          "numerator": -45.6,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "items_with_waste": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 4,
+      "coverage_notes": [
+        "Analysis period: 2026-07-06 to 2026-07-13",
+        "Items with documented waste: 4 out of 6 inventory records",
+        "Only non-null waste values included in calculation",
+        "Waste cost calculated as units_wasted × unit_cost_sar"
+      ],
+      "assumptions": [
+        "Unit costs in inventory records are accurate for waste valuation",
+        "Waste units are accurately recorded",
+        "Blank waste values represent zero waste (not missing data)"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

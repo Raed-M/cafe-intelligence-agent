@@ -1,0 +1,260 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 5 Items by Gross Profit (Analysis Week)",
+      "claim": "Five items generated 20218.8 SAR in gross profit during the analysis week, representing 56.9% of total revenue.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_ICE-005_gross_profit": {
+          "value": 6831.6,
+          "unit": "SAR",
+          "numerator": 10154.4,
+          "denominator": 3322.8,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-005_gross_margin_pct": {
+          "value": 67.28,
+          "unit": "%",
+          "numerator": 6831.6,
+          "denominator": 10154.4,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-001_gross_profit": {
+          "value": 4996.4,
+          "unit": "SAR",
+          "numerator": 6962.0,
+          "denominator": 1965.6,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-001_gross_margin_pct": {
+          "value": 71.77,
+          "unit": "%",
+          "numerator": 4996.4,
+          "denominator": 6962.0,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-004_gross_profit": {
+          "value": 3044.2,
+          "unit": "SAR",
+          "numerator": 4053.0,
+          "denominator": 1008.8,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-004_gross_margin_pct": {
+          "value": 75.11,
+          "unit": "%",
+          "numerator": 3044.2,
+          "denominator": 4053.0,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-002_gross_profit": {
+          "value": 2926.1,
+          "unit": "SAR",
+          "numerator": 3796.5,
+          "denominator": 870.4,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-002_gross_margin_pct": {
+          "value": 77.07,
+          "unit": "%",
+          "numerator": 2926.1,
+          "denominator": 3796.5,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-006_gross_profit": {
+          "value": 2420.5,
+          "unit": "SAR",
+          "numerator": 3159.7,
+          "denominator": 739.2,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "item_ICE-006_gross_margin_pct": {
+          "value": 76.61,
+          "unit": "%",
+          "numerator": 2420.5,
+          "denominator": 3159.7,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "top_5_total_gross_profit": {
+          "value": 20218.8,
+          "unit": "SAR",
+          "numerator": 28125.6,
+          "denominator": 7906.8,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 1252,
+      "coverage_notes": [
+        "Analysis period: 2026-06-29 to 2026-07-06",
+        "Excludes refunds (is_refund=False)",
+        "Only items with non-null unit_cost_sar in menu included",
+        "Total items analyzed: 19",
+        "Total transactions: 1374"
+      ],
+      "assumptions": [
+        "Unit cost from menu_items.unit_cost_sar applied uniformly to all sales",
+        "Line totals include discounts as recorded",
+        "No recipe/BOM available; cost per unit is as stated in menu"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Waste Cost Comparison (Analysis Week vs Previous Week)",
+      "claim": "Known waste cost in analysis week was 455.6 SAR (5 items), compared to 1322.1 SAR (6 items) in previous week, a change of -65.54%.",
+      "finding_type": "waste_economics",
+      "metrics": {
+        "waste_cost_analysis_week": {
+          "value": 455.6,
+          "unit": "SAR",
+          "numerator": 5,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "waste_cost_previous_week": {
+          "value": 1322.1,
+          "unit": "SAR",
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "waste_cost_change_pct": {
+          "value": -65.54,
+          "unit": "%",
+          "numerator": -866.5,
+          "denominator": 1322.1,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 5,
+      "coverage_notes": [
+        "Only non-null known_waste_cost_sar values included",
+        "Analysis week items with waste data: 5",
+        "Previous week items with waste data: 6",
+        "Blank waste values excluded per specification"
+      ],
+      "assumptions": [
+        "Waste cost is as calculated and recorded in inventory.known_waste_cost_sar",
+        "Week boundaries align with inventory reporting periods"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Recent Supplier Price Changes",
+      "claim": "Supplier price changes detected: full-fat milk 7.1 → 8.4 SAR (18.3%) effective 2026-05-01 00:00:00; Barista oat 15.4 → 17.9 SAR (16.2%) effective 2026-05-01 00:00:00; roasted coffee 88.0 → 96.0 SAR (9.1%) effective 2026-04-15 00:00:00",
+      "finding_type": "supplier_pricing",
+      "metrics": {
+        "full-fat_milk_old_price": {
+          "value": 7.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "full-fat_milk_new_price": {
+          "value": 8.4,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "full-fat_milk_pct_change": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 1.3,
+          "denominator": 7.1,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "barista_oat_old_price": {
+          "value": 15.4,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "barista_oat_new_price": {
+          "value": 17.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "barista_oat_pct_change": {
+          "value": 16.23,
+          "unit": "%",
+          "numerator": 2.5,
+          "denominator": 15.4,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "roasted_coffee_old_price": {
+          "value": 88.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "roasted_coffee_new_price": {
+          "value": 96.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "roasted_coffee_pct_change": {
+          "value": 9.09,
+          "unit": "%",
+          "numerator": 8.0,
+          "denominator": 88.0,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Email extraction confidence: 0.95",
+        "Only price changes with old_price, new_price, and effective_date included",
+        "Most recent 3 changes shown",
+        "No recipe/BOM available; impact on menu items not calculated",
+        "Metrics aligned to analysis period for consistency"
+      ],
+      "assumptions": [
+        "Email extraction accuracy as recorded in confidence field",
+        "Effective dates represent actual implementation dates",
+        "Standing order quantities and payment terms not confirmed in email data"
+      ],
+      "confidence": 0.9499999999999998
+    }
+  ]
+}

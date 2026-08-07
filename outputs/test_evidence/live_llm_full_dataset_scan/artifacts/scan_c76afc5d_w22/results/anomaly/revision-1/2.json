@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Hourly Traffic Anomaly at Hour 19",
+      "claim": "Average hourly door count at hour 19 during analysis period was 102.8, 2.43 standard deviations from baseline mean of 51.3.",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "observed_hourly_door_count": {
+          "value": 102.8,
+          "unit": "door_count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08",
+          "period_end": "2026-06-15"
+        },
+        "baseline_mean_hourly_door_count": {
+          "value": 51.3,
+          "unit": "door_count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-11",
+          "period_end": "2026-06-08"
+        },
+        "z_score": {
+          "value": 2.43,
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08",
+          "period_end": "2026-06-15"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 17,
+      "coverage_notes": [
+        "Analysis period: 2026-06-08 to 2026-06-15",
+        "Baseline: 4 weeks from 2026-05-11 to 2026-06-08",
+        "Dead sensor days excluded",
+        "Baseline sample size: 17 hours"
+      ],
+      "assumptions": [
+        "Z-score threshold of 2.0 (95% confidence)",
+        "Baseline calculated from trailing 4 weeks",
+        "Dead sensor intervals excluded per data quality notes"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

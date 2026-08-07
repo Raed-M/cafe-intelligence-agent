@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Gross Profit & Margin Analysis (Analysis Period)",
+      "claim": "During the analysis period (2026-07-20 to 2026-07-27), the cafe generated net revenue of 47179.30 SAR with total COGS of 13847.80 SAR, resulting in gross profit of 33331.50 SAR and a gross margin of 70.65%.",
+      "finding_type": "profitability_analysis",
+      "metrics": {
+        "net_revenue_sar": {
+          "value": 47179.3,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "total_cogs_sar": {
+          "value": 13847.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "gross_profit_sar": {
+          "value": 33331.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "gross_margin_pct": {
+          "value": 70.65,
+          "unit": "%",
+          "numerator": 33331.5,
+          "denominator": 47179.3,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "transaction_count": {
+          "value": 1325,
+          "unit": "baskets",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2269,
+      "coverage_notes": [
+        "SKUs with unit cost data: 19 of 19 menu items",
+        "Revenue includes net of refunds (refund line_total_sar values are negative)",
+        "COGS calculated as quantity × unit_cost_sar from menu.parquet",
+        "Transaction count based on unique transaction_ids excluding refunds"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar values are current and applicable to all sales in analysis period",
+        "Unit costs in menu.parquet reflect actual procurement costs at time of sale",
+        "No recipe/BOM data available; unit costs are treated as stated in menu",
+        "Refunds are included in net revenue calculation (negative line_total_sar)"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Quantified Waste Cost (Analysis Period)",
+      "claim": "During the week of 2026-07-20, 6 items with known waste observations incurred a total waste cost of 1243.70 SAR.",
+      "finding_type": "waste_cost_analysis",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 1243.7,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "waste_items_count": {
+          "value": 6,
+          "unit": "items",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Only non-null known_waste_cost_sar values included",
+        "Waste cost sourced from inventory.parquet known_waste_cost_sar column",
+        "Week starting 2026-07-20 corresponds to analysis period"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar values are accurate and complete for observed waste",
+        "Blank waste values are treated as unknown, not zero"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Supplier Price Changes Detected",
+      "claim": "Email evidence identifies 4 supplier price changes. Most recent: full-fat milk price changed from 7.10 to 8.40 SAR per L (effective 2026-05-01), representing a 18.31% increase. No recipe/BOM available to calculate exact menu item cost impact.",
+      "finding_type": "supplier_cost_analysis",
+      "metrics": {
+        "total_price_changes_identified": {
+          "value": 4,
+          "unit": "changes",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "ingredient_name": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR per L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR per L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        },
+        "price_change_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 1.3,
+          "denominator": 7.1,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": "2026-05-01T00:00:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 4,
+      "coverage_notes": [
+        "Email evidence contains 4 price change records",
+        "Most recent price change shown; others available in source data",
+        "Effective dates extracted from email evidence",
+        "No recipe/BOM data available to link ingredient costs to menu items"
+      ],
+      "assumptions": [
+        "Email extraction accuracy and completeness",
+        "Effective dates as stated in supplier communications",
+        "Price units (SAR per unit) as specified in email evidence",
+        "No retroactive price adjustments or contract modifications"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

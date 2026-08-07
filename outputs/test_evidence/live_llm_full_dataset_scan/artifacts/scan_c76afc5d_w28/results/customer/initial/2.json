@@ -1,0 +1,104 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution (Analysis Period)",
+      "claim": "Average rating is 4.33 out of 5.0 across 18 reviews in the analysis period (2026-07-20 to 2026-07-27).",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "average_rating": {
+          "value": 4.33,
+          "unit": "stars",
+          "numerator": 78.0,
+          "denominator": 18,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 18,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Analysis period: 2026-07-20 to 2026-07-27",
+        "Total reviews in dataset: 520",
+        "Reviews in analysis period: 18",
+        "Rating distribution: {1: 1, 4: 8, 5: 9}"
+      ],
+      "assumptions": [
+        "Review dates are accurate and in UTC+03:00 timezone",
+        "All ratings are valid numeric values between 1 and 5"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "Reviews are distributed across 2 languages, with en being the most common (11 reviews, 61.1%).",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "language_distribution": {
+          "value": {
+            "en": 11,
+            "ar": 7
+          },
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Total reviews analyzed: 18",
+        "Languages detected: ['en', 'ar']"
+      ],
+      "assumptions": [
+        "Language field is accurately populated in the reviews dataset"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Review Source Platform Distribution",
+      "claim": "Customer reviews originate from 3 platforms, with google accounting for 9 reviews (50.0% of total).",
+      "finding_type": "voice_of_customer",
+      "metrics": {
+        "platform_distribution": {
+          "value": {
+            "google": 9,
+            "instagram": 6,
+            "talabat": 3
+          },
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-20T00:00:00+03:00",
+          "period_end": "2026-07-27T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 18,
+      "coverage_notes": [
+        "Total reviews analyzed: 18",
+        "Platforms represented: ['google', 'instagram', 'talabat']"
+      ],
+      "assumptions": [
+        "Source field accurately identifies the platform from which each review was collected"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

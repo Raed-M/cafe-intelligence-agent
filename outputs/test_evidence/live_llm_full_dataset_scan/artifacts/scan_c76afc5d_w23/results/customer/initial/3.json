@@ -1,0 +1,146 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Review Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (June 15-22, 2026), the average rating across 16 reviews was 4.56 out of 5, with the majority of reviews rated 5 stars.",
+      "finding_type": "rating_distribution",
+      "metrics": {
+        "average_rating": {
+          "value": 4.56,
+          "unit": "stars",
+          "numerator": 73,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 16,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 10,
+          "unit": "count",
+          "numerator": 10,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Analysis period: 2026-06-15 to 2026-06-22",
+        "Total reviews in dataset: 520",
+        "Reviews in analysis period: 16",
+        "Language distribution: 12 English, 4 Arabic"
+      ],
+      "assumptions": [
+        "Rating values are valid integers from 1-5",
+        "Review dates are accurate and in UTC+3 timezone",
+        "All reviews in the dataset are from the same source"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Sentiment Analysis by Rating",
+      "claim": "Of 16 reviews in the analysis period, 15 (93.8%) were positive (rating 4-5), 1 (6.2%) were neutral (rating 3), and 0 (0.0%) were negative (rating 1-2).",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "positive_sentiment_count": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "negative_sentiment_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "neutral_sentiment_count": {
+          "value": 1,
+          "unit": "count",
+          "numerator": 1,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Sentiment classification based on rating thresholds",
+        "Positive: rating >= 4, Neutral: rating = 3, Negative: rating < 3",
+        "Language coverage: 12 English reviews, 4 Arabic reviews"
+      ],
+      "assumptions": [
+        "Sentiment is determined solely by numerical rating",
+        "Rating scale is consistent across all reviews",
+        "No reviews have missing or invalid ratings"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Most Frequent Review Topics",
+      "claim": "The most frequently mentioned topics in reviews during the analysis period were: taste_quality (3 mentions), temperature (3 mentions), service_speed (1 mentions).",
+      "finding_type": "topic_frequency",
+      "metrics": {
+        "top_topic_1": {
+          "value": "taste_quality",
+          "unit": "topic",
+          "numerator": 3,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "top_topic_2": {
+          "value": "temperature",
+          "unit": "topic",
+          "numerator": 3,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "top_topic_3": {
+          "value": "service_speed",
+          "unit": "topic",
+          "numerator": 1,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "reviews"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Topic extraction based on keyword matching in review text",
+        "Topics identified: taste_quality, temperature, service_speed",
+        "Total topic mentions: 7",
+        "Some reviews may mention multiple topics"
+      ],
+      "assumptions": [
+        "Topic keywords are representative of actual customer concerns",
+        "Keyword matching is case-insensitive",
+        "Topics are mutually exclusive for counting purposes",
+        "Review text is available and non-empty for topic extraction"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

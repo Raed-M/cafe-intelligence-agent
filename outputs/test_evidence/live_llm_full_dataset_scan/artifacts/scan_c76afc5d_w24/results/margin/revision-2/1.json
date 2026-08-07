@@ -1,0 +1,215 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item: Item-Level Economics",
+      "claim": "During analysis week (Jun 22-29), Matcha Latte generated the highest gross profit of 6093.60 SAR across 348 transactions, with 384 units sold at 67.0% gross margin.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Matcha Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "total_gross_profit_sar": {
+          "value": 6093.6,
+          "unit": "SAR",
+          "numerator": 6093.6,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "total_revenue_sar": {
+          "value": 9088.8,
+          "unit": "SAR",
+          "numerator": 9088.8,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "total_cogs_sar": {
+          "value": 2995.2,
+          "unit": "SAR",
+          "numerator": 2995.2,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "gross_margin_pct": {
+          "value": 67.05,
+          "unit": "%",
+          "numerator": 6093.6,
+          "denominator": 9088.8,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "units_sold": {
+          "value": 384,
+          "unit": "units",
+          "numerator": 384,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "basket_count": {
+          "value": 348,
+          "unit": "transactions",
+          "numerator": 348,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2257,
+      "coverage_notes": [
+        "Analysis period: 2026-06-22 to 2026-06-29",
+        "Refunds excluded from calculation",
+        "Only items with non-null unit_cost_sar in menu included",
+        "Total POS lines analyzed: 2257",
+        "Items with complete cost data: 19"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and accurate for analysis period",
+        "Line totals reflect net revenue after discounts",
+        "No recipe/BOM data available; COGS is item-level only"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Known Waste Cost Impact",
+      "claim": "During week of Jun 22, 6 items recorded quantifiable waste with total known waste cost of 1322.10 SAR. This represents direct margin erosion from spoilage and disposal.",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_known_waste_cost_sar": {
+          "value": 1322.1,
+          "unit": "SAR",
+          "numerator": 1322.1,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "items_with_waste": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "waste_cost_pct_of_revenue": {
+          "value": 2.81,
+          "unit": "%",
+          "numerator": 1322.1,
+          "denominator": 47103.8,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: week starting 2026-06-22",
+        "Only items with non-null known_waste_cost_sar included",
+        "Total inventory records for week: 6",
+        "Records with quantifiable waste: 6"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar reflects actual disposal/spoilage cost",
+        "Blank waste values are treated as unknown, not zero",
+        "Waste cost is incremental to COGS"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Supplier Price Changes Detected (Email Evidence)",
+      "claim": "Email evidence from 2026-05-04 documents 3 supplier price changes. Largest: full-fat milk price increased from 7.10 to 8.40 SAR per L (+18.31%), effective 2026-05-01. Detection occurred during analysis week; effective date is retroactive (May 1). Impact on menu items requires recipe/BOM data to quantify.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "price_changes_detected": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "largest_ingredient": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "old_price_sar": {
+          "value": 7.1,
+          "unit": "SAR per L",
+          "numerator": 7.1,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "new_price_sar": {
+          "value": 8.4,
+          "unit": "SAR per L",
+          "numerator": 8.4,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "percentage_change": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 1.3000000000000007,
+          "denominator": 7.1,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "effective_date": {
+          "value": "2026-05-01",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        },
+        "detection_date": {
+          "value": "2026-05-04",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+00:00",
+          "period_end": "2026-06-29T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Analysis period: 2026-06-22 to 2026-06-29 (detection window)",
+        "Effective date: 2026-05-01 (retroactive, 52 days before analysis period end)",
+        "Only price changes with old_price, new_price, and effective_date included",
+        "Total price changes extracted: 3",
+        "Email extraction confidence: 0.85"
+      ],
+      "assumptions": [
+        "Email extraction accurately captured supplier price change facts",
+        "Effective date (May 1) indicates when price change became/becomes active",
+        "No recipe/BOM available; per-drink impact cannot be calculated",
+        "Continued standing order volume and payment terms are not confirmed",
+        "Cafe may already be operating under new prices or change is pending"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

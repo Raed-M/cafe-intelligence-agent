@@ -1,0 +1,143 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Daily Revenue Anomaly",
+      "claim": "Daily revenue on 2026-07-04 was 9880.85 SAR, which is 2.38 standard deviations from the baseline mean of 6584.80 SAR.",
+      "finding_type": "revenue_anomaly",
+      "metrics": {
+        "observed_daily_revenue": {
+          "value": 9880.85,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-04T00:00:00",
+          "period_end": "2026-07-05T00:00:00"
+        },
+        "baseline_mean_daily_revenue": {
+          "value": 6584.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00",
+          "period_end": "2026-06-08T00:00:00"
+        },
+        "z_score": {
+          "value": 2.38,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-04T00:00:00",
+          "period_end": "2026-07-05T00:00:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 7,
+      "coverage_notes": [
+        "Analysis period: 2026-06-29T00:00:00 to 2026-07-06T00:00:00",
+        "Baseline: 28 daily observations from 4 weeks",
+        "Excludes refunds: False (line_total_sar includes refunds as negative values)"
+      ],
+      "assumptions": [
+        "Z-score threshold of 2.0 standard deviations used to identify anomalies",
+        "Baseline calculated from 4 preceding weeks",
+        "Daily revenue aggregated from POS line items"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Hourly Traffic Anomaly",
+      "claim": "Door count at 1970-01-01 00:00 was 150, which is 3.53 standard deviations from the baseline mean of 46.54.",
+      "finding_type": "traffic_anomaly",
+      "metrics": {
+        "observed_hourly_door_count": {
+          "value": 150,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "1970-01-01T00:00:00.000000019",
+          "period_end": "1970-01-01T01:00:00.000000019"
+        },
+        "baseline_mean_hourly_door_count": {
+          "value": 46.54,
+          "unit": "visitors",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00",
+          "period_end": "2026-06-08T00:00:00"
+        },
+        "z_score": {
+          "value": 3.53,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "1970-01-01T00:00:00.000000019",
+          "period_end": "1970-01-01T01:00:00.000000019"
+        }
+      },
+      "source_names": [
+        "traffic"
+      ],
+      "sample_size": 119,
+      "coverage_notes": [
+        "Analysis period: 2026-06-29T00:00:00 to 2026-07-06T00:00:00",
+        "Baseline: 425 hourly observations from 4 weeks",
+        "Excluded dead sensor days as marked in is_dead_sensor_day"
+      ],
+      "assumptions": [
+        "Z-score threshold of 2.0 standard deviations used to identify anomalies",
+        "Baseline calculated from 4 preceding weeks",
+        "Dead sensor intervals excluded from analysis"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Weekly Waste Cost Anomaly",
+      "claim": "Weekly waste cost for week starting 2026-06-29 was 455.60 SAR, which is 2.26 standard deviations from the baseline mean of 1014.90 SAR.",
+      "finding_type": "waste_anomaly",
+      "metrics": {
+        "observed_weekly_waste_cost": {
+          "value": 455.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29",
+          "period_end": "2026-07-06"
+        },
+        "baseline_mean_weekly_waste_cost": {
+          "value": 1014.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00",
+          "period_end": "2026-06-08T00:00:00"
+        },
+        "z_score": {
+          "value": -2.26,
+          "unit": "standard_deviations",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29",
+          "period_end": "2026-07-06"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 4,
+      "coverage_notes": [
+        "Analysis week: 2026-06-29",
+        "Baseline: 4 weekly observations",
+        "Uses known_waste_cost_sar field; unknown waste values excluded"
+      ],
+      "assumptions": [
+        "Z-score threshold of 1.5 standard deviations used (lower due to small sample)",
+        "Baseline calculated from 4 preceding weeks",
+        "Weekly waste cost aggregated from inventory records"
+      ],
+      "confidence": 0.7
+    }
+  ]
+}

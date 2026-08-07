@@ -1,0 +1,184 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 3 Items by Gross Profit (Analysis Period)",
+      "claim": "The top 3 items by gross profit contribution during 2026-06-29 to 2026-07-06 are Matcha Latte, Iced Spanish Latte, Cold Brew with combined gross profit of 14872.20 SAR",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_1_name": {
+          "value": "Matcha Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+00:00",
+          "period_end": "2026-07-06T00:00:00+00:00"
+        },
+        "top_item_1_gross_profit": {
+          "value": 6831.6,
+          "unit": "SAR",
+          "numerator": 10154.4,
+          "denominator": 3322.8,
+          "period_start": "2026-06-29T00:00:00+00:00",
+          "period_end": "2026-07-06T00:00:00+00:00"
+        },
+        "top_item_1_margin_pct": {
+          "value": 67.28,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+00:00",
+          "period_end": "2026-07-06T00:00:00+00:00"
+        },
+        "top_item_2_name": {
+          "value": "Iced Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+00:00",
+          "period_end": "2026-07-06T00:00:00+00:00"
+        },
+        "top_item_2_gross_profit": {
+          "value": 4996.4,
+          "unit": "SAR",
+          "numerator": 6962.0,
+          "denominator": 1965.6,
+          "period_start": "2026-06-29T00:00:00+00:00",
+          "period_end": "2026-07-06T00:00:00+00:00"
+        },
+        "top_item_3_name": {
+          "value": "Cold Brew",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+00:00",
+          "period_end": "2026-07-06T00:00:00+00:00"
+        },
+        "top_item_3_gross_profit": {
+          "value": 3044.2,
+          "unit": "SAR",
+          "numerator": 4053.0,
+          "denominator": 1008.8,
+          "period_start": "2026-06-29T00:00:00+00:00",
+          "period_end": "2026-07-06T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2321,
+      "coverage_notes": [
+        "Analysis period: 2026-06-29 to 2026-07-06",
+        "Excludes refunds (is_refund=False)",
+        "Unit costs from menu.unit_cost_sar",
+        "Revenue from POS line_total_sar"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and applicable to analysis period",
+        "POS line_total_sar accurately reflects revenue after discounts",
+        "No recipe/BOM data available; using menu unit costs as-is"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost (Week of 2026-06-29)",
+      "claim": "Known waste cost for the week of 2026-06-29 totals 455.60 SAR across 65 units wasted",
+      "finding_type": "waste_analysis",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 455.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "total_units_wasted": {
+          "value": 65,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        },
+        "waste_items_count": {
+          "value": 5,
+          "unit": "items",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-29T00:00:00+03:00",
+          "period_end": "2026-07-06T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 5,
+      "coverage_notes": [
+        "Only includes items with non-null known_waste_cost_sar",
+        "Week starting 2026-06-29",
+        "Items with waste data: 5 out of 6 total items"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar values are accurate and complete for reported waste",
+        "Blank waste values are treated as unknown, not zero"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Recent Supplier Price Change Detected",
+      "claim": "Supplier price change for full-fat milk: 7.1 → 8.4 SAR/L (effective 2026-05-01 00:00:00), representing a 18.3% change",
+      "finding_type": "supplier_pricing",
+      "metrics": {
+        "ingredient": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01 00:00:00",
+          "period_end": "2026-05-01 00:00:00"
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01 00:00:00",
+          "period_end": "2026-05-01 00:00:00"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01 00:00:00",
+          "period_end": "2026-05-01 00:00:00"
+        },
+        "percentage_change": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 1.3,
+          "denominator": 7.1,
+          "period_start": "2026-05-01 00:00:00",
+          "period_end": "2026-05-01 00:00:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 1,
+      "coverage_notes": [
+        "Most recent price change from 3 total price changes in email data",
+        "Effective date: 2026-05-01 00:00:00",
+        "Sender: orders@qatifdairy.com"
+      ],
+      "assumptions": [
+        "Email extraction accurately captured old_price, new_price, and effective_date",
+        "Price change applies to the specified ingredient/entity only",
+        "No recipe/BOM data available; impact on menu items cannot be calculated without additional information"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

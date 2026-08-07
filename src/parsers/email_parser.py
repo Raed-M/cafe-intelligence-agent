@@ -22,6 +22,7 @@ from src.config.source_registry import SourceConfig
 from src.parsers.base import RunContext
 from src.schemas.sources import SourceResult
 from src.tools.artifact_io import write_dataframe
+from src.tools.concurrency import bounded_map
 
 _HEADER_RE = re.compile(r"^(From|Date|Subject):\s*(.*)$")
 _PRICE_CHANGE_RE = re.compile(
@@ -183,16 +184,26 @@ def parse_emails(source: SourceConfig, ctx: RunContext) -> SourceResult:
 
     model_name = ctx.config.app_settings.models.email_extractor
 
+    parsed_by_file: dict[str, dict[str, Any]] = {}
     for fpath in files:
         try:
-            parsed = _parse_email_file(Path(fpath))
+            parsed_by_file[fpath] = _parse_email_file(Path(fpath))
         except Exception as e:  # noqa: BLE001
             failed_files.append(fpath)
             warnings.append(f"failed to parse {fpath}: {e}")
-            continue
-        facts = _extract_with_llm(fpath, parsed, model_name)
-        if facts is None:
-            facts = _extract_deterministic(fpath, parsed)
+
+    def _extract_one(fpath: str) -> tuple[str, list[dict[str, Any]], bool]:
+        facts = _extract_with_llm(fpath, parsed_by_file[fpath], model_name)
+        used_fallback = facts is None
+        if used_fallback:
+            facts = _extract_deterministic(fpath, parsed_by_file[fpath])
+        return fpath, facts, used_fallback
+
+    # Each email's extraction is an independent LLM call -- run them concurrently
+    # (bounded, and still throttled centrally by llm_factory's rate limiter)
+    # instead of one at a time, see src/tools/concurrency.py.
+    for fpath, facts, used_fallback in bounded_map(_extract_one, parsed_by_file.keys()):
+        if used_fallback:
             warnings.append(f"LLM extraction unavailable for {Path(fpath).name}; used deterministic fallback")
         all_facts.extend(facts)
 

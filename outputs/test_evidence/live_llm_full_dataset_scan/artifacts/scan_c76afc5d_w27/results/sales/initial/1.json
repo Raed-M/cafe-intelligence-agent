@@ -1,0 +1,175 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Weekly Revenue Change",
+      "claim": "Net revenue for week of 2026-07-13 to 2026-07-20 was SAR 47502.45, representing a 3.7% change from previous week (SAR 45792.10). Refunds totaled SAR 298.10 in analysis period vs SAR 296.00 previously.",
+      "finding_type": "revenue_change",
+      "metrics": {
+        "analysis_period_revenue": {
+          "value": 47502.45,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "previous_period_revenue": {
+          "value": 45792.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "revenue_change_sar": {
+          "value": 1710.35,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "revenue_change_pct": {
+          "value": 3.7,
+          "unit": "%",
+          "numerator": 1710.35,
+          "denominator": 45792.1,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1299,
+      "coverage_notes": [
+        "Analysis period: 2237 non-refund line items from 1299 unique transactions",
+        "Previous period: 2180 non-refund line items from 1280 unique transactions",
+        "Refunds excluded from net revenue; analysis period refunds: SAR 298.10"
+      ],
+      "assumptions": [
+        "is_refund flag correctly identifies refund transactions",
+        "line_total_sar represents net realized revenue per line item",
+        "transaction_id uniquely identifies a basket"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Order Value Change",
+      "claim": "Average order value increased from SAR 35.78 (previous week) to SAR 36.57 (analysis week), a change of SAR 0.79 (2.2%). This reflects 1299 baskets in analysis period vs 1280 in previous period.",
+      "finding_type": "aov_change",
+      "metrics": {
+        "analysis_aov": {
+          "value": 36.57,
+          "unit": "SAR",
+          "numerator": 47502.45,
+          "denominator": 1299,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "previous_aov": {
+          "value": 35.78,
+          "unit": "SAR",
+          "numerator": 45792.1,
+          "denominator": 1280,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "aov_change_sar": {
+          "value": 0.79,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "aov_change_pct": {
+          "value": 2.2,
+          "unit": "%",
+          "numerator": 0.79,
+          "denominator": 35.78,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 1299,
+      "coverage_notes": [
+        "AOV calculated from 2237 non-refund line items across 1299 unique transactions",
+        "Refunds excluded from calculation"
+      ],
+      "assumptions": [
+        "transaction_id uniquely identifies a basket",
+        "line_total_sar represents net revenue per line item",
+        "All transactions in period are valid sales"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Top Category Revenue Growth",
+      "claim": "Category 'iced_coffee' generated SAR 17737.60 in analysis week vs SAR 16221.10 previously, a 9.3% increase. This category represented 37.3% of weekly revenue.",
+      "finding_type": "category_mix_change",
+      "metrics": {
+        "category_analysis_revenue": {
+          "value": 17737.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "category_previous_revenue": {
+          "value": 16221.1,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "category_revenue_change_sar": {
+          "value": 1516.5,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "category_revenue_change_pct": {
+          "value": 9.3,
+          "unit": "%",
+          "numerator": 1516.5,
+          "denominator": 16221.1,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "category_pct_of_weekly_revenue": {
+          "value": 37.3,
+          "unit": "%",
+          "numerator": 17737.6,
+          "denominator": 47502.45,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 859,
+      "coverage_notes": [
+        "Category data sourced from POS line items with category field populated",
+        "Analysis period: 859 line items in this category",
+        "Refunds excluded from revenue calculations"
+      ],
+      "assumptions": [
+        "category field in POS correctly classifies products",
+        "line_total_sar represents net revenue",
+        "No material data quality issues in category assignment"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

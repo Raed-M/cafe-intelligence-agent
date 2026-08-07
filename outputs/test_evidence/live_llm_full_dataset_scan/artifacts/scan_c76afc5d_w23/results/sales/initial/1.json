@@ -1,0 +1,122 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Category Mix Shift",
+      "claim": "Category 'food' revenue changed from 3674.80 SAR to 4932.80 SAR (+34.2%) between analysis and previous week.",
+      "finding_type": "category_mix_change",
+      "metrics": {
+        "category_name": {
+          "value": "food",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "analysis_category_revenue": {
+          "value": 4932.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "previous_category_revenue": {
+          "value": 3674.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+03:00",
+          "period_end": "2026-06-15T00:00:00+03:00"
+        },
+        "category_revenue_change_pct": {
+          "value": 34.23,
+          "unit": "%",
+          "numerator": 1258.0,
+          "denominator": 3674.8,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos"
+      ],
+      "sample_size": 183,
+      "coverage_notes": [
+        "Analysis period: 2026-06-15 to 2026-06-22",
+        "Previous period: 2026-06-08 to 2026-06-15",
+        "Category transactions in analysis period: 183"
+      ],
+      "assumptions": [
+        "Category assignment from POS data is accurate",
+        "Revenue comparison uses line_total_sar net of discounts"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Top Product Revenue Growth",
+      "claim": "Product 'Chicken Sandwich' (SKU: FOD-005) generated 2756.00 SAR in analysis week vs 1814.80 SAR in previous week, representing +51.9% change.",
+      "finding_type": "product_performance_change",
+      "metrics": {
+        "product_sku": {
+          "value": "FOD-005",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "product_name": {
+          "value": "Chicken Sandwich",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "analysis_product_revenue": {
+          "value": 2756.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "previous_product_revenue": {
+          "value": 1814.8,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+03:00",
+          "period_end": "2026-06-15T00:00:00+03:00"
+        },
+        "product_revenue_change_pct": {
+          "value": 51.86,
+          "unit": "%",
+          "numerator": 941.2,
+          "denominator": 1814.8,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 103,
+      "coverage_notes": [
+        "Analysis period: 2026-06-15 to 2026-06-22",
+        "Previous period: 2026-06-08 to 2026-06-15",
+        "Product transactions in analysis period: 103",
+        "Launch date: Not specified"
+      ],
+      "assumptions": [
+        "SKU to product name mapping from menu is accurate",
+        "Revenue includes all line items for the product",
+        "Product is eligible for comparison (no launch/retire date conflicts)"
+      ],
+      "confidence": 0.88
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Rating Distribution and Average (Analysis Period)",
+      "claim": "During the analysis period (2026-06-22 to 2026-06-29), 21 reviews were collected with an average rating of 3.90 out of 5. Rating distribution: {1: 2, 2: 4, 4: 3, 5: 12}. Language coverage: {'en': 14, 'ar': 7}.",
+      "finding_type": "sentiment_distribution",
+      "metrics": {
+        "total_reviews": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "average_rating": {
+          "value": 3.9,
+          "unit": "stars",
+          "numerator": 82.0,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "rating_1_count": {
+          "value": 2,
+          "unit": "count",
+          "numerator": 2,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "rating_2_count": {
+          "value": 4,
+          "unit": "count",
+          "numerator": 4,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "rating_3_count": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "rating_4_count": {
+          "value": 3,
+          "unit": "count",
+          "numerator": 3,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "rating_5_count": {
+          "value": 12,
+          "unit": "count",
+          "numerator": 12,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "english_reviews": {
+          "value": 14,
+          "unit": "count",
+          "numerator": 14,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "arabic_reviews": {
+          "value": 7,
+          "unit": "count",
+          "numerator": 7,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-06-22 to 2026-06-29 (7 days)",
+        "Total reviews in analysis period: 21",
+        "Language distribution: English=14, Arabic=7",
+        "Sources represented: google, talabat, instagram"
+      ],
+      "assumptions": [
+        "Review dates are accurate and in UTC+3 timezone",
+        "Rating values are integers from 1 to 5",
+        "Language field accurately reflects review language"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Average Rating Trend (Week-over-Week)",
+      "claim": "Average rating in analysis period (2026-06-22 to 2026-06-29) was 3.90, compared to 4.56 in the previous period (2026-06-15 to 2026-06-22), a change of -0.66 points.",
+      "finding_type": "trend_comparison",
+      "metrics": {
+        "avg_rating_analysis_period": {
+          "value": 3.9,
+          "unit": "stars",
+          "numerator": 82.0,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "avg_rating_previous_period": {
+          "value": 4.56,
+          "unit": "stars",
+          "numerator": 73.0,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "rating_change": {
+          "value": -0.66,
+          "unit": "stars",
+          "numerator": -0.66,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "reviews_analysis_period": {
+          "value": 21,
+          "unit": "count",
+          "numerator": 21,
+          "denominator": null,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "reviews_previous_period": {
+          "value": 16,
+          "unit": "count",
+          "numerator": 16,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "instagram",
+        "talabat",
+        "google"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-06-22 to 2026-06-29 (21 reviews)",
+        "Previous period: 2026-06-15 to 2026-06-22 (16 reviews)",
+        "Sources in analysis period: google, talabat, instagram",
+        "Sources in previous period: google, instagram, talabat"
+      ],
+      "assumptions": [
+        "Review dates are accurate",
+        "Periods are comparable in terms of business operations",
+        "No major operational changes between periods"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Sentiment Polarity Distribution (Analysis Period)",
+      "claim": "In the analysis period, 15 reviews (71.4%) were positive (4-5 stars), 6 reviews (28.6%) were negative (1-2 stars), and 0 reviews were neutral (3 stars).",
+      "finding_type": "sentiment_polarity",
+      "metrics": {
+        "positive_reviews_4_5_stars": {
+          "value": 15,
+          "unit": "count",
+          "numerator": 15,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "positive_reviews_percentage": {
+          "value": 71.4,
+          "unit": "percent",
+          "numerator": 15,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "negative_reviews_1_2_stars": {
+          "value": 6,
+          "unit": "count",
+          "numerator": 6,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "negative_reviews_percentage": {
+          "value": 28.6,
+          "unit": "percent",
+          "numerator": 6,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        },
+        "neutral_reviews_3_stars": {
+          "value": 0,
+          "unit": "count",
+          "numerator": 0,
+          "denominator": 21,
+          "period_start": "2026-06-22T00:00:00+03:00",
+          "period_end": "2026-06-29T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "talabat",
+        "instagram"
+      ],
+      "sample_size": 21,
+      "coverage_notes": [
+        "Analysis period: 2026-06-22 to 2026-06-29",
+        "Total reviews analyzed: 21",
+        "Positive (4-5 stars): 15 reviews",
+        "Negative (1-2 stars): 6 reviews",
+        "Neutral (3 stars): 0 reviews"
+      ],
+      "assumptions": [
+        "Rating scale is 1-5 with 4-5 considered positive, 1-2 negative, 3 neutral",
+        "All reviews have valid rating values",
+        "Review ratings reflect customer satisfaction"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

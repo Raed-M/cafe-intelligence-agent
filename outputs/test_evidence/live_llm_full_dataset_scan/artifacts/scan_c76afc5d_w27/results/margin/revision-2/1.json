@@ -1,0 +1,163 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item: Exact Item Economics",
+      "claim": "Matcha Latte generated 6133.20 SAR gross profit (67.19% margin) from 384 units across 338 transactions during Week 27.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Matcha Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        },
+        "gross_profit_sar": {
+          "value": 6133.2,
+          "unit": "SAR",
+          "numerator": 9128.4,
+          "denominator": 2995.2,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        },
+        "gross_margin_pct": {
+          "value": 67.19,
+          "unit": "%",
+          "numerator": 6133.2,
+          "denominator": 9128.4,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        },
+        "units_sold": {
+          "value": 384,
+          "unit": "units",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        },
+        "revenue_sar": {
+          "value": 9128.4,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        },
+        "cogs_sar": {
+          "value": 2995.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        },
+        "transactions": {
+          "value": 338,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 338,
+      "coverage_notes": [
+        "Analysis period: Week 27 (2026-07-13 to 2026-07-20)",
+        "Total POS transactions in period: 1299",
+        "Total items in menu: 19",
+        "Items with sales in period: 19",
+        "Refunds excluded from revenue and COGS calculations",
+        "Unit cost sourced from menu.unit_cost_sar; no recipe/BOM adjustments applied"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and applies to all units sold in period",
+        "No recipe/BOM data available; per-ingredient cost variance not quantified",
+        "Discount amounts (discount_sar) are deducted from line_total_sar before COGS calculation",
+        "Refunds (is_refund=True) excluded from all calculations"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost Impact",
+      "claim": "Week 27 recorded 6 inventory items with documented waste totaling 1147.90 SAR, representing 2.42% of gross revenue. Top waste item: Halloumi Toast (311.60 SAR).",
+      "finding_type": "waste_economics",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 1147.9,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        },
+        "waste_pct_of_revenue": {
+          "value": 2.42,
+          "unit": "%",
+          "numerator": 1147.9,
+          "denominator": 47502.45,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        },
+        "waste_items_count": {
+          "value": 6,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        },
+        "top_waste_item": {
+          "value": "Halloumi Toast",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        },
+        "top_waste_cost_sar": {
+          "value": 311.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        },
+        "gross_revenue_sar": {
+          "value": 47502.45,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13",
+          "period_end": "2026-07-20"
+        }
+      },
+      "source_names": [
+        "inventory",
+        "pos"
+      ],
+      "sample_size": 6,
+      "coverage_notes": [
+        "Analysis period: Week 27 (2026-07-13 to 2026-07-20)",
+        "Total inventory records for period: 6",
+        "Waste records with non-null known_waste_cost_sar: 6",
+        "Waste cost calculated from inventory.known_waste_cost_sar (pre-computed field)",
+        "Blank/null waste costs excluded per data quality rules",
+        "Revenue denominator: POS gross revenue (refunds excluded)"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar field represents actual waste cost incurred (not estimated)",
+        "Waste cost is calculated as units_wasted × unit_cost_sar in source data",
+        "All inventory items with waste activity in period are captured",
+        "Revenue used for percentage calculation is net of refunds"
+      ],
+      "confidence": 0.9
+    }
+  ]
+}

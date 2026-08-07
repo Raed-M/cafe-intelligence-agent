@@ -1,0 +1,163 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Comparison",
+      "claim": "Conversion rate in analysis week (Jul 13-20) was 0.2419 vs 0.2300 in previous week, a change of +0.0119",
+      "finding_type": "conversion_metric",
+      "metrics": {
+        "conversion_rate_analysis": {
+          "value": 0.2419,
+          "unit": "transactions_per_visitor",
+          "numerator": 1299,
+          "denominator": 5371,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "conversion_rate_previous": {
+          "value": 0.23,
+          "unit": "transactions_per_visitor",
+          "numerator": 1280,
+          "denominator": 5566,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "conversion_change": {
+          "value": 0.0119,
+          "unit": "transactions_per_visitor",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 1299,
+      "coverage_notes": [
+        "Analysis period: 119 valid traffic days (excluded 0 dead sensor days)",
+        "Previous period: 119 valid traffic days (excluded 0 dead sensor days)",
+        "Transactions counted as unique transaction_ids excluding refunds"
+      ],
+      "assumptions": [
+        "Footfall sensor accuracy assumed for non-dead-sensor intervals",
+        "Refunds excluded from transaction count per metric definition"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Labour Cost as Percentage of Revenue",
+      "claim": "Average daily labour cost was 14.2% of revenue in analysis week vs 16.7% in previous week",
+      "finding_type": "labour_efficiency",
+      "metrics": {
+        "labour_cost_pct_analysis": {
+          "value": 14.2,
+          "unit": "percent",
+          "numerator": 966.86,
+          "denominator": 6786.06,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "labour_cost_pct_previous": {
+          "value": 16.7,
+          "unit": "percent",
+          "numerator": 1095.71,
+          "denominator": 6541.73,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "avg_daily_labour_analysis": {
+          "value": 966.86,
+          "unit": "SAR",
+          "numerator": 6768.0,
+          "denominator": 7,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "avg_daily_revenue_analysis": {
+          "value": 6786.06,
+          "unit": "SAR",
+          "numerator": 47502.45,
+          "denominator": 7,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "staff",
+        "pos"
+      ],
+      "sample_size": 7,
+      "coverage_notes": [
+        "Analysis period: 7 days with staff data",
+        "Previous period: 7 days with staff data",
+        "Labour cost includes all shifts with computed_duration_hours",
+        "Revenue calculated from non-refund transactions"
+      ],
+      "assumptions": [
+        "Staff shifts fully captured in shift_start/shift_end",
+        "Hourly rates accurately reflect actual compensation",
+        "Revenue excludes refunds per metric definition"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "title": "Known Waste Cost as Percentage of Revenue",
+      "claim": "Known waste cost was 5.03% of revenue in analysis week vs 0.90% in previous week",
+      "finding_type": "waste_efficiency",
+      "metrics": {
+        "waste_cost_pct_analysis": {
+          "value": 5.03,
+          "unit": "percent",
+          "numerator": 2391.6,
+          "denominator": 47502.45,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "waste_cost_pct_previous": {
+          "value": 0.9,
+          "unit": "percent",
+          "numerator": 410.0,
+          "denominator": 45792.1,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "total_waste_cost_analysis": {
+          "value": 2391.6,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-13T00:00:00+03:00",
+          "period_end": "2026-07-20T00:00:00+03:00"
+        },
+        "total_waste_cost_previous": {
+          "value": 410.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory",
+        "pos"
+      ],
+      "sample_size": 12,
+      "coverage_notes": [
+        "Analysis period: 12 inventory records with known waste",
+        "Previous period: 6 inventory records with known waste",
+        "Waste cost includes only known_waste_cost_sar (unknown waste excluded)",
+        "Revenue from non-refund transactions"
+      ],
+      "assumptions": [
+        "Inventory waste data captured accurately in weekly counts",
+        "Known waste cost reflects actual disposal/loss value",
+        "Sunday inventory counts treated as weekly snapshot, not real-time"
+      ],
+      "confidence": 0.75
+    }
+  ]
+}

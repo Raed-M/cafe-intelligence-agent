@@ -1,0 +1,133 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Conversion Rate Comparison",
+      "claim": "Conversion rate in analysis period (Jun 15-22) was 0.2329 vs 0.3621 in previous period (Jun 8-15), a change of -35.68%.",
+      "finding_type": "performance_metric",
+      "metrics": {
+        "conversion_rate_analysis": {
+          "value": 0.2329,
+          "unit": "ratio",
+          "numerator": 1265,
+          "denominator": 5432,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "conversion_rate_previous": {
+          "value": 0.3621,
+          "unit": "ratio",
+          "numerator": 1264,
+          "denominator": 3491,
+          "period_start": "2026-06-08T00:00:00+03:00",
+          "period_end": "2026-06-15T00:00:00+03:00"
+        },
+        "conversion_change_pct": {
+          "value": -35.68,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "traffic"
+      ],
+      "sample_size": 2529,
+      "coverage_notes": [
+        "Analysis period: 5432 valid footfall entries (dead sensor days excluded)",
+        "Previous period: 3491 valid footfall entries (dead sensor days excluded)",
+        "Analysis period: 1265 valid sales transactions (refunds excluded)",
+        "Previous period: 1264 valid sales transactions (refunds excluded)"
+      ],
+      "assumptions": [
+        "Conversion = unique valid sales transactions / valid footfall",
+        "Dead sensor days excluded from footfall denominator",
+        "Refunds excluded from transaction count"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "title": "Labour Cost to Revenue Ratio",
+      "claim": "Labour cost ratio in analysis period (Jun 15-22) was 0.1557 vs 0.1535 in previous period (Jun 8-15), a change of 1.42%.",
+      "finding_type": "operational_efficiency",
+      "metrics": {
+        "total_labour_cost_analysis": {
+          "value": 6934.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "total_revenue_analysis": {
+          "value": 44528.15,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "labour_cost_ratio_analysis": {
+          "value": 0.1557,
+          "unit": "ratio",
+          "numerator": 6934.0,
+          "denominator": 44528.15,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "total_labour_cost_previous": {
+          "value": 6800.0,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+03:00",
+          "period_end": "2026-06-15T00:00:00+03:00"
+        },
+        "total_revenue_previous": {
+          "value": 44288.2,
+          "unit": "SAR",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+03:00",
+          "period_end": "2026-06-15T00:00:00+03:00"
+        },
+        "labour_cost_ratio_previous": {
+          "value": 0.1535,
+          "unit": "ratio",
+          "numerator": 6800.0,
+          "denominator": 44288.2,
+          "period_start": "2026-06-08T00:00:00+03:00",
+          "period_end": "2026-06-15T00:00:00+03:00"
+        },
+        "labour_ratio_change_pct": {
+          "value": 1.42,
+          "unit": "%",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "staff",
+        "pos"
+      ],
+      "sample_size": 84,
+      "coverage_notes": [
+        "Analysis period: 43 staff records, 6934.0 SAR total labour cost",
+        "Previous period: 41 staff records, 6800.0 SAR total labour cost",
+        "Analysis period revenue (net of refunds): 44528.15 SAR",
+        "Previous period revenue (net of refunds): 44288.2 SAR"
+      ],
+      "assumptions": [
+        "Labour cost ratio = total labour cost / total revenue (refunds excluded)",
+        "Staff labour_cost_sar field used as authoritative",
+        "POS line_total_sar used for revenue calculation"
+      ],
+      "confidence": 0.8
+    }
+  ]
+}

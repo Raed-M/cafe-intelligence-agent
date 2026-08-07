@@ -1,0 +1,202 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Customer Rating Distribution (Analysis Period)",
+      "claim": "During the analysis period (2026-06-15 to 2026-06-22), customer ratings averaged 4.56 out of 5.0 across 16 reviews. The distribution shows: 5-star (10 reviews), 4-star (5 reviews), 3-star (1 reviews), 2-star (0 reviews), 1-star (0 reviews).",
+      "finding_type": "customer_sentiment",
+      "metrics": {
+        "average_rating": {
+          "value": 4.56,
+          "unit": "stars (1-5)",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "total_reviews": {
+          "value": 16,
+          "unit": "count",
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "five_star_count": {
+          "value": 10,
+          "unit": "reviews",
+          "numerator": 10,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "four_star_count": {
+          "value": 5,
+          "unit": "reviews",
+          "numerator": 5,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "three_star_count": {
+          "value": 1,
+          "unit": "reviews",
+          "numerator": 1,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "two_star_count": {
+          "value": 0,
+          "unit": "reviews",
+          "numerator": 0,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "one_star_count": {
+          "value": 0,
+          "unit": "reviews",
+          "numerator": 0,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Analysis period: 2026-06-15 to 2026-06-22 (7 days)",
+        "Total reviews in analysis period: 16",
+        "Language distribution: {'en': np.int64(12), 'ar': np.int64(4)}"
+      ],
+      "assumptions": [
+        "Rating values are valid integers from 1 to 5",
+        "All reviews in the analysis period are included",
+        "No filtering applied based on review text quality"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "title": "Customer Review Topics and Sentiment Themes",
+      "claim": "During the analysis period, 4 out of 16 reviews contained identifiable topics. The most frequently mentioned topics were: temperature (3 mentions), service_speed (1 mentions). 12 reviews contained no identified topics or other topics not in the primary classification set.",
+      "finding_type": "topic_analysis",
+      "metrics": {
+        "topic_1_name": {
+          "value": "temperature",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "topic_1_mentions": {
+          "value": 3,
+          "unit": "mentions",
+          "numerator": 3,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "topic_2_name": {
+          "value": "service_speed",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "topic_2_mentions": {
+          "value": 1,
+          "unit": "mentions",
+          "numerator": 1,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "reviews_with_topics": {
+          "value": 4,
+          "unit": "reviews",
+          "numerator": 4,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "total_topic_mentions": {
+          "value": 4,
+          "unit": "mentions",
+          "numerator": 4,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Analysis period: 2026-06-15 to 2026-06-22",
+        "Total reviews analyzed: 16",
+        "Reviews with identified topics: 4",
+        "Reviews without identified topics: 12",
+        "Total topic mentions: 4",
+        "Topic classification based on keyword matching in original review text",
+        "Reviews may mention multiple topics; each mention is counted separately",
+        "Language distribution: {'en': np.int64(12), 'ar': np.int64(4)}"
+      ],
+      "assumptions": [
+        "Topic keywords are representative of customer concerns",
+        "Keyword matching in original language (English or Arabic) is reliable",
+        "A single review may contain multiple topics",
+        "Absence of keywords indicates absence of topic mention"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "title": "Review Language Distribution",
+      "claim": "During the analysis period, reviews were submitted in 2 language(s): en: 12 reviews, ar: 4 reviews.",
+      "finding_type": "data_coverage",
+      "metrics": {
+        "en_reviews": {
+          "value": 12,
+          "unit": "reviews",
+          "numerator": 12,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        },
+        "ar_reviews": {
+          "value": 4,
+          "unit": "reviews",
+          "numerator": 4,
+          "denominator": 16,
+          "period_start": "2026-06-15T00:00:00+03:00",
+          "period_end": "2026-06-22T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "google",
+        "instagram",
+        "talabat"
+      ],
+      "sample_size": 16,
+      "coverage_notes": [
+        "Analysis period: 2026-06-15 to 2026-06-22",
+        "Total reviews: 16",
+        "Languages represented: ['en', 'ar']"
+      ],
+      "assumptions": [
+        "Language field is accurately populated in source data",
+        "All reviews are included regardless of language"
+      ],
+      "confidence": 1.0
+    }
+  ]
+}

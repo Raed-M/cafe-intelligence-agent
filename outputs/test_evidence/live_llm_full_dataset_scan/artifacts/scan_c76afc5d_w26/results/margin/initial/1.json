@@ -1,0 +1,205 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top Gross Profit Item - Week of 2026-07-06",
+      "claim": "Matcha Latte generated the highest gross profit of 6238.80 SAR with 67.1% margin",
+      "finding_type": "item_economics",
+      "metrics": {
+        "item_name": {
+          "value": "Matcha Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "total_revenue": {
+          "value": 9296.4,
+          "unit": "SAR",
+          "numerator": 9296.4,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "total_cogs": {
+          "value": 3057.6,
+          "unit": "SAR",
+          "numerator": 3057.6,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "gross_profit": {
+          "value": 6238.8,
+          "unit": "SAR",
+          "numerator": 6238.8,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "gross_margin_pct": {
+          "value": 67.11,
+          "unit": "%",
+          "numerator": 67.11,
+          "denominator": 100,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "quantity_sold": {
+          "value": 392,
+          "unit": "units",
+          "numerator": 392,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "unit_cost": {
+          "value": 7.8,
+          "unit": "SAR",
+          "numerator": 7.8,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 348,
+      "coverage_notes": [
+        "Analysis period: 2026-07-06 to 2026-07-13",
+        "Includes 19 items with sales",
+        "Excludes refunds (is_refund=False)",
+        "Unit costs from menu.unit_cost_sar"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is accurate and current",
+        "No recipe/BOM adjustments applied",
+        "Quantity from POS line items",
+        "Revenue calculated as sum of line_total_sar"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Highest Waste Cost Item - Week of 2026-07-06",
+      "claim": "Chicken Sandwich incurred 161.50 SAR in waste cost from 17 units wasted",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "item_name": {
+          "value": "Chicken Sandwich",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "units_wasted": {
+          "value": 17,
+          "unit": "units",
+          "numerator": 17,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "waste_cost_sar": {
+          "value": 161.5,
+          "unit": "SAR",
+          "numerator": 161.5,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        },
+        "total_waste_cost_week": {
+          "value": 410.0,
+          "unit": "SAR",
+          "numerator": 410.0,
+          "denominator": null,
+          "period_start": "2026-07-06T00:00:00+03:00",
+          "period_end": "2026-07-13T00:00:00+03:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 4,
+      "coverage_notes": [
+        "Analysis period: 2026-07-06 to 2026-07-13",
+        "Only items with non-null known_waste_cost_sar included",
+        "Total items with waste data: 4",
+        "Waste cost calculated from inventory.known_waste_cost_sar"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar reflects actual waste cost",
+        "Null waste values treated as unknown, not zero",
+        "Waste cost = units_wasted × unit_cost_sar"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Supplier Price Change - full-fat milk",
+      "claim": "full-fat milk price changed from 7.1 to 8.4 SAR per L (effective 2026-05-01), a 18.3% change",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "ingredient": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": null
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": 7.1,
+          "denominator": null,
+          "period_start": null,
+          "period_end": null
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": 8.4,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": null
+        },
+        "price_change_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 18.31,
+          "denominator": 100,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": null
+        },
+        "effective_date": {
+          "value": "2026-05-01",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-05-01T00:00:00",
+          "period_end": null
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Total supplier price changes identified: 3",
+        "Related menu items found: 0",
+        "Price changes extracted from supplier emails",
+        "No recipe/BOM data available to calculate per-drink impact"
+      ],
+      "assumptions": [
+        "Email extraction confidence reflects data quality",
+        "Price change applies to specified unit and currency",
+        "No recipe/BOM exists to calculate exact menu item cost impact",
+        "Related items identified by name matching only"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}

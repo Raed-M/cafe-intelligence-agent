@@ -1,0 +1,248 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "title": "Top 3 Items by Gross Profit (Analysis Period)",
+      "claim": "During 2026-06-08 to 2026-06-15, the top 3 items by absolute gross profit contribution are Matcha Latte, Iced Spanish Latte, Iced Americano. Total gross profit across all items: 31437.80 SAR.",
+      "finding_type": "item_economics",
+      "metrics": {
+        "top_item_1_name": {
+          "value": "Matcha Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "top_item_1_gross_profit": {
+          "value": 5161.8,
+          "unit": "SAR",
+          "numerator": 5161.8,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "top_item_1_quantity": {
+          "value": 323,
+          "unit": "units",
+          "numerator": 323,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "top_item_1_margin_pct": {
+          "value": 67.2,
+          "unit": "%",
+          "numerator": 67.2,
+          "denominator": 100,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "top_item_2_name": {
+          "value": "Iced Spanish Latte",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "top_item_2_gross_profit": {
+          "value": 4685.6,
+          "unit": "SAR",
+          "numerator": 4685.6,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "top_item_3_name": {
+          "value": "Iced Americano",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "top_item_3_gross_profit": {
+          "value": 2952.7,
+          "unit": "SAR",
+          "numerator": 2952.7,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "total_items_analyzed": {
+          "value": 19,
+          "unit": "count",
+          "numerator": 19,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "total_gross_profit_all_items": {
+          "value": 31437.8,
+          "unit": "SAR",
+          "numerator": 31437.8,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "pos",
+        "menu"
+      ],
+      "sample_size": 2144,
+      "coverage_notes": [
+        "Analysis period: 2026-06-08 to 2026-06-15",
+        "Refunds excluded from calculations",
+        "Unit costs sourced from menu.parquet",
+        "Line totals used as revenue (net of discounts)"
+      ],
+      "assumptions": [
+        "Menu unit_cost_sar is current and applicable to analysis period",
+        "Line_total_sar represents actual revenue after discounts",
+        "No recipe/BOM available; per-unit COGS from menu is used as-is"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Quantified Waste Cost (Analysis Period)",
+      "claim": "During the week of 2026-06-08, quantified waste cost totaled 6443.70 SAR across 39 inventory records. Top waste contributor: Chicken Sandwich (1643.50 SAR).",
+      "finding_type": "waste_cost",
+      "metrics": {
+        "total_waste_cost_sar": {
+          "value": 6443.7,
+          "unit": "SAR",
+          "numerator": 6443.7,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "waste_records_count": {
+          "value": 39,
+          "unit": "count",
+          "numerator": 39,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "top_waste_item": {
+          "value": "Chicken Sandwich",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "top_waste_item_cost": {
+          "value": 1643.5,
+          "unit": "SAR",
+          "numerator": 1643.5,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "top_waste_item_units": {
+          "value": 173,
+          "unit": "units",
+          "numerator": 173,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "inventory"
+      ],
+      "sample_size": 39,
+      "coverage_notes": [
+        "Only non-null known_waste_cost_sar values included",
+        "Waste cost calculated from inventory.parquet known_waste_cost_sar column",
+        "Analysis period: week starting 2026-06-08"
+      ],
+      "assumptions": [
+        "known_waste_cost_sar represents actual quantified waste cost",
+        "Null waste values are excluded (not treated as zero)"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "Recent Supplier Price Change",
+      "claim": "Email evidence from orders@qatifdairy.com dated 2026-05-04 documents a price change for full-fat milk: 7.1 SAR/L → 8.4 SAR/L (effective 2026-05-01). This represents a 18.31% change.",
+      "finding_type": "supplier_price_change",
+      "metrics": {
+        "ingredient": {
+          "value": "full-fat milk",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "old_price": {
+          "value": 7.1,
+          "unit": "SAR/L",
+          "numerator": 7.1,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "new_price": {
+          "value": 8.4,
+          "unit": "SAR/L",
+          "numerator": 8.4,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "price_change_pct": {
+          "value": 18.31,
+          "unit": "%",
+          "numerator": 18.31,
+          "denominator": 100,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "effective_date": {
+          "value": "2026-05-01T00:00:00+00:00",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "sender": {
+          "value": "orders@qatifdairy.com",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        },
+        "email_date": {
+          "value": "2026-05-04",
+          "unit": null,
+          "numerator": null,
+          "denominator": null,
+          "period_start": "2026-06-08T00:00:00+00:00",
+          "period_end": "2026-06-15T00:00:00+00:00"
+        }
+      },
+      "source_names": [
+        "emails"
+      ],
+      "sample_size": 3,
+      "coverage_notes": [
+        "Analysis based on emails with both old_price and new_price and effective_date",
+        "Most recent price change selected",
+        "Total price change records identified: 3"
+      ],
+      "assumptions": [
+        "Email extraction confidence and facts field are authoritative",
+        "Price change applies to the named ingredient/entity only",
+        "No recipe/BOM available; impact on menu items cannot be calculated without standing order volumes"
+      ],
+      "confidence": 0.85
+    }
+  ]
+}
