@@ -1,0 +1,2875 @@
+{
+  "values": {
+    "run_id": "studio_25a20449",
+    "thread_id": "studio_25a20449",
+    "config": {
+      "profile_key": "qahwa-saihat-e2cc8102",
+      "raw_profile": {
+        "cafe_name": "Qahwa Saihat",
+        "city": "Saihat",
+        "governorate": "Qatif",
+        "region": "Eastern Province",
+        "country": "Saudi Arabia",
+        "coordinates": {
+          "lat": 26.465,
+          "lng": 50.04
+        },
+        "timezone": "Asia/Riyadh",
+        "seats": 42,
+        "opened": "2025-02-01",
+        "opening_hours": {
+          "default": "07:00-23:00",
+          "ramadan": "14:00-01:00"
+        },
+        "instagram": "@qahwa.saihat",
+        "tiktok": "@qahwa.saihat",
+        "currency": "SAR",
+        "weekend_days": [
+          "Friday",
+          "Saturday"
+        ],
+        "notes": "Neighbourhood specialty cafe. Mixed student and family traffic. Arabic-first audience.",
+        "local_search_areas": null
+      },
+      "social_handles": {
+        "instagram": "@qahwa.saihat",
+        "tiktok": "@qahwa.saihat"
+      },
+      "data_dir": [
+        "data",
+        "qahwa_saihat"
+      ],
+      "source_registry": {
+        "sources": [
+          {
+            "name": "pos",
+            "parser": "parse_pos",
+            "path": "pos_transactions.csv",
+            "required_for": [
+              "sales",
+              "margin",
+              "operations",
+              "anomaly"
+            ],
+            "sheet": null
+          },
+          {
+            "name": "menu",
+            "parser": "parse_menu",
+            "path": "menu_items.csv",
+            "required_for": [
+              "sales",
+              "margin",
+              "operations"
+            ],
+            "sheet": null
+          },
+          {
+            "name": "traffic",
+            "parser": "parse_traffic",
+            "path": "foot_traffic.csv",
+            "required_for": [
+              "operations",
+              "anomaly"
+            ],
+            "sheet": null
+          },
+          {
+            "name": "staff",
+            "parser": "parse_staff",
+            "path": "staff_shifts.csv",
+            "required_for": [
+              "operations"
+            ],
+            "sheet": null
+          },
+          {
+            "name": "inventory",
+            "parser": "parse_inventory",
+            "path": "inventory_weekly.xlsx",
+            "required_for": [
+              "margin",
+              "operations",
+              "anomaly"
+            ],
+            "sheet": "weekly_counts"
+          },
+          {
+            "name": "emails",
+            "parser": "parse_emails",
+            "path": "supplier_emails/*.txt",
+            "required_for": [
+              "margin",
+              "content"
+            ],
+            "sheet": null
+          },
+          {
+            "name": "reviews",
+            "parser": "parse_reviews",
+            "path": "customer_reviews.json",
+            "required_for": [
+              "customer",
+              "anomaly"
+            ],
+            "sheet": null
+          }
+        ]
+      },
+      "analysis_period": {
+        "start": "2026-03-23T00:00:00+03:00",
+        "end": "2026-03-30T00:00:00+03:00"
+      },
+      "previous_period": {
+        "start": "2026-03-16T00:00:00+03:00",
+        "end": "2026-03-23T00:00:00+03:00"
+      },
+      "trailing_baseline_periods": [
+        {
+          "start": "2026-03-16T00:00:00+03:00",
+          "end": "2026-03-23T00:00:00+03:00"
+        },
+        {
+          "start": "2026-03-09T00:00:00+03:00",
+          "end": "2026-03-16T00:00:00+03:00"
+        },
+        {
+          "start": "2026-03-02T00:00:00+03:00",
+          "end": "2026-03-09T00:00:00+03:00"
+        },
+        {
+          "start": "2026-02-23T00:00:00+03:00",
+          "end": "2026-03-02T00:00:00+03:00"
+        }
+      ],
+      "recommendation_period": {
+        "start": "2026-03-30T00:00:00+03:00",
+        "end": "2026-04-06T00:00:00+03:00"
+      },
+      "local_search_terms": [
+        "Saihat",
+        "Qatif",
+        "Eastern Province",
+        "Saudi Arabia"
+      ],
+      "app_settings": {
+        "schedule": {
+          "day_of_week": "mon",
+          "hour": 6,
+          "minute": 0
+        },
+        "limits": {
+          "max_graph_steps": 60,
+          "max_cost_usd": 2.0,
+          "analyst_code_attempts": 3,
+          "critic_revision_rounds": 2,
+          "content_repair_attempts": 1,
+          "max_candidate_findings_per_analyst": 3,
+          "max_final_findings": 5,
+          "code_timeout_seconds": 30
+        },
+        "models": {
+          "analyst": "gemini-3.1-flash-lite",
+          "critic": "gemini-3.1-flash-lite",
+          "content": "gemini-3.1-flash-lite",
+          "content_validator": "gemini-3.1-flash-lite",
+          "report_summary": "gemini-3.1-flash-lite",
+          "email_extractor": "gemini-3.1-flash-lite",
+          "temperature": 0.0
+        },
+        "report": {
+          "whatsapp_max_chars": 500,
+          "pdf_optional": true,
+          "use_llm_summary_compression": false
+        },
+        "prayer_times": {
+          "calculation_method": "umm_al_qura"
+        }
+      },
+      "artifact_root": [
+        "outputs",
+        "artifacts"
+      ],
+      "checkpoint_db": [
+        "db",
+        "checkpoints.sqlite"
+      ],
+      "memory_db": [
+        "db",
+        "memory.sqlite"
+      ],
+      "prayer_calculation_method": "umm_al_qura",
+      "run_id": ""
+    },
+    "analysis_period": {
+      "start": "2026-03-23T00:00:00+03:00",
+      "end": "2026-03-30T00:00:00+03:00"
+    },
+    "previous_period": {
+      "start": "2026-03-16T00:00:00+03:00",
+      "end": "2026-03-23T00:00:00+03:00"
+    },
+    "trailing_baseline_periods": [
+      {
+        "start": "2026-03-16T00:00:00+03:00",
+        "end": "2026-03-23T00:00:00+03:00"
+      },
+      {
+        "start": "2026-03-09T00:00:00+03:00",
+        "end": "2026-03-16T00:00:00+03:00"
+      },
+      {
+        "start": "2026-03-02T00:00:00+03:00",
+        "end": "2026-03-09T00:00:00+03:00"
+      },
+      {
+        "start": "2026-02-23T00:00:00+03:00",
+        "end": "2026-03-02T00:00:00+03:00"
+      }
+    ],
+    "recommendation_period": {
+      "start": "2026-03-30T00:00:00+03:00",
+      "end": "2026-04-06T00:00:00+03:00"
+    },
+    "target_week": "2026-03-23",
+    "source_results": [
+      {
+        "source_name": "pos",
+        "status": "success",
+        "raw_row_count": 66195,
+        "accepted_row_count": 66195,
+        "rejected_row_count": 0,
+        "artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\parsed\\pos.parquet",
+          "media_type": "application/x-parquet",
+          "sha256": "bfce4962290c4e9c054b3e3fa1d730610532e2a2f32b2a474d68c39513fd8234",
+          "schema_version": "1.0",
+          "row_count": 66195,
+          "byte_size": 1309164,
+          "created_at": "2026-08-07T11:00:12.798772+00:00"
+        },
+        "schema_version": "1.0",
+        "date_min": null,
+        "date_max": null,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "source_name": "menu",
+        "status": "success",
+        "raw_row_count": 19,
+        "accepted_row_count": 19,
+        "rejected_row_count": 0,
+        "artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\parsed\\menu.parquet",
+          "media_type": "application/x-parquet",
+          "sha256": "fba270ce185cdf43135bedae5d5f3dd40aaba5d94072e27cf4bb2072f7d524c1",
+          "schema_version": "1.0",
+          "row_count": 19,
+          "byte_size": 6346,
+          "created_at": "2026-08-07T11:00:12.478775+00:00"
+        },
+        "schema_version": "1.0",
+        "date_min": null,
+        "date_max": null,
+        "warnings": [],
+        "error": null
+      },
+      {
+        "source_name": "traffic",
+        "status": "success",
+        "raw_row_count": 3296,
+        "accepted_row_count": 3296,
+        "rejected_row_count": 0,
+        "artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\parsed\\traffic.parquet",
+          "media_type": "application/x-parquet",
+          "sha256": "ef2c8730f8d7c2f2864be81ff2ca3607e90020769e6e341566f0d864c701014e",
+          "schema_version": "1.0",
+          "row_count": 3296,
+          "byte_size": 7981,
+          "created_at": "2026-08-07T11:00:12.480773+00:00"
+        },
+        "schema_version": "1.0",
+        "date_min": "2026-01-05",
+        "date_max": "2026-07-26",
+        "warnings": [],
+        "error": null
+      },
+      {
+        "source_name": "staff",
+        "status": "success",
+        "raw_row_count": 1036,
+        "accepted_row_count": 1036,
+        "rejected_row_count": 0,
+        "artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\parsed\\staff.parquet",
+          "media_type": "application/x-parquet",
+          "sha256": "42cb9eb639373b16b7608443731a20f623948c4b1644935ee6f52b3afb85bdbe",
+          "schema_version": "1.0",
+          "row_count": 1036,
+          "byte_size": 9011,
+          "created_at": "2026-08-07T11:00:12.490773+00:00"
+        },
+        "schema_version": "1.0",
+        "date_min": "2026-01-05",
+        "date_max": "2026-07-26",
+        "warnings": [],
+        "error": null
+      },
+      {
+        "source_name": "inventory",
+        "status": "success",
+        "raw_row_count": 174,
+        "accepted_row_count": 174,
+        "rejected_row_count": 0,
+        "artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\parsed\\inventory.parquet",
+          "media_type": "application/x-parquet",
+          "sha256": "3b05cfc643d59e262467ea094913879a4a26ca3638a29ef67a0640ffdf4aa511",
+          "schema_version": "1.0",
+          "row_count": 174,
+          "byte_size": 7037,
+          "created_at": "2026-08-07T11:00:12.478775+00:00"
+        },
+        "schema_version": "1.0",
+        "date_min": "2026-01-05",
+        "date_max": "2026-07-20",
+        "warnings": [
+          "5 rows have unknown (blank) units_wasted; treated as unrecorded, not zero"
+        ],
+        "error": null
+      },
+      {
+        "source_name": "emails",
+        "status": "success",
+        "raw_row_count": 13,
+        "accepted_row_count": 13,
+        "rejected_row_count": 0,
+        "artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\parsed\\emails.parquet",
+          "media_type": "application/x-parquet",
+          "sha256": "0e9aeb576032a184daab3c7777eb45629b996c1189c97bdc74ca4fe8cd3e2819",
+          "schema_version": "1.0",
+          "row_count": 5,
+          "byte_size": 12814,
+          "created_at": "2026-08-07T11:00:17.478775+00:00"
+        },
+        "schema_version": "1.0",
+        "date_min": "2026-01-12",
+        "date_max": "2026-03-02",
+        "warnings": [
+          "9 of 13 emails dated after the current analysis period (after 2026-03-30) excluded as not-yet-visible at this point in time -- skipped entirely, no LLM call spent on them: ['2026-04-01_05.txt', '2026-04-20_06.txt', '2026-05-04_07.txt', '2026-05-18_08.txt', '2026-06-02_09.txt', '2026-06-09_10.txt', '2026-06-21_11.txt', '2026-07-06_12.txt', '2026-07-15_13.txt']"
+        ],
+        "error": null
+      },
+      {
+        "source_name": "reviews",
+        "status": "success",
+        "raw_row_count": 520,
+        "accepted_row_count": 520,
+        "rejected_row_count": 0,
+        "artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\parsed\\reviews.parquet",
+          "media_type": "application/x-parquet",
+          "sha256": "e1506ff06cc0e1eec76f03fcc3c8392296b493d86f15592a642495bb6dbfa058",
+          "schema_version": "1.0",
+          "row_count": 520,
+          "byte_size": 9772,
+          "created_at": "2026-08-07T11:00:12.489798+00:00"
+        },
+        "schema_version": "1.0",
+        "date_min": "2026-01-05",
+        "date_max": "2026-07-26",
+        "warnings": [],
+        "error": null
+      }
+    ],
+    "cleaned_artifacts": {
+      "pos": {
+        "path": "outputs\\artifacts\\studio_25a20449\\cleaned\\pos.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "99791fbcc7a561cecdac497ea8a7f68813ab1b8ac78d84ccc2111c3b12e08202",
+        "schema_version": "1.0",
+        "row_count": 65574,
+        "byte_size": 1719805,
+        "created_at": "2026-08-07T11:00:33.981936+00:00"
+      },
+      "traffic": {
+        "path": "outputs\\artifacts\\studio_25a20449\\cleaned\\traffic.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "5fdc436621461540185eb9cfe21c10f819c4de590273a1d2f19e343bd5117cd5",
+        "schema_version": "1.0",
+        "row_count": 3296,
+        "byte_size": 8542,
+        "created_at": "2026-08-07T11:00:34.003945+00:00"
+      },
+      "staff": {
+        "path": "outputs\\artifacts\\studio_25a20449\\cleaned\\staff.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "7bda921bf4d9762776f444da7c05d4911fedbf014ab8581fd15220c54a2e8876",
+        "schema_version": "1.0",
+        "row_count": 1036,
+        "byte_size": 11399,
+        "created_at": "2026-08-07T11:00:34.242911+00:00"
+      },
+      "inventory": {
+        "path": "outputs\\artifacts\\studio_25a20449\\cleaned\\inventory.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "d8f47f0015d3675d86c6db8b10cde1597ac4aa264f2d796470fc5277207b336c",
+        "schema_version": "1.0",
+        "row_count": 174,
+        "byte_size": 9368,
+        "created_at": "2026-08-07T11:00:34.256944+00:00"
+      },
+      "menu": {
+        "path": "outputs\\artifacts\\studio_25a20449\\cleaned\\menu.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "fba270ce185cdf43135bedae5d5f3dd40aaba5d94072e27cf4bb2072f7d524c1",
+        "schema_version": "1.0",
+        "row_count": 19,
+        "byte_size": 6346,
+        "created_at": "2026-08-07T11:00:34.263944+00:00"
+      },
+      "emails": {
+        "path": "outputs\\artifacts\\studio_25a20449\\cleaned\\emails.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "0e9aeb576032a184daab3c7777eb45629b996c1189c97bdc74ca4fe8cd3e2819",
+        "schema_version": "1.0",
+        "row_count": 5,
+        "byte_size": 12814,
+        "created_at": "2026-08-07T11:00:34.279912+00:00"
+      },
+      "reviews": {
+        "path": "outputs\\artifacts\\studio_25a20449\\cleaned\\reviews.parquet",
+        "media_type": "application/x-parquet",
+        "sha256": "e1506ff06cc0e1eec76f03fcc3c8392296b493d86f15592a642495bb6dbfa058",
+        "schema_version": "1.0",
+        "row_count": 520,
+        "byte_size": 9772,
+        "created_at": "2026-08-07T11:00:34.292942+00:00"
+      }
+    },
+    "data_quality": {
+      "source_summaries": [
+        {
+          "source_name": "pos",
+          "rows_in": 66195,
+          "rows_accepted": 65574,
+          "rows_dropped": 621,
+          "rows_repaired": 1592,
+          "rows_quarantined": 0,
+          "null_counts": {
+            "cashier_id": 5327,
+            "item_name_raw": 1592
+          },
+          "issue_counts": {
+            "unparseable_timestamp": 0,
+            "double_swipe_transactions": 382,
+            "double_swipe_rows_removed": 621,
+            "unknown_sku_rows": 0,
+            "line_total_inconsistent": 38,
+            "refund_rows": 530
+          },
+          "excluded_periods": [],
+          "examples": [
+            {
+              "transaction_id": "TXN-100178",
+              "multiplicity": 2,
+              "rows_before": 2,
+              "rows_after": 1,
+              "cashier_ids_seen": [
+                "EMP-03"
+              ]
+            },
+            {
+              "transaction_id": "TXN-100235",
+              "multiplicity": 2,
+              "rows_before": 2,
+              "rows_after": 1,
+              "cashier_ids_seen": [
+                "EMP-02",
+                "EMP-05"
+              ]
+            },
+            {
+              "transaction_id": "TXN-100280",
+              "multiplicity": 2,
+              "rows_before": 2,
+              "rows_after": 1,
+              "cashier_ids_seen": [
+                "EMP-02",
+                "EMP-05"
+              ]
+            },
+            {
+              "transaction_id": "TXN-100365",
+              "multiplicity": 2,
+              "rows_before": 2,
+              "rows_after": 1,
+              "cashier_ids_seen": [
+                "EMP-06"
+              ]
+            },
+            {
+              "transaction_id": "TXN-100507",
+              "multiplicity": 2,
+              "rows_before": 2,
+              "rows_after": 1,
+              "cashier_ids_seen": [
+                "EMP-03"
+              ]
+            },
+            {
+              "transaction_id": "TXN-100596",
+              "multiplicity": 2,
+              "rows_before": 4,
+              "rows_after": 2,
+              "cashier_ids_seen": [
+                "EMP-02",
+                "EMP-04",
+                "EMP-05",
+                "EMP-06"
+              ]
+            },
+            {
+              "transaction_id": "TXN-100639",
+              "multiplicity": 2,
+              "rows_before": 2,
+              "rows_after": 1,
+              "cashier_ids_seen": [
+                "EMP-04"
+              ]
+            },
+            {
+              "transaction_id": "TXN-100647",
+              "multiplicity": 2,
+              "rows_before": 2,
+              "rows_after": 1,
+              "cashier_ids_seen": [
+                "EMP-04",
+                "EMP-05"
+              ]
+            },
+            {
+              "transaction_id": "TXN-100781",
+              "multiplicity": 2,
+              "rows_before": 2,
+              "rows_after": 1,
+              "cashier_ids_seen": [
+                "EMP-03",
+                "EMP-05"
+              ]
+            },
+            {
+              "transaction_id": "TXN-100818",
+              "multiplicity": 2,
+              "rows_before": 4,
+              "rows_after": 2,
+              "cashier_ids_seen": [
+                "EMP-02",
+                "EMP-03",
+                "EMP-04"
+              ]
+            }
+          ]
+        },
+        {
+          "source_name": "traffic",
+          "rows_in": 3296,
+          "rows_accepted": 3296,
+          "rows_dropped": 0,
+          "rows_repaired": 0,
+          "rows_quarantined": 51,
+          "null_counts": {},
+          "issue_counts": {
+            "dead_sensor_days": 3
+          },
+          "excluded_periods": [
+            {
+              "date": "2026-06-08"
+            },
+            {
+              "date": "2026-06-09"
+            },
+            {
+              "date": "2026-06-10"
+            }
+          ],
+          "examples": []
+        },
+        {
+          "source_name": "staff",
+          "rows_in": 1036,
+          "rows_accepted": 1036,
+          "rows_dropped": 0,
+          "rows_repaired": 0,
+          "rows_quarantined": 0,
+          "null_counts": {},
+          "issue_counts": {
+            "shift_duration_mismatch": 0
+          },
+          "excluded_periods": [],
+          "examples": []
+        },
+        {
+          "source_name": "inventory",
+          "rows_in": 174,
+          "rows_accepted": 174,
+          "rows_dropped": 0,
+          "rows_repaired": 0,
+          "rows_quarantined": 0,
+          "null_counts": {
+            "units_wasted": 5
+          },
+          "issue_counts": {
+            "unknown_waste_weeks": 5
+          },
+          "excluded_periods": [],
+          "examples": []
+        },
+        {
+          "source_name": "menu",
+          "rows_in": 19,
+          "rows_accepted": 19,
+          "rows_dropped": 0,
+          "rows_repaired": 0,
+          "rows_quarantined": 0,
+          "null_counts": {},
+          "issue_counts": {},
+          "examples": [],
+          "excluded_periods": []
+        },
+        {
+          "source_name": "emails",
+          "rows_in": 5,
+          "rows_accepted": 5,
+          "rows_dropped": 0,
+          "rows_repaired": 0,
+          "rows_quarantined": 0,
+          "null_counts": {},
+          "issue_counts": {},
+          "examples": [],
+          "excluded_periods": []
+        },
+        {
+          "source_name": "reviews",
+          "rows_in": 520,
+          "rows_accepted": 520,
+          "rows_dropped": 0,
+          "rows_repaired": 0,
+          "rows_quarantined": 0,
+          "null_counts": {},
+          "issue_counts": {},
+          "examples": [],
+          "excluded_periods": []
+        }
+      ],
+      "sources_successful": [
+        "pos",
+        "menu",
+        "traffic",
+        "staff",
+        "inventory",
+        "emails",
+        "reviews"
+      ],
+      "sources_partial": [],
+      "sources_failed": [],
+      "critical_dependencies_missing": [],
+      "total_rows_in": 71245,
+      "total_rows_dropped": 621,
+      "total_rows_repaired": 1592,
+      "warnings": [
+        "5 rows have unknown (blank) units_wasted; treated as unrecorded, not zero",
+        "9 of 13 emails dated after the current analysis period (after 2026-03-30) excluded as not-yet-visible at this point in time -- skipped entirely, no LLM call spent on them: ['2026-04-01_05.txt', '2026-04-20_06.txt', '2026-05-04_07.txt', '2026-05-18_08.txt', '2026-06-02_09.txt', '2026-06-09_10.txt', '2026-06-21_11.txt', '2026-07-06_12.txt', '2026-07-15_13.txt']"
+      ]
+    },
+    "candidate_findings": [
+      {
+        "finding_id": "F-sales-061f7748",
+        "analyst_name": "sales",
+        "title": "Revenue and Transaction Decline",
+        "claim": "Net revenue decreased by -23.54% and transaction volume fell by -23.64% compared to the previous week.",
+        "finding_type": "Performance Decline",
+        "evidence": [
+          {
+            "metric_name": "rev_delta_pct",
+            "value": -23.54,
+            "unit": "percent",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\sales\\initial\\1.json",
+            "result_key": "rev_delta_pct"
+          },
+          {
+            "metric_name": "bask_delta_pct",
+            "value": -23.64,
+            "unit": "percent",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\sales\\initial\\1.json",
+            "result_key": "bask_delta_pct"
+          }
+        ],
+        "source_names": [
+          "pos"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\sales\\initial\\1.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 2145,
+          "created_at": "2026-08-07T11:00:38.533527+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\sales\\initial\\1.json",
+          "media_type": "application/json",
+          "sha256": "10fdf85b5612109569bc8570b9016c5a8dd23be3790628f4b2cde8bbec84fdac",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 1033,
+          "created_at": "2026-08-07T11:00:39.436547+00:00"
+        },
+        "sample_size": 2977,
+        "coverage_notes": [
+          "Includes all valid POS transactions."
+        ],
+        "assumptions": [
+          "Refunds are included in net revenue calculations."
+        ],
+        "confidence": 1.0,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 0,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:00:39.439547+00:00"
+        }
+      },
+      {
+        "finding_id": "F-margin-2152a8e8",
+        "analyst_name": "margin",
+        "title": "Menu Engineering: Star Items",
+        "claim": "The items identified as 'stars' (high popularity, high margin) are CORTADO , Cold Brew, Cortado, Iced Americano, Iced Latte, Iced Spanish Latte, Karak Tea, Mojito Passion, SPANISH LATTE , V60 Filter, \u0633\u0628\u0627\u0646\u064a\u0634 \u0644\u0627\u062a\u064a\u0647, \u0643\u0648\u0631\u062a\u0627\u062f\u0648. These items exceeded the median sales volume of 6 units and the median gross margin rate of 71.11%.",
+        "finding_type": "menu_engineering",
+        "evidence": [
+          {
+            "metric_name": "star_names",
+            "value": "CORTADO , Cold Brew, Cortado, Iced Americano, Iced Latte, Iced Spanish Latte, Karak Tea, Mojito Passion, SPANISH LATTE , V60 Filter, \u0633\u0628\u0627\u0646\u064a\u0634 \u0644\u0627\u062a\u064a\u0647, \u0643\u0648\u0631\u062a\u0627\u062f\u0648",
+            "unit": null,
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\initial\\1.json",
+            "result_key": "star_names"
+          },
+          {
+            "metric_name": "median_units",
+            "value": 6.0,
+            "unit": "units",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\initial\\1.json",
+            "result_key": "median_units"
+          },
+          {
+            "metric_name": "median_margin_pct",
+            "value": 71.11,
+            "unit": "%",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\initial\\1.json",
+            "result_key": "median_margin_pct"
+          }
+        ],
+        "source_names": [
+          "pos",
+          "menu"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\margin\\initial\\1.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 3803,
+          "created_at": "2026-08-07T11:00:39.644549+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\initial\\1.json",
+          "media_type": "application/json",
+          "sha256": "876f513a3aab621c4b5fe89b7c1e1efff0123ea650c0f4e7506db6aa85242535",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 2552,
+          "created_at": "2026-08-07T11:00:40.490546+00:00"
+        },
+        "sample_size": 2179,
+        "coverage_notes": [
+          "Analysis restricted to items with defined unit costs in menu artifact."
+        ],
+        "assumptions": [
+          "Median thresholds calculated based on items present in the current period."
+        ],
+        "confidence": 1.0,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 0,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:00:40.492549+00:00"
+        }
+      },
+      {
+        "finding_id": "F-margin-e1819d9b",
+        "analyst_name": "margin",
+        "title": "Known Waste Cost",
+        "claim": "Total known waste cost for the period was SAR 17916.20.",
+        "finding_type": "waste_analysis",
+        "evidence": [
+          {
+            "metric_name": "total_waste_cost",
+            "value": 17916.199999999997,
+            "unit": "SAR",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "inventory"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\initial\\1.json",
+            "result_key": "total_waste_cost"
+          }
+        ],
+        "source_names": [
+          "inventory"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\margin\\initial\\1.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 3803,
+          "created_at": "2026-08-07T11:00:39.644549+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\initial\\1.json",
+          "media_type": "application/json",
+          "sha256": "876f513a3aab621c4b5fe89b7c1e1efff0123ea650c0f4e7506db6aa85242535",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 2552,
+          "created_at": "2026-08-07T11:00:40.490546+00:00"
+        },
+        "sample_size": 108,
+        "coverage_notes": [
+          "Only includes non-null waste observations from inventory records."
+        ],
+        "assumptions": [
+          "Waste costs are accurately captured in the inventory artifact."
+        ],
+        "confidence": 1.0,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 0,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:00:40.492549+00:00"
+        }
+      },
+      {
+        "finding_id": "F-operations-36038f0e",
+        "analyst_name": "operations",
+        "title": "Operational Efficiency and Waste Divergence",
+        "claim": "During the current period, revenue decreased by -12.89% while known waste costs increased by 62.41% compared to the previous week.",
+        "finding_type": "operational_efficiency",
+        "evidence": [
+          {
+            "metric_name": "rev_delta_pct",
+            "value": -12.89,
+            "unit": "%",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "",
+            "period_end": "",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "inventory"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\initial\\1.json",
+            "result_key": "rev_delta_pct"
+          },
+          {
+            "metric_name": "waste_delta_pct",
+            "value": 62.41,
+            "unit": "%",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "",
+            "period_end": "",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "inventory"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\initial\\1.json",
+            "result_key": "waste_delta_pct"
+          }
+        ],
+        "source_names": [
+          "pos",
+          "inventory"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\operations\\initial\\1.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 2672,
+          "created_at": "2026-08-07T11:00:39.077549+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\initial\\1.json",
+          "media_type": "application/json",
+          "sha256": "c779141734431bc7230c13c6b6218d0e93155ddf53ff5c86d7a1c551c356150c",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 922,
+          "created_at": "2026-08-07T11:00:39.977548+00:00"
+        },
+        "sample_size": 2909,
+        "coverage_notes": [
+          "Analysis covers full business weeks 2026-03-16 to 2026-03-30."
+        ],
+        "assumptions": [
+          "Known waste cost is reported weekly and attributed to the week_starting date."
+        ],
+        "confidence": 0.95,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 0,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:00:39.979547+00:00"
+        }
+      },
+      {
+        "finding_id": "F-customer-51b9f7f9",
+        "analyst_name": "customer",
+        "title": "Customer Sentiment and Topic Distribution",
+        "claim": "During the analysis period, the average customer rating was 4.79 across 19 reviews. The most frequent feedback topic was other, appearing in 14 reviews.",
+        "finding_type": "sentiment_analysis",
+        "evidence": [
+          {
+            "metric_name": "avg_rating",
+            "value": 4.79,
+            "unit": "stars",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "reviews"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\customer\\initial\\1.json",
+            "result_key": "avg_rating"
+          },
+          {
+            "metric_name": "total_reviews",
+            "value": 19,
+            "unit": "count",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "reviews"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\customer\\initial\\1.json",
+            "result_key": "total_reviews"
+          },
+          {
+            "metric_name": "top_topic",
+            "value": "other",
+            "unit": null,
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "reviews"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\customer\\initial\\1.json",
+            "result_key": "top_topic"
+          },
+          {
+            "metric_name": "top_topic_count",
+            "value": 14,
+            "unit": "count",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "reviews"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\customer\\initial\\1.json",
+            "result_key": "top_topic_count"
+          }
+        ],
+        "source_names": [
+          "reviews"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\customer\\initial\\1.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 2720,
+          "created_at": "2026-08-07T11:00:38.600548+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\customer\\initial\\1.json",
+          "media_type": "application/json",
+          "sha256": "5901753f317105f42ca1680664a32fd1a0cf1fc5763539a67a65af1a45e753d7",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 1441,
+          "created_at": "2026-08-07T11:00:39.441550+00:00"
+        },
+        "sample_size": 19,
+        "coverage_notes": [
+          "Analysis covers all reviews submitted between 2026-03-23 and 2026-03-30."
+        ],
+        "assumptions": [
+          "Topic classification is based on keyword presence in review text."
+        ],
+        "confidence": 0.9,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 0,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:00:39.443549+00:00"
+        }
+      },
+      {
+        "finding_id": "F-anomaly-c47e4ce6",
+        "analyst_name": "anomaly",
+        "title": "Significant Waste Cost Anomaly",
+        "claim": "Weekly waste cost for the period starting 2026-03-23 reached 1363.30 SAR, which is statistically anomalous (z-score: 2.68).",
+        "finding_type": "anomaly",
+        "evidence": [
+          {
+            "metric_name": "waste_date",
+            "value": "2026-03-23",
+            "unit": null,
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "inventory"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\anomaly\\initial\\3.json",
+            "result_key": "waste_date"
+          },
+          {
+            "metric_name": "waste_val",
+            "value": 1363.3,
+            "unit": "SAR",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "inventory"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\anomaly\\initial\\3.json",
+            "result_key": "waste_val"
+          },
+          {
+            "metric_name": "waste_z",
+            "value": 2.6766872768154673,
+            "unit": null,
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "inventory"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\anomaly\\initial\\3.json",
+            "result_key": "waste_z"
+          }
+        ],
+        "source_names": [
+          "inventory"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\anomaly\\initial\\3.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 4277,
+          "created_at": "2026-08-07T11:01:30.534678+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\anomaly\\initial\\3.json",
+          "media_type": "application/json",
+          "sha256": "5109469a371b5f68779c668cf55512e211c7b3f983d6410dbc88d7e4eb75b0ed",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 1331,
+          "created_at": "2026-08-07T11:01:31.588678+00:00"
+        },
+        "sample_size": 29,
+        "coverage_notes": [
+          "Analysis covers weekly waste cost."
+        ],
+        "assumptions": [
+          "Baseline calculated from historical weekly waste."
+        ],
+        "confidence": 0.99,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 0,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:01:31.590678+00:00"
+        }
+      },
+      {
+        "finding_id": "F-cross_domain-a6e9fc22",
+        "analyst_name": "cross_domain",
+        "title": "Divergence between basket size and margin rate",
+        "claim": "Sales revenue fell by 23.54% while the median margin rate reached 71.11%. The simultaneous decline in basket size (23.64%) and high margin rate suggests a potential shift toward premium, lower-volume purchasing behavior rather than a broad-based demand collapse. This implies that marketing efforts should focus on retention of high-value segments rather than broad discounting.",
+        "finding_type": "Divergent Trend",
+        "evidence": [
+          {
+            "metric_name": "rev_delta_pct",
+            "value": -23.54,
+            "unit": "percent",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\sales\\initial\\1.json",
+            "result_key": "rev_delta_pct"
+          },
+          {
+            "metric_name": "bask_delta_pct",
+            "value": -23.64,
+            "unit": "percent",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\sales\\initial\\1.json",
+            "result_key": "bask_delta_pct"
+          },
+          {
+            "metric_name": "median_margin_pct",
+            "value": 71.11,
+            "unit": "%",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\initial\\1.json",
+            "result_key": "median_margin_pct"
+          }
+        ],
+        "source_names": [
+          "menu",
+          "pos"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\cross_domain\\synthesis\\1.json",
+          "media_type": "application/json",
+          "sha256": "bffa5e3135feb89fa3ca783ab58e3c31a061771efd3dc2789dec18b812036bb1",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 1516,
+          "created_at": "2026-08-07T11:01:34.163678+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\cross_domain\\synthesis\\1.json",
+          "media_type": "application/json",
+          "sha256": "08ce73b117aba3a527f42ff91b84c019adf1c2601a565154b2c1095e82c2919a",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 1447,
+          "created_at": "2026-08-07T11:01:34.154678+00:00"
+        },
+        "sample_size": null,
+        "coverage_notes": [
+          "Relates sales performance metrics with margin efficiency metrics."
+        ],
+        "assumptions": [
+          "Co-movement within a single week is weak evidence of mechanism.",
+          "The median margin rate is representative of the current product mix."
+        ],
+        "confidence": 0.85,
+        "business_impact_score": 0.7,
+        "actionability_score": 0.6,
+        "revision_count": 0,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:01:34.163678+00:00",
+          "cited_pool_keys": [
+            "sales__rev_delta_pct",
+            "sales__bask_delta_pct",
+            "margin__median_margin_pct"
+          ],
+          "origin_analysts": [
+            "margin",
+            "sales"
+          ]
+        }
+      },
+      {
+        "finding_id": "F-margin-60fd0391",
+        "analyst_name": "margin",
+        "title": "Menu Engineering: Star Items",
+        "claim": "The items identified as 'stars' (high popularity and high margin) are CORTADO , Cold Brew, Cortado, FLAT WHITE , ICED SPANISH LATTE , Iced Americano, Iced Latte, Iced Spanish Latte, Karak Tea, Mojito Passion, V60 FILTER , V60 Filter, \u0633\u0628\u0627\u0646\u064a\u0634 \u0644\u0627\u062a\u064a\u0647, \u0643\u0648\u0631\u062a\u0627\u062f\u0648. These items achieved a median unit sales threshold of 6 and a median margin rate of 71.08%.",
+        "finding_type": "menu_engineering",
+        "evidence": [
+          {
+            "metric_name": "star_items_list",
+            "value": "CORTADO , Cold Brew, Cortado, FLAT WHITE , ICED SPANISH LATTE , Iced Americano, Iced Latte, Iced Spanish Latte, Karak Tea, Mojito Passion, V60 FILTER , V60 Filter, \u0633\u0628\u0627\u0646\u064a\u0634 \u0644\u0627\u062a\u064a\u0647, \u0643\u0648\u0631\u062a\u0627\u062f\u0648",
+            "unit": null,
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-1\\1.json",
+            "result_key": "star_items_list"
+          },
+          {
+            "metric_name": "median_units",
+            "value": 6.0,
+            "unit": "units",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-1\\1.json",
+            "result_key": "median_units"
+          },
+          {
+            "metric_name": "median_margin",
+            "value": 71.08187134502924,
+            "unit": "percent",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-1\\1.json",
+            "result_key": "median_margin"
+          }
+        ],
+        "source_names": [
+          "pos",
+          "menu"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\margin\\revision-1\\1.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 4234,
+          "created_at": "2026-08-07T11:02:25.517721+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-1\\1.json",
+          "media_type": "application/json",
+          "sha256": "7cc2bb302e41090a46ac5dfb98da3a3cae3c74ebd35336a9216298247ff34a75",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 2713,
+          "created_at": "2026-08-07T11:02:26.356690+00:00"
+        },
+        "sample_size": 1346,
+        "coverage_notes": [
+          "Analysis restricted to non-refund POS transactions."
+        ],
+        "assumptions": [
+          "Unit costs derived from menu master data."
+        ],
+        "confidence": 1.0,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 1,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:02:26.358690+00:00"
+        }
+      },
+      {
+        "finding_id": "F-margin-e4a29681",
+        "analyst_name": "margin",
+        "title": "Gross Profit Performance",
+        "claim": "Total gross profit for the period was 31516.75 SAR, representing a margin rate of 69.88%.",
+        "finding_type": "financial_performance",
+        "evidence": [
+          {
+            "metric_name": "gross_profit",
+            "value": 31516.750000000004,
+            "unit": "SAR",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-1\\1.json",
+            "result_key": "gross_profit"
+          },
+          {
+            "metric_name": "margin_rate",
+            "value": 69.87565418183068,
+            "unit": "percent",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-1\\1.json",
+            "result_key": "margin_rate"
+          }
+        ],
+        "source_names": [
+          "pos",
+          "menu"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\margin\\revision-1\\1.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 4234,
+          "created_at": "2026-08-07T11:02:25.517721+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-1\\1.json",
+          "media_type": "application/json",
+          "sha256": "7cc2bb302e41090a46ac5dfb98da3a3cae3c74ebd35336a9216298247ff34a75",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 2713,
+          "created_at": "2026-08-07T11:02:26.356690+00:00"
+        },
+        "sample_size": 1346,
+        "coverage_notes": [
+          "Calculated using POS revenue and menu unit costs."
+        ],
+        "assumptions": [
+          "No waste costs deducted from gross profit calculation."
+        ],
+        "confidence": 1.0,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 1,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:02:26.358690+00:00"
+        }
+      },
+      {
+        "finding_id": "F-operations-b7900127",
+        "analyst_name": "operations",
+        "title": "Operational Efficiency Divergence",
+        "claim": "Daily revenue decreased by -14.56% while daily waste costs rose by 62.41% and daily staff hours increased by 14.05%.",
+        "finding_type": "operational_efficiency",
+        "evidence": [
+          {
+            "metric_name": "rev_delta_pct",
+            "value": -14.56,
+            "unit": "%",
+            "numerator": 6486.614285714286,
+            "denominator": 7591.692857142858,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "inventory",
+              "staff"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\revision-1\\2.json",
+            "result_key": "rev_delta_pct"
+          },
+          {
+            "metric_name": "waste_delta_pct",
+            "value": 62.41,
+            "unit": "%",
+            "numerator": 194.7571428571429,
+            "denominator": 119.91428571428571,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "inventory",
+              "staff"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\revision-1\\2.json",
+            "result_key": "waste_delta_pct"
+          },
+          {
+            "metric_name": "hrs_delta_pct",
+            "value": 14.05,
+            "unit": "%",
+            "numerator": 39.42857142857143,
+            "denominator": 34.57142857142857,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "inventory",
+              "staff"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\revision-1\\2.json",
+            "result_key": "hrs_delta_pct"
+          }
+        ],
+        "source_names": [
+          "pos",
+          "inventory",
+          "staff"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\operations\\revision-1\\2.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 3475,
+          "created_at": "2026-08-07T11:02:30.299303+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\revision-1\\2.json",
+          "media_type": "application/json",
+          "sha256": "09e4a51a791137cbaae506a7c97dcb53c4e5bc76163ddc812d8a004c54870bb9",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 1598,
+          "created_at": "2026-08-07T11:02:31.344309+00:00"
+        },
+        "sample_size": 2919,
+        "coverage_notes": [
+          "Calculated using daily averages to account for sensor downtime."
+        ],
+        "assumptions": [
+          "Waste and labour costs are attributed to the week of record."
+        ],
+        "confidence": 0.95,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 1,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:02:31.346282+00:00"
+        }
+      },
+      {
+        "finding_id": "F-margin-675553d5",
+        "analyst_name": "margin",
+        "title": "Menu Engineering: Star Items",
+        "claim": "The items identified as 'stars' (high popularity, high margin) are V60 Filter, Karak Tea, Iced Spanish Latte. These items achieved a median margin rate of 70.93% and median unit sales of 133.",
+        "finding_type": "menu_engineering",
+        "evidence": [
+          {
+            "metric_name": "star_names",
+            "value": "V60 Filter, Karak Tea, Iced Spanish Latte",
+            "unit": null,
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-2\\1.json",
+            "result_key": "star_names"
+          },
+          {
+            "metric_name": "median_margin_rate_pct",
+            "value": 70.93,
+            "unit": "%",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-2\\1.json",
+            "result_key": "median_margin_rate_pct"
+          },
+          {
+            "metric_name": "median_units",
+            "value": 133,
+            "unit": "units",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-2\\1.json",
+            "result_key": "median_units"
+          }
+        ],
+        "source_names": [
+          "pos",
+          "menu"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\margin\\revision-2\\1.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 4306,
+          "created_at": "2026-08-07T11:03:25.616783+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-2\\1.json",
+          "media_type": "application/json",
+          "sha256": "30df01190576b65c893a92e37d47fd8790170c4241aa3e65beca9fd39378a819",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 2528,
+          "created_at": "2026-08-07T11:03:26.475314+00:00"
+        },
+        "sample_size": 1346,
+        "coverage_notes": [
+          "Analysis covers all POS transactions in the period."
+        ],
+        "assumptions": [
+          "Median thresholds calculated based on items sold in the current period."
+        ],
+        "confidence": 1.0,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 2,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:03:26.477315+00:00"
+        }
+      },
+      {
+        "finding_id": "F-margin-3c61cca2",
+        "analyst_name": "margin",
+        "title": "Gross Profit Performance",
+        "claim": "Total gross profit for the period was 31516.75 SAR, representing a margin rate of 69.88%.",
+        "finding_type": "financial_performance",
+        "evidence": [
+          {
+            "metric_name": "gross_profit",
+            "value": 31516.75,
+            "unit": "SAR",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-2\\1.json",
+            "result_key": "gross_profit"
+          },
+          {
+            "metric_name": "margin_rate_pct",
+            "value": 69.88,
+            "unit": "%",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-2\\1.json",
+            "result_key": "margin_rate_pct"
+          }
+        ],
+        "source_names": [
+          "pos",
+          "menu"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\margin\\revision-2\\1.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 4306,
+          "created_at": "2026-08-07T11:03:25.616783+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-2\\1.json",
+          "media_type": "application/json",
+          "sha256": "30df01190576b65c893a92e37d47fd8790170c4241aa3e65beca9fd39378a819",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 2528,
+          "created_at": "2026-08-07T11:03:26.475314+00:00"
+        },
+        "sample_size": 1346,
+        "coverage_notes": [
+          "Calculated using POS line items and menu unit costs."
+        ],
+        "assumptions": [
+          "Unit costs are static as per menu artifact."
+        ],
+        "confidence": 1.0,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 2,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:03:26.478315+00:00"
+        }
+      },
+      {
+        "finding_id": "F-operations-a881968d",
+        "analyst_name": "operations",
+        "title": "Operational Efficiency Divergence",
+        "claim": "Daily revenue decreased by -14.56% while daily waste costs rose by 62.41% and daily staff hours increased by 14.05%.",
+        "finding_type": "operational_efficiency",
+        "evidence": [
+          {
+            "metric_name": "rev_delta_pct",
+            "value": -14.56,
+            "unit": "%",
+            "numerator": 6486.614285714286,
+            "denominator": 7591.692857142858,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "inventory",
+              "staff"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\revision-2\\2.json",
+            "result_key": "rev_delta_pct"
+          },
+          {
+            "metric_name": "waste_delta_pct",
+            "value": 62.41,
+            "unit": "%",
+            "numerator": 194.7571428571429,
+            "denominator": 119.91428571428571,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "inventory",
+              "staff"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\revision-2\\2.json",
+            "result_key": "waste_delta_pct"
+          },
+          {
+            "metric_name": "hrs_delta_pct",
+            "value": 14.05,
+            "unit": "%",
+            "numerator": 39.42857142857143,
+            "denominator": 34.57142857142857,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "inventory",
+              "staff"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\revision-2\\2.json",
+            "result_key": "hrs_delta_pct"
+          }
+        ],
+        "source_names": [
+          "pos",
+          "inventory",
+          "staff"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\operations\\revision-2\\2.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 3579,
+          "created_at": "2026-08-07T11:03:57.356174+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\revision-2\\2.json",
+          "media_type": "application/json",
+          "sha256": "09e4a51a791137cbaae506a7c97dcb53c4e5bc76163ddc812d8a004c54870bb9",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 1598,
+          "created_at": "2026-08-07T11:03:58.425175+00:00"
+        },
+        "sample_size": 2919,
+        "coverage_notes": [
+          "Calculated using daily averages to account for sensor downtime."
+        ],
+        "assumptions": [
+          "Waste and labour costs are attributed to the week of record."
+        ],
+        "confidence": 0.95,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 2,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:03:58.427175+00:00"
+        }
+      }
+    ],
+    "critic_results": {
+      "approved_findings": [
+        "F-sales-061f7748",
+        "F-margin-e1819d9b",
+        "F-customer-51b9f7f9",
+        "F-anomaly-c47e4ce6",
+        "F-margin-e4a29681",
+        "F-operations-b7900127"
+      ],
+      "rejected_findings": [
+        "F-margin-2152a8e8",
+        "F-operations-36038f0e",
+        "F-cross_domain-a6e9fc22",
+        "F-margin-60fd0391",
+        "F-margin-675553d5",
+        "F-margin-3c61cca2",
+        "F-operations-a881968d"
+      ],
+      "revision_requests": [],
+      "removed_after_cap": [
+        "F-margin-2152a8e8",
+        "F-operations-36038f0e",
+        "F-margin-60fd0391",
+        "F-margin-675553d5"
+      ],
+      "total_rejections": 7,
+      "notes": [
+        "F-margin-2152a8e8 rejected after exhausting 2 revision rounds: claim states number(s) ['60'] that do not match any evidence value on this finding -- the prose claim must restate what the executed code actually computed",
+        "F-operations-36038f0e rejected after exhausting 2 revision rounds: metric 'rev_delta_pct' missing period bounds; metric 'waste_delta_pct' missing period bounds",
+        "F-cross_domain-a6e9fc22 (cross_domain) rejected without revision (stage has no revision path): claim states number(s) ['23.54', '23.64'] that do not match any evidence value on this finding -- the prose claim must restate what the executed code actually computed",
+        "F-margin-60fd0391 rejected after exhausting 2 revision rounds: claim states number(s) ['60', '60'] that do not match any evidence value on this finding -- the prose claim must restate what the executed code actually computed",
+        "F-margin-675553d5 rejected after exhausting 2 revision rounds: claim states number(s) ['60'] that do not match any evidence value on this finding -- the prose claim must restate what the executed code actually computed",
+        "F-margin-3c61cca2 rejected as duplicate of F-margin-e4a29681",
+        "F-operations-a881968d rejected as duplicate of F-operations-b7900127"
+      ]
+    },
+    "critic_round": 3,
+    "final_findings": [
+      {
+        "finding_id": "F-operations-b7900127",
+        "analyst_name": "operations",
+        "title": "Operational Efficiency Divergence",
+        "claim": "Daily revenue decreased by -14.56% while daily waste costs rose by 62.41% and daily staff hours increased by 14.05%.",
+        "finding_type": "operational_efficiency",
+        "evidence": [
+          {
+            "metric_name": "rev_delta_pct",
+            "value": -14.56,
+            "unit": "%",
+            "numerator": 6486.614285714286,
+            "denominator": 7591.692857142858,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "inventory",
+              "staff"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\revision-1\\2.json",
+            "result_key": "rev_delta_pct"
+          },
+          {
+            "metric_name": "waste_delta_pct",
+            "value": 62.41,
+            "unit": "%",
+            "numerator": 194.7571428571429,
+            "denominator": 119.91428571428571,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "inventory",
+              "staff"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\revision-1\\2.json",
+            "result_key": "waste_delta_pct"
+          },
+          {
+            "metric_name": "hrs_delta_pct",
+            "value": 14.05,
+            "unit": "%",
+            "numerator": 39.42857142857143,
+            "denominator": 34.57142857142857,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "inventory",
+              "staff"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\revision-1\\2.json",
+            "result_key": "hrs_delta_pct"
+          }
+        ],
+        "source_names": [
+          "pos",
+          "inventory",
+          "staff"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\operations\\revision-1\\2.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 3475,
+          "created_at": "2026-08-07T11:02:30.299303+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\operations\\revision-1\\2.json",
+          "media_type": "application/json",
+          "sha256": "09e4a51a791137cbaae506a7c97dcb53c4e5bc76163ddc812d8a004c54870bb9",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 1598,
+          "created_at": "2026-08-07T11:02:31.344309+00:00"
+        },
+        "sample_size": 2919,
+        "coverage_notes": [
+          "Calculated using daily averages to account for sensor downtime."
+        ],
+        "assumptions": [
+          "Waste and labour costs are attributed to the week of record."
+        ],
+        "confidence": 0.95,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 1,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:02:31.346282+00:00"
+        }
+      },
+      {
+        "finding_id": "F-anomaly-c47e4ce6",
+        "analyst_name": "anomaly",
+        "title": "Significant Waste Cost Anomaly",
+        "claim": "Weekly waste cost for the period starting 2026-03-23 reached 1363.30 SAR, which is statistically anomalous (z-score: 2.68).",
+        "finding_type": "anomaly",
+        "evidence": [
+          {
+            "metric_name": "waste_date",
+            "value": "2026-03-23",
+            "unit": null,
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "inventory"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\anomaly\\initial\\3.json",
+            "result_key": "waste_date"
+          },
+          {
+            "metric_name": "waste_val",
+            "value": 1363.3,
+            "unit": "SAR",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "inventory"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\anomaly\\initial\\3.json",
+            "result_key": "waste_val"
+          },
+          {
+            "metric_name": "waste_z",
+            "value": 2.6766872768154673,
+            "unit": null,
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "inventory"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\anomaly\\initial\\3.json",
+            "result_key": "waste_z"
+          }
+        ],
+        "source_names": [
+          "inventory"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\anomaly\\initial\\3.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 4277,
+          "created_at": "2026-08-07T11:01:30.534678+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\anomaly\\initial\\3.json",
+          "media_type": "application/json",
+          "sha256": "5109469a371b5f68779c668cf55512e211c7b3f983d6410dbc88d7e4eb75b0ed",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 1331,
+          "created_at": "2026-08-07T11:01:31.588678+00:00"
+        },
+        "sample_size": 29,
+        "coverage_notes": [
+          "Analysis covers weekly waste cost."
+        ],
+        "assumptions": [
+          "Baseline calculated from historical weekly waste."
+        ],
+        "confidence": 0.99,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 0,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:01:31.590678+00:00"
+        }
+      },
+      {
+        "finding_id": "F-customer-51b9f7f9",
+        "analyst_name": "customer",
+        "title": "Customer Sentiment and Topic Distribution",
+        "claim": "During the analysis period, the average customer rating was 4.79 across 19 reviews. The most frequent feedback topic was other, appearing in 14 reviews.",
+        "finding_type": "sentiment_analysis",
+        "evidence": [
+          {
+            "metric_name": "avg_rating",
+            "value": 4.79,
+            "unit": "stars",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "reviews"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\customer\\initial\\1.json",
+            "result_key": "avg_rating"
+          },
+          {
+            "metric_name": "total_reviews",
+            "value": 19,
+            "unit": "count",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "reviews"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\customer\\initial\\1.json",
+            "result_key": "total_reviews"
+          },
+          {
+            "metric_name": "top_topic",
+            "value": "other",
+            "unit": null,
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "reviews"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\customer\\initial\\1.json",
+            "result_key": "top_topic"
+          },
+          {
+            "metric_name": "top_topic_count",
+            "value": 14,
+            "unit": "count",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "reviews"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\customer\\initial\\1.json",
+            "result_key": "top_topic_count"
+          }
+        ],
+        "source_names": [
+          "reviews"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\customer\\initial\\1.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 2720,
+          "created_at": "2026-08-07T11:00:38.600548+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\customer\\initial\\1.json",
+          "media_type": "application/json",
+          "sha256": "5901753f317105f42ca1680664a32fd1a0cf1fc5763539a67a65af1a45e753d7",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 1441,
+          "created_at": "2026-08-07T11:00:39.441550+00:00"
+        },
+        "sample_size": 19,
+        "coverage_notes": [
+          "Analysis covers all reviews submitted between 2026-03-23 and 2026-03-30."
+        ],
+        "assumptions": [
+          "Topic classification is based on keyword presence in review text."
+        ],
+        "confidence": 0.9,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 0,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:00:39.443549+00:00"
+        }
+      },
+      {
+        "finding_id": "F-margin-e4a29681",
+        "analyst_name": "margin",
+        "title": "Gross Profit Performance",
+        "claim": "Total gross profit for the period was 31516.75 SAR, representing a margin rate of 69.88%.",
+        "finding_type": "financial_performance",
+        "evidence": [
+          {
+            "metric_name": "gross_profit",
+            "value": 31516.750000000004,
+            "unit": "SAR",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-1\\1.json",
+            "result_key": "gross_profit"
+          },
+          {
+            "metric_name": "margin_rate",
+            "value": 69.87565418183068,
+            "unit": "percent",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23",
+            "period_end": "2026-03-30",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos",
+              "menu"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-1\\1.json",
+            "result_key": "margin_rate"
+          }
+        ],
+        "source_names": [
+          "pos",
+          "menu"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\margin\\revision-1\\1.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 4234,
+          "created_at": "2026-08-07T11:02:25.517721+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\margin\\revision-1\\1.json",
+          "media_type": "application/json",
+          "sha256": "7cc2bb302e41090a46ac5dfb98da3a3cae3c74ebd35336a9216298247ff34a75",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 2713,
+          "created_at": "2026-08-07T11:02:26.356690+00:00"
+        },
+        "sample_size": 1346,
+        "coverage_notes": [
+          "Calculated using POS revenue and menu unit costs."
+        ],
+        "assumptions": [
+          "No waste costs deducted from gross profit calculation."
+        ],
+        "confidence": 1.0,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 1,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:02:26.358690+00:00"
+        }
+      },
+      {
+        "finding_id": "F-sales-061f7748",
+        "analyst_name": "sales",
+        "title": "Revenue and Transaction Decline",
+        "claim": "Net revenue decreased by -23.54% and transaction volume fell by -23.64% compared to the previous week.",
+        "finding_type": "Performance Decline",
+        "evidence": [
+          {
+            "metric_name": "rev_delta_pct",
+            "value": -23.54,
+            "unit": "percent",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\sales\\initial\\1.json",
+            "result_key": "rev_delta_pct"
+          },
+          {
+            "metric_name": "bask_delta_pct",
+            "value": -23.64,
+            "unit": "percent",
+            "numerator": null,
+            "denominator": null,
+            "period_start": "2026-03-23T00:00:00+03:00",
+            "period_end": "2026-03-30T00:00:00+03:00",
+            "comparison_period_start": null,
+            "comparison_period_end": null,
+            "source_names": [
+              "pos"
+            ],
+            "result_path": "outputs\\artifacts\\studio_25a20449\\results\\sales\\initial\\1.json",
+            "result_key": "bask_delta_pct"
+          }
+        ],
+        "source_names": [
+          "pos"
+        ],
+        "code_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\code\\sales\\initial\\1.py",
+          "media_type": "text/x-python",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 2145,
+          "created_at": "2026-08-07T11:00:38.533527+00:00"
+        },
+        "result_artifact": {
+          "path": "outputs\\artifacts\\studio_25a20449\\results\\sales\\initial\\1.json",
+          "media_type": "application/json",
+          "sha256": "10fdf85b5612109569bc8570b9016c5a8dd23be3790628f4b2cde8bbec84fdac",
+          "schema_version": "1.0",
+          "row_count": null,
+          "byte_size": 1033,
+          "created_at": "2026-08-07T11:00:39.436547+00:00"
+        },
+        "sample_size": 2977,
+        "coverage_notes": [
+          "Includes all valid POS transactions."
+        ],
+        "assumptions": [
+          "Refunds are included in net revenue calculations."
+        ],
+        "confidence": 1.0,
+        "business_impact_score": 0.5,
+        "actionability_score": 0.5,
+        "revision_count": 0,
+        "execution_metadata": {
+          "generated_at": "2026-08-07T11:00:39.439547+00:00"
+        }
+      }
+    ],
+    "context_bundle": {
+      "recommendation_period_start": "2026-03-30T00:00:00+03:00",
+      "recommendation_period_end": "2026-04-06T00:00:00+03:00",
+      "search_queries": [
+        "events near Saihat, Qatif, Eastern Province during 2026-03-30 to 2026-04-06",
+        "weather Saihat 2026-03-30 to 2026-04-06",
+        "seasonal events near Saihat, Qatif, Eastern Province during 2026-03-30 to 2026-04-06"
+      ],
+      "evidence": [
+        {
+          "context_id": "prayer-2026-03-30",
+          "kind": "prayer",
+          "title": "Prayer times 2026-03-30",
+          "date_start": "2026-03-30",
+          "date_end": "2026-03-30",
+          "location": "Saihat",
+          "source": "deterministic:umm_al_qura",
+          "source_url_or_artifact": null,
+          "retrieved_at": "2026-08-07T11:05:00.395631+00:00",
+          "summary": "Fajr 04:13, Dhuhr 11:44, Asr 15:13, Maghrib 17:55, Isha 19:25"
+        },
+        {
+          "context_id": "prayer-2026-03-31",
+          "kind": "prayer",
+          "title": "Prayer times 2026-03-31",
+          "date_start": "2026-03-31",
+          "date_end": "2026-03-31",
+          "location": "Saihat",
+          "source": "deterministic:umm_al_qura",
+          "source_url_or_artifact": null,
+          "retrieved_at": "2026-08-07T11:05:00.395631+00:00",
+          "summary": "Fajr 04:12, Dhuhr 11:44, Asr 15:13, Maghrib 17:56, Isha 19:26"
+        },
+        {
+          "context_id": "prayer-2026-04-01",
+          "kind": "prayer",
+          "title": "Prayer times 2026-04-01",
+          "date_start": "2026-04-01",
+          "date_end": "2026-04-01",
+          "location": "Saihat",
+          "source": "deterministic:umm_al_qura",
+          "source_url_or_artifact": null,
+          "retrieved_at": "2026-08-07T11:05:00.395631+00:00",
+          "summary": "Fajr 04:11, Dhuhr 11:44, Asr 15:13, Maghrib 17:56, Isha 19:26"
+        },
+        {
+          "context_id": "prayer-2026-04-02",
+          "kind": "prayer",
+          "title": "Prayer times 2026-04-02",
+          "date_start": "2026-04-02",
+          "date_end": "2026-04-02",
+          "location": "Saihat",
+          "source": "deterministic:umm_al_qura",
+          "source_url_or_artifact": null,
+          "retrieved_at": "2026-08-07T11:05:00.395631+00:00",
+          "summary": "Fajr 04:10, Dhuhr 11:44, Asr 15:13, Maghrib 17:57, Isha 19:27"
+        },
+        {
+          "context_id": "prayer-2026-04-03",
+          "kind": "prayer",
+          "title": "Prayer times 2026-04-03",
+          "date_start": "2026-04-03",
+          "date_end": "2026-04-03",
+          "location": "Saihat",
+          "source": "deterministic:umm_al_qura",
+          "source_url_or_artifact": null,
+          "retrieved_at": "2026-08-07T11:05:00.395631+00:00",
+          "summary": "Fajr 04:09, Dhuhr 11:43, Asr 15:13, Maghrib 17:57, Isha 19:27"
+        },
+        {
+          "context_id": "prayer-2026-04-04",
+          "kind": "prayer",
+          "title": "Prayer times 2026-04-04",
+          "date_start": "2026-04-04",
+          "date_end": "2026-04-04",
+          "location": "Saihat",
+          "source": "deterministic:umm_al_qura",
+          "source_url_or_artifact": null,
+          "retrieved_at": "2026-08-07T11:05:00.395631+00:00",
+          "summary": "Fajr 04:08, Dhuhr 11:43, Asr 15:13, Maghrib 17:58, Isha 19:28"
+        },
+        {
+          "context_id": "prayer-2026-04-05",
+          "kind": "prayer",
+          "title": "Prayer times 2026-04-05",
+          "date_start": "2026-04-05",
+          "date_end": "2026-04-05",
+          "location": "Saihat",
+          "source": "deterministic:umm_al_qura",
+          "source_url_or_artifact": null,
+          "retrieved_at": "2026-08-07T11:05:00.395631+00:00",
+          "summary": "Fajr 04:06, Dhuhr 11:43, Asr 15:13, Maghrib 17:58, Isha 19:28"
+        },
+        {
+          "context_id": "email-event-24c21519",
+          "kind": "email_event",
+          "title": "Ramadan night market \u2014 vendor slots",
+          "date_start": "20:00",
+          "date_end": "01:00",
+          "location": "Saihat corniche",
+          "source": "data\\qahwa_saihat\\supplier_emails\\2026-03-02_04.txt",
+          "source_url_or_artifact": "data\\qahwa_saihat\\supplier_emails\\2026-03-02_04.txt",
+          "retrieved_at": "2026-08-07T11:05:00.402658+00:00",
+          "summary": "The Saihat corniche night market runs nightly 20:00-01:00 through Eid. Food and beverage vendor slots remain available."
+        },
+        {
+          "context_id": "tavily-9220e350",
+          "kind": "event",
+          "title": "Saudi Arabia Events Calendar 2026 \u2014 Month-by-Month Guide",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://houseofsaud.com/travel/saudi-arabia-events-2026",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "The Taif Rose Festival celebrates the annual harvest of millions of Taif Damascus roses, which bloom between March and April in the cool highland climate of Saudi Arabia\u2019s \u201cCity of Roses.\u201d The festival runs for approximately 45 days and includes the Rose Market, scenic Rose Mountain tours, parades, live performances, flower displays, theatre shows, and workshops on traditional rose oil distillation. Taif rose oil is among the most expensive essential oils in the world, and the city has been [..."
+        },
+        {
+          "context_id": "tavily-d97f7234",
+          "kind": "event",
+          "title": "Qatif Flower Festival 2026",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://www.instagram.com/popular/qatif-flower-festival-2026",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "\u00b7 1 Million Flowers in a giant bouquet\n\u00b7 150+ Booths & rare bird garden\n\u00b7 Scenic seaside location\n\u00b7 Unique floral displays & family fun\n\nVisit now for the ultimate spring experience\n\n#instagram #fyp #ksa #reel #dammam\n\n3,450 [...] \u2068\t\ud83d\udccdTiflet City \ud83c\uddf2\ud83c\udde6\u0645\u0646 \u0645\u0647\u0631\u062c\u0627\u0646 \u062a\u064a\u0641\u0644\u062a \u0627\u0644\u0646\u0633\u062e\u0629 5\u2069\n\n172K\n\n\u2068 \ud83d\udccdTiflet City \ud83c\uddf2\ud83c\udde6\u0645\u0646 \u0645\u0647\u0631\u062c\u0627\u0646 \u062a\u064a\u0641\u0644\u062a \u0627\u0644\u0646\u0633\u062e\u0629 5\u2069\n\nThe Qatif Municipality has officially announced the launch of the 5th Flower Festival starting from 13th February 2026\n\n\u2022 Location: Al-Mishari Corniche, Qatif.\n\u2022 Opening Hours"
+        },
+        {
+          "context_id": "tavily-a816b04f",
+          "kind": "event",
+          "title": "18 Saudi events in 2026 you need to mark in your calendar",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://www.timeoutjeddah.com/features-food-drink/saudi-events-in-2026",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "What: Every spring, Taif bursts into bloom with the Taif Rose Festival \u2013 a fragrant celebration of the city\u2019s famous rose harvest. Usually kicking off in March and lasting until April and running for around 45 days, the festival transforms the city into a sea of colour and scent with parades, live performances and dazzling flower displays. You can stroll through the bustling Rose Market, explore the scenic Rose Mountain and dive into cultural fun with theatre shows, workshops and design [...] On"
+        },
+        {
+          "context_id": "tavily-00c4471e",
+          "kind": "event",
+          "title": "THE 15 BEST Middle East Cultural Events (2026)",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://www.tripadvisor.com/Attractions-g21-Activities-c62-t282-Middle_East.html",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "### 7. Narcis Persian Night [...] ### 1. Janadriyah Festival [...] ### 6. Sheikh Zayed Festival"
+        },
+        {
+          "context_id": "tavily-0a37ece1",
+          "kind": "event",
+          "title": "The best Eastern Province Saudi Arabia Outdoor activities 2026",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://www.getyourguide.com/eastern-province-saudi-arabia-l201284/outdoor-activities-tc1093",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "Image 2: image Top pick Eastern Province Al asfar Lake Jeep Safari 3 hours \u2022 Private group From$100Image 3: image New activity Dammam Camel Farm Visit with Desert Drive and Dune Bashing 3 hours \u2022 Private group From$306 per group up to 4\n\n## Explore more of Saudi Arabia [...] available \u2022 Pickup available 4.7 (1,151) From$40Image 19: image Al-Ula Hegra, Dadan, and Ikmah Highlights Tour 6 hours \u2022 Pickup available 4.6 (2) From$99 [...] image New activity Riyadh Guided Night Tour with Skyline View & "
+        },
+        {
+          "context_id": "tavily-eeb08639",
+          "kind": "event",
+          "title": "Weather in Saihat",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://www.weatherapi.com/",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "{'location': {'name': 'Saihat', 'region': 'Ash Sharqiyah', 'country': 'Saudi Arabia', 'lat': 26.4794, 'lon': 50.045, 'tz_id': 'Asia/Riyadh', 'localtime_epoch': 1786100696, 'localtime': '2026-08-07 14:04'}, 'current': {'last_updated_epoch': 1786100400, 'last_updated': '2026-08-07 14:00', 'temp_c': 39.8, 'temp_f': 103.6, 'is_day': 1, 'condition': {'text': 'Sunny', 'icon': '//cdn.weatherapi.com/weather/64x64/day/113.png', 'code': 1000}, 'wind_mph': 12.5, 'wind_kph': 20.2, 'wind_degree': 26, 'wind_d"
+        },
+        {
+          "context_id": "tavily-97572349",
+          "kind": "event",
+          "title": "Saihat Saudi Arabia, 14 days Weather forecast, Radar & Photos",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://weawow.com/c9195413",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "4.8+      5,000,000+ Download  \n\n No Ads\n No tracking\n Beautiful Forecast\n Widgets\n Powerful Customize\n\n\u00a9 2026 Weawow      English\n\nSign up | Log in\n\n1. Weawow\n2. Discover\n3. Marketplace\n4. Cart\n5. Units\n6. Theme Color\n7. Weather Icon\n8. Weather Provider\n9. About Weawow\n10. Privacy Policy\n11. Terms of use\n12. Cookie Policy\n13. Help\n14. Contact\n15. \u00a9 2026 Weawow\n\n### Units\n\n1. Temperature\n\n   \u00b0C\u00b0F\n2. Rain, Snow\n\n   mm, cmin\n3. Distance\n\n   kmmi\n4. Wind speed\n\n   m/skm/hmphknotsBf\n5. Pressure [..."
+        },
+        {
+          "context_id": "tavily-c8d44266",
+          "kind": "event",
+          "title": "Weather - Sayhat - 14-Day Forecast & Rain",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://www.ventusky.com/sayhat",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "\u00b0F 0 inch 0 %  W  2 mph | clear sky 97 \u00b0F 0 inch 0 %  W  4 mph | clear sky 100 \u00b0F 0 inch 0 %  NW  5 mph | clear sky 106 \u00b0F 0 inch 0 %  NW  3 mph | clear sky 109 \u00b0F 0 inch 0 %  N  2 mph | clear sky 113 \u00b0F 0 inch 0 %  NE  4 mph | clear sky 111 \u00b0F 0 inch 0 %  NE  10 mph | clear sky 108 \u00b0F 0 inch 0 %  E  11 mph | clear sky 109 \u00b0F 0 inch 0 %  E  8 mph | clear sky 109 \u00b0F 0 inch 0 %  E  8 mph | clear sky 106 \u00b0F 0 inch 0 %  E  8 mph | clear sky 102 \u00b0F 0 inch 0 %  E  7 mph | clear sky 99 \u00b0F 0 inch 0 % [."
+        },
+        {
+          "context_id": "tavily-f61c815e",
+          "kind": "event",
+          "title": "Sayh\u0101t Climate, Weather By Month, Average Temperature (Saudi Arabia) - Weather Spark",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://weatherspark.com/y/104948/Average-Weather-in-Sayh%C4%81t-Saudi-Arabia-Year-Round",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "| Jul | Aug | Sep | Oct | Nov | Dec |  ---  ---  ---  ---  ---  ---  | Daylight | 10.7h | 11.3h | 12.0h | 12.8h | 13.5h | 13.8h | 13.6h | 13.0h | 12.3h | 11.5h | 10.8h | 10.5h | |  The earliest sunrise is at 4:46 AM on June 10, and the latest sunrise is 1 hour, 43 minutes later at 6:29 AM on January 12. The earliest sunset is at 4:46 PM on November 30, and the latest sunset is 1 hour, 50 minutes later at 6:36 PM on July 2.  Daylight saving time (DST) is not observed in Sayh\u0101t during 2026. [...] "
+        },
+        {
+          "context_id": "tavily-72d093aa",
+          "kind": "event",
+          "title": "Weather Forecast for Sihat , Saudi Arabia",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://www.arabiaweather.com/en/weather-forecast/sihat/201033213/sa",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "37\u00b0\n\nMorning\n\nScattered Clouds\n\nScattered Clouds\n\nWestern\n\n11 km/h\n\nRelative Humidity\n\n13%\n\nPrecipitation Probability\n\n0%\n\n\u0648\u0642\u062a  \nSunrise  \n05:08  \nClear  \n\nClear\n\n36\u00b0\n\nNoon\n\nVery Hot\n\nVery Hot\n\nNorthern\n\n9 km/h\n\nRelative Humidity\n\n20%\n\nPrecipitation Probability\n\n0%\n\n\u0623\u0630\u0627\u0646  \nDhuhr  \n11:46  \nVery Hot  \n\nVery Hot\n\n47\u00b0\n\nAfternoon\n\nVery Hot\n\nVery Hot\n\nNortheastern\n\n10 km/h\n\nRelative Humidity\n\n29%\n\nPrecipitation Probability\n\n0%\n\n\u0623\u0630\u0627\u0646  \nAsr  \n03:17  \nVery Hot  \n\nVery Hot\n\n47\u00b0\n\nEvening [...] Mostly Clear"
+        },
+        {
+          "context_id": "tavily-eeba9199",
+          "kind": "event",
+          "title": "Saudi Arabia Events Calendar 2026 \u2014 Month-by-Month Guide",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://houseofsaud.com/travel/saudi-arabia-events-2026",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "The Taif Rose Festival celebrates the annual harvest of millions of Taif Damascus roses, which bloom between March and April in the cool highland climate of Saudi Arabia\u2019s \u201cCity of Roses.\u201d The festival runs for approximately 45 days and includes the Rose Market, scenic Rose Mountain tours, parades, live performances, flower displays, theatre shows, and workshops on traditional rose oil distillation. Taif rose oil is among the most expensive essential oils in the world, and the city has been [..."
+        },
+        {
+          "context_id": "tavily-db15eee9",
+          "kind": "event",
+          "title": "Qatif Flower Festival 2026",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://www.instagram.com/popular/qatif-flower-festival-2026",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "\u00b7 1 Million Flowers in a giant bouquet\n\u00b7 150+ Booths & rare bird garden\n\u00b7 Scenic seaside location\n\u00b7 Unique floral displays & family fun\n\nVisit now for the ultimate spring experience\n\n#instagram #fyp #ksa #reel #dammam\n\n3,450 [...] \u2068\t\ud83d\udccdTiflet City \ud83c\uddf2\ud83c\udde6\u0645\u0646 \u0645\u0647\u0631\u062c\u0627\u0646 \u062a\u064a\u0641\u0644\u062a \u0627\u0644\u0646\u0633\u062e\u0629 5\u2069\n\n172K\n\n\u2068 \ud83d\udccdTiflet City \ud83c\uddf2\ud83c\udde6\u0645\u0646 \u0645\u0647\u0631\u062c\u0627\u0646 \u062a\u064a\u0641\u0644\u062a \u0627\u0644\u0646\u0633\u062e\u0629 5\u2069\n\nThe Qatif Municipality has officially announced the launch of the 5th Flower Festival starting from 13th February 2026\n\n\u2022 Location: Al-Mishari Corniche, Qatif.\n\u2022 Opening Hours"
+        },
+        {
+          "context_id": "tavily-0846c3e3",
+          "kind": "event",
+          "title": "18 Saudi events in 2026 you need to mark in your calendar",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://www.timeoutjeddah.com/features-food-drink/saudi-events-in-2026",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "What: Every spring, Taif bursts into bloom with the Taif Rose Festival \u2013 a fragrant celebration of the city\u2019s famous rose harvest. Usually kicking off in March and lasting until April and running for around 45 days, the festival transforms the city into a sea of colour and scent with parades, live performances and dazzling flower displays. You can stroll through the bustling Rose Market, explore the scenic Rose Mountain and dive into cultural fun with theatre shows, workshops and design [...] On"
+        },
+        {
+          "context_id": "tavily-0076dd6d",
+          "kind": "event",
+          "title": "Al-Qatif, Saudi Arabia Events, Calendar & Tickets | Eventbrite",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://www.eventbrite.hk/d/saudi-arabia--al-qatif/events",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "### Washington Crossing the Delaware / The Crossing - Film History Livestream\n\nSat, Dec 19, 8:00 PM EST\n\nCheck ticket price on event\n\nTaller de Lactancia Exitosa primary image\n\n### Taller de Lactancia Exitosa\n\nTomorrow at 20:00 CDT\n\nCheck ticket price on event\n\nImposter Fatigue primary image\n\n### Imposter Fatigue\n\nSaturday at 10:00 PDT\n\nCheck ticket price on event\n\nFellowship Day 2026  |  Virtual Workshops primary image\n\n### Fellowship Day 2026 | Virtual Workshops\n\nSaturday at 10:00 PDT [...] Fe"
+        },
+        {
+          "context_id": "tavily-d9fc4e8f",
+          "kind": "event",
+          "title": "Saudi Summer Events 2026: Complete Calendar of Festivals ...",
+          "date_start": null,
+          "date_end": null,
+          "location": null,
+          "source": "tavily",
+          "source_url_or_artifact": "https://www.bmeventsksa.com/saudi-summer-events-2026-complete-calendar-of-festivals-concerts-and-exhibitions",
+          "retrieved_at": "2026-08-07T11:04:54.909365+00:00",
+          "summary": "Jeddah Season 2026 is particularly special because of the coastal location. Therefore, visitors can enjoy beach activities during the day and world-class concerts at night. The summer events in Saudi Arabia 2026 calendar would not be complete without the vibrant energy of Jeddah.\n\n#### Eastern Province Summer Events\n\nThe Eastern Province is also hosting major events during summer 2026. [...] | Event Name | Dates | Venue | Type |\n ---  --- |\n| Dammam Summer Festival | July 1 \u2013 August 15 | Dammam "
+        }
+      ],
+      "posting_windows": [
+        {
+          "window_id": "pw-2026-03-30",
+          "post_date": "2026-03-30",
+          "start_time_local": "21:00",
+          "end_time_local": "22:00",
+          "busy_metric_keys": [
+            "hourly_valid_transaction_count"
+          ],
+          "demand_score": 531.0,
+          "prayer_relation": null,
+          "event_context_ids": [],
+          "rationale": "Historically busiest hour (21:00) on this weekday based on unique valid transactions observed across the available POS history."
+        },
+        {
+          "window_id": "pw-2026-03-31",
+          "post_date": "2026-03-31",
+          "start_time_local": "20:00",
+          "end_time_local": "21:00",
+          "busy_metric_keys": [
+            "hourly_valid_transaction_count"
+          ],
+          "demand_score": 517.0,
+          "prayer_relation": null,
+          "event_context_ids": [],
+          "rationale": "Historically busiest hour (20:00) on this weekday based on unique valid transactions observed across the available POS history."
+        },
+        {
+          "window_id": "pw-2026-04-01",
+          "post_date": "2026-04-01",
+          "start_time_local": "20:00",
+          "end_time_local": "21:00",
+          "busy_metric_keys": [
+            "hourly_valid_transaction_count"
+          ],
+          "demand_score": 501.0,
+          "prayer_relation": null,
+          "event_context_ids": [],
+          "rationale": "Historically busiest hour (20:00) on this weekday based on unique valid transactions observed across the available POS history."
+        },
+        {
+          "window_id": "pw-2026-04-02",
+          "post_date": "2026-04-02",
+          "start_time_local": "21:00",
+          "end_time_local": "22:00",
+          "busy_metric_keys": [
+            "hourly_valid_transaction_count"
+          ],
+          "demand_score": 501.0,
+          "prayer_relation": null,
+          "event_context_ids": [],
+          "rationale": "Historically busiest hour (21:00) on this weekday based on unique valid transactions observed across the available POS history."
+        },
+        {
+          "window_id": "pw-2026-04-03",
+          "post_date": "2026-04-03",
+          "start_time_local": "19:00",
+          "end_time_local": "20:00",
+          "busy_metric_keys": [
+            "hourly_valid_transaction_count"
+          ],
+          "demand_score": 768.0,
+          "prayer_relation": null,
+          "event_context_ids": [],
+          "rationale": "Historically busiest hour (19:00) on this weekday based on unique valid transactions observed across the available POS history."
+        },
+        {
+          "window_id": "pw-2026-04-04",
+          "post_date": "2026-04-04",
+          "start_time_local": "20:00",
+          "end_time_local": "21:00",
+          "busy_metric_keys": [
+            "hourly_valid_transaction_count"
+          ],
+          "demand_score": 759.0,
+          "prayer_relation": null,
+          "event_context_ids": [],
+          "rationale": "Historically busiest hour (20:00) on this weekday based on unique valid transactions observed across the available POS history."
+        },
+        {
+          "window_id": "pw-2026-04-05",
+          "post_date": "2026-04-05",
+          "start_time_local": "20:00",
+          "end_time_local": "21:00",
+          "busy_metric_keys": [
+            "hourly_valid_transaction_count"
+          ],
+          "demand_score": 390.0,
+          "prayer_relation": null,
+          "event_context_ids": [],
+          "rationale": "Historically busiest hour (20:00) on this weekday based on unique valid transactions observed across the available POS history."
+        }
+      ],
+      "search_status": "success",
+      "warnings": []
+    },
+    "content_ideas": [
+      {
+        "idea_id": "idea-001",
+        "hook_ar": "\u0627\u0633\u062a\u0645\u062a\u0639 \u0628\u0628\u0631\u0648\u062f\u0629 \u0627\u0644\u0635\u064a\u0641 \u0645\u0639 \u0622\u064a\u0633 \u0633\u0628\u0627\u0646\u0634 \u0644\u0627\u062a\u064a\u0647 \u0627\u0644\u0645\u0646\u0639\u0634.",
+        "hook_en": "Beat the summer heat with our refreshing Iced Spanish Latte.",
+        "format": "reel",
+        "product_sku": "ICE-001",
+        "product_name_ar": "\u0622\u064a\u0633 \u0633\u0628\u0627\u0646\u0634 \u0644\u0627\u062a\u064a\u0647",
+        "product_name_en": "Iced Spanish Latte",
+        "finding_id": "F-margin-e4a29681",
+        "cited_metric_keys": [
+          "margin_rate"
+        ],
+        "local_context_ids": [
+          "tavily-eeb08639"
+        ],
+        "calendar_context_ids": [
+          "prayer-2026-04-03"
+        ],
+        "posting_window_id": "pw-2026-04-03",
+        "timing_metric_keys": [
+          "hourly_valid_transaction_count"
+        ],
+        "rationale_ar": "\u0627\u0633\u062a\u063a\u0644\u0627\u0644 \u0630\u0631\u0648\u0629 \u0627\u0644\u0637\u0644\u0628 \u0627\u0644\u0645\u0633\u0627\u0626\u064a\u0629 \u0644\u062a\u0639\u0632\u064a\u0632 \u0645\u0628\u064a\u0639\u0627\u062a \u0627\u0644\u0645\u0646\u062a\u062c\u0627\u062a \u0630\u0627\u062a \u0627\u0644\u0647\u0627\u0645\u0634 \u0627\u0644\u0631\u0628\u062d\u064a \u0627\u0644\u0639\u0627\u0644\u064a.",
+        "rationale_en": "Leveraging peak evening demand to drive sales of high-margin products.",
+        "post_date": "2026-04-03",
+        "post_time_local": "19:00",
+        "timing_reason": "Historically busiest hour on this day, aligning with high demand for refreshing drinks.",
+        "inventory_suitability": "supported"
+      },
+      {
+        "idea_id": "idea-002",
+        "hook_ar": "\u0627\u0628\u062f\u0623 \u064a\u0648\u0645\u0643 \u0628\u0642\u0637\u0639\u0629 \u0645\u0646 \u0627\u0644\u0633\u0639\u0627\u062f\u0629 \u0645\u0639 \u0643\u0631\u0648\u0627\u0633\u0648\u0646 \u0627\u0644\u0632\u0628\u062f\u0629 \u0627\u0644\u0637\u0627\u0632\u062c.",
+        "hook_en": "Start your day with a slice of happiness with our fresh Butter Croissant.",
+        "format": "carousel",
+        "product_sku": "FOD-001",
+        "product_name_ar": "\u0643\u0631\u0648\u0627\u0633\u0648\u0646",
+        "product_name_en": "Butter Croissant",
+        "finding_id": "F-customer-51b9f7f9",
+        "cited_metric_keys": [
+          "avg_rating"
+        ],
+        "local_context_ids": [
+          "tavily-d97f7234"
+        ],
+        "calendar_context_ids": [
+          "prayer-2026-04-04"
+        ],
+        "posting_window_id": "pw-2026-04-04",
+        "timing_metric_keys": [
+          "hourly_valid_transaction_count"
+        ],
+        "rationale_ar": "\u0627\u0644\u062a\u0631\u0643\u064a\u0632 \u0639\u0644\u0649 \u062c\u0648\u062f\u0629 \u0627\u0644\u062e\u062f\u0645\u0629 \u0648\u0627\u0644\u0645\u0646\u062a\u062c\u0627\u062a \u0644\u062a\u0639\u0632\u064a\u0632 \u0627\u0644\u062a\u0642\u064a\u064a\u0645\u0627\u062a \u0627\u0644\u0625\u064a\u062c\u0627\u0628\u064a\u0629 \u0644\u0644\u0639\u0645\u0644\u0627\u0621.",
+        "rationale_en": "Focusing on service and product quality to reinforce positive customer ratings.",
+        "post_date": "2026-04-04",
+        "post_time_local": "20:00",
+        "timing_reason": "High transaction volume window on Saturday evening.",
+        "inventory_suitability": "supported"
+      },
+      {
+        "idea_id": "idea-003",
+        "hook_ar": "\u0647\u0644 \u062c\u0631\u0628\u062a \u0643\u064a\u0643\u0629 \u0627\u0644\u062a\u0645\u0631\u061f \u0627\u0644\u0637\u0639\u0645 \u0627\u0644\u0630\u064a \u0644\u0627 \u064a\u0642\u0627\u0648\u0645.",
+        "hook_en": "Have you tried our Date Cake? An irresistible taste.",
+        "format": "trend_audio",
+        "product_sku": "FOD-003",
+        "product_name_ar": "\u0643\u064a\u0643\u0629 \u0627\u0644\u062a\u0645\u0631",
+        "product_name_en": "Date Cake",
+        "finding_id": "F-sales-061f7748",
+        "cited_metric_keys": [
+          "rev_delta_pct",
+          "bask_delta_pct"
+        ],
+        "local_context_ids": [
+          "tavily-0846c3e3"
+        ],
+        "calendar_context_ids": [
+          "prayer-2026-04-05"
+        ],
+        "posting_window_id": "pw-2026-04-05",
+        "timing_metric_keys": [
+          "hourly_valid_transaction_count"
+        ],
+        "rationale_ar": "\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0645\u062d\u062a\u0648\u0649 \u0627\u0644\u0631\u0627\u0626\u062c \u0644\u062a\u062d\u0641\u064a\u0632 \u062d\u062c\u0645 \u0627\u0644\u0645\u0639\u0627\u0645\u0644\u0627\u062a \u0648\u0632\u064a\u0627\u062f\u0629 \u0627\u0644\u0625\u064a\u0631\u0627\u062f\u0627\u062a.",
+        "rationale_en": "Using trending content to stimulate transaction volume and increase revenue.",
+        "post_date": "2026-04-05",
+        "post_time_local": "20:00",
+        "timing_reason": "Optimal window for Sunday evening engagement.",
+        "inventory_suitability": "supported"
+      }
+    ],
+    "content_validation": {
+      "valid": false,
+      "issues": {
+        "idea-002": [
+          "product_sku 'FOD-001' has known stock/waste risk not addressed by the idea"
+        ],
+        "idea-003": [
+          "product_sku 'FOD-003' has known stock/waste risk not addressed by the idea"
+        ]
+      }
+    },
+    "content_repair_attempts": 1,
+    "report": {
+      "html_path": "outputs\\reports\\studio_25a20449\\report.html",
+      "pdf_path": null,
+      "pdf_warning": "PDF generation unavailable/failed: Blocking call to os.getcwd\n\nHeads up! LangGraph dev identified a synchronous blocking call in your code. When running in an ASGI web server, blocking calls can degrade performance for everyone since they tie up the event loop.\n\nHere are your options to fix this:\n\n1. Best approach: Use an async driver so the call is non-blocking\n   For example, use 'await aiohttp.get()' instead of 'requests.get()', or asyncpg instead of psycopg2.\n\n2. If an async driver isn't available: wrap the blocking call in a thread\n   Example: 'await asyncio.to_thread(your_blocking_function)'\n\n3. Dev-only override: run 'langgraph dev --allow-blocking'\n\nThese blocking operations can prevent health checks and slow down other runs in your deployment. Following these recommendations will help keep your LangGraph application running smoothly!",
+      "whatsapp_summary": "\u062a\u0642\u0631\u064a\u0631 Qahwa Saihat (2026-03-23 - 2026-03-30):\n- Operational Efficiency Divergence\n\nQahwa Saihat report (2026-03-23 - 2026-03-30):\n- Operational Efficiency Divergence: Daily revenue decreased by -14.56% while daily waste costs rose by 62.41% and daily staff hours increased by 14.05%.\n3 content ideas ready for review.\nFull report: outputs/reports/studio_25a20449/report.html",
+      "whatsapp_path": "outputs\\reports\\studio_25a20449\\whatsapp_summary.txt",
+      "whatsapp_char_count": 374,
+      "generated_at": "2026-08-07T11:05:56.623901+00:00",
+      "context": {
+        "chart_path": null
+      }
+    },
+    "human_decision": "approve",
+    "delivery_receipt": {
+      "idempotency_key": "6ae95843a14879a029d477b2c6a892b5f52a6a1b24a350830e5dba990b6525d7",
+      "newly_recorded": false
+    },
+    "messages": [],
+    "step_count": 31,
+    "cost_usd": 0.0,
+    "token_usage": {},
+    "errors": [],
+    "run_status": "succeeded"
+  },
+  "next": [],
+  "tasks": [],
+  "metadata": {
+    "graph_id": "cafe_intelligence",
+    "assistant_id": "7b04913d-935d-5821-a0d4-4fc05c5dd4d7",
+    "user_id": "",
+    "created_by": "system",
+    "run_id": "019fdbe6-b18e-78d2-bb0c-9c48272ea90a",
+    "thread_id": "019fdbe1-6bfc-7723-a979-5c04ea34288f",
+    "run_attempt": 1,
+    "langgraph_version": "1.2.10",
+    "langgraph_api_version": "0.12.0",
+    "langgraph_plan": "enterprise",
+    "langgraph_host": "self-hosted",
+    "langgraph_api_url": "http://127.0.0.1:2024",
+    "source": "loop",
+    "step": 28,
+    "parents": {},
+    "langgraph_auth_user_id": "",
+    "langgraph_request_id": "1adfa4ed-2f01-4c71-a800-f177c86cd066"
+  },
+  "created_at": "2026-08-07T11:05:57.766901+00:00",
+  "checkpoint": {
+    "checkpoint_id": "1f1924ff-7809-6d97-801c-18f7fed373a3",
+    "thread_id": "019fdbe1-6bfc-7723-a979-5c04ea34288f",
+    "checkpoint_ns": ""
+  },
+  "parent_checkpoint": {
+    "checkpoint_id": "1f1924ff-77e0-657f-801b-7bd5bc1cde9f",
+    "thread_id": "019fdbe1-6bfc-7723-a979-5c04ea34288f",
+    "checkpoint_ns": ""
+  },
+  "interrupts": [],
+  "checkpoint_id": "1f1924ff-7809-6d97-801c-18f7fed373a3",
+  "parent_checkpoint_id": "1f1924ff-77e0-657f-801b-7bd5bc1cde9f"
+}

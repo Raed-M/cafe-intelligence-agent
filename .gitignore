@@ -8,3 +8,8 @@ outputs/reports/
 outputs/test_evidence/*.sqlite
 outputs/graph.mmd
 .pytest_cache/
+
+# langgraph dev server state: ephemeral run/thread checkpoints. Committing it
+# makes an old pending run resumable on the next `langgraph dev` start, which
+# fires real LLM calls unprompted.
+.langgraph_api/

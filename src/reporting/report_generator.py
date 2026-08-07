@@ -20,6 +20,54 @@ from src.state import CafeIntelligenceState
 TEMPLATE_DIR = Path("src/reporting/templates")
 
 
+PDF_TIMEOUT_SECONDS = 120
+
+# Derived from __file__ rather than Path.cwd(): os.getcwd is one of the calls
+# blockbuster blocks under `langgraph dev`, and this module is imported inside
+# that server. src/reporting/report_generator.py -> project root is two up.
+_PROJECT_ROOT = Path(__file__).parent.parent.parent
+
+
+def _abs(p: Path) -> Path:
+    """Absolute path without touching os.getcwd (blocked under `langgraph dev`
+    -- Path.absolute() calls it for relative inputs, and report paths here are
+    relative, e.g. outputs/reports/<run_id>/report.html)."""
+    return p if p.is_absolute() else _PROJECT_ROOT / p
+
+
+def _render_pdf(html_path: Path, pdf_path: Path) -> tuple[str | None, str | None]:
+    """Renders the report PDF, returning (path, warning).
+
+    Runs in a subprocess -- see src/reporting/pdf_render.py for why that is
+    required rather than merely tidy (blockbuster under `langgraph dev` raises
+    on Playwright's sync API, and the patch is process-wide so a worker thread
+    does not escape it).
+
+    PDF is best-effort by design: any failure returns a warning string and
+    leaves the HTML and WhatsApp artifacts untouched."""
+    import subprocess
+    import sys
+
+    try:
+        proc = subprocess.run(
+            [sys.executable, "-m", "src.reporting.pdf_render",
+             str(_abs(html_path)), str(_abs(pdf_path))],
+            capture_output=True, text=True, timeout=PDF_TIMEOUT_SECONDS,
+            cwd=str(_PROJECT_ROOT),
+        )
+    except subprocess.TimeoutExpired:
+        return None, f"PDF generation unavailable/failed: timed out after {PDF_TIMEOUT_SECONDS}s"
+    except Exception as e:  # noqa: BLE001
+        return None, f"PDF generation unavailable/failed: {type(e).__name__}: {e}"
+
+    if proc.returncode != 0:
+        detail = (proc.stderr or proc.stdout or "").strip().splitlines()
+        return None, f"PDF generation unavailable/failed: {detail[-1] if detail else 'unknown error'}"
+    if not _abs(pdf_path).exists():
+        return None, "PDF generation unavailable/failed: renderer reported success but wrote no file"
+    return str(pdf_path), None
+
+
 def generate_report(state: CafeIntelligenceState) -> dict[str, Any]:
     config = state["config"]
     run_id = state["run_id"]
@@ -91,29 +139,7 @@ def generate_report(state: CafeIntelligenceState) -> dict[str, Any]:
     whatsapp_path = out_dir / "whatsapp_summary.txt"
     whatsapp_path.write_text(whatsapp_text, encoding="utf-8")
 
-    pdf_path = None
-    pdf_warning = None
-    try:
-        from playwright.sync_api import sync_playwright
-
-        # weasyprint needs native GTK/Pango/GObject libraries that pip can't
-        # install on Windows (confirmed: pip install succeeds, rendering
-        # fails with "cannot load library 'libgobject-2.0-0'"). Playwright's
-        # headless Chromium is self-contained (installs into a user-level
-        # cache via `playwright install chromium`, no system PATH/registry
-        # changes) and renders from the already-written HTML file directly,
-        # so relative asset paths (the menu-engineering chart PNG) resolve
-        # exactly as they would in a real browser -- no base_url workaround.
-        pdf_path = out_dir / "report.pdf"
-        with sync_playwright() as p:
-            browser = p.chromium.launch()
-            page = browser.new_page()
-            page.goto(html_path.resolve().as_uri())
-            page.pdf(path=str(pdf_path))
-            browser.close()
-    except Exception as e:  # noqa: BLE001
-        pdf_warning = f"PDF generation unavailable/failed: {e}"
-        pdf_path = None
+    pdf_path, pdf_warning = _render_pdf(html_path, out_dir / "report.pdf")
 
     report = ReportOutput(
         html_path=str(html_path),

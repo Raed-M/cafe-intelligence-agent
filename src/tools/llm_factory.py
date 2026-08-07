@@ -27,11 +27,108 @@ import time
 from collections import deque
 from typing import Any
 
+from langchain_core.callbacks import BaseCallbackHandler
+
 _PROVIDER_ENV_KEYS = {
     "anthropic": "ANTHROPIC_API_KEY",
     "openai": "OPENAI_API_KEY",
     "gemini": "GOOGLE_API_KEY",
 }
+
+# --- opt-in local telemetry -------------------------------------------------
+# LLM_TELEMETRY_PATH (optional): when set, append one JSON line per provider
+# request to that file -- model, graph node, latency, token usage, error type.
+# Implemented as a callback handler rather than by wrapping .invoke() because
+# nearly every call here goes through .with_structured_output(), whose return
+# value is a parsed pydantic object with no usage_metadata on it; the callback
+# still sees the underlying AIMessage and therefore the real token counts.
+# Default off, so normal runs and the test suite are completely unaffected.
+
+
+class _TelemetryHandler(BaseCallbackHandler):
+    """Writes one JSONL record per LLM request. Deliberately swallows its own
+    errors: telemetry must never be able to fail a run."""
+
+    raise_error = False
+
+    def __init__(self, path: str):
+        self._path = path
+        self._lock = threading.Lock()
+        self._started: dict[Any, dict[str, Any]] = {}
+
+    def _write(self, record: dict[str, Any]) -> None:
+        try:
+            import json
+
+            with self._lock, open(self._path, "a", encoding="utf-8") as fh:
+                fh.write(json.dumps(record, default=str) + "\n")
+        except Exception:  # noqa: BLE001
+            pass
+
+    def _begin(self, run_id, metadata, prompts_chars):
+        self._started[run_id] = {
+            "t0": time.time(),
+            "node": (metadata or {}).get("langgraph_node"),
+            "step": (metadata or {}).get("langgraph_step"),
+            "prompt_chars": prompts_chars,
+        }
+
+    def on_llm_start(self, serialized, prompts, *, run_id=None, metadata=None, **kwargs):
+        self._begin(run_id, metadata, sum(len(p) for p in prompts or []))
+
+    def on_chat_model_start(self, serialized, messages, *, run_id=None, metadata=None, **kwargs):
+        chars = sum(len(str(getattr(m, "content", m))) for batch in messages or [] for m in batch)
+        self._begin(run_id, metadata, chars)
+
+    def on_llm_end(self, response, *, run_id=None, **kwargs):
+        started = self._started.pop(run_id, {})
+        usage, model, finish = {}, None, None
+        try:
+            gen = response.generations[0][0]
+            msg = getattr(gen, "message", None)
+            usage = getattr(msg, "usage_metadata", None) or {}
+            meta = getattr(msg, "response_metadata", {}) or {}
+            model = meta.get("model_name") or meta.get("model")
+            finish = getattr(gen, "generation_info", {}) or {}
+            finish = finish.get("finish_reason")
+        except Exception:  # noqa: BLE001
+            pass
+        self._write({
+            "ts": time.time(), "status": "ok", "node": started.get("node"),
+            "step": started.get("step"), "model": model,
+            "latency_s": round(time.time() - started.get("t0", time.time()), 3),
+            "prompt_chars": started.get("prompt_chars"),
+            "input_tokens": usage.get("input_tokens"), "output_tokens": usage.get("output_tokens"),
+            "total_tokens": usage.get("total_tokens"), "finish_reason": finish,
+        })
+
+    def on_llm_error(self, error, *, run_id=None, **kwargs):
+        started = self._started.pop(run_id, {})
+        msg = str(error)
+        self._write({
+            "ts": time.time(), "status": "error", "node": started.get("node"),
+            "step": started.get("step"),
+            "latency_s": round(time.time() - started.get("t0", time.time()), 3),
+            "prompt_chars": started.get("prompt_chars"),
+            "error_type": type(error).__name__,
+            "quota_exhausted": _is_quota_exhausted(error),
+            "error": msg[:500],
+        })
+
+
+_telemetry_handler: _TelemetryHandler | None = None
+_telemetry_path: str | None = None
+
+
+def _get_telemetry_callbacks() -> list[Any]:
+    global _telemetry_handler, _telemetry_path
+    path = os.environ.get("LLM_TELEMETRY_PATH", "").strip()
+    if not path:
+        return []
+    if path != _telemetry_path:
+        _telemetry_handler = _TelemetryHandler(path)
+        _telemetry_path = path
+    return [_telemetry_handler]
 
 
 def get_provider() -> str:
@@ -235,16 +332,17 @@ def extract_text(response) -> str:
 
 def get_chat_model(model_name: str, temperature: float = 0.0):
     provider = get_provider()
+    cb = _get_telemetry_callbacks()
 
     if provider == "anthropic":
         from langchain_anthropic import ChatAnthropic
 
-        model = ChatAnthropic(model=model_name, temperature=temperature)
+        model = ChatAnthropic(model=model_name, temperature=temperature, callbacks=cb)
 
     elif provider == "openai":
         from langchain_openai import ChatOpenAI
 
-        model = ChatOpenAI(model=model_name, temperature=temperature)
+        model = ChatOpenAI(model=model_name, temperature=temperature, callbacks=cb)
 
     elif provider == "gemini":
         from langchain_google_genai import ChatGoogleGenerativeAI
@@ -261,12 +359,15 @@ def get_chat_model(model_name: str, temperature: float = 0.0):
         if len(keys) > 1:
             model = _RotatingKeyChatModel(
                 lambda key: ChatGoogleGenerativeAI(
-                    model=model_name, temperature=temperature, google_api_key=key, max_retries=1,
+                    model=model_name, temperature=temperature, google_api_key=key,
+                    max_retries=1, callbacks=cb,
                 ),
                 keys,
             )
         else:
-            model = ChatGoogleGenerativeAI(model=model_name, temperature=temperature, max_retries=1)
+            model = ChatGoogleGenerativeAI(
+                model=model_name, temperature=temperature, max_retries=1, callbacks=cb
+            )
 
     else:
         raise ValueError(f"Unknown LLM_PROVIDER {provider!r}; supported: {sorted(_PROVIDER_ENV_KEYS)}")

@@ -58,6 +58,28 @@ def _compressed_summary_passes_post_check(
     return True
 
 
+_SENTENCE_END_RE = re.compile(r"(?<=[.!?])\s+")
+
+
+def first_sentence(text: str) -> str:
+    """First complete sentence of a claim, for when the whole claim will not
+    fit. Analyst claims lead with the quantified fact and follow with
+    interpretation, so the opening sentence is the part worth keeping."""
+    parts = _SENTENCE_END_RE.split(text.strip(), maxsplit=1)
+    return parts[0].strip() if parts else text.strip()
+
+
+def _en_line_variants(finding: AnalystFinding):
+    """Renderings of one finding, longest first. Every variant is a complete
+    thought -- the shortest is the title on its own, never a clipped phrase."""
+    title, claim = finding["title"], finding["claim"]
+    yield f"- {title}: {claim}"
+    opening = first_sentence(claim)
+    if opening and opening != claim:
+        yield f"- {title}: {opening}"
+    yield f"- {title}"
+
+
 def build_whatsapp_summary(
     cafe_name: str,
     run_status: str,
@@ -78,12 +100,18 @@ def build_whatsapp_summary(
         text = f"{body_ar}\n{body_en}\n{report_reference}"
         return text[:max_chars], count_unicode_chars(text[:max_chars])
 
-    # Greedy-fit within max_chars: always keep the headers and the report
-    # link (the recipient's escape hatch to full detail), then add complete
-    # finding lines one at a time and stop at the first one that wouldn't
-    # fit -- never truncate a line mid-sentence. A hard character cut used to
-    # produce things like "...previous period's 4..." which is worse than
-    # just showing one fewer finding.
+    # Greedy-fit within max_chars: always keep the headers and the report link
+    # (the recipient's escape hatch to full detail), then fit complete finding
+    # lines -- never a mid-sentence cut, which used to produce things like
+    # "...previous period's 4...".
+    #
+    # Each finding is tried at decreasing lengths (full claim -> first sentence
+    # -> title alone) rather than being dropped outright the moment its full
+    # form does not fit, and a finding that cannot fit at all is skipped so a
+    # shorter one behind it still gets its turn. Without this the message went
+    # silent exactly when it mattered: on 2026-03-23 the top-ranked finding was
+    # a long cross-domain claim, nothing fit, and the summary shipped with a
+    # header, a content-idea count and no findings whatsoever.
     ar_header = f"تقرير {cafe_name} ({period_label}):"
     en_header = f"{cafe_name} report ({period_label}):"
     footer_en = f"Full report: {report_reference}"
@@ -95,13 +123,14 @@ def build_whatsapp_summary(
     en_lines: list[str] = []
     for f in final_findings[:3]:
         candidate_ar = f"- {f['title']}"
-        candidate_en = f"- {f['title']}: {f['claim']}"
-        cost = count_unicode_chars(candidate_ar) + 1 + count_unicode_chars(candidate_en) + 1
-        if cost > budget:
-            break
-        ar_lines.append(candidate_ar)
-        en_lines.append(candidate_en)
-        budget -= cost
+        ar_cost = count_unicode_chars(candidate_ar) + 1
+        for candidate_en in _en_line_variants(f):
+            cost = ar_cost + count_unicode_chars(candidate_en) + 1
+            if cost <= budget:
+                ar_lines.append(candidate_ar)
+                en_lines.append(candidate_en)
+                budget -= cost
+                break
 
     if content_ideas:
         idea_line = f"{len(content_ideas)} content ideas ready for review."

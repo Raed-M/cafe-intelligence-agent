@@ -118,3 +118,68 @@ def test_ranker_caps_at_max_final_findings(tmp_path):
     assert len(ranked) == 5
     # Higher-confidence findings (later in the loop) should be preferred.
     assert ranked[0]["finding_id"] == "F7"
+
+
+# --- claim-number grounding: cases found by live runs ------------------------
+
+def test_digits_inside_a_product_name_are_not_claimed_numbers(tmp_path):
+    """Regression, found live on 2026-03-23: the cafe sells a "V60 Filter"
+    (Hario V60 pour-over). Reading the 60 in that name as an asserted quantity
+    rejected a correct finding, and no rewrite could save it -- the product is
+    simply called that -- so it burned both revision rounds every run."""
+    result_ref = _write_result(tmp_path, {"findings": [{"metrics": {"margin_rate": {"value": 69.88}}}]})
+    finding = _finding(
+        finding_id="F1", result_artifact=result_ref,
+        claim="Star items were V60 FILTER, Cortado and Karak Tea, at a combined margin rate of 69.88%.",
+        evidence=[{
+            "metric_name": "margin_rate", "value": 69.88, "unit": "%",
+            "numerator": None, "denominator": None,
+            "period_start": "2026-01-05", "period_end": "2026-01-12",
+            "comparison_period_start": None, "comparison_period_end": None,
+            "source_names": ["pos"], "result_path": "x", "result_key": "margin_rate",
+        }],
+    )
+    out = run_critic([finding], revision_round=0, max_revision_rounds=2)
+    assert out["approved_findings"] == ["F1"], out["notes"]
+
+
+def test_magnitude_of_a_negative_metric_is_grounded(tmp_path):
+    """Regression, found live on 2026-03-23: "revenue fell 23.54%" against an
+    evidence value of -23.54 is that exact metric, with direction carried by
+    the word "fell". Requiring the signed form would force the double negative
+    "fell -23.54%"."""
+    result_ref = _write_result(tmp_path, {"findings": [{"metrics": {"rev_pct": {"value": -23.54}}}]})
+    finding = _finding(
+        finding_id="F1", result_artifact=result_ref,
+        claim="Net revenue fell 23.54% versus the prior week.",
+        evidence=[{
+            "metric_name": "rev_pct", "value": -23.54, "unit": "%",
+            "numerator": None, "denominator": None,
+            "period_start": "2026-01-05", "period_end": "2026-01-12",
+            "comparison_period_start": None, "comparison_period_end": None,
+            "source_names": ["pos"], "result_path": "x", "result_key": "rev_pct",
+        }],
+    )
+    out = run_critic([finding], revision_round=0, max_revision_rounds=2)
+    assert out["approved_findings"] == ["F1"], out["notes"]
+
+
+def test_fabricated_number_still_rejected_in_either_sign(tmp_path):
+    """The loosenings above must not weaken the rule they live in."""
+    result_ref = _write_result(tmp_path, {"findings": [{"metrics": {"rev_pct": {"value": -23.54}}}]})
+    # 55.55, not 99.99: the fixture's sample_size is 100, and the rule's 2%
+    # tolerance would legitimately treat 99.99 as restating it.
+    for bad_claim in ("Net revenue fell 55.55% versus the prior week.",
+                      "Net revenue changed by -55.55% versus the prior week."):
+        finding = _finding(
+            finding_id="F1", result_artifact=result_ref, claim=bad_claim,
+            evidence=[{
+                "metric_name": "rev_pct", "value": -23.54, "unit": "%",
+                "numerator": None, "denominator": None,
+                "period_start": "2026-01-05", "period_end": "2026-01-12",
+                "comparison_period_start": None, "comparison_period_end": None,
+                "source_names": ["pos"], "result_path": "x", "result_key": "rev_pct",
+            }],
+        )
+        out = run_critic([finding], revision_round=2, max_revision_rounds=2)
+        assert out["rejected_findings"] == ["F1"], f"should reject: {bad_claim}"

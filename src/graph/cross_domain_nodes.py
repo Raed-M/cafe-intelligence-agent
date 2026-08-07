@@ -20,6 +20,8 @@ from src.analysis.cross_domain import (
     build_evidence_pool,
     detect_co_movements,
     evidence_from_pool,
+    has_substantive_co_movement,
+    placeholder_metrics_from_pool,
     pool_for_prompt,
     validate_metric_refs,
 )
@@ -88,8 +90,9 @@ def cross_domain_synthesis_node(
 
     # Gate: no material cross-analyst co-movement -> no call, no cost. This is
     # the common case on a quiet week and is deliberately silent rather than
-    # forcing a weak connection.
-    if not co_movements:
+    # forcing a weak connection. A pool whose only co-movements are the same
+    # quantity computed by two analysts is treated as nothing to say.
+    if not co_movements or not has_substantive_co_movement(co_movements):
         return {"step_count": 1}
 
     config = state["config"]
@@ -132,7 +135,7 @@ def cross_domain_synthesis_node(
             notes.append(f"cross-domain draft {draft.get('title', '')!r} dropped: {reject_reason}")
             continue
 
-        placeholder_metrics = {k: {"value": pool[k]["value"]} for k in pool}
+        placeholder_metrics = placeholder_metrics_from_pool(pool)
         claim, assumptions, coverage, unresolved = _substitute_all(draft, placeholder_metrics)
         if unresolved:
             notes.append(

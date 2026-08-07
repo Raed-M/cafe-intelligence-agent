@@ -50,6 +50,18 @@ threshold correlation_hints uses, kept consistent deliberately."""
 MAX_CO_MOVEMENTS = 6
 MAX_CROSS_DOMAIN_FINDINGS = 2
 
+ABS_SUFFIX = "__abs"
+"""Every pool key is also exposed as `<key>__abs` holding |value|, so the model
+can write naturally directional prose ("revenue fell <<sales__rev_pct__abs>>%")
+without either typing a digit or producing the double negative that a signed
+substitution gives ("fell -23.54%")."""
+
+NEAR_IDENTICAL_REL_TOL = 0.02
+"""Two change metrics from different analysts whose values agree this closely
+are almost certainly the same underlying quantity measured twice (sales'
+revenue delta vs margin's revenue delta). Relating them is a tautology, not a
+cross-domain insight, so such pairs are flagged and score-penalised."""
+
 _CHANGE_KEY_RE = re.compile(r"pct|delta|change|growth|_rate\b|rate_", re.IGNORECASE)
 _PERCENT_UNITS = {"%", "percent", "pct", "percentage"}
 
@@ -102,6 +114,14 @@ def _is_change_metric(entry: dict[str, Any]) -> bool:
     return bool(_CHANGE_KEY_RE.search(entry["result_key"]))
 
 
+def _near_identical(a: float, b: float) -> bool:
+    """Same sign and same magnitude to within NEAR_IDENTICAL_REL_TOL."""
+    if (a > 0) != (b > 0):
+        return False
+    scale = max(abs(a), abs(b))
+    return scale > 0 and abs(a - b) / scale <= NEAR_IDENTICAL_REL_TOL
+
+
 def detect_co_movements(pool: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     """Deterministically pairs materially-moved change metrics reported by
     *different* analysts for the *same* period. Divergent pairs (one up, one
@@ -120,6 +140,7 @@ def detect_co_movements(pool: dict[str, dict[str, Any]]) -> list[dict[str, Any]]
             if (a["period_start"][:10], a["period_end"][:10]) != (b["period_start"][:10], b["period_end"][:10]):
                 continue
             divergent = (a["value"] > 0) != (b["value"] > 0)
+            near_identical = _near_identical(a["value"], b["value"])
             pairs.append({
                 "left": a["pool_key"], "right": b["pool_key"],
                 "left_analyst": a["analyst_name"], "right_analyst": b["analyst_name"],
@@ -127,10 +148,32 @@ def detect_co_movements(pool: dict[str, dict[str, Any]]) -> list[dict[str, Any]]
                 "left_unit": a.get("unit"), "right_unit": b.get("unit"),
                 "period_start": a["period_start"], "period_end": a["period_end"],
                 "divergent": divergent,
-                "score": abs(a["value"]) + abs(b["value"]) + (100.0 if divergent else 0.0),
+                "likely_same_quantity": near_identical,
+                "score": (
+                    abs(a["value"]) + abs(b["value"])
+                    + (100.0 if divergent else 0.0)
+                    - (500.0 if near_identical else 0.0)
+                ),
             })
     pairs.sort(key=lambda p: p["score"], reverse=True)
     return pairs[:MAX_CO_MOVEMENTS]
+
+
+def has_substantive_co_movement(pairs: list[dict[str, Any]]) -> bool:
+    """A run whose only cross-analyst co-movements are the same quantity
+    measured twice has nothing genuinely cross-domain to say -- skip the call
+    rather than pay for a guaranteed tautology."""
+    return any(not p.get("likely_same_quantity") for p in pairs)
+
+
+def placeholder_metrics_from_pool(pool: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    """Substitution table for <<pool_key>> tokens: every pooled metric plus an
+    `__abs` variant of each (see ABS_SUFFIX)."""
+    metrics: dict[str, dict[str, Any]] = {}
+    for key, entry in pool.items():
+        metrics[key] = {"value": entry["value"]}
+        metrics[key + ABS_SUFFIX] = {"value": abs(entry["value"])}
+    return metrics
 
 
 def pool_for_prompt(pool: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:

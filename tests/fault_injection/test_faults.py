@@ -163,23 +163,20 @@ def test_pdf_failure_keeps_html_and_summary(tmp_path, monkeypatch):
     run_id = "fault_pdf_" + uuid.uuid4().hex[:6]
 
     # Simulate a Playwright/Chromium failure (e.g. `playwright install
-    # chromium` never having been run) by monkeypatching a fake
-    # playwright.sync_api module whose sync_playwright() context manager
-    # raises immediately, before it ever tries to launch a real browser.
-    import sys
-    import types
+    # chromium` never having been run). The renderer runs out-of-process (see
+    # src/reporting/pdf_render.py -- blockbuster under `langgraph dev` blocks
+    # Playwright's sync API in-process), so the fault is injected at the
+    # subprocess boundary: patching a fake playwright module into *this*
+    # interpreter would not reach the child at all.
+    import subprocess
 
-    fake_module = types.ModuleType("playwright.sync_api")
+    def _failing_run(*args, **kwargs):
+        return subprocess.CompletedProcess(
+            args=args[0] if args else [], returncode=1,
+            stdout="", stderr="RuntimeError: simulated renderer crash",
+        )
 
-    class _FakeSyncPlaywright:
-        def __enter__(self):
-            raise RuntimeError("simulated renderer crash")
-
-        def __exit__(self, *a):
-            return False
-
-    fake_module.sync_playwright = lambda: _FakeSyncPlaywright()
-    monkeypatch.setitem(sys.modules, "playwright.sync_api", fake_module)
+    monkeypatch.setattr(subprocess, "run", _failing_run)
 
     state = {
         "config": config, "run_id": run_id, "final_findings": [], "content_ideas": [],

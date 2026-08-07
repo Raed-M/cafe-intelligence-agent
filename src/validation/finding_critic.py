@@ -62,7 +62,17 @@ def _calendar_confound(ev_period_start: str, ev_period_end: str) -> list[str]:
 
 
 _ISO_DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
-_NUMBER_RE = re.compile(r"-?\d[\d,]*\.?\d*")
+
+# The lookbehind excludes digits embedded in a word, which are part of a name
+# rather than a quantity. Observed live (run 2026-03-23): this cafe sells a
+# "V60 Filter" (the Hario V60 pour-over), so a perfectly correct claim listing
+# it among the star items was read as asserting the number 60, found no
+# matching evidence, and was rejected -- twice, after burning both revision
+# rounds, because no rewrite the analyst could produce would remove the
+# product's actual name. Menu items containing digits are entirely normal
+# (V60, 1850 blend, No.2 roast), so this has to be handled here rather than
+# asked of the analysts.
+_NUMBER_RE = re.compile(r"(?<![A-Za-z0-9_.])-?\d[\d,]*\.?\d*")
 
 
 def _numbers_in_claim(claim: str) -> list[float]:
@@ -89,15 +99,31 @@ def _numbers_in_claim(claim: str) -> list[float]:
 
 
 def _grounded_values(finding: AnalystFinding) -> set[float]:
+    """Every numeric value a claim on this finding may legitimately state.
+
+    Magnitudes are included alongside signed values: a claim that "revenue fell
+    23.54%" against an evidence value of -23.54 is stating that exact evidence
+    item, with the direction carried by the word "fell" rather than by a minus
+    sign. Writing it the other way round ("revenue fell -23.54%") is a double
+    negative, so requiring the signed form would effectively ban natural prose
+    about any metric that went down -- which is most change metrics.
+
+    This deliberately keeps the two validation layers to their own jobs: this
+    deterministic rule answers "did this digit come from the data at all?",
+    which |v| provably does, while whether the *direction word* matches the
+    sign is a semantic question that the LLM critic pass reviews. Fabricated
+    numbers -- the failure this rule exists to catch -- are still caught,
+    since a value absent from the evidence is absent in both signs."""
     values: set[float] = set()
     for ev in finding.get("evidence", []):
         for raw in (ev.get("value"), ev.get("numerator"), ev.get("denominator")):
             if isinstance(raw, (int, float)):
-                for nd in (0, 1, 2, 3, 4):
-                    values.add(round(float(raw), nd))
-                if -1.0 <= raw <= 1.0:
-                    for nd in (0, 1, 2):
-                        values.add(round(float(raw) * 100, nd))
+                for signed in (float(raw), abs(float(raw))):
+                    for nd in (0, 1, 2, 3, 4):
+                        values.add(round(signed, nd))
+                    if -1.0 <= signed <= 1.0:
+                        for nd in (0, 1, 2):
+                            values.add(round(signed * 100, nd))
     for key in ("sample_size", "confidence"):
         raw = finding.get(key)
         if isinstance(raw, (int, float)):

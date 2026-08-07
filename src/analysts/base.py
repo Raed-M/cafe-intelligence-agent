@@ -115,6 +115,27 @@ def _format_metric_value(value: Any) -> str:
     return str(value)
 
 
+ABS_SUFFIX = "__abs"
+
+
+def with_abs_variants(metrics: dict[str, Any]) -> dict[str, Any]:
+    """Adds a `<key>__abs` entry holding |value| for every numeric metric.
+
+    Lets a claim carry direction in words instead of in a minus sign:
+    "revenue fell <<rev_delta_pct__abs>>%" renders "revenue fell 23.54%",
+    where the plain key would render "revenue fell -23.54%" -- a double
+    negative that reached real WhatsApp output on 2026-03-23. The model still
+    types no digits, so the anti-restatement guarantee is unchanged, and the
+    critic treats a magnitude as grounded in the evidence it comes from (see
+    _grounded_values in src/validation/finding_critic.py)."""
+    out = dict(metrics)
+    for key, m in metrics.items():
+        value = m.get("value") if isinstance(m, dict) else None
+        if isinstance(value, (int, float)) and not isinstance(value, bool):
+            out[f"{key}{ABS_SUFFIX}"] = {**m, "value": abs(value)}
+    return out
+
+
 def _substitute_claim_placeholders(claim: str, metrics: dict[str, Any]) -> tuple[str, list[str]]:
     """Replaces <<metric_key>> tokens in a claim with the literal value from this
     finding's own metrics dict, so a restated number can never drift from the
@@ -301,15 +322,16 @@ def _build_findings(
     notes: list[str] = []
     for raw in result_obj.get("findings", [])[:max_findings]:
         metrics_raw = raw.get("metrics", {})
-        claim_text, unresolved = _substitute_claim_placeholders(raw.get("claim", ""), metrics_raw)
+        subs = with_abs_variants(metrics_raw)
+        claim_text, unresolved = _substitute_claim_placeholders(raw.get("claim", ""), subs)
         coverage_notes: list[str] = []
         for note in raw.get("coverage_notes", []):
-            substituted, bad = _substitute_claim_placeholders(note, metrics_raw)
+            substituted, bad = _substitute_claim_placeholders(note, subs)
             coverage_notes.append(substituted)
             unresolved.extend(bad)
         assumptions: list[str] = []
         for assumption in raw.get("assumptions", []):
-            substituted, bad = _substitute_claim_placeholders(assumption, metrics_raw)
+            substituted, bad = _substitute_claim_placeholders(assumption, subs)
             assumptions.append(substituted)
             unresolved.extend(bad)
         if unresolved:
