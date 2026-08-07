@@ -61,3 +61,23 @@ class CriticOutput(TypedDict):
     removed_after_cap: list[str]
     total_rejections: int
     notes: list[str]
+
+
+class CrossDomainFindingDraft(TypedDict):
+    """One synthesis proposal. `metric_refs` are pool keys (analyst__result_key)
+    from the supplied evidence pool, and every number in the free-text fields
+    must be written as a `<<pool_key>>` placeholder rather than a literal --
+    src/graph/cross_domain_nodes.py substitutes the real values afterwards, so
+    a synthesized claim cannot state a figure no analyst actually computed."""
+
+    title: str
+    claim: str
+    finding_type: str
+    metric_refs: list[str]
+    assumptions: list[str]
+    coverage_notes: list[str]
+    confidence: float
+
+
+class CrossDomainSynthesisOutput(TypedDict):
+    items: list[CrossDomainFindingDraft]

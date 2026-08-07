@@ -125,18 +125,90 @@ def _resolve_metric(result_obj: dict[str, Any], metric_name: str, result_key: st
     return False
 
 
+def _load_result_obj(path_str: str, cache: dict[str, Any]) -> dict[str, Any] | None:
+    """Reads and caches a result artifact by path. Returns None when the file
+    is missing or unparseable, which the caller reports as an unresolvable
+    metric rather than crashing the critic."""
+    if path_str in cache:
+        return cache[path_str]
+    obj: dict[str, Any] | None
+    try:
+        obj = json.loads(Path(path_str).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        obj = None
+    cache[path_str] = obj
+    return obj
+
+
+def _is_known_period_or_span(
+    period_key: tuple[str, str], valid_periods: set[tuple[str, str]]
+) -> bool:
+    """True when the period exactly matches a known run period, or exactly
+    tiles a *contiguous span* of them (e.g. the four trailing baseline weeks
+    2026-02-23..2026-03-23 collapsed into one month-long window).
+
+    A multi-week baseline is legitimate and often better statistics -- an
+    anomaly z-score over four weeks is more robust than over one -- and
+    rejecting it outright (as the exact-match-only rule did) sent a sound
+    finding through the whole revision loop to a guaranteed rejection. An
+    arbitrary invented range still fails, because the span must start on a
+    known period's start, end on a known period's end, and be fully tiled by
+    known periods end-to-start with no gaps or overlaps."""
+    if period_key in valid_periods:
+        return True
+    start, end = period_key
+    if start >= end:
+        return False
+    starts: dict[str, set[str]] = {}
+    for p_start, p_end in valid_periods:
+        starts.setdefault(p_start, set()).add(p_end)
+    cursor = start
+    seen: set[str] = set()
+    while cursor in starts and cursor not in seen:
+        seen.add(cursor)
+        # Prefer the longest next hop that doesn't overshoot the target end.
+        candidates = [e for e in starts[cursor] if e <= end]
+        if not candidates:
+            return False
+        cursor = max(candidates)
+        if cursor == end:
+            return True
+    return False
+
+
 DeterministicRuleContext = dict[str, Any]
-"""Passed to every rule in _DETERMINISTIC_RULES: {"result_obj", "valid_periods",
-"excluded_days_by_source"}. Adding a new deterministic check means adding one
-function with this signature and appending it to the list below -- nothing
-else in this module needs to change, which is the point: previously every new
-rule was one more `if` bolted onto a single growing function."""
+"""Passed to every rule in _DETERMINISTIC_RULES: {"result_obj", "result_cache",
+"valid_periods", "excluded_days_by_source"}. Adding a new deterministic check
+means adding one function with this signature and appending it to the list
+below -- nothing else in this module needs to change, which is the point:
+previously every new rule was one more `if` bolted onto a single growing
+function."""
 
 
 def _rule_metric_evidence_resolves(finding: AnalystFinding, ctx: DeterministicRuleContext) -> list[str]:
+    """Each evidence item is resolved against *its own* result_path, not the
+    finding-level result_artifact. Single-analyst findings are unaffected (every
+    evidence item points at that analyst's one artifact anyway), but this is
+    what makes a genuinely cross-domain finding verifiable: its evidence cites
+    metrics computed by several different analysts' executed code, each still
+    independently re-read from the artifact that actually produced it, so
+    provenance chains back to the real computation rather than to a synthesis
+    step's say-so."""
     reasons: list[str] = []
     for ev in finding["evidence"]:
-        if not _resolve_metric(ctx["result_obj"], ev["metric_name"], ev["result_key"]):
+        # Prefer the evidence item's own artifact; fall back to the
+        # finding-level one when it names no readable path. The fallback keeps
+        # this strictly an *enhancement*: single-artifact findings (and any
+        # caller that doesn't populate a real per-evidence path) behave exactly
+        # as before, while a genuine multi-artifact finding gets each number
+        # checked against the artifact that actually produced it.
+        ev_result_obj = None
+        ev_path = ev.get("result_path")
+        if ev_path:
+            ev_result_obj = _load_result_obj(ev_path, ctx["result_cache"])
+        if ev_result_obj is None:
+            ev_result_obj = ctx["result_obj"]
+        if not _resolve_metric(ev_result_obj, ev["metric_name"], ev["result_key"]):
             reasons.append(f"metric '{ev['result_key']}' does not resolve in stored result")
         if ev["value"] is None:
             reasons.append(f"metric '{ev['result_key']}' has null value")
@@ -144,10 +216,10 @@ def _rule_metric_evidence_resolves(finding: AnalystFinding, ctx: DeterministicRu
             reasons.append(f"metric '{ev['result_key']}' missing period bounds")
         elif ctx["valid_periods"] is not None:
             period_key = (ev["period_start"][:10], ev["period_end"][:10])
-            if period_key not in ctx["valid_periods"]:
+            if not _is_known_period_or_span(period_key, ctx["valid_periods"]):
                 reasons.append(
                     f"metric '{ev['result_key']}' period {period_key} does not match any known "
-                    f"analysis/previous/trailing-baseline period for this run"
+                    f"analysis/previous/trailing-baseline period (or contiguous span of them) for this run"
                 )
     return reasons
 
@@ -290,7 +362,9 @@ def _deterministic_check(
         return False, ["finding has no metric evidence to resolve"]
 
     ctx: DeterministicRuleContext = {
-        "result_obj": result_obj, "valid_periods": valid_periods,
+        "result_obj": result_obj,
+        "result_cache": {str(result_path): result_obj},
+        "valid_periods": valid_periods,
         "excluded_days_by_source": excluded_days_by_source,
     }
     reasons: list[str] = []
@@ -322,10 +396,16 @@ def _default_llm_reviewer(model_name: str) -> SemanticReviewer:
 
 def _semantic_review(
     finding: AnalystFinding, model_name: str | None, reviewer: SemanticReviewer | None,
-    cross_domain_hints: list[str] | None = None,
 ) -> tuple[bool, str, str] | None:
     """Returns (ok, explanation, required_fix), or None if the layer is not
-    enabled (no model/reviewer supplied) or unavailable (call failed)."""
+    enabled (no model/reviewer supplied) or unavailable (call failed).
+
+    Deliberately *not* given other analysts' metrics: a single-analyst finding
+    can only cite numbers its own code produced, so showing the reviewer a
+    neighbouring domain's figure only tempts it to demand something that the
+    deterministic grounding rule then rejects. Cross-analyst relationships are
+    synthesized in their own stage (src/analysis/cross_domain.py) and arrive
+    here as ordinary `cross_domain` findings to be judged on their own merits."""
     if reviewer is None and not model_name:
         return None
     system_prompt = CRITIC_PROMPT_PATH.read_text(encoding="utf-8")
@@ -335,7 +415,6 @@ def _semantic_review(
         "evidence": finding["evidence"], "source_names": finding.get("source_names", []),
         "assumptions": finding.get("assumptions", []), "coverage_notes": finding.get("coverage_notes", []),
         "confidence": finding.get("confidence"),
-        "cross_domain_hints_for_this_period": cross_domain_hints or [],
     }
     review = reviewer or _default_llm_reviewer(model_name)  # type: ignore[arg-type]
     try:
@@ -355,8 +434,8 @@ def run_critic(
     valid_periods: set[tuple[str, str]] | None = None,
     model_name: str | None = None,
     reviewer: SemanticReviewer | None = None,
-    cross_domain_hints: list[str] | None = None,
     excluded_days_by_source: dict[str, list[str]] | None = None,
+    non_revisable_analysts: set[str] | None = None,
 ) -> CriticOutput:
     approved: list[str] = []
     rejected: list[str] = []
@@ -377,7 +456,7 @@ def run_critic(
     needs_semantic_review = [f for f in candidate_findings if deterministic_results[f["finding_id"]][0]]
 
     def _review_one(finding: AnalystFinding):
-        return finding["finding_id"], _semantic_review(finding, model_name, reviewer, cross_domain_hints)
+        return finding["finding_id"], _semantic_review(finding, model_name, reviewer)
 
     semantic_results: dict[str, tuple[bool, str, str] | None] = dict(bounded_map(_review_one, needs_semantic_review))
 
@@ -402,7 +481,19 @@ def run_critic(
             seen_titles[key] = finding["finding_id"]
             approved.append(finding["finding_id"])
         else:
-            if revision_round < max_revision_rounds:
+            # A finding from a stage with no revision path (cross-domain
+            # synthesis) is terminal: re-running it would re-issue the same
+            # LLM call over the same pooled inputs, which is precisely the
+            # doomed-retry pattern this design removed. Reject it now with
+            # the real reason instead of booking a revision that can never
+            # be serviced and would spin the loop to its cap.
+            if (non_revisable_analysts or set()) & {finding["analyst_name"]}:
+                rejected.append(finding["finding_id"])
+                notes.append(
+                    f"{finding['finding_id']} ({finding['analyst_name']}) rejected without revision "
+                    f"(stage has no revision path): {'; '.join(reasons)}"
+                )
+            elif revision_round < max_revision_rounds:
                 revision_requests.append(RevisionRequest(
                     finding_id=finding["finding_id"], analyst_name=finding["analyst_name"],
                     reason_code="unresolved_or_unsupported_claim",

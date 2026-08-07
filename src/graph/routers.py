@@ -34,22 +34,28 @@ def _excluded_days_by_source(state: CafeIntelligenceState) -> dict[str, list[str
     }
 
 
-def critic_node(state: CafeIntelligenceState) -> dict[str, Any]:
-    from src.analysis.correlation_hints import cross_analyst_coincidences
+def _non_revisable_analysts(candidate_findings: list[dict[str, Any]]) -> set[str]:
+    """Any producing stage that isn't a rerunnable specialist analyst (i.e. has
+    no entry in ANALYST_SPECS) cannot be sent through the revision loop --
+    run_one_analyst_revision would KeyError on it. Derived from the findings
+    actually present rather than hardcoded, so adding another synthesis-style
+    stage later needs no change here."""
+    return {
+        f["analyst_name"] for f in candidate_findings
+        if f.get("analyst_name") and f["analyst_name"] not in ANALYST_SPECS
+    }
 
+
+def critic_node(state: CafeIntelligenceState) -> dict[str, Any]:
     limits = state["config"].app_settings.limits
     round_ = state.get("critic_round", 0)
     candidate_findings = state.get("candidate_findings", [])
-    try:
-        cross_domain_hints = cross_analyst_coincidences(candidate_findings)
-    except Exception:  # noqa: BLE001
-        cross_domain_hints = []
     result = run_critic(
         candidate_findings, round_, limits.critic_revision_rounds,
         valid_periods=_valid_periods(state),
         model_name=state["config"].app_settings.models.critic,
-        cross_domain_hints=cross_domain_hints,
         excluded_days_by_source=_excluded_days_by_source(state),
+        non_revisable_analysts=_non_revisable_analysts(candidate_findings),
     )
     return {"critic_results": result, "critic_round": round_ + 1, "step_count": 1}
 
@@ -61,8 +67,14 @@ class _RevisionJobState(CafeIntelligenceState, total=False):
 def route_after_critic(state: CafeIntelligenceState) -> str | list[Send]:
     critic: dict = state["critic_results"]
     if critic["revision_requests"]:
-        analysts_to_rerun = sorted({r["analyst_name"] for r in critic["revision_requests"]})
-        return [Send("run_one_analyst_revision", {**state, "_analyst_name": name}) for name in analysts_to_rerun]
+        # Defense in depth: the critic already refuses to book revisions for
+        # non-rerunnable stages, but never dispatch a Send for a name that has
+        # no AnalystSpec -- that would KeyError inside the revision node.
+        analysts_to_rerun = sorted(
+            {r["analyst_name"] for r in critic["revision_requests"] if r["analyst_name"] in ANALYST_SPECS}
+        )
+        if analysts_to_rerun:
+            return [Send("run_one_analyst_revision", {**state, "_analyst_name": name}) for name in analysts_to_rerun]
     if not critic["approved_findings"]:
         return "no_evidence"
     return "rank"

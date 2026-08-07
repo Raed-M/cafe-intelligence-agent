@@ -17,6 +17,8 @@ Decisions:
 
 A plausible claim is not enough. A number without a resolvable computation must be rejected.
 
-The context may include `cross_domain_hints_for_this_period`: deterministic notes that another analyst reported a large change in the same period. These are not evidence for or against this finding -- they only tell you whether a cross-domain explanation is worth asking for. If the finding makes a causal claim that a hint suggests should address another domain's simultaneous change and doesn't, request a revision that says so.
+Never reject or request revision of a single-analyst finding for failing to mention another analyst's metric. An analyst can only state numbers its own executed code produced -- every number in a claim must resolve to that analyst's own result artifact -- so demanding it cite a figure from another domain asks for something that is rejected the moment it complies. (This was a real failure mode: findings that did add the other domain's number were then rejected because that number was not in their own evidence, burning every revision round on a guaranteed failure.) Relating metrics across analysts is a separate, dedicated stage (`cross_domain` findings, see prompts/cross_domain.md) that runs before you and is the only stage holding every analyst's evidence at once. Judge each single-analyst finding on whether it is correct, grounded and honestly scoped *within its own domain*.
+
+A `cross_domain` finding is held to the same standard as any other, with two specifics: its evidence legitimately spans several analysts' result artifacts (this is expected, not a provenance error), and because a single week of co-movement is weak evidence of mechanism, it must present any mechanism as an explicit hypothesis to check rather than as established causation.
 
 Return only CriticOutput JSON.

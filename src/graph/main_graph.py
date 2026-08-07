@@ -11,6 +11,7 @@ from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, START, StateGraph
 
 from src.graph.analysis_subgraph import analysis_fanin, route_analysts, run_one_analyst
+from src.graph.cross_domain_nodes import cross_domain_synthesis_node
 from src.graph.content_nodes import (
     content_agent_node,
     increment_repair_attempts,
@@ -55,6 +56,7 @@ def build_main_graph(checkpointer: BaseCheckpointSaver | None = None):
 
     graph.add_node("run_one_analyst", run_one_analyst)
     graph.add_node("analysis_fanin", analysis_fanin)
+    graph.add_node("cross_domain_synthesis", cross_domain_synthesis_node)
 
     graph.add_node("critic", critic_node)
     graph.add_node("run_one_analyst_revision", run_one_analyst_revision)
@@ -82,7 +84,13 @@ def build_main_graph(checkpointer: BaseCheckpointSaver | None = None):
     graph.add_edge("ingestion_fanin", "clean_and_materialise")
     graph.add_conditional_edges("clean_and_materialise", route_analysts, ["run_one_analyst"])
     graph.add_edge("run_one_analyst", "analysis_fanin")
-    graph.add_edge("analysis_fanin", "critic")
+    # Synthesis sits between the analyst fan-in and the critic: it is the only
+    # stage that sees every analyst's grounded evidence at once, and it runs
+    # before validation so its output is held to exactly the same standard as
+    # a single-domain finding. Revision reruns re-enter at `critic` directly,
+    # so synthesis happens once per run, never once per revision round.
+    graph.add_edge("analysis_fanin", "cross_domain_synthesis")
+    graph.add_edge("cross_domain_synthesis", "critic")
 
     graph.add_conditional_edges(
         "critic", route_after_critic, ["run_one_analyst_revision", "rank", "no_evidence"]
