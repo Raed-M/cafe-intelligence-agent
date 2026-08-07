@@ -46,6 +46,55 @@ python scripts/run_week.py --profile data/qahwa_saihat/cafe_profile.json --data-
 python scripts/export_graph.py   # writes outputs/graph.mmd
 ```
 
+## Running from LangGraph Studio (`langgraph dev`)
+
+```bash
+pip install -e ".[dev]"     # installs langgraph-cli[inmem]
+langgraph dev --no-reload   # --no-reload is REQUIRED, see below
+```
+
+Opens a Studio UI (`smith.langchain.com/studio/?baseUrl=...`) that can drive
+the real graph (`src/graph/main_graph.py:graph`) directly -- start a new
+thread with `{"target_week": "2026-03-16"}` (or nothing, for the latest week);
+`profile_path`/`data_dir` default to `qahwa_saihat`. `resolve_config`
+(`src/graph/setup_nodes.py`) is the only node whose behavior differs from a
+CLI/scheduler-triggered run: it resolves the real `RuntimeCafeConfig` from
+those plain fields when one isn't already in state.
+
+**`--no-reload` is not optional.** `langgraph dev` defaults to hot-reloading
+on file changes (like `uvicorn --reload`), and this pipeline writes artifact
+files (generated analyst code, results, reports) under `outputs/` as core,
+unavoidable behavior of every run -- the very first file an analyst writes
+mid-run triggers a reload, which kills the in-flight run. This was confirmed
+directly: writing one file under `outputs/artifacts/...` while `langgraph dev`
+was running (no `--no-reload`) produced `WatchFiles detected changes in
+'outputs\...'. Reloading...` in the server log immediately, and the same
+write with `--no-reload` produced no reload event at all. Symptom without the
+flag: every analyst call gets `asyncio.exceptions.CancelledError` shortly
+after the 5-way fan-out starts, the run silently retries from its last
+checkpoint (re-spending every LLM call in that step) instead of completing,
+and Ctrl+C may not cleanly stop the server (the reload supervisor adds an
+extra process layer that Windows' console signal handling doesn't always
+propagate through). There is no per-path ignore/exclude option in
+`langgraph_cli` today -- `--no-reload` is the only fix.
+
+**Stale runs auto-resume across server restarts.** `langgraph dev`'s local
+persistence (`.langgraph_api/`, gitignored) is explicitly dev/test-only, not
+durable production state, and it resumes any pending run automatically on
+the *next* server start -- including one you thought you'd already stopped.
+If a run needs to be abandoned, cancel/delete it via the API first, or delete
+`.langgraph_api/` before restarting, so simply starting the server again for
+any reason (even just to poke at it) can't silently re-spend real API calls
+on a stale run.
+
+As defense in depth against both of the above (and against ordinary heavy
+concurrent use), `get_chat_model()` wraps Gemini calls in a circuit breaker
+(`src/tools/llm_factory.py::_CircuitBreakerChatModel`): once a call confirms
+the provider's quota is exhausted, every subsequent call fails instantly --
+no network request -- for `LLM_QUOTA_COOLDOWN_SECONDS` (default 1800s),
+instead of letting an external auto-retry (or another `run_one_analyst`
+sibling) re-spend a call that's guaranteed to fail the same way.
+
 ## Autonomous scheduling
 
 ```bash

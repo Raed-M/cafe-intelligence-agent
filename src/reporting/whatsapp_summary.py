@@ -78,20 +78,38 @@ def build_whatsapp_summary(
         text = f"{body_ar}\n{body_en}\n{report_reference}"
         return text[:max_chars], count_unicode_chars(text[:max_chars])
 
-    lines_ar = [f"تقرير {cafe_name} ({period_label}):"]
-    lines_en = [f"{cafe_name} report ({period_label}):"]
+    # Greedy-fit within max_chars: always keep the headers and the report
+    # link (the recipient's escape hatch to full detail), then add complete
+    # finding lines one at a time and stop at the first one that wouldn't
+    # fit -- never truncate a line mid-sentence. A hard character cut used to
+    # produce things like "...previous period's 4..." which is worse than
+    # just showing one fewer finding.
+    ar_header = f"تقرير {cafe_name} ({period_label}):"
+    en_header = f"{cafe_name} report ({period_label}):"
+    footer_en = f"Full report: {report_reference}"
+
+    skeleton_len = count_unicode_chars(ar_header) + 2 + count_unicode_chars(en_header) + 1 + count_unicode_chars(footer_en)
+    budget = max_chars - skeleton_len
+
+    ar_lines: list[str] = []
+    en_lines: list[str] = []
     for f in final_findings[:3]:
-        lines_ar.append(f"- {f['title']}")
-        lines_en.append(f"- {f['title']}: {f['claim']}")
+        candidate_ar = f"- {f['title']}"
+        candidate_en = f"- {f['title']}: {f['claim']}"
+        cost = count_unicode_chars(candidate_ar) + 1 + count_unicode_chars(candidate_en) + 1
+        if cost > budget:
+            break
+        ar_lines.append(candidate_ar)
+        en_lines.append(candidate_en)
+        budget -= cost
 
     if content_ideas:
-        lines_en.append(f"{len(content_ideas)} content ideas ready for review.")
+        idea_line = f"{len(content_ideas)} content ideas ready for review."
+        if count_unicode_chars(idea_line) + 1 <= budget:
+            en_lines.append(idea_line)
+            budget -= count_unicode_chars(idea_line) + 1
 
-    lines_en.append(f"Full report: {report_reference}")
-
-    text = "\n".join(lines_ar) + "\n\n" + "\n".join(lines_en)
-    if count_unicode_chars(text) > max_chars:
-        text = text[: max_chars - 1] + "…"
+    text = "\n".join([ar_header, *ar_lines]) + "\n\n" + "\n".join([en_header, *en_lines, footer_en])
 
     if use_llm_compression and (compressor is not None or model_name):
         try:

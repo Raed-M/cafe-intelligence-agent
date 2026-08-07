@@ -8,6 +8,7 @@ class ReportOutput(TypedDict):
     pdf_path: str | None
     pdf_warning: str | None
     whatsapp_summary: str
+    whatsapp_path: str
     whatsapp_char_count: int
     generated_at: str
     context: dict[str, Any]

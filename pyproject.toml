@@ -27,8 +27,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest", "pytest-timeout"]
-pdf = ["weasyprint"]
+dev = ["pytest", "pytest-timeout", "langgraph-cli[inmem]"]
+pdf = ["playwright"]  # after install: `playwright install chromium` (one-time, ~150MB, no admin/PATH changes)
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

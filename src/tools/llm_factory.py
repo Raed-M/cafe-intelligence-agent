@@ -64,6 +64,59 @@ def _is_quota_exhausted(exc: Exception) -> bool:
     return "RESOURCE_EXHAUSTED" in msg or "429" in msg or "quota" in msg.lower()
 
 
+_QUOTA_COOLDOWN_SECONDS = int(os.environ.get("LLM_QUOTA_COOLDOWN_SECONDS", "1800"))
+_quota_exhausted_until: dict[str, float] = {}
+
+
+def _circuit_open(provider: str) -> float | None:
+    until = _quota_exhausted_until.get(provider)
+    return until if until and time.monotonic() < until else None
+
+
+def _trip_circuit(provider: str) -> None:
+    _quota_exhausted_until[provider] = time.monotonic() + _QUOTA_COOLDOWN_SECONDS
+
+
+class _CircuitBreakerChatModel:
+    """Wraps a chat model (rotating or not) so that once its provider's quota
+    has been confirmed exhausted, every subsequent call fails instantly --
+    zero network calls -- for a cooldown window, instead of re-spending a
+    doomed request. This matters specifically because callers we don't
+    control can retry automatically: `langgraph dev`/LangGraph Platform
+    restarts a run from its last checkpoint after a worker crash, which
+    re-issues every in-flight LLM call from scratch. Without this, that kind
+    of external auto-retry (or simple heavy concurrent use) turns one
+    exhausted-quota error into an unbounded loop of doomed calls. Only trips
+    on a quota-exhausted error -- every other error passes through untouched
+    so genuine transient failures are still retried normally by callers."""
+
+    def __init__(self, inner: Any, provider: str):
+        self._inner = inner
+        self._provider = provider
+
+    def invoke(self, *args, **kwargs):
+        open_until = _circuit_open(self._provider)
+        if open_until is not None:
+            raise RuntimeError(
+                f"{self._provider} quota circuit breaker open until "
+                f"{time.strftime('%H:%M:%S', time.localtime(open_until))} -- its quota was confirmed "
+                f"exhausted within the last {_QUOTA_COOLDOWN_SECONDS}s; refusing to spend another call "
+                f"until the cooldown passes (set LLM_QUOTA_COOLDOWN_SECONDS to change this window)."
+            )
+        try:
+            return self._inner.invoke(*args, **kwargs)
+        except Exception as e:  # noqa: BLE001
+            if _is_quota_exhausted(e):
+                _trip_circuit(self._provider)
+            raise
+
+    def with_structured_output(self, *args, **kwargs):
+        return _CircuitBreakerChatModel(self._inner.with_structured_output(*args, **kwargs), self._provider)
+
+    def __getattr__(self, name):
+        return getattr(self._inner, name)
+
+
 class _RotatingKeyChatModel:
     """Holds one chat-model instance per API key and retries the *same*
     request on the next key when the current one reports quota exhaustion.
@@ -196,17 +249,33 @@ def get_chat_model(model_name: str, temperature: float = 0.0):
     elif provider == "gemini":
         from langchain_google_genai import ChatGoogleGenerativeAI
 
+        # max_retries=1 (i.e. no SDK-internal retry): ChatGoogleGenerativeAI
+        # defaults to max_retries=6, which retries-with-backoff *inside* a
+        # single .invoke() call before ever raising to our code -- on a
+        # daily-quota 429 (not transient), that just burns minutes retrying
+        # the same doomed key instead of giving _RotatingKeyChatModel a
+        # chance to switch keys immediately. The library's own docs recommend
+        # exactly this (max_retries=1 + custom retry logic) for callers that
+        # implement their own retry/rotation, which is what we do below.
         keys = _key_pool("gemini")
         if len(keys) > 1:
             model = _RotatingKeyChatModel(
-                lambda key: ChatGoogleGenerativeAI(model=model_name, temperature=temperature, google_api_key=key),
+                lambda key: ChatGoogleGenerativeAI(
+                    model=model_name, temperature=temperature, google_api_key=key, max_retries=1,
+                ),
                 keys,
             )
         else:
-            model = ChatGoogleGenerativeAI(model=model_name, temperature=temperature)
+            model = ChatGoogleGenerativeAI(model=model_name, temperature=temperature, max_retries=1)
 
     else:
         raise ValueError(f"Unknown LLM_PROVIDER {provider!r}; supported: {sorted(_PROVIDER_ENV_KEYS)}")
 
     limiter = _get_rate_limiter()
-    return _RateLimitedChatModel(model, limiter) if limiter else model
+    result = _RateLimitedChatModel(model, limiter) if limiter else model
+    if provider == "gemini":
+        # Outermost wrapper: check the circuit breaker before even acquiring a
+        # rate-limit slot, so a tripped breaker fails instantly instead of
+        # waiting out an RPM sleep first just to fail anyway.
+        result = _CircuitBreakerChatModel(result, "gemini")
+    return result

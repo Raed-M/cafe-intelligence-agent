@@ -32,6 +32,7 @@ from src.graph.setup_nodes import (
     build_context_node,
     guard_limits,
     preflight_dataset,
+    resolve_config,
     route_after_guard,
     route_after_preflight,
 )
@@ -43,6 +44,7 @@ from src.state import CafeIntelligenceState
 def build_main_graph(checkpointer: BaseCheckpointSaver | None = None):
     graph = StateGraph(CafeIntelligenceState)
 
+    graph.add_node("resolve_config", resolve_config)
     graph.add_node("preflight_dataset", preflight_dataset)
     graph.add_node("guard_limits", guard_limits)
     graph.add_node("abort", abort_node)
@@ -71,7 +73,8 @@ def build_main_graph(checkpointer: BaseCheckpointSaver | None = None):
     graph.add_node("stop_rejected", stop_rejected)
     graph.add_node("persist_run", persist_run)
 
-    graph.add_edge(START, "preflight_dataset")
+    graph.add_edge(START, "resolve_config")
+    graph.add_edge("resolve_config", "preflight_dataset")
     graph.add_conditional_edges("preflight_dataset", route_after_preflight, {"guard": "guard_limits", "abort": "abort"})
     graph.add_conditional_edges("guard_limits", route_after_guard, ["parse_source", "abort"])
 
@@ -107,3 +110,13 @@ def build_main_graph(checkpointer: BaseCheckpointSaver | None = None):
     graph.add_edge("persist_run", END)
 
     return graph.compile(checkpointer=checkpointer or MemorySaver(), interrupt_before=["human_gate"])
+
+
+def graph(config=None):  # noqa: ARG001 -- required factory signature, see langgraph.json
+    """Factory form for `langgraph dev` / LangGraph Studio (langgraph.json
+    points here directly -- no wrapper graph). `langgraph dev` calls this
+    with a RunnableConfig we don't need: real per-run input arrives through
+    graph state via resolve_config above, identically to every other caller
+    of build_main_graph. The platform supplies its own persistence layer, so
+    no checkpointer is passed here."""
+    return build_main_graph()

@@ -184,13 +184,40 @@ def parse_emails(source: SourceConfig, ctx: RunContext) -> SourceResult:
 
     model_name = ctx.config.app_settings.models.email_extractor
 
+    # Point-in-time cutoff: an email dated after the current analysis period
+    # hasn't "arrived" yet from the system's perspective, so it must not be
+    # visible to any analyst -- excluding it here also means never spending
+    # an LLM call (or even the deterministic fallback) extracting facts from
+    # data that shouldn't be seen yet. Only applied when the date header
+    # parses as an unambiguous ISO date; anything else is included rather
+    # than silently dropped on a parsing guess.
+    cutoff_date = ctx.config.analysis_period["end"][:10]
+    future_files: list[str] = []
+
     parsed_by_file: dict[str, dict[str, Any]] = {}
     for fpath in files:
         try:
-            parsed_by_file[fpath] = _parse_email_file(Path(fpath))
+            parsed = _parse_email_file(Path(fpath))
         except Exception as e:  # noqa: BLE001
             failed_files.append(fpath)
             warnings.append(f"failed to parse {fpath}: {e}")
+            continue
+        email_date = parsed.get("date")
+        try:
+            is_future = bool(email_date) and datetime.strptime(email_date, "%Y-%m-%d").date().isoformat() > cutoff_date
+        except ValueError:
+            is_future = False  # unparseable date header -- fail open, include it
+        if is_future:
+            future_files.append(fpath)
+            continue
+        parsed_by_file[fpath] = parsed
+
+    if future_files:
+        warnings.append(
+            f"{len(future_files)} of {raw_row_count} emails dated after the current analysis period "
+            f"(after {cutoff_date}) excluded as not-yet-visible at this point in time -- skipped "
+            f"entirely, no LLM call spent on them: {[Path(f).name for f in future_files]}"
+        )
 
     def _extract_one(fpath: str) -> tuple[str, list[dict[str, Any]], bool]:
         facts = _extract_with_llm(fpath, parsed_by_file[fpath], model_name)

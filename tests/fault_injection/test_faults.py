@@ -162,23 +162,24 @@ def test_pdf_failure_keeps_html_and_summary(tmp_path, monkeypatch):
     config = _cfg(DATA_DIR)
     run_id = "fault_pdf_" + uuid.uuid4().hex[:6]
 
-    # weasyprint isn't installed in this environment, which already exercises
-    # the ImportError branch; simulate an install-but-fails case too by
-    # monkeypatching a fake weasyprint module that raises on write_pdf.
+    # Simulate a Playwright/Chromium failure (e.g. `playwright install
+    # chromium` never having been run) by monkeypatching a fake
+    # playwright.sync_api module whose sync_playwright() context manager
+    # raises immediately, before it ever tries to launch a real browser.
     import sys
     import types
 
-    fake_module = types.ModuleType("weasyprint")
+    fake_module = types.ModuleType("playwright.sync_api")
 
-    class _FakeHTML:
-        def __init__(self, *a, **k):
-            pass
-
-        def write_pdf(self, *a, **k):
+    class _FakeSyncPlaywright:
+        def __enter__(self):
             raise RuntimeError("simulated renderer crash")
 
-    fake_module.HTML = _FakeHTML
-    monkeypatch.setitem(sys.modules, "weasyprint", fake_module)
+        def __exit__(self, *a):
+            return False
+
+    fake_module.sync_playwright = lambda: _FakeSyncPlaywright()
+    monkeypatch.setitem(sys.modules, "playwright.sync_api", fake_module)
 
     state = {
         "config": config, "run_id": run_id, "final_findings": [], "content_ideas": [],

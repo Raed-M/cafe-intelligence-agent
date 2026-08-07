@@ -88,13 +88,29 @@ def generate_report(state: CafeIntelligenceState) -> dict[str, Any]:
     html_path = out_dir / "report.html"
     html_path.write_text(html, encoding="utf-8")
 
+    whatsapp_path = out_dir / "whatsapp_summary.txt"
+    whatsapp_path.write_text(whatsapp_text, encoding="utf-8")
+
     pdf_path = None
     pdf_warning = None
     try:
-        from weasyprint import HTML  # type: ignore
+        from playwright.sync_api import sync_playwright
 
+        # weasyprint needs native GTK/Pango/GObject libraries that pip can't
+        # install on Windows (confirmed: pip install succeeds, rendering
+        # fails with "cannot load library 'libgobject-2.0-0'"). Playwright's
+        # headless Chromium is self-contained (installs into a user-level
+        # cache via `playwright install chromium`, no system PATH/registry
+        # changes) and renders from the already-written HTML file directly,
+        # so relative asset paths (the menu-engineering chart PNG) resolve
+        # exactly as they would in a real browser -- no base_url workaround.
         pdf_path = out_dir / "report.pdf"
-        HTML(string=html, base_url=str(out_dir)).write_pdf(str(pdf_path))
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            page = browser.new_page()
+            page.goto(html_path.resolve().as_uri())
+            page.pdf(path=str(pdf_path))
+            browser.close()
     except Exception as e:  # noqa: BLE001
         pdf_warning = f"PDF generation unavailable/failed: {e}"
         pdf_path = None
@@ -104,6 +120,7 @@ def generate_report(state: CafeIntelligenceState) -> dict[str, Any]:
         pdf_path=str(pdf_path) if pdf_path else None,
         pdf_warning=pdf_warning,
         whatsapp_summary=whatsapp_text,
+        whatsapp_path=str(whatsapp_path),
         whatsapp_char_count=whatsapp_len,
         generated_at=datetime.now(timezone.utc).isoformat(),
         context={"chart_path": chart_path},

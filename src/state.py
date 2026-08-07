@@ -35,6 +35,18 @@ class CafeIntelligenceState(TypedDict, total=False):
     trailing_baseline_periods: list[Period]
     recommendation_period: Period
 
+    # Plain-JSON alternative to a pre-built `config` -- lets a caller that
+    # can't construct a RuntimeCafeConfig object itself (e.g. a human typing
+    # input into LangGraph Studio) start the graph with these instead; the
+    # first node (setup_nodes.resolve_config) resolves them into the same
+    # `config`/period fields above and is a no-op for every other caller,
+    # which already builds `config` itself before invoking.
+    profile_path: str
+    data_dir: str
+    app_settings_path: str
+    source_registry_path: str
+    target_week: str
+
     source_results: Annotated[list[SourceResult], merge_source_results]
     parsed_artifacts: dict[str, ArtifactRef]
     cleaned_artifacts: dict[str, ArtifactRef]
