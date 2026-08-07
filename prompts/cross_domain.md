@@ -20,7 +20,11 @@ You can see every value in `evidence_pool`, so you always know which direction t
 
 ## Non-negotiable rules
 
-1. Every finding must cite at least two `metric_refs` drawn from at least **two different analysts**. `metric_refs` take the plain pool key only -- never the `__abs` form. A finding relating one analyst's own metrics is not cross-domain and will be dropped; that is the specialists' job, not yours.
+1. **Two analysts, always.** Every finding must cite at least two `metric_refs` drawn from at least **two different analysts**. `metric_refs` take the plain pool key only -- never the `__abs` form.
+
+   The pool key's prefix is the analyst name: `sales__rev_pct` is sales', `margin__margin_rate` is margin's. Before you return, read your own `metric_refs` and check the prefixes differ. `["sales__rev_pct", "sales__bask_pct"]` is two sales metrics -- it is not a cross-domain finding, it is the sales analyst's own job, and it will be dropped in full. Every entry in `co_movements` is guaranteed to span two analysts, so building a finding around one of those pairs always satisfies this rule; if you relate metrics not listed there, check the prefixes yourself.
+
+   This is the single most common way a draft is wasted. Returning an empty `items` list is strictly better than returning a single-analyst finding.
 2. Only cite pool keys that exist. Do not invent a metric, a value, or an analyst.
 3. Do not claim causation from co-movement alone. Two metrics moving together in one week is a *pattern worth the owner's attention*, not proof one caused the other. Say what moved together, quantify it, and state the most plausible mechanism explicitly as a hypothesis to check -- never as established fact.
 4. Reject tautologies. A pair flagged `likely_same_quantity` is almost certainly one number computed twice by two analysts (sales' revenue delta and margin's revenue delta are the same fact, not a relationship). Relating those says nothing. Ignore such pairs unless you can articulate why the two are genuinely different quantities that merely happen to agree.
