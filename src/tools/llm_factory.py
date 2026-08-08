@@ -93,6 +93,12 @@ class _TelemetryHandler(BaseCallbackHandler):
             finish = finish.get("finish_reason")
         except Exception:  # noqa: BLE001
             pass
+        # Cache accounting: providers report cache hits under
+        # usage_metadata["input_token_details"] with provider-specific keys
+        # (cache_read for Gemini/OpenAI, cache_read/cache_creation for
+        # Anthropic). Recorded so prompt-caching work can be measured instead
+        # of assumed.
+        details = usage.get("input_token_details") or {}
         self._write({
             "ts": time.time(), "status": "ok", "node": started.get("node"),
             "step": started.get("step"), "model": model,
@@ -100,6 +106,8 @@ class _TelemetryHandler(BaseCallbackHandler):
             "prompt_chars": started.get("prompt_chars"),
             "input_tokens": usage.get("input_tokens"), "output_tokens": usage.get("output_tokens"),
             "total_tokens": usage.get("total_tokens"), "finish_reason": finish,
+            "cache_read_tokens": details.get("cache_read"),
+            "cache_creation_tokens": details.get("cache_creation"),
         })
 
     def on_llm_error(self, error, *, run_id=None, **kwargs):
@@ -330,19 +338,27 @@ def extract_text(response) -> str:
     return str(content)
 
 
-def get_chat_model(model_name: str, temperature: float = 0.0):
+def get_chat_model(model_name: str, temperature: float = 0.0, **provider_kwargs):
+    """Builds a chat model for the active provider.
+
+    provider_kwargs are passed straight through to the underlying client, for
+    options only one provider has -- e.g. Gemini's `cached_content` (an explicit
+    prompt cache; see src/tools/prompt_cache.py). Passing a kwarg the active
+    provider does not accept is a programming error and will raise, so callers
+    should send provider-specific options only when that provider is active.
+    """
     provider = get_provider()
     cb = _get_telemetry_callbacks()
 
     if provider == "anthropic":
         from langchain_anthropic import ChatAnthropic
 
-        model = ChatAnthropic(model=model_name, temperature=temperature, callbacks=cb)
+        model = ChatAnthropic(model=model_name, temperature=temperature, callbacks=cb, **provider_kwargs)
 
     elif provider == "openai":
         from langchain_openai import ChatOpenAI
 
-        model = ChatOpenAI(model=model_name, temperature=temperature, callbacks=cb)
+        model = ChatOpenAI(model=model_name, temperature=temperature, callbacks=cb, **provider_kwargs)
 
     elif provider == "gemini":
         from langchain_google_genai import ChatGoogleGenerativeAI
@@ -360,13 +376,14 @@ def get_chat_model(model_name: str, temperature: float = 0.0):
             model = _RotatingKeyChatModel(
                 lambda key: ChatGoogleGenerativeAI(
                     model=model_name, temperature=temperature, google_api_key=key,
-                    max_retries=1, callbacks=cb,
+                    max_retries=1, callbacks=cb, **provider_kwargs,
                 ),
                 keys,
             )
         else:
             model = ChatGoogleGenerativeAI(
-                model=model_name, temperature=temperature, max_retries=1, callbacks=cb
+                model=model_name, temperature=temperature, max_retries=1, callbacks=cb,
+                **provider_kwargs,
             )
 
     else:

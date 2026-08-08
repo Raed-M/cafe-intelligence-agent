@@ -119,6 +119,38 @@ def _sample_envelope(rows: list[dict[str, Any]], matched_total: int, **extra: An
     return json.dumps(payload, ensure_ascii=False, default=str)
 
 
+def _cached_model_and_prompt() -> tuple[Any, Any]:
+    """The chat model and its system prompt, with prompt caching applied.
+
+    SYSTEM_PROMPT is ~1,030 tokens of fixed instructions resent on every turn of
+    the ReAct loop, which makes it the one part of this agent's cost worth
+    caching. See src/tools/prompt_cache.py for why the mechanism differs per
+    provider (and why it is inert on a free-tier Gemini key).
+
+    Two shapes come back:
+      * Gemini with an explicit cache -- the prompt lives in the cache, so the
+        agent is given no prompt at all; sending it too would bill it twice.
+      * everything else -- the prompt is passed through, marked up for Anthropic
+        and plain for OpenAI (which caches automatically).
+    """
+    from src.tools.llm_factory import get_provider
+    from src.tools.prompt_cache import cacheable_system_prompt, gemini_context_cache
+
+    provider = get_provider()
+    model_name = resolve_chat_model()
+
+    if provider == "gemini":
+        cache_name = gemini_context_cache(model_name, SYSTEM_PROMPT)
+        if cache_name:
+            model = get_chat_model(
+                model_name, temperature=CHAT_TEMPERATURE, cached_content=cache_name
+            )
+            return model, None
+
+    model = get_chat_model(model_name, temperature=CHAT_TEMPERATURE)
+    return model, cacheable_system_prompt(SYSTEM_PROMPT, provider)
+
+
 def verified_findings_payload(artifacts: ArtifactRepository, run_id: str | None) -> str:
     """JSON payload of approved findings for the findings tool, or
     NO_GROUNDED_FINDINGS when there are none.
@@ -463,9 +495,8 @@ def create_chat_agent(artifacts: ArtifactRepository, cafe_id: str, run_id: str |
     # ------------------------------------------------------------------
     # Build agent
     # ------------------------------------------------------------------
-    model = get_chat_model(resolve_chat_model(), temperature=CHAT_TEMPERATURE)
-
-    agent = create_react_agent(model, tools, prompt=SYSTEM_PROMPT)
+    model, prompt = _cached_model_and_prompt()
+    agent = create_react_agent(model, tools, prompt=prompt)
     return agent, run_id
 
 
