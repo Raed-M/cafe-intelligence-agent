@@ -57,6 +57,68 @@ _SOURCE_FILE_MAP = {
 }
 
 
+CHAT_TEMPERATURE = 0.0
+"""Matches config/app_settings.yaml (`models.temperature: 0`) and every
+pipeline agent. This agent's job is to relay numbers its tools computed, so
+sampling variance is a hallucination risk with no upside -- the creative
+latitude the system prompt asks for is in *what* it connects, not in how
+freely it words a figure. Was 0.7."""
+
+CHAT_RECURSION_LIMIT = 12
+"""Hard cap on the ReAct loop (LangGraph counts one superstep per model call
+plus tool node). One chat request is otherwise bounded only by LangGraph's
+default of 25, i.e. up to ~12 model calls of a large system prompt on a single
+question. Twelve supersteps still allows a chain of ~5 tool calls, which covers
+the cross-domain questions the prompt asks for, while keeping the worst case
+affordable on a rate-limited free tier."""
+
+
+def resolve_chat_model() -> str:
+    """Model name for the chat agent, resolved the same way the pipeline
+    resolves its agents' models.
+
+    ANALYST_MODEL is the same variable config/app_settings.yaml interpolates
+    for the analyst, so the chat agent tracks the rest of the system by
+    default. The fallback is the configured provider's own default rather than
+    a hardcoded "gpt-4o", which is not a valid model on this project's actual
+    provider -- that literal default sent a live request to Anthropic asking
+    for "gpt-4o" and got a 404."""
+    from src.tools.llm_factory import get_provider
+
+    configured = os.environ.get("ANALYST_MODEL", "").strip()
+    if configured:
+        return configured
+    from api.services.ai_settings import DEFAULT_MODELS
+
+    provider_defaults = DEFAULT_MODELS.get(get_provider())
+    return provider_defaults[0] if provider_defaults else ""
+
+
+def _sample_envelope(rows: list[dict[str, Any]], matched_total: int, **extra: Any) -> str:
+    """Wraps a truncated result set so the model cannot mistake the page it was
+    given for the whole population.
+
+    Row-returning tools used to emit a bare JSON array capped at `limit`. Asked
+    "how many reviews are there?", the agent received 20 rows and answered
+    "20 reviews currently in the system" -- the real figure was 520. Stating
+    matched_total explicitly, and flagging truncation, removes the inference
+    that produced that."""
+    payload: dict[str, Any] = {
+        "matched_total": matched_total,
+        "returned": len(rows),
+        "truncated": len(rows) < matched_total,
+        **extra,
+        "rows": rows,
+    }
+    if payload["truncated"]:
+        payload["note"] = (
+            f"Showing {len(rows)} of {matched_total} matching rows. "
+            f"Cite matched_total ({matched_total}) for any count; the rows below are a sample. "
+            "Do not compute totals or averages from them -- ask for an aggregate instead."
+        )
+    return json.dumps(payload, ensure_ascii=False, default=str)
+
+
 def verified_findings_payload(artifacts: ArtifactRepository, run_id: str | None) -> str:
     """JSON payload of approved findings for the findings tool, or
     NO_GROUNDED_FINDINGS when there are none.
@@ -124,7 +186,8 @@ You have access to the café's **real operational data** through specialized too
 You also have **web search** to research market trends, competitor analysis, and viral café ideas in the region.
 
 ## LANGUAGE & TONE RULES
-- **Mirror the user's language**: If they write in Arabic, respond in Arabic (Gulf-friendly, professional). If in English, respond in English.
+- **Mirror the user's language**: If they write in Arabic, respond in Arabic (Gulf-friendly, professional). If in English, respond **entirely in English**.
+- This applies to *every* reply, including refusals, "no data available" answers, and off-topic redirections. Several example phrasings later in this prompt are written in Arabic purely to show tone -- do not let them pull an English conversation into Arabic. Match the language of the user's latest message, nothing else.
 - **Be concise by default**: Give direct, actionable answers. No filler or unnecessary pleasantries.
 - **Adaptive depth**: 
   - If the user says "مختصر", "بسرعة", "brief", "quick" — give a short summary
@@ -156,6 +219,7 @@ When asked to write marketing copy, supplier orders, WhatsApp messages, or repor
 - If a tool returns no data, say so honestly. Do NOT hallucinate.
 - When showing data, specify the date range or week it covers.
 - Use SAR (ريال) as the currency.
+- **Counts come from `matched_total`, never from the number of rows you were shown.** Row-returning tools give you a capped sample and report `matched_total`, `returned` and `truncated`. When `truncated` is true, the rows are an excerpt: quote `matched_total` for "how many", and never sum or average the sample as if it were the full set. Use the aggregate fields the tool provides (e.g. `average_rating_of_all_matches`) or call an aggregating tool such as `get_sales_ranking`.
 
 ## AVAILABLE DATA SOURCES FOR query_cafe_data TOOL
 Use these exact source names: 'pos', 'inventory', 'menu', 'reviews', 'traffic', 'staff', 'emails'
@@ -209,10 +273,11 @@ def create_chat_agent(artifacts: ArtifactRepository, cafe_id: str, run_id: str |
             # Apply sort
             if sort_column and sort_column in table.column_names:
                 table = table.sort_by([(sort_column, "ascending" if ascending else "descending")])
+            matched_total = table.num_rows
             rows = table.slice(0, limit).to_pylist()
             if not rows:
                 return f"Source '{source}' returned no matching rows."
-            return json.dumps(rows, ensure_ascii=False, default=str)
+            return _sample_envelope(rows, matched_total, source=source)
         except Exception as e:
             return f"Error reading {source}: {e}"
 
@@ -287,10 +352,20 @@ def create_chat_agent(artifacts: ArtifactRepository, cafe_id: str, run_id: str |
                 df = df[df["rating"] <= max_rating]
             if min_rating is not None:
                 df = df[df["rating"] >= min_rating]
-            df = df.sort_values("date", ascending=False).head(limit)
-            if df.empty:
-                return f"No reviews found matching your criteria."
-            return json.dumps(df[["review_id", "date", "rating", "text", "source"]].to_dict("records"), ensure_ascii=False, default=str)
+            matched_total = len(df)
+            if matched_total == 0:
+                return "No reviews found matching your criteria."
+            average_rating = round(float(df["rating"].mean()), 2)
+            page = df.sort_values("date", ascending=False).head(limit)
+            return _sample_envelope(
+                page[["review_id", "date", "rating", "text", "source"]].to_dict("records"),
+                matched_total,
+                # Aggregates over ALL matches, not just the returned page: the
+                # model is asked for "the average rating" far more often than
+                # for individual reviews, and computing it from the page would
+                # be wrong.
+                average_rating_of_all_matches=average_rating,
+            )
         except Exception as e:
             return f"Error searching reviews: {e}"
 
@@ -388,8 +463,7 @@ def create_chat_agent(artifacts: ArtifactRepository, cafe_id: str, run_id: str |
     # ------------------------------------------------------------------
     # Build agent
     # ------------------------------------------------------------------
-    model_name = os.environ.get("ANALYST_MODEL", "gpt-4o")
-    model = get_chat_model(model_name, temperature=0.7)
+    model = get_chat_model(resolve_chat_model(), temperature=CHAT_TEMPERATURE)
 
     agent = create_react_agent(model, tools, prompt=SYSTEM_PROMPT)
     return agent, run_id
@@ -491,7 +565,10 @@ def grounded_answer(
 
         langchain_messages = _to_langchain_messages(messages)
 
-        response = agent.invoke({"messages": langchain_messages})
+        response = agent.invoke(
+            {"messages": langchain_messages},
+            config={"recursion_limit": CHAT_RECURSION_LIMIT},
+        )
 
         # extract_text, not .content directly: Gemini returns a list of content
         # blocks rather than a string, which then reached sqlite as a list and

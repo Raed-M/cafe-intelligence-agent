@@ -17,6 +17,8 @@ from api.services.chat import (
     NO_GROUNDED_FINDINGS,
     WEB_SEARCH_TOOL_NAME,
     _extract_citations,
+    _sample_envelope,
+    resolve_chat_model,
     verified_findings_payload,
 )
 
@@ -391,3 +393,58 @@ def test_report_allowlist_and_cross_platform_path_scrubbing() -> None:
         "file:///tmp/private.txt | /home/user/private.txt | \\\\server\\share\\private.txt | outputs/reports/x.html"
     )
     assert_no_path_leak(scrubbed)
+
+
+# --- chat agent configuration and tool honesty ------------------------------
+
+def test_chat_uses_the_same_model_as_the_pipeline(monkeypatch) -> None:
+    """The chat agent must track the configured analyst model, not diverge from
+    the rest of the system."""
+    monkeypatch.setenv("ANALYST_MODEL", "gemini-3.1-flash-lite")
+    assert resolve_chat_model() == "gemini-3.1-flash-lite"
+
+
+def test_chat_model_fallback_is_provider_correct(monkeypatch) -> None:
+    """With no ANALYST_MODEL the fallback must be valid for the active
+    provider. The old hardcoded "gpt-4o" default sent a live request to
+    Anthropic asking for an OpenAI model and got a 404."""
+    monkeypatch.delenv("ANALYST_MODEL", raising=False)
+    for provider, expected_prefix in (("gemini", "gemini"), ("anthropic", "claude"), ("openai", "gpt")):
+        monkeypatch.setenv("LLM_PROVIDER", provider)
+        assert resolve_chat_model().startswith(expected_prefix)
+
+
+def test_chat_is_deterministic_and_call_capped() -> None:
+    """Temperature matches config/app_settings.yaml (models.temperature: 0) so
+    a number-relaying agent does not sample, and the ReAct loop is capped so one
+    question cannot spend an unbounded number of calls."""
+    from api.services import chat as chat_module
+
+    assert chat_module.CHAT_TEMPERATURE == 0.0
+    assert 0 < chat_module.CHAT_RECURSION_LIMIT <= 25
+
+
+def test_truncated_tool_results_report_the_true_total() -> None:
+    """Regression, found by live probing: asked how many reviews existed, the
+    agent was handed 20 rows with no total and answered "20 reviews currently
+    in the system". The real figure was 520."""
+    payload = json.loads(_sample_envelope([{"a": 1}, {"a": 2}], matched_total=520))
+    assert payload["matched_total"] == 520
+    assert payload["returned"] == 2
+    assert payload["truncated"] is True
+    assert "520" in payload["note"]
+    assert "sample" in payload["note"].lower()
+
+
+def test_untruncated_tool_results_carry_no_truncation_note() -> None:
+    payload = json.loads(_sample_envelope([{"a": 1}], matched_total=1))
+    assert payload["truncated"] is False
+    assert "note" not in payload
+
+
+def test_sample_envelope_passes_through_aggregates() -> None:
+    """Aggregates must describe all matches, not the returned page."""
+    payload = json.loads(
+        _sample_envelope([{"rating": 5}], matched_total=520, average_rating_of_all_matches=4.33)
+    )
+    assert payload["average_rating_of_all_matches"] == 4.33
