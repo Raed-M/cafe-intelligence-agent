@@ -40,6 +40,18 @@ class ApiSettings:
         default_factory=lambda: _bool_env("WADDEHHA_INCLUDE_TEST_EVIDENCE", False)
     )
     runs_enabled: bool = field(default_factory=lambda: _bool_env("WADDEHHA_RUNS_ENABLED", True))
+    allow_owner_self_review: bool = field(
+        default_factory=lambda: _bool_env("WADDEHHA_ALLOW_OWNER_SELF_REVIEW", False)
+    )
+    """Let an owner file the manager review as well as the final decision.
+
+    Off by default: the manager->owner handoff is two-person review, and
+    `test_manager_review_then_owner_decision_enforces_rbac_and_order` pins the
+    403 an owner gets when self-reviewing. Turning it on is the escape hatch
+    for a single-operator deployment, where the only account is the bootstrap
+    owner and a run would otherwise park at `manager_review` forever -- only a
+    manager can advance it, and `add_decision` refuses an owner decision until
+    a manager review exists. Development-only (see __post_init__)."""
     allowed_origins: tuple[str, ...] = field(
         default_factory=lambda: tuple(
             value.strip()
@@ -72,6 +84,8 @@ class ApiSettings:
             raise RuntimeError("Development seed users cannot be enabled outside development")
         if self.environment != "development" and self.include_test_evidence:
             raise RuntimeError("Test evidence cannot be exposed outside development")
+        if self.environment != "development" and self.allow_owner_self_review:
+            raise RuntimeError("Owner self-review cannot be enabled outside development")
         if self.bootstrap_admin is None:
             self.bootstrap_admin = self.environment == "development"
         if self.environment != "development" and self.bootstrap_admin:

@@ -1,11 +1,11 @@
 week_starting,purpose,status,sources_successful,sources_partial,sources_failed,candidate_findings,approved_findings,rejected_findings,final_findings,content_valid,steps,duration_seconds,primary_failure_layer,diagnosis
-2026-01-05,First complete normal week/baseline edge,succeeded,7,0,0,5,1,4,1,True,21,20.2,none,completed normally
-2026-01-26,Normal winter comparison,succeeded,7,0,0,5,1,4,1,True,21,19.72,none,completed normally
-2026-02-16,Ramadan transition and Founding Day context,succeeded,7,0,0,5,1,4,1,True,21,19.83,none,completed normally
-2026-02-23,Ramadan night behaviour,succeeded,7,0,0,5,1,4,1,True,21,20.14,none,completed normally
-2026-03-16,Ramadan/Eid al-Fitr transition,succeeded,7,0,0,5,1,4,1,True,21,19.8,none,completed normally
-2026-04-06,Mid-period Matcha launch; launch-aware tests,succeeded,7,0,0,5,1,4,1,True,21,20.14,none,completed normally
-2026-05-25,Eid al-Adha period,succeeded,7,0,0,5,1,4,1,True,21,19.62,none,completed normally
-2026-06-08,Sensor outage and supplier delivery delay,succeeded,7,0,0,5,1,4,1,True,21,19.83,none,completed normally
-2026-07-06,Peak summer and Summer Nights event,succeeded,7,0,0,5,1,4,1,True,21,19.84,none,completed normally
-2026-07-20,Latest complete supplied week,succeeded,7,0,0,5,1,4,1,True,21,19.77,none,completed normally
+2026-01-05,First complete normal week/baseline edge,succeeded,7,0,0,5,1,4,1,True,21,37.78,none,completed normally
+2026-01-26,Normal winter comparison,succeeded,7,0,0,5,1,4,1,True,21,25.22,none,completed normally
+2026-02-16,Ramadan transition and Founding Day context,succeeded,7,0,0,5,1,4,1,True,21,33.24,none,completed normally
+2026-02-23,Ramadan night behaviour,succeeded,7,0,0,5,1,4,1,True,21,32.34,none,completed normally
+2026-03-16,Ramadan/Eid al-Fitr transition,succeeded,7,0,0,5,1,4,1,True,21,35.22,none,completed normally
+2026-04-06,Mid-period Matcha launch; launch-aware tests,succeeded,7,0,0,5,1,4,1,True,21,38.03,none,completed normally
+2026-05-25,Eid al-Adha period,succeeded,7,0,0,5,1,4,1,True,21,28.21,none,completed normally
+2026-06-08,Sensor outage and supplier delivery delay,succeeded,7,0,0,5,1,4,1,True,21,24.84,none,completed normally
+2026-07-06,Peak summer and Summer Nights event,succeeded,7,0,0,5,1,4,1,True,21,27.18,none,completed normally
+2026-07-20,Latest complete supplied week,succeeded,7,0,0,5,1,4,1,True,21,27.43,none,completed normally

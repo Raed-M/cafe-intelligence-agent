@@ -5,13 +5,18 @@ import { ArrowLeft, ArrowRight, Calculator, Database, FileSearch, ShieldCheck } 
 import Link from "next/link";
 import { api } from "@/lib/api";
 import { displayError, formatValue } from "@/lib/format";
+import { livePolling } from "@/lib/run-state";
 import { useWorkspace } from "@/components/providers";
 import { Skeleton, StatePanel, StatusBadge } from "@/components/ui";
 
 export function FindingView({ runId, findingId }: { runId: string; findingId: string }) {
   const { locale, viewMode } = useWorkspace();
   const Arrow = locale === "ar" ? ArrowLeft : ArrowRight;
-  const findings = useQuery({ queryKey: ["findings", runId], queryFn: () => api.findings(runId) });
+  // Shares the ["run", runId] cache entry with the run page, so this adds no
+  // request when navigating from there -- it just keeps the evidence trail
+  // refreshing while the critic can still revise findings.
+  const run = useQuery({ queryKey: ["run", runId], queryFn: () => api.run(runId), retry: false, refetchInterval: (query) => livePolling(query.state.data?.status) });
+  const findings = useQuery({ queryKey: ["findings", runId], queryFn: () => api.findings(runId), refetchInterval: () => livePolling(run.data?.status) });
   const finding = findings.data?.find((candidate) => candidate.id === findingId);
 
   return <div className="page-stack">

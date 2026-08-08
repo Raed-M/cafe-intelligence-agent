@@ -6,12 +6,13 @@ import json
 import re
 import sqlite3
 from contextlib import closing
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from html import escape
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Iterable
 
+import pandas as pd
 import pyarrow.parquet as pq
 
 from api.database import ApiDatabase
@@ -160,6 +161,9 @@ class ArtifactRepository:
         self.include_test_evidence = include_test_evidence
         # Must be the same store RunService writes -- see ApiSettings.checkpoint_db.
         self.checkpoint_db = Path(checkpoint_db).resolve() if checkpoint_db else self.root / "db" / "checkpoints.sqlite"
+        # available_weeks() scans every POS row; keyed on (path, mtime, size) so
+        # it is recomputed only when the file actually changes.
+        self._weeks_cache: dict[tuple[str, int, int], list[dict[str, Any]]] = {}
 
     def list_cafes(self) -> list[dict[str, Any]]:
         cafes: list[dict[str, Any]] = []
@@ -498,6 +502,50 @@ class ArtifactRepository:
             "generated_at": generated_at,
         }
 
+    def report_location(self, run_id: str) -> dict[str, Any] | None:
+        """Resolve the on-disk folder holding this run's report files.
+
+        Deliberately separate from `report()`: every other response strips
+        filesystem paths (`_safe_value`/`strip_path_text`), so the one place a
+        real path is handed out is this explicit, individually-authorised
+        endpoint rather than a field smuggled into an existing payload.
+
+        Returns None when the run has no report, or when the stored path
+        escapes outputs/reports -- the same containment check `_read_report`
+        applies before reading.
+        """
+        run = self.get_run(run_id)
+        if run is None:
+            return None
+        stored_path: str | None = None
+        memory = self._memory_row_for_run(run_id)
+        if memory:
+            _, row = memory
+            stored_path = row["report_html_path"]
+        else:
+            stored_path = ((self.checkpoint_values(run_id) or {}).get("report") or {}).get("html_path")
+        if not stored_path:
+            return None
+        candidate = Path(stored_path)
+        if not candidate.is_absolute():
+            candidate = self.root / candidate
+        reports_root = (self.root / "outputs" / "reports").resolve()
+        try:
+            resolved = candidate.resolve()
+            resolved.relative_to(reports_root)
+        except (OSError, ValueError):
+            return None
+        directory = resolved.parent
+        if not directory.is_dir():
+            return None
+        files = sorted(
+            ({"name": item.name, "bytes": item.stat().st_size} for item in directory.iterdir() if item.is_file()),
+            key=lambda item: item["name"],
+        )
+        if not files:
+            return None
+        return {"run_id": run_id, "directory": str(directory), "files": files}
+
     def _read_report(self, stored_path: str) -> str | None:
         candidate = Path(stored_path)
         if not candidate.is_absolute():
@@ -553,6 +601,71 @@ class ArtifactRepository:
             }
             for source, relative in _SOURCE_FILES.items()
         ]
+
+    def available_weeks(self, cafe_id: str, limit: int = 26) -> dict[str, Any]:
+        """Monday-start weeks the POS file actually covers, newest first.
+
+        The pipeline's own default is "the most recent complete calendar week"
+        (`resolve_analysis_period`), which is right for a cafe uploading data
+        weekly but silently analyses an empty window whenever the data stops
+        short of today -- the analyst then reports a true-but-meaningless
+        100% collapse. Offering the weeks that exist lets the UI default to the
+        newest week with real coverage and lets a human pick another.
+
+        `covered_days` is how many distinct dates in the week carry
+        transactions, so the caller can tell a whole week from a stub.
+        """
+        cafe = self.get_cafe(cafe_id)
+        data_dir = cafe.get("_data_dir") if cafe else None
+        if data_dir is None:
+            return {"items": [], "default_week": None}
+        path = Path(data_dir) / _SOURCE_FILES["pos"]
+        if not path.is_file():
+            return {"items": [], "default_week": None}
+
+        stat = path.stat()
+        cache_key = (str(path), stat.st_mtime_ns, stat.st_size)
+        cached = self._weeks_cache.get(cache_key)
+        if cached is None:
+            from src.business_time import parse_pos_timestamp
+
+            counts: dict[date, int] = {}
+            days: dict[date, set[date]] = {}
+            try:
+                frame = pd.read_csv(path, usecols=["timestamp"])
+            except (OSError, ValueError):
+                return {"items": [], "default_week": None}
+            for raw in frame["timestamp"]:
+                try:
+                    # The file mixes two documented formats; the shared parser
+                    # is the only thing that reads both correctly (a naive
+                    # dayfirst parse invents dates that are not in the data).
+                    stamp = parse_pos_timestamp(str(raw))
+                except ValueError:
+                    continue
+                day = stamp.date()
+                monday = day - timedelta(days=day.weekday())
+                counts[monday] = counts.get(monday, 0) + 1
+                days.setdefault(monday, set()).add(day)
+            cached = [
+                {
+                    "week_start": monday.isoformat(),
+                    "week_end": (monday + timedelta(days=7)).isoformat(),
+                    "transactions": total,
+                    "covered_days": len(days[monday]),
+                }
+                for monday, total in sorted(counts.items(), reverse=True)
+            ]
+            self._weeks_cache = {cache_key: cached}
+
+        items = cached[:limit]
+        # Prefer the newest fully covered week; a trailing stub week would
+        # otherwise become the default and skew every week-over-week number.
+        default = next((item for item in items if item["covered_days"] == 7), None)
+        return {
+            "items": items,
+            "default_week": (default or (items[0] if items else None) or {}).get("week_start"),
+        }
 
     @staticmethod
     def _parquet_rows(path: Path) -> int | None:

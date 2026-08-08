@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import type { Run, RunEvent } from "@/lib/types";
 import { formatDate } from "@/lib/format";
+import { invalidateRunScoped } from "@/lib/run-state";
 
 type Locale = "ar" | "en";
 type StreamState = "connecting" | "open" | "closed" | "error";
@@ -107,7 +108,7 @@ export function WorkflowMonitor({ run, locale }: { run: Run; locale: Locale }) {
           return items.some((item) => item.event_id && item.event_id === next.event_id) ? { runId: run.id, items } : { runId: run.id, items: [...items.slice(-39), next] };
         });
         setStreamState("open");
-        queryClient.invalidateQueries({ queryKey: ["runs"] });
+        invalidateRunScoped(queryClient, run.id);
       } catch {
         setStreamState("error");
       }

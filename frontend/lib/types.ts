@@ -8,6 +8,20 @@ export interface Run { id: string; cafe_id: string; status: string; stage?: stri
 export interface Evidence { id: string; metric_name: string; value: unknown; unit?: string; period_start?: string; period_end?: string; source_names?: string[]; artifact_id?: string }
 export interface Finding { id: string; analyst: string; title: string; claim: string; type?: string; confidence?: number; approved?: boolean; evidence: Evidence[] }
 export interface Report { run_id: string; state: string; format?: "html" | string; html?: string; whatsapp_summary?: string; generated_at?: string }
+/** A Monday-start week the POS data covers. `covered_days` is how many of the
+ *  seven days actually carry transactions, so a stub week is distinguishable
+ *  from a whole one. */
+export interface WeekOption { week_start: string; week_end: string; transactions: number; covered_days: number }
+export interface AvailableWeeks { cafe_id: string; items: WeekOption[]; default_week: string | null }
+/** Deployment switches the UI must respect. `owner_self_review` is off unless
+ *  the API opted out of two-person review, so the gate can tell an owner why
+ *  the manager step is not theirs to take. */
+export interface Capabilities { owner_self_review: boolean; local_file_access: boolean }
+/** Where a run's report files landed on the machine running the API. `available`
+ *  is false until the files actually exist on disk; `can_reveal` is false when
+ *  the API is not local/development, in which case `directory` is all the UI
+ *  can offer. */
+export interface ReportLocation { run_id: string; available: boolean; can_reveal: boolean; directory: string | null; files: Array<{ name: string; bytes: number }> }
 export interface RunEvent { event_id?: string; run_id: string; type: string; at?: string; stage?: string; status?: string; message?: string }
 export interface Lineage { raw?: Record<string, unknown> | null; cleaned?: Record<string, unknown> | null; changes?: Array<{ field?: string; before?: unknown; after?: unknown; reason?: string; rule?: string }> }
 export interface Conversation { id: string; cafe_id?: string; title?: string; created_at?: string }

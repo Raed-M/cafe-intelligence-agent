@@ -1,11 +1,13 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { ArrowLeft, ArrowRight, Database, FileCheck2, Play, RefreshCw, ShieldCheck, TriangleAlert } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarRange, Database, FileCheck2, Play, RefreshCw, ShieldCheck, TriangleAlert } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { api } from "@/lib/api";
 import { displayError, formatDate, formatValue } from "@/lib/format";
+import { livePolling, useRunStatusSync } from "@/lib/run-state";
 import type { Evidence, Finding } from "@/lib/types";
 import { useWorkspace } from "@/components/providers";
 import { Pearl, Skeleton, StatePanel, StatusBadge } from "@/components/ui";
@@ -33,12 +35,29 @@ export function DashboardView() {
   const queryClient = useQueryClient();
   const runs = useQuery({ queryKey: ["runs", cafeId], queryFn: () => api.runs(cafeId, 10), enabled: Boolean(cafeId), refetchInterval: 15_000 });
   const latest = runs.data?.[0];
-  const findings = useQuery({ queryKey: ["findings", latest?.id], queryFn: () => api.findings(latest!.id), enabled: Boolean(latest?.id), retry: 1 });
-  const report = useQuery({ queryKey: ["report", latest?.id], queryFn: () => api.report(latest!.id), enabled: Boolean(latest?.id), retry: false });
-  const sources = useQuery({ queryKey: ["sources", cafeId], queryFn: () => api.sources(cafeId), enabled: Boolean(cafeId), retry: 1 });
+  // These three are all written while a run is in flight. Polling only `runs`
+  // left the story, KPI strip and source counts frozen at whatever they were
+  // when the page first loaded; `useRunStatusSync` then catches the final
+  // write once the run settles and polling stops.
+  const findings = useQuery({ queryKey: ["findings", latest?.id], queryFn: () => api.findings(latest!.id), enabled: Boolean(latest?.id), retry: 1, refetchInterval: () => livePolling(latest?.status) });
+  const report = useQuery({ queryKey: ["report", latest?.id], queryFn: () => api.report(latest!.id), enabled: Boolean(latest?.id), retry: false, refetchInterval: () => livePolling(latest?.status) });
+  const sources = useQuery({ queryKey: ["sources", cafeId], queryFn: () => api.sources(cafeId), enabled: Boolean(cafeId), retry: 1, refetchInterval: () => livePolling(latest?.status) });
+  useRunStatusSync(queryClient, latest?.id, latest?.status, cafeId);
   const canRun = user?.role === "owner" || user?.role === "manager";
+
+  // Which week to analyse. The pipeline's own fallback is the most recent
+  // complete *calendar* week, which is an empty window whenever the data stops
+  // short of today -- so preselect the newest week with real coverage and let
+  // the operator override it.
+  const weeks = useQuery({ queryKey: ["weeks", cafeId], queryFn: () => api.weeks(cafeId), enabled: Boolean(cafeId), retry: 1 });
+  // Tagged with the cafe it was picked for, so switching cafe falls back to
+  // that cafe's own default without an effect resetting state.
+  const [chosen, setChosen] = useState<{ cafeId: string; week: string } | null>(null);
+  const targetWeek = (chosen?.cafeId === cafeId ? chosen.week : "") || weeks.data?.default_week || "";
+  const selectedWeek = weeks.data?.items.find((week) => week.week_start === targetWeek);
+
   const start = useMutation({
-    mutationFn: () => api.startRun(cafeId),
+    mutationFn: () => api.startRun(cafeId, targetWeek || undefined),
     onSuccess(run) { queryClient.invalidateQueries({ queryKey: ["runs", cafeId] }); router.push(`/runs/${run.id}`); },
   });
   const Arrow = locale === "ar" ? ArrowLeft : ArrowRight;
@@ -48,8 +67,19 @@ export function DashboardView() {
   return <div className="page-stack">
     <section className="page-heading" id="weekly-story">
       <div><span className="eyebrow">{locale === "ar" ? "وضوح أسبوعي · قرار موثّق" : "Weekly clarity · traceable decision"}</span><h1>{locale === "ar" ? "القصة الأسبوعية" : "Weekly story"}</h1><p>{cafe?.name || "—"}{latest?.analysis_period ? ` · ${typeof latest.analysis_period === "string" ? latest.analysis_period : `${latest.analysis_period.start ?? ""} — ${latest.analysis_period.end ?? ""}`}` : ""}</p></div>
-      <div className="heading-actions"><StatusBadge status={latest?.status} /><button className="primary-button" type="button" disabled={!canRun || !cafeId || start.isPending} onClick={() => start.mutate()}><Play />{start.isPending ? (locale === "ar" ? "بدء التشغيل…" : "Starting…") : (locale === "ar" ? "تشغيل الأسبوع الآن" : "Run this week")}</button></div>
+      <div className="heading-actions">
+        <StatusBadge status={latest?.status} />
+        {canRun && <label className="week-picker"><CalendarRange aria-hidden="true" /><span className="week-picker-label">{locale === "ar" ? "أسبوع التحليل" : "Analysis week"}</span>
+          <select value={targetWeek} onChange={(event) => setChosen({ cafeId, week: event.target.value })} disabled={!weeks.data?.items.length || start.isPending} aria-label={locale === "ar" ? "اختر أسبوع التحليل" : "Choose the analysis week"}>
+            {weeks.isLoading && <option value="">{locale === "ar" ? "جارٍ القراءة…" : "Reading data…"}</option>}
+            {!weeks.isLoading && !weeks.data?.items.length && <option value="">{locale === "ar" ? "لا توجد أسابيع في البيانات" : "No weeks in the data"}</option>}
+            {weeks.data?.items.map((week) => <option key={week.week_start} value={week.week_start}>{week.week_start}{week.covered_days < 7 ? (locale === "ar" ? ` · ${week.covered_days}/7 أيام` : ` · ${week.covered_days}/7 days`) : ""}</option>)}
+          </select>
+        </label>}
+        <button className="primary-button" type="button" disabled={!canRun || !cafeId || start.isPending} onClick={() => start.mutate()}><Play />{start.isPending ? (locale === "ar" ? "بدء التشغيل…" : "Starting…") : (locale === "ar" ? "شغّل هذا الأسبوع" : "Run this week")}</button>
+      </div>
     </section>
+    {canRun && selectedWeek && selectedWeek.covered_days < 7 && <div className="degraded-banner"><TriangleAlert /><div><strong>{locale === "ar" ? "أسبوع غير مكتمل" : "Partial week selected"}</strong><span>{locale === "ar" ? `${selectedWeek.covered_days} من 7 أيام تحتوي على معاملات. ستكون المقارنة الأسبوعية مضللة.` : `${selectedWeek.covered_days} of 7 days carry transactions, so week-over-week comparisons will be misleading.`}</span></div></div>}
     {start.isError && <StatePanel kind="error" title={locale === "ar" ? "لم يبدأ التشغيل" : "Run did not start"} body={displayError(start.error, locale === "ar" ? "تحقق من اتصال API وصلاحيات الحساب." : "Check the API connection and account permissions.")} />}
 
     <section className="story-grid" aria-label={locale === "ar" ? "ملخص الأسبوع" : "Week summary"}>

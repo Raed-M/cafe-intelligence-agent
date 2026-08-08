@@ -6,8 +6,11 @@ import { Activity, ArrowLeft, ArrowRight, Braces, Clock3, Radio, ShieldCheck, Tr
 import Link from "next/link";
 import { api } from "@/lib/api";
 import { displayError, formatDate } from "@/lib/format";
+import { invalidateRunScoped, livePolling, useRunStatusSync } from "@/lib/run-state";
 import type { AgentState, RunEvent } from "@/lib/types";
 import { useWorkspace } from "@/components/providers";
+import { HumanGate } from "@/components/human-gate";
+import { ReportLocationButton } from "@/components/report-location";
 import { Pearl, Skeleton, StatePanel, StatusBadge } from "@/components/ui";
 
 const expectedAgents = [
@@ -26,13 +29,16 @@ function normalizeAgents(agents?: Record<string, AgentState> | AgentState[]) {
 }
 
 export function RunView({ runId }: { runId: string }) {
-  const { locale, viewMode } = useWorkspace();
+  const { locale, viewMode, cafeId } = useWorkspace();
   const Arrow = locale === "ar" ? ArrowLeft : ArrowRight;
   const queryClient = useQueryClient();
   const [events, setEvents] = useState<RunEvent[]>([]);
   const [streamState, setStreamState] = useState<"connecting" | "open" | "closed" | "error">("connecting");
-  const run = useQuery({ queryKey: ["run", runId], queryFn: () => api.run(runId), refetchInterval: (query) => ["completed", "saved", "failed", "paused"].includes(query.state.data?.status ?? "") ? false : 8_000 });
-  const findings = useQuery({ queryKey: ["findings", runId], queryFn: () => api.findings(runId), enabled: Boolean(run.data), retry: 1 });
+  const run = useQuery({ queryKey: ["run", runId], queryFn: () => api.run(runId), refetchInterval: (query) => livePolling(query.state.data?.status) });
+  // Findings arrive mid-run, long after this query first resolves. Without its
+  // own poll it kept serving the empty list it was seeded with at run creation.
+  const findings = useQuery({ queryKey: ["findings", runId], queryFn: () => api.findings(runId), enabled: Boolean(run.data), retry: 1, refetchInterval: () => livePolling(run.data?.status) });
+  useRunStatusSync(queryClient, runId, run.data?.status, cafeId);
 
   useEffect(() => {
     const stream = new EventSource(`/api/runs/${encodeURIComponent(runId)}/events`, { withCredentials: true });
@@ -41,16 +47,16 @@ export function RunView({ runId }: { runId: string }) {
         const next = JSON.parse(event.data) as RunEvent;
         setEvents((current) => [...current.slice(-39), next]);
         setStreamState("open");
-        queryClient.invalidateQueries({ queryKey: ["run", runId] });
+        invalidateRunScoped(queryClient, runId, cafeId);
       } catch { setStreamState("error"); }
     };
-    const onEnd = () => { setStreamState("closed"); stream.close(); queryClient.invalidateQueries({ queryKey: ["run", runId] }); };
+    const onEnd = () => { setStreamState("closed"); stream.close(); invalidateRunScoped(queryClient, runId, cafeId); };
     stream.addEventListener("run.status", onStatus as EventListener);
     stream.addEventListener("end", onEnd);
     stream.onopen = () => setStreamState("open");
     stream.onerror = () => { if (stream.readyState === EventSource.CLOSED) setStreamState("closed"); else setStreamState("error"); };
     return () => stream.close();
-  }, [runId, queryClient]);
+  }, [runId, queryClient, cafeId]);
 
   const reportedAgents = normalizeAgents(run.data?.agents);
   const agentRows = useMemo(() => expectedAgents.map(([id, ar, en]) => ({ id, label: locale === "ar" ? ar : en, state: reportedAgents.find((agent) => agent.id === id || agent.name?.toLowerCase().includes(id)) })), [locale, reportedAgents]);
@@ -69,6 +75,20 @@ export function RunView({ runId }: { runId: string }) {
       {viewMode === "technical" && <section className="two-column"><article className="panel"><div className="panel-head"><div><span className="eyebrow">SSE</span><h2>{locale === "ar" ? "سجل الأحداث" : "Event ledger"}</h2></div><Radio /></div>{events.length ? <ol className="event-list">{events.slice().reverse().map((event, index) => <li key={event.event_id || `${event.at}-${index}`}><Clock3 /><div><strong>{event.stage || event.type}</strong><span>{event.message || event.status}</span><time>{formatDate(event.at, locale)}</time></div></li>)}</ol> : <StatePanel title={locale === "ar" ? "لا توجد إطارات SSE بعد" : "No SSE frames received yet"} />}</article><article className="panel"><div className="panel-head"><div><span className="eyebrow">REST</span><h2>{locale === "ar" ? "عقد التشغيل" : "Run contract"}</h2></div><Braces /></div><pre className="json-block">{JSON.stringify(run.data, null, 2)}</pre></article></section>}
 
       <section><div className="section-head"><div><span className="eyebrow"><ShieldCheck /> Critic</span><h2>{locale === "ar" ? "النتائج بعد التحقق" : "Post-Critic findings"}</h2></div></div>{findings.isLoading ? <Skeleton /> : findings.isError ? <StatePanel kind="error" title={locale === "ar" ? "تعذر تحميل النتائج" : "Could not load findings"} body={displayError(findings.error, "API error")} /> : findings.data?.length ? <div className="finding-list">{findings.data.map((finding) => <Link href={`/findings/${runId}/${finding.id}`} className="finding-row" key={finding.id}><div><span>{finding.analyst}</span><h3>{finding.title}</h3><p>{finding.claim}</p></div><div><span>{finding.evidence.length} {locale === "ar" ? "أدلة" : "evidence"}</span><Arrow /></div></Link>)}</div> : <StatePanel title={locale === "ar" ? "لا توجد نتائج كافية" : "No sufficient findings"} body={locale === "ar" ? "يمكن أن يكون هذا ناتجًا حقيقيًا لتشغيل متأثر أو أدلة غير كافية." : "This can be a real outcome of a degraded run or insufficient evidence."} />}</section>
+
+      {/* The decision sits immediately under the findings it is about, so the
+          human gate is reachable from the evidence rather than only from the
+          report screen. */}
+      <section className="panel human-gate-panel" id="human-gate">
+        <div className="panel-head">
+          <div><span className="eyebrow">HITL</span><h2>{locale === "ar" ? "بوابة القرار البشري" : "Human decision gate"}</h2></div>
+          {run.data.status === "waiting_review" && <StatusBadge status="waiting_review" label={locale === "ar" ? "بانتظار قرارك" : "Awaiting your decision"} />}
+        </div>
+        <p>{locale === "ar" ? "راجع النتائج أعلاه ثم اقبل أو ارفض. لا ينتقل التقرير للتسليم دون قرار مخوّل، وكل قرار يُسجَّل مع تعليقه." : "Review the findings above, then accept or reject. Nothing moves to delivery without an authorized decision, and every decision is recorded with its comment."}</p>
+        <HumanGate runId={runId} />
+        <Link className="text-link" href={`/reports/${runId}`}>{locale === "ar" ? "افتح التقرير الكامل قبل القرار" : "Open the full report before deciding"}<Arrow /></Link>
+        <ReportLocationButton runId={runId} status={run.data.status} />
+      </section>
     </>}
   </div>;
 }

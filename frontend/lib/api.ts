@@ -1,4 +1,4 @@
-import type { AccessRequest, AiConnectionTest, AiSettings, AiSettingsPayload, BrowserFilePayload, Cafe, ChatAnswer, Conversation, DataProcessResult, Finding, Lineage, Report, Run, SourceSummary, User } from "@/lib/types";
+import type { AccessRequest, AiConnectionTest, AiSettings, AiSettingsPayload, AvailableWeeks, BrowserFilePayload, Cafe, Capabilities, ChatAnswer, Conversation, DataProcessResult, Finding, Lineage, Report, ReportLocation, Run, SourceSummary, User } from "@/lib/types";
 
 export class ApiError extends Error {
   constructor(message: string, public readonly status: number, public readonly code = "request_failed", public readonly requestId?: string) { super(message); }
@@ -40,16 +40,23 @@ export const api = {
   signup: (payload: { display_name: string; email: string; password: string; requested_role: "manager" | "employee" }) => request<{ access_request: AccessRequest }>("/api/auth/signup", { method: "POST", body: JSON.stringify(payload) }),
   logout: () => request<void>("/api/auth/logout", { method: "POST" }),
   me: async () => (await request<{ user: User }>("/api/auth/me")).user,
+  capabilities: () => request<Capabilities>("/api/capabilities"),
   cafes: async () => items<Cafe>(await request("/api/cafes")),
   sources: async (cafeId: string) => items<SourceSummary>(await request(`/api/cafes/${encodeURIComponent(cafeId)}/sources`)),
   data: (cafeId: string, source: string, cursor?: string) => request<{ items: Array<Record<string, unknown>>; next_cursor?: string }>(`/api/cafes/${encodeURIComponent(cafeId)}/data/${encodeURIComponent(source)}${query({ limit: 50, cursor })}`),
   lineage: (cafeId: string, source: string, recordId: string) => request<Lineage>(`/api/cafes/${encodeURIComponent(cafeId)}/data/${encodeURIComponent(source)}/${encodeURIComponent(recordId)}/lineage`),
   processData: (cafeId: string, files: BrowserFilePayload[]) => request<DataProcessResult>(`/api/cafes/${encodeURIComponent(cafeId)}/data/process`, { method: "POST", body: JSON.stringify({ files }) }),
   runs: async (cafeId: string, limit = 10) => items<Run>(await request(`/api/runs${query({ cafe_id: cafeId, limit })}`)),
-  startRun: async (cafeId: string) => member<Run>(await request("/api/runs", { method: "POST", body: JSON.stringify({ cafe_id: cafeId }) }), "run"),
+  weeks: (cafeId: string) => request<AvailableWeeks>(`/api/cafes/${encodeURIComponent(cafeId)}/weeks`),
+  // Omitting target_week lets the pipeline fall back to "most recent complete
+  // calendar week", which is an empty window whenever the data stops short of
+  // today -- so the caller passes the week the operator actually picked.
+  startRun: async (cafeId: string, targetWeek?: string) => member<Run>(await request("/api/runs", { method: "POST", body: JSON.stringify({ cafe_id: cafeId, ...(targetWeek ? { target_week: targetWeek } : {}) }) }), "run"),
   run: async (runId: string) => member<Run>(await request(`/api/runs/${encodeURIComponent(runId)}`), "run"),
   findings: async (runId: string) => items<Finding>(await request(`/api/runs/${encodeURIComponent(runId)}/findings`)),
   report: (runId: string) => request<Report>(`/api/runs/${encodeURIComponent(runId)}/report`),
+  reportLocation: (runId: string) => request<ReportLocation>(`/api/runs/${encodeURIComponent(runId)}/report/location`),
+  revealReport: (runId: string) => request<{ revealed: boolean }>(`/api/runs/${encodeURIComponent(runId)}/report/reveal`, { method: "POST" }),
   managerReview: (runId: string, decision: "submit" | "request_changes", comment: string) => request<Report>(`/api/runs/${encodeURIComponent(runId)}/manager-review`, { method: "POST", body: JSON.stringify({ decision, comment }) }),
   ownerDecision: (runId: string, decision: "approve" | "edit" | "reject", comment?: string) => request<Report>(`/api/runs/${encodeURIComponent(runId)}/decision`, { method: "POST", body: JSON.stringify({ decision, comment }) }),
   conversations: async () => items<Conversation>(await request("/api/conversations")),

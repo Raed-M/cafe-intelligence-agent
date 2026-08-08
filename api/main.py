@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import asyncio
 import json
+import subprocess
+import sys
 import uuid
 from contextlib import asynccontextmanager
 from typing import Any, AsyncIterator, Callable
@@ -261,6 +263,19 @@ def create_app(settings: ApiSettings | None = None) -> FastAPI:
     def me(user: dict[str, Any] = Depends(current_user)) -> dict[str, Any]:
         return _envelope(user=user)
 
+    @app.get("/api/capabilities")
+    def capabilities(user: dict[str, Any] = Depends(current_user)) -> dict[str, Any]:
+        """Deployment switches the UI has to know about to render honestly.
+
+        Without this the human gate would have to show an owner buttons that
+        the API then 403s, or hide buttons that actually work.
+        """
+        del user
+        return _envelope(
+            owner_self_review=configured.allow_owner_self_review,
+            local_file_access=configured.environment == "development",
+        )
+
     @app.get("/api/admin/ai-settings")
     def get_ai_settings(
         user: dict[str, Any] = Depends(require_roles("owner")),
@@ -371,6 +386,21 @@ def create_app(settings: ApiSettings | None = None) -> FastAPI:
     ) -> dict[str, Any]:
         accessible_cafe(cafe_id, user, repository)
         return _envelope(cafe_id=cafe_id, items=repository.sources(cafe_id))
+
+    @app.get("/api/cafes/{cafe_id}/weeks")
+    def list_available_weeks(
+        cafe_id: str,
+        user: dict[str, Any] = Depends(current_user),
+        repository: ArtifactRepository = Depends(artifacts),
+    ) -> dict[str, Any]:
+        """Weeks the POS data actually covers, plus the one to preselect.
+
+        Lets the UI offer a real choice instead of silently inheriting the
+        pipeline's calendar default, which analyses an empty window whenever
+        the data stops short of today.
+        """
+        accessible_cafe(cafe_id, user, repository)
+        return _envelope(cafe_id=cafe_id, **repository.available_weeks(cafe_id))
 
     @app.post("/api/cafes/{cafe_id}/data/process", status_code=202)
     def process_cafe_data(
@@ -542,14 +572,82 @@ def create_app(settings: ApiSettings | None = None) -> FastAPI:
             _problem(404, "report_not_found", "This run does not have a report yet.")
         return _envelope(**report)
 
+    @app.get("/api/runs/{run_id}/report/location")
+    def get_report_location(
+        run_id: str,
+        user: dict[str, Any] = Depends(require_roles("owner", "manager")),
+        repository: ArtifactRepository = Depends(artifacts),
+    ) -> dict[str, Any]:
+        """Where this run's report files sit on the API host.
+
+        The only endpoint that returns a real filesystem path, so it is
+        role-gated rather than open to every signed-in account. `can_reveal`
+        tells the UI whether POST .../reveal will do anything: opening a file
+        manager is only meaningful when the browser and the API are the same
+        machine, which we only assume in development.
+        """
+        accessible_run(run_id, user, repository)
+        location = repository.report_location(run_id)
+        if location is None:
+            return _envelope(
+                run_id=run_id, available=False, can_reveal=False, directory=None, files=[]
+            )
+        return _envelope(
+            available=True,
+            can_reveal=configured.environment == "development",
+            **location,
+        )
+
+    @app.post("/api/runs/{run_id}/report/reveal")
+    def reveal_report_location(
+        run_id: str,
+        user: dict[str, Any] = Depends(require_roles("owner", "manager")),
+        repository: ArtifactRepository = Depends(artifacts),
+    ) -> dict[str, Any]:
+        """Open the run's report folder in the host's file manager.
+
+        Development-only, and the path is never taken from the request: it is
+        resolved from the run's own checkpoint and re-checked to sit inside
+        outputs/reports. The launcher is called with an argument vector (no
+        shell), so nothing here is interpolated into a command line.
+        """
+        accessible_run(run_id, user, repository)
+        if configured.environment != "development":
+            _problem(403, "reveal_not_available", "Revealing local files is a development-only action.")
+        location = repository.report_location(run_id)
+        if location is None:
+            _problem(404, "report_files_not_found", "This run has no saved report files.")
+        directory = location["directory"]
+        if sys.platform == "win32":
+            command = ["explorer.exe", directory]
+        elif sys.platform == "darwin":
+            command = ["open", directory]
+        else:
+            command = ["xdg-open", directory]
+        try:
+            # explorer.exe returns a non-zero exit code even when it succeeds,
+            # so the return code is not a usable success signal here.
+            subprocess.Popen(command, close_fds=True)
+        except OSError as exc:
+            _problem(500, "reveal_failed", f"Could not open the file manager: {exc}")
+        return _envelope(revealed=True, directory=directory)
+
     @app.post("/api/runs/{run_id}/manager-review", status_code=201)
     def manager_review(
         run_id: str,
         payload: ManagerReviewRequest,
-        user: dict[str, Any] = Depends(require_roles("manager")),
+        # Managers by default. An owner is admitted only when the deployment
+        # explicitly opts out of two-person review via
+        # WADDEHHA_ALLOW_OWNER_SELF_REVIEW -- see the role check below, which
+        # keeps the default 403 that segregation of duties depends on.
+        user: dict[str, Any] = Depends(current_user),
         repository: ArtifactRepository = Depends(artifacts),
         db: ApiDatabase = Depends(database),
     ) -> dict[str, Any]:
+        if user["role"] != "manager" and not (
+            user["role"] == "owner" and configured.allow_owner_self_review
+        ):
+            _problem(403, "permission_denied", "Your role cannot perform this action.")
         run = accessible_run(run_id, user, repository)
         if repository.report(run_id) is None:
             _problem(409, "report_not_ready", "The report is not ready for review.")
