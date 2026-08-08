@@ -11,7 +11,10 @@ export interface Report { run_id: string; state: string; format?: "html" | strin
 export interface RunEvent { event_id?: string; run_id: string; type: string; at?: string; stage?: string; status?: string; message?: string }
 export interface Lineage { raw?: Record<string, unknown> | null; cleaned?: Record<string, unknown> | null; changes?: Array<{ field?: string; before?: unknown; after?: unknown; reason?: string; rule?: string }> }
 export interface Conversation { id: string; cafe_id?: string; title?: string; created_at?: string }
-export interface ChatAnswer { answer?: string; message?: string; citations?: Array<string | { id?: string; label?: string }>; limitations?: string[]; confidence?: number }
+/** A source behind a chat answer. `evidence` citations name a pipeline finding
+ *  and link to its in-app page; `web` citations carry an external URL. */
+export interface Citation { kind?: "evidence" | "web"; url?: string; label?: string; finding_id?: string }
+export interface ChatAnswer { answer?: string; message?: string; citations?: Array<string | Citation>; limitations?: string[]; confidence?: number }
 export interface AccessRequest { id: string; email: string; display_name: string; requested_role: "manager" | "employee"; status: "pending" | "approved" | "rejected"; created_at?: string; reviewed_at?: string; cafe_ids: string[] }
 export interface BrowserFilePayload { name: string; relative_path: string; media_type?: string; size: number; last_modified?: string; content_base64: string }
 export interface ProcessedBrowserFile { name: string; relative_path?: string; source?: string; type?: string; size?: number; last_modified?: string; status: "accepted" | "rejected"; reason?: string; replaced_existing?: boolean }
@@ -22,9 +25,11 @@ export interface AiModelOption {
   summary: string;
   tier: string;
   status: "Current" | "Preview" | "Previous generation";
-  input_price: number;
+  // null for a model configured outside the built-in catalog: unknown,
+  // which the UI must render as such rather than as free.
+  input_price: number | null;
   cached_input_price: number | null;
-  output_price: number;
+  output_price: number | null;
   speed: string;
   speed_rank: number;
   speed_note: string;

@@ -151,10 +151,15 @@ def profile_id(profile: dict[str, Any]) -> str:
 
 
 class ArtifactRepository:
-    def __init__(self, root: Path, database: ApiDatabase, include_test_evidence: bool = True):
+    def __init__(
+        self, root: Path, database: ApiDatabase, include_test_evidence: bool = True,
+        checkpoint_db: Path | None = None,
+    ):
         self.root = Path(root).resolve()
         self.database = database
         self.include_test_evidence = include_test_evidence
+        # Must be the same store RunService writes -- see ApiSettings.checkpoint_db.
+        self.checkpoint_db = Path(checkpoint_db).resolve() if checkpoint_db else self.root / "db" / "checkpoints.sqlite"
 
     def list_cafes(self) -> list[dict[str, Any]]:
         cafes: list[dict[str, Any]] = []
@@ -228,7 +233,7 @@ class ArtifactRepository:
             yield from ((path, row) for row in rows)
 
     def _checkpoint_path(self) -> Path:
-        return self.root / "db" / "checkpoints.sqlite"
+        return self.checkpoint_db
 
     def _checkpoint_thread_ids(self) -> list[str]:
         path = self._checkpoint_path()
@@ -531,6 +536,11 @@ class ArtifactRepository:
                     }
                 )
             return items
+        # No checkpoint: fall back to the artifacts of the most recent recorded
+        # run for this cafe (see _latest_run_dir_for_cafe) so row counts reflect
+        # data that genuinely exists, rather than reporting every source as
+        # unknown for runs this API did not itself launch.
+        fallback = self._latest_run_dir_for_cafe(cafe_id)
         cafe = self.get_cafe(cafe_id)
         data_dir = cafe.get("_data_dir") if cafe else None
         return [
@@ -538,31 +548,85 @@ class ArtifactRepository:
                 "id": source,
                 "name": source,
                 "status": "available" if data_dir and (data_dir / relative).exists() else "missing",
-                "raw_rows": None,
-                "accepted_rows": None,
-                "rejected_rows": None,
+                **self._fallback_row_counts(fallback, source),
                 "schema_version": SCHEMA_VERSION,
-                "last_run_id": None,
             }
             for source, relative in _SOURCE_FILES.items()
         ]
 
+    @staticmethod
+    def _parquet_rows(path: Path) -> int | None:
+        try:
+            return pq.ParquetFile(path).metadata.num_rows
+        except Exception:  # noqa: BLE001 -- unreadable/absent artifact is just "unknown"
+            return None
+
+    def _fallback_row_counts(
+        self, fallback: tuple[str, Path] | None, source: str
+    ) -> dict[str, Any]:
+        """Row counts read straight from a run's parquet artifacts, for sources
+        whose numbers are not available from a checkpoint. Reads only parquet
+        footer metadata, so it does not load the data."""
+        if fallback is None:
+            return {"raw_rows": None, "accepted_rows": None, "rejected_rows": None, "last_run_id": None}
+        run_id, run_dir = fallback
+        raw = self._parquet_rows(run_dir / "parsed" / f"{source}.parquet")
+        accepted = self._parquet_rows(run_dir / "cleaned" / f"{source}.parquet")
+        return {
+            "raw_rows": raw,
+            "accepted_rows": accepted,
+            "rejected_rows": (raw - accepted) if raw is not None and accepted is not None else None,
+            "last_run_id": run_id if raw is not None else None,
+        }
+
+    def _latest_run_dir_for_cafe(self, cafe_id: str) -> tuple[str, Path] | None:
+        """Most recent recorded run for this cafe that still has artifacts on disk.
+
+        Runs produced by the CLI, the scheduler or LangGraph Studio leave their
+        artifacts under outputs/artifacts/<run_id>/ and a row in the memory DB,
+        but no entry in the API's checkpoint store. Without this, the Data
+        Explorer and lineage view report "no processed data" for a cafe the
+        cafe list simultaneously advertises as `available`.
+
+        Scoped by profile_key so one cafe can never be shown another's rows,
+        and both parsed and cleaned come from the same run so lineage compares
+        like with like. _memory_rows() is already ordered newest-first.
+        """
+        artifacts_root = self.root / "outputs" / "artifacts"
+        for _, row in self._memory_rows():
+            keys = row.keys()
+            if "profile_key" not in keys or "run_id" not in keys:
+                continue
+            if row["profile_key"] != cafe_id:
+                continue
+            run_dir = artifacts_root / str(row["run_id"])
+            if (run_dir / "parsed").is_dir():
+                return str(row["run_id"]), run_dir
+        return None
+
     def _artifact_paths(self, cafe_id: str, source: str) -> tuple[str, Path, Path | None] | None:
         checkpoint = self._checkpoint_for_cafe(cafe_id)
-        if checkpoint is None:
+        if checkpoint is not None:
+            run_id, values = checkpoint
+            result = next(
+                (item for item in values.get("source_results") or [] if item.get("source_name") == source), None
+            )
+            parsed = (result or {}).get("artifact", {}).get("path")
+            cleaned = (values.get("cleaned_artifacts") or {}).get(source, {}).get("path")
+            if parsed:
+                parsed_path = self._resolve_artifact(parsed)
+                cleaned_path = self._resolve_artifact(cleaned) if cleaned else None
+                if parsed_path is not None:
+                    return run_id, parsed_path, cleaned_path
+
+        fallback = self._latest_run_dir_for_cafe(cafe_id)
+        if fallback is None:
             return None
-        run_id, values = checkpoint
-        result = next(
-            (item for item in values.get("source_results") or [] if item.get("source_name") == source), None
-        )
-        parsed = (result or {}).get("artifact", {}).get("path")
-        cleaned = (values.get("cleaned_artifacts") or {}).get(source, {}).get("path")
-        if not parsed:
-            return None
-        parsed_path = self._resolve_artifact(parsed)
-        cleaned_path = self._resolve_artifact(cleaned) if cleaned else None
+        run_id, run_dir = fallback
+        parsed_path = self._resolve_artifact(str(run_dir / "parsed" / f"{source}.parquet"))
         if parsed_path is None:
             return None
+        cleaned_path = self._resolve_artifact(str(run_dir / "cleaned" / f"{source}.parquet"))
         return run_id, parsed_path, cleaned_path
 
     def _resolve_artifact(self, stored_path: str | None) -> Path | None:

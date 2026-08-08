@@ -21,10 +21,12 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { FormEvent, useEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent, type ReactNode } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState, type ComponentPropsWithoutRef, type MouseEvent as ReactMouseEvent, type ReactNode } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { api } from "@/lib/api";
-import type { ChatAnswer } from "@/lib/types";
+import type { Citation } from "@/lib/types";
 import { displayError } from "@/lib/format";
 import { useWorkspace } from "@/components/providers";
 import { StatePanel } from "@/components/ui";
@@ -50,20 +52,29 @@ function BrandMark({ compact }: { compact: boolean }) {
   return <Link className="brand" href="/dashboard" aria-label="وضحها — WADDEHHA"><span className="brand-mark" aria-hidden="true"><span /></span>{!compact && <span><b>وضّحها</b><small>WADDEHHA · CAFÉ INTELLIGENCE</small></span>}</Link>;
 }
 
-function ChatMessage({ role, content, citations }: { role: "user" | "assistant"; content: string; citations?: Array<{ url?: string; label?: string }> }) {
-  const Markdown = require("react-markdown").default;
-  const remarkGfm = require("remark-gfm").default;
+/** Evidence citations point at in-app finding pages, so they navigate via the
+ *  router rather than opening a new tab; only external sources get _blank. */
+function CitationLink({ citation }: { citation: Citation }) {
+  const label = citation.label || citation.finding_id || citation.url || "";
+  if (!citation.url) return <span className="chat-cite-link">{label}</span>;
+  if (citation.kind === "evidence" || citation.url.startsWith("/")) {
+    return <Link href={citation.url} className="chat-cite-link chat-cite-evidence">{label}</Link>;
+  }
+  return <a href={citation.url} target="_blank" rel="noopener noreferrer" className="chat-cite-link">{label}</a>;
+}
+
+function ChatMessage({ role, content, citations }: { role: "user" | "assistant"; content: string; citations?: Citation[] }) {
   if (role === "user") return <div className="chat-msg chat-msg-user"><p>{content}</p></div>;
   return <div className="chat-msg chat-msg-assistant">
     <Markdown remarkPlugins={[remarkGfm]} components={{
-      a: ({ href, children, ...props }: any) => <a href={href} target="_blank" rel="noopener noreferrer" {...props}>{children}</a>,
-      table: ({ children, ...props }: any) => <div className="chat-table-wrap"><table {...props}>{children}</table></div>,
+      a: ({ href, children, ...props }: ComponentPropsWithoutRef<"a">) => <a href={href} target="_blank" rel="noopener noreferrer" {...props}>{children}</a>,
+      table: ({ children, ...props }: ComponentPropsWithoutRef<"table">) => <div className="chat-table-wrap"><table {...props}>{children}</table></div>,
     }}>{content}</Markdown>
-    {citations && citations.length > 0 && <div className="chat-citations">{citations.map((c, i) => <a key={i} href={c.url} target="_blank" rel="noopener noreferrer" className="chat-cite-link">{c.label || c.url}</a>)}</div>}
+    {citations && citations.length > 0 && <div className="chat-citations">{citations.map((c, i) => <CitationLink key={i} citation={c} />)}</div>}
   </div>;
 }
 
-type ChatMsg = { role: "user" | "assistant"; content: string; citations?: Array<{ url?: string; label?: string }> };
+type ChatMsg = { role: "user" | "assistant"; content: string; citations?: Citation[] };
 
 function ChatComposer() {
   const { locale, cafeId } = useWorkspace();
@@ -84,8 +95,8 @@ function ChatComposer() {
     },
     onSuccess(data) {
       const reply = data.answer || data.message || "";
-      const cites: Array<{ url?: string; label?: string }> = (data.citations || []).map(c =>
-        typeof c === "string" ? { url: c, label: c } : { url: (c as any).url || (c as any).id, label: (c as any).label || (c as any).id }
+      const cites: Citation[] = (data.citations || []).map(c =>
+        typeof c === "string" ? { kind: "web" as const, url: c, label: c } : c
       );
       setThread(prev => [...prev, { role: "assistant", content: reply, citations: cites }]);
       setMessage(""); setError(""); setOpen(true);

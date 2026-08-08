@@ -53,10 +53,34 @@ describe("human-readable data adapter", () => {
 });
 
 describe("readable report formatting", () => {
+  // Mirrors src/reporting/templates/report.html.j2, which wraps each block in
+  // <section>. The previous fixture omitted that wrapper, so the appendix
+  // regex could never match and the test asserted a shape the backend never
+  // emits.
+  const reportHtml =
+    "<html><head></head><body><h1>Weekly report</h1>" +
+    "<section><h2>Local, Calendar &amp; Prayer Context</h2><p>raw weather dump</p></section>" +
+    "<section><h2>Limitations</h2></section></body></html>";
+
   it("adds the reading path and folds raw local context into a technical appendix", () => {
-    const formatted = enhanceReportHtml("<html><head></head><body><h1>Weekly report</h1><h2>Local, Calendar &amp; Prayer Context</h2><p>raw weather dump</p><h2>Limitations</h2></body></html>");
+    const formatted = enhanceReportHtml(reportHtml);
     expect(formatted).toContain("Verified findings");
     expect(formatted).toContain('class="technical-appendix"');
     expect(formatted).toContain("raw weather dump");
+    // the appendix must wrap the context section, not replace it
+    expect(formatted).toContain("Local, Calendar &amp; Prayer Context");
+    // ...and only that section: other sections stay in the main flow
+    const appendix = formatted.slice(
+      formatted.indexOf('class="technical-appendix"'),
+      formatted.indexOf("</details>"),
+    );
+    expect(appendix).toContain("raw weather dump");
+    expect(appendix).not.toContain("Limitations");
+  });
+
+  it("still injects styles and the reading path when there is no head", () => {
+    const formatted = enhanceReportHtml("<body><h1>Weekly report</h1></body>");
+    expect(formatted).toContain("Verified findings");
+    expect(formatted).toContain("<style>");
   });
 });

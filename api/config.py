@@ -21,6 +21,17 @@ class ApiSettings:
             Path(value) if (value := os.getenv("WADDEHHA_API_DB", "").strip()) else None
         )
     )
+    checkpoint_db: Path | None = field(
+        default_factory=lambda: (
+            Path(value) if (value := os.getenv("WADDEHHA_CHECKPOINT_DB", "").strip()) else None
+        )
+    )
+    """LangGraph checkpoint store. Defaults to <project_root>/db/checkpoints.sqlite.
+
+    Configurable because ArtifactRepository (which reads run state, source row
+    counts and pause status out of it) and RunService (which writes it) must
+    agree on one path -- they previously hardcoded it independently, so any
+    deployment moving the DB would have silently shown zero runs."""
     cookie_name: str = "waddehha_session"
     cookie_secure: bool | None = None
     session_ttl_seconds: int = 60 * 60 * 12
@@ -49,6 +60,10 @@ class ApiSettings:
         if not api_db.is_absolute():
             api_db = self.project_root / api_db
         self.api_db = api_db.resolve()
+        checkpoint_db = Path(self.checkpoint_db or self.project_root / "db" / "checkpoints.sqlite")
+        if not checkpoint_db.is_absolute():
+            checkpoint_db = self.project_root / checkpoint_db
+        self.checkpoint_db = checkpoint_db.resolve()
         if self.environment != "development":
             self.cookie_secure = True
         elif self.cookie_secure is None:

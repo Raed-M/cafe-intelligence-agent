@@ -54,7 +54,7 @@ class RunService:
                 source_registry_path=self.settings.project_root / "config" / "source_registry.yaml",
                 target_week=target_week,
                 artifact_root=self.settings.project_root / "outputs" / "artifacts",
-                checkpoint_db=self.settings.project_root / "db" / "checkpoints.sqlite",
+                checkpoint_db=self.settings.checkpoint_db,
                 memory_db=self.settings.project_root / "db" / "memory.sqlite",
             )
             saver = build_checkpointer(config.checkpoint_db)
@@ -97,7 +97,7 @@ class RunService:
             from src.graph.main_graph import build_main_graph
             from src.persistence.checkpointer import build_checkpointer
 
-            saver = build_checkpointer(self.settings.project_root / "db" / "checkpoints.sqlite")
+            saver = build_checkpointer(self.settings.checkpoint_db)
             graph = build_main_graph(checkpointer=saver)
             thread_config = {"configurable": {"thread_id": run_id}, "recursion_limit": 200}
             graph.update_state(thread_config, {"human_decision": decision})

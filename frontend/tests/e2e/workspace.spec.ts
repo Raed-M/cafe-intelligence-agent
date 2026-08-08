@@ -83,7 +83,9 @@ test("admin controls access and can use the English workspace interactions", asy
   await expect(page.locator(".scale-bars, .model-scale")).toHaveCount(0);
   await page.getByRole("button", { name: /Anthropic.*4 compatible models/ }).click();
   await expect(page.getByRole("button", { name: /Claude Fable 5/ })).toContainText("$50.00");
-  await page.getByRole("button", { name: /Google Gemini.*3 compatible models/ }).click();
+  // 4 since gemini-3.1-flash-lite (the model this project's .env actually
+  // runs on) was added to the catalog.
+  await page.getByRole("button", { name: /Google Gemini.*4 compatible models/ }).click();
   await expect(page.getByRole("button", { name: /Gemini 3.6 Flash/ })).toContainText("$7.50");
   await page.getByRole("button", { name: /OpenAI.*5 compatible models/ }).click();
   const aiLayout = await page.evaluate(() => ({

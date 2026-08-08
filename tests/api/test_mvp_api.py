@@ -12,7 +12,13 @@ from fastapi.testclient import TestClient
 from api.artifacts import ArtifactRepository, sanitize_report_html, strip_path_text
 from api.config import ApiSettings
 from api.database import ApiDatabase
-from api.services.chat import grounded_answer
+from api.services.chat import (
+    FINDINGS_TOOL_NAME,
+    NO_GROUNDED_FINDINGS,
+    WEB_SEARCH_TOOL_NAME,
+    _extract_citations,
+    verified_findings_payload,
+)
 
 
 PATH_LEAK = re.compile(
@@ -256,7 +262,23 @@ def test_manager_review_then_owner_decision_enforces_rbac_and_order(
     assert resumed == [(paused["id"], "approve")]
 
 
-def test_chat_is_narrowly_grounded_and_cites_evidence(client: TestClient, login) -> None:
+def _fake_chat_model(monkeypatch, tool_calls, answer="Fake grounded answer."):
+    """Points the chat agent at a scripted tool-calling fake so the endpoint is
+    exercised without a provider call."""
+    from tests.fakes import _FakeToolCallingModel
+
+    model = _FakeToolCallingModel(tool_calls_script=tool_calls, answer=answer)
+    monkeypatch.setattr("api.services.chat.get_chat_model", lambda *a, **k: model)
+    monkeypatch.setattr("src.tools.llm_factory.has_provider_key", lambda *a, **k: True)
+    monkeypatch.setattr("api.services.chat.has_provider_key", lambda *a, **k: True, raising=False)
+    return model
+
+
+def test_chat_cites_the_findings_it_used(client: TestClient, login, monkeypatch) -> None:
+    """An answer drawn from pipeline findings must carry evidence citations the
+    UI can link back to /findings/<run>/<id>. The agent rewrite dropped these
+    entirely, leaving only web-search URLs."""
+    _fake_chat_model(monkeypatch, [{"name": FINDINGS_TOOL_NAME}])
     login("owner")
     run = next(run for run in client.get("/api/runs").json()["items"] if run["findings_count"] > 0)
     conversation = client.post(
@@ -271,9 +293,23 @@ def test_chat_is_narrowly_grounded_and_cites_evidence(client: TestClient, login)
     )
     assert grounded.status_code == 201
     assistant = grounded.json()["assistant_message"]
-    assert assistant["citations"]
-    assert assistant["citations"][0]["finding_id"].startswith("F-")
+    citations = assistant["citations"]
+    assert citations, "an answer using verified findings must cite them"
+    assert all(c["kind"] == "evidence" for c in citations)
+    assert all(c["finding_id"].startswith("F-") for c in citations)
+    assert all(c["url"].startswith(f"/findings/{run['id']}/") for c in citations)
     assert_no_path_leak(grounded.json())
+
+
+def test_chat_without_tool_use_has_no_citations(client: TestClient, login, monkeypatch) -> None:
+    """An off-topic question that consults no data must not manufacture
+    citations."""
+    _fake_chat_model(monkeypatch, [], answer="I can only answer questions about this cafe's data.")
+    login("owner")
+    run = next(run for run in client.get("/api/runs").json()["items"] if run["findings_count"] > 0)
+    conversation_id = client.post(
+        "/api/conversations", json={"cafe_id": run["cafe_id"], "run_id": run["id"]}
+    ).json()["conversation"]["id"]
 
     refused = client.post(
         f"/api/conversations/{conversation_id}/messages",
@@ -281,10 +317,40 @@ def test_chat_is_narrowly_grounded_and_cites_evidence(client: TestClient, login)
     )
     assert refused.status_code == 201
     assert refused.json()["assistant_message"]["citations"] == []
-    assert "could not match" in refused.json()["assistant_message"]["content"].lower()
+
+
+def test_web_search_results_become_web_citations() -> None:
+    from langchain_core.messages import AIMessage, ToolMessage
+
+    messages = [
+        AIMessage(content=""),
+        ToolMessage(
+            content=json.dumps({"status": "success", "results": [
+                {"url": "https://example.test/a", "title": "Trend A"},
+                {"url": "https://example.test/a", "title": "duplicate"},
+                {"url": "https://example.test/b", "title": "Trend B"},
+            ]}),
+            name=WEB_SEARCH_TOOL_NAME,
+            tool_call_id="1",
+        ),
+    ]
+    citations = _extract_citations(messages, "run_x")
+    assert [c["url"] for c in citations] == ["https://example.test/a", "https://example.test/b"]
+    assert all(c["kind"] == "web" for c in citations)
+
+
+def test_malformed_tool_payload_yields_no_citations() -> None:
+    from langchain_core.messages import ToolMessage
+
+    for content in ("not json at all", json.dumps({"unexpected": True}), json.dumps([1, 2, 3])):
+        messages = [ToolMessage(content=content, name=WEB_SEARCH_TOOL_NAME, tool_call_id="1")]
+        assert _extract_citations(messages, "run_x") == []
 
 
 def test_rejected_findings_never_reach_repository_or_chat(tmp_path: Path) -> None:
+    """Un-approving every finding must empty the repository and leave the chat
+    agent with nothing to cite -- checked without a provider call, since the
+    guarantee is about the data layer, not the model."""
     project_root = Path(__file__).resolve().parents[2]
     source_db = project_root / "outputs" / "test_evidence" / "memory_test.sqlite"
     evidence_dir = tmp_path / "outputs" / "test_evidence"
@@ -301,12 +367,8 @@ def test_rejected_findings_never_reach_repository_or_chat(tmp_path: Path) -> Non
     database = ApiDatabase(tmp_path / "api.sqlite")
     repository = ArtifactRepository(tmp_path, database, include_test_evidence=True)
     assert repository.findings(run_id) == []
-    answer, citations, grounded_run_id = grounded_answer(
-        repository, cafe_id, run_id, "Show all findings"
-    )
-    assert citations == []
-    assert grounded_run_id == run_id
-    assert "no grounded findings" in answer.lower()
+
+    assert verified_findings_payload(repository, run_id) == NO_GROUNDED_FINDINGS
 
 
 def test_report_allowlist_and_cross_platform_path_scrubbing() -> None:

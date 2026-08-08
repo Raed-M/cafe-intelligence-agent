@@ -32,9 +32,27 @@ if (-not (Test-Path -LiteralPath $nextScript -PathType Leaf)) {
     throw "Frontend dependencies not found under 'frontend\node_modules'. Install them first."
 }
 $nodeCommand = Get-Command node.exe -ErrorAction SilentlyContinue
-if ($null -eq $nodeCommand) {
-    throw 'node.exe was not found on PATH. Install Node.js before starting the web app.'
+$nodePath = if ($null -ne $nodeCommand) { $nodeCommand.Source } else { $null }
+if ($null -eq $nodePath) {
+    # A standard Node installer puts node.exe here but only updates the PATH of
+    # shells started afterwards, so an existing terminal (or a non-login shell)
+    # sees an installed Node as missing. Check the default locations before
+    # telling the user to install something they already have.
+    foreach ($candidate in @(
+        (Join-Path $env:ProgramFiles 'nodejs\node.exe'),
+        (Join-Path ${env:ProgramFiles(x86)} 'nodejs\node.exe'),
+        (Join-Path $env:LOCALAPPDATA 'Programs\nodejs\node.exe')
+    )) {
+        if ($candidate -and (Test-Path -LiteralPath $candidate -PathType Leaf)) {
+            $nodePath = $candidate
+            break
+        }
+    }
 }
+if ($null -eq $nodePath) {
+    throw 'node.exe was not found on PATH or in the default install locations. Install Node.js before starting the web app.'
+}
+Write-Host "Using Node from '$nodePath'."
 
 if ($SeedDevelopmentUsers) {
     if ($env:WADDEHHA_ENV -and $env:WADDEHHA_ENV.Trim().ToLowerInvariant() -ne 'development') {
@@ -99,7 +117,7 @@ try {
         -PassThru
 
     $frontendProcess = Start-Process `
-        -FilePath $nodeCommand.Source `
+        -FilePath $nodePath `
         -ArgumentList @('node_modules\next\dist\bin\next', 'dev', '--hostname', $FrontendHost, '--port', $FrontendPort) `
         -WorkingDirectory $frontendRoot `
         -WindowStyle Hidden `

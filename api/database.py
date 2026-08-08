@@ -501,6 +501,13 @@ class ApiDatabase:
     def add_message(
         self, conversation_id: str, role: str, content: str, citations: list[dict[str, Any]] | None = None
     ) -> dict[str, Any]:
+        # Coerce content to text before it reaches sqlite. A provider that
+        # returns structured content blocks (Gemini does) otherwise fails the
+        # INSERT with "type 'list' is not supported" and 500s the whole chat
+        # request; callers should normalize, but the store must not be the place
+        # a provider quirk becomes an outage.
+        if not isinstance(content, str):
+            content = json.dumps(content, ensure_ascii=False, default=str)
         item = {
             "id": f"message-{uuid.uuid4().hex[:12]}",
             "conversation_id": conversation_id,

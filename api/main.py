@@ -13,7 +13,7 @@ from fastapi.responses import JSONResponse, StreamingResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from api.artifacts import ArtifactRepository, SCHEMA_VERSION
-from api.config import ApiSettings
+from api.config import ApiSettings, _bool_env
 from api.database import ApiDatabase
 from api.models import (
     AccessDecisionRequest,
@@ -54,13 +54,33 @@ def _public_run(row: dict[str, Any]) -> dict[str, Any]:
 
 
 def create_app(settings: ApiSettings | None = None) -> FastAPI:
+    if settings is None and not _bool_env("WADDEHHA_SKIP_DOTENV"):
+        # Serving path only (`app = create_app()` below, i.e. uvicorn). Without
+        # this the API process has no LLM_PROVIDER/API keys, so a run started
+        # from the UI fails in every analyst and the chat agent reports itself
+        # unconfigured -- even though the CLI, scheduler and `langgraph dev`
+        # all read the same .env happily.
+        #
+        # Deliberately NOT at module import time, and skipped whenever a caller
+        # supplies settings (which the test suite always does): loading .env
+        # during pytest collection previously put real provider keys into every
+        # test process and turned "offline" tests into live API calls.
+        #
+        # WADDEHHA_SKIP_DOTENV lets the E2E harness opt out, so browser tests
+        # assert against a fixed configuration instead of whatever provider and
+        # model the developer happens to have in .env.
+        from dotenv import load_dotenv
+
+        load_dotenv()
     configured = settings or ApiSettings()
 
     @asynccontextmanager
     async def lifespan(app: FastAPI):
         database = ApiDatabase(configured.api_db)
         artifacts = ArtifactRepository(
-            configured.project_root, database, include_test_evidence=configured.include_test_evidence
+            configured.project_root, database,
+            include_test_evidence=configured.include_test_evidence,
+            checkpoint_db=configured.checkpoint_db,
         )
         if configured.seed_users:
             database.seed_development_users(

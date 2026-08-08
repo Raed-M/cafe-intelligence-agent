@@ -217,8 +217,51 @@ MODEL_CATALOG: dict[str, list[dict[str, Any]]] = {
             "pricing_note": None,
             "recommended_for": "Extraction and frequent runs",
         },
+        {
+            # The model this project's .env actually ships with and which every
+            # validated pipeline run to date used. It was missing from the
+            # catalog, so the AI Connections page showed the provider selected
+            # but no model highlighted.
+            "id": "gemini-3.1-flash-lite",
+            "name": "Gemini 3.1 Flash-Lite",
+            "summary": "Previous-generation low-cost model; the project default for pipeline runs.",
+            "tier": "Efficient",
+            "status": "Previous generation",
+            "input_price": 0.1,
+            "cached_input_price": None,
+            "output_price": 0.4,
+            "speed": "Fastest",
+            "speed_rank": 3,
+            "speed_note": "Very high throughput on the free tier; used for the analyst/critic loop.",
+            "context_window": "1M",
+            "pricing_note": None,
+            "recommended_for": "Low-cost analyst and critic runs",
+        },
     ],
 }
+
+def _unlisted_model(model_id: str) -> dict[str, Any]:
+    """Catalog card for a configured model the catalog does not know about.
+
+    Prices are unknown rather than zero -- showing 0.0 would read as free. The
+    UI renders `pricing_note` so the gap is explicit."""
+    return {
+        "id": model_id,
+        "name": model_id,
+        "summary": "Configured outside the built-in catalog; details unavailable.",
+        "tier": "Unlisted",
+        "status": "Current",
+        "input_price": None,
+        "cached_input_price": None,
+        "output_price": None,
+        "speed": "Unknown",
+        "speed_rank": 99,
+        "speed_note": "Not benchmarked here.",
+        "context_window": "Unknown",
+        "pricing_note": "Pricing not in the built-in catalog; check the provider's pricing page.",
+        "recommended_for": "Currently configured model",
+    }
+
 
 DEFAULT_MODELS = {
     "openai": ("gpt-5.6-terra", "gpt-5.6-luna"),
@@ -303,18 +346,33 @@ class AiSettingsService:
         self._load()
 
     @staticmethod
-    def catalog() -> list[dict[str, Any]]:
-        return [
-            {
+    def catalog(active_models: dict[str, list[str]] | None = None) -> list[dict[str, Any]]:
+        """The model catalog, plus any model that is actually configured but
+        not listed.
+
+        A hardcoded catalog always lags real model releases, and when the
+        configured model is missing from it the UI highlights nothing -- the
+        page then looks unconfigured while the system is happily running that
+        very model. Surfacing it as an "Unlisted" card keeps what is actually
+        in use visible and selectable instead."""
+        active_models = active_models or {}
+        catalog: list[dict[str, Any]] = []
+        for provider, models in MODEL_CATALOG.items():
+            known = {model["id"] for model in models}
+            extra = [
+                _unlisted_model(model_id)
+                for model_id in dict.fromkeys(active_models.get(provider, []))
+                if model_id and model_id not in known
+            ]
+            catalog.append({
                 "id": provider,
                 "key_env": PROVIDER_KEY_ENV[provider],
                 "source_url": PROVIDER_SOURCES[provider],
                 "default_analysis_model": DEFAULT_MODELS[provider][0],
                 "default_utility_model": DEFAULT_MODELS[provider][1],
-                "models": models,
-            }
-            for provider, models in MODEL_CATALOG.items()
-        ]
+                "models": [*models, *extra],
+            })
+        return catalog
 
     def _load(self) -> None:
         if not self.path.exists():
@@ -343,19 +401,23 @@ class AiSettingsService:
         primary_default, utility_default = DEFAULT_MODELS.get(provider, ("", ""))
         tavily = self._settings.get("tavily_key") or os.getenv("TAVILY_API_KEY")
         langsmith = self._settings.get("langsmith_key") or os.getenv("LANGCHAIN_API_KEY")
+        analysis_model = self._settings.get("analysis_model") or os.getenv("ANALYST_MODEL") or primary_default
+        utility_model = self._settings.get("utility_model") or os.getenv("EMAIL_EXTRACTOR_MODEL") or utility_default
         return {
             "provider": provider or None,
             "provider_configured": bool(provider_key),
             "provider_fingerprint": self._fingerprint(provider_key),
-            "analysis_model": self._settings.get("analysis_model") or os.getenv("ANALYST_MODEL") or primary_default,
-            "utility_model": self._settings.get("utility_model") or os.getenv("EMAIL_EXTRACTOR_MODEL") or utility_default,
+            "analysis_model": analysis_model,
+            "utility_model": utility_model,
             "tavily_configured": bool(tavily),
             "tavily_fingerprint": self._fingerprint(tavily),
             "langsmith_configured": bool(langsmith),
             "langsmith_fingerprint": self._fingerprint(langsmith),
             "persisted": self._persisted,
             "persistence_available": platform.system() == "Windows",
-            "catalog": self.catalog(),
+            "catalog": self.catalog(
+                {provider: [analysis_model, utility_model]} if provider else None
+            ),
         }
 
     def _apply_environment(self, settings: dict[str, Any]) -> None:

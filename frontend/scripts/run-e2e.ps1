@@ -84,6 +84,9 @@ try {
     $env:WADDEHHA_DEV_MANAGER_PASSWORD = $e2ePassword
     $env:WADDEHHA_DEV_EMPLOYEE_PASSWORD = $e2ePassword
     $env:WADDEHHA_RUNS_ENABLED = "0"
+    # Browser tests assert against a fixed provider/model configuration, so the
+    # API must not pick up whatever happens to be in the developer's .env.
+    $env:WADDEHHA_SKIP_DOTENV = "1"
     $env:API_ORIGIN = "http://127.0.0.1:$apiPort"
 
     $uvicornPath = Join-Path $projectRoot ".venv\Scripts\uvicorn.exe"

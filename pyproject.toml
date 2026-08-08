@@ -24,6 +24,10 @@ dependencies = [
     "hijridate",
     "astral",
     "langgraph-checkpoint-sqlite",
+    # api/ (FastAPI backend serving the Next.js frontend). uvicorn is the ASGI
+    # server scripts/start_local.ps1 launches it with.
+    "fastapi",
+    "uvicorn",
 ]
 
 [project.optional-dependencies]

@@ -31,7 +31,8 @@ const providerNames = {
   gemini: "Google Gemini",
 } as const;
 
-const price = (value: number) => `$${value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+const price = (value: number | null) =>
+  value === null || value === undefined ? "—" : `$${value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
 function ModelCard({ model, selected, onSelect }: { model: AiModelOption; selected: boolean; onSelect: () => void }) {
   return <button type="button" className={`model-choice ${selected ? "selected" : ""}`} onClick={onSelect} aria-pressed={selected}>
@@ -106,7 +107,9 @@ export function AiConnectionsView() {
   const canSave = Boolean(provider && analysisModel && (apiKey || providerConfigured));
   const submit = () => save.mutate({ provider, api_key: apiKey || undefined, analysis_model: analysisModel, utility_model: utilityModel || analysisModel, tavily_key: tavilyKey || undefined, langsmith_key: langsmithKey || undefined, remember });
   const models = providerOption?.models ?? [];
-  const lowestCostModel = models.reduce<AiModelOption | undefined>((lowest, model) => !lowest || model.input_price + model.output_price < lowest.input_price + lowest.output_price ? model : lowest, undefined);
+  // Unpriced (unlisted) models cannot take part in a cheapest-model comparison.
+  const pricedModels = models.filter((m) => m.input_price !== null && m.output_price !== null);
+  const lowestCostModel = pricedModels.reduce<AiModelOption | undefined>((lowest, model) => !lowest || (model.input_price! + model.output_price!) < (lowest.input_price! + lowest.output_price!) ? model : lowest, undefined);
   const fastestModel = models.reduce<AiModelOption | undefined>((fastest, model) => !fastest || model.speed_rank > fastest.speed_rank ? model : fastest, undefined);
 
   return <div className="page-stack ai-settings-page">
