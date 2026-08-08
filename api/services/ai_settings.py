@@ -222,19 +222,21 @@ MODEL_CATALOG: dict[str, list[dict[str, Any]]] = {
             # validated pipeline run to date used. It was missing from the
             # catalog, so the AI Connections page showed the provider selected
             # but no model highlighted.
+            # Prices from ai.google.dev/gemini-api/docs/pricing (paid tier,
+            # standard). Cheaper than 3.5 Flash-Lite on both input and output.
             "id": "gemini-3.1-flash-lite",
             "name": "Gemini 3.1 Flash-Lite",
             "summary": "Previous-generation low-cost model; the project default for pipeline runs.",
             "tier": "Efficient",
             "status": "Previous generation",
-            "input_price": 0.1,
+            "input_price": 0.25,
             "cached_input_price": None,
-            "output_price": 0.4,
+            "output_price": 1.5,
             "speed": "Fastest",
             "speed_rank": 3,
             "speed_note": "Very high throughput on the free tier; used for the analyst/critic loop.",
             "context_window": "1M",
-            "pricing_note": None,
+            "pricing_note": "Audio input is priced higher ($0.50/1M) than text/image/video.",
             "recommended_for": "Low-cost analyst and critic runs",
         },
     ],
